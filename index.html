@@ -73,16 +73,98 @@
         .btn-white{background:transparent;color:#fff;border:2px solid #fff}.btn-white:hover{background:rgba(255,255,255,.15)}
         .btn-black{background:var(--noir);color:#fff}.btn-black:hover{background:var(--orange)}
         
-        /* Menu styles */
+        /* ===== MENU REPENSÉ ===== */
+        nav {
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(0,0,0,.07);
+            padding: 0 4%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--noir);
+            white-space: nowrap;
+        }
+        .logo span { color: var(--orange); }
+        
+        .nav-links {
+            display: flex;
+            gap: 0.5rem 1rem;
+            list-style: none;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            flex: 1;
+        }
+        
+        .nav-links > li {
+            display: inline-block;
+        }
+        
+        .nav-links a {
+            font-size: .8rem;
+            font-weight: 600;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            transition: color .2s;
+            white-space: nowrap;
+            padding: 0.4rem 0.5rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--orange);
+        }
+        
+        .nav-links .nav-yt {
+            background: var(--orange);
+            color: #fff !important;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-left: 0.5rem;
+        }
+        
+        .nav-links .nav-yt:hover {
+            background: var(--orange-dark);
+        }
+        
+        .nav-links .nav-yt-icon {
+            background: #ff0000;
+            color: #fff !important;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            font-weight: 700;
+        }
+        
+        .nav-links .nav-yt-icon:hover {
+            background: #cc0000;
+        }
+        
+        /* Menu dropdown */
         .has-drop {
             position: relative;
         }
+        
         .has-drop > a::after {
             content: '▾';
             font-size: 0.6rem;
             opacity: 0.7;
             margin-left: 0.2rem;
         }
+        
         .dropdown {
             display: none;
             position: absolute;
@@ -96,50 +178,31 @@
             padding: .5rem 0;
             z-index: 999;
         }
+        
         .has-drop:hover .dropdown {
             display: block;
         }
+        
         .dropdown a {
             display: block;
             padding: .52rem 1.1rem;
             font-size: .8rem;
             color: var(--noir);
             font-weight: 500;
-            transition: background .15s, color .15s;
+            white-space: nowrap;
+            text-transform: none;
+            letter-spacing: normal;
         }
+        
         .dropdown a:hover {
             background: #fff8f2;
             color: var(--orange);
         }
-        /* Boutons YouTube */
-        .nav-yt {
-            background: var(--orange);
-            color: #fff !important;
-            padding: .42rem .8rem;
-            border-radius: 6px;
-            font-weight: 700 !important;
-            margin-left: 0.3rem;
-            font-size: .75rem !important;
-        }
-        .nav-yt:hover {
-            background: var(--orange-dark);
-        }
-        .nav-yt-icon {
-            background: #ff0000;
-            color: #fff !important;
-            padding: .42rem .8rem;
-            border-radius: 6px;
-            font-weight: 700 !important;
-            font-size: .75rem !important;
-        }
-        .nav-yt-icon:hover {
-            background: #cc0000;
-        }
         
-        /* Menu responsive - ACTIVATION PLUS TÔT */
+        /* Menu responsive */
         .menu-toggle {
             display: none;
-            font-size: 1.8rem;
+            font-size: 2rem;
             cursor: pointer;
             color: var(--noir);
             background: none;
@@ -147,14 +210,18 @@
             padding: 0.5rem;
             line-height: 1;
         }
-
-        /* Passage en mode mobile à partir de 1000px */
+        
+        .mobile-only {
+            display: none !important;
+        }
+        
+        /* Passage en hamburger à 1000px (assez tard pour laisser le menu s'étaler) */
         @media (max-width: 1000px) {
             .nav-links {
                 display: none;
                 flex-direction: column;
                 position: absolute;
-                top: 66px;
+                top: 70px;
                 left: 0;
                 width: 100%;
                 background: white;
@@ -162,6 +229,8 @@
                 box-shadow: 0 10px 20px rgba(0,0,0,0.1);
                 z-index: 1000;
                 gap: 0;
+                align-items: stretch;
+                flex-wrap: nowrap;
             }
             
             .nav-links.active {
@@ -177,8 +246,8 @@
                 display: block;
                 padding: 1rem !important;
                 width: 100%;
-                white-space: normal !important;
-                font-size: .9rem;
+                white-space: normal;
+                font-size: 0.95rem;
             }
             
             .has-drop {
@@ -196,47 +265,33 @@
                 display: none;
             }
             
-            .has-drop:hover .dropdown {
+            .has-drop:hover .dropdown,
+            .has-drop.active .dropdown {
                 display: block;
             }
             
             .dropdown a {
                 padding: 0.8rem 2rem !important;
+                white-space: normal;
             }
             
             .menu-toggle {
                 display: block;
             }
             
-            nav {
-                flex-wrap: wrap;
-                height: auto;
-                min-height: 66px;
-                padding: 0.5rem 4%;
-            }
-            
-            .logo {
-                font-size: 1.3rem;
-            }
-            
             .desktop-only {
-                display: none;
-            }
-        }
-        
-        @media (min-width: 1001px) {
-            .mobile-only {
                 display: none !important;
             }
             
-            /* Réduction de la taille des liens sur desktop pour gagner de la place */
-            .nav-links a {
-                font-size: .8rem !important;
+            .mobile-only {
+                display: block !important;
             }
             
-            .nav-yt, .nav-yt-icon {
-                padding: .4rem .7rem;
-                font-size: .7rem !important;
+            .nav-links .nav-yt,
+            .nav-links .nav-yt-icon {
+                margin: 0.5rem auto;
+                display: inline-block;
+                width: auto;
             }
         }
         
@@ -440,28 +495,17 @@
                 e.preventDefault();
                 e.stopPropagation();
                 navLinks.classList.toggle('active');
-                
-                const mobileButtons = document.querySelectorAll('.mobile-only');
-                mobileButtons.forEach(btn => {
-                    btn.style.display = navLinks.classList.contains('active') ? 'block' : 'none';
-                });
             });
             
             navLinks.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', function() {
                     navLinks.classList.remove('active');
-                    document.querySelectorAll('.mobile-only').forEach(btn => {
-                        btn.style.display = 'none';
-                    });
                 });
             });
             
             document.addEventListener('click', function(e) {
                 if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
                     navLinks.classList.remove('active');
-                    document.querySelectorAll('.mobile-only').forEach(btn => {
-                        btn.style.display = 'none';
-                    });
                 }
             });
         }
@@ -496,9 +540,542 @@
 <!-- === FIN HERO =========================== -->
 <!-- ======================================== -->
 
-<!-- Le reste du fichier (sections AOOCCI, CARPURIDE, AFERIY, BLACKVIEW, KOMOBI, VIDÉOS, FOOTER) est identique à ton fichier actuel -->
-<!-- Je ne le recopie pas ici pour garder le message clair, mais il est présent dans ton fichier -->
+<!-- ======================================== -->
+<!-- === DÉBUT SECTION AOOCCI =============== -->
+<!-- ======================================== -->
+<section class="section">
+    <div class="sec-head">
+        <h2>GPS MOTO <em>AOOCCI</em></h2>
+        <div class="bar"></div>
+        <p>Navigation offline, CarPlay, Android Auto et dashcam intégrée – testé sur 10 000 km jusqu'au Cap Nord</p>
+    </div>
+    
+    <div style="background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); border-radius: 20px; padding: 2rem; margin: 2rem 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem; color: white;">
+        <div style="flex: 2; min-width: 300px;">
+            <span style="background: #e67e22; padding: 0.3rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; display: inline-block; margin-bottom: 1rem;">⭐ PARTENAIRE OFFICIEL</span>
+            <h3 style="font-size: 2.2rem; margin-bottom: 0.5rem;">GPS MOTO AOOCCI</h3>
+            <p style="color: #ccc; margin-bottom: 1rem; font-size: 1.1rem; line-height: 1.6;">
+                Le <strong>GPS moto offline</strong> que j'utilise depuis 10 000 km. <strong>Navigation 100% hors réseau</strong> avec cartes préchargées, idéal pour les road trips en zones blanches. Écran <strong>CarPlay et Android Auto</strong> intégré, dashcam avant/arrière, <strong>surveillance pression pneus (TPMS)</strong>. Testé jusqu'au Cap Nord par -5°C, sous la pluie et sur pistes.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
+                <span style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 50px;">📍 GPS offline Europe</span>
+                <span style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 50px;">📱 CarPlay/Android Auto</span>
+                <span style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 50px;">📹 Dashcam avant/arrière</span>
+                <span style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 50px;">🛞 TPMS pression pneus</span>
+            </div>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin: 1.5rem 0;">
+                <a href="https://aoocci.fr/?ref=gvxyhqgv" class="btn btn-orange" style="background: #e67e22; color: white; padding: 0.8rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none;" target="_blank" rel="sponsored nofollow noopener">💰 VOIR TOUS LES GPS AOOCCI →</a>
+                <div style="background: rgba(255,255,255,0.1); padding: 0.5rem 1.2rem; border-radius: 50px; font-family: monospace; font-size: 1.1rem;">Code <strong>LCDMH28</strong> = -28%</div>
+            </div>
+            
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 2rem;">
+                <a href="https://youtu.be/xj5-sH7pH2w" target="_blank" style="text-decoration: none; color: white;">
+                    <div style="width: 180px; border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.1); transition: transform 0.2s;">
+                        <div style="position: relative;">
+                            <img src="https://img.youtube.com/vi/xj5-sH7pH2w/hqdefault.jpg" alt="Test Aoocci U6" style="width: 100%; display: block;">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; background: #e67e22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <span style="color: white; font-size: 1.2rem;">▶️</span>
+                            </div>
+                        </div>
+                        <div style="padding: 0.5rem; text-align: center; font-size: 0.9rem; font-weight: 600;">Test Aoocci U6</div>
+                    </div>
+                </a>
+                <a href="https://youtu.be/MVHMeX2rrok" target="_blank" style="text-decoration: none; color: white;">
+                    <div style="width: 180px; border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.1); transition: transform 0.2s;">
+                        <div style="position: relative;">
+                            <img src="https://img.youtube.com/vi/MVHMeX2rrok/hqdefault.jpg" alt="Test Aoocci BX" style="width: 100%; display: block;">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; background: #e67e22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <span style="color: white; font-size: 1.2rem;">▶️</span>
+                            </div>
+                        </div>
+                        <div style="padding: 0.5rem; text-align: center; font-size: 0.9rem; font-weight: 600;">Test Aoocci BX</div>
+                    </div>
+                </a>
+                <a href="https://youtu.be/6vp73RL1frA" target="_blank" style="text-decoration: none; color: white;">
+                    <div style="width: 180px; border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.1); transition: transform 0.2s;">
+                        <div style="position: relative;">
+                            <img src="https://img.youtube.com/vi/6vp73RL1frA/hqdefault.jpg" alt="2 flux audio intercom" style="width: 100%; display: block;">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; background: #e67e22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <span style="color: white; font-size: 1.2rem;">▶️</span>
+                            </div>
+                        </div>
+                        <div style="padding: 0.5rem; text-align: center; font-size: 0.9rem; font-weight: 600;">2 flux audio</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem 2rem; border-radius: 15px; text-align: center; min-width: 180px;">
+            <div style="font-size: 2.5rem; font-weight: 700;">⭐ 4.8/5</div>
+            <div style="color: #ccc;">1 200+ avis</div>
+            <div style="margin-top: 0.8rem; color: #e67e22; font-weight: 600;">Meilleure vente 2025</div>
+            <div style="margin-top: 0.5rem; font-size: 0.9rem;">Testé Cap Nord 2025</div>
+        </div>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 2rem;">
+        <div style="background: white; border-radius: 12px; padding: 1.2rem; text-align: center; border: 1px solid var(--border);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--noir);">U6 / U7</h4>
+            <p style="font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem;">GPS 6" Android • Dashcam • TPMS</p>
+            <a href="https://aoocci.fr/products/u6-u7-gps-moto-android-6-pouces-navigation-hors-ligne-tpms?_pos=1&_sid=34498bc63&_ss=r&ref=gvxyhqgv&variant=62540875366769" style="color: #e67e22; font-weight: 600; font-size: 0.9rem;" target="_blank" rel="sponsored nofollow noopener">🔗 Voir le produit →</a>
+        </div>
+        
+        <div style="background: white; border-radius: 12px; padding: 1.2rem; text-align: center; border: 1px solid var(--border);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--noir);">BX</h4>
+            <p style="font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem;">CarPlay • Radar BSD • Dashcam HD</p>
+            <a href="https://aoocci.fr/products/carplay-moto-bx-dashcam-detection-angles-morts?_pos=1&_sid=7d2cfbaf4&_ss=r&ref=gvxyhqgv&variant=62540837683569" style="color: #e67e22; font-weight: 600; font-size: 0.9rem;" target="_blank" rel="sponsored nofollow noopener">🔗 Voir le produit →</a>
+        </div>
+        
+        <div style="background: white; border-radius: 12px; padding: 1.2rem; text-align: center; border: 1px solid var(--border);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--noir);">C3 Plus</h4>
+            <p style="font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem;">CarPlay sans fil 5" • TPMS • IP67</p>
+            <a href="https://aoocci.fr/products/ecran-carplay-moto-c3-plus-sans-fil-android-auto?ref=gvxyhqgv&variant=62536018854257" style="color: #e67e22; font-weight: 600; font-size: 0.9rem;" target="_blank" rel="sponsored nofollow noopener">🔗 Voir le produit →</a>
+        </div>
+        
+        <div style="background: white; border-radius: 12px; padding: 1.2rem; text-align: center; border: 1px solid var(--border);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--noir);">C6 Pro</h4>
+            <p style="font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem;">Caméra Moto • GPS antivol • TPMS</p>
+            <a href="https://aoocci.fr/products/camera-moto-c6-pro-gps-antivol-tpms-carplay?ref=gvxyhqgv" style="color: #e67e22; font-weight: 600; font-size: 0.9rem;" target="_blank" rel="sponsored nofollow noopener">🔗 Voir le produit →</a>
+        </div>
+        
+        <div style="background: white; border-radius: 12px; padding: 1.2rem; text-align: center; border: 1px solid var(--border);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--noir);">BM6 / BM7</h4>
+            <p style="font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem;">CarPlay BMW • Intégration spécifique</p>
+            <a href="https://aoocci.fr/products/bm6-bm7-carplay-android-auto-bmw?_pos=1&_sid=e5edf74bf&_ss=r&ref=gvxyhqgv&variant=62542151221617" style="color: #e67e22; font-weight: 600; font-size: 0.9rem;" target="_blank" rel="sponsored nofollow noopener">🔗 Voir le produit →</a>
+        </div>
+        
+        <div style="background: white; border-radius: 12px; padding: 1.2rem; text-align: center; border: 1px solid var(--border);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--noir);">Boutique AOOCCI</h4>
+            <p style="font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem;">Tous les produits et accessoires</p>
+            <a href="https://aoocci.fr/?ref=gvxyhqgv" style="color: #e67e22; font-weight: 600; font-size: 0.9rem;" target="_blank" rel="sponsored nofollow noopener">🔗 Voir toute la gamme →</a>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 2rem;">
+        <a href="aoocci.html" style="display: inline-block; color: #e67e22; font-weight: 600; text-decoration: none;">→ Voir tous mes tests et avis sur les GPS AOOCCI ←</a>
+    </div>
+</section>
+<!-- ======================================== -->
+<!-- === FIN SECTION AOOCCI ================= -->
+<!-- ======================================== -->
 
+<!-- ======================================== -->
+<!-- === DÉBUT SECTION CARPURIDE ============ -->
+<!-- ======================================== -->
+<section class="section">
+    <div class="sec-head">
+        <h2>ÉCRANS MOTO <em>CARPURIDE</em></h2>
+        <div class="bar"></div>
+        <p>CarPlay, Android Auto, navigation et dashcam – des solutions pour toutes les motos</p>
+    </div>
+    
+    <div style="background: linear-gradient(135deg, #e67e22 0%, #d35400 100%); border-radius: 20px; padding: 2rem; margin: 2rem 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem; color: white;">
+        <div style="flex: 2; min-width: 300px;">
+            <span style="background: #1a1a1a; padding: 0.3rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; display: inline-block; margin-bottom: 1rem;">⭐ PARTENAIRE OFFICIEL</span>
+            <h3 style="font-size: 2.2rem; margin-bottom: 0.5rem;">ÉCRANS MOTO CARPURIDE</h3>
+            <p style="color: rgba(255,255,255,0.9); margin-bottom: 1rem; font-size: 1.1rem; line-height: 1.6;">
+                La référence des écrans <strong>CarPlay et Android Auto</strong> pour moto. Des modèles pour toutes les motos : <strong>universels (W702 Pro)</strong> avec support universel, <strong>W702RS Pro avec radar BSD</strong> pour la détection d'angle mort. Écrans 1000 nits lisibles en plein soleil, IP67 étanches.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
+                <span style="background: rgba(0,0,0,0.2); padding: 0.5rem 1rem; border-radius: 50px;">📱 CarPlay/Android Auto</span>
+                <span style="background: rgba(0,0,0,0.2); padding: 0.5rem 1rem; border-radius: 50px;">☀️ 1000 nits</span>
+                <span style="background: rgba(0,0,0,0.2); padding: 0.5rem 1rem; border-radius: 50px;">🛡️ Radar BSD (RS)</span>
+                <span style="background: rgba(0,0,0,0.2); padding: 0.5rem 1rem; border-radius: 50px;">🎮 Commande au guidon</span>
+            </div>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin: 1.5rem 0;">
+                <a href="https://carpuride.com/fr?ref=uxcepkkq" class="btn btn-orange" style="background: #1a1a1a; color: white; padding: 0.8rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none;" target="_blank" rel="sponsored nofollow noopener">💰 VOIR TOUS LES ÉCRANS CARPURIDE →</a>
+                <div style="background: rgba(0,0,0,0.2); padding: 0.5rem 1.2rem; border-radius: 50px; font-family: monospace; font-size: 1.1rem;">Code <strong>LCDMH</strong> = -30%</div>
+            </div>
+            
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 2rem;">
+                <a href="https://youtu.be/Q2OlIRiTFgc" target="_blank" style="text-decoration: none; color: white;">
+                    <div style="width: 180px; border-radius: 12px; overflow: hidden; background: rgba(0,0,0,0.2); transition: transform 0.2s;">
+                        <div style="position: relative;">
+                            <img src="https://img.youtube.com/vi/Q2OlIRiTFgc/hqdefault.jpg" alt="Test Carpuride W702 Pro" style="width: 100%; display: block;">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; background: #e67e22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <span style="color: white; font-size: 1.2rem;">▶️</span>
+                            </div>
+                        </div>
+                        <div style="padding: 0.5rem; text-align: center; font-size: 0.9rem; font-weight: 600;">Test W702 Pro</div>
+                    </div>
+                </a>
+                <a href="https://youtu.be/qPs50yYwdTk" target="_blank" style="text-decoration: none; color: white;">
+                    <div style="width: 180px; border-radius: 12px; overflow: hidden; background: rgba(0,0,0,0.2); transition: transform 0.2s;">
+                        <div style="position: relative;">
+                            <img src="https://img.youtube.com/vi/qPs50yYwdTk/hqdefault.jpg" alt="Test Carpuride W702RS Pro" style="width: 100%; display: block;">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; background: #e67e22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <span style="color: white; font-size: 1.2rem;">▶️</span>
+                            </div>
+                        </div>
+                        <div style="padding: 0.5rem; text-align: center; font-size: 0.9rem; font-weight: 600;">Test W702RS Pro (BSD)</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <div style="background: rgba(0,0,0,0.2); padding: 1.5rem 2rem; border-radius: 15px; text-align: center; min-width: 180px;">
+            <div style="font-size: 2.5rem; font-weight: 700;">⭐ 4.7/5</div>
+            <div style="color: rgba(255,255,255,0.8);">800+ avis</div>
+            <div style="margin-top: 0.8rem; color: #1a1a1a; font-weight: 600;">Top qualité/prix</div>
+            <div style="margin-top: 0.5rem; font-size: 0.9rem;">Garantie 2 ans</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+        <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid var(--border);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--noir); font-size: 1.3rem;">W702 Plus</h4>
+            <p style="font-size: 0.9rem; color: var(--orange); margin-bottom: 0.8rem;">🚀 Android 14 complet</p>
+            <ul style="list-style: none; color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                <li style="padding: 0.2rem 0;">✓ Installer ses propres apps (Play Store)</li>
+                <li style="padding: 0.2rem 0;">✓ GPS intégré (hors-ligne possible)</li>
+                <li style="padding: 0.2rem 0;">✓ Dashcam avant/arrière 1080P</li>
+                <li style="padding: 0.2rem 0;">✓ Écran 7" 1000 nits, IP67</li>
+            </ul>
+            <a href="https://carpuride.com/fr/products/carpuride-w702-plus-motorcycle-stereo-supports-app-installation?_pos=1&_sid=a0238933c&_ss=r&ref=uxcepkkq" class="btn btn-orange" style="display: inline-block; padding: 0.5rem 1rem; font-size: 0.9rem; margin-top: 0.5rem;" target="_blank" rel="sponsored nofollow noopener">🔗 Voir le produit →</a>
+        </div>
+        
+        <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid var(--border);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--noir); font-size: 1.3rem;">W702S Pro / W502S Pro</h4>
+            <p style="font-size: 0.9rem; color: var(--orange); margin-bottom: 0.8rem;">🌍 Universal + TPMS optionnel</p>
+            <ul style="list-style: none; color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                <li style="padding: 0.2rem 0;">✓ Pour toutes motos (support BM05)</li>
+                <li style="padding: 0.2rem 0;">✓ TPMS en option</li>
+                <li style="padding: 0.2rem 0;">✓ Commande au guidon filaire</li>
+                <li style="padding: 0.2rem 0;">✓ Choix 7" ou 5"</li>
+            </ul>
+            <a href="https://carpuride.com/fr/collections/motorcycle-7-inch-series/products/carpuride-w702s-motorcycle-stereo-with-universal-mounting-bracket-bm05?ref=uxcepkkq" class="btn btn-orange" style="display: inline-block; padding: 0.5rem 1rem; font-size: 0.9rem; margin-top: 0.5rem;" target="_blank" rel="sponsored nofollow noopener">🔗 Voir le produit →</a>
+        </div>
+        
+        <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid var(--border);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--noir); font-size: 1.3rem;">W702BS / W502BS</h4>
+            <p style="font-size: 0.9rem; color: var(--orange); margin-bottom: 0.8rem;">🏍️ Pour BMW (Wonder Wheel)</p>
+            <ul style="list-style: none; color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                <li style="padding: 0.2rem 0;">✓ Intégration commande Wonder Wheel</li>
+                <li style="padding: 0.2rem 0;">✓ Affichage données moto (TPMS, vitesse...)</li>
+                <li style="padding: 0.2rem 0;">✓ Mode SOS</li>
+                <li style="padding: 0.2rem 0;">✓ Choix 7" ou 5"</li>
+            </ul>
+            <a href="https://carpuride.com/fr/products/carpuride-w702bs-motorcycle-stereo?ref=uxcepkkq" class="btn btn-orange" style="display: inline-block; padding: 0.5rem 1rem; font-size: 0.9rem; margin-top: 0.5rem;" target="_blank" rel="sponsored nofollow noopener">🔗 Voir le produit →</a>
+        </div>
+        
+        <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid var(--border);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--noir); font-size: 1.3rem;">W702RS Pro</h4>
+            <p style="font-size: 0.9rem; color: var(--orange); margin-bottom: 0.8rem;">🛡️ Radar BSD inclus</p>
+            <ul style="list-style: none; color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                <li style="padding: 0.2rem 0;">✓ Détection d'angle mort intégrée</li>
+                <li style="padding: 0.2rem 0;">✓ Alerte visuelle et sonore</li>
+                <li style="padding: 0.2rem 0;">✓ Idéal pour autoroute</li>
+            </ul>
+            <a href="https://carpuride.com/fr?ref=uxcepkkq" class="btn btn-orange" style="display: inline-block; padding: 0.5rem 1rem; font-size: 0.9rem; margin-top: 0.5rem;" target="_blank" rel="sponsored nofollow noopener">🔗 Voir le produit →</a>
+        </div>
+        
+        <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <h4 style="margin-bottom: 0.5rem; color: var(--noir); font-size: 1.3rem;">Boutique CARPURIDE</h4>
+            <p style="color: var(--muted); margin-bottom: 1rem; text-align: center;">Tous les modèles, accessoires et TPMS</p>
+            <a href="https://carpuride.com/fr?ref=uxcepkkq" class="btn btn-orange" style="display: inline-block; padding: 0.5rem 1.5rem;" target="_blank" rel="sponsored nofollow noopener">🔗 Voir toute la gamme →</a>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 2rem;">
+        <a href="carpuride.html" style="display: inline-block; color: #e67e22; font-weight: 600; text-decoration: none;">→ Voir tous mes tests et avis sur les écrans CARPURIDE ←</a>
+    </div>
+</section>
+<!-- ======================================== -->
+<!-- === FIN SECTION CARPURIDE ============== -->
+<!-- ======================================== -->
+
+<!-- ======================================== -->
+<!-- === DÉBUT SECTION AFERIY =============== -->
+<!-- ======================================== -->
+<section class="section">
+    <div class="sec-head">
+        <h2>ÉNERGIE BIVOUAC <em>AFERIY</em></h2>
+        <div class="bar"></div>
+        <p>Stations électriques et jump starters pour le voyage autonome – testés en Norvège et Albanie</p>
+    </div>
+    
+    <div style="background: linear-gradient(135deg, #2c3e50 0%, #1a1a1a 100%); border-radius: 20px; padding: 2rem; margin: 2rem 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem; color: white;">
+        <div style="flex: 2; min-width: 300px;">
+            <span style="background: #e67e22; padding: 0.3rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; display: inline-block; margin-bottom: 1rem;">⭐ PARTENAIRE OFFICIEL</span>
+            <h3 style="font-size: 2.2rem; margin-bottom: 0.5rem;">STATIONS AFERIY</h3>
+            <p style="color: #ccc; margin-bottom: 1rem; font-size: 1.1rem; line-height: 1.6;">
+                L'énergie indispensable pour le bivouac moto. La <strong>station Nano 100</strong> (batterie portable 100W) pour recharger téléphone, GoPro, drone, appareil photo. Le <strong>Jump Starter 2000A</strong> pour dépanner une batterie à plat en quelques secondes. Testés en conditions réelles en Norvège (froid) et Albanie (pistes).
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
+                <span style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 50px;">🔋 Nano 100</span>
+                <span style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 50px;">⚡ Jump Starter 2000A</span>
+                <span style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 50px;">🏕️ Bivouac</span>
+                <span style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 50px;">📱 Recharge USB-C</span>
+            </div>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin: 1.5rem 0;">
+                <a href="https://www.amazon.fr/dp/B0F1MR5HD3?tag=lcdmh-21" class="btn btn-orange" style="background: #e67e22; color: white; padding: 0.8rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none;" target="_blank" rel="sponsored nofollow noopener">💰 VOIR SUR AMAZON →</a>
+                <div style="background: rgba(255,255,255,0.1); padding: 0.5rem 1.2rem; border-radius: 50px; font-family: monospace; font-size: 1.1rem;">Code <strong>8JGATT8K</strong> = -47%</div>
+            </div>
+            
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 2rem;">
+                <a href="https://youtu.be/D1eLA6LRkLU" target="_blank" style="text-decoration: none; color: white;">
+                    <div style="width: 220px; border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.1); transition: transform 0.2s;">
+                        <div style="position: relative;">
+                            <img src="https://img.youtube.com/vi/D1eLA6LRkLU/hqdefault.jpg" alt="Test AFERIY Nano 100" style="width: 100%; display: block;">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; background: #e67e22; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <span style="color: white; font-size: 1.2rem;">▶️</span>
+                            </div>
+                        </div>
+                        <div style="padding: 0.5rem; text-align: center; font-size: 0.9rem; font-weight: 600;">Test AFERIY Nano 100</div>
+                        <div style="padding: 0 0.5rem 0.5rem; text-align: center; font-size: 0.8rem; color: #ccc;">Autonomie électrique en road trip</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem 2rem; border-radius: 15px; text-align: center; min-width: 180px;">
+            <div style="font-size: 2.5rem; font-weight: 700;">⭐ 4.6/5</div>
+            <div style="color: #ccc;">500+ avis</div>
+            <div style="margin-top: 0.8rem; color: #e67e22; font-weight: 600;">Idéal voyage</div>
+            <div style="margin-top: 0.5rem; font-size: 0.9rem;">Testé en Norvège</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+        <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid var(--border);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--noir); font-size: 1.3rem;">AFERIY Nano 100</h4>
+            <p style="font-size: 0.9rem; color: var(--orange); margin-bottom: 0.8rem;">🔋 Station électrique portable</p>
+            <ul style="list-style: none; color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                <li style="padding: 0.2rem 0;">✓ Capacité : 100W / 256Wh</li>
+                <li style="padding: 0.2rem 0;">✓ Recharge USB-C, USB-A, 12V</li>
+                <li style="padding: 0.2rem 0;">✓ Recharge smartphone (5-6 fois)</li>
+                <li style="padding: 0.2rem 0;">✓ Poids léger (2,8 kg)</li>
+            </ul>
+            <a href="https://www.amazon.fr/dp/B0F1MR5HD3?tag=lcdmh-21" class="btn btn-orange" style="display: inline-block; padding: 0.5rem 1rem; font-size: 0.9rem; margin-top: 0.5rem;" target="_blank" rel="sponsored nofollow noopener">🔗 Voir le produit →</a>
+        </div>
+        
+        <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid var(--border);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--noir); font-size: 1.3rem;">Jump Starter 2000A</h4>
+            <p style="font-size: 0.9rem; color: var(--orange); margin-bottom: 0.8rem;">⚡ Démarreur de secours</p>
+            <ul style="list-style: none; color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                <li style="padding: 0.2rem 0;">✓ Démarre batterie 12V (jusqu'à 8L essence)</li>
+                <li style="padding: 0.2rem 0;">✓ Batterie intégrée 20000mAh</li>
+                <li style="padding: 0.2rem 0;">✓ Lampe torche LED</li>
+                <li style="padding: 0.2rem 0;">✓ Recharge USB-C rapide</li>
+            </ul>
+            <a href="https://www.amazon.fr/dp/B0C1NMW5VP?tag=lcdmh-21" class="btn btn-orange" style="display: inline-block; padding: 0.5rem 1rem; font-size: 0.9rem; margin-top: 0.5rem;" target="_blank" rel="sponsored nofollow noopener">🔗 Voir le produit →</a>
+        </div>
+        
+        <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid var(--border);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--noir); font-size: 1.3rem;">Panneau Solaire</h4>
+            <p style="font-size: 0.9rem; color: var(--orange); margin-bottom: 0.8rem;">☀️ Recharge autonome</p>
+            <ul style="list-style: none; color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                <li style="padding: 0.2rem 0;">✓ 60W pliable</li>
+                <li style="padding: 0.2rem 0;">✓ Compatible Nano 100</li>
+                <li style="padding: 0.2rem 0;">✓ Léger et compact</li>
+            </ul>
+            <a href="https://www.amazon.fr/dp/B0F1MR5HD3?tag=lcdmh-21" class="btn btn-orange" style="display: inline-block; padding: 0.5rem 1rem; font-size: 0.9rem; margin-top: 0.5rem;" target="_blank" rel="sponsored nofollow noopener">🔗 Voir le produit →</a>
+        </div>
+        
+        <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <h4 style="margin-bottom: 0.5rem; color: var(--noir); font-size: 1.3rem;">Kits Bivouac</h4>
+            <p style="color: var(--muted); margin-bottom: 1rem; text-align: center;">Nano 100 + panneau solaire</p>
+            <a href="https://www.amazon.fr/dp/B0F1MR5HD3" class="btn btn-orange" style="display: inline-block; padding: 0.5rem 1.5rem;" target="_blank" rel="sponsored nofollow noopener">🔗 Voir les kits →</a>
+        </div>
+    </div>
+    
+    <div style="background: #f8f9fa; border: 1px solid var(--border); border-radius: 15px; padding: 2rem; margin: 2rem 0; text-align: center;">
+        <p style="max-width: 800px; margin: 0 auto; color: var(--muted); font-style: italic;">
+            "La Nano 100 m'a sauvé plusieurs fois en Norvège quand je n'avais pas de prise pour recharger mes appareils. Compacte, légère, elle tient facilement dans une valise. Le jump starter, je ne l'ai pas utilisé personnellement mais je sais que ça peut dépanner un motard en galère. Pour le bivouac autonome, c'est vraiment un plus."
+        </p>
+        <p style="margin-top: 1rem; font-weight: 600;">— Yves, LCDMH</p>
+    </div>
+    
+    <div style="text-align: center; margin-top: 2rem;">
+        <a href="#" style="display: inline-block; color: #e67e22; font-weight: 600; text-decoration: none;">→ Voir tous mes tests sur l'énergie bivouac ←</a>
+    </div>
+</section>
+<!-- ======================================== -->
+<!-- === FIN SECTION AFERIY ================= -->
+<!-- ======================================== -->
+
+<!-- ======================================== -->
+<!-- === DÉBUT SECTION BLACKVIEW ============ -->
+<!-- ======================================== -->
+<section class="section">
+    <div class="sec-head">
+        <h2>SMARTPHONE RENFORCÉ <em>BLACKVIEW</em></h2>
+        <div class="bar"></div>
+        <p>Le téléphone qui résiste à tout – testé sous la pluie, le froid et les chocs en road trip</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin: 3rem 0; background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,.05); border: 1px solid var(--border);">
+        
+        <div style="background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%); padding: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white;">
+            <div style="background: rgba(255,255,255,0.2); padding: 0.3rem 1rem; border-radius: 50px; font-size: 0.7rem; font-weight: 600; margin-bottom: 1rem; letter-spacing: 0.05rem;">🔥 CODE EXCLUSIF LCDMH</div>
+            <h3 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.2rem;">XPLORE X1</h3>
+            <p style="font-size: 1rem; margin-bottom: 1rem; opacity: 0.9;">BLACKVIEW</p>
+            
+            <div style="width: 220px; height: 300px; background: rgba(255,255,255,0.15); border-radius: 30px; display: flex; align-items: center; justify-content: center; margin: 1rem 0; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3);">
+                <span style="font-size: 8rem; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));">📱</span>
+            </div>
+            
+            <div style="margin-top: 0.5rem; text-align: center;">
+                <div style="font-size: 2.2rem; font-weight: 800;">296,91 €</div>
+                <div style="font-size: 1rem; text-decoration: line-through; opacity: 0.7;">329,90 €</div>
+                <div style="font-size: 0.9rem; background: rgba(255,255,255,0.2); padding: 0.2rem 1rem; border-radius: 50px; margin-top: 0.5rem;">Économisez 33 €</div>
+            </div>
+        </div>
+        
+        <div style="padding: 2.5rem;">
+            <div style="display: inline-block; background: #f0f0f0; padding: 0.3rem 1.2rem; border-radius: 50px; font-size: 0.7rem; font-weight: 600; margin-bottom: 1rem;">⭐ PARTENAIRE OFFICIEL</div>
+            <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Le smartphone increvable pour l'aventure</h4>
+            <p style="color: var(--muted); margin-bottom: 1.5rem; line-height: 1.6;">
+                Testé sous la pluie norvégienne, sur les pistes albanaises et par -15°C en Laponie. Le Xplore X1 est le compagnon idéal pour vos road trips moto.
+            </p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.8rem;">
+                    <div style="background: #e67e22; width: 35px; height: 35px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white;">🔋</div>
+                    <div>
+                        <div style="font-weight: 700;">20 000 mAh</div>
+                        <div style="font-size: 0.8rem; color: var(--muted);">3 jours d'autonomie</div>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.8rem;">
+                    <div style="background: #e67e22; width: 35px; height: 35px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white;">💧</div>
+                    <div>
+                        <div style="font-weight: 700;">IP68/IP69K</div>
+                        <div style="font-size: 0.8rem; color: var(--muted);">Étanche, poussière</div>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.8rem;">
+                    <div style="background: #e67e22; width: 35px; height: 35px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white;">📡</div>
+                    <div>
+                        <div style="font-weight: 700;">GPS offline</div>
+                        <div style="font-size: 0.8rem; color: var(--muted);">Cartes hors réseau</div>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.8rem;">
+                    <div style="background: #e67e22; width: 35px; height: 35px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white;">📸</div>
+                    <div>
+                        <div style="font-weight: 700;">Vision nocturne</div>
+                        <div style="font-size: 0.8rem; color: var(--muted);">20 MP</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: #f8f9fa; padding: 1.2rem; border-radius: 15px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <div style="font-size: 0.8rem; color: var(--muted);">Code exclusif LCDMH</div>
+                    <div style="font-family: monospace; font-size: 1.3rem; font-weight: 700; color: var(--orange);">S4KCKFKE6C4K</div>
+                </div>
+                <button class="copy-btn" onclick="copyText('S4KCKFKE6C4K', this)" style="background: var(--orange); color: white; border: none; padding: 0.5rem 1.2rem; border-radius: 50px; font-weight: 600; cursor: pointer;">📋 Copier le code</button>
+            </div>
+            
+            <a href="https://www.awin1.com/cread.php?awinmid=90283&awinaffid=2753560&ued=https%3A%2F%2Fwww.blackview.hk%2Fproducts%2Fitem%2Fxplore-x1" class="btn btn-orange" style="display: inline-block; padding: 0.8rem 2rem; font-size: 1rem;" target="_blank" rel="sponsored nofollow noopener">💰 VOIR LE PRODUIT SUR BLACKVIEW →</a>
+        </div>
+    </div>
+
+    <div style="margin-top: 2rem;">
+        <h4 style="font-size: 1.3rem; margin-bottom: 1rem;">📹 Mes tests vidéo</h4>
+        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+            <a href="https://youtu.be/_lV1S1_JXd0" target="_blank" style="text-decoration: none; color: inherit;">
+                <div style="width: 200px; border-radius: 12px; overflow: hidden; background: white; border: 1px solid var(--border);">
+                    <img src="https://img.youtube.com/vi/_lV1S1_JXd0/hqdefault.jpg" alt="Test Blackview" style="width: 100%;">
+                    <div style="padding: 0.5rem; text-align: center; font-size: 0.8rem;">Test Xplore X1</div>
+                </div>
+            </a>
+            <a href="https://youtu.be/AYjFZ1QfCWY" target="_blank" style="text-decoration: none; color: inherit;">
+                <div style="width: 200px; border-radius: 12px; overflow: hidden; background: white; border: 1px solid var(--border);">
+                    <img src="https://img.youtube.com/vi/AYjFZ1QfCWY/hqdefault.jpg" alt="Test Blackview" style="width: 100%;">
+                    <div style="padding: 0.5rem; text-align: center; font-size: 0.8rem;">Quel téléphone choisir ?</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- ======================================== -->
+<!-- === FIN SECTION BLACKVIEW ============== -->
+<!-- ======================================== -->
+
+<!-- ======================================== -->
+<!-- === DÉBUT SECTION KOMOBI =============== -->
+<!-- ======================================== -->
+<section class="section">
+    <div class="sec-head">
+        <h2>TRACEUR GPS <em>KOMOBI</em></h2>
+        <div class="bar"></div>
+        <p>Nouveau partenaire – antivol GPS avec détection de chute</p>
+    </div>
+    <div style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); border-radius: 20px; padding: 2rem; margin: 2rem 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem; color: white;">
+        <div style="flex: 1; min-width: 250px;">
+            <span style="background: #e67e22; padding: 0.3rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; display: inline-block; margin-bottom: 1rem;">🚀 NOUVEAU PARTENAIRE</span>
+            <h3 style="font-size: 2rem; margin-bottom: 0.5rem;">KOMOBI</h3>
+            <p style="color: rgba(255,255,255,0.9); margin-bottom: 1rem;">Le traceur GPS antivol pour moto avec alarme, détection de chute (eCall) et télémetrie. Testé sur 10 000 km. Localisation en temps réel, notification sur smartphone en cas de mouvement.</p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0;">
+                <span style="background: rgba(0,0,0,0.2); padding: 0.5rem 1rem; border-radius: 50px;">📍 GPS temps réel</span>
+                <span style="background: rgba(0,0,0,0.2); padding: 0.5rem 1rem; border-radius: 50px;">🆘 Détection chute</span>
+                <span style="background: rgba(0,0,0,0.2); padding: 0.5rem 1rem; border-radius: 50px;">📊 Télémetrie</span>
+            </div>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+                <a href="https://www.komobimoto.com/fr/" class="btn btn-orange" style="background: #1a1a1a; color: white; padding: 0.8rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none;" target="_blank" rel="sponsored nofollow noopener">💰 DÉCOUVRIR KOMOBI →</a>
+                <div style="background: rgba(0,0,0,0.2); padding: 0.5rem 1rem; border-radius: 50px; font-family: monospace;">Code <strong>LCDMH15</strong> (à venir)</div>
+            </div>
+        </div>
+        <div style="background: rgba(0,0,0,0.2); padding: 1.5rem 2rem; border-radius: 15px; text-align: center;">
+            <div style="font-size: 2rem; font-weight: 700;">⭐ 4.9/5</div>
+            <div style="color: rgba(255,255,255,0.8);">200+ avis</div>
+            <div style="margin-top: 0.5rem; color: #1a1a1a;">Anti-vol efficace</div>
+        </div>
+    </div>
+</section>
+<!-- ======================================== -->
+<!-- === FIN SECTION KOMOBI ================= -->
+<!-- ======================================== -->
+
+<!-- ======================================== -->
+<!-- === DÉBUT VIDÉOS ======================= -->
+<!-- ======================================== -->
+<section class="section" id="videos">
+    <div class="sec-head">
+        <h2>Les <em>vidéos</em></h2>
+        <div class="bar"></div>
+        <p>Road trips, GPS moto, pneus, intercom, équipement, sécurité — toute la chaîne LCDMH</p>
+    </div>
+    <div style="text-align: center;">
+        <a href="https://www.youtube.com/@LCDMH" style="display:inline-block;background:white;border:1px solid var(--border);border-radius:50px;padding:1rem 2rem;text-decoration:none;color:var(--noir);font-weight:600;margin-bottom:2rem" target="_blank" rel="noopener">🎬 Voir toutes les vidéos sur YouTube →</a>
+    </div>
+</section>
+<!-- ======================================== -->
+<!-- === FIN VIDÉOS ========================= -->
+<!-- ======================================== -->
+
+<!-- ======================================== -->
+<!-- === DÉBUT FOOTER ======================= -->
+<!-- ======================================== -->
+<footer>
+    <div class="footer-logo">LC<em>D</em>MH</div>
+    <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">La Chaîne du Motard Heureux · Annecy, France</p>
+    <ul class="footer-links">
+        <li><a href="codes-promo.html">Codes promo</a></li>
+        <li><a href="aoocci.html">Aoocci</a></li>
+        <li><a href="carpuride.html">Carpuride</a></li>
+        <li><a href="blackview.html">Blackview</a></li>
+        <li><a href="komobi.html">Komobi</a></li>
+        <li><a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
+    </ul>
+    <p class="footer-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves · Annecy, France</p>
+</footer>
+
+<script>
+    function copyText(text, btn) {
+        navigator.clipboard.writeText(text).then(() => {
+            const original = btn.textContent;
+            btn.textContent = 'Copié ✓';
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.textContent = original;
+                btn.classList.remove('copied');
+            }, 2000);
+        });
+    }
+</script>
 </body>
 </html>
 <!-- FIN DU FICHIER : index.html -->
