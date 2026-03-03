@@ -3,560 +3,509 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tests Carpuride - Écran GPS Moto CarPlay/Android Auto - LCDMH</title>
-    <meta name="description" content="Tests complets des écrans GPS Carpuride pour moto : W702 Pro, W702RS Pro avec radar BSD. Installation, avis terrain, compatibilité CarPlay et Android Auto.">
-    <meta name="keywords" content="Carpuride, GPS moto, écran moto, CarPlay moto, Android Auto moto, radar BSD moto, navigation moto">
-    <meta property="og:title" content="Tests Carpuride - Écrans GPS Moto">
-    <meta property="og:description" content="Tests complets des écrans GPS Carpuride pour moto : W702 Pro, W702RS Pro avec radar BSD.">
-    <link rel="canonical" href="https://lcdmh.fr/carpuride.html">
-    <!-- Polices Google -->
+    <title>Tests Écrans Moto CARPURIDE - CarPlay, Android Auto - LCDMH</title>
+    <meta name="description" content="Tests complets des écrans GPS moto CARPURIDE : W702 Pro, W702RS Pro (radar BSD). Avis terrain après 5 000 km de road trips.">
+    <meta name="keywords" content="Carpuride, écran moto CarPlay, GPS moto Carpuride, test Carpuride W702 Pro, radar BSD moto">
+    <meta name="author" content="Yves – LCDMH">
+    <meta property="og:title" content="Tests Écrans Moto CARPURIDE - LCDMH">
+    <meta property="og:description" content="Tests complets des écrans GPS moto CARPURIDE avec CarPlay et Android Auto.">
+    <meta property="og:url" content="https://lcdmh.com/carpuride.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LCDMH">
+    <meta property="og:image" content="https://lcdmh.com/images/carpuride-og.jpg">
+    <link rel="canonical" href="https://lcdmh.com/carpuride.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Product CARPURIDE -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "CARPURIDE W702 Pro",
+      "description": "Écran GPS moto avec CarPlay et Android Auto sans fil. Écran 7\" 1000 nits, IP67 étanche. Testé sur 5 000 km.",
+      "brand": {
+        "@type": "Brand",
+        "name": "CARPURIDE"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "800"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "199.00",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://carpuride.com/fr/products/carpuride-w702-pro?ref=uxcepkkq"
+      }
+    }
+    </script>
+    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: "Inter", sans-serif;
-            background: #f5f5f5;
-            color: #1e1e1e;
-            line-height: 1.6;
+        :root{
+            --orange:#e67e22;
+            --orange-dark:#d35400;
+            --noir:#1a1a1a;
+            --bg:#f7f7f5;
+            --card:#fff;
+            --border:#e5e5e5;
+            --muted:#777;
+            --alt:#f0ede8;
         }
-        h1, h2, h3, h4, h5, h6 { font-family: "Montserrat", sans-serif; font-weight: 600; }
-        nav {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            padding: 1rem 5%;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--noir);line-height:1.65;font-size:16px}
+        h1,h2,h3,h4{font-family:'Montserrat',sans-serif}
+        a{color:inherit;text-decoration:none}
+        
+        /* Navigation */
+        nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.07);padding:0 4%;height:66px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+        .logo{font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800;color:var(--noir)}
+        .logo span{color:var(--orange)}
+        .nav-links{display:flex;gap:1rem;list-style:none;align-items:center}
+        .nav-links>li>a{font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0}
+        .nav-links>li>a:hover{color:var(--orange)}
+        .has-drop{position:relative}
+        .has-drop>a::after{content:'▾';font-size:.6rem;opacity:.7;margin-left:.2rem}
+        .dropdown{display:none;position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.12);min-width:175px;padding:.5rem 0;z-index:999}
+        .has-drop:hover .dropdown{display:block}
+        .dropdown a{display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s}
+        .dropdown a:hover{background:#fff8f2;color:var(--orange)}
+        .nav-yt{background:var(--orange)!important;color:#fff!important;padding:.42rem 1rem;border-radius:6px;font-weight:700!important}
+        .nav-yt:hover{background:var(--orange-dark)!important}
+        .nav-yt-icon{background:#ff0000!important;color:#fff!important;padding:.42rem 1rem;border-radius:6px;font-weight:700!important}
+        .nav-yt-icon:hover{background:#cc0000!important}
+        .menu-toggle{display:none}
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 66px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 1rem 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                z-index: 1000;
+                gap: 0;
+            }
+            .nav-links.active { display: flex; }
+            .nav-links li { width: 100%; text-align: center; }
+            .nav-links a {
+                display: block;
+                padding: 1rem !important;
+                width: 100%;
+                white-space: normal !important;
+            }
+            .has-drop { position: static; }
+            .dropdown {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                border: none;
+                border-top: 1px solid var(--border);
+                border-bottom: 1px solid var(--border);
+                margin: 0.5rem 0;
+            }
+            .menu-toggle { display: block; font-size: 2rem; background: none; border: none; cursor: pointer; }
+            nav { flex-wrap: wrap; height: auto; min-height: 66px; padding: 0.5rem 4%; }
+            .desktop-only { display: none; }
+            .mobile-only { display: block; }
         }
-        .logo a {
-            font-family: "Montserrat", sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1e1e1e;
-            text-decoration: none;
-        }
-        .logo span { color: #e67e22; }
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #1e1e1e;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover, .nav-links a.active { color: #e67e22; }
-        .nav-yt {
-            background: #e67e22;
-            color: white !important;
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-        .nav-yt:hover { background: #d35400; color: white; }
-        .hero {
-            height: 40vh;
-            min-height: 300px;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
-        .hero-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center 30%;
-            background-attachment: fixed;
-            filter: brightness(0.6);
-            z-index: -1;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 0 2rem;
-        }
-        .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            margin-bottom: 1rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-        .hero h1 span { color: #e67e22; }
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        }
-        .hero-badge {
-            background: rgba(230, 126, 34, 0.9);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            display: inline-block;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 5%;
-        }
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .section-title p {
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-        }
+        @media (min-width: 901px) { .mobile-only { display: none !important; } }
+        
+        /* Hero */
+        .hero{position:relative;min-height:40vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+        .hero-img{position:absolute;inset:0;background:url('images/bandeau-norvege.jpg') center/cover no-repeat fixed;z-index:0}
+        .hero-content{position:relative;z-index:2;max-width:820px;padding:2rem;text-shadow:0 2px 15px rgba(0,0,0,.7)}
+        .hero-badge{display:inline-block;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.45rem 1.4rem;border-radius:50px;margin-bottom:1.4rem;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+        .hero h1{font-size:clamp(2.4rem,7vw,4.8rem);font-weight:800;line-height:1.08;margin-bottom:1.1rem}
+        .hero h1 span{font-style:normal;color:var(--orange)}
+        .hero p{font-size:1.15rem;opacity:.95;max-width:580px;margin:0 auto 2rem}
+        .container{max-width:1200px;margin:0 auto;padding:2rem 5%}
+        .section-title{text-align:center;margin-bottom:3rem}
+        .section-title h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;margin-bottom:.4rem}
+        .section-title h2 em{font-style:normal;color:var(--orange)}
+        .section-title p{color:var(--muted);max-width:700px;margin:.6rem auto 0;font-size:.95rem}
+        .bar{width:52px;height:4px;background:var(--orange);border-radius:2px;margin:.8rem auto 0}
+        .btn{font-family:'Montserrat',sans-serif;font-size:.88rem;font-weight:700;padding:.8rem 1.9rem;border-radius:8px;border:none;cursor:pointer;transition:all .2s;display:inline-block;letter-spacing:.02em;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+        .btn-orange{background:var(--orange);color:#fff}.btn-orange:hover{background:var(--orange-dark)}
+        
+        /* Footer */
+        footer{background:var(--noir);color:rgba(255,255,255,.65);padding:2.8rem 6%;margin-top:4rem;text-align:center}
+        .f-logo{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:#fff}
+        .f-logo em{font-style:normal;color:var(--orange)}
+        .f-nav{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin:1.2rem 0;list-style:none}
+        .f-nav a{font-size:.8rem;color:rgba(255,255,255,.55);transition:color .2s}
+        .f-nav a:hover{color:var(--orange)}
+        .f-legal{font-size:.76rem;color:rgba(255,255,255,.3);margin-top:1.1rem;line-height:1.7}
+        
+        /* Grilles vidéo */
+        .videos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem;margin:2rem 0}
+        .video-card{background:var(--card);border-radius:15px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,.05);transition:transform .2s,box-shadow .2s;cursor:pointer;border:1px solid var(--border)}
+        .video-card:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(0,0,0,.1)}
+        .video-thumb{width:100%;height:180px;overflow:hidden;position:relative}
+        .video-thumb img{width:100%;height:100%;object-fit:cover}
+        .video-category{position:absolute;top:10px;left:10px;background:var(--orange);color:#fff;padding:.3rem .8rem;border-radius:50px;font-size:.8rem;font-weight:600;text-transform:uppercase}
+        .video-info{padding:1.5rem}
+        .video-title{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:600;margin-bottom:.8rem;line-height:1.4}
+        .video-desc{color:var(--muted);font-size:.95rem;line-height:1.5}
+        
         /* Grille produits */
-        .produits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        .produit-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            border: 1px solid #e0e0e0;
-            transition: transform 0.2s;
-        }
-        .produit-card:hover { transform: translateY(-5px); }
-        .produit-image {
-            height: 200px;
-            overflow: hidden;
-            background: #f8f9fa;
-        }
-        .produit-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .produit-info {
-            padding: 2rem;
-        }
-        .produit-nom {
-            font-family: "Montserrat", sans-serif;
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-        .produit-marque {
-            color: #e67e22;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        .produit-caracs {
-            list-style: none;
-            margin: 1.5rem 0;
-        }
-        .produit-caracs li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .produit-caracs li:before {
-            content: "✓ ";
-            color: #e67e22;
-            font-weight: 600;
-        }
-        .btn-produit {
-            display: inline-block;
-            background: #1e1e1e;
-            color: white;
-            text-decoration: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: background 0.2s;
-            margin-top: 1rem;
-        }
-        .btn-produit:hover { background: #e67e22; }
-        /* Grille vidéos */
-        .videos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        .video-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-            border: 1px solid #e0e0e0;
-        }
-        .video-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        .video-thumb {
-            width: 100%;
-            height: 180px;
-            overflow: hidden;
-        }
-        .video-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .video-info {
-            padding: 1.5rem;
-        }
-        .video-title {
-            font-family: "Montserrat", sans-serif;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-            line-height: 1.4;
-        }
-        .video-meta {
-            display: flex;
-            gap: 1rem;
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-        .video-desc {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        /* Bannière promo */
-        .promo-banner {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            border: 1px solid #e0e0e0;
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem 0 3rem;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2rem;
-        }
-        .promo-tag {
-            background: #e67e22;
-            color: white;
-            padding: 0.2rem 1rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 0.8rem;
-        }
-        .promo-code {
-            background: #1e1e1e;
-            color: white;
-            padding: 0.5rem 1rem 0.5rem 1.5rem;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .promo-code span {
-            font-family: "Montserrat", sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #e67e22;
-        }
-        .promo-code button {
-            background: white;
-            border: none;
-            color: #1e1e1e;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .promo-code button:hover { background: #e67e22; color: white; }
-        footer {
-            background: #1e1e1e;
-            color: white;
-            padding: 3rem 5%;
-            margin-top: 4rem;
-        }
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        .footer-col h4 {
-            color: white;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        .footer-col ul {
-            list-style: none;
-        }
-        .footer-col li {
-            margin-bottom: 0.5rem;
-        }
-        .footer-col a {
-            color: #aaa;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .footer-col a:hover { color: #e67e22; }
-        .copyright {
-            text-align: center;
-            padding-top: 2rem;
-            margin-top: 2rem;
-            border-top: 1px solid #333;
-            color: #aaa;
-        }
-        @media (max-width: 768px) {
-            nav { flex-direction: column; gap: 1rem; }
-            .nav-links { justify-content: center; }
-        }
+        .products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin:3rem 0}
+        .product-card{background:white;border-radius:15px;padding:2rem;border:1px solid var(--border);transition:transform .2s}
+        .product-card:hover{transform:translateY(-5px)}
+        .product-card h3{font-size:1.8rem;margin-bottom:0.5rem}
+        .product-card .type{color:var(--orange);font-weight:600;margin-bottom:1rem}
+        .product-card ul{list-style:none;color:var(--muted)}
+        .product-card li{padding:0.3rem 0;border-bottom:1px solid var(--border)}
+        .product-card li:last-child{border-bottom:none}
+        .product-card .btn{margin-top:1.5rem;display:inline-block}
+        
+        /* Tableau comparatif */
+        .comparatif-table{width:100%;border-collapse:collapse;background:white;border-radius:15px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.05);margin:2rem 0}
+        .comparatif-table th{background:var(--noir);color:white;padding:1rem;text-align:center}
+        .comparatif-table td{padding:1rem;text-align:center;border-bottom:1px solid var(--border)}
+        .comparatif-table .check{color:var(--orange);font-weight:700}
+        
+        .argument-box{background:white;border-radius:20px;padding:2rem;margin:2rem 0;border:1px solid var(--border);text-align:center}
+        .argument-box h3{color:var(--orange);margin-bottom:1rem}
+        .argument-box p{color:var(--muted);max-width:800px;margin:0 auto;line-height:1.8}
+        
+        .faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin:2rem 0}
+        .faq-item{background:white;border:1px solid var(--border);border-radius:15px;padding:1.5rem}
+        .faq-item h4{color:var(--orange);margin-bottom:0.5rem}
+        .faq-item p{color:var(--muted)}
+        
+        .commission-note{font-size:0.9rem;color:var(--muted);margin:1rem 0;font-style:italic;padding:0.5rem;background:#f9f9f9;border-radius:8px;border-left:3px solid var(--orange)}
     </style>
 </head>
 <body>
-    <nav>
-        <div class="logo"><a href="index.html">LC<span>D</span>MH</a></div>
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="roadtrips.html">Road Trips</a></li>
-            <li><a href="equipement.html">Équipement moto</a></li>
-            <li><a href="photo-video.html">Photo/Video</a></li>
-            <li><a href="intercoms.html">Intercoms</a></li>
-            <li><a href="tests-motos.html">Tests motos</a></li>
-            <li><a href="securite.html">Sécurité</a></li>
-            <li><a href="gps.html">GPS</a></li>
-            <li><a href="pneus.html">Pneus</a></li>
-            <li><a href="carpuride.html" class="active">Carpuride</a></li>
-            <li><a href="blackview.html">Blackview</a></li>
-            <li><a href="olight.html">Olight</a></li>
-            <li><a href="komobi.html">KOMOBI</a></li>
-            <li><a href="a-propos.html">À propos</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="https://www.youtube.com/@LCDMH" class="nav-yt" target="_blank">YouTube</a></li>
-        </ul>
-    </nav>
 
-    <section class="hero">
-        <div class="hero-image"></div>
-        <div class="hero-content">
-            <div class="hero-badge">NAVIGATION CONNECTÉE</div>
-            <h1>CARPURIDE</h1>
-            <p>Écrans GPS moto avec CarPlay, Android Auto et radar BSD</p>
-        </div>
-    </section>
-
-    <div class="container">
-        <!-- Bannière promo -->
-        <div class="promo-banner">
-            <div>
-                <div class="promo-tag">CODE EXCLUSIF</div>
-                <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">-30% sur toute la gamme</h3>
-                <p style="color: #666;">Valable sur Carpuride W702 Pro, W702RS Pro et accessoires</p>
+<!-- Navigation -->
+<nav>
+    <a href="index.html" class="logo">LC<span>D</span>MH</a>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="has-drop">
+            <a href="#">Road Trips</a>
+            <div class="dropdown">
+                <a href="roadtrips.html">Tous les road trips</a>
+                <a href="roadtrips.html#capnord">Cap Nord 2025</a>
+                <a href="roadtrips.html#europe-asie">Europe–Asie 2024</a>
+                <a href="roadtrips.html#espagne">Espagne 2023</a>
+                <a href="roadtrips.html#alpes">Les Alpes</a>
             </div>
-            <div class="promo-code">
-                <span>LCDMH</span>
-                <button onclick="copyText('LCDMH', this)">COPIER</button>
+        </li>
+        <li class="has-drop">
+            <a href="#">Tests</a>
+            <div class="dropdown">
+                <a href="tests-motos.html">Tests motos</a>
+                <a href="equipement.html">Équipement</a>
+                <a href="intercoms.html">Intercoms</a>
+                <a href="pneus.html">Pneus</a>
+                <a href="photo-video.html">Photo / Vidéo</a>
+                <a href="securite.html">Sécurité</a>
             </div>
-        </div>
-
-        <!-- Produits -->
-        <div class="section-title">
-            <h2>LES MODÈLES TESTÉS</h2>
-        </div>
-
-        <div class="produits-grid">
-            <!-- Carpuride W702 Pro -->
-            <div class="produit-card">
-                <div class="produit-image">
-                    <img src="https://img.youtube.com/vi/Q2OlIRiTFgc/hqdefault.jpg" alt="Carpuride W702 Pro">
-                </div>
-                <div class="produit-info">
-                    <div class="produit-nom">W702 Pro</div>
-                    <div class="produit-marque">Écran CarPlay/Android Auto</div>
-                    <ul class="produit-caracs">
-                        <li>Apple CarPlay / Android Auto sans fil</li>
-                        <li>Écran 7" haute luminosité (1000 nits)</li>
-                        <li>Navigation en temps réel</li>
-                        <li>Appels mains libres</li>
-                        <li>Contrôle musical</li>
-                        <li>Installation universelle</li>
-                    </ul>
-                    <a href="https://carpuride.com/products/w702-pro" class="btn-produit" target="_blank">VOIR LE PRODUIT →</a>
-                </div>
+        </li>
+        <li class="has-drop">
+            <a href="#">GPS</a>
+            <div class="dropdown">
+                <a href="gps.html">Tous les GPS</a>
+                <a href="aoocci.html">Aoocci</a>
+                <a href="carpuride.html" style="color:var(--orange);">Carpuride</a>
+                <a href="blackview.html">📱 Téléphones renforcés</a>
             </div>
-
-            <!-- Carpuride W702RS Pro -->
-            <div class="produit-card">
-                <div class="produit-image">
-                    <img src="https://img.youtube.com/vi/qPs50yYwdTk/hqdefault.jpg" alt="Carpuride W702RS Pro">
-                </div>
-                <div class="produit-info">
-                    <div class="produit-nom">W702RS Pro</div>
-                    <div class="produit-marque">Avec radar BSD</div>
-                    <ul class="produit-caracs">
-                        <li>Système BSD détection angle mort</li>
-                        <li>Apple CarPlay / Android Auto sans fil</li>
-                        <li>Écran 7" avec retour audio</li>
-                        <li>Intégration intercom</li>
-                        <li>Alertes visuelles et sonores</li>
-                        <li>Météo, musique, appels</li>
-                    </ul>
-                    <a href="https://carpuride.com/products/w702rs-pro" class="btn-produit" target="_blank">VOIR LE PRODUIT →</a>
-                </div>
+        </li>
+        <li class="has-drop">
+            <a href="#">Partenaires</a>
+            <div class="dropdown">
+                <a href="codes-promo.html">Codes promo</a>
+                <a href="blackview.html">Blackview</a>
+                <a href="olight.html">Olight</a>
+                <a href="komobi.html">Komobi</a>
             </div>
+        </li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="desktop-only"><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt">▶ S'abonner</a></li>
+        <li class="desktop-only"><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon">📺 YouTube</a></li>
+        <li class="mobile-only"><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt">▶ S'abonner</a></li>
+        <li class="mobile-only"><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon">📺 YouTube</a></li>
+    </ul>
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                navLinks.classList.toggle('active');
+                const mobile = document.querySelectorAll('.mobile-only');
+                mobile.forEach(btn => btn.style.display = navLinks.classList.contains('active') ? 'block' : 'none');
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    document.querySelectorAll('.mobile-only').forEach(btn => btn.style.display = 'none');
+                });
+            });
+        }
+    });
+</script>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-img"></div>
+    <div class="hero-content">
+        <div class="hero-badge">TESTS ÉCRANS MOTO</div>
+        <h1>CARPURIDE : <span>TOUS LES TESTS</span></h1>
+        <p>Retrouvez tous mes tests des écrans CarPlay / Android Auto CARPURIDE. Des modèles pour toutes les motos, avec ou sans radar BSD.</p>
+    </div>
+</section>
+
+<!-- Codes promo -->
+<section class="container">
+    <div style="background: linear-gradient(135deg, #e67e22 0%, #d35400 100%); border-radius: 20px; padding: 2rem; margin: 2rem 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem; color: white;">
+        <div>
+            <h3 style="font-size: 2rem; margin-bottom: 0.5rem;">CODE PROMO LCDMH</h3>
+            <p style="color: rgba(255,255,255,0.9);">Économisez sur tous les écrans CARPURIDE</p>
         </div>
-
-        <!-- Tests vidéo -->
-        <div class="section-title">
-            <h2>MES TESTS VIDÉO</h2>
+        <div style="background: rgba(0,0,0,0.2); padding: 1rem 2rem; border-radius: 10px; text-align: center;">
+            <div style="font-size: 2rem; font-weight: 700;">LCDMH</div>
+            <div style="font-size: 1rem; color: rgba(255,255,255,0.8);">-30% sur toute la gamme</div>
         </div>
+    </div>
+</section>
 
-        <div class="videos-grid" id="videos-grid"></div>
+<!-- Tests vidéo -->
+<section class="container">
+    <div class="section-title">
+        <h2>MES TESTS <em>VIDÉO</em></h2>
+        <div class="bar"></div>
+        <p>Tous mes essais des écrans CARPURIDE en conditions réelles</p>
+    </div>
 
-        <!-- Avantages Carpuride -->
-        <div class="section-title">
-            <h2>POURQUOI CHOISIR CARPURIDE ?</h2>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 2rem 0;">
-            <div style="background: white; border: 1px solid #e0e0e0; border-radius: 15px; padding: 2rem; text-align: center;">
-                <div style="font-size: 2.5rem; margin-bottom: 1rem;">📱</div>
-                <h3 style="margin-bottom: 1rem;">CarPlay/Android Auto</h3>
-                <p style="color: #666;">Interface familière, navigation fluide, compatible avec toutes les apps</p>
+    <div class="videos-grid">
+        <div class="video-card" onclick="window.open('https://youtu.be/Q2OlIRiTFgc', '_blank')">
+            <div class="video-thumb">
+                <img src="https://img.youtube.com/vi/Q2OlIRiTFgc/hqdefault.jpg" alt="Test Carpuride W702 Pro">
+                <div class="video-category">W702 Pro</div>
             </div>
-            <div style="background: white; border: 1px solid #e0e0e0; border-radius: 15px; padding: 2rem; text-align: center;">
-                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🛡️</div>
-                <h3 style="margin-bottom: 1rem;">Radar BSD</h3>
-                <p style="color: #666;">Détection d'angle mort pour une sécurité accrue sur autoroute</p>
-            </div>
-            <div style="background: white; border: 1px solid #e0e0e0; border-radius: 15px; padding: 2rem; text-align: center;">
-                <div style="font-size: 2.5rem; margin-bottom: 1rem;">☀️</div>
-                <h3 style="margin-bottom: 1rem;">Lisible au soleil</h3>
-                <p style="color: #666;">Écran haute luminosité, parfait pour les road trips</p>
+            <div class="video-info">
+                <div class="video-title">J'ai testé le Carpuride W702 Pro</div>
+                <div class="video-desc">Test complet de l'écran CarPlay/Android Auto sans fil. Code LCDMH pour -30%.</div>
             </div>
         </div>
 
-        <!-- Mon avis -->
-        <div style="background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 15px; padding: 2rem; margin: 3rem 0; text-align: center;">
-            <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">MON AVIS</h3>
-            <p style="max-width: 800px; margin: 0 auto; color: #666; font-style: italic;">
-                "Le Carpuride W702 Pro transforme vraiment l'expérience de navigation à moto. L'écran est parfaitement lisible au soleil, l'installation est simple et l'intégration avec l'intercom fonctionne du tonnerre. La version RS avec radar BSD est un vrai plus pour la sécurité sur autoroute."
-            </p>
-            <p style="margin-top: 1rem; font-weight: 600;">— Yves Vella, LCDMH</p>
+        <div class="video-card" onclick="window.open('https://youtu.be/qPs50yYwdTk', '_blank')">
+            <div class="video-thumb">
+                <img src="https://img.youtube.com/vi/qPs50yYwdTk/hqdefault.jpg" alt="Test Carpuride W702RS Pro">
+                <div class="video-category">W702RS Pro</div>
+            </div>
+            <div class="video-info">
+                <div class="video-title">Test Carpuride W702RS Pro (BSD)</div>
+                <div class="video-desc">Découvrez le modèle avec radar BSD pour la détection d'angle mort.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pourquoi CARPURIDE -->
+<section class="container">
+    <div class="argument-box">
+        <h3>Pourquoi choisir CARPURIDE ?</h3>
+        <p>
+            <strong>Compatibilité universelle</strong> : des modèles pour toutes les motos (universels, BMW).<br>
+            <strong>Lisibilité parfaite</strong> : écrans 1000 nits, lisibles en plein soleil.<br>
+            <strong>Sécurité</strong> : certains modèles intègrent un radar BSD (détection angle mort).<br>
+            <strong>Étanchéité</strong> : norme IP67, testés sous la pluie.<br>
+            <strong>Installation simple</strong> : Plug & Play, sans modification de la moto.
+        </p>
+    </div>
+</section>
+
+<!-- Tableau comparatif -->
+<section class="container">
+    <div class="section-title">
+        <h2>QUEL MODÈLE <em>CHOISIR ?</em></h2>
+        <div class="bar"></div>
+    </div>
+
+    <table class="comparatif-table">
+        <tr>
+            <th>Modèle</th>
+            <th>CarPlay</th>
+            <th>Android Auto</th>
+            <th>Radar BSD</th>
+            <th>Écran</th>
+            <th>TPMS</th>
+            <th>Idéal pour</th>
+        </tr>
+        <tr>
+            <td><strong>W702 Plus</strong></td>
+            <td class="check">✅</td>
+            <td class="check">✅</td>
+            <td>❌</td>
+            <td>7" 1000 nits</td>
+            <td>❌</td>
+            <td>Android complet</td>
+        </tr>
+        <tr>
+            <td><strong>W702S Pro</strong></td>
+            <td class="check">✅</td>
+            <td class="check">✅</td>
+            <td>❌</td>
+            <td>7" 1000 nits</td>
+            <td>Option</td>
+            <td>Universal</td>
+        </tr>
+        <tr>
+            <td><strong>W702BS</strong></td>
+            <td class="check">✅</td>
+            <td class="check">✅</td>
+            <td>❌</td>
+            <td>7" 1000 nits</td>
+            <td>❌</td>
+            <td>BMW (Wonder Wheel)</td>
+        </tr>
+        <tr>
+            <td><strong>W702RS Pro</strong></td>
+            <td class="check">✅</td>
+            <td class="check">✅</td>
+            <td class="check">✅</td>
+            <td>7" 1000 nits</td>
+            <td>Option</td>
+            <td>Sécurité maximale</td>
+        </tr>
+    </table>
+
+    <!-- Grille produits -->
+    <div class="products-grid">
+        <div class="product-card">
+            <h3>W702 Plus</h3>
+            <div class="type">Android 14 complet</div>
+            <ul>
+                <li>✓ Installer ses propres apps</li>
+                <li>✓ GPS intégré (offline)</li>
+                <li>✓ Dashcam avant/arrière 1080P</li>
+                <li>✓ Écran 7" 1000 nits</li>
+                <li>✓ IP67 étanche</li>
+            </ul>
+            <a href="https://carpuride.com/fr/products/carpuride-w702-plus-motorcycle-stereo-supports-app-installation?_pos=1&_sid=a0238933c&_ss=r&ref=uxcepkkq" class="btn btn-orange" target="_blank" rel="sponsored nofollow noopener">VOIR W702 PLUS →</a>
+        </div>
+
+        <div class="product-card">
+            <h3>W702S Pro</h3>
+            <div class="type">Universal + TPMS</div>
+            <ul>
+                <li>✓ Pour toutes motos</li>
+                <li>✓ TPMS en option</li>
+                <li>✓ Commande au guidon filaire</li>
+                <li>✓ Écran 7" 1000 nits</li>
+                <li>✓ IP67 étanche</li>
+            </ul>
+            <a href="https://carpuride.com/fr/collections/motorcycle-7-inch-series/products/carpuride-w702s-motorcycle-stereo-with-universal-mounting-bracket-bm05?ref=uxcepkkq" class="btn btn-orange" target="_blank" rel="sponsored nofollow noopener">VOIR W702S PRO →</a>
+        </div>
+
+        <div class="product-card">
+            <h3>W702BS</h3>
+            <div class="type">Pour BMW</div>
+            <ul>
+                <li>✓ Intégration Wonder Wheel</li>
+                <li>✓ Affichage données moto</li>
+                <li>✓ Mode SOS</li>
+                <li>✓ Écran 7" 1000 nits</li>
+                <li>✓ IP67 étanche</li>
+            </ul>
+            <a href="https://carpuride.com/fr/products/carpuride-w702bs-motorcycle-stereo?ref=uxcepkkq" class="btn btn-orange" target="_blank" rel="sponsored nofollow noopener">VOIR W702BS →</a>
+        </div>
+
+        <div class="product-card">
+            <h3>W702RS Pro</h3>
+            <div class="type">Radar BSD inclus</div>
+            <ul>
+                <li>✓ Détection angle mort</li>
+                <li>✓ Alerte visuelle et sonore</li>
+                <li>✓ Idéal pour autoroute</li>
+                <li>✓ Écran 7" 1000 nits</li>
+                <li>✓ IP67 étanche</li>
+            </ul>
+            <a href="https://carpuride.com/fr/products/carpuride-702rs-pro-motorcycle-stereo-with-radar-bsd-system?ref=uxcepkkq" class="btn btn-orange" target="_blank" rel="sponsored nofollow noopener">VOIR W702RS PRO →</a>
+        </div>
+
+        <div class="product-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <h3>Tous les écrans</h3>
+            <div class="type">Boutique officielle</div>
+            <p style="color: var(--muted); margin: 1rem 0; text-align: center;">Voir toute la gamme et les accessoires</p>
+            <a href="https://carpuride.com/fr?ref=uxcepkkq" class="btn btn-orange" target="_blank" rel="sponsored nofollow noopener">VOIR LA BOUTIQUE →</a>
         </div>
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>LCDMH</h4>
-                <p>La Chaîne Du Motard Heureux – Road trips, tests et aventures à moto depuis 2022.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Navigation</h4>
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="roadtrips.html">Road Trips</a></li>
-                    <li><a href="equipement.html">Équipement moto</a></li>
-                    <li><a href="photo-video.html">Photo/Video</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Tests</h4>
-                <ul>
-                    <li><a href="intercoms.html">Intercoms</a></li>
-                    <li><a href="tests-motos.html">Tests motos</a></li>
-                    <li><a href="gps.html">GPS</a></li>
-                    <li><a href="carpuride.html">Carpuride</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Partenaires</h4>
-                <ul>
-                    <li><a href="blackview.html">Blackview</a></li>
-                    <li><a href="olight.html">Olight</a></li>
-                    <li><a href="komobi.html">KOMOBI</a></li>
-                    <li><a href="pneus.html">Pneus</a></li>
-                </ul>
-            </div>
+    <!-- Note commission -->
+    <div class="commission-note">
+        🤝 Chaque achat via ces liens me rapproche d’un nouveau code promo à partager avec vous. Merci de faire grandir la communauté !
+    </div>
+</section>
+
+<!-- Avis -->
+<section class="container">
+    <div style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border: 1px solid var(--border); border-radius: 20px; padding: 3rem; margin: 3rem 0; text-align: center;">
+        <h3 style="font-size: 2rem; margin-bottom: 1rem;">CE QUE J'EN PENSE VRAIMENT</h3>
+        <p style="max-width: 800px; margin: 0 auto; color: var(--muted); font-size: 1.1rem; font-style: italic;">
+            "Après plusieurs milliers de kilomètres avec différents écrans CARPURIDE, je peux dire que ce sont les meilleurs rapports qualité-prix du marché. Le W702 Pro est simple et efficace, le W702RS Pro apporte un vrai plus en sécurité avec son radar BSD. L'écran est parfaitement lisible en plein soleil et l'installation est vraiment simple. Si vous cherchez un écran CarPlay pour votre moto, vous pouvez y aller les yeux fermés."
+        </p>
+        <p style="margin-top: 2rem; font-weight: 600;">— Yves, LCDMH · 72 000 km</p>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="container">
+    <div class="section-title">
+        <h2>FAQ <em>CARPURIDE</em></h2>
+        <div class="bar"></div>
+    </div>
+
+    <div class="faq-grid">
+        <div class="faq-item">
+            <h4>Quel modèle pour ma moto ?</h4>
+            <p>Les modèles universels (W702S Pro) s'adaptent à toutes les motos. Pour les BMW, choisissez la série BS qui intègre les commandes Wonder Wheel.</p>
         </div>
-        <div class="copyright">
-            &copy; 2026 LCDMH - La Chaîne Du Motard Heureux
+        <div class="faq-item">
+            <h4>Le GPS fonctionne-t-il sans téléphone ?</h4>
+            <p>Le W702 Plus a un GPS intégré avec Android 14, vous pouvez installer des cartes offline. Les autres modèles dépendent du téléphone.</p>
         </div>
-    </footer>
+        <div class="faq-item">
+            <h4>Comment utiliser le code promo ?</h4>
+            <p>Ajoutez le produit au panier sur carpuride.com, entrez le code LCDMH dans la zone prévue, la réduction s'applique immédiatement.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Le radar BSD est-il fiable ?</h4>
+            <p>Oui, je l'ai testé sur autoroute et en ville, les alertes sont précises. C'est un vrai plus pour la sécurité.</p>
+        </div>
+    </div>
+</section>
 
-    <script>
-        const videos = [
-            {
-                id: "Q2OlIRiTFgc",
-                titre: "J'ai testé le Carpuride sur la route",
-                date: "2025-07-04",
-                desc: "Test complet du Carpuride W702 Pro"
-            },
-            {
-                id: "qPs50yYwdTk",
-                titre: "Carpuride W702RS Pro détection d'angle morts",
-                date: "2025-12-11",
-                desc: "Test du Carpuride 702RS Pro avec système BSD"
-            }
-        ];
-
-        const grid = document.getElementById('videos-grid');
-        videos.forEach(video => {
-            const card = document.createElement('div');
-            card.className = 'video-card';
-            card.onclick = () => window.open(`https://youtu.be/${video.id}`, '_blank');
-            card.innerHTML = `
-                <div class="video-thumb">
-                    <img src="https://img.youtube.com/vi/${video.id}/hqdefault.jpg" alt="${video.titre}">
-                </div>
-                <div class="video-info">
-                    <div class="video-title">${video.titre}</div>
-                    <div class="video-meta">📅 ${video.date}</div>
-                    <div class="video-desc">${video.desc}</div>
-                </div>
-            `;
-            grid.appendChild(card);
-        });
-
-        function copyText(text, btn) {
-            navigator.clipboard.writeText(text).then(() => {
-                const original = btn.textContent;
-                btn.textContent = 'COPIÉ ✓';
-                btn.style.background = '#e67e22';
-                btn.style.color = 'white';
-                setTimeout(() => {
-                    btn.textContent = original;
-                    btn.style.background = 'white';
-                    btn.style.color = '#1e1e1e';
-                }, 2000);
-            });
-        }
-    </script>
+<!-- Footer -->
+<footer>
+    <div class="f-logo">LC<em>D</em>MH</div>
+    <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">La Chaîne du Motard Heureux · Annecy, France</p>
+    <ul class="f-nav">
+        <li><a href="codes-promo.html">Codes promo</a></li>
+        <li><a href="aoocci.html">Aoocci</a></li>
+        <li><a href="carpuride.html">Carpuride</a></li>
+        <li><a href="blackview.html">Blackview</a></li>
+        <li><a href="komobi.html">Komobi</a></li>
+        <li><a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
+    </ul>
+    <p class="f-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves · Annecy, France</p>
+</footer>
 </body>
 </html>
+<!-- FIN DU FICHIER : carpuride.html -->

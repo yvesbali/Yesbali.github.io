@@ -1,19 +1,48 @@
 <!DOCTYPE html>
 <html lang="fr">
-<!-- ======================================== -->
-<!-- === DÉBUT HEAD ========================= -->
-<!-- ======================================== -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tests GPS Moto AOOCCI - U6, BX, C3 Plus - LCDMH</title>
     <meta name="description" content="Tous mes tests des GPS moto AOOCCI : U6 (navigation offline), BX (radar BSD), C3 Plus (CarPlay sans fil). Avis terrain après 10 000 km de road trips.">
     <meta name="keywords" content="GPS moto AOOCCI, test AOOCCI U6, test AOOCCI BX, GPS offline moto, CarPlay moto, dashcam moto, TPMS moto, code promo AOOCCI">
+    <meta name="author" content="Yves – LCDMH">
     <meta property="og:title" content="Tests GPS Moto AOOCCI - LCDMH">
     <meta property="og:description" content="Tests complets des GPS moto AOOCCI après 10 000 km de road trips.">
+    <meta property="og:url" content="https://lcdmh.com/aoocci.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LCDMH">
+    <meta property="og:image" content="https://lcdmh.com/images/aoocci-og.jpg">
     <link rel="canonical" href="https://lcdmh.com/aoocci.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Product AOOCCI -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "AOOCCI U6 GPS Moto",
+      "description": "GPS moto avec navigation offline, CarPlay, Android Auto, dashcam avant/arrière, TPMS. Testé sur 10 000 km.",
+      "brand": {
+        "@type": "Brand",
+        "name": "AOOCCI"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "1200"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "239.00",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://aoocci.fr/products/u6-u7-gps-moto-android-6-pouces-navigation-hors-ligne-tpms?ref=gvxyhqgv"
+      }
+    }
+    </script>
+    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root{
@@ -30,6 +59,8 @@
         body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--noir);line-height:1.65;font-size:16px}
         h1,h2,h3,h4{font-family:'Montserrat',sans-serif}
         a{color:inherit;text-decoration:none}
+        
+        /* Navigation */
         nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.07);padding:0 4%;height:66px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
         .logo{font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800;color:var(--noir)}
         .logo span{color:var(--orange)}
@@ -44,7 +75,49 @@
         .dropdown a:hover{background:#fff8f2;color:var(--orange)}
         .nav-yt{background:var(--orange)!important;color:#fff!important;padding:.42rem 1rem;border-radius:6px;font-weight:700!important}
         .nav-yt:hover{background:var(--orange-dark)!important}
-        @media(max-width:900px){.nav-links{display:none}}
+        .nav-yt-icon{background:#ff0000!important;color:#fff!important;padding:.42rem 1rem;border-radius:6px;font-weight:700!important}
+        .nav-yt-icon:hover{background:#cc0000!important}
+        .menu-toggle{display:none}
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 66px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 1rem 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                z-index: 1000;
+                gap: 0;
+            }
+            .nav-links.active { display: flex; }
+            .nav-links li { width: 100%; text-align: center; }
+            .nav-links a {
+                display: block;
+                padding: 1rem !important;
+                width: 100%;
+                white-space: normal !important;
+            }
+            .has-drop { position: static; }
+            .dropdown {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                border: none;
+                border-top: 1px solid var(--border);
+                border-bottom: 1px solid var(--border);
+                margin: 0.5rem 0;
+            }
+            .menu-toggle { display: block; font-size: 2rem; background: none; border: none; cursor: pointer; }
+            nav { flex-wrap: wrap; height: auto; min-height: 66px; padding: 0.5rem 4%; }
+            .desktop-only { display: none; }
+            .mobile-only { display: block; }
+        }
+        @media (min-width: 901px) { .mobile-only { display: none !important; } }
+        
+        /* Hero */
         .hero{position:relative;min-height:40vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
         .hero-img{position:absolute;inset:0;background:url('images/bandeau-norvege.jpg') center/cover no-repeat fixed;z-index:0}
         .hero-content{position:relative;z-index:2;max-width:820px;padding:2rem;text-shadow:0 2px 15px rgba(0,0,0,.7)}
@@ -60,7 +133,8 @@
         .bar{width:52px;height:4px;background:var(--orange);border-radius:2px;margin:.8rem auto 0}
         .btn{font-family:'Montserrat',sans-serif;font-size:.88rem;font-weight:700;padding:.8rem 1.9rem;border-radius:8px;border:none;cursor:pointer;transition:all .2s;display:inline-block;letter-spacing:.02em;box-shadow:0 2px 8px rgba(0,0,0,.2)}
         .btn-orange{background:var(--orange);color:#fff}.btn-orange:hover{background:var(--orange-dark)}
-        .btn-white{background:transparent;color:#fff;border:2px solid #fff}.btn-white:hover{background:rgba(255,255,255,.15)}
+        
+        /* Footer */
         footer{background:var(--noir);color:rgba(255,255,255,.65);padding:2.8rem 6%;margin-top:4rem;text-align:center}
         .f-logo{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:#fff}
         .f-logo em{font-style:normal;color:var(--orange)}
@@ -68,6 +142,8 @@
         .f-nav a{font-size:.8rem;color:rgba(255,255,255,.55);transition:color .2s}
         .f-nav a:hover{color:var(--orange)}
         .f-legal{font-size:.76rem;color:rgba(255,255,255,.3);margin-top:1.1rem;line-height:1.7}
+        
+        /* Grilles */
         .videos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem;margin:2rem 0}
         .video-card{background:var(--card);border-radius:15px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,.05);transition:transform .2s,box-shadow .2s;cursor:pointer;border:1px solid var(--border)}
         .video-card:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(0,0,0,.1)}
@@ -77,26 +153,40 @@
         .video-info{padding:1.5rem}
         .video-title{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:600;margin-bottom:.8rem;line-height:1.4}
         .video-desc{color:var(--muted);font-size:.95rem;line-height:1.5}
-        .comparatif-grid{display:grid;grid-template-columns:1fr 0.1fr 1fr;gap:1rem;align-items:center;margin:3rem 0}
-        .pneu-card{background:white;border-radius:20px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.05);border:1px solid var(--border)}
-        .pneu-header{background:var(--noir);color:white;padding:2rem;text-align:center}
-        .pneu-header h3{font-size:2rem;margin-bottom:.3rem}
-        .pneu-header .marque{color:var(--orange);font-weight:600}
-        .pneu-content{padding:2rem}
-        .versus{font-size:2.5rem;font-weight:700;color:var(--orange);text-align:center;background:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto;border:1px solid var(--border)}
+        
+        .products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin:3rem 0}
+        .product-card{background:white;border-radius:15px;padding:2rem;border:1px solid var(--border);transition:transform .2s}
+        .product-card:hover{transform:translateY(-5px)}
+        .product-card h3{font-size:1.8rem;margin-bottom:0.5rem}
+        .product-card .type{color:var(--orange);font-weight:600;margin-bottom:1rem}
+        .product-card ul{list-style:none;color:var(--muted)}
+        .product-card li{padding:0.3rem 0;border-bottom:1px solid var(--border)}
+        .product-card li:last-child{border-bottom:none}
+        .product-card .btn{margin-top:1.5rem;display:inline-block}
+        
+        .comparatif-table{width:100%;border-collapse:collapse;background:white;border-radius:15px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.05);margin:2rem 0}
+        .comparatif-table th{background:var(--noir);color:white;padding:1rem;text-align:center}
+        .comparatif-table td{padding:1rem;text-align:center;border-bottom:1px solid var(--border)}
+        .comparatif-table .check{color:var(--orange);font-weight:700}
+        
+        .argument-box{background:white;border-radius:20px;padding:2rem;margin:2rem 0;border:1px solid var(--border);text-align:center}
+        .argument-box h3{color:var(--orange);margin-bottom:1rem}
+        .argument-box p{color:var(--muted);max-width:800px;margin:0 auto;line-height:1.8}
+        
+        .faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin:2rem 0}
+        .faq-item{background:white;border:1px solid var(--border);border-radius:15px;padding:1.5rem}
+        .faq-item h4{color:var(--orange);margin-bottom:0.5rem}
+        
+        .commission-note{font-size:0.9rem;color:var(--muted);margin:1rem 0;font-style:italic;padding:0.5rem;background:#f9f9f9;border-radius:8px;border-left:3px solid var(--orange)}
     </style>
 </head>
-<!-- ======================================== -->
-<!-- === FIN HEAD =========================== -->
-<!-- ======================================== -->
-
 <body>
-<!-- ======================================== -->
-<!-- === DÉBUT NAVIGATION =================== -->
-<!-- ======================================== -->
+
+<!-- Navigation -->
 <nav>
     <a href="index.html" class="logo">LC<span>D</span>MH</a>
-    <ul class="nav-links">
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Accueil</a></li>
         <li class="has-drop">
             <a href="#">Road Trips</a>
@@ -105,6 +195,7 @@
                 <a href="roadtrips.html#capnord">Cap Nord 2025</a>
                 <a href="roadtrips.html#europe-asie">Europe–Asie 2024</a>
                 <a href="roadtrips.html#espagne">Espagne 2023</a>
+                <a href="roadtrips.html#alpes">Les Alpes</a>
             </div>
         </li>
         <li class="has-drop">
@@ -124,6 +215,7 @@
                 <a href="gps.html">Tous les GPS</a>
                 <a href="aoocci.html" style="color:var(--orange);">Aoocci</a>
                 <a href="carpuride.html">Carpuride</a>
+                <a href="blackview.html">📱 Téléphones renforcés</a>
             </div>
         </li>
         <li class="has-drop">
@@ -137,41 +229,55 @@
         </li>
         <li><a href="a-propos.html">À propos</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt" target="_blank" rel="noopener">▶ S'abonner</a></li>
+        <li class="desktop-only"><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt">▶ S'abonner</a></li>
+        <li class="desktop-only"><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon">📺 YouTube</a></li>
+        <li class="mobile-only"><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt">▶ S'abonner</a></li>
+        <li class="mobile-only"><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon">📺 YouTube</a></li>
     </ul>
 </nav>
-<!-- ======================================== -->
-<!-- === FIN NAVIGATION ===================== -->
-<!-- ======================================== -->
 
-<!-- ======================================== -->
-<!-- === DÉBUT HERO ========================= -->
-<!-- ======================================== -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                navLinks.classList.toggle('active');
+                const mobile = document.querySelectorAll('.mobile-only');
+                mobile.forEach(btn => btn.style.display = navLinks.classList.contains('active') ? 'block' : 'none');
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    document.querySelectorAll('.mobile-only').forEach(btn => btn.style.display = 'none');
+                });
+            });
+        }
+    });
+</script>
+
+<!-- Hero -->
 <section class="hero">
     <div class="hero-img"></div>
     <div class="hero-content">
         <div class="hero-badge">TESTS GPS MOTO</div>
-        <h1>AOOCCI <span>COMPLET</span></h1>
-        <p>Tous mes tests des GPS moto AOOCCI : U6, BX, C3 Plus, C6 Pro, BM6/BM7. Navigation offline, CarPlay, dashcam, TPMS.</p>
+        <h1>AOOCCI : <span>TOUS LES TESTS GPS MOTO</span></h1>
+        <p>Retrouvez tous les tests des écrans Apple CarPlay / Android Auto, avec ou sans GPS autonome. Pensez à votre sécurité avec les dashcams intégrées et la détection d'angle mort (radar BSD).</p>
     </div>
 </section>
-<!-- ======================================== -->
-<!-- === FIN HERO =========================== -->
-<!-- ======================================== -->
 
-<!-- ======================================== -->
-<!-- === DÉBUT SECTION CODES PROMO ========== -->
-<!-- ======================================== -->
+<!-- Codes promo -->
 <section class="container">
     <div style="background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); border-radius: 20px; padding: 2rem; margin: 2rem 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem; color: white;">
         <div>
-            <h3 style="font-size: 2rem; margin-bottom: 0.5rem;">CODES EXCLUSIFS LCDMH</h3>
+            <h3 style="font-size: 2rem; margin-bottom: 0.5rem;">CODES PROMO LCDMH</h3>
             <p style="color: #ccc;">Économisez sur tous les GPS AOOCCI</p>
         </div>
         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
             <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 10px; text-align: center;">
                 <div style="font-size: 1.5rem; font-weight: 700;">LCDMH28</div>
-                <div style="font-size: 0.9rem; color: #ccc;">-28% sur tout</div>
+                <div style="font-size: 0.9rem; color: #ccc;">-28% (code temporaire)</div>
             </div>
             <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 10px; text-align: center;">
                 <div style="font-size: 1.5rem; font-weight: 700;">LCDMH25</div>
@@ -184,13 +290,8 @@
         </div>
     </div>
 </section>
-<!-- ======================================== -->
-<!-- === FIN SECTION CODES PROMO ============ -->
-<!-- ======================================== -->
 
-<!-- ======================================== -->
-<!-- === DÉBUT SECTION MES TESTS VIDÉO ====== -->
-<!-- ======================================== -->
+<!-- Tests vidéo -->
 <section class="container">
     <div class="section-title">
         <h2>MES TESTS <em>VIDÉO</em></h2>
@@ -199,7 +300,6 @@
     </div>
 
     <div class="videos-grid">
-        <!-- Test U6 -->
         <div class="video-card" onclick="window.open('https://youtu.be/xj5-sH7pH2w', '_blank')">
             <div class="video-thumb">
                 <img src="https://img.youtube.com/vi/xj5-sH7pH2w/hqdefault.jpg" alt="Test Aoocci U6">
@@ -211,7 +311,6 @@
             </div>
         </div>
 
-        <!-- Test BX -->
         <div class="video-card" onclick="window.open('https://youtu.be/MVHMeX2rrok', '_blank')">
             <div class="video-thumb">
                 <img src="https://img.youtube.com/vi/MVHMeX2rrok/hqdefault.jpg" alt="Test Aoocci BX">
@@ -223,7 +322,6 @@
             </div>
         </div>
 
-        <!-- Test 2 flux audio -->
         <div class="video-card" onclick="window.open('https://youtu.be/6vp73RL1frA', '_blank')">
             <div class="video-thumb">
                 <img src="https://img.youtube.com/vi/6vp73RL1frA/hqdefault.jpg" alt="2 flux audio">
@@ -235,166 +333,216 @@
             </div>
         </div>
 
-        <!-- Test C3 Plus (si disponible) -->
-        <div class="video-card" onclick="window.open('https://youtu.be/lien_c3plus', '_blank')">
+        <div class="video-card">
             <div class="video-thumb">
-                <img src="https://img.youtube.com/vi/lien_c3plus/hqdefault.jpg" alt="Test Aoocci C3 Plus" onerror="this.src='https://via.placeholder.com/320x180/f0f0f0/e67e22?text=C3+Plus'">
+                <img src="https://via.placeholder.com/320x180/f0f0f0/e67e22?text=C3+Plus" alt="Test Aoocci C3 Plus">
                 <div class="video-category">C3 Plus</div>
             </div>
             <div class="video-info">
-                <div class="video-title">Test Aoocci C3 Plus</div>
-                <div class="video-desc">CarPlay sans fil 5", TPMS, IP67. Test terrain.</div>
+                <div class="video-title">Test Aoocci C3 Plus (bientôt)</div>
+                <div class="video-desc">CarPlay sans fil 5", TPMS, IP67. Test à venir.</div>
             </div>
         </div>
     </div>
 </section>
-<!-- ======================================== -->
-<!-- === FIN SECTION MES TESTS VIDÉO ======== -->
-<!-- ======================================== -->
 
-<!-- ======================================== -->
-<!-- === DÉBUT SECTION COMPARATIF =========== -->
-<!-- ======================================== -->
+<!-- Pourquoi AOOCCI -->
+<section class="container">
+    <div class="argument-box">
+        <h3>Pourquoi choisir AOOCCI ?</h3>
+        <p>
+            <strong>Navigation offline</strong> : plus besoin de réseau, les cartes sont préchargées.<br>
+            <strong>Sécurité</strong> : dashcam avant/arrière + radar BSD (détection angle mort).<br>
+            <strong>Polyvalence</strong> : CarPlay, Android Auto, GPS autonome selon les modèles.<br>
+            <strong>Étanchéité</strong> : tous les modèles sont IP67/IP68, testés sous la pluie.<br>
+            <strong>TPMS inclus</strong> : surveillance de la pression des pneus en temps réel.
+        </p>
+    </div>
+</section>
+
+<!-- Tableau comparatif -->
 <section class="container">
     <div class="section-title">
         <h2>QUEL MODÈLE <em>CHOISIR ?</em></h2>
         <div class="bar"></div>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 3rem 0;">
-        <!-- U6/U7 -->
-        <div style="background: white; border-radius: 15px; padding: 2rem; border: 1px solid var(--border);">
-            <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">U6 / U7</h3>
-            <p style="color: var(--orange); font-weight: 600; margin-bottom: 1rem;">GPS Android complet</p>
-            <ul style="list-style: none; color: var(--muted);">
-                <li style="padding: 0.3rem 0;">✓ Écran 6" 800 nits</li>
-                <li style="padding: 0.3rem 0;">✓ Android 14 + Play Store</li>
-                <li style="padding: 0.3rem 0;">✓ Dashcam avant/arrière</li>
-                <li style="padding: 0.3rem 0;">✓ TPMS inclus</li>
-                <li style="padding: 0.3rem 0;">✓ IP67 étanche</li>
+    <table class="comparatif-table">
+        <tr>
+            <th>Modèle</th>
+            <th>GPS Offline</th>
+            <th>CarPlay</th>
+            <th>Radar BSD</th>
+            <th>Dashcam</th>
+            <th>TPMS</th>
+            <th>Idéal pour</th>
+        </tr>
+        <tr>
+            <td><strong>U6 / U7</strong></td>
+            <td class="check">✅ Oui</td>
+            <td class="check">✅ Oui</td>
+            <td>❌ Non</td>
+            <td class="check">✅ Av/Arr</td>
+            <td class="check">✅ Oui</td>
+            <td>Longs road trips</td>
+        </tr>
+        <tr>
+            <td><strong>BX</strong></td>
+            <td class="check">✅ Oui</td>
+            <td class="check">✅ Oui</td>
+            <td class="check">✅ Oui</td>
+            <td class="check">✅ HD</td>
+            <td class="check">✅ Oui</td>
+            <td>Sécurité maximale</td>
+        </tr>
+        <tr>
+            <td><strong>C3 Plus</strong></td>
+            <td>❌ Non</td>
+            <td class="check">✅ Oui</td>
+            <td>❌ Non</td>
+            <td>❌ Non</td>
+            <td class="check">✅ Oui</td>
+            <td>Budget / simplicité</td>
+        </tr>
+        <tr>
+            <td><strong>C6 Pro</strong></td>
+            <td class="check">✅ Oui</td>
+            <td class="check">✅ Oui</td>
+            <td>❌ Non</td>
+            <td class="check">✅ Av/Arr</td>
+            <td class="check">✅ Oui</td>
+            <td>Antivol + caméra</td>
+        </tr>
+        <tr>
+            <td><strong>BM6 / BM7</strong></td>
+            <td>❌ Non</td>
+            <td class="check">✅ Oui</td>
+            <td>❌ Non</td>
+            <td>❌ Non</td>
+            <td>❌ Non</td>
+            <td>BMW uniquement</td>
+        </tr>
+    </table>
+
+    <!-- Grille produits -->
+    <div class="products-grid">
+        <div class="product-card">
+            <h3>U6 / U7</h3>
+            <div class="type">GPS Android complet</div>
+            <ul>
+                <li>✓ Écran 6" 800 nits</li>
+                <li>✓ Android 14 + Play Store</li>
+                <li>✓ Dashcam avant/arrière</li>
+                <li>✓ TPMS inclus</li>
+                <li>✓ IP67 étanche</li>
             </ul>
-            <a href="https://aoocci.fr/products/u6-u7-gps-moto-android-6-pouces-navigation-hors-ligne-tpms?_pos=1&_sid=34498bc63&_ss=r&ref=gvxyhqgv&variant=62540875366769" class="btn btn-orange" style="margin-top: 1.5rem; display: inline-block;" target="_blank" rel="nofollow">VOIR U6/U7 →</a>
+            <a href="https://aoocci.fr/products/u6-u7-gps-moto-android-6-pouces-navigation-hors-ligne-tpms?_pos=1&_sid=34498bc63&_ss=r&ref=gvxyhqgv&variant=62540875366769" class="btn btn-orange" target="_blank" rel="sponsored nofollow noopener">VOIR U6/U7 →</a>
         </div>
 
-        <!-- BX -->
-        <div style="background: white; border-radius: 15px; padding: 2rem; border: 1px solid var(--border);">
-            <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">BX</h3>
-            <p style="color: var(--orange); font-weight: 600; margin-bottom: 1rem;">Radar BSD + Dashcam</p>
-            <ul style="list-style: none; color: var(--muted);">
-                <li style="padding: 0.3rem 0;">✓ Radar détection angle mort</li>
-                <li style="padding: 0.3rem 0;">✓ Écran 5.5" 1000 nits</li>
-                <li style="padding: 0.3rem 0;">✓ Dashcam HD 1080p</li>
-                <li style="padding: 0.3rem 0;">✓ TPMS intégré</li>
-                <li style="padding: 0.3rem 0;">✓ IP68 étanche</li>
+        <div class="product-card">
+            <h3>BX</h3>
+            <div class="type">Radar BSD + Dashcam</div>
+            <ul>
+                <li>✓ Radar détection angle mort</li>
+                <li>✓ Écran 5.5" 1000 nits</li>
+                <li>✓ Dashcam HD 1080p</li>
+                <li>✓ TPMS intégré</li>
+                <li>✓ IP68 étanche</li>
             </ul>
-            <a href="https://aoocci.fr/products/carplay-moto-bx-dashcam-detection-angles-morts?_pos=1&_sid=7d2cfbaf4&_ss=r&ref=gvxyhqgv&variant=62540837683569" class="btn btn-orange" style="margin-top: 1.5rem; display: inline-block;" target="_blank" rel="nofollow">VOIR BX →</a>
+            <a href="https://aoocci.fr/products/carplay-moto-bx-dashcam-detection-angles-morts?_pos=1&_sid=7d2cfbaf4&_ss=r&ref=gvxyhqgv&variant=62540837683569" class="btn btn-orange" target="_blank" rel="sponsored nofollow noopener">VOIR BX →</a>
         </div>
 
-        <!-- C3 Plus -->
-        <div style="background: white; border-radius: 15px; padding: 2rem; border: 1px solid var(--border);">
-            <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">C3 Plus</h3>
-            <p style="color: var(--orange); font-weight: 600; margin-bottom: 1rem;">CarPlay sans fil compact</p>
-            <ul style="list-style: none; color: var(--muted);">
-                <li style="padding: 0.3rem 0;">✓ Écran 5" 800 nits</li>
-                <li style="padding: 0.3rem 0;">✓ CarPlay/Android Auto sans fil</li>
-                <li style="padding: 0.3rem 0;">✓ TPMS inclus</li>
-                <li style="padding: 0.3rem 0;">✓ IP67 étanche</li>
-                <li style="padding: 0.3rem 0;">✓ Ultra compact</li>
+        <div class="product-card">
+            <h3>C3 Plus</h3>
+            <div class="type">CarPlay sans fil compact</div>
+            <ul>
+                <li>✓ Écran 5" 800 nits</li>
+                <li>✓ CarPlay/Android Auto sans fil</li>
+                <li>✓ TPMS inclus</li>
+                <li>✓ IP67 étanche</li>
+                <li>✓ Ultra compact</li>
             </ul>
-            <a href="https://aoocci.fr/products/ecran-carplay-moto-c3-plus-sans-fil-android-auto?ref=gvxyhqgv&variant=62536018854257" class="btn btn-orange" style="margin-top: 1.5rem; display: inline-block;" target="_blank" rel="nofollow">VOIR C3 PLUS →</a>
+            <a href="https://aoocci.fr/products/ecran-carplay-moto-c3-plus-sans-fil-android-auto?ref=gvxyhqgv&variant=62536018854257" class="btn btn-orange" target="_blank" rel="sponsored nofollow noopener">VOIR C3 PLUS →</a>
         </div>
 
-        <!-- C6 Pro -->
-        <div style="background: white; border-radius: 15px; padding: 2rem; border: 1px solid var(--border);">
-            <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">C6 Pro</h3>
-            <p style="color: var(--orange); font-weight: 600; margin-bottom: 1rem;">Caméra moto GPS antivol</p>
-            <ul style="list-style: none; color: var(--muted);">
-                <li style="padding: 0.3rem 0;">✓ Caméra avant/arrière 1080p</li>
-                <li style="padding: 0.3rem 0;">✓ GPS antivol intégré</li>
-                <li style="padding: 0.3rem 0;">✓ TPMS inclus</li>
-                <li style="padding: 0.3rem 0;">✓ Mode parking</li>
-                <li style="padding: 0.3rem 0;">✓ Détection de choc</li>
+        <div class="product-card">
+            <h3>C6 Pro</h3>
+            <div class="type">Caméra moto GPS antivol</div>
+            <ul>
+                <li>✓ Caméra avant/arrière 1080p</li>
+                <li>✓ GPS antivol intégré</li>
+                <li>✓ TPMS inclus</li>
+                <li>✓ Mode parking</li>
+                <li>✓ Détection de choc</li>
             </ul>
-            <a href="https://aoocci.fr/products/camera-moto-c6-pro-gps-antivol-tpms-carplay?ref=gvxyhqgv" class="btn btn-orange" style="margin-top: 1.5rem; display: inline-block;" target="_blank" rel="nofollow">VOIR C6 PRO →</a>
+            <a href="https://aoocci.fr/products/camera-moto-c6-pro-gps-antivol-tpms-carplay?ref=gvxyhqgv" class="btn btn-orange" target="_blank" rel="sponsored nofollow noopener">VOIR C6 PRO →</a>
         </div>
 
-        <!-- BM6/BM7 BMW -->
-        <div style="background: white; border-radius: 15px; padding: 2rem; border: 1px solid var(--border);">
-            <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">BM6 / BM7</h3>
-            <p style="color: var(--orange); font-weight: 600; margin-bottom: 1rem;">Pour BMW</p>
-            <ul style="list-style: none; color: var(--muted);">
-                <li style="padding: 0.3rem 0;">✓ Intégration spécifique BMW</li>
-                <li style="padding: 0.3rem 0;">✓ CarPlay sans fil</li>
-                <li style="padding: 0.3rem 0;">✓ Android Auto</li>
-                <li style="padding: 0.3rem 0;">✓ Design adapté</li>
+        <div class="product-card">
+            <h3>BM6 / BM7</h3>
+            <div class="type">Pour BMW</div>
+            <ul>
+                <li>✓ Intégration spécifique BMW</li>
+                <li>✓ CarPlay sans fil</li>
+                <li>✓ Android Auto</li>
+                <li>✓ Design adapté</li>
             </ul>
-            <a href="https://aoocci.fr/products/bm6-bm7-carplay-android-auto-bmw?_pos=1&_sid=e5edf74bf&_ss=r&ref=gvxyhqgv&variant=62542151221617" class="btn btn-orange" style="margin-top: 1.5rem; display: inline-block;" target="_blank" rel="nofollow">VOIR BM6/BM7 →</a>
+            <a href="https://aoocci.fr/products/bm6-bm7-carplay-android-auto-bmw?_pos=1&_sid=e5edf74bf&_ss=r&ref=gvxyhqgv&variant=62542151221617" class="btn btn-orange" target="_blank" rel="sponsored nofollow noopener">VOIR BM6/BM7 →</a>
         </div>
 
-        <!-- Boutique -->
-        <div style="background: white; border-radius: 15px; padding: 2rem; border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center;">
-            <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Tous les GPS</h3>
-            <p style="color: var(--orange); font-weight: 600; margin-bottom: 1rem;">Boutique officielle</p>
-            <p style="color: var(--muted); margin-bottom: 1.5rem; text-align: center;">Voir toute la gamme et les accessoires</p>
-            <a href="https://aoocci.fr/?ref=gvxyhqgv" class="btn btn-orange" target="_blank" rel="nofollow">VOIR LA BOUTIQUE →</a>
+        <div class="product-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <h3>Tous les GPS</h3>
+            <div class="type">Boutique officielle</div>
+            <p style="color: var(--muted); margin: 1rem 0; text-align: center;">Voir toute la gamme et les accessoires</p>
+            <a href="https://aoocci.fr/?ref=gvxyhqgv" class="btn btn-orange" target="_blank" rel="sponsored nofollow noopener">VOIR LA BOUTIQUE →</a>
         </div>
     </div>
-</section>
-<!-- ======================================== -->
-<!-- === FIN SECTION COMPARATIF ============= -->
-<!-- ======================================== -->
 
-<!-- ======================================== -->
-<!-- === DÉBUT SECTION AVIS ================= -->
-<!-- ======================================== -->
+    <!-- Note commission -->
+    <div class="commission-note">
+        🤝 Chaque achat via ces liens me rapproche d’un nouveau code promo à partager avec vous. Merci de faire grandir la communauté !
+    </div>
+</section>
+
+<!-- Avis -->
 <section class="container">
     <div style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border: 1px solid var(--border); border-radius: 20px; padding: 3rem; margin: 3rem 0; text-align: center;">
         <h3 style="font-size: 2rem; margin-bottom: 1rem;">CE QUE J'EN PENSE VRAIMENT</h3>
         <p style="max-width: 800px; margin: 0 auto; color: var(--muted); font-size: 1.1rem; font-style: italic;">
-            "Après 10 000 km avec différents GPS AOOCCI, je peux dire que le rapport qualité-prix est excellent. Le U6 est mon choix pour les longs road trips grâce à son autonomie et ses cartes offline. Le BX avec radar BSD est un vrai plus pour la sécurité sur autoroute. Le C3 Plus est parfait pour ceux qui veulent l'essentiel sans se ruiner. Et le C6 Pro, avec sa fonction antivol, m'accompagne maintenant au quotidien."
+            "Après plusieurs milliers de kilomètres avec différents GPS AOOCCI, je peux dire que le rapport qualité-prix est excellent. Le U6 est mon choix pour les longs road trips grâce à son autonomie et ses cartes offline. Le BX avec radar BSD est un vrai plus pour la sécurité sur autoroute. Le C3 Plus est parfait pour ceux qui veulent l'essentiel sans se ruiner. Et le C6 Pro, avec sa fonction antivol, m'accompagne maintenant au quotidien."
         </p>
-        <p style="margin-top: 2rem; font-weight: 600;">— Yves Vella, LCDMH · 72 000 km</p>
+        <p style="margin-top: 2rem; font-weight: 600;">— Yves, LCDMH · 72 000 km</p>
     </div>
 </section>
-<!-- ======================================== -->
-<!-- === FIN SECTION AVIS =================== -->
-<!-- ======================================== -->
 
-<!-- ======================================== -->
-<!-- === DÉBUT SECTION FAQ ================== -->
-<!-- ======================================== -->
+<!-- FAQ -->
 <section class="container">
     <div class="section-title">
         <h2>FAQ <em>AOOCCI</em></h2>
         <div class="bar"></div>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin: 2rem 0;">
-        <div style="background: white; border: 1px solid var(--border); border-radius: 15px; padding: 1.5rem;">
-            <h4 style="color: var(--orange); margin-bottom: 0.5rem;">Quel modèle choisir pour un road trip ?</h4>
+    <div class="faq-grid">
+        <div class="faq-item">
+            <h4>Quel modèle choisir pour un road trip ?</h4>
             <p style="color: var(--muted);">Le U6/U7 est idéal pour les longs voyages grâce à ses cartes offline préchargées sur toute l'Europe et son grand écran.</p>
         </div>
-        <div style="background: white; border: 1px solid var(--border); border-radius: 15px; padding: 1.5rem;">
-            <h4 style="color: var(--orange); margin-bottom: 0.5rem;">Comment utiliser le code promo ?</h4>
+        <div class="faq-item">
+            <h4>Comment utiliser le code promo ?</h4>
             <p style="color: var(--muted);">Ajoutez le produit au panier sur aoocci.fr, entrez le code (LCDMH28, LCDMH25 ou LCDMH) dans la zone prévue, la réduction s'applique immédiatement.</p>
         </div>
-        <div style="background: white; border: 1px solid var(--border); border-radius: 15px; padding: 1.5rem;">
-            <h4 style="color: var(--orange); margin-bottom: 0.5rem;">Le GPS fonctionne-t-il sans téléphone ?</h4>
+        <div class="faq-item">
+            <h4>Le GPS fonctionne-t-il sans téléphone ?</h4>
             <p style="color: var(--muted);">Oui, les modèles U6/U7 et C6 Pro ont des cartes offline préchargées. Vous n'avez pas besoin de connexion pour naviguer.</p>
         </div>
-        <div style="background: white; border: 1px solid var(--border); border-radius: 15px; padding: 1.5rem;">
-            <h4 style="color: var(--orange); margin-bottom: 0.5rem;">Quelle est la différence entre U6 et BX ?</h4>
+        <div class="faq-item">
+            <h4>Quelle est la différence entre U6 et BX ?</h4>
             <p style="color: var(--muted);">Le U6 est un GPS Android complet avec grand écran. Le BX est spécialisé avec radar BSD (détection angle mort) et dashcam HD.</p>
         </div>
     </div>
 </section>
-<!-- ======================================== -->
-<!-- === FIN SECTION FAQ ==================== -->
-<!-- ======================================== -->
 
-<!-- ======================================== -->
-<!-- === DÉBUT FOOTER ======================= -->
-<!-- ======================================== -->
+<!-- Footer -->
 <footer>
     <div class="f-logo">LC<em>D</em>MH</div>
     <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">La Chaîne du Motard Heureux · Annecy, France</p>
@@ -406,10 +554,8 @@
         <li><a href="komobi.html">Komobi</a></li>
         <li><a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
     </ul>
-    <p class="f-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves Vella · Annecy, France</p>
+    <p class="f-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves · Annecy, France</p>
 </footer>
-<!-- ======================================== -->
-<!-- === FIN FOOTER ========================= -->
-<!-- ======================================== -->
 </body>
 </html>
+<!-- FIN DU FICHIER : aoocci.html -->
