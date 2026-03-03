@@ -512,6 +512,9 @@
         }
 
         .trip-episodes {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2.5rem 5%;
             margin-bottom: 3.2rem;
             padding-bottom: 2rem;
             border-bottom: 1px dashed var(--border);
@@ -545,7 +548,7 @@
 
         .episodes-grid {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
             gap: 1.4rem;
         }
 
@@ -798,7 +801,7 @@
             }
 
             .episodes-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             }
         }
 
@@ -1048,177 +1051,7 @@
     </div>
 </section>
 
-<section class="container episodes-section">
-    <div class="section-title">
-        <h2>Quelques <span>épisodes vedettes</span></h2>
-        <div class="bar"></div>
-        <p>Un aperçu rapide pour entrer dans chaque aventure sans être noyé sous une longue liste de vidéos.</p>
-    </div>
-
-    <div class="trip-episodes" id="episodes-cap-nord">
-        <div class="trip-title">
-            <h3>Cap Nord 2025</h3>
-            <span>3 épisodes vedettes</span>
-        </div>
-        <div class="episodes-grid">
-            <article class="episode-card">
-                <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/aEEJXeNSsdg/hqdefault.jpg" alt="Miniature épisode départ vers le Nord">
-                </div>
-                <div class="episode-info">
-                    <h4>#1 – Le départ vers le Nord</h4>
-                    <p>Les premiers kilomètres, l’excitation du grand départ et les premières réalités du voyage.</p>
-                    <a href="https://www.youtube.com/watch?v=aEEJXeNSsdg" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
-                </div>
-            </article>
-
-            <article class="episode-card">
-                <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/MNKg781CFh0/hqdefault.jpg" alt="Miniature épisode bivouac en Laponie">
-                </div>
-                <div class="episode-info">
-                    <h4>#4 – Nuit sous tente à -5°C</h4>
-                    <p>Le bivouac, le froid, la fatigue et toute la vérité du road trip quand les conditions se durcissent.</p>
-                    <a href="https://www.youtube.com/watch?v=MNKg781CFh0" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
-                </div>
-            </article>
-
-            <article class="episode-card">
-                <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/PaEMRm_5H0U/hqdefault.jpg" alt="Miniature arrivée au Cap Nord">
-                </div>
-                <div class="episode-info">
-                    <h4>#7 – Cap Nord, enfin !</h4>
-                    <p>L’arrivée au bout du voyage, avec tout ce que ce moment représente après tant de route.</p>
-                    <a href="https://www.youtube.com/watch?v=PaEMRm_5H0U" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
-                </div>
-            </article>
-        </div>
-    </div>
-
-    <div class="trip-episodes" id="episodes-cappadoce">
-        <div class="trip-title">
-            <h3>Europe – Asie 2024</h3>
-            <span>3 épisodes vedettes</span>
-        </div>
-        <div class="episodes-grid">
-            <article class="episode-card">
-                <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/Fblx1mI1teE/hqdefault.jpg" alt="Miniature entrée en Turquie">
-                </div>
-                <div class="episode-info">
-                    <h4>#2 – Entrée en Turquie</h4>
-                    <p>Le moment où le voyage change de dimension et où le dépaysement devient bien réel.</p>
-                    <a href="https://www.youtube.com/watch?v=Fblx1mI1teE" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
-                </div>
-            </article>
-
-            <article class="episode-card">
-                <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/SY5vAz7iQx8/hqdefault.jpg" alt="Miniature route en Cappadoce">
-                </div>
-                <div class="episode-info">
-                    <h4>#5 – Cappadoce vue de la selle</h4>
-                    <p>Des paysages hors normes et cette impression de rouler dans un décor presque irréel.</p>
-                    <a href="https://www.youtube.com/watch?v=SY5vAz7iQx8" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
-                </div>
-            </article>
-
-            <article class="episode-card">
-                <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/GdyqmphLdQU/hqdefault.jpg" alt="Miniature retour émotion voyage">
-                </div>
-                <div class="episode-info">
-                    <h4>#8 – Retour émotions</h4>
-                    <p>Le bilan d’un voyage marquant, avec ce mélange de satisfaction, de fatigue et d’envie de repartir.</p>
-                    <a href="https://www.youtube.com/watch?v=GdyqmphLdQU" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
-                </div>
-            </article>
-        </div>
-    </div>
-
-    <div class="trip-episodes" id="episodes-espagne">
-        <div class="trip-title">
-            <h3>Tour d’Espagne 2023</h3>
-            <span>3 épisodes vedettes</span>
-        </div>
-        <div class="episodes-grid">
-            <article class="episode-card">
-                <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/BAPas-qa5eU/hqdefault.jpg" alt="Miniature désert de Tabernas">
-                </div>
-                <div class="episode-info">
-                    <h4>#3 – Désert de Tabernas</h4>
-                    <p>La chaleur, l’espace, les paysages de western et ce sentiment délicieux d’être loin.</p>
-                    <a href="https://www.youtube.com/watch?v=BAPas-qa5eU" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
-                </div>
-            </article>
-
-            <article class="episode-card">
-                <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/wvgvHSkkjGQ/hqdefault.jpg" alt="Miniature côte et falaises">
-                </div>
-                <div class="episode-info">
-                    <h4>#6 – Côte et falaises</h4>
-                    <p>Une autre Espagne, plus brute, plus contrastée, entre mer, lumière et route sinueuse.</p>
-                    <a href="https://www.youtube.com/watch?v=wvgvHSkkjGQ" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
-                </div>
-            </article>
-
-            <article class="episode-card">
-                <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/ly7GGAo9RWU/hqdefault.jpg" alt="Miniature routes sinueuses en Espagne">
-                </div>
-                <div class="episode-info">
-                    <h4>#9 – Routes et plaisir de rouler</h4>
-                    <p>Le genre d’étape qui rappelle pourquoi on aime tant partir à moto sans trop savoir ce que la journée réserve.</p>
-                    <a href="https://www.youtube.com/watch?v=ly7GGAo9RWU" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
-                </div>
-            </article>
-        </div>
-    </div>
-
-    <div class="trip-episodes" id="episodes-alpes">
-        <div class="trip-title">
-            <h3>Les Alpes 2022</h3>
-            <span>3 épisodes vedettes</span>
-        </div>
-        <div class="episodes-grid">
-            <article class="episode-card">
-                <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/UevfEKcHDjU/hqdefault.jpg" alt="Miniature col alpin">
-                </div>
-                <div class="episode-info">
-                    <h4>#1 – Premier grand col</h4>
-                    <p>Le début d’une histoire, avec la découverte de la montagne et du bonheur simple de grimper en moto.</p>
-                    <a href="https://www.youtube.com/watch?v=UevfEKcHDjU" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
-                </div>
-            </article>
-
-            <article class="episode-card">
-                <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/8cQ573KasHI/hqdefault.jpg" alt="Miniature bivouac au bord d’un lac">
-                </div>
-                <div class="episode-info">
-                    <h4>#3 – Bivouac au bord de l’eau</h4>
-                    <p>Un de ces moments paisibles qui restent longtemps dans la tête et donnent envie de recommencer.</p>
-                    <a href="https://www.youtube.com/watch?v=8cQ573KasHI" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
-                </div>
-            </article>
-
-            <article class="episode-card">
-                <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/AkLCTHm2xNY/hqdefault.jpg" alt="Miniature route des Alpes à moto">
-                </div>
-                <div class="episode-info">
-                    <h4>#5 – L’appel de la montagne</h4>
-                    <p>Des routes superbes, des panoramas à couper le souffle et la certitude que cette passion ne fait que commencer.</p>
-                    <a href="https://www.youtube.com/watch?v=AkLCTHm2xNY" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
-                </div>
-            </article>
-        </div>
-    </div>
-</section>
+<section class="container episodes-section"><div class="section-title"><h2>Les episodes <span>par voyage</span></h2><div class="bar"></div><p>Tous les vrais episodes YouTube. Cliquez sur &laquo; Voir tous les episodes &raquo; pour la liste complete.</p></div><div class="trip-episodes" id="episodes-cap-nord"><div class="trip-title"><h3>Cap Nord 2025 (Norvege)</h3><span>14 episodes</span></div><div class="episodes-grid"><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=aEEJXeNSsdg" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/aEEJXeNSsdg/hqdefault.jpg" alt="Cap Nord à Moto : 63 ans, 10 000 km en Solo | Road Trip Norvège Honda NT1100 EP1" loading="lazy"></a></div><div class="episode-info"><h4>Cap Nord à Moto : 63 ans, 10 000 km en Solo | Road Trip Norvège Honda NT1100 EP1</h4><a href="https://www.youtube.com/watch?v=aEEJXeNSsdg" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=MNKg781CFh0" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/MNKg781CFh0/hqdefault.jpg" alt="Fjords de Norvège à Moto : Bergen, Gaularfjellet &amp; Bivouac Sauvage | Cap Nord EP" loading="lazy"></a></div><div class="episode-info"><h4>Fjords de Norvège à Moto : Bergen, Gaularfjellet &amp; Bivouac Sauvage | Cap Nord EP</h4><a href="https://www.youtube.com/watch?v=MNKg781CFh0" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=cstTBA6HBGc" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/cstTBA6HBGc/hqdefault.jpg" alt="350 km dans le FROID NORVÉGIEN : Le Vent du Groenland m'a Brisé.EP8. Road trip m" loading="lazy"></a></div><div class="episode-info"><h4>350 km dans le FROID NORVÉGIEN : Le Vent du Groenland m'a Brisé.EP8. Road trip m</h4><a href="https://www.youtube.com/watch?v=cstTBA6HBGc" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=8ZrBLfM8LT8" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/8ZrBLfM8LT8/hqdefault.jpg" alt="700 km jusqu’au Cap Nord… était-ce une erreur ?”" loading="lazy"></a></div><div class="episode-info"><h4>700 km jusqu’au Cap Nord… était-ce une erreur ?”</h4><a href="https://www.youtube.com/watch?v=8ZrBLfM8LT8" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article></div><details style="margin-top:1.5rem;"><summary style="cursor:pointer;font-weight:700;color:var(--orange);font-size:.95rem;padding:.6rem 0;">&#9660; Voir tous les episodes (14)</summary><ol style="margin-top:1rem;padding-left:1.4rem;columns:2;column-gap:2rem;line-height:2.1;font-size:.87rem;"><li><a href="https://www.youtube.com/watch?v=aEEJXeNSsdg" target="_blank" rel="noopener">Cap Nord à Moto : 63 ans, 10 000 km en Solo | Road Trip Norvège Honda NT1100 EP1&amp;</a></li><li><a href="https://www.youtube.com/watch?v=YwiwUpp8yBY" target="_blank" rel="noopener">Meilleures Routes Moto Norvège : Top 7 Incontournables | Road Trip Cap Nord EP2</a></li><li><a href="https://www.youtube.com/watch?v=XbA7du0oX-I" target="_blank" rel="noopener">5 FERRYS, 250 KM DE FOLIE | Stavanger-Bergen à Moto 🚢 EP3. Road  Trip Cap Nord Honda NT 11</a></li><li><a href="https://www.youtube.com/watch?v=MNKg781CFh0" target="_blank" rel="noopener">Fjords de Norvège à Moto : Bergen, Gaularfjellet &amp; Bivouac Sauvage | Cap Nord EP4</a></li><li><a href="https://www.youtube.com/watch?v=L9ZSCWiqNFU" target="_blank" rel="noopener">SOGNEFJORD. Road trip moto Fjords,  Bergen-Balestrand. Norvège Cap Nord EP5</a></li><li><a href="https://www.youtube.com/watch?v=Fzj-lGDwedc" target="_blank" rel="noopener">GEIRANGERFJORD à Moto : Le Plus Beau Fjord de Norvège | Road Trip Cap Nord EP6</a></li><li><a href="https://www.youtube.com/watch?v=PaEMRm_5H0U" target="_blank" rel="noopener">L'ivresse du voyage en moto, La Norvège, Road trip moto Norvège, Cap Nord 2025 EP7</a></li><li><a href="https://www.youtube.com/watch?v=cstTBA6HBGc" target="_blank" rel="noopener">350 km dans le FROID NORVÉGIEN : Le Vent du Groenland m'a Brisé.EP8. Road trip moto CapNor</a></li><li><a href="https://www.youtube.com/watch?v=Q3a39FcIjQo" target="_blank" rel="noopener">Road trip moto en Norvège – Cette nuit-là, j’étais à bout | EP9</a></li><li><a href="https://www.youtube.com/watch?v=VrjDNkzVAZk" target="_blank" rel="noopener">Le Cap Nord ça va mal finir : Cercle Arctique Polaire | Road Trip Moto Norvège EP10</a></li><li><a href="https://www.youtube.com/watch?v=Kq36_wrfvnw" target="_blank" rel="noopener">Tu vas te marrer,...ou pas ? je pète un câble..🤪 Ferry Bodø  Lofoten | Road Trip Moto Norv</a></li><li><a href="https://www.youtube.com/watch?v=aW5Ryq83oO4" target="_blank" rel="noopener">.Lofoten : ce jour-là, quelque chose n’a pas fonctionné.</a></li><li><a href="https://www.youtube.com/watch?v=8ZrBLfM8LT8" target="_blank" rel="noopener">700 km jusqu’au Cap Nord… était-ce une erreur ?”</a></li><li><a href="https://www.youtube.com/watch?v=jKEeq45vtPU" target="_blank" rel="noopener">Voyager en Norvège : ferries, budget, conseils. Guide de voyage Norway. EP14</a></li></ol></details></div><div class="trip-episodes" id="episodes-cappadoce"><div class="trip-title"><h3>Europe - Asie 2024 (Turquie)</h3><span>12 episodes</span></div><div class="episodes-grid"><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=Fblx1mI1teE" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/Fblx1mI1teE/hqdefault.jpg" alt="Road Trip Moto Turquie 🇹🇷 – Le Départ | Col du Mont-Cenis &amp; Lac de Côme en TRK 7" loading="lazy"></a></div><div class="episode-info"><h4>Road Trip Moto Turquie 🇹🇷 – Le Départ | Col du Mont-Cenis &amp; Lac de Côme en TRK 7</h4><a href="https://www.youtube.com/watch?v=Fblx1mI1teE" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=6NtbDiiGgNY" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/6NtbDiiGgNY/hqdefault.jpg" alt="Off-Road (extrême) en Albanie 🇦🇱 | Road Trip Moto en Benelli TRK 702 jusqu’aux M" loading="lazy"></a></div><div class="episode-info"><h4>Off-Road (extrême) en Albanie 🇦🇱 | Road Trip Moto en Benelli TRK 702 jusqu’aux M</h4><a href="https://www.youtube.com/watch?v=6NtbDiiGgNY" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=SY5vAz7iQx8" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/SY5vAz7iQx8/hqdefault.jpg" alt="Cappadoce en moto 🇹🇷 | Montgolfières, galères &amp; Benelli TRK 702 (EP8)" loading="lazy"></a></div><div class="episode-info"><h4>Cappadoce en moto 🇹🇷 | Montgolfières, galères &amp; Benelli TRK 702 (EP8)</h4><a href="https://www.youtube.com/watch?v=SY5vAz7iQx8" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=GdyqmphLdQU" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/GdyqmphLdQU/hqdefault.jpg" alt="Aventure Moto | De l’Europe à l’Asie… la fin du voyage — 10 000 km en TRK 702 (E" loading="lazy"></a></div><div class="episode-info"><h4>Aventure Moto | De l’Europe à l’Asie… la fin du voyage — 10 000 km en TRK 702 (E</h4><a href="https://www.youtube.com/watch?v=GdyqmphLdQU" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article></div><details style="margin-top:1.5rem;"><summary style="cursor:pointer;font-weight:700;color:var(--orange);font-size:.95rem;padding:.6rem 0;">&#9660; Voir tous les episodes (12)</summary><ol style="margin-top:1rem;padding-left:1.4rem;columns:2;column-gap:2rem;line-height:2.1;font-size:.87rem;"><li><a href="https://www.youtube.com/watch?v=Fblx1mI1teE" target="_blank" rel="noopener">Road Trip Moto Turquie 🇹🇷 – Le Départ | Col du Mont-Cenis &amp; Lac de Côme en TRK 702 (EP1)</a></li><li><a href="https://www.youtube.com/watch?v=iHbzhxcOVrA" target="_blank" rel="noopener">Croatie – Cette journée a mal dérapé… | Road trip moto Europe–Asie EP2</a></li><li><a href="https://www.youtube.com/watch?v=ixzZerrhubU" target="_blank" rel="noopener">Road Trip Moto Balkans 🇧🇦🇭🇷🇲🇪 | De Mostar à la Baie de Kotor via Dubrovnik en TRK 702. (EP</a></li><li><a href="https://www.youtube.com/watch?v=CnrUas-r0gE" target="_blank" rel="noopener">Road Trip Moto Europe-Asie | De Kotor à l’Albanie en Benelli TRK 702 – Galères &amp; Aventure </a></li><li><a href="https://www.youtube.com/watch?v=6NtbDiiGgNY" target="_blank" rel="noopener">Off-Road (extrême) en Albanie 🇦🇱 | Road Trip Moto en Benelli TRK 702 jusqu’aux Météores | </a></li><li><a href="https://www.youtube.com/watch?v=iQiEbdyokBg" target="_blank" rel="noopener">700 km à moto en une journée. Des Météores à Istanbul en Benelli TRK 702 | Road Trip (EP6)</a></li><li><a href="https://www.youtube.com/watch?v=Njm4fUFu-Lw" target="_blank" rel="noopener">Istanbul à pied et à moto 🇹🇷 | Immersion, rencontres &amp; Benelli TRK 702 (EP7)</a></li><li><a href="https://www.youtube.com/watch?v=SY5vAz7iQx8" target="_blank" rel="noopener">Cappadoce en moto 🇹🇷 | Montgolfières, galères &amp; Benelli TRK 702 (EP8)</a></li><li><a href="https://www.youtube.com/watch?v=mWKp9bFWQMc" target="_blank" rel="noopener">Road Trip Moto | Göreme &amp; Love Valley 🇹🇷 → Sofia 🇧🇬 | Routes défoncées en Benelli TRK 702</a></li><li><a href="https://www.youtube.com/watch?v=XlpyhrLkfVo" target="_blank" rel="noopener">Transfăgărășan à moto : route EPIC… et mon drone disparaît ! | TRK 702 (EP10)</a></li><li><a href="https://www.youtube.com/watch?v=GdyqmphLdQU" target="_blank" rel="noopener">Aventure Moto | De l’Europe à l’Asie… la fin du voyage — 10 000 km en TRK 702 (EP11)</a></li><li><a href="https://www.youtube.com/watch?v=9pMwGzErbmA" target="_blank" rel="noopener">Road Trip Moto (14 pays) | Benelli TRK 702 &amp; Bivouac sur 10 000 km</a></li></ol></details></div><div class="trip-episodes" id="episodes-espagne"><div class="trip-title"><h3>Tour d'Espagne 2023</h3><span>19 episodes</span></div><div class="episodes-grid"><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=BAPas-qa5eU" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/BAPas-qa5eU/hqdefault.jpg" alt="EP 1. Enfin le grand jour ! : Jour 1, 23 jours 6600 kms &quot;Tous d'Espagne 2023&quot;" loading="lazy"></a></div><div class="episode-info"><h4>EP 1. Enfin le grand jour ! : Jour 1, 23 jours 6600 kms &quot;Tous d'Espagne 2023&quot;</h4><a href="https://www.youtube.com/watch?v=BAPas-qa5eU" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=9e2VVgC-Sqw" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/9e2VVgC-Sqw/hqdefault.jpg" alt="EP06 – Cap vers les Bardenas Reales 🇪🇸 | Aragon à moto – Tour d’Espagne (Jour 7)" loading="lazy"></a></div><div class="episode-info"><h4>EP06 – Cap vers les Bardenas Reales 🇪🇸 | Aragon à moto – Tour d’Espagne (Jour 7)</h4><a href="https://www.youtube.com/watch?v=9e2VVgC-Sqw" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=MxuqmHYv9RU" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/MxuqmHYv9RU/hqdefault.jpg" alt="EP11 1/3 – Bivouac à moto : l’envers du décor 🇪🇸 | Tour d’Espagne (Jour 13)" loading="lazy"></a></div><div class="episode-info"><h4>EP11 1/3 – Bivouac à moto : l’envers du décor 🇪🇸 | Tour d’Espagne (Jour 13)</h4><a href="https://www.youtube.com/watch?v=MxuqmHYv9RU" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=HdF2VSjbON4" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/HdF2VSjbON4/hqdefault.jpg" alt="EP 15 Bivouac solo et dernière route en Espagne 🇪🇸 | Tour d’Espagne à moto. Jour" loading="lazy"></a></div><div class="episode-info"><h4>EP 15 Bivouac solo et dernière route en Espagne 🇪🇸 | Tour d’Espagne à moto. Jour</h4><a href="https://www.youtube.com/watch?v=HdF2VSjbON4" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article></div><details style="margin-top:1.5rem;"><summary style="cursor:pointer;font-weight:700;color:var(--orange);font-size:.95rem;padding:.6rem 0;">&#9660; Voir tous les episodes (19)</summary><ol style="margin-top:1rem;padding-left:1.4rem;columns:2;column-gap:2rem;line-height:2.1;font-size:.87rem;"><li><a href="https://www.youtube.com/watch?v=0jR-I7TrS90" target="_blank" rel="noopener">Préparer un road trip moto de 22 jours en Espagne | Moto chargée &amp; équipement</a></li><li><a href="https://www.youtube.com/watch?v=BAPas-qa5eU" target="_blank" rel="noopener">EP 1. Enfin le grand jour ! : Jour 1, 23 jours 6600 kms &quot;Tous d'Espagne 2023&quot;</a></li><li><a href="https://www.youtube.com/watch?v=tmOiM0ZlorE" target="_blank" rel="noopener">EP02 – Trouver le spot parfait pour bivouaquer 🇫🇷 | Tour d’Espagne à moto (Jour 2)</a></li><li><a href="https://www.youtube.com/watch?v=nV0974c2ZrU" target="_blank" rel="noopener">EP03 – La montagne qui plonge dans la mer 🇫🇷🇪🇸 | Tour d’Espagne à moto (Jour 5)</a></li><li><a href="https://www.youtube.com/watch?v=OVmmCxnXnVo" target="_blank" rel="noopener">EP04 – Traverser la Catalogne par les petites routes 🇪🇸 | Tour d’Espagne à moto (Jour 6)</a></li><li><a href="https://www.youtube.com/watch?v=Un68jTJROrs" target="_blank" rel="noopener">EP05 – Aventure moto en Catalogne 🇪🇸 | Montagnes et vallées sauvages</a></li><li><a href="https://www.youtube.com/watch?v=9e2VVgC-Sqw" target="_blank" rel="noopener">EP06 – Cap vers les Bardenas Reales 🇪🇸 | Aragon à moto – Tour d’Espagne (Jour 7)</a></li><li><a href="https://www.youtube.com/watch?v=wvgvHSkkjGQ" target="_blank" rel="noopener">EP07 – Plongée dans les Bardenas Reales 🇪🇸 | Désert d’Aragon à moto – Tour d’Espagne (Jour</a></li><li><a href="https://www.youtube.com/watch?v=qcSA-qs5smM" target="_blank" rel="noopener">EP08 Galère à Madrid : chute et réparation 🇪🇸 | Tour d’Espagne à moto</a></li><li><a href="https://www.youtube.com/watch?v=OAgMxHPiTco" target="_blank" rel="noopener">EP09 – Châteaux et routes sauvages au lever du jour 🇪🇸 | Tour d’Espagne à moto (Jour 12)</a></li><li><a href="https://www.youtube.com/watch?v=KpgycHTURgE" target="_blank" rel="noopener">Épisode 10 – Châteaux et routes sauvages en Espagne 🇪🇸</a></li><li><a href="https://www.youtube.com/watch?v=MxuqmHYv9RU" target="_blank" rel="noopener">EP11 1/3 – Bivouac à moto : l’envers du décor 🇪🇸 | Tour d’Espagne (Jour 13)</a></li><li><a href="https://www.youtube.com/watch?v=yuAOzDbPLBA" target="_blank" rel="noopener">EP 11 2/3 – Je ne pensais pas que Séville serait aussi belle 🇪🇸 | Tour d’Espagne à moto</a></li><li><a href="https://www.youtube.com/watch?v=d7HafoGtrK4" target="_blank" rel="noopener">EP 11 3/3 – Ronda, beauté vertigineuse 🇪🇸 | Tour d’Espagne à moto (Jour 13)</a></li><li><a href="https://www.youtube.com/watch?v=ly7GGAo9RWU" target="_blank" rel="noopener">J’ai perdu mon drone à Ronda… mission impossible | Épisode 12</a></li><li><a href="https://www.youtube.com/watch?v=8CQzjMLDAKU" target="_blank" rel="noopener">EP13 – Des villages blancs à Grenade 🇪🇸 | Andalousie à moto – Tour d’Espagne (Jour 15)</a></li><li><a href="https://www.youtube.com/watch?v=WyxQ3rzVyhs" target="_blank" rel="noopener">EP14 – L’Alhambra de Grenade, palais et forteresse 🇪🇸 | Tour d’Espagne à moto (Jour 16)</a></li><li><a href="https://www.youtube.com/watch?v=HdF2VSjbON4" target="_blank" rel="noopener">EP 15 Bivouac solo et dernière route en Espagne 🇪🇸 | Tour d’Espagne à moto. Jour 17 –</a></li><li><a href="https://www.youtube.com/watch?v=kb8NdP58LEs" target="_blank" rel="noopener">Ce road trip a failli tout me coûter 🇪🇸 | 5 500 km de moto en Espagne – Le Film</a></li></ol></details></div><div class="trip-episodes" id="episodes-alpes"><div class="trip-title"><h3>Les Alpes (serie complete)</h3><span>9 episodes</span></div><div class="episodes-grid"><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=UevfEKcHDjU" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/UevfEKcHDjU/hqdefault.jpg" alt="Cols mythiques des Alpes à moto – TRK 502 | Ép. 1" loading="lazy"></a></div><div class="episode-info"><h4>Cols mythiques des Alpes à moto – TRK 502 | Ép. 1</h4><a href="https://www.youtube.com/watch?v=UevfEKcHDjU" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=F0wjVN88D_E" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/F0wjVN88D_E/hqdefault.jpg" alt="Alpes en moto : Barcelonnette → Cuneo | Benelli TRK 502. EP3" loading="lazy"></a></div><div class="episode-info"><h4>Alpes en moto : Barcelonnette → Cuneo | Benelli TRK 502. EP3</h4><a href="https://www.youtube.com/watch?v=F0wjVN88D_E" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=WATKVuWzRN4" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/WATKVuWzRN4/hqdefault.jpg" alt="Alpes du Sud en moto : cols, villages et liberté | EP7" loading="lazy"></a></div><div class="episode-info"><h4>Alpes du Sud en moto : cols, villages et liberté | EP7</h4><a href="https://www.youtube.com/watch?v=WATKVuWzRN4" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article></div><details style="margin-top:1.5rem;"><summary style="cursor:pointer;font-weight:700;color:var(--orange);font-size:.95rem;padding:.6rem 0;">&#9660; Voir tous les episodes (9)</summary><ol style="margin-top:1rem;padding-left:1.4rem;columns:2;column-gap:2rem;line-height:2.1;font-size:.87rem;"><li><a href="https://www.youtube.com/watch?v=UevfEKcHDjU" target="_blank" rel="noopener">Cols mythiques des Alpes à moto – TRK 502 | Ép. 1</a></li><li><a href="https://www.youtube.com/watch?v=9GvBpAWy__E" target="_blank" rel="noopener">Gorges de Méouge &amp; Baronnies : 350 km de liberté.  EP2</a></li><li><a href="https://www.youtube.com/watch?v=F0wjVN88D_E" target="_blank" rel="noopener">Alpes en moto : Barcelonnette → Cuneo | Benelli TRK 502. EP3</a></li><li><a href="https://www.youtube.com/watch?v=zvOTRRvdQeE" target="_blank" rel="noopener">ALPES – 240 km d’adrénaline : chute épique au Col de Tende. EP4</a></li><li><a href="https://www.youtube.com/watch?v=8cQ573KasHI" target="_blank" rel="noopener">Col de Tende 1870 m – 14 lacets &amp; une chute inoubliable ! Épisode 5</a></li><li><a href="https://www.youtube.com/watch?v=WATKVuWzRN4" target="_blank" rel="noopener">Alpes du Sud en moto : cols, villages et liberté | EP7</a></li><li><a href="https://www.youtube.com/watch?v=AkLCTHm2xNY" target="_blank" rel="noopener">Alpes en moto : Lautaret &amp; Galibier sous l’orage | EP8-1</a></li><li><a href="https://www.youtube.com/watch?v=aMgL1LC1nMU" target="_blank" rel="noopener">Alpes en moto.  Lautaret, Galibier la pluie et l'orage de montagne en Benelli TRK 502. Ep8</a></li><li><a href="https://www.youtube.com/watch?v=8g2so14gA80" target="_blank" rel="noopener">Alpes en moto. Pas de bringue pendant le road trip moto en Benelli TRK 502. Ep6</a></li></ol></details></div><div class="trip-episodes" id="episodes-france"><div class="trip-title"><h3>Road Trips France</h3><span>47 episodes</span></div><div class="episodes-grid"><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=ili6Tkm6kJw" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/ili6Tkm6kJw/hqdefault.jpg" alt="Tarentaise à moto : cols alpins et routes d’altitude | Road trip Alpes Partie 1" loading="lazy"></a></div><div class="episode-info"><h4>Tarentaise à moto : cols alpins et routes d’altitude | Road trip Alpes Partie 1</h4><a href="https://www.youtube.com/watch?v=ili6Tkm6kJw" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=5cI2rCVRiGw" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/5cI2rCVRiGw/hqdefault.jpg" alt="RGA, en moto et en bivouac. 1800 kilomètres à traver les Alpes." loading="lazy"></a></div><div class="episode-info"><h4>RGA, en moto et en bivouac. 1800 kilomètres à traver les Alpes.</h4><a href="https://www.youtube.com/watch?v=5cI2rCVRiGw" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=NsM2DEysUI0" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/NsM2DEysUI0/hqdefault.jpg" alt="TRK 702-AirFlow A8717-Camping Lone Rider. Vêtements Hiver-Préparation road trip " loading="lazy"></a></div><div class="episode-info"><h4>TRK 702-AirFlow A8717-Camping Lone Rider. Vêtements Hiver-Préparation road trip </h4><a href="https://www.youtube.com/watch?v=NsM2DEysUI0" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=zUmmVjmUIsY" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/zUmmVjmUIsY/hqdefault.jpg" alt="Le cancer du sein, Octobre rose, motardes engagées." loading="lazy"></a></div><div class="episode-info"><h4>Le cancer du sein, Octobre rose, motardes engagées.</h4><a href="https://www.youtube.com/watch?v=zUmmVjmUIsY" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article></div><details style="margin-top:1.5rem;"><summary style="cursor:pointer;font-weight:700;color:var(--orange);font-size:.95rem;padding:.6rem 0;">&#9660; Voir tous les episodes (47)</summary><ol style="margin-top:1rem;padding-left:1.4rem;columns:2;column-gap:2rem;line-height:2.1;font-size:.87rem;"><li><a href="https://www.youtube.com/watch?v=ili6Tkm6kJw" target="_blank" rel="noopener">Tarentaise à moto : cols alpins et routes d’altitude | Road trip Alpes Partie 1</a></li><li><a href="https://www.youtube.com/watch?v=Ig7sfnRf80A" target="_blank" rel="noopener">Road trip moto en Tarentaise ▸ Beaufortain &amp; Mont-Blanc (Partie 2)</a></li><li><a href="https://www.youtube.com/watch?v=QPH5CJRbI0E" target="_blank" rel="noopener">Ballade en Benelli TRK  502 et Leoncino, moto A2.</a></li><li><a href="https://www.youtube.com/watch?v=amxFV0iPxR0" target="_blank" rel="noopener">Sortie moto en Haute-Savoie ▸ Benelli TRK 502 avec un Chapter Harley</a></li><li><a href="https://www.youtube.com/watch?v=5cI2rCVRiGw" target="_blank" rel="noopener">RGA, en moto et en bivouac. 1800 kilomètres à traver les Alpes.</a></li><li><a href="https://www.youtube.com/watch?v=3MrTGcwA_-4" target="_blank" rel="noopener">Road Trip Moto: Découverte des Bauges en savoie.</a></li><li><a href="https://www.youtube.com/watch?v=i1YwQsEgCSQ" target="_blank" rel="noopener">Week-end découverte Annecy, la Venise des Alpes: Pont de l'abîme et tours saint Jacques</a></li><li><a href="https://www.youtube.com/watch?v=hqDzIM7M2qs" target="_blank" rel="noopener">Week-end découverte Annecy, la Venise des Alpes: Les Bauges 2022</a></li><li><a href="https://www.youtube.com/watch?v=VqwvMUWyCO4" target="_blank" rel="noopener">Week-end découverte Annecy, la Venise des Alpes:Ne passez pas à côté de Precherel Bauges 2</a></li><li><a href="https://www.youtube.com/watch?v=89PnfLu9pGA" target="_blank" rel="noopener">Week-end découverte Annecy, la Venise des Alpes: L'Abbaye de Tamié, Bauges 2022.</a></li><li><a href="https://www.youtube.com/watch?v=XFgsUOnTWgk" target="_blank" rel="noopener">: Le château de Miolans : Un secret de Savoie</a></li><li><a href="https://www.youtube.com/watch?v=Wxt4pVsC-ZI" target="_blank" rel="noopener">Week-end découverte Annecy, la Venise des Alpes: château de Duingt vu 4K en drone.</a></li><li><a href="https://www.youtube.com/watch?v=mvEydQ3lpZ4" target="_blank" rel="noopener">Week-end découverte Annecy, la Venise des Alpes : Col de Aravis</a></li><li><a href="https://www.youtube.com/watch?v=zFJGnSVl4og" target="_blank" rel="noopener">Week-end découverte Annecy, la Venise des Alpes: Le col de l'Arpettaz</a></li><li><a href="https://www.youtube.com/watch?v=jq02gt4YWlo" target="_blank" rel="noopener">Week-end découverte Annecy, la Venise des Alpes.  les plus beaux sites de Annecy: Les Arav</a></li><li><a href="https://www.youtube.com/watch?v=NsM2DEysUI0" target="_blank" rel="noopener">TRK 702-AirFlow A8717-Camping Lone Rider. Vêtements Hiver-Préparation road trip moto-Voyag</a></li><li><a href="https://www.youtube.com/watch?v=25QDcsN3K18" target="_blank" rel="noopener">Road Trip Moto, Bonne année des Aravis</a></li><li><a href="https://www.youtube.com/watch?v=zdkuNEHqCjE" target="_blank" rel="noopener">Benelli TRK 702. Moto hiver, les Aravis-La clusaz</a></li><li><a href="https://www.youtube.com/watch?v=1H38LNxAD60" target="_blank" rel="noopener">Sur les Routes de l’Histoire.  Nature et découverte en Moto des Trésors de Haute-Savoie.</a></li><li><a href="https://www.youtube.com/watch?v=v5Ngfsj8X8o" target="_blank" rel="noopener">Col de la Chambotte &amp; Grand Colombier en moto | France</a></li><li><a href="https://www.youtube.com/watch?v=s38cppyYdvo" target="_blank" rel="noopener">Ascension du  Col de l'Arpetaz à Moto: TRK 702 &amp; Tiger 900 en Action</a></li><li><a href="https://www.youtube.com/watch?v=fpZ6pD8lwtc" target="_blank" rel="noopener">Balade moto dans la Maurienne pour aller voir Lacets de Montvernier.</a></li><li><a href="https://www.youtube.com/watch?v=EwPtBFMxypY" target="_blank" rel="noopener">MINI Road Trip Moto R 1200 RT et TRK 702.  Entre Haute-Savoie, Ain et Bugey</a></li><li><a href="https://www.youtube.com/watch?v=tBttggEGOQc" target="_blank" rel="noopener">Le déluge s'abat sur nous. Road trip moto Benelli TRK 702,</a></li><li><a href="https://www.youtube.com/watch?v=Rgrm3xO3mSI" target="_blank" rel="noopener">Road trip jour 4 Benelli TRK 702</a></li><li><a href="https://www.youtube.com/watch?v=3GWcB9oyP8s" target="_blank" rel="noopener">réveil matinal et dans la rosée du matin. Road trip Benelli TRK 702</a></li><li><a href="https://www.youtube.com/watch?v=Wdn-4saXn6Q" target="_blank" rel="noopener">2 motards en balade Ep1. 🏍️ Duel Moto : TRK 702 vs BMW R 1200 RT – Qui Domine la Route ?</a></li><li><a href="https://www.youtube.com/watch?v=4xaqaEltO-0" target="_blank" rel="noopener">Découverte d'un paysage caché après la tempête !</a></li><li><a href="https://www.youtube.com/watch?v=-n2dfOgClTM" target="_blank" rel="noopener">Octobre rose 2024. Organisé par Louli louli et Francois Bernard.</a></li><li><a href="https://www.youtube.com/watch?v=PZpZGOlJ2xQ" target="_blank" rel="noopener">Octobre rose 2024. Organisé par Louli louli et Francois Bernard.</a></li><li><a href="https://www.youtube.com/watch?v=zUmmVjmUIsY" target="_blank" rel="noopener">Le cancer du sein, Octobre rose, motardes engagées.</a></li><li><a href="https://www.youtube.com/watch?v=YU51KbYRZJw" target="_blank" rel="noopener">Ep3. 🏔️ Road Trip Moto – 5 Cols de Légende &amp; Paysages à Couper le Souffle</a></li><li><a href="https://www.youtube.com/watch?v=YU51KbYRZJw" target="_blank" rel="noopener">Ep3. 🏔️ Road Trip Moto – 5 Cols de Légende &amp; Paysages à Couper le Souffle</a></li><li><a href="https://www.youtube.com/watch?v=UNOVNYDJhTo" target="_blank" rel="noopener">Explosion de couleurs dans les Alpes : l’Automne comme jamais vu !</a></li><li><a href="https://www.youtube.com/watch?v=w3h2dD5oCQ4" target="_blank" rel="noopener">Juste pour le plaisir, avec Télégraph Road.</a></li><li><a href="https://www.youtube.com/watch?v=ubb_I0QnQ-M" target="_blank" rel="noopener">Découvre les routes secrètes des Alpes en moto ! Road trip moto  Tracer 9 GT+ vs Honda NT1</a></li><li><a href="https://www.youtube.com/watch?v=ZQgqg4Qxc2Q" target="_blank" rel="noopener">Tu n’as jamais vu ces montagnes comme ça !</a></li><li><a href="https://www.youtube.com/watch?v=o4NSUSvf1eg" target="_blank" rel="noopener">Dernière claque, le road trip est fini!  EP3. Honda NT 1100 et Tracer 9GT dans les Alpes</a></li><li><a href="https://www.youtube.com/watch?v=KvxVwXFjKn4" target="_blank" rel="noopener">Découvre le Luberon à moto avec Yann et Sandra 🚵‍♂️ | Road trip Drôme Provençale</a></li><li><a href="https://www.youtube.com/watch?v=a9Kcqx5J7VU" target="_blank" rel="noopener">Road trip moto. Galibier Express Honda NT 1100</a></li><li><a href="https://www.youtube.com/watch?v=eNVD7c6g3wM" target="_blank" rel="noopener">Alpes Aventure Moto Festival, Barcelonnette en Honda NT 1100 et tracer 9 GT.</a></li><li><a href="https://www.youtube.com/watch?v=dOjvRtEitX4" target="_blank" rel="noopener">Alpes Aventure Moto Festival : J'ai TOUT Raté (Essais, Chute, Moto cassée...) EP2</a></li><li><a href="https://www.youtube.com/watch?v=xQSpEY5EsEc" target="_blank" rel="noopener">Un géant pour toi et facile à faire ! Valcavera le col que tu vas aimer !</a></li><li><a href="https://www.youtube.com/watch?v=moyo4_X1338" target="_blank" rel="noopener">Balade entre Savoie et Haute Savoie</a></li><li><a href="https://www.youtube.com/watch?v=30Pw8c_OW-0" target="_blank" rel="noopener">Road trip moto. BMW 1250RT Honda NT 1100 La bonette</a></li><li><a href="https://www.youtube.com/watch?v=eVi9fzp4MZ0" target="_blank" rel="noopener">Géant, tu vas Adorer, c'est trop beau !!</a></li><li><a href="https://www.youtube.com/watch?v=1JKi34BG_rU" target="_blank" rel="noopener">Vidéo Annecy</a></li></ol></details></div></section>
 
 <section class="container choice-section">
     <div class="section-title">
