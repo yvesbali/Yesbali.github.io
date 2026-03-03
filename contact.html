@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - LCDMH - La Chaîne Du Motard Heureux</title>
+    <!-- Polices Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Inter", sans-serif;
+            background: #f5f5f5;
+            color: #1e1e1e;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+        }
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo a {
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e1e1e;
+            text-decoration: none;
+        }
+        .logo span {
+            color: #e67e22;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1e1e1e;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #e67e22;
+        }
+        .nav-yt {
+            background: #e67e22;
+            color: white !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        .nav-yt:hover {
+            background: #d35400;
+            color: white;
+        }
+        /* Hero avec parallaxe */
+        .hero {
+            height: 40vh;
+            min-height: 300px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center 30%;
+            background-attachment: fixed;
+            filter: brightness(0.6);
+            z-index: -1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .hero h1 span {
+            color: #e67e22;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        .hero-badge {
+            background: rgba(230, 126, 34, 0.9);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        /* Conteneur principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 5%;
+        }
+        /* Section titre */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        /* Grille contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+        /* Infos contact */
+        .contact-info {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 2rem;
+        }
+        .info-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+        }
+        .info-icon {
+            font-size: 2rem;
+            min-width: 50px;
+            text-align: center;
+        }
+        .info-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        .info-content p, .info-content a {
+            color: #666;
+            text-decoration: none;
+        }
+        .info-content a:hover {
+            color: #e67e22;
+        }
+        /* Formulaire */
+        .contact-form {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: "Inter", sans-serif;
+            font-size: 1rem;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #e67e22;
+        }
+        .btn-submit {
+            background: #1e1e1e;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+            font-size: 1.1rem;
+        }
+        .btn-submit:hover {
+            background: #e67e22;
+        }
+        /* Réseaux sociaux */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        .social-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s;
+        }
+        .social-card:hover {
+            transform: translateY(-5px);
+            border-color: #e67e22;
+        }
+        .social-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .social-name {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .social-handle {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        /* FAQ Contact */
+        .faq-contact {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+        .faq-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #e67e22;
+        }
+        .faq-answer {
+            color: #666;
+        }
+        /* Footer */
+        footer {
+            background: #1e1e1e;
+            color: white;
+            padding: 3rem 5%;
+            margin-top: 4rem;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-col a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover {
+            color: #e67e22;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #333;
+            color: #aaa;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-links {
+                justify-content: center;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">LC<span>D</span>MH</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="roadtrips.html">Road Trips</a></li>
+            <li><a href="tests-matos.html">Tests équipements</a></li>
+            <li><a href="tests-motos.html">Tests motos</a></li>
+            <li><a href="securite.html">Sécurité</a></li>
+            <li><a href="gps.html">GPS</a></li>
+            <li><a href="intercoms.html">Intercoms</a></li>
+            <li><a href="pneus.html">Pneus</a></li>
+            <li><a href="blackview.html">Blackview</a></li>
+            <li><a href="olight.html">Olight</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="https://www.youtube.com/@LCDMH" class="nav-yt" target="_blank">YouTube</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-image"></div>
+        <div class="hero-content">
+            <div class="hero-badge">RESTONS CONNECTÉS</div>
+            <h1>CONTACT</h1>
+            <p>Une question, un partenariat, un message ? Écrivez-moi !</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Grille contact -->
+        <div class="contact-grid">
+            <!-- Infos -->
+            <div class="contact-info">
+                <h2 style="margin-bottom: 2rem;">Informations</h2>
+                
+                <div class="info-item">
+                    <div class="info-icon">📧</div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p><a href="mailto:contact@lcdmh.fr">yvesbali@gmail.com</a></p>
+                        <p style="color: #999; font-size: 0.9rem;">Réponse sous 48h</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-content">
+                        <h3>Localisation</h3>
+                        <p>Annecy, Haute-Savoie<br>France</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">🎥</div>
+                    <div class="info-content">
+                        <h3>YouTube</h3>
+                        <p><a href="https://www.youtube.com/@LCDMH" target="_blank">@LCDMH</a></p>
+                        <p style="color: #999; font-size: 0.9rem;">Abonnez-vous !</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">🤝</div>
+                    <div class="info-content">
+                        <h3>Partenariats</h3>
+                        <p>Pour toute proposition de partenariat, contactez-moi par email avec l'objet "PARTENARIAT".</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulaire -->
+            <div class="contact-form">
+                <h2 style="margin-bottom: 2rem;">Envoyer un message</h2>
+                <form id="contactForm" onsubmit="return handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="nom">Nom *</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sujet">Sujet *</label>
+                        <select id="sujet" name="sujet" required>
+                            <option value="">Choisissez un sujet</option>
+                            <option value="question">Question sur une vidéo</option>
+                            <option value="conseil">Conseil pour un road trip</option>
+                            <option value="partenariat">Partenariat / Collaboration</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">ENVOYER LE MESSAGE</button>
+                </form>
+                <p id="formConfirmation" style="display: none; color: #e67e22; margin-top: 1rem; text-align: center;">Message envoyé ! (simulation)</p>
+            </div>
+        </div>
+
+        <!-- Réseaux sociaux -->
+        <h2 style="text-align: center; margin: 3rem 0 2rem;">RETROUVEZ-MOI SUR</h2>
+        <div class="social-grid">
+            <a href="https://www.youtube.com/@LCDMH" class="social-card" target="_blank">
+                <div class="social-icon">▶️</div>
+                <div class="social-name">YouTube</div>
+                <div class="social-handle">@LCDMH</div>
+            </a>
+            <a href="#" class="social-card" target="_blank">
+                <div class="social-icon">📷</div>
+                <div class="social-name">Instagram</div>
+                <div class="social-handle">@lcdmh_officiel</div>
+            </a>
+            <a href="#" class="social-card" target="_blank">
+                <div class="social-icon">👍</div>
+                <div class="social-name">Facebook</div>
+                <div class="social-handle">LCDMH</div>
+            </a>
+        </div>
+
+        <!-- FAQ Contact -->
+        <div class="faq-contact">
+            <h2 style="margin-bottom: 2rem;">QUESTIONS FRÉQUENTES</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Comment puis-je utiliser vos codes promo ?</div>
+                <div class="faq-answer">Rendez-vous sur les sites partenaires (Blackview, Olight, Aoocci) et saisissez le code dans la zone prévue au moment de la validation du panier.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Proposez-vous des guides pour préparer un road trip ?</div>
+                <div class="faq-answer">Oui ! Retrouvez tous mes conseils dans la rubrique "Road Trips" et sur ma chaîne YouTube.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Puis-je vous rencontrer lors d'un événement ?</div>
+                <div class="faq-answer">Je participe régulièrement à des rassemblements moto comme le Alpes Aventure Moto Festival. Suivez-moi sur les réseaux pour être informé !</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>LCDMH</h4>
+                <p>La Chaîne Du Motard Heureux – Road trips, tests et aventures à moto depuis 2022.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="roadtrips.html">Road Trips</a></li>
+                    <li><a href="tests-matos.html">Tests équipements</a></li>
+                    <li><a href="tests-motos.html">Tests motos</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Tests</h4>
+                <ul>
+                    <li><a href="gps.html">GPS moto</a></li>
+                    <li><a href="intercoms.html">Intercoms</a></li>
+                    <li><a href="pneus.html">Pneus</a></li>
+                    <li><a href="blackview.html">Blackview</a></li>
+                    <li><a href="olight.html">Olight</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="a-propos.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://www.youtube.com/@LCDMH" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 LCDMH - La Chaîne Du Motard Heureux
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('contactForm');
+            const confirmation = document.getElementById('formConfirmation');
+            
+            // Simulation d'envoi
+            confirmation.style.display = 'block';
+            form.reset();
+            
+            // Cache le message après 3 secondes
+            setTimeout(() => {
+                confirmation.style.display = 'none';
+            }, 3000);
+            
+            return false;
+        }
+    </script>
+</body>
+</html>
