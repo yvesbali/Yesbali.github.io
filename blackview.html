@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blackview XPLORE X1 – Test Smartphone Renforcé Moto | LCDMH</title>
-    <meta name="description" content="Test complet du Blackview XPLORE X1 : smartphone renforcé 20 000 mAh, IP68/IP69K, vision nocturne. Idéal pour road trip moto. Code promo exclusif LCDMH.">
+    <meta name="description" content="Test complet du Blackview XPLORE X1 : smartphone renforcé 20 000 mAh, IP68/IP69K, vision nocturne. Idéal pour road trip moto. Code promo exclusif LCDMH : 296€ au lieu de 329€.">
     <meta name="keywords" content="Blackview XPLORE X1, smartphone renforcé, téléphone moto, GPS offline, road trip, LCDMH">
     <meta name="author" content="Yves – LCDMH">
     <meta name="robots" content="index, follow">
@@ -13,12 +13,12 @@
     <meta property="og:url" content="https://lcdmh.com/blackview.html">
     <meta property="og:type" content="product">
     <meta property="og:site_name" content="LCDMH">
-    <meta property="og:image" content="https://lcdmh.com/images/blackview-xplore-x1-og.jpg">
+    <meta property="og:image" content="https://lcdmh.com/images/xplore_x1-1.png">
     <link rel="canonical" href="https://lcdmh.com/blackview.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Blackview XPLORE X1 – Test Smartphone Renforcé Moto">
     <meta name="twitter:description" content="Le smartphone increvable testé en conditions extrêmes par LCDMH.">
-    <meta name="twitter:image" content="https://lcdmh.com/images/blackview-xplore-x1-twitter.jpg">
+    <meta name="twitter:image" content="https://lcdmh.com/images/xplore_x1-1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
@@ -35,8 +35,9 @@
       },
       "offers": {
         "@type": "Offer",
-        "price": "329.90",
+        "price": "296.00",
         "priceCurrency": "EUR",
+        "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/InStock",
         "url": "https://www.awin1.com/cread.php?awinmid=90283&awinaffid=2753560&ued=https%3A%2F%2Fwww.blackview.hk%2Fproducts%2Fitem%2Fxplore-x1"
       }
@@ -157,7 +158,17 @@
         .product-copy{padding:28px 28px 22px}
         .eyebrow{font-size:12px;font-weight:700;text-transform:uppercase;color:var(--orange);letter-spacing:.08em;margin-bottom:6px}
         .product-copy h2{font-size:clamp(32px,4vw,52px);line-height:1.04}
-        .price{font-size:clamp(20px,2.6vw,28px);font-weight:800}
+        .price{
+            font-size:clamp(20px,2.6vw,28px);
+            font-weight:800;
+        }
+        .old-price{
+            font-size:1rem;
+            color:var(--muted);
+            text-decoration:line-through;
+            margin-right:0.5rem;
+            font-weight:400;
+        }
         .specs{list-style:none;border-top:1px solid var(--border)}
         .specs li{display:grid;grid-template-columns:92px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px}
         .specs strong{color:var(--orange)}
@@ -171,12 +182,27 @@
         .feature p{color:var(--muted);font-size:14px}
         
         /* Videos */
-        .videos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:2rem 0}
+        .videos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:2rem 0}
         .video-card{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08)}
-        .video-thumb{aspect-ratio:16/9;background:#1b1b1f;color:#fff;display:grid;place-items:center;padding:16px;text-align:center;font-weight:700}
+        .video-thumb{aspect-ratio:16/9;overflow:hidden;background:#000}
+        .video-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+        .video-card:hover .video-thumb img{transform:scale(1.05)}
         .video-body{padding:16px}
         .video-body h4{font-size:18px}
         .video-body p{color:var(--muted);font-size:14px}
+        
+        /* Image bloc */
+        .image-bloc{
+            display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:center;margin:16px 0 34px;
+        }
+        .image-bloc img{
+            width:100%;
+            border-radius:24px;
+            box-shadow:0 10px 30px rgba(0,0,0,.08);
+        }
+        .specs-bloc{
+            background:white;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,.08);padding:28px;
+        }
         
         /* Quote */
         .quote{margin:22px auto 40px;background:#101114;color:#fff;border-radius:22px;padding:28px;text-align:center;font-size:clamp(18px,2.2vw,24px);font-style:italic;box-shadow:0 10px 30px rgba(0,0,0,.08);max-width:860px}
@@ -194,7 +220,7 @@
         .commission-note{font-size:0.9rem;color:var(--muted);margin:1rem 0;font-style:italic;padding:0.5rem;background:#f9f9f9;border-radius:8px;border-left:3px solid var(--orange)}
         
         @media (max-width: 980px) {
-            .promo-code, .product-card{grid-template-columns:1fr}
+            .promo-code, .product-card, .image-bloc{grid-template-columns:1fr}
             .code-box{justify-self:start}
             .features{grid-template-columns:repeat(2,1fr)}
             .videos-grid{grid-template-columns:1fr}
@@ -311,13 +337,15 @@
 <div class="container">
     <div class="product-card">
         <div class="product-media">
-            <img src="https://img.blackview.hk/upload/2024/10/22/202410220459587082.jpg" alt="Blackview XPLORE X1" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x600/1b1b1f/ffffff?text=Blackview+XPLORE+X1'">
+            <img src="images/xplore_x1-1.png" alt="Blackview XPLORE X1">
         </div>
         <div class="product-copy">
             <div class="eyebrow">Blackview</div>
             <h2>XPLORE X1</h2>
-            <p class="price">À partir de 329,90 €</p>
-            <p style="color:var(--muted);margin:0 0 16px;">Prix constaté sur la boutique officielle Blackview France.</p>
+            <p class="price">
+                <span class="old-price">329,90 €</span> 296,00 €
+            </p>
+            <p style="color:var(--muted);margin:0 0 16px;">Prix avec le code exclusif LCDMH sur la boutique officielle Blackview France.</p>
             <p>Un smartphone ultra-résistant pensé pour l'aventure : grosse batterie, GPS hors ligne, second écran, 5G et vraie endurance pour le voyage à moto.</p>
             <ul class="specs">
                 <li><strong>Écran</strong><span>6,78" FHD+ 120 Hz + écran secondaire 2,01"</span></li>
@@ -368,17 +396,18 @@
     </div>
 </div>
 
-<!-- Camera block -->
+<!-- Image bloc avec xplore_x1-2.png -->
 <div class="container">
-    <div style="display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:center;margin:16px 0 34px;">
-        <img src="https://img.blackview.hk/upload/2024/10/22/202410220500147442.jpg" alt="Capteurs photo Blackview" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x600/1b1b1f/ffffff?text=Photo+Blackview'">
-        <div style="background:white;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,.08);padding:28px;">
-            <h4 style="font-size:clamp(28px,3.5vw,42px);">Photo & vision nocturne</h4>
-            <p>Le Blackview XPLORE X1 embarque un capteur principal de 64 MP et un capteur infrarouge dédié de 20 MP pour la vision de nuit. Idéal pour immortaliser vos aventures, même dans l'obscurité.</p>
+    <div class="image-bloc">
+        <img src="images/xplore_x1-2.png" alt="Blackview XPLORE X1 résistance à l'eau et aux chocs">
+        <div class="specs-bloc">
+            <h4 style="font-size:clamp(28px,3.5vw,42px);">Résistance extrême</h4>
+            <p>Le Blackview XPLORE X1 surpasse les standards :</p>
             <ul style="margin:1rem 0 0 20px;">
-                <li>📸 64 MP principal</li>
-                <li>🌙 20 MP vision nocturne</li>
-                <li>🤳 50 MP selfie</li>
+                <li>💧 2 mètres pendant 30 minutes (vs 1.5 m chez les concurrents)</li>
+                <li>📱 Résistance aux chocs 25% supérieure</li>
+                <li>🏔️ Testé sous la pluie, la boue et le froid</li>
+                <li>✅ Certification IP68/IP69K et MIL-STD-810H</li>
             </ul>
         </div>
     </div>
@@ -391,26 +420,29 @@
         <div class="bar"></div>
     </div>
     <div class="videos-grid">
+        <!-- Vidéo 1 : Blackview X1 test complet -->
         <div class="video-card">
-            <div class="video-thumb">▶️ Test en conditions extrêmes</div>
-            <div class="video-body">
-                <h4>Dans la boue et sous la pluie</h4>
-                <p>On l'a volontairement sali et mouillé pour voir ce qu'il a dans le ventre.</p>
-            </div>
+            <a href="https://www.youtube.com/watch?v=_lV1S1_JXd0" target="_blank">
+                <div class="video-thumb">
+                    <img src="https://img.youtube.com/vi/_lV1S1_JXd0/hqdefault.jpg" alt="Blackview X1 test complet">
+                </div>
+                <div class="video-body">
+                    <h4>Dans la boue et sous la pluie</h4>
+                    <p>On l'a volontairement sali et mouillé pour voir ce qu'il a dans le ventre.</p>
+                </div>
+            </a>
         </div>
+        <!-- Vidéo 2 : Quel téléphone pour road trip ? -->
         <div class="video-card">
-            <div class="video-thumb">▶️ Autonomie réelle</div>
-            <div class="video-body">
-                <h4>10 jours sans recharge ?</h4>
-                <p>On a utilisé le XPLORE X1 comme téléphone principal pour tester sa batterie monstre.</p>
-            </div>
-        </div>
-        <div class="video-card">
-            <div class="video-thumb">▶️ Navigation à moto</div>
-            <div class="video-body">
-                <h4>Guidage et vision au soleil</h4>
-                <p>Test de la lisibilité de l'écran en plein soleil avec des gants.</p>
-            </div>
+            <a href="https://www.youtube.com/watch?v=AYjFZ1QfCWY" target="_blank">
+                <div class="video-thumb">
+                    <img src="https://img.youtube.com/vi/AYjFZ1QfCWY/hqdefault.jpg" alt="Quel téléphone pour road trip">
+                </div>
+                <div class="video-body">
+                    <h4>10 jours sans recharge ?</h4>
+                    <p>On a utilisé le XPLORE X1 comme téléphone principal pour tester sa batterie monstre.</p>
+                </div>
+            </a>
         </div>
     </div>
 </div>
