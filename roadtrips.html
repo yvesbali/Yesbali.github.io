@@ -391,7 +391,7 @@
 
         .playlists-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 2rem;
             margin: 3rem 0 4rem;
         }
@@ -545,7 +545,7 @@
 
         .episodes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 1.4rem;
         }
 
@@ -792,6 +792,16 @@
             line-height: 1.7;
         }
 
+        @media (max-width: 1100px) {
+            .playlists-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .episodes-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
         @media (max-width: 980px) {
             .intro-story-grid {
                 grid-template-columns: 1fr;
@@ -842,6 +852,12 @@
             }
 
             .choice-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .playlists-grid,
+            .episodes-grid,
+            .recent-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -964,7 +980,7 @@
                     <span>🏕️ Bivouac</span>
                 </div>
                 <div class="card-buttons">
-                    <a href="#" class="btn-primary">▶ Voir la playlist</a>
+                    <a href="https://www.youtube.com/watch?v=aEEJXeNSsdg" class="btn-primary" target="_blank" rel="noopener">▶ Commencer la série</a>
                     <a href="#episodes-cap-nord" class="btn-secondary">📋 Épisodes vedettes</a>
                 </div>
             </div>
@@ -984,7 +1000,7 @@
                     <span>⛰️ Cappadoce</span>
                 </div>
                 <div class="card-buttons">
-                    <a href="#" class="btn-primary">▶ Voir la playlist</a>
+                    <a href="https://www.youtube.com/watch?v=Fblx1mI1teE" class="btn-primary" target="_blank" rel="noopener">▶ Commencer la série</a>
                     <a href="#episodes-cappadoce" class="btn-secondary">📋 Épisodes vedettes</a>
                 </div>
             </div>
@@ -1004,7 +1020,7 @@
                     <span>🌊 Contrastes</span>
                 </div>
                 <div class="card-buttons">
-                    <a href="#" class="btn-primary">▶ Voir la playlist</a>
+                    <a href="https://www.youtube.com/watch?v=BAPas-qa5eU" class="btn-primary" target="_blank" rel="noopener">▶ Commencer la série</a>
                     <a href="#episodes-espagne" class="btn-secondary">📋 Épisodes vedettes</a>
                 </div>
             </div>
@@ -1024,7 +1040,7 @@
                     <span>🇫🇷 Alpes</span>
                 </div>
                 <div class="card-buttons">
-                    <a href="#" class="btn-primary">▶ Voir la playlist</a>
+                    <a href="https://www.youtube.com/watch?v=UevfEKcHDjU" class="btn-primary" target="_blank" rel="noopener">▶ Commencer la série</a>
                     <a href="#episodes-alpes" class="btn-secondary">📋 Épisodes vedettes</a>
                 </div>
             </div>
@@ -1047,34 +1063,34 @@
         <div class="episodes-grid">
             <article class="episode-card">
                 <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/xxxxxxxxxxx/hqdefault.jpg" alt="Miniature épisode départ vers le Nord">
+                    <img src="https://img.youtube.com/vi/aEEJXeNSsdg/hqdefault.jpg" alt="Miniature épisode départ vers le Nord">
                 </div>
                 <div class="episode-info">
                     <h4>#1 – Le départ vers le Nord</h4>
                     <p>Les premiers kilomètres, l’excitation du grand départ et les premières réalités du voyage.</p>
-                    <a href="#" class="episode-link">Voir l’épisode →</a>
+                    <a href="https://www.youtube.com/watch?v=aEEJXeNSsdg" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
                 </div>
             </article>
 
             <article class="episode-card">
                 <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/yyyyyyyyyyy/hqdefault.jpg" alt="Miniature épisode bivouac en Laponie">
+                    <img src="https://img.youtube.com/vi/MNKg781CFh0/hqdefault.jpg" alt="Miniature épisode bivouac en Laponie">
                 </div>
                 <div class="episode-info">
                     <h4>#4 – Nuit sous tente à -5°C</h4>
                     <p>Le bivouac, le froid, la fatigue et toute la vérité du road trip quand les conditions se durcissent.</p>
-                    <a href="#" class="episode-link">Voir l’épisode →</a>
+                    <a href="https://www.youtube.com/watch?v=MNKg781CFh0" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
                 </div>
             </article>
 
             <article class="episode-card">
                 <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/zzzzzzzzzzz/hqdefault.jpg" alt="Miniature arrivée au Cap Nord">
+                    <img src="https://img.youtube.com/vi/PaEMRm_5H0U/hqdefault.jpg" alt="Miniature arrivée au Cap Nord">
                 </div>
                 <div class="episode-info">
                     <h4>#7 – Cap Nord, enfin !</h4>
                     <p>L’arrivée au bout du voyage, avec tout ce que ce moment représente après tant de route.</p>
-                    <a href="#" class="episode-link">Voir l’épisode →</a>
+                    <a href="https://www.youtube.com/watch?v=PaEMRm_5H0U" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
                 </div>
             </article>
         </div>
@@ -1088,34 +1104,34 @@
         <div class="episodes-grid">
             <article class="episode-card">
                 <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/aaaaaaaaaaa/hqdefault.jpg" alt="Miniature entrée en Turquie">
+                    <img src="https://img.youtube.com/vi/Fblx1mI1teE/hqdefault.jpg" alt="Miniature entrée en Turquie">
                 </div>
                 <div class="episode-info">
                     <h4>#2 – Entrée en Turquie</h4>
                     <p>Le moment où le voyage change de dimension et où le dépaysement devient bien réel.</p>
-                    <a href="#" class="episode-link">Voir l’épisode →</a>
+                    <a href="https://www.youtube.com/watch?v=Fblx1mI1teE" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
                 </div>
             </article>
 
             <article class="episode-card">
                 <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/bbbbbbbbbbb/hqdefault.jpg" alt="Miniature route en Cappadoce">
+                    <img src="https://img.youtube.com/vi/SY5vAz7iQx8/hqdefault.jpg" alt="Miniature route en Cappadoce">
                 </div>
                 <div class="episode-info">
                     <h4>#5 – Cappadoce vue de la selle</h4>
                     <p>Des paysages hors normes et cette impression de rouler dans un décor presque irréel.</p>
-                    <a href="#" class="episode-link">Voir l’épisode →</a>
+                    <a href="https://www.youtube.com/watch?v=SY5vAz7iQx8" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
                 </div>
             </article>
 
             <article class="episode-card">
                 <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/ccccccccccc/hqdefault.jpg" alt="Miniature retour émotion voyage">
+                    <img src="https://img.youtube.com/vi/GdyqmphLdQU/hqdefault.jpg" alt="Miniature retour émotion voyage">
                 </div>
                 <div class="episode-info">
                     <h4>#8 – Retour émotions</h4>
                     <p>Le bilan d’un voyage marquant, avec ce mélange de satisfaction, de fatigue et d’envie de repartir.</p>
-                    <a href="#" class="episode-link">Voir l’épisode →</a>
+                    <a href="https://www.youtube.com/watch?v=GdyqmphLdQU" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
                 </div>
             </article>
         </div>
@@ -1129,34 +1145,34 @@
         <div class="episodes-grid">
             <article class="episode-card">
                 <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/ddddddddddd/hqdefault.jpg" alt="Miniature désert de Tabernas">
+                    <img src="https://img.youtube.com/vi/BAPas-qa5eU/hqdefault.jpg" alt="Miniature désert de Tabernas">
                 </div>
                 <div class="episode-info">
                     <h4>#3 – Désert de Tabernas</h4>
                     <p>La chaleur, l’espace, les paysages de western et ce sentiment délicieux d’être loin.</p>
-                    <a href="#" class="episode-link">Voir l’épisode →</a>
+                    <a href="https://www.youtube.com/watch?v=BAPas-qa5eU" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
                 </div>
             </article>
 
             <article class="episode-card">
                 <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/eeeeeeeeeee/hqdefault.jpg" alt="Miniature côte et falaises">
+                    <img src="https://img.youtube.com/vi/wvgvHSkkjGQ/hqdefault.jpg" alt="Miniature côte et falaises">
                 </div>
                 <div class="episode-info">
                     <h4>#6 – Côte et falaises</h4>
                     <p>Une autre Espagne, plus brute, plus contrastée, entre mer, lumière et route sinueuse.</p>
-                    <a href="#" class="episode-link">Voir l’épisode →</a>
+                    <a href="https://www.youtube.com/watch?v=wvgvHSkkjGQ" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
                 </div>
             </article>
 
             <article class="episode-card">
                 <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/fffffffffff/hqdefault.jpg" alt="Miniature routes sinueuses en Espagne">
+                    <img src="https://img.youtube.com/vi/ly7GGAo9RWU/hqdefault.jpg" alt="Miniature routes sinueuses en Espagne">
                 </div>
                 <div class="episode-info">
                     <h4>#9 – Routes et plaisir de rouler</h4>
                     <p>Le genre d’étape qui rappelle pourquoi on aime tant partir à moto sans trop savoir ce que la journée réserve.</p>
-                    <a href="#" class="episode-link">Voir l’épisode →</a>
+                    <a href="https://www.youtube.com/watch?v=ly7GGAo9RWU" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
                 </div>
             </article>
         </div>
@@ -1170,34 +1186,34 @@
         <div class="episodes-grid">
             <article class="episode-card">
                 <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/ggggggggggg/hqdefault.jpg" alt="Miniature col alpin">
+                    <img src="https://img.youtube.com/vi/UevfEKcHDjU/hqdefault.jpg" alt="Miniature col alpin">
                 </div>
                 <div class="episode-info">
                     <h4>#1 – Premier grand col</h4>
                     <p>Le début d’une histoire, avec la découverte de la montagne et du bonheur simple de grimper en moto.</p>
-                    <a href="#" class="episode-link">Voir l’épisode →</a>
+                    <a href="https://www.youtube.com/watch?v=UevfEKcHDjU" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
                 </div>
             </article>
 
             <article class="episode-card">
                 <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/hhhhhhhhhhh/hqdefault.jpg" alt="Miniature bivouac au bord d’un lac">
+                    <img src="https://img.youtube.com/vi/8cQ573KasHI/hqdefault.jpg" alt="Miniature bivouac au bord d’un lac">
                 </div>
                 <div class="episode-info">
                     <h4>#3 – Bivouac au bord de l’eau</h4>
                     <p>Un de ces moments paisibles qui restent longtemps dans la tête et donnent envie de recommencer.</p>
-                    <a href="#" class="episode-link">Voir l’épisode →</a>
+                    <a href="https://www.youtube.com/watch?v=8cQ573KasHI" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
                 </div>
             </article>
 
             <article class="episode-card">
                 <div class="episode-thumb">
-                    <img src="https://img.youtube.com/vi/iiiiiiiiiii/hqdefault.jpg" alt="Miniature route des Alpes à moto">
+                    <img src="https://img.youtube.com/vi/AkLCTHm2xNY/hqdefault.jpg" alt="Miniature route des Alpes à moto">
                 </div>
                 <div class="episode-info">
                     <h4>#5 – L’appel de la montagne</h4>
                     <p>Des routes superbes, des panoramas à couper le souffle et la certitude que cette passion ne fait que commencer.</p>
-                    <a href="#" class="episode-link">Voir l’épisode →</a>
+                    <a href="https://www.youtube.com/watch?v=AkLCTHm2xNY" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
                 </div>
             </article>
         </div>
@@ -1251,29 +1267,29 @@
 
     <div class="recent-grid">
         <article class="recent-card">
-            <img src="https://img.youtube.com/vi/xxxxxxxxxxx/hqdefault.jpg" alt="Miniature dernier épisode road trip">
+            <img src="https://img.youtube.com/vi/aEEJXeNSsdg/hqdefault.jpg" alt="Miniature dernier épisode road trip">
             <div class="episode-info">
-                <h4>Cap Nord – Épisode récent</h4>
-                <p>À remplacer par ton vrai titre YouTube.</p>
-                <a href="#" class="episode-link">Voir l’épisode →</a>
+                <h4>Cap Nord – Le départ</h4>
+                <p>Le début du grand road trip vers le Nord.</p>
+                <a href="https://www.youtube.com/watch?v=aEEJXeNSsdg" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
             </div>
         </article>
 
         <article class="recent-card">
-            <img src="https://img.youtube.com/vi/aaaaaaaaaaa/hqdefault.jpg" alt="Miniature dernier épisode road trip">
+            <img src="https://img.youtube.com/vi/Fblx1mI1teE/hqdefault.jpg" alt="Miniature dernier épisode road trip">
             <div class="episode-info">
-                <h4>Cappadoce – Épisode récent</h4>
-                <p>À remplacer par ton vrai titre YouTube.</p>
-                <a href="#" class="episode-link">Voir l’épisode →</a>
+                <h4>Cappadoce – Montgolfières & galères</h4>
+                <p>L’un des épisodes marquants du voyage en Turquie.</p>
+                <a href="https://www.youtube.com/watch?v=SY5vAz7iQx8" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
             </div>
         </article>
 
         <article class="recent-card">
-            <img src="https://img.youtube.com/vi/ddddddddddd/hqdefault.jpg" alt="Miniature dernier épisode road trip">
+            <img src="https://img.youtube.com/vi/BAPas-qa5eU/hqdefault.jpg" alt="Miniature dernier épisode road trip">
             <div class="episode-info">
-                <h4>Espagne – Épisode récent</h4>
-                <p>À remplacer par ton vrai titre YouTube.</p>
-                <a href="#" class="episode-link">Voir l’épisode →</a>
+                <h4>Espagne – Mission impossible à Ronda</h4>
+                <p>Un épisode fort du tour d’Espagne.</p>
+                <a href="https://www.youtube.com/watch?v=ly7GGAo9RWU" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
             </div>
         </article>
     </div>
