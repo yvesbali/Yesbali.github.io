@@ -841,7 +841,6 @@ function copyText(text, btn){
       }
     });
   }catch(e){
-    // fallback
     const ta = document.createElement('textarea');
     ta.value = text;
     document.body.appendChild(ta);
@@ -850,6 +849,32 @@ function copyText(text, btn){
     document.body.removeChild(ta);
   }
 }
+
+/* Menu déroulant : clic pour mobile + fermeture auto */
+document.querySelectorAll('.has-drop > a').forEach(a => {
+  a.addEventListener('click', (e) => {
+    e.preventDefault();
+    const li = a.parentElement;
+
+    document.querySelectorAll('.has-drop.open').forEach(x => {
+      if (x !== li) x.classList.remove('open');
+    });
+
+    li.classList.toggle('open');
+  });
+});
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.has-drop')) {
+    document.querySelectorAll('.has-drop.open').forEach(x => x.classList.remove('open'));
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.has-drop.open').forEach(x => x.classList.remove('open'));
+  }
+});
 </script>
 </body>
 </html>
