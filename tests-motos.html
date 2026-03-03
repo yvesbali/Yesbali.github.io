@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tests Moto - Essais Honda NT1100, Benelli TRK, BMW, Suzuki - LCDMH</title>
-    <meta name="description" content="Essais et avis terrain sur les motos routières et trails : Honda NT1100, Benelli TRK 502/702, BMW R 1300 GS, Suzuki V-Strom. Comparatifs réels pour choisir votre moto.">
-    <meta name="keywords" content="test moto, essai moto, Honda NT1100, Benelli TRK 502, Benelli TRK 702, BMW R 1300 GS, Suzuki V-Strom, comparatif moto">
+    <meta name="description" content="Essais et avis terrain sur les motos routières et trails : Honda NT1100, Benelli TRK 502/702, BMW R 1300 GS, Suzuki V-Strom, Transalp. Comparatifs réels pour choisir votre moto.">
+    <meta name="keywords" content="test moto, essai moto, Honda NT1100, Benelli TRK 502, Benelli TRK 702, BMW R 1300 GS, Suzuki V-Strom, Transalp 750, comparatif moto">
     <meta name="author" content="Yves - LCDMH">
     <meta property="og:title" content="Tests Moto - Essais Honda, Benelli, BMW, Suzuki - LCDMH">
-    <meta property="og:description" content="Tests et avis terrain sur les motos routières et trails : Honda NT1100, Benelli TRK, BMW, Suzuki.">
+    <meta property="og:description" content="Tests et avis terrain sur les motos routières et trails : Honda NT1100, Benelli TRK, BMW, Suzuki, Transalp.">
     <meta property="og:url" content="https://lcdmh.com/tests-motos.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="LCDMH">
@@ -118,9 +118,13 @@
         .section-title .bar { width: 52px; height: 4px; background: #e67e22; margin: 0 auto; border-radius: 2px; }
         
         .intro-box { background: white; border-radius: 20px; padding: 2rem; margin: 2rem 0; border: 1px solid #e0e0e0; text-align: center; }
+        
+        /* Style pour les cartes avec images */
         .bike-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 3rem 0; }
         .bike-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,.05); border: 1px solid #e0e0e0; transition: transform .2s; }
         .bike-card:hover { transform: translateY(-5px); }
+        .bike-thumb { width: 100%; height: 200px; overflow: hidden; position: relative; }
+        .bike-thumb img { width: 100%; height: 100%; object-fit: cover; }
         .bike-header { background: #1e1e1e; color: white; padding: 1.5rem; }
         .bike-header h3 { font-size: 1.8rem; margin-bottom: .3rem; }
         .bike-header .period { color: #e67e22; font-weight: 600; }
@@ -129,16 +133,21 @@
         .bike-content li { padding: .3rem 0; border-bottom: 1px solid #f0f0f0; }
         .bike-content li:last-child { border-bottom: none; }
         .bike-footer { padding: 1.5rem; border-top: 1px solid #e0e0e0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; }
+        
+        .other-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 3rem 0; }
+        .other-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,.05); border: 1px solid #e0e0e0; transition: transform .2s; cursor: pointer; }
+        .other-card:hover { transform: translateY(-5px); }
+        .other-thumb { width: 100%; height: 160px; overflow: hidden; }
+        .other-thumb img { width: 100%; height: 100%; object-fit: cover; }
+        .other-info { padding: 1.5rem; }
+        .other-info h3 { margin-bottom: .5rem; }
+        .other-info .badge { color: #e67e22; font-weight: 600; margin-bottom: .5rem; font-size: .9rem; }
+        .other-info p { color: #666; margin-bottom: 1rem; }
+        
         .btn { background: #e67e22; color: white; padding: .5rem 1.2rem; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block; }
         .btn:hover { background: #d35400; }
         .btn-outline { background: transparent; border: 1px solid #e67e22; color: #e67e22; }
         .btn-outline:hover { background: #e67e22; color: white; }
-        
-        .other-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 3rem 0; }
-        .other-card { background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid #e0e0e0; text-align: center; }
-        .other-card h3 { margin-bottom: .5rem; }
-        .other-card .badge { color: #e67e22; font-weight: 600; margin-bottom: 1rem; }
-        .other-card p { color: #666; margin-bottom: 1rem; }
         
         .comparatif-box { background: white; border-radius: 15px; padding: 2rem; margin: 3rem 0; border: 1px solid #e0e0e0; overflow-x: auto; }
         .comparatif-box h3 { color: #e67e22; margin-bottom: 1.5rem; }
@@ -244,7 +253,7 @@
     <div class="hero-image"></div>
     <div class="hero-content">
         <h1>TESTS <span>MOTOS</span></h1>
-        <p>Essais et avis terrain sur les motos routières et trails : Honda, Benelli, BMW, Suzuki.</p>
+        <p>Essais et avis terrain sur les motos routières et trails : Honda, Benelli, BMW, Suzuki, Transalp.</p>
     </div>
 </section>
 
@@ -253,8 +262,8 @@
     <!-- Introduction -->
     <div class="intro-box">
         <p style="font-size: 1.1rem; color: #666;">
-            Depuis 2022, j'ai eu la chance de tester plusieurs motos sur des milliers de kilomètres, 
-            dans des conditions réelles de road trip : cols alpins, autoroutes, pluie, off-road léger. 
+            Depuis 2022, j'ai eu la chance de tester plusieurs motos, juste pour le plaisir. Il y a eu des kilomètres magiques et d'autres... 
+            Dans des conditions réelles avec des routes de cols alpins, bref tout pour s'amuser un peu. 
             Voici mes retours d'expérience détaillés.
         </p>
     </div>
@@ -267,6 +276,9 @@
     <div class="bike-grid">
         <!-- Honda NT1100 -->
         <div class="bike-card">
+            <div class="bike-thumb">
+                <img src="https://img.youtube.com/vi/8oNAzOpJtnI/hqdefault.jpg" alt="Honda NT1100">
+            </div>
             <div class="bike-header">
                 <h3>Honda NT1100</h3>
                 <div class="period">2024 – aujourd'hui · 26 000 km</div>
@@ -288,6 +300,9 @@
 
         <!-- Benelli TRK 702 -->
         <div class="bike-card">
+            <div class="bike-thumb">
+                <img src="https://img.youtube.com/vi/YktXXQfABS0/hqdefault.jpg" alt="Benelli TRK 702">
+            </div>
             <div class="bike-header">
                 <h3>Benelli TRK 702</h3>
                 <div class="period">2023 – 2024 · 18 000 km</div>
@@ -309,6 +324,9 @@
 
         <!-- Benelli TRK 502 -->
         <div class="bike-card">
+            <div class="bike-thumb">
+                <img src="https://img.youtube.com/vi/Kn19RUvvFsQ/hqdefault.jpg" alt="Benelli TRK 502">
+            </div>
             <div class="bike-header">
                 <h3>Benelli TRK 502</h3>
                 <div class="period">2022 – 2023 · 28 000 km</div>
@@ -336,27 +354,51 @@
     </div>
     <div class="other-grid">
         <!-- BMW R 1300 GS -->
-        <div class="other-card">
-            <h3>BMW R 1300 GS</h3>
-            <div class="badge">Test rapide</div>
-            <p>Moteur souple, boîte ASA étonnante, confort typé GS. Un essai prometteur.</p>
-            <a href="https://youtu.be/HxkWyYR9AmM" class="btn" target="_blank" rel="noopener">Voir l'essai</a>
+        <div class="other-card" onclick="window.open('https://youtu.be/HxkWyYR9AmM', '_blank')">
+            <div class="other-thumb">
+                <img src="https://img.youtube.com/vi/HxkWyYR9AmM/hqdefault.jpg" alt="BMW R 1300 GS">
+            </div>
+            <div class="other-info">
+                <h3>BMW R 1300 GS</h3>
+                <div class="badge">Test rapide</div>
+                <p>Moteur souple, boîte ASA étonnante, confort typé GS. Un essai prometteur.</p>
+            </div>
         </div>
 
         <!-- Suzuki V-Strom 650 -->
-        <div class="other-card">
-            <h3>Suzuki V-Strom 650</h3>
-            <div class="badge">Test complet</div>
-            <p>Moteur linéaire, légère, idéale pour débuter en road trip.</p>
-            <a href="https://youtu.be/OM912btEtw0" class="btn" target="_blank" rel="noopener">Voir le test</a>
+        <div class="other-card" onclick="window.open('https://youtu.be/OM912btEtw0', '_blank')">
+            <div class="other-thumb">
+                <img src="https://img.youtube.com/vi/OM912btEtw0/hqdefault.jpg" alt="Suzuki V-Strom 650">
+            </div>
+            <div class="other-info">
+                <h3>Suzuki V-Strom 650</h3>
+                <div class="badge">Test complet</div>
+                <p>Moteur linéaire, légère, idéale pour débuter en road trip.</p>
+            </div>
         </div>
 
         <!-- Kawasaki ZX-6R -->
-        <div class="other-card">
-            <h3>Kawasaki ZX-6R</h3>
-            <div class="badge">Essai sportive</div>
-            <p>Moto sportive, légère, vive. Loin de mes trails habituels.</p>
-            <a href="https://youtu.be/3HFJZWHQEzA" class="btn" target="_blank" rel="noopener">Voir l'essai</a>
+        <div class="other-card" onclick="window.open('https://youtu.be/3HFJZWHQEzA', '_blank')">
+            <div class="other-thumb">
+                <img src="https://img.youtube.com/vi/3HFJZWHQEzA/hqdefault.jpg" alt="Kawasaki ZX-6R">
+            </div>
+            <div class="other-info">
+                <h3>Kawasaki ZX-6R</h3>
+                <div class="badge">Essai sportive</div>
+                <p>Moto sportive, légère, vive. Loin de mes trails habituels.</p>
+            </div>
+        </div>
+
+        <!-- Transalp 750 (NOUVEAU) -->
+        <div class="other-card" onclick="window.open('https://youtu.be/PKkLFi2e2DE', '_blank')">
+            <div class="other-thumb">
+                <img src="https://img.youtube.com/vi/PKkLFi2e2DE/hqdefault.jpg" alt="Transalp 750">
+            </div>
+            <div class="other-info">
+                <h3>Transalp 750</h3>
+                <div class="badge">Test complet</div>
+                <p>Transalp 750 vs TRK 502 : trail mid-size comparé.</p>
+            </div>
         </div>
     </div>
 
@@ -399,13 +441,20 @@
                 <td>5,5 L</td>
                 <td>Trail aventure</td>
             </tr>
+            <tr>
+                <td><strong>Transalp 750</strong></td>
+                <td>750 cm³</td>
+                <td>208 kg</td>
+                <td>4,5 L</td>
+                <td>Trail routier</td>
+            </tr>
         </table>
     </div>
 
     <!-- Note sur les prochains tests -->
     <div style="background: #f8f9fa; border-left: 4px solid #e67e22; padding: 1.5rem; margin: 2rem 0;">
         <p style="color: #666;">
-            🏍️ <strong>À venir :</strong> Triumph Tiger 900, Yamaha Tracer 9 GT+, nouvelle Transalp.
+            🏍️ <strong>À venir :</strong> Triumph Tiger 900, Yamaha Tracer 9 GT+.
         </p>
     </div>
 </div>
