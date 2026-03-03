@@ -90,10 +90,10 @@
         }
         @media (min-width: 901px) { .mobile-only { display: none !important; } }
         
-        /* Hero avec parallaxe - PHOTO MOTARD */
+        /* Hero avec hauteur réduite à 60vh */
         .hero{
             position:relative;
-            min-height:70vh;
+            min-height:60vh;
             display:flex;
             align-items:center;
             justify-content:center;
@@ -139,6 +139,7 @@
         .btn{font-family:'Montserrat',sans-serif;font-size:.88rem;font-weight:700;padding:.8rem 1.9rem;border-radius:8px;border:none;cursor:pointer;transition:all .2s;display:inline-block;letter-spacing:.02em;box-shadow:0 2px 8px rgba(0,0,0,.2)}
         .btn-orange{background:var(--orange);color:#fff}.btn-orange:hover{background:var(--orange-dark)}
         
+        /* Grille des 3 fonctions avec photos */
         .features-grid{
             display:grid;
             grid-template-columns:repeat(3,1fr);
@@ -170,6 +171,34 @@
             color:var(--orange);
         }
         
+        /* Bloc produit avec image */
+        .product-showcase{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:2rem;
+            margin:3rem 0;
+            background:white;
+            border-radius:20px;
+            padding:2rem;
+            border:1px solid var(--border);
+            align-items:center;
+        }
+        .product-showcase img{
+            width:100%;
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,.1);
+        }
+        .product-showcase .rating{
+            color:var(--orange);
+            font-size:1.2rem;
+            margin:1rem 0;
+        }
+        .btn-group{
+            display:flex;
+            gap:1rem;
+            margin-top:1.5rem;
+        }
+        
         .why-grid{
             display:grid;
             grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -187,22 +216,6 @@
             color:var(--orange);
             margin-bottom:1rem;
             font-size:1.3rem;
-        }
-        
-        .product-showcase{
-            display:grid;
-            grid-template-columns:1fr 1fr;
-            gap:2rem;
-            margin:3rem 0;
-            background:white;
-            border-radius:20px;
-            padding:2rem;
-            border:1px solid var(--border);
-        }
-        .product-showcase img{
-            width:100%;
-            border-radius:15px;
-            box-shadow:0 5px 15px rgba(0,0,0,.1);
         }
         
         .pending-box{
@@ -343,7 +356,7 @@
     });
 </script>
 
-<!-- Hero avec parallaxe - PHOTO MOTARD -->
+<!-- Hero avec hauteur réduite -->
 <section class="hero">
     <div class="hero-content">
         <div class="hero-badge">🚨 LE SEUL TRACEUR GPS ANTIVOL AVEC DÉTECTION DE COLLISION</div>
@@ -368,42 +381,46 @@
         </p>
     </div>
 
-    <!-- 3 fonctions clés avec images produits -->
+    <!-- 3 fonctions clés avec PHOTOS -->
     <div class="features-grid">
+        <!-- PROTÈGE - Photo cadenas -->
         <div class="feature-card">
-            <img src="https://www.komobimoto.com/wp-content/uploads/2024/01/komobi-traceur-gps-moto-boitier.png" alt="KOMOBI boîtier" class="feature-img" onerror="this.src='https://via.placeholder.com/600x400/1e1e1e/e67e22?text=KOMOBI+Boitier'">
+            <img src="https://images.unsplash.com/photo-1585598320067-c3b9a0c2acb8?q=80&w=1974" alt="Protection moto cadenas" class="feature-img">
             <div class="feature-content">
-                <h3>PROTÈGE ta moto</h3>
+                <h3>🔒 PROTÈGE ta moto</h3>
                 <p>Localisation GPS en temps réel, alarme anti-vol, géofencing. Votre moto sous surveillance permanente.</p>
             </div>
         </div>
+        <!-- VEILLE - Photo ange gardien -->
         <div class="feature-card">
-            <img src="https://www.komobimoto.com/wp-content/uploads/2024/01/komobi-detecteur-chute-moto-ecall.png" alt="KOMOBI détection chute" class="feature-img" onerror="this.src='https://via.placeholder.com/600x400/1e1e1e/e67e22?text=DETECTION+CHUTE'">
+            <img src="https://images.unsplash.com/photo-1603791445824-0050bd436672?q=80&w=1974" alt="Ange gardien protection" class="feature-img">
             <div class="feature-content">
-                <h3>VEILLE sur toi</h3>
+                <h3>👼 VEILLE sur toi</h3>
                 <p>Détection de chute eCall : en cas d'accident, vos contacts d'urgence sont alertés avec votre position.</p>
             </div>
         </div>
+        <!-- RASSURE - Photo téléphone / famille -->
         <div class="feature-card">
-            <img src="https://www.komobimoto.com/wp-content/uploads/2024/01/application-komobi-traceur-gps.png" alt="Application KOMOBI" class="feature-img" onerror="this.src='https://via.placeholder.com/600x400/1e1e1e/e67e22?text=APPLICATION'">
+            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070" alt="Famille au téléphone" class="feature-img">
             <div class="feature-content">
-                <h3>RASSURE tes proches</h3>
+                <h3>👨‍👩‍👧 RASSURE tes proches</h3>
                 <p>Partagez votre position en direct. En cas de problème, votre famille sait où vous êtes et reçoit les alertes.</p>
             </div>
         </div>
     </div>
 
-    <!-- PHOTO MOTARD 2 - Bloc alterné -->
+    <!-- Bloc PRODUIT avec image -->
     <div class="product-showcase">
-        <img src="https://images.unsplash.com/photo-1635771917243-6f74f5d4f9f6?q=80&w=2070" alt="Motard sur sa moto" onerror="this.src='https://via.placeholder.com/600x400/1e1e1e/e67e22?text=MOTARD'">
+        <img src="https://www.komobimoto.com/wp-content/uploads/2024/01/komobi-traceur-gps-moto-boitier.png" alt="KOMOBI boîtier" onerror="this.src='https://via.placeholder.com/600x400/1e1e1e/e67e22?text=KOMOBI+Boitier'">
         <div>
             <h3 style="font-size: 2rem; color: var(--orange); margin-bottom: 1rem;">Si vous allez en moto, choisissez KOMOBI</h3>
-            <p style="color: #666; font-size: 1.1rem;">Le seul traceur GPS antivol avec détection de collision. Une protection complète pour vous et votre machine.</p>
-            <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-                <a href="https://www.komobimoto.com/fr/" class="btn btn-orange">Acheter</a>
-                <a href="#" class="btn" style="background:#f0f1f5;color:#111;">Lequel choisir ?</a>
+            <p style="color: #666; font-size: 1.1rem; margin-bottom: 1rem;">Le seul traceur GPS antivol avec détection de collision. Une protection complète pour vous et votre machine.</p>
+            <div class="rating">★★★★★ 4,8/5 (350 avis)</div>
+            <div class="btn-group">
+                <a href="https://www.komobimoto.com/fr/" class="btn btn-orange" target="_blank" rel="nofollow">🛒 Acheter</a>
+                <a href="#" class="btn" style="background:#f0f1f5;color:#111;">📊 Standard vs Pro</a>
             </div>
-            <p style="margin-top: 1rem; color: var(--orange);">★★★★★ 4,8/5 (350 avis)</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--muted);">* Version Standard : alarme et localisation. Version Pro : + eCall + télémétrie avancée.</p>
         </div>
     </div>
 
