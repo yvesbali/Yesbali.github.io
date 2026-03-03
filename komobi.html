@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KOMOBI - Traceur GPS Moto : Protection, Sécurité, Tranquillité | LCDMH</title>
-    <meta name="description" content="KOMOBI : le traceur GPS qui protège votre moto contre le vol, veille sur vous avec la détection de chute eCall, et rassure vos proches. Localisation temps réel, alarme, télémetrie. Test à venir.">
+    <title>KOMOBI - Le Traceur GPS qui Protège, Veille et Sauve | LCDMH</title>
+    <meta name="description" content="KOMOBI : le traceur GPS qui PROTÈGE votre moto, VEILLE sur vous (détection chute eCall), et SAUVE en alertant vos proches. Le seul qui ne te lâche pas, même en cas d'accident.">
     <meta name="keywords" content="traceur GPS moto, antivol GPS moto, KOMOBI, détection chute moto, eCall moto, sécurité motard, protection moto">
     <meta name="author" content="Yves – LCDMH">
     <meta property="og:title" content="KOMOBI - Traceur GPS Moto : Protection, Sécurité, Tranquillité">
@@ -16,27 +16,6 @@
     <link rel="canonical" href="https://lcdmh.com/komobi.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Schema.org Product KOMOBI -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "KOMOBI Traceur GPS Moto",
-      "description": "Traceur GPS antivol avec détection de chute eCall, localisation temps réel, alarme et télémetrie.",
-      "brand": {
-        "@type": "Brand",
-        "name": "KOMOBI"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "199.00",
-        "priceCurrency": "EUR",
-        "availability": "https://schema.org/InStock",
-        "url": "https://www.komobimoto.com/fr/"
-      }
-    }
-    </script>
     
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -55,7 +34,6 @@
         h1,h2,h3,h4{font-family:'Montserrat',sans-serif}
         a{color:inherit;text-decoration:none}
         
-        /* Navigation */
         nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.07);padding:0 4%;height:66px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
         .logo{font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800;color:var(--noir)}
         .logo span{color:var(--orange)}
@@ -112,46 +90,36 @@
         }
         @media (min-width: 901px) { .mobile-only { display: none !important; } }
         
-        /* Hero */
-        .hero{position:relative;min-height:50vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
-        .hero-img{position:absolute;inset:0;background:url('images/bandeau-norvege.jpg') center/cover no-repeat fixed;z-index:0}
+        .hero{position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+        .hero-img{position:absolute;inset:0;background:url('images/bandeau-securite.jpg') center/cover no-repeat fixed;z-index:0}
         .hero-content{position:relative;z-index:2;max-width:900px;padding:2rem;text-shadow:0 2px 15px rgba(0,0,0,.7)}
         .hero-badge{display:inline-block;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.45rem 1.4rem;border-radius:50px;margin-bottom:1.4rem;box-shadow:0 2px 8px rgba(0,0,0,.2)}
-        .hero h1{font-size:clamp(2.4rem,7vw,4.8rem);font-weight:800;line-height:1.08;margin-bottom:1.1rem}
-        .hero h1 span{font-style:normal;color:var(--orange)}
-        .hero-slogan{font-size:1.5rem;font-weight:600;margin-bottom:1rem;color:var(--orange)}
-        .hero p{font-size:1.15rem;opacity:.95;max-width:700px;margin:0 auto}
+        .hero h1{font-size:clamp(2.4rem,7vw,4.8rem);font-weight:800;line-height:1.08;margin-bottom:1.1rem;color:white}
         .container{max-width:1200px;margin:0 auto;padding:2rem 5%}
         .section-title{text-align:center;margin-bottom:3rem}
         .section-title h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;margin-bottom:.4rem}
         .section-title h2 em{font-style:normal;color:var(--orange)}
-        .section-title p{color:var(--muted);max-width:700px;margin:.6rem auto 0;font-size:.95rem}
-        .bar{width:52px;height:4px;background:var(--orange);border-radius:2px;margin:.8rem auto 0}
+        .section-title .bar{width:52px;height:4px;background:var(--orange);border-radius:2px;margin:.8rem auto 0}
         .btn{font-family:'Montserrat',sans-serif;font-size:.88rem;font-weight:700;padding:.8rem 1.9rem;border-radius:8px;border:none;cursor:pointer;transition:all .2s;display:inline-block;letter-spacing:.02em;box-shadow:0 2px 8px rgba(0,0,0,.2)}
         .btn-orange{background:var(--orange);color:#fff}.btn-orange:hover{background:var(--orange-dark)}
         
-        /* Grilles */
         .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin:3rem 0}
         .feature-card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,.05);border:1px solid var(--border);transition:transform .2s}
         .feature-card:hover{transform:translateY(-5px)}
         .feature-img{width:100%;height:200px;object-fit:cover;border-bottom:1px solid var(--border)}
         .feature-content{padding:1.5rem;text-align:center}
-        .feature-icon{font-size:2.5rem;margin-bottom:1rem}
-        .feature-content h3{font-size:1.4rem;margin-bottom:.5rem;color:var(--orange)}
-        .feature-content p{color:#666}
+        .feature-content h3{font-size:1.5rem;margin-bottom:.5rem;color:var(--orange)}
         
-        .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin:3rem 0}
-        .why-card{background:white;border-radius:15px;padding:2rem;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,.05);border:1px solid var(--border)}
-        .why-icon{font-size:2rem;margin-bottom:1rem;color:var(--orange)}
-        .why-card h3{margin-bottom:1rem}
-        .why-card p{color:#666}
+        .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin:3rem 0}
+        .why-card{background:white;border-radius:15px;padding:2rem;box-shadow:0 5px 15px rgba(0,0,0,.05);border:1px solid var(--border)}
+        .why-card h3{color:var(--orange);margin-bottom:1rem;font-size:1.3rem}
+        
+        .product-showcase{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:3rem 0;background:white;border-radius:20px;padding:2rem;border:1px solid var(--border)}
+        .product-showcase img{width:100%;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,.1)}
+        .product-showcase p{color:#666;line-height:1.7}
         
         .pending-box{background:#f8f9fa;border:1px solid var(--border);border-radius:15px;padding:2rem;margin:3rem 0;text-align:center}
         .pending-box h3{color:var(--orange);margin-bottom:1rem}
-        .pending-box p{color:#666}
-        
-        .btn{display:inline-block;background:var(--orange);color:white;padding:.8rem 2rem;border-radius:50px;font-weight:600;margin-top:1rem}
-        .btn:hover{background:var(--orange-dark)}
         
         .commission-note{font-size:0.9rem;color:var(--muted);margin:1rem 0;font-style:italic;padding:0.5rem;background:#f9f9f9;border-radius:8px;border-left:3px solid var(--orange)}
         
@@ -165,12 +133,12 @@
         
         @media (max-width: 768px) {
             .features-grid{grid-template-columns:1fr}
+            .product-showcase{grid-template-columns:1fr}
         }
     </style>
 </head>
 <body>
 
-<!-- Navigation -->
 <nav>
     <a href="index.html" class="logo">LC<span>D</span>MH</a>
     <button class="menu-toggle" id="menuToggle">☰</button>
@@ -251,91 +219,96 @@
     <div class="hero-content">
         <div class="hero-badge">🚨 LE TRACEUR QUI TE SAUVE</div>
         <h1>KOMOBI</h1>
-        <div class="hero-slogan" style="font-size: 2.5rem; font-weight: 900; line-height: 1.2; margin-bottom: 1.5rem; text-transform: uppercase;">
+        <div class="hero-slogan" style="font-size: 2.5rem; font-weight: 900; line-height: 1.2; margin-bottom: 1.5rem; text-transform: uppercase; color: white;">
             ILS TE PROTÈGENT.<br>ILS VEILLENT SUR TOI.<br>ILS SAUVENT TA FAMILLE.
         </div>
         <div class="hero-sub-slogan" style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1.5rem; color: #e67e22;">
             Le traceur GPS qui ne te lâche pas.<br>Même en cas d'accident.
         </div>
-        <p style="font-size: 1.3rem; font-weight: 600; opacity:.95;">📍 Localisation temps réel • 🆘 Détection chute eCall • 🔔 Alarme anti-vol • 📊 Télémétrie</p>
+        <p style="font-size: 1.2rem; font-weight: 500; color: white;">📍 Localisation temps réel • 🆘 Détection chute eCall • 🔔 Alarme anti-vol • 📊 Télémétrie</p>
     </div>
 </section>
 
 <!-- Introduction -->
 <div class="container">
     <div class="section-title">
-        <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+        <p style="font-size: 1.2rem; max-width: 900px; margin: 0 auto; line-height: 1.6;">
             <strong>KOMOBI</strong> n'est pas qu'un simple traceur GPS. C'est ton ange gardien sur la route : 
             il <strong>protège</strong> ta moto contre le vol, <strong>veille</strong> sur toi en cas de chute avec le système eCall, 
             et <strong>alerte</strong> automatiquement tes proches pour les rassurer. Parce que ta sécurité et leur tranquillité n'ont pas de prix.
         </p>
     </div>
 
+    <!-- PHOTO 1 : Le boîtier KOMOBI -->
+    <div class="product-showcase">
+        <img src="https://www.komobimoto.com/wp-content/uploads/2024/01/komobi-traceur-gps-moto-boitier.png" alt="Boîtier KOMOBI traceur GPS" onerror="this.src='https://via.placeholder.com/600x400/1e1e1e/e67e22?text=KOMOBI+Boitier'">
+        <div>
+            <h3 style="font-size: 2rem; color: var(--orange); margin-bottom: 1rem;">Le boîtier KOMOBI</h3>
+            <p style="color: #666; font-size: 1.1rem;">Un design compact et discret qui se cache facilement sur votre moto. Installation simple, étanche, conçu pour résister aux pires conditions.</p>
+        </div>
+    </div>
+
     <!-- 3 fonctions clés avec images -->
     <div class="features-grid">
-        <!-- PROTÈGE ta moto -->
         <div class="feature-card">
-            <img src="https://www.komobimoto.com/wp-content/uploads/2024/01/komobi-traceur-gps-moto-antivol.png" alt="KOMOBI traceur GPS antivol moto" class="feature-img" onerror="this.src='https://via.placeholder.com/600x400/1e1e1e/e67e22?text=KOMOBI+ANTIVOL'">
+            <img src="https://www.komobimoto.com/wp-content/uploads/2024/01/komobi-protection-moto.jpg" alt="KOMOBI protection moto" class="feature-img" onerror="this.src='https://via.placeholder.com/600x400/1e1e1e/e67e22?text=PROTECTION'">
             <div class="feature-content">
-                <span class="feature-icon">🔒</span>
                 <h3>PROTÈGE ta moto</h3>
                 <p>Localisation GPS en temps réel, alarme anti-vol, géofencing. Votre moto sous surveillance permanente.</p>
             </div>
         </div>
-        <!-- VEILLE sur toi -->
         <div class="feature-card">
-            <img src="https://www.komobimoto.com/wp-content/uploads/2024/01/komobi-detecteur-chute-moto-ecall.png" alt="KOMOBI détection chute eCall" class="feature-img" onerror="this.src='https://via.placeholder.com/600x400/1e1e1e/e67e22?text=DETECTION+CHUTE+ECALL'">
+            <img src="https://www.komobimoto.com/wp-content/uploads/2024/01/komobi-detecteur-chute.jpg" alt="KOMOBI détection chute" class="feature-img" onerror="this.src='https://via.placeholder.com/600x400/1e1e1e/e67e22?text=DETECTION+CHUTE'">
             <div class="feature-content">
-                <span class="feature-icon">🆘</span>
                 <h3>VEILLE sur toi</h3>
                 <p>Détection de chute eCall : en cas d'accident, vos contacts d'urgence sont alertés avec votre position.</p>
             </div>
         </div>
-        <!-- RASSURE tes proches -->
         <div class="feature-card">
-            <img src="https://www.komobimoto.com/wp-content/uploads/2024/01/application-komobi-traceur-gps.png" alt="Application KOMOBI alerte proches" class="feature-img" onerror="this.src='https://via.placeholder.com/600x400/1e1e1e/e67e22?text=ALERTE+PROCHES'">
+            <img src="https://www.komobimoto.com/wp-content/uploads/2024/01/application-komobi.jpg" alt="Application KOMOBI" class="feature-img" onerror="this.src='https://via.placeholder.com/600x400/1e1e1e/e67e22?text=APPLICATION'">
             <div class="feature-content">
-                <span class="feature-icon">👨‍👩‍👧</span>
                 <h3>RASSURE tes proches</h3>
                 <p>Partagez votre position en direct. En cas de problème, votre famille sait où vous êtes et reçoit les alertes.</p>
             </div>
         </div>
     </div>
 
-    <!-- Pourquoi choisir KOMOBI -->
-    <div class="section-title">
-        <h2>POURQUOI CHOISIR <em>KOMOBI</em> ?</h2>
-        <div class="bar"></div>
+    <!-- PHOTO 2 : Application mobile -->
+    <div class="product-showcase">
+        <div>
+            <h3 style="font-size: 2rem; color: var(--orange); margin-bottom: 1rem;">Application intuitive</h3>
+            <p style="color: #666; font-size: 1.1rem;">Tout se gère depuis votre smartphone : localisation en direct, historique des trajets, alertes personnalisées. Une interface claire et réactive.</p>
+        </div>
+        <img src="https://www.komobimoto.com/wp-content/uploads/2024/01/komobi-application-interface.jpg" alt="Application KOMOBI interface" onerror="this.src='https://via.placeholder.com/600x400/1e1e1e/e67e22?text=APPLICATION+INTERFACE'">
     </div>
+
+    <!-- Pourquoi choisir KOMOBI -->
+    <h2 style="font-size: 2.2rem; text-align: center; margin: 3rem 0 1rem;">POURQUOI CHOISIR KOMOBI ?</h2>
+    <div class="bar" style="margin: 0 auto 2rem;"></div>
+    
     <div class="why-grid">
         <div class="why-card">
-            <div class="why-icon">🔋</div>
-            <h3>Autonomie longue durée</h3>
+            <h3>🔋 Autonomie longue durée</h3>
             <p>Jusqu'à plusieurs semaines en veille. Pas besoin de recharger en plein road trip.</p>
         </div>
         <div class="why-card">
-            <div class="why-icon">📱</div>
-            <h3>Application intuitive</h3>
+            <h3>📱 Application intuitive</h3>
             <p>Interface claire, notifications en temps réel. Tout se gère depuis votre smartphone.</p>
         </div>
         <div class="why-card">
-            <div class="why-icon">🔧</div>
-            <h3>Installation discrète</h3>
+            <h3>🔧 Installation discrète</h3>
             <p>Se cache facilement sur la moto. Indétectable par les voleurs.</p>
         </div>
         <div class="why-card">
-            <div class="why-icon">📊</div>
-            <h3>Télémetrie complète</h3>
+            <h3>📊 Télémétrie complète</h3>
             <p>Analysez vos trajets : vitesse, distance, consommation, angle de courbe.</p>
         </div>
         <div class="why-card">
-            <div class="why-icon">🌍</div>
-            <h3>Pas d'abonnement forcé</h3>
+            <h3>🌍 Pas d'abonnement forcé</h3>
             <p>Choisissez votre forfait selon vos besoins. Pas de surprise.</p>
         </div>
         <div class="why-card">
-            <div class="why-icon">🤝</div>
-            <h3>Communauté active</h3>
+            <h3>🤝 Communauté active</h3>
             <p>Entraide et partage d'astuces entre utilisateurs KOMOBI.</p>
         </div>
     </div>
@@ -348,18 +321,15 @@
     <!-- Section TEST À VENIR -->
     <div class="pending-box">
         <h3>🔜 TEST EN PRÉPARATION</h3>
-        <p>
+        <p style="margin-bottom: 1rem;">
             Je n'ai pas encore testé ce produit en conditions réelles. Le partenariat est en cours de discussion. 
-            Dès que j'aurai parcouru plusieurs milliers de kilomètres avec le KOMOBI, je publierai un test complet 
-            (installation, fiabilité, autonomie, précision).
+            Dès que j'aurai parcouru plusieurs milliers de kilomètres avec le KOMOBI, je publierai un test complet.
         </p>
-        <p style="margin-top: 1rem; font-style: italic; color: #999;">
-            En attendant, vous pouvez consulter le site officiel pour plus d'informations.
-        </p>
-        <a href="https://www.komobimoto.com/fr/" class="btn" target="_blank" rel="nofollow">VOIR LE SITE OFFICIEL KOMOBI</a>
+        <p style="font-style: italic; margin-bottom: 1.5rem;">En attendant, vous pouvez consulter le site officiel.</p>
+        <a href="https://www.komobimoto.com/fr/" class="btn btn-orange" target="_blank" rel="nofollow">VOIR LE SITE OFFICIEL KOMOBI</a>
     </div>
 
-    <!-- Note sur le code promo -->
+    <!-- Note code promo -->
     <div style="background: #f8f9fa; border: 1px solid var(--border); border-radius: 15px; padding: 1.5rem; margin: 2rem 0; text-align: center;">
         <p style="color: #666;">
             💡 Un code promo LCDMH est en négociation. Dès qu'il sera actif, je le publierai sur la page 
@@ -368,7 +338,6 @@
     </div>
 </div>
 
-<!-- Footer -->
 <footer>
     <div class="f-logo">LC<em>D</em>MH</div>
     <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">La Chaîne du Motard Heureux · Annecy, France</p>
@@ -385,4 +354,3 @@
 </footer>
 </body>
 </html>
-<!-- FIN DU FICHIER : komobi.html -->
