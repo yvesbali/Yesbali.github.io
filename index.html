@@ -147,9 +147,106 @@
 <!-- === DÉBUT NAVIGATION =================== -->
 <!-- ======================================== -->
 
-<nav style="background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.07);padding:0 4%;height:66px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100">
+<style>
+    /* Menu responsive */
+    .menu-toggle {
+        display: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--noir);
+        background: none;
+        border: none;
+        padding: 0.5rem;
+        line-height: 1;
+    }
+
+    @media (max-width: 900px) {
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 66px;
+            left: 0;
+            width: 100%;
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            gap: 0;
+        }
+        
+        .nav-links.active {
+            display: flex;
+        }
+        
+        .nav-links li {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .nav-links a {
+            display: block;
+            padding: 1rem !important;
+            width: 100%;
+            white-space: normal !important;
+        }
+        
+        .has-drop {
+            position: static;
+        }
+        
+        .dropdown {
+            position: static;
+            width: 100%;
+            box-shadow: none;
+            border: none;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            margin: 0.5rem 0;
+            display: none;
+        }
+        
+        .has-drop:hover .dropdown {
+            display: block;
+        }
+        
+        .dropdown a {
+            padding: 0.8rem 2rem !important;
+        }
+        
+        .menu-toggle {
+            display: block;
+        }
+        
+        nav {
+            flex-wrap: wrap;
+            height: auto;
+            min-height: 66px;
+            padding: 0.5rem 4%;
+        }
+        
+        .logo {
+            font-size: 1.3rem;
+        }
+        
+        .desktop-only {
+            display: none;
+        }
+    }
+    
+    @media (min-width: 901px) {
+        .mobile-only {
+            display: none !important;
+        }
+    }
+</style>
+
+<nav style="background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.07);padding:0 4%;min-height:66px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100">
     <a href="index.html" class="logo" style="font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800;color:var(--noir)">LC<span style="color:var(--orange)">D</span>MH</a>
-    <ul style="display:flex;gap:1rem;list-style:none;align-items:center">
+    
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+    
+    <ul class="nav-links" id="navLinks" style="display:flex;gap:1rem;list-style:none;align-items:center;margin:0;padding:0;">
         <li><a href="index.html" style="font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0">Accueil</a></li>
 
         <li class="has-drop">
@@ -198,10 +295,48 @@
         <li><a href="a-propos.html" style="font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0">À propos</a></li>
         <li><a href="contact.html" style="font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0">Contact</a></li>
 
-        <li><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt" target="_blank" rel="noopener">▶ S'abonner</a></li>
-        <li><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon" target="_blank" rel="noopener">📺 YouTube</a></li>
+        <li class="desktop-only"><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt" target="_blank" rel="noopener" style="background:var(--orange);color:#fff!important;padding:.42rem 1rem;border-radius:6px;font-weight:700!important;">▶ S'abonner</a></li>
+        <li class="desktop-only"><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon" target="_blank" rel="noopener" style="background:#ff0000;color:#fff!important;padding:.42rem 1rem;border-radius:6px;font-weight:700!important;">📺 YouTube</a></li>
+        
+        <!-- Version mobile des boutons YouTube -->
+        <li class="mobile-only" style="display:none;"><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt" target="_blank" rel="noopener" style="background:var(--orange);color:#fff!important;padding:.42rem 1rem;border-radius:6px;font-weight:700!important;display:inline-block;margin:0.5rem auto;">▶ S'abonner</a></li>
+        <li class="mobile-only" style="display:none;"><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon" target="_blank" rel="noopener" style="background:#ff0000;color:#fff!important;padding:.42rem 1rem;border-radius:6px;font-weight:700!important;display:inline-block;margin:0.5rem auto;">📺 YouTube</a></li>
     </ul>
 </nav>
+
+<script>
+    // Menu hamburger
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                
+                // Afficher/masquer les boutons YouTube en mobile
+                const mobileButtons = document.querySelectorAll('.mobile-only');
+                mobileButtons.forEach(btn => {
+                    if (navLinks.classList.contains('active')) {
+                        btn.style.display = 'block';
+                    } else {
+                        btn.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Fermer le menu quand on clique sur un lien
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    document.querySelectorAll('.mobile-only').forEach(btn => {
+                        btn.style.display = 'none';
+                    });
+                });
+            });
+        }
+    });
+</script>
 
 <!-- ======================================== -->
 <!-- === FIN NAVIGATION ===================== -->
