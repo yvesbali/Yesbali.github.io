@@ -1,603 +1,446 @@
 <!DOCTYPE html>
 <html lang="fr">
+<!-- ======================================== -->
+<!-- === DÉBUT HEAD ========================= -->
+<!-- ======================================== -->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tous les Codes Promo Moto – LCDMH | Aoocci, Carpuride, Aferiy</title>
-  <meta name="description" content="Tous les codes promo exclusifs LCDMH : Aoocci (-28%), Carpuride (-30%), Aferiy (-47%) et plus. Codes testés et vérifiés pour la communauté motarde.">
-  <meta name="keywords" content="codes promo moto, code promo Aoocci, code promo Carpuride, code promo Aferiy, réduction GPS moto, LCDMH codes">
-  <meta property="og:title" content="Tous les Codes Promo Moto – LCDMH">
-  <meta property="og:description" content="Centralisation de tous les codes promo exclusifs négociés pour la communauté LCDMH.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://lcdmh.netlify.app/codes-promo">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5DP7XR1C7W"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-5DP7XR1C7W');
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{
-      background:#080809;
-      font-family:'Crimson Pro',serif;
-      color:#e6e2d8;
-      font-size:18px;
-      line-height:1.6;
-    }
-    nav{
-      position:fixed;
-      top:0;left:0;right:0;
-      background:rgba(8,8,9,0.92);
-      backdrop-filter:blur(14px);
-      padding:0 6vw;
-      height:70px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      border-bottom:1px solid #242430;
-      z-index:100;
-    }
-    .nav-logo{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:22px;
-      color:#f2ede4;
-      text-decoration:none;
-    }
-    .nav-logo span{
-      color:#d4890a;
-    }
-    .nav-links{
-      display:flex;
-      gap:24px;
-      list-style:none;
-    }
-    .nav-links a{
-      font-family:'JetBrains Mono',monospace;
-      font-size:11px;
-      letter-spacing:0.1em;
-      text-transform:uppercase;
-      color:#6e6a62;
-      text-decoration:none;
-      transition:color 0.2s;
-    }
-    .nav-links a:hover,
-    .nav-links a.active{
-      color:#d4890a;
-    }
-    .nav-yt{
-      background:#d4890a;
-      color:#080809 !important;
-      padding:8px 16px;
-    }
-    .hero{
-      padding:120px 8vw 60px;
-      border-bottom:1px solid #242430;
-    }
-    .breadcrumb{
-      font-family:'JetBrains Mono',monospace;
-      font-size:10px;
-      letter-spacing:0.3em;
-      text-transform:uppercase;
-      color:#6e6a62;
-      margin-bottom:20px;
-    }
-    .breadcrumb a{
-      color:#d4890a;
-      text-decoration:none;
-    }
-    h1{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:clamp(48px, 8vw, 90px);
-      line-height:0.92;
-      color:#f2ede4;
-      margin-bottom:24px;
-    }
-    h1 span{
-      color:#d4890a;
-    }
-    .hero-sub{
-      font-size:18px;
-      font-style:italic;
-      color:#6e6a62;
-      max-width:600px;
-      margin-bottom:40px;
-    }
-    .section{
-      padding:64px 8vw;
-    }
-    .divider{
-      height:1px;
-      margin:0 8vw;
-      background:linear-gradient(90deg, #d4890a 0%, transparent 50%);
-      opacity:0.25;
-    }
-    .sec-label{
-      font-family:'JetBrains Mono',monospace;
-      font-size:10px;
-      letter-spacing:0.4em;
-      text-transform:uppercase;
-      color:#d4890a;
-      margin-bottom:10px;
-    }
-    h2{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:clamp(32px, 5vw, 60px);
-      color:#f2ede4;
-      line-height:1;
-      margin-bottom:36px;
-    }
-    .promo-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fill, minmax(350px, 1fr));
-      gap:24px;
-    }
-    .promo-card{
-      background:#131317;
-      border:1px solid #242430;
-      overflow:hidden;
-      transition:transform 0.2s;
-    }
-    .promo-card:hover{
-      transform:translateY(-4px);
-    }
-    .promo-header{
-      height:100px;
-      background:linear-gradient(135deg, #1a1a22 0%, #131317 100%);
-      border-bottom:1px solid #242430;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:0 24px;
-    }
-    .promo-brand{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:36px;
-      color:#f2ede4;
-    }
-    .promo-discount{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:42px;
-      color:#d4890a;
-    }
-    .promo-content{
-      padding:24px;
-    }
-    .promo-cat{
-      font-family:'JetBrains Mono',monospace;
-      font-size:10px;
-      letter-spacing:0.2em;
-      color:#d4890a;
-      text-transform:uppercase;
-      margin-bottom:8px;
-    }
-    .promo-desc{
-      font-size:15px;
-      color:#6e6a62;
-      font-style:italic;
-      margin-bottom:20px;
-      line-height:1.5;
-    }
-    .codes-list{
-      background:#080809;
-      border:1px solid #242430;
-      margin-bottom:16px;
-    }
-    .code-item{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:12px 16px;
-      border-bottom:1px solid #242430;
-    }
-    .code-item:last-child{
-      border-bottom:none;
-    }
-    .code-info{
-      flex:1;
-    }
-    .code-val{
-      font-family:'JetBrains Mono',monospace;
-      font-size:18px;
-      font-weight:500;
-      color:#d4890a;
-      letter-spacing:0.1em;
-      display:block;
-    }
-    .code-pct{
-      font-family:'JetBrains Mono',monospace;
-      font-size:11px;
-      color:#6e6a62;
-    }
-    .copy-btn{
-      font-family:'JetBrains Mono',monospace;
-      font-size:10px;
-      letter-spacing:0.2em;
-      text-transform:uppercase;
-      background:none;
-      border:1px solid #242430;
-      color:#6e6a62;
-      cursor:pointer;
-      padding:8px 14px;
-      transition:all 0.2s;
-      white-space:nowrap;
-    }
-    .copy-btn:hover{
-      border-color:#d4890a;
-      color:#d4890a;
-    }
-    .copy-btn.copied{
-      border-color:#5cb85c;
-      color:#5cb85c;
-    }
-    .promo-footer{
-      margin-top:16px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-    .promo-link{
-      font-family:'JetBrains Mono',monospace;
-      font-size:11px;
-      letter-spacing:0.15em;
-      color:#d4890a;
-      text-decoration:none;
-      border-bottom:1px solid transparent;
-    }
-    .promo-link:hover{
-      border-bottom-color:#d4890a;
-    }
-    .promo-note{
-      font-size:12px;
-      color:#6e6a62;
-      font-style:italic;
-    }
-    .info-box{
-      background:#131317;
-      border:1px solid #242430;
-      padding:24px;
-      margin:40px 0;
-      display:flex;
-      align-items:center;
-      gap:20px;
-    }
-    .info-icon{
-      font-size:32px;
-    }
-    .info-text{
-      color:#6e6a62;
-      font-style:italic;
-    }
-    .info-text strong{
-      color:#d4890a;
-      font-style:normal;
-    }
-    footer{
-      border-top:1px solid #242430;
-      padding:32px 8vw;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      flex-wrap:wrap;
-      gap:16px;
-    }
-    .footer-logo{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:24px;
-      color:#f2ede4;
-      text-decoration:none;
-    }
-    .footer-logo span{
-      color:#d4890a;
-    }
-    .footer-nav{
-      display:flex;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-    .footer-nav a{
-      font-family:'JetBrains Mono',monospace;
-      font-size:10px;
-      letter-spacing:0.2em;
-      text-transform:uppercase;
-      color:#6e6a62;
-      text-decoration:none;
-      transition:color 0.2s;
-    }
-    .footer-nav a:hover{
-      color:#d4890a;
-    }
-    @media(max-width:700px){
-      .hero{padding:100px 6vw 40px;}
-      .section{padding:48px 6vw;}
-      .divider{margin:0 6vw;}
-      .promo-grid{grid-template-columns:1fr;}
-      .info-box{flex-direction:column; text-align:center;}
-      .nav-links{display:none;}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes Promo Moto Exclusifs - LCDMH</title>
+    <meta name="description" content="Tous les codes promo exclusifs LCDMH : Aoocci (-28%), Carpuride (-30%), Aferiy (-47%), Quad Lock (-10%), Sena (-15%), Cardo (-10%). Codes testés terrain.">
+    <meta name="keywords" content="codes promo moto, code promo Aoocci, code promo Carpuride, code promo Aferiy, réduction GPS moto, LCDMH codes">
+    <meta property="og:title" content="Codes Promo Moto Exclusifs - LCDMH">
+    <meta property="og:description" content="Centralisation de tous les codes promo exclusifs négociés pour la communauté LCDMH.">
+    <link rel="canonical" href="https://lcdmh.com/codes-promo.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root{
+            --orange:#e67e22;
+            --orange-dark:#d35400;
+            --noir:#1a1a1a;
+            --bg:#f7f7f5;
+            --card:#fff;
+            --border:#e5e5e5;
+            --muted:#777;
+            --alt:#f0ede8;
+        }
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--noir);line-height:1.65;font-size:16px}
+        h1,h2,h3,h4{font-family:'Montserrat',sans-serif}
+        a{color:inherit;text-decoration:none}
+        nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.07);padding:0 4%;height:66px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+        .logo{font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800;color:var(--noir)}
+        .logo span{color:var(--orange)}
+        .nav-links{display:flex;gap:1rem;list-style:none;align-items:center}
+        .nav-links>li>a{font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0}
+        .nav-links>li>a:hover{color:var(--orange)}
+        .has-drop{position:relative}
+        .has-drop>a::after{content:'▾';font-size:.6rem;opacity:.7;margin-left:.2rem}
+        .dropdown{display:none;position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.12);min-width:175px;padding:.5rem 0;z-index:999}
+        .has-drop:hover .dropdown{display:block}
+        .dropdown a{display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s}
+        .dropdown a:hover{background:#fff8f2;color:var(--orange)}
+        .nav-yt{background:var(--orange)!important;color:#fff!important;padding:.42rem 1rem;border-radius:6px;font-weight:700!important}
+        .nav-yt:hover{background:var(--orange-dark)!important}
+        .nav-yt-icon{background:#ff0000!important;color:#fff!important;padding:.42rem 1rem;border-radius:6px;font-weight:700!important}
+        .nav-yt-icon:hover{background:#cc0000!important}
+        @media(max-width:900px){.nav-links{display:none}}
+        .hero{position:relative;min-height:40vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+        .hero-img{position:absolute;inset:0;background:url('images/bandeau-norvege.jpg') center/cover no-repeat fixed;filter:brightness(.6);z-index:0}
+        .hero-content{position:relative;z-index:2;max-width:820px;padding:2rem;text-shadow:0 2px 15px rgba(0,0,0,.7)}
+        .hero-badge{display:inline-block;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.45rem 1.4rem;border-radius:50px;margin-bottom:1.4rem;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+        .hero h1{font-size:clamp(2.4rem,7vw,4.8rem);font-weight:800;line-height:1.08;margin-bottom:1.1rem}
+        .hero h1 span{font-style:normal;color:var(--orange)}
+        .hero p{font-size:1.15rem;opacity:.95;max-width:580px;margin:0 auto 2rem}
+        .container{max-width:1200px;margin:0 auto;padding:2rem 5%}
+        .section-title{text-align:center;margin-bottom:3rem}
+        .section-title h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;margin-bottom:.4rem}
+        .section-title h2 em{font-style:normal;color:var(--orange)}
+        .section-title p{color:var(--muted);max-width:700px;margin:.6rem auto 0;font-size:.95rem}
+        .bar{width:52px;height:4px;background:var(--orange);border-radius:2px;margin:.8rem auto 0}
+        .btn{font-family:'Montserrat',sans-serif;font-size:.88rem;font-weight:700;padding:.8rem 1.9rem;border-radius:8px;border:none;cursor:pointer;transition:all .2s;display:inline-block;letter-spacing:.02em;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+        .btn-orange{background:var(--orange);color:#fff}.btn-orange:hover{background:var(--orange-dark)}
+        .btn-white{background:transparent;color:#fff;border:2px solid #fff}.btn-white:hover{background:rgba(255,255,255,.15)}
+        .promo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:2rem;margin:3rem 0}
+        .promo-card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.05);border:1px solid var(--border);transition:transform .2s}
+        .promo-card:hover{transform:translateY(-5px)}
+        .promo-header{background:linear-gradient(135deg, #1a1a1a 0%, #333 100%);padding:2rem;color:white}
+        .promo-brand{font-size:2.2rem;font-weight:800;margin-bottom:.2rem}
+        .promo-discount{font-size:1.2rem;color:var(--orange);font-weight:600}
+        .promo-content{padding:2rem}
+        .promo-cat{font-size:.8rem;font-weight:600;color:var(--orange);text-transform:uppercase;margin-bottom:.5rem}
+        .promo-desc{color:var(--muted);margin-bottom:1.5rem;line-height:1.6}
+        .code-row{display:flex;align-items:center;justify-content:space-between;background:#f8f9fa;border:1px dashed var(--border);border-radius:8px;padding:.8rem 1rem;margin-bottom:.8rem}
+        .code-val{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:700;color:var(--orange)}
+        .code-sub{font-size:.8rem;color:var(--muted);margin-top:.2rem}
+        .copy-btn{background:var(--noir);color:white;border:none;padding:.5rem 1rem;border-radius:6px;font-weight:600;font-size:.8rem;cursor:pointer;transition:background .2s}
+        .copy-btn:hover{background:var(--orange)}
+        .copy-btn.copied{background:#27ae60}
+        .promo-footer{display:flex;justify-content:space-between;align-items:center;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border)}
+        .promo-link{color:var(--orange);font-weight:600;font-size:.9rem}
+        .promo-note{color:var(--muted);font-size:.8rem;font-style:italic}
+        .info-box{background:white;border:1px solid var(--border);border-radius:15px;padding:2rem;margin:2rem 0;display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+        .info-icon{font-size:3rem}
+        .info-text{color:var(--muted);font-style:italic;line-height:1.6}
+        .info-text strong{color:var(--orange);font-style:normal}
+        .partenaires-grid{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;margin:3rem 0;background:white;border:1px solid var(--border);border-radius:15px;padding:2rem}
+        .partenaire-item{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:600;color:var(--muted);padding:.5rem 1rem}
+        footer{background:var(--noir);color:rgba(255,255,255,.65);padding:2.8rem 6%;margin-top:4rem;text-align:center}
+        .f-logo{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:#fff}
+        .f-logo em{font-style:normal;color:var(--orange)}
+        .f-nav{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin:1.2rem 0;list-style:none}
+        .f-nav a{font-size:.8rem;color:rgba(255,255,255,.55);transition:color .2s}
+        .f-nav a:hover{color:var(--orange)}
+        .f-legal{font-size:.76rem;color:rgba(255,255,255,.3);margin-top:1.1rem;line-height:1.7}
+        @media(max-width:768px){nav{flex-direction:column;gap:1rem}.nav-links{justify-content:center}}
+    </style>
 </head>
+<!-- ======================================== -->
+<!-- === FIN HEAD =========================== -->
+<!-- ======================================== -->
+
 <body>
-
+<!-- ======================================== -->
+<!-- === DÉBUT NAVIGATION =================== -->
+<!-- ======================================== -->
 <nav>
-  <a href="index.html" class="nav-logo">LC<span>D</span>MH</a>
-  <ul class="nav-links">
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="roadtrips.html">Road Trips</a></li>
-    <li><a href="tests.html">Tests</a></li>
-    <li><a href="equipement.html">Équipement</a></li>
-    <li><a href="codes-promo.html" class="active">Codes Promo</a></li>
-    <li><a href="a-propos.html">À propos</a></li>
-    <li><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt" target="_blank">YouTube</a></li>
-  </ul>
+    <a href="index.html" class="logo">LC<span>D</span>MH</a>
+    <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="has-drop">
+            <a href="#">Road Trips</a>
+            <div class="dropdown">
+                <a href="roadtrips.html">Tous les road trips</a>
+                <a href="roadtrips.html">Cap Nord 2025</a>
+                <a href="roadtrips.html">Europe–Asie 2024</a>
+                <a href="roadtrips.html">Espagne 2023</a>
+                <a href="roadtrips.html">Les Alpes</a>
+            </div>
+        </li>
+        <li class="has-drop">
+            <a href="#">Tests</a>
+            <div class="dropdown">
+                <a href="tests-motos.html">Tests motos</a>
+                <a href="equipement.html">Équipement</a>
+                <a href="intercoms.html">Intercoms</a>
+                <a href="pneus.html">Pneus</a>
+                <a href="photo-video.html">Photo / Vidéo</a>
+                <a href="securite.html">Sécurité</a>
+            </div>
+        </li>
+        <li class="has-drop">
+            <a href="#">GPS</a>
+            <div class="dropdown">
+                <a href="gps.html">Tous les GPS</a>
+                <a href="aoocci.html">Aoocci</a>
+                <a href="carpuride.html">Carpuride</a>
+            </div>
+        </li>
+        <li class="has-drop">
+            <a href="#">Partenaires</a>
+            <div class="dropdown">
+                <a href="codes-promo.html">Codes promo</a>
+                <a href="blackview.html">Blackview</a>
+                <a href="olight.html">Olight</a>
+                <a href="komobi.html">Komobi</a>
+            </div>
+        </li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt" target="_blank" rel="noopener">▶ S'abonner</a></li>
+        <li><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon" target="_blank" rel="noopener">📺 YouTube</a></li>
+    </ul>
 </nav>
+<!-- ======================================== -->
+<!-- === FIN NAVIGATION ===================== -->
+<!-- ======================================== -->
 
-<div class="hero">
-  <div class="breadcrumb"><a href="index.html">LCDMH</a> › Codes Promo</div>
-  <h1>CODES <span>PROMO</span></h1>
-  <p class="hero-sub">Tous les codes exclusifs négociés pour la communauté. Testés terrain, vérifiés, et mis à jour régulièrement. Économisez sur votre équipement moto.</p>
+<!-- ======================================== -->
+<!-- === DÉBUT HERO ========================= -->
+<!-- ======================================== -->
+<section class="hero">
+    <div class="hero-img"></div>
+    <div class="hero-content">
+        <div class="hero-badge">ÉCONOMISEZ SUR VOTRE ÉQUIPEMENT</div>
+        <h1>CODES <span>PROMO</span></h1>
+        <p>Tous les codes exclusifs négociés pour la communauté. Testés terrain, vérifiés, et mis à jour régulièrement.</p>
+    </div>
+</section>
+<!-- ======================================== -->
+<!-- === FIN HERO =========================== -->
+<!-- ======================================== -->
+
+<!-- ======================================== -->
+<!-- === DÉBUT SECTION INFO ================= -->
+<!-- ======================================== -->
+<div class="container">
+    <div class="info-box">
+        <div class="info-icon">🏍️</div>
+        <div class="info-text">
+            <strong>Comment ça marche ?</strong> Cliquez sur "Copier" pour le code, puis cliquez sur le lien pour acheter. Collez le code dans le panier. Les codes sont vérifiés chaque mois.
+        </div>
+    </div>
+<!-- ======================================== -->
+<!-- === FIN SECTION INFO =================== -->
+<!-- ======================================== -->
+
+<!-- ======================================== -->
+<!-- === DÉBUT SECTION CODES PROMO ========== -->
+<!-- ======================================== -->
+    <div class="promo-grid">
+        
+        <!-- AOOCCI -->
+        <div class="promo-card">
+            <div class="promo-header">
+                <div class="promo-brand">AOOCCI</div>
+                <div class="promo-discount">Jusqu'à -28%</div>
+            </div>
+            <div class="promo-content">
+                <div class="promo-cat">GPS MOTO · Navigation Offline</div>
+                <div class="promo-desc">
+                    GPS moto avec navigation 100% offline, CarPlay, Android Auto, dashcam intégrée. Testé 10 000 km jusqu'au Cap Nord.
+                </div>
+                <div class="code-row">
+                    <div>
+                        <div class="code-val">LCDMH28</div>
+                        <div class="code-sub">-28% sur toute la boutique</div>
+                    </div>
+                    <button class="copy-btn" onclick="copyText('LCDMH28', this)">Copier</button>
+                </div>
+                <div class="code-row">
+                    <div>
+                        <div class="code-val">LCDMH25</div>
+                        <div class="code-sub">-25% sur toute la boutique</div>
+                    </div>
+                    <button class="copy-btn" onclick="copyText('LCDMH25', this)">Copier</button>
+                </div>
+                <div class="code-row">
+                    <div>
+                        <div class="code-val">LCDMH</div>
+                        <div class="code-sub">-22% sur toute la boutique</div>
+                    </div>
+                    <button class="copy-btn" onclick="copyText('LCDMH', this)">Copier</button>
+                </div>
+                <div class="promo-footer">
+                    <a href="aoocci.html" class="promo-link">→ Voir le test complet</a>
+                    <span class="promo-note">Testé Cap Nord 2025</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARPURIDE -->
+        <div class="promo-card">
+            <div class="promo-header">
+                <div class="promo-brand">CARPURIDE</div>
+                <div class="promo-discount">-30%</div>
+            </div>
+            <div class="promo-content">
+                <div class="promo-cat">ÉCRAN GPS · CarPlay/Android Auto</div>
+                <div class="promo-desc">
+                    Écran GPS moto avec CarPlay et Android Auto. Lisibilité parfaite en plein soleil. Idéal pour Waze et Google Maps.
+                </div>
+                <div class="code-row">
+                    <div>
+                        <div class="code-val">LCDMH</div>
+                        <div class="code-sub">-30% sur toute la gamme</div>
+                    </div>
+                    <button class="copy-btn" onclick="copyText('LCDMH', this)">Copier</button>
+                </div>
+                <div class="promo-footer">
+                    <a href="carpuride.html" class="promo-link">→ Voir le test complet</a>
+                    <span class="promo-note">Testé 5 000 km</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- AFERIY -->
+        <div class="promo-card">
+            <div class="promo-header">
+                <div class="promo-brand">AFERIY</div>
+                <div class="promo-discount">-47%</div>
+            </div>
+            <div class="promo-content">
+                <div class="promo-cat">ÉNERGIE · BIVOUAC</div>
+                <div class="promo-desc">
+                    Stations électriques, jump starters, panneaux solaires. Testés en camping sauvage en Norvège et Albanie.
+                </div>
+                <div class="code-row">
+                    <div>
+                        <div class="code-val">8JGATT8K</div>
+                        <div class="code-sub">-47% sur sélection</div>
+                    </div>
+                    <button class="copy-btn" onclick="copyText('8JGATT8K', this)">Copier</button>
+                </div>
+                <div class="promo-footer">
+                    <span class="promo-note">Valable sur Nano 100 et Jump Starter</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUAD LOCK -->
+        <div class="promo-card">
+            <div class="promo-header">
+                <div class="promo-brand">QUAD LOCK</div>
+                <div class="promo-discount">-10%</div>
+            </div>
+            <div class="promo-content">
+                <div class="promo-cat">SUPPORTS TÉLÉPHONE</div>
+                <div class="promo-desc">
+                    Supports téléphone anti-vibration pour moto. Le système de fixation le plus sûr du marché.
+                </div>
+                <div class="code-row">
+                    <div>
+                        <div class="code-val">LCDMH10</div>
+                        <div class="code-sub">-10% sur tout le site</div>
+                    </div>
+                    <button class="copy-btn" onclick="copyText('LCDMH10', this)">Copier</button>
+                </div>
+                <div class="promo-footer">
+                    <span class="promo-note">Valable sur accessoires aussi</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SENA -->
+        <div class="promo-card">
+            <div class="promo-header">
+                <div class="promo-brand">SENA</div>
+                <div class="promo-discount">-15%</div>
+            </div>
+            <div class="promo-content">
+                <div class="promo-cat">INTERCOMS · CASQUES</div>
+                <div class="promo-desc">
+                    Intercoms Sena 60S, 50S, accessoires. Testés sur 20 000 km.
+                </div>
+                <div class="code-row">
+                    <div>
+                        <div class="code-val">LCDMH15</div>
+                        <div class="code-sub">-15% sur sélection</div>
+                    </div>
+                    <button class="copy-btn" onclick="copyText('LCDMH15', this)">Copier</button>
+                </div>
+                <div class="promo-footer">
+                    <span class="promo-note">Valable sur Motoblouz</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARDO -->
+        <div class="promo-card">
+            <div class="promo-header">
+                <div class="promo-brand">CARDO</div>
+                <div class="promo-discount">-10%</div>
+            </div>
+            <div class="promo-content">
+                <div class="promo-cat">INTERCOMS · MESH</div>
+                <div class="promo-desc">
+                    Cardo Packtalk Edge, Packtalk Bold, Spirit. La référence en communication Mesh.
+                </div>
+                <div class="code-row">
+                    <div>
+                        <div class="code-val">LCDMH10</div>
+                        <div class="code-sub">-10% sur tout</div>
+                    </div>
+                    <button class="copy-btn" onclick="copyText('LCDMH10', this)">Copier</button>
+                </div>
+                <div class="promo-footer">
+                    <span class="promo-note">Valable sur Louis Moto</span>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ======================================== -->
+<!-- === FIN SECTION CODES PROMO ============ -->
+<!-- ======================================== -->
+
+<!-- ======================================== -->
+<!-- === DÉBUT SECTION MODE D'EMPLOI ======== -->
+<!-- ======================================== -->
+    <div class="section-title">
+        <h2>MODE <em>D'EMPLOI</em></h2>
+        <div class="bar"></div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin:3rem 0;">
+        <div style="background:white; border:1px solid var(--border); border-radius:15px; padding:2rem; text-align:center;">
+            <div style="font-size:2rem; margin-bottom:1rem;">📋</div>
+            <h3 style="margin-bottom:1rem;">1. Copiez le code</h3>
+            <p style="color:var(--muted);">Cliquez sur "Copier" à côté du code promo que vous voulez utiliser.</p>
+        </div>
+        <div style="background:white; border:1px solid var(--border); border-radius:15px; padding:2rem; text-align:center;">
+            <div style="font-size:2rem; margin-bottom:1rem;">🔗</div>
+            <h3 style="margin-bottom:1rem;">2. Cliquez sur le lien</h3>
+            <p style="color:var(--muted);">Utilisez les liens vers les sites partenaires (liens affiliés qui soutiennent la chaîne).</p>
+        </div>
+        <div style="background:white; border:1px solid var(--border); border-radius:15px; padding:2rem; text-align:center;">
+            <div style="font-size:2rem; margin-bottom:1rem;">🛒</div>
+            <h3 style="margin-bottom:1rem;">3. Collez dans le panier</h3>
+            <p style="color:var(--muted);">Au moment du paiement, collez le code dans la zone "Code promo".</p>
+        </div>
+    </div>
+<!-- ======================================== -->
+<!-- === FIN SECTION MODE D'EMPLOI ========== -->
+<!-- ======================================== -->
+
+<!-- ======================================== -->
+<!-- === DÉBUT SECTION PARTENAIRES ========== -->
+<!-- ======================================== -->
+    <div class="section-title">
+        <h2>ILS ME <em>FONT CONFIANCE</em></h2>
+        <div class="bar"></div>
+    </div>
+
+    <div class="partenaires-grid">
+        <span class="partenaire-item">AOOCCI</span>
+        <span class="partenaire-item">CARPURIDE</span>
+        <span class="partenaire-item">AFERIY</span>
+        <span class="partenaire-item">QUAD LOCK</span>
+        <span class="partenaire-item">SENA</span>
+        <span class="partenaire-item">CARDO</span>
+    </div>
+    
+    <p style="text-align:center; color:var(--muted); font-style:italic; margin-bottom:3rem;">
+        Partenariats officiels et codes exclusifs négociés pour la communauté LCDMH.
+    </p>
 </div>
+<!-- ======================================== -->
+<!-- === FIN SECTION PARTENAIRES ============ -->
+<!-- ======================================== -->
 
-<div class="divider"></div>
-
-<section class="section">
-  <div class="info-box">
-    <div class="info-icon">🏍️</div>
-    <div class="info-text">
-      <strong>Comment ça marche ?</strong> Cliquez sur "Copier" pour le code, puis cliquez sur le lien pour acheter. Collez le code dans le panier. Les codes sont vérifiés chaque mois.
-    </div>
-  </div>
-
-  <div class="promo-grid">
-    <!-- AOOCCI -->
-    <div class="promo-card">
-      <div class="promo-header">
-        <span class="promo-brand">AOOCCI</span>
-        <span class="promo-discount">-28%</span>
-      </div>
-      <div class="promo-content">
-        <div class="promo-cat">GPS MOTO · Navigation Offline</div>
-        <div class="promo-desc">
-          GPS moto avec navigation 100% offline, CarPlay, Android Auto, dashcam intégrée. Testé 10 000 km jusqu'au Cap Nord.
-        </div>
-        <div class="codes-list">
-          <div class="code-item">
-            <div class="code-info">
-              <span class="code-val">LCDMH28</span>
-              <span class="code-pct">-28% sur toute la boutique</span>
-            </div>
-            <button class="copy-btn" onclick="copyText('LCDMH28', this)">Copier</button>
-          </div>
-          <div class="code-item">
-            <div class="code-info">
-              <span class="code-val">LCDMH25</span>
-              <span class="code-pct">-25% sur toute la boutique</span>
-            </div>
-            <button class="copy-btn" onclick="copyText('LCDMH25', this)">Copier</button>
-          </div>
-          <div class="code-item">
-            <div class="code-info">
-              <span class="code-val">LCDMH</span>
-              <span class="code-pct">-22% sur toute la boutique</span>
-            </div>
-            <button class="copy-btn" onclick="copyText('LCDMH', this)">Copier</button>
-          </div>
-        </div>
-        <div class="promo-footer">
-          <a href="aoocci.html" class="promo-link">→ Test complet</a>
-          <span class="promo-note">Testé Cap Nord 2025</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- CARPURIDE -->
-    <div class="promo-card">
-      <div class="promo-header">
-        <span class="promo-brand">CARPURIDE</span>
-        <span class="promo-discount">-30%</span>
-      </div>
-      <div class="promo-content">
-        <div class="promo-cat">ÉCRAN GPS · CarPlay/Android Auto</div>
-        <div class="promo-desc">
-          Écran GPS moto avec CarPlay et Android Auto. Lisibilité parfaite en plein soleil. Idéal pour Waze et Google Maps.
-        </div>
-        <div class="codes-list">
-          <div class="code-item">
-            <div class="code-info">
-              <span class="code-val">LCDMH</span>
-              <span class="code-pct">-30% sur toute la gamme</span>
-            </div>
-            <button class="copy-btn" onclick="copyText('LCDMH', this)">Copier</button>
-          </div>
-        </div>
-        <div class="promo-footer">
-          <a href="carpuride.html" class="promo-link">→ Test complet</a>
-          <span class="promo-note">Testé 5 000 km</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- AFERIY -->
-    <div class="promo-card">
-      <div class="promo-header">
-        <span class="promo-brand">AFERIY</span>
-        <span class="promo-discount">-47%</span>
-      </div>
-      <div class="promo-content">
-        <div class="promo-cat">ÉNERGIE · BIVOUAC</div>
-        <div class="promo-desc">
-          Stations électriques, jump starters, panneaux solaires. Testés en camping sauvage en Norvège et Albanie.
-        </div>
-        <div class="codes-list">
-          <div class="code-item">
-            <div class="code-info">
-              <span class="code-val">8JGATT8K</span>
-              <span class="code-pct">-47% sur sélection</span>
-            </div>
-            <button class="copy-btn" onclick="copyText('8JGATT8K', this)">Copier</button>
-          </div>
-        </div>
-        <div class="promo-footer">
-          <span class="promo-note">Valable sur Nano 100 et Jump Starter</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- QUAD LOCK -->
-    <div class="promo-card">
-      <div class="promo-header">
-        <span class="promo-brand">QUAD LOCK</span>
-        <span class="promo-discount">-10%</span>
-      </div>
-      <div class="promo-content">
-        <div class="promo-cat">SUPPORTS TÉLÉPHONE</div>
-        <div class="promo-desc">
-          Supports téléphone anti-vibration pour moto. Le système de fixation le plus sûr du marché.
-        </div>
-        <div class="codes-list">
-          <div class="code-item">
-            <div class="code-info">
-              <span class="code-val">LCDMH10</span>
-              <span class="code-pct">-10% sur tout le site</span>
-            </div>
-            <button class="copy-btn" onclick="copyText('LCDMH10', this)">Copier</button>
-          </div>
-        </div>
-        <div class="promo-footer">
-          <span class="promo-note">Valable sur accessoires aussi</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- SENA (exemple) -->
-    <div class="promo-card">
-      <div class="promo-header">
-        <span class="promo-brand">SENA</span>
-        <span class="promo-discount">-15%</span>
-      </div>
-      <div class="promo-content">
-        <div class="promo-cat">INTERCOMS · CASQUES</div>
-        <div class="promo-desc">
-          Intercoms Sena 60S, 50S, accessoires. Testés sur 20 000 km.
-        </div>
-        <div class="codes-list">
-          <div class="code-item">
-            <div class="code-info">
-              <span class="code-val">LCDMH15</span>
-              <span class="code-pct">-15% sur sélection</span>
-            </div>
-            <button class="copy-btn" onclick="copyText('LCDMH15', this)">Copier</button>
-          </div>
-        </div>
-        <div class="promo-footer">
-          <span class="promo-note">Valable sur Motoblouz</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- CARDO (exemple) -->
-    <div class="promo-card">
-      <div class="promo-header">
-        <span class="promo-brand">CARDO</span>
-        <span class="promo-discount">-10%</span>
-      </div>
-      <div class="promo-content">
-        <div class="promo-cat">INTERCOMS · MESH</div>
-        <div class="promo-desc">
-          Cardo Packtalk Edge, Packtalk Bold, Spirit. La référence en communication Mesh.
-        </div>
-        <div class="codes-list">
-          <div class="code-item">
-            <div class="code-info">
-              <span class="code-val">LCDMH10</span>
-              <span class="code-pct">-10% sur tout</span>
-            </div>
-            <button class="copy-btn" onclick="copyText('LCDMH10', this)">Copier</button>
-          </div>
-        </div>
-        <div class="promo-footer">
-          <span class="promo-note">Valable sur Louis Moto</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section class="section">
-  <div class="sec-label">Comment utiliser les codes</div>
-  <h2>MODE D'EMPLOI</h2>
-  
-  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:#242430; border:1px solid #242430;">
-    <div style="background:#131317; padding:24px;">
-      <div style="font-family:'Bebas Neue',sans-serif; font-size:20px; color:#d4890a; margin-bottom:12px;">1. Copiez le code</div>
-      <p style="color:#6e6a62; font-size:15px;">Cliquez sur "Copier" à côté du code promo que vous voulez utiliser.</p>
-    </div>
-    <div style="background:#131317; padding:24px;">
-      <div style="font-family:'Bebas Neue',sans-serif; font-size:20px; color:#d4890a; margin-bottom:12px;">2. Cliquez sur le lien</div>
-      <p style="color:#6e6a62; font-size:15px;">Utilisez les liens vers les sites partenaires (liens affiliés qui soutiennent la chaîne).</p>
-    </div>
-    <div style="background:#131317; padding:24px;">
-      <div style="font-family:'Bebas Neue',sans-serif; font-size:20px; color:#d4890a; margin-bottom:12px;">3. Collez dans le panier</div>
-      <p style="color:#6e6a62; font-size:15px;">Au moment du paiement, collez le code dans la zone "Code promo".</p>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section class="section">
-  <div class="sec-label">Ils me font confiance</div>
-  <h2>NOS PARTENAIRES</h2>
-  
-  <div style="display:flex; flex-wrap:wrap; gap:24px; justify-content:space-between; align-items:center; background:#131317; border:1px solid #242430; padding:32px;">
-    <div style="font-family:'Bebas Neue',sans-serif; font-size:28px; color:#6e6a62;">AOOCCI</div>
-    <div style="font-family:'Bebas Neue',sans-serif; font-size:28px; color:#6e6a62;">CARPURIDE</div>
-    <div style="font-family:'Bebas Neue',sans-serif; font-size:28px; color:#6e6a62;">AFERIY</div>
-    <div style="font-family:'Bebas Neue',sans-serif; font-size:28px; color:#6e6a62;">QUAD LOCK</div>
-    <div style="font-family:'Bebas Neue',sans-serif; font-size:28px; color:#6e6a62;">SENA</div>
-    <div style="font-family:'Bebas Neue',sans-serif; font-size:28px; color:#6e6a62;">CARDO</div>
-  </div>
-  
-  <div style="margin-top:24px; text-align:center; color:#6e6a62; font-style:italic;">
-    Partenariats officiels et codes exclusifs négociés pour la communauté LCDMH.
-  </div>
-</section>
-
+<!-- ======================================== -->
+<!-- === DÉBUT FOOTER ======================= -->
+<!-- ======================================== -->
 <footer>
-  <a href="index.html" class="footer-logo">LC<span>D</span>MH</a>
-  <nav class="footer-nav">
-    <a href="roadtrips.html">Road Trips</a>
-    <a href="tests.html">Tests</a>
-    <a href="intercoms.html">Intercoms</a>
-    <a href="equipement.html">Équipement</a>
-    <a href="codes-promo.html">Codes Promo</a>
-    <a href="a-propos.html">À propos</a>
-    <a href="https://www.youtube.com/@LCDMH" target="_blank">YouTube</a>
-  </nav>
+    <div class="f-logo">LC<em>D</em>MH</div>
+    <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">La Chaîne du Motard Heureux · Annecy, France</p>
+    <ul class="f-nav">
+        <li><a href="codes-promo.html">Codes promo</a></li>
+        <li><a href="aoocci.html">Aoocci</a></li>
+        <li><a href="carpuride.html">Carpuride</a></li>
+        <li><a href="blackview.html">Blackview</a></li>
+        <li><a href="komobi.html">Komobi</a></li>
+        <li><a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
+    </ul>
+    <p class="f-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves Vella · Annecy, France</p>
 </footer>
+<!-- ======================================== -->
+<!-- === FIN FOOTER ========================= -->
+<!-- ======================================== -->
 
 <script>
-  function copyText(text, btn) {
-    navigator.clipboard.writeText(text).then(() => {
-      const original = btn.textContent;
-      btn.textContent = 'Copié ✓';
-      btn.classList.add('copied');
-      setTimeout(() => {
-        btn.textContent = original;
-        btn.classList.remove('copied');
-      }, 2000);
-    });
-  }
+    function copyText(text, btn) {
+        navigator.clipboard.writeText(text).then(() => {
+            const original = btn.textContent;
+            btn.textContent = 'Copié ✓';
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.textContent = original;
+                btn.classList.remove('copied');
+            }, 2000);
+        });
+    }
 </script>
-
 </body>
 </html>
