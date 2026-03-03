@@ -57,50 +57,122 @@
 <!-- ======================================== -->
 <!-- === DÉBUT NAVIGATION =================== -->
 <!-- ======================================== -->
+<style>
+    /* Styles pour le menu déroulant */
+    .has-drop {
+        position: relative;
+    }
+    .has-drop > a::after {
+        content: '▾';
+        font-size: 0.6rem;
+        opacity: 0.7;
+        margin-left: 0.2rem;
+    }
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: calc(100% + 6px);
+        left: 0;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        box-shadow: 0 8px 28px rgba(0,0,0,.12);
+        min-width: 175px;
+        padding: .5rem 0;
+        z-index: 999;
+    }
+    .has-drop:hover .dropdown {
+        display: block;
+    }
+    .dropdown a {
+        display: block;
+        padding: .52rem 1.1rem;
+        font-size: .8rem;
+        color: var(--noir);
+        font-weight: 500;
+        transition: background .15s, color .15s;
+    }
+    .dropdown a:hover {
+        background: #fff8f2;
+        color: var(--orange);
+    }
+    /* Boutons YouTube */
+    .nav-yt {
+        background: var(--orange);
+        color: #fff !important;
+        padding: .42rem 1rem;
+        border-radius: 6px;
+        font-weight: 700 !important;
+        margin-left: 0.5rem;
+    }
+    .nav-yt:hover {
+        background: var(--orange-dark);
+    }
+    .nav-yt-icon {
+        background: #ff0000;
+        color: #fff !important;
+        padding: .42rem 1rem;
+        border-radius: 6px;
+        font-weight: 700 !important;
+    }
+    .nav-yt-icon:hover {
+        background: #cc0000;
+    }
+</style>
+
 <nav style="background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.07);padding:0 4%;height:66px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100">
     <a href="index.html" class="logo" style="font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800;color:var(--noir)">LC<span style="color:var(--orange)">D</span>MH</a>
     <ul style="display:flex;gap:1rem;list-style:none;align-items:center">
         <li><a href="index.html" style="font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0">Accueil</a></li>
-        <li style="position:relative">
-            <a href="#" style="font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0">Road Trips ▾</a>
-            <div style="display:none;position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.12);min-width:175px;padding:.5rem 0;z-index:999">
-                <a href="roadtrips.html" style="display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s">Tous les road trips</a>
-                <a href="roadtrips.html#capnord" style="display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s">Cap Nord 2025</a>
-                <a href="roadtrips.html#europe-asie" style="display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s">Europe–Asie 2024</a>
-                <a href="roadtrips.html#espagne" style="display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s">Espagne 2023</a>
+        
+        <li class="has-drop">
+            <a href="#" style="font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0">Road Trips</a>
+            <div class="dropdown">
+                <a href="roadtrips.html">Tous les road trips</a>
+                <a href="roadtrips.html">Cap Nord 2025</a>
+                <a href="roadtrips.html">Europe–Asie 2024</a>
+                <a href="roadtrips.html">Espagne 2023</a>
+                <a href="roadtrips.html">Les Alpes</a>
             </div>
         </li>
-        <li style="position:relative">
-            <a href="#" style="font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0">Tests ▾</a>
-            <div style="display:none;position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.12);min-width:175px;padding:.5rem 0;z-index:999">
-                <a href="tests-motos.html" style="display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s">Tests motos</a>
-                <a href="equipement.html" style="display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s">Équipement</a>
-                <a href="intercoms.html" style="display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s">Intercoms</a>
-                <a href="pneus.html" style="display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s">Pneus</a>
-                <a href="photo-video.html" style="display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s">Photo / Vidéo</a>
-                <a href="securite.html" style="display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s">Sécurité</a>
+        
+        <li class="has-drop">
+            <a href="#" style="font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0">Tests</a>
+            <div class="dropdown">
+                <a href="tests-motos.html">Tests motos</a>
+                <a href="equipement.html">Équipement</a>
+                <a href="intercoms.html">Intercoms</a>
+                <a href="pneus.html">Pneus</a>
+                <a href="photo-video.html">Photo / Vidéo</a>
+                <a href="securite.html">Sécurité</a>
             </div>
         </li>
-        <li style="position:relative">
-            <a href="#" style="font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0">GPS ▾</a>
-            <div style="display:none;position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.12);min-width:175px;padding:.5rem 0;z-index:999">
-                <a href="gps.html" style="display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s">Tous les GPS</a>
-                <a href="aoocci.html" style="display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s">Aoocci</a>
-                <a href="carpuride.html" style="display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s">Carpuride</a>
+        
+        <li class="has-drop">
+            <a href="#" style="font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0">GPS</a>
+            <div class="dropdown">
+                <a href="gps.html">Tous les GPS</a>
+                <a href="aoocci.html">Aoocci</a>
+                <a href="carpuride.html">Carpuride</a>
             </div>
         </li>
-        <li style="position:relative">
-            <a href="#" style="font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0">Partenaires ▾</a>
-            <div style="display:none;position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.12);min-width:175px;padding:.5rem 0;z-index:999">
-                <a href="codes-promo.html" style="display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s">Codes promo</a>
-                <a href="blackview.html" style="display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s">Blackview</a>
-                <a href="olight.html" style="display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s">Olight</a>
-                <a href="komobi.html" style="display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s">Komobi</a>
+        
+        <li class="has-drop">
+            <a href="#" style="font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0">Partenaires</a>
+            <div class="dropdown">
+                <a href="codes-promo.html">Codes promo</a>
+                <a href="blackview.html">Blackview</a>
+                <a href="olight.html">Olight</a>
+                <a href="komobi.html">Komobi</a>
             </div>
         </li>
+        
         <li><a href="a-propos.html" style="font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0">À propos</a></li>
         <li><a href="contact.html" style="font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0">Contact</a></li>
-        <li><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" style="background:var(--orange);color:#fff;padding:.42rem 1rem;border-radius:6px;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em" target="_blank" rel="noopener">▶ S'abonner</a></li>
+        
+        <!-- DEUX BOUTONS YOUTUBE : S'abonner + YouTube -->
+        <li><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt" target="_blank" rel="noopener">▶ S'abonner</a></li>
+        <li><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon" target="_blank" rel="noopener">📺 YouTube</a></li>
     </ul>
 </nav>
 <!-- ======================================== -->
