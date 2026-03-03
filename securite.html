@@ -3,220 +3,464 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sécurité Routière à Moto - Tutoriels et Conseils - LCDMH</title>
-    <meta name="description" content="Tout pour rouler en sécurité à moto : trajectoires avec la gendarmerie, tutoriels virages (A2), contre-braquage, regard, inclinaison, équilibre à basse vitesse.">
-    <meta name="keywords" content="sécurité moto, trajectoires de sécurité, formation gendarmerie moto, virages moto débutant, contre-braquage, équilibre moto, permis A2 moto">
-    <meta property="og:title" content="Sécurité Routière à Moto - Tutoriels et Conseils - LCDMH">
-    <meta property="og:description" content="Formations, trajectoires, techniques de pilotage. Des conseils basés sur 72 000 km d'expérience et des formations avec la gendarmerie.">
+    <title>Sécurité à Moto - Trajectoires, Équipement, Conseils - LCDMH</title>
+    <meta name="description" content="Conseils et formations pour une conduite moto plus sûre : trajectoires de sécurité, freinage, équipement de protection, visibilité.">
+    <meta name="keywords" content="sécurité moto, trajectoire de sécurité, freinage moto, équipement de protection, visibilité motard, formation moto">
+    <meta name="author" content="Yves - LCDMH">
+    <meta property="og:title" content="Sécurité à Moto - LCDMH">
+    <meta property="og:description" content="Conseils et formations pour une conduite moto plus sûre : trajectoires, équipement, visibilité.">
+    <meta property="og:url" content="https://lcdmh.com/securite.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LCDMH">
+    <meta property="og:image" content="https://lcdmh.com/images/securite-og.jpg">
     <link rel="canonical" href="https://lcdmh.com/securite.html">
-    <!-- Polices Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root{
-            --orange:#e67e22;
-            --orange-dark:#d35400;
-            --noir:#1a1a1a;
-            --bg:#f7f7f5;
-            --card:#fff;
-            --border:#e5e5e5;
-            --muted:#777;
-            --alt:#f0ede8;
+        body { font-family: "Inter", sans-serif; background: #f5f5f5; color: #1e1e1e; line-height: 1.6; }
+        h1,h2,h3,h4,h5,h6 { font-family: "Montserrat", sans-serif; font-weight: 600; }
+        a { text-decoration: none; color: inherit; }
+        
+        /* Navigation */
+        nav { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 1rem 5%; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; }
+        .logo a { font-family: "Montserrat", sans-serif; font-size: 1.5rem; font-weight: 700; color: #1e1e1e; }
+        .logo span { color: #e67e22; }
+        .nav-links { display: flex; gap: 1.4rem; list-style: none; flex-wrap: wrap; align-items: center; }
+        .nav-links a { font-weight: 500; color: #1e1e1e; transition: color .2s; font-size: .9rem; }
+        .nav-links a:hover, .nav-links a.active { color: #e67e22; }
+        .nav-yt { background: #e67e22; color: white !important; padding: .5rem 1.2rem; border-radius: 50px; font-weight: 600 !important; }
+        .nav-yt:hover { background: #d35400; }
+        .nav-yt-icon { background: #ff0000; color: white !important; padding: .5rem 1.2rem; border-radius: 50px; font-weight: 600 !important; }
+        .nav-yt-icon:hover { background: #cc0000; }
+        .menu-toggle { display: none; }
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 1rem 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                z-index: 1000;
+                gap: 0;
+            }
+            .nav-links.active { display: flex; }
+            .nav-links li { width: 100%; text-align: center; }
+            .nav-links a {
+                display: block;
+                padding: 1rem !important;
+                width: 100%;
+                white-space: normal !important;
+            }
+            .has-drop { position: static; }
+            .dropdown {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                border: none;
+                border-top: 1px solid #e0e0e0;
+                border-bottom: 1px solid #e0e0e0;
+                margin: 0.5rem 0;
+            }
+            .menu-toggle { display: block; font-size: 2rem; background: none; border: none; cursor: pointer; }
+            nav { flex-wrap: wrap; height: auto; min-height: 70px; padding: 0.5rem 4%; }
+            .desktop-only { display: none; }
+            .mobile-only { display: block; }
         }
-        html{scroll-behavior:smooth}
-        body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--noir);line-height:1.65;font-size:16px}
-        h1,h2,h3,h4{font-family:'Montserrat',sans-serif}
-        a{color:inherit;text-decoration:none}
-        nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.07);padding:0 4%;height:66px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-        .logo{font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800;color:var(--noir)}
-        .logo span{color:var(--orange)}
-        .nav-links{display:flex;gap:1rem;list-style:none;align-items:center}
-        .nav-links>li>a{font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0}
-        .nav-links>li>a:hover{color:var(--orange)}
-        .has-drop{position:relative}
-        .has-drop>a::after{content:'▾';font-size:.6rem;opacity:.7;margin-left:.2rem}
-        .dropdown{display:none;position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.12);min-width:175px;padding:.5rem 0;z-index:999}
-        .has-drop:hover .dropdown{display:block}
-        .dropdown a{display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s}
-        .dropdown a:hover{background:#fff8f2;color:var(--orange)}
-        .nav-yt{background:var(--orange)!important;color:#fff!important;padding:.42rem 1rem;border-radius:6px;font-weight:700!important}
-        .nav-yt:hover{background:var(--orange-dark)!important}
-        @media(max-width:900px){.nav-links{display:none}}
-        .hero{position:relative;min-height:40vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
-        .hero-img{position:absolute;inset:0;background:url('images/bandeau-norvege.jpg') center/cover no-repeat fixed;filter:brightness(.55);z-index:0}
-        .hero-content{position:relative;z-index:2;max-width:820px;padding:2rem;text-shadow:0 2px 15px rgba(0,0,0,.7)}
-        .hero-badge{display:inline-block;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.45rem 1.4rem;border-radius:50px;margin-bottom:1.4rem;box-shadow:0 2px 8px rgba(0,0,0,.2)}
-        .hero h1{font-size:clamp(2.4rem,7vw,4.8rem);font-weight:800;line-height:1.08;margin-bottom:1.1rem}
-        .hero h1 span{font-style:normal;color:var(--orange)}
-        .hero p{font-size:1.15rem;opacity:.95;max-width:580px;margin:0 auto 2rem}
-        .container{max-width:1200px;margin:0 auto;padding:2rem 5%}
-        .section-title{text-align:center;margin-bottom:3rem}
-        .section-title h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;margin-bottom:.4rem}
-        .section-title h2 em{font-style:normal;color:var(--orange)}
-        .section-title p{color:var(--muted);max-width:700px;margin:.6rem auto 0;font-size:.95rem}
-        .bar{width:52px;height:4px;background:var(--orange);border-radius:2px;margin:.8rem auto 0}
-        .videos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem;margin:3rem 0}
-        .video-card{background:var(--card);border-radius:15px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,.05);transition:transform .2s,box-shadow .2s;cursor:pointer;border:1px solid var(--border)}
-        .video-card:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(0,0,0,.1)}
-        .video-thumb{width:100%;height:180px;overflow:hidden;position:relative}
-        .video-thumb img{width:100%;height:100%;object-fit:cover}
-        .video-category{position:absolute;top:10px;left:10px;background:var(--orange);color:#fff;padding:.3rem .8rem;border-radius:50px;font-size:.8rem;font-weight:600;text-transform:uppercase}
-        .video-info{padding:1.5rem}
-        .video-title{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:600;margin-bottom:.8rem;line-height:1.4}
-        .video-meta{display:flex;gap:1rem;color:var(--muted);font-size:.9rem;margin-bottom:1rem}
-        .video-desc{color:var(--muted);font-size:.95rem;line-height:1.5}
-        footer{background:var(--noir);color:rgba(255,255,255,.65);padding:2.8rem 6%;margin-top:4rem}
-        .f-logo{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:#fff}
-        .f-logo em{font-style:normal;color:var(--orange)}
-        .f-nav{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin:1.2rem 0;list-style:none}
-        .f-nav a{font-size:.8rem;color:rgba(255,255,255,.55);transition:color .2s}
-        .f-nav a:hover{color:var(--orange)}
-        .f-legal{font-size:.76rem;color:rgba(255,255,255,.3);margin-top:1.1rem;line-height:1.7}
-        @media(max-width:768px){nav{flex-direction:column;gap:1rem}.nav-links{justify-content:center}}
+        @media (min-width: 901px) { .mobile-only { display: none !important; } }
+        
+        .has-drop { position: relative; }
+        .has-drop > a::after {
+            content: '▾';
+            font-size: 0.6rem;
+            opacity: 0.7;
+            margin-left: 0.2rem;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            box-shadow: 0 8px 28px rgba(0,0,0,.12);
+            min-width: 175px;
+            padding: .5rem 0;
+            z-index: 999;
+        }
+        .has-drop:hover .dropdown { display: block; }
+        .dropdown a {
+            display: block;
+            padding: .52rem 1.1rem;
+            font-size: .8rem;
+            color: #1e1e1e;
+            font-weight: 500;
+            transition: background .15s, color .15s;
+        }
+        .dropdown a:hover { background: #fff8f2; color: #e67e22; }
+        
+        .hero { height: 30vh; min-height: 250px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
+        .hero-image { position: absolute; inset: 0; background-image: url('images/bandeau-norvege.jpg'); background-size: cover; background-position: center; filter: brightness(.6); z-index: -1; }
+        .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 2rem; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1rem; text-shadow: 0 2px 10px rgba(0,0,0,.3); }
+        .hero h1 span { color: #e67e22; }
+        .hero p { font-size: 1.1rem; text-shadow: 0 2px 5px rgba(0,0,0,.3); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem 5%; }
+        .section-title { text-align: center; margin-bottom: 3rem; }
+        .section-title h2 { font-size: 2rem; color: #e67e22; margin-bottom: .5rem; }
+        .section-title .bar { width: 52px; height: 4px; background: #e67e22; margin: 0 auto; border-radius: 2px; }
+        
+        .intro-box { background: white; border-radius: 20px; padding: 2rem; margin: 2rem 0; border: 1px solid #e0e0e0; text-align: center; }
+        .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 3rem 0; }
+        .tip-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,.05); border: 1px solid #e0e0e0; transition: transform .2s; }
+        .tip-card:hover { transform: translateY(-5px); }
+        .tip-header { background: #1e1e1e; color: white; padding: 1.5rem; }
+        .tip-header h3 { font-size: 1.5rem; margin-bottom: .3rem; }
+        .tip-header .badge { color: #e67e22; font-weight: 600; font-size: .9rem; }
+        .tip-content { padding: 1.5rem; }
+        .tip-content ul { list-style: none; color: #666; }
+        .tip-content li { padding: .3rem 0; border-bottom: 1px solid #f0f0f0; }
+        .tip-content li:last-child { border-bottom: none; }
+        .tip-footer { padding: 1.5rem; border-top: 1px solid #e0e0e0; }
+        .btn { background: #e67e22; color: white; padding: .5rem 1.2rem; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block; }
+        .btn:hover { background: #d35400; }
+        
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0; }
+        .video-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,.05); border: 1px solid #e0e0e0; cursor: pointer; transition: transform .2s; }
+        .video-card:hover { transform: translateY(-5px); }
+        .video-thumb { width: 100%; height: 180px; background: #1e1e1e; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; }
+        .video-info { padding: 1.5rem; }
+        .video-info h4 { margin-bottom: .5rem; }
+        .video-info p { color: #666; font-size: .9rem; }
+        
+        .cta-box { background: linear-gradient(135deg, #e67e22 0%, #d35400 100%); color: white; border-radius: 30px; padding: 2.5rem; text-align: center; margin: 3rem 0; }
+        .cta-box h3 { font-size: 2rem; margin-bottom: 1rem; }
+        .cta-box p { font-size: 1.1rem; max-width: 700px; margin: 0 auto 1.5rem; }
+        .btn-cta { background: white; color: #e67e22; padding: 1rem 2.5rem; border-radius: 50px; font-weight: 700; font-size: 1.1rem; display: inline-block; transition: transform .2s; }
+        .btn-cta:hover { transform: scale(1.05); }
+        
+        footer { background: #1e1e1e; color: white; padding: 3rem 5%; margin-top: 4rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
+        .footer-col h4 { color: white; margin-bottom: 1rem; font-size: 1.1rem; }
+        .footer-col p { color: #aaa; font-size: .9rem; line-height: 1.7; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: .5rem; }
+        .footer-col a { color: #aaa; transition: color .2s; font-size: .9rem; }
+        .footer-col a:hover { color: #e67e22; }
+        .copyright { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #333; color: #aaa; font-size: .85rem; }
+        
+        @media(max-width: 768px) { 
+            nav { flex-direction: column; gap: 1rem; } 
+            .nav-links { justify-content: center; gap: .8rem; } 
+        }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="logo">LC<span>D</span>MH</a>
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li class="has-drop"><a href="#">Road Trips</a><div class="dropdown"><a href="roadtrips.html">Tous les road trips</a><a href="roadtrips.html#capnord">Cap Nord 2025</a><a href="roadtrips.html#europe-asie">Europe–Asie 2024</a><a href="roadtrips.html#espagne">Espagne 2023</a><a href="roadtrips.html#alpes">Les Alpes</a></div></li>
-            <li class="has-drop"><a href="#">Tests</a><div class="dropdown"><a href="tests-motos.html">Tests motos</a><a href="equipement.html">Équipement</a><a href="intercoms.html">Intercoms</a><a href="pneus.html">Pneus</a><a href="photo-video.html">Photo / Vidéo</a><a href="securite.html" class="active">Sécurité</a></div></li>
-            <li class="has-drop"><a href="#">GPS</a><div class="dropdown"><a href="gps.html">Tous les GPS</a><a href="aoocci.html">Aoocci</a><a href="carpuride.html">Carpuride</a></div></li>
-            <li class="has-drop"><a href="#">Partenaires</a><div class="dropdown"><a href="codes-promo.html">Codes promo</a><a href="blackview.html">Blackview</a><a href="olight.html">Olight</a><a href="komobi.html">Komobi</a></div></li>
-            <li><a href="a-propos.html">À propos</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt" target="_blank" rel="noopener">▶ S'abonner</a></li>
-        </ul>
-    </nav>
 
-    <section class="hero">
-        <div class="hero-img"></div>
-        <div class="hero-content">
-            <div class="hero-badge">APPRENDRE & PROGRESSER</div>
-            <h1>SÉCURITÉ <span>ROUTIÈRE</span></h1>
-            <p>Formations, trajectoires, techniques de pilotage. Des conseils basés sur 72 000 km d'expérience et des formations avec la gendarmerie.</p>
-        </div>
-    </section>
+<!-- Navigation -->
+<nav>
+    <div class="logo"><a href="index.html">LC<span>D</span>MH</a></div>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="has-drop">
+            <a href="#">Road Trips</a>
+            <div class="dropdown">
+                <a href="roadtrips.html">Tous les road trips</a>
+                <a href="roadtrips.html#capnord">Cap Nord 2025</a>
+                <a href="roadtrips.html#europe-asie">Europe–Asie 2024</a>
+                <a href="roadtrips.html#espagne">Espagne 2023</a>
+                <a href="roadtrips.html#alpes">Les Alpes</a>
+            </div>
+        </li>
+        <li class="has-drop">
+            <a href="#">Tests</a>
+            <div class="dropdown">
+                <a href="tests-motos.html">Tests motos</a>
+                <a href="equipement.html">Équipement</a>
+                <a href="intercoms.html">Intercoms</a>
+                <a href="pneus.html">Pneus</a>
+                <a href="photo-video.html">Photo / Vidéo</a>
+                <a href="securite.html" class="active">Sécurité</a>
+            </div>
+        </li>
+        <li class="has-drop">
+            <a href="#">GPS</a>
+            <div class="dropdown">
+                <a href="gps.html">Tous les GPS</a>
+                <a href="aoocci.html">Aoocci</a>
+                <a href="carpuride.html">Carpuride</a>
+                <a href="blackview.html">📱 Téléphones renforcés</a>
+            </div>
+        </li>
+        <li class="has-drop">
+            <a href="#">Partenaires</a>
+            <div class="dropdown">
+                <a href="codes-promo.html">Codes promo</a>
+                <a href="blackview.html">Blackview</a>
+                <a href="olight.html">Olight</a>
+                <a href="komobi.html">Komobi</a>
+            </div>
+        </li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="desktop-only"><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt">▶ S'abonner</a></li>
+        <li class="desktop-only"><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon">📺 YouTube</a></li>
+        <li class="mobile-only"><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt">▶ S'abonner</a></li>
+        <li class="mobile-only"><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon">📺 YouTube</a></li>
+    </ul>
+</nav>
 
-    <div class="container">
-        <div class="section-title">
-            <h2>FORMATION <em>GENDARMERIE</em></h2>
-            <div class="bar"></div>
-            <p>Trajectoires de sécurité encadrées par des motards gendarmes</p>
-        </div>
-        <div class="videos-grid">
-            <div class="video-card" onclick="window.open('https://youtu.be/KGfovxM_Q7w', '_blank')">
-                <div class="video-thumb"><img src="https://img.youtube.com/vi/KGfovxM_Q7w/hqdefault.jpg" alt="Trajectoires sécurité"><div class="video-category">Gendarmerie</div></div>
-                <div class="video-info"><div class="video-title">Trajectoires de sécurité avec la Gendarmerie - Permis A2</div><div class="video-meta">📅 8 avril 2024</div><div class="video-desc">Formation de sécurité et maniabilité avec un motard gendarme</div></div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                navLinks.classList.toggle('active');
+                const mobile = document.querySelectorAll('.mobile-only');
+                mobile.forEach(btn => btn.style.display = navLinks.classList.contains('active') ? 'block' : 'none');
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    document.querySelectorAll('.mobile-only').forEach(btn => btn.style.display = 'none');
+                });
+            });
+        }
+    });
+</script>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-image"></div>
+    <div class="hero-content">
+        <h1>SÉCURITÉ <span>À MOTO</span></h1>
+        <p>Conseils, formations et équipements pour rouler en toute sécurité.</p>
+    </div>
+</section>
+
+<!-- Introduction -->
+<div class="container">
+    <div class="intro-box">
+        <p style="font-size: 1.1rem; color: #666;">
+            Après plus de 72 000 km sur les routes d'Europe, j'ai appris que la sécurité ne se limite pas à l'équipement.
+            C'est une combinaison de bonnes pratiques, d'anticipation, de technique de pilotage et de visibilité.
+            J'ai eu la chance de participer à des formations avec la gendarmerie et des instructeurs professionnels.
+            Voici ce que j'ai appris et que je mets en pratique chaque jour.
+        </p>
+    </div>
+
+    <!-- Section TRAJECTOIRES DE SÉCURITÉ -->
+    <div class="section-title">
+        <h2>TRAJECTOIRES DE SÉCURITÉ</h2>
+        <div class="bar"></div>
+    </div>
+    <div class="tips-grid">
+        <!-- Virage -->
+        <div class="tip-card">
+            <div class="tip-header">
+                <h3>Bien prendre un virage</h3>
+                <div class="badge">Technique</div>
             </div>
-            <div class="video-card" onclick="window.open('https://youtu.be/fUAJAq-UBCg', '_blank')">
-                <div class="video-thumb"><img src="https://img.youtube.com/vi/fUAJAq-UBCg/hqdefault.jpg" alt="Conduite sécurisée"><div class="video-category">Gendarmerie</div></div>
-                <div class="video-info"><div class="video-title">Les secrets d'une conduite sécurisée à moto 2024</div><div class="video-meta">📅 21 avril 2024</div><div class="video-desc">Nouvelle stratégie de trajectoire de sécurité</div></div>
+            <div class="tip-content">
+                <ul>
+                    <li>✅ Ralentissez avant le virage, pas dans le virage</li>
+                    <li>✅ Regardez le plus loin possible (là où vous voulez aller)</li>
+                    <li>✅ Positionnez-vous à l'extérieur du virage à l'entrée</li>
+                    <li>✅ Accélérez progressivement en sortie</li>
+                    <li>⚠️ Évitez de freiner en courbe</li>
+                </ul>
             </div>
-            <div class="video-card" onclick="window.open('https://youtu.be/99e2C9w6Dlo', '_blank')">
-                <div class="video-thumb"><img src="https://img.youtube.com/vi/99e2C9w6Dlo/hqdefault.jpg" alt="Extrait formation"><div class="video-category">Extrait</div></div>
-                <div class="video-info"><div class="video-title">Trajectoires de sécurité (extrait)</div><div class="video-meta">📅 22 septembre 2025</div><div class="video-desc">Extrait de la formation complète</div></div>
-            </div>
-            <div class="video-card" onclick="window.open('https://youtu.be/dOZekuTmAQo', '_blank')">
-                <div class="video-thumb"><img src="https://img.youtube.com/vi/dOZekuTmAQo/hqdefault.jpg" alt="Trajectoire road trip"><div class="video-category">Conseil</div></div>
-                <div class="video-info"><div class="video-title">trajectoire de sécurité pour des bons road trip moto</div><div class="video-meta">📅 31 août 2025</div><div class="video-desc">Adapter sa trajectoire en voyage</div></div>
+            <div class="tip-footer">
+                <a href="https://youtu.be/KGfovxM_Q7w" class="btn" target="_blank" rel="noopener">Voir la formation</a>
             </div>
         </div>
 
-        <div class="section-title">
-            <h2>POUR <em>DÉBUTANTS (A2)</em></h2>
-            <div class="bar"></div>
-            <p>Maîtriser les bases en toute sécurité</p>
-        </div>
-        <div class="videos-grid">
-            <div class="video-card" onclick="window.open('https://youtu.be/mqrxymLts_0', '_blank')">
-                <div class="video-thumb"><img src="https://img.youtube.com/vi/mqrxymLts_0/hqdefault.jpg" alt="Virages débutant"><div class="video-category">A2</div></div>
-                <div class="video-info"><div class="video-title">Virages Moto Débutant : Le SECRET pour maîtriser sa trajectoire</div><div class="video-meta">📅 11 septembre 2025</div><div class="video-desc">Basé sur 72 000 km d'expérience</div></div>
+        <!-- Freinage d'urgence -->
+        <div class="tip-card">
+            <div class="tip-header">
+                <h3>Freinage d'urgence</h3>
+                <div class="badge">Survie</div>
             </div>
-            <div class="video-card" onclick="window.open('https://youtu.be/eikh4VNCNa4', '_blank')">
-                <div class="video-thumb"><img src="https://img.youtube.com/vi/eikh4VNCNa4/hqdefault.jpg" alt="Tuto A2"><div class="video-category">A2</div></div>
-                <div class="video-info"><div class="video-title">Tuto A2 : Virages et Épingles en montagne</div><div class="video-meta">📅 16 septembre 2025</div><div class="video-desc">Comment choisir la bonne trajectoire</div></div>
-            </div>
-            <div class="video-card" onclick="window.open('https://youtu.be/2H_zLT1tdNs', '_blank')">
-                <div class="video-thumb"><img src="https://img.youtube.com/vi/2H_zLT1tdNs/hqdefault.jpg" alt="Trajectoire sécurité"><div class="video-category">A2</div></div>
-                <div class="video-info"><div class="video-title">Trajectoire de sécurité moto : réussir ses virages (Permis A2)</div><div class="video-meta">📅 27 octobre 2022</div><div class="video-desc">Les bases essentielles</div></div>
-            </div>
-            <div class="video-card" onclick="window.open('https://youtu.be/ryO-H1WRHHU', '_blank')">
-                <div class="video-thumb"><img src="https://img.youtube.com/vi/ryO-H1WRHHU/hqdefault.jpg" alt="Virages de nuit"><div class="video-category">Conseil</div></div>
-                <div class="video-info"><div class="video-title">Peur de pencher ? Comment prendre les virages de nuit</div><div class="video-meta">📅 17 octobre 2024</div><div class="video-desc">Techniques pour vaincre l'appréhension</div></div>
+            <div class="tip-content">
+                <ul>
+                    <li>✅ Serrez fermement le frein avant (80% de la puissance)</li>
+                    <li>✅ Frein arrière en complément (20%)</li>
+                    <li>✅ Gardez la moto droite</li>
+                    <li>✅ Relâchez progressivement en fin de freinage</li>
+                    <li>⚠️ Entraînez-vous sur parking sécurisé</li>
+                </ul>
             </div>
         </div>
 
-        <div class="section-title">
-            <h2>TECHNIQUES <em>AVANCÉES</em></h2>
-            <div class="bar"></div>
-            <p>Pour aller plus loin dans le pilotage</p>
-        </div>
-        <div class="videos-grid">
-            <div class="video-card" onclick="window.open('https://youtu.be/sx5bO9q0uXg', '_blank')">
-                <div class="video-thumb"><img src="https://img.youtube.com/vi/sx5bO9q0uXg/hqdefault.jpg" alt="Contre-braquage"><div class="video-category">Technique</div></div>
-                <div class="video-info"><div class="video-title">Maîtrisez le Contre-Braquage</div><div class="video-meta">📅 23 octobre 2025</div><div class="video-desc">Pour des courbes précises et sécurisées</div></div>
+        <!-- Regard et anticipation -->
+        <div class="tip-card">
+            <div class="tip-header">
+                <h3>Regard & anticipation</h3>
+                <div class="badge">Clé</div>
             </div>
-            <div class="video-card" onclick="window.open('https://youtu.be/4I1R2cyZUH8', '_blank')">
-                <div class="video-thumb"><img src="https://img.youtube.com/vi/4I1R2cyZUH8/hqdefault.jpg" alt="Regard"><div class="video-category">Technique</div></div>
-                <div class="video-info"><div class="video-title">Regard en virage et lâcher prise</div><div class="video-meta">📅 13 octobre 2025</div><div class="video-desc">L'art de la courbe et de la confiance</div></div>
+            <div class="tip-content">
+                <ul>
+                    <li>✅ Regardez toujours là où vous voulez aller</li>
+                    <li>✅ Anticipez les trajectoires des autres véhicules</li>
+                    <li>✅ Scannez les intersections, les sorties de garage</li>
+                    <li>✅ Gardez une distance de sécurité suffisante</li>
+                </ul>
             </div>
-            <div class="video-card" onclick="window.open('https://youtu.be/f2Le-gDPWh4', '_blank')">
-                <div class="video-thumb"><img src="https://img.youtube.com/vi/f2Le-gDPWh4/hqdefault.jpg" alt="Basse vitesse"><div class="video-category">Technique</div></div>
-                <div class="video-info"><div class="video-title">Équilibre Moto Basse Vitesse</div><div class="video-meta">📅 21 octobre 2025</div><div class="video-desc">Maîtrisez le lent, adieu aux petites chutes</div></div>
+            <div class="tip-footer">
+                <a href="https://youtu.be/mqrxymLts_0" class="btn" target="_blank" rel="noopener">Voir la vidéo</a>
             </div>
-            <div class="video-card" onclick="window.open('https://youtu.be/MGITmq_HW_U', '_blank')">
-                <div class="video-thumb"><img src="https://img.youtube.com/vi/MGITmq_HW_U/hqdefault.jpg" alt="Inclinaison"><div class="video-category">Technique</div></div>
-                <div class="video-info"><div class="video-title">Pencher ou rester droit ? La vérité sur l'inclinaison</div><div class="video-meta">📅 15 octobre 2025</div><div class="video-desc">Comprendre les techniques de pilotage</div></div>
-            </div>
-            <div class="video-card" onclick="window.open('https://youtu.be/voweQPx-2FU', '_blank')">
-                <div class="video-thumb"><img src="https://img.youtube.com/vi/voweQPx-2FU/hqdefault.jpg" alt="Virage trop vite"><div class="video-category">Urgence</div></div>
-                <div class="video-info"><div class="video-title">Arrivé trop vite en virage ? La stratégie anti-panique</div><div class="video-meta">📅 26 octobre 2025</div><div class="video-desc">Gérer l'imprévu</div></div>
-            </div>
-            <div class="video-card" onclick="window.open('https://youtu.be/W5IAaH9nrmw', '_blank')">
-                <div class="video-thumb"><img src="https://img.youtube.com/vi/W5IAaH9nrmw/hqdefault.jpg" alt="Virages serrés"><div class="video-category">Montagne</div></div>
-                <div class="video-info"><div class="video-title">Maîtrisez les virages serrés et épingles</div><div class="video-meta">📅 19 octobre 2025</div><div class="video-desc">Méthodes pour les reliefs escarpés</div></div>
-            </div>
-        </div>
-
-        <!-- Citation -->
-        <div style="background: #f8f9fa; border: 1px solid var(--border); border-radius: 15px; padding: 3rem; margin: 3rem 0; text-align: center;">
-            <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">MON AVIS</h3>
-            <p style="max-width: 800px; margin: 0 auto; color: var(--muted); font-size: 1.1rem; font-style: italic;">
-                "La sécurité à moto, ce n'est pas du talent, c'est de la technique et de l'anticipation. Les trajectoires de sécurité apprises avec la gendarmerie m'ont changé. Depuis, je partage ces techniques pour que chacun puisse rouler plus serein."
-            </p>
-            <p style="margin-top: 1rem; font-weight: 600;">— Yves Vella, LCDMH · 72 000 km</p>
         </div>
     </div>
 
-    <footer>
-        <div class="f-logo">LC<em>D</em>MH</div>
-        <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">La Chaîne du Motard Heureux · Annecy, France</p>
-        <ul class="f-nav">
-            <li><a href="codes-promo.html">Codes promo</a></li>
-            <li><a href="aoocci.html">Aoocci</a></li>
-            <li><a href="carpuride.html">Carpuride</a></li>
-            <li><a href="blackview.html">Blackview</a></li>
-            <li><a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
-        </ul>
-        <p class="f-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves Vella · Annecy, France</p>
-    </footer>
+    <!-- Section ÉQUIPEMENT DE SÉCURITÉ -->
+    <div class="section-title">
+        <h2>ÉQUIPEMENT DE SÉCURITÉ</h2>
+        <div class="bar"></div>
+    </div>
+    <div class="tips-grid">
+        <!-- Casque -->
+        <div class="tip-card">
+            <div class="tip-header">
+                <h3>Casque</h3>
+                <div class="badge">Indispensable</div>
+            </div>
+            <div class="tip-content">
+                <ul>
+                    <li>✅ Homologué (ECE 22.06)</li>
+                    <li>✅ Bien ajusté, pas trop lâche</li>
+                    <li>✅ Visière claire pour la nuit</li>
+                    <li>✅ Remplacez-le après un choc</li>
+                </ul>
+            </div>
+            <div class="tip-footer">
+                <a href="tests-motos.html" class="btn">Voir les tests</a>
+            </div>
+        </div>
 
-    <script>
-        function copyText(text, btn) {
-            navigator.clipboard.writeText(text).then(() => {
-                const original = btn.textContent;
-                btn.textContent = 'Copié ✓';
-                btn.style.background = '#27ae60';
-                setTimeout(() => {
-                    btn.textContent = original;
-                    btn.style.background = '#1e1e1e';
-                }, 2000);
-            });
-        }
-    </script>
+        <!-- Gants -->
+        <div class="tip-card">
+            <div class="tip-header">
+                <h3>Gants</h3>
+                <div class="badge">Protection</div>
+            </div>
+            <div class="tip-content">
+                <ul>
+                    <li>✅ Avec coques de protection</li>
+                    <li>✅ Adaptés à la saison</li>
+                    <li>✅ Bonne préhension des commandes</li>
+                    <li>✅ Renforcés au niveau des paumes</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Gilet airbag -->
+        <div class="tip-card">
+            <div class="tip-header">
+                <h3>Gilet airbag</h3>
+                <div class="badge">+10 ans</div>
+            </div>
+            <div class="tip-content">
+                <ul>
+                    <li>✅ Protection cervicale et dorsale</li>
+                    <li>✅ Déclenchement en cas de chute</li>
+                    <li>✅ De plus en plus abordable</li>
+                    <li>✅ Testé et recommandé</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vidéos formation -->
+    <div class="section-title">
+        <h2>MES VIDÉOS FORMATION</h2>
+        <div class="bar"></div>
+    </div>
+    <div class="video-grid">
+        <div class="video-card" onclick="window.open('https://youtu.be/KGfovxM_Q7w', '_blank')">
+            <div class="video-thumb">▶️ Trajectoires avec la Gendarmerie</div>
+            <div class="video-info">
+                <h4>Formation trajectoires de sécurité</h4>
+                <p>Une journée d'entraînement avec un motard gendarme pour apprendre les bonnes trajectoires.</p>
+            </div>
+        </div>
+        <div class="video-card" onclick="window.open('https://youtu.be/mqrxymLts_0', '_blank')">
+            <div class="video-thumb">▶️ Virages débutant</div>
+            <div class="video-info">
+                <h4>Virages Moto Débutant</h4>
+                <p>Le secret pour maîtriser sa trajectoire et prendre confiance en courbe.</p>
+            </div>
+        </div>
+        <div class="video-card" onclick="window.open('https://youtu.be/f2Le-gDPWh4', '_blank')">
+            <div class="video-thumb">▶️ Équilibre basse vitesse</div>
+            <div class="video-info">
+                <h4>Maîtrisez le lent</h4>
+                <p>Exercices pour améliorer votre équilibre à basse vitesse et éviter les chutes.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-box">
+        <h3>💰 Équipez-vous en toute sécurité</h3>
+        <p>Retrouvez mes tests d'équipements et les codes promo exclusifs pour vous protéger sans vous ruiner.</p>
+        <a href="codes-promo.html" class="btn-cta">Voir les codes promo</a>
+    </div>
+
+    <!-- Note -->
+    <div style="background: #f8f9fa; border-left: 4px solid #e67e22; padding: 1.5rem; margin: 2rem 0;">
+        <p style="color: #666;">
+            🏍️ <strong>Rappel important :</strong> La sécurité n'a pas de prix. Un bon équipement et une formation régulière sont les meilleurs investissements pour profiter pleinement de la route.
+        </p>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>LCDMH</h4>
+            <p>La Chaîne Du Motard Heureux – Road trips, tests et aventures à moto depuis 2022.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="roadtrips.html">Road Trips</a></li>
+                <li><a href="tests-motos.html">Tests motos</a></li>
+                <li><a href="equipement.html">Équipement</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>GPS & Médias</h4>
+            <ul>
+                <li><a href="gps.html">GPS moto</a></li>
+                <li><a href="photo-video.html">Photo / Vidéo</a></li>
+                <li><a href="intercoms.html">Intercoms</a></li>
+                <li><a href="pneus.html">Pneus</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Partenaires</h4>
+            <ul>
+                <li><a href="codes-promo.html">Codes promo</a></li>
+                <li><a href="blackview.html">Blackview</a></li>
+                <li><a href="olight.html">Olight</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">&copy; 2026 LCDMH - La Chaîne Du Motard Heureux</div>
+</footer>
 </body>
 </html>
+<!-- FIN DU FICHIER : securite.html -->

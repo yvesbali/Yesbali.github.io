@@ -4,30 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Road Trips Moto en Europe | Playlists LCDMH</title>
-    <meta name="description" content="Les road trips moto de LCDMH : Alpes, Espagne, Cappadoce, Cap Nord. Playlists complètes, épisodes vedettes, aventures et découvertes à vivre sur YouTube.">
+    <meta name="description" content="Les road trips moto de LCDMH : Cap Nord, Europe-Asie, Espagne, Alpes. Playlists complètes, épisodes, aventures et paysages à vivre sur YouTube.">
     <meta name="keywords" content="road trip moto, voyage moto Europe, Cap Nord moto, Espagne moto, Alpes moto, Cappadoce moto, playlist moto YouTube, LCDMH">
-    <meta name="author" content="Yves Vella – LCDMH">
+    <meta name="author" content="Yves – LCDMH">
     <meta name="robots" content="index, follow">
-
     <meta property="og:title" content="Road Trips Moto en Europe | Playlists LCDMH">
-    <meta property="og:description" content="Des Alpes au Cap Nord, en passant par l’Espagne et la Cappadoce : les grandes aventures moto de LCDMH en playlist.">
+    <meta property="og:description" content="Revivez les aventures de LCDMH : Cap Nord, Europe-Asie, Espagne, Alpes. Tous les épisodes en playlist.">
     <meta property="og:url" content="https://lcdmh.com/roadtrips.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="LCDMH">
     <meta property="og:image" content="https://lcdmh.com/images/roadtrips-og.jpg">
-
+    <link rel="canonical" href="https://lcdmh.com/roadtrips.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Road Trips Moto en Europe | LCDMH">
-    <meta name="twitter:description" content="Les grandes aventures à moto de LCDMH : Alpes, Espagne, Cappadoce, Cap Nord.">
+    <meta name="twitter:description" content="Les grandes aventures à moto de LCDMH en playlist.">
     <meta name="twitter:image" content="https://lcdmh.com/images/roadtrips-twitter.jpg">
-
-    <link rel="canonical" href="https://lcdmh.com/roadtrips.html">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+    
+    <!-- Schema.org ItemList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Road trips moto LCDMH",
+      "description": "Tous mes road trips moto en Europe : Cap Nord, Espagne, Alpes, Turquie.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Cap Nord 2025",
+          "url": "https://lcdmh.com/roadtrips.html#capnord"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Europe–Asie 2024",
+          "url": "https://lcdmh.com/roadtrips.html#europe-asie"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Tour d'Espagne 2023",
+          "url": "https://lcdmh.com/roadtrips.html#espagne"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Les Alpes",
+          "url": "https://lcdmh.com/roadtrips.html#alpes"
+        }
+      ]
+    }
+    </script>
+    
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --orange: #e67e22;
             --orange-dark: #d35400;
@@ -39,20 +73,8 @@
             --alt: #f0ede8;
             --font-sans: 'Inter', sans-serif;
             --font-title: 'Montserrat', sans-serif;
-            --shadow-soft: 0 10px 30px rgba(0,0,0,.08);
-            --shadow-hover: 0 18px 40px rgba(0,0,0,.12);
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        html { scroll-behavior: smooth; }
         body {
             font-family: var(--font-sans);
             background: var(--bg);
@@ -60,30 +82,16 @@
             line-height: 1.65;
             font-size: 16px;
         }
-
         h1, h2, h3, h4 {
             font-family: var(--font-title);
             font-weight: 700;
             line-height: 1.2;
         }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 5%;
-        }
-
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 5%; }
+        
+        /* Navigation */
         nav {
             background: #fff;
             box-shadow: 0 2px 12px rgba(0,0,0,.07);
@@ -96,25 +104,19 @@
             top: 0;
             z-index: 100;
         }
-
         .logo {
             font-family: var(--font-title);
             font-size: 1.6rem;
             font-weight: 800;
             color: var(--noir);
         }
-
-        .logo span {
-            color: var(--orange);
-        }
-
+        .logo span { color: var(--orange); }
         .nav-links {
             display: flex;
             gap: 1.8rem;
             list-style: none;
             align-items: center;
         }
-
         .nav-links a {
             font-size: .85rem;
             font-weight: 600;
@@ -123,12 +125,8 @@
             letter-spacing: .04em;
             transition: color .2s;
         }
-
         .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--orange);
-        }
-
+        .nav-links a.active { color: var(--orange); }
         .nav-yt {
             background: var(--orange);
             color: #fff !important;
@@ -136,620 +134,9 @@
             border-radius: 30px;
             font-weight: 700;
         }
-
-        .nav-yt:hover {
-            background: var(--orange-dark);
-            color: #fff !important;
-        }
-
-        .hero-road {
-    position: relative;
-    min-height: 68vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
-    background-image: url('images/bandeau-road-trip.jpg');
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-bottom: 0;
-}
-
-        .hero-road-content {
-            max-width: 880px;
-            padding: 3rem 1.5rem 4rem;
-            text-shadow: 0 2px 18px rgba(0,0,0,.7);
-        }
-
-        .hero-kicker {
-            display: inline-block;
-            background: rgba(255,255,255,.14);
-            border: 1px solid rgba(255,255,255,.2);
-            padding: .45rem 1rem;
-            border-radius: 999px;
-            font-size: .85rem;
-            font-weight: 700;
-            letter-spacing: .05em;
-            text-transform: uppercase;
-            margin-bottom: 1.2rem;
-            backdrop-filter: blur(8px);
-        }
-
-        .hero-road h1 {
-            font-size: clamp(2.5rem, 7vw, 4.6rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            letter-spacing: -.02em;
-        }
-
-        .hero-road h1 span {
-            color: var(--orange);
-        }
-
-        .hero-road p {
-            font-size: clamp(1rem, 2vw, 1.22rem);
-            opacity: .96;
-            max-width: 760px;
-            margin: 0 auto 2rem;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-white,
-        .btn-white-outline {
-            padding: 0.9rem 1.8rem;
-            border-radius: 50px;
-            font-weight: 700;
-            display: inline-block;
-            transition: all .3s;
-        }
-
-        .btn-white {
-            background: #fff;
-            color: var(--noir);
-        }
-
-        .btn-white:hover {
-            transform: translateY(-2px);
-        }
-
-        .btn-white-outline {
-            background: transparent;
-            color: #fff;
-            border: 2px solid #fff;
-        }
-
-        .btn-white-outline:hover {
-            background: #fff;
-            color: var(--noir);
-        }
-
-        .intro-story {
-            position: relative;
-            margin-top: -48px;
-            margin-bottom: 3.5rem;
-        }
-
-        .intro-story-card {
-            background: linear-gradient(135deg, #fff 0%, #fcfbf9 100%);
-            border: 1px solid var(--border);
-            border-radius: 28px;
-            box-shadow: var(--shadow-soft);
-            overflow: hidden;
-        }
-
-        .intro-story-grid {
-            display: grid;
-            grid-template-columns: 1.25fr .9fr;
-            gap: 2rem;
-            padding: 2.4rem;
-        }
-
-        .intro-story-text h2 {
-            font-size: clamp(1.9rem, 4vw, 2.8rem);
-            margin-bottom: 1rem;
-        }
-
-        .intro-story-text h2 span {
-            color: var(--orange);
-        }
-
-        .intro-story-text p {
-            color: #444;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-        }
-
-        .highlight-line {
-            font-weight: 700;
-            color: var(--noir);
-        }
-
-        .intro-note {
-            margin-top: 1.2rem;
-            padding: 1rem 1.2rem;
-            background: var(--alt);
-            border-left: 4px solid var(--orange);
-            border-radius: 14px;
-            color: #444;
-        }
-
-        .timeline-box {
-            background: var(--noir);
-            color: #fff;
-            border-radius: 24px;
-            padding: 1.8rem;
-            align-self: start;
-        }
-
-        .timeline-box h3 {
-            font-size: 1.35rem;
-            margin-bottom: 1rem;
-        }
-
-        .timeline-list {
-            list-style: none;
-            display: grid;
-            gap: 1rem;
-        }
-
-        .timeline-list li {
-            display: grid;
-            grid-template-columns: 70px 1fr;
-            gap: .8rem;
-            align-items: start;
-            padding-bottom: .9rem;
-            border-bottom: 1px solid rgba(255,255,255,.1);
-        }
-
-        .timeline-list li:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .timeline-year {
-            color: var(--orange);
-            font-weight: 800;
-            font-size: 1rem;
-        }
-
-        .timeline-list strong {
-            display: block;
-            margin-bottom: .15rem;
-        }
-
-        .timeline-list span {
-            color: rgba(255,255,255,.78);
-            font-size: .93rem;
-        }
-
-        .stats-band {
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 1.2rem 1rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,.03);
-        }
-
-        .stats-grid {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: .95rem;
-            color: var(--muted);
-        }
-
-        .stat-item i {
-            color: var(--orange);
-            font-style: normal;
-            font-size: 1.25rem;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 2.3rem;
-        }
-
-        .section-title h2 {
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            font-weight: 800;
-        }
-
-        .section-title h2 span {
-            color: var(--orange);
-        }
-
-        .section-title p {
-            color: var(--muted);
-            max-width: 700px;
-            margin: 0.7rem auto 0;
-            font-size: 1rem;
-        }
-
-        .section-title .bar {
-            width: 54px;
-            height: 4px;
-            background: var(--orange);
-            border-radius: 2px;
-            margin: 0.85rem auto 0;
-        }
-
-        .playlists-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 2rem;
-            margin: 3rem 0 4rem;
-        }
-
-        .playlist-card {
-            background: var(--card);
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: var(--shadow-soft);
-            transition: transform .3s, box-shadow .3s;
-            border: 1px solid var(--border);
-        }
-
-        .playlist-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .card-image {
-            position: relative;
-            aspect-ratio: 16 / 9;
-            overflow: hidden;
-        }
-
-        .card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform .45s;
-        }
-
-        .playlist-card:hover .card-image img {
-            transform: scale(1.05);
-        }
-
-        .card-badge {
-            position: absolute;
-            top: 14px;
-            left: 14px;
-            background: rgba(0,0,0,.68);
-            color: #fff;
-            padding: .4rem .8rem;
-            border-radius: 999px;
-            font-size: .78rem;
-            font-weight: 700;
-            backdrop-filter: blur(6px);
-        }
-
-        .card-content {
-            padding: 1.5rem;
-        }
-
-        .card-content h3 {
-            font-size: 1.55rem;
-            margin-bottom: .55rem;
-        }
-
-        .card-content p {
-            color: var(--muted);
-            margin-bottom: 1rem;
-            font-size: .95rem;
-        }
-
-        .card-meta {
-            display: flex;
-            gap: .7rem;
-            flex-wrap: wrap;
-            margin-bottom: 1.35rem;
-        }
-
-        .card-meta span {
-            background: var(--alt);
-            padding: .35rem .8rem;
-            border-radius: 999px;
-            font-size: .8rem;
-            font-weight: 700;
-            color: var(--noir);
-        }
-
-        .card-buttons {
-            display: flex;
-            gap: .8rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary,
-        .btn-secondary {
-            flex: 1;
-            text-align: center;
-            padding: .72rem 1.2rem;
-            border-radius: 999px;
-            font-size: .92rem;
-            font-weight: 700;
-            transition: all .2s;
-        }
-
-        .btn-primary {
-            background: var(--orange);
-            color: #fff;
-        }
-
-        .btn-primary:hover {
-            background: var(--orange-dark);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 1px solid var(--border);
-            color: var(--noir);
-        }
-
-        .btn-secondary:hover {
-            background: var(--alt);
-        }
-
-        .episodes-section {
-            margin: 4rem 0;
-        }
-
-        .trip-episodes {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 2.5rem 5%;
-            margin-bottom: 3.2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px dashed var(--border);
-        }
-
-        .trip-episodes:last-child {
-            border-bottom: none;
-        }
-
-        .trip-title {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 1.4rem;
-        }
-
-        .trip-title h3 {
-            font-size: 1.7rem;
-        }
-
-        .trip-title span {
-            background: var(--orange);
-            color: #fff;
-            padding: .35rem .85rem;
-            border-radius: 999px;
-            font-size: .9rem;
-            font-weight: 700;
-        }
-
-        .episodes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-            gap: 1.4rem;
-        }
-
-        .episode-card {
-            background: var(--card);
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 6px 16px rgba(0,0,0,.05);
-            border: 1px solid var(--border);
-            transition: transform .2s;
-        }
-
-        .episode-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .episode-thumb {
-            aspect-ratio: 16 / 9;
-            background: #ddd;
-            overflow: hidden;
-        }
-
-        .episode-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .episode-info {
-            padding: 1rem;
-        }
-
-        .episode-info h4 {
-            font-size: 1rem;
-            margin-bottom: .35rem;
-        }
-
-        .episode-info p {
-            font-size: .88rem;
-            color: var(--muted);
-            margin-bottom: .8rem;
-        }
-
-        .episode-link {
-            display: inline-block;
-            color: var(--orange);
-            font-weight: 700;
-            font-size: .9rem;
-        }
-
-        .episode-link:hover {
-            text-decoration: underline;
-        }
-
-        .choice-section {
-            margin: 4rem 0;
-            padding: 3rem 0;
-        }
-
-        .choice-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.6rem;
-            margin-top: 2rem;
-        }
-
-        .choice-card {
-            background: var(--card);
-            border-radius: 22px;
-            padding: 2rem 1.4rem;
-            text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,.05);
-            border: 1px solid var(--border);
-            transition: all .3s;
-        }
-
-        .choice-card:hover {
-            background: var(--orange);
-            color: #fff;
-            border-color: var(--orange);
-            transform: translateY(-5px);
-        }
-
-        .choice-icon {
-            font-size: 2.7rem;
-            color: var(--orange);
-            margin-bottom: .9rem;
-            transition: color .3s;
-        }
-
-        .choice-card:hover .choice-icon,
-        .choice-card:hover .choice-link {
-            color: #fff;
-        }
-
-        .choice-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: .45rem;
-        }
-
-        .choice-card p {
-            font-size: .93rem;
-            opacity: .85;
-            margin-bottom: .9rem;
-        }
-
-        .choice-link {
-            color: var(--orange);
-            font-weight: 800;
-        }
-
-        .recent-section {
-            margin: 4rem 0 2rem;
-            padding: 2.2rem 0;
-            background: var(--alt);
-            border-radius: 30px;
-        }
-
-        .recent-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            padding: 0 2rem;
-        }
-
-        .recent-card {
-            background: #fff;
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,.05);
-            border: 1px solid rgba(0,0,0,.04);
-        }
-
-        .recent-card img {
-            aspect-ratio: 16/9;
-            object-fit: cover;
-            width: 100%;
-        }
-
-        .recent-card .episode-info {
-            padding: 1rem;
-        }
-
-        .cta-final {
-            text-align: center;
-            background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
-            color: #fff;
-            padding: 4rem 2rem;
-            border-radius: 30px;
-            margin: 4rem 0;
-            box-shadow: var(--shadow-soft);
-        }
-
-        .cta-final h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 1rem;
-        }
-
-        .cta-final p {
-            font-size: 1.1rem;
-            max-width: 760px;
-            margin: 0 auto 2rem;
-            opacity: .96;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-cta,
-        .btn-cta-outline {
-            padding: 1rem 2rem;
-            border-radius: 999px;
-            font-weight: 800;
-            font-size: 1rem;
-            transition: all .2s;
-        }
-
-        .btn-cta {
-            background: #fff;
-            color: var(--orange-dark);
-        }
-
-        .btn-cta:hover {
-            transform: scale(1.04);
-        }
-
-        .btn-cta-outline {
-            background: transparent;
-            color: #fff;
-            border: 2px solid #fff;
-        }
-
-        .btn-cta-outline:hover {
-            background: #fff;
-            color: var(--orange-dark);
-        }
-
+        .nav-yt:hover { background: var(--orange-dark); color: #fff !important; }
+        
+        /* Footer */
         footer {
             background: var(--noir);
             color: rgba(255,255,255,.65);
@@ -757,18 +144,13 @@
             margin-top: 4rem;
             text-align: center;
         }
-
         .footer-logo {
             font-family: var(--font-title);
             font-size: 1.6rem;
             font-weight: 800;
             color: #fff;
         }
-
-        .footer-logo span {
-            color: var(--orange);
-        }
-
+        .footer-logo span { color: var(--orange); }
         .footer-links {
             display: flex;
             gap: 1.5rem;
@@ -777,383 +159,852 @@
             margin: 1.2rem 0;
             list-style: none;
         }
-
         .footer-links a {
             font-size: .8rem;
             color: rgba(255,255,255,.55);
             transition: color .2s;
         }
-
-        .footer-links a:hover {
-            color: #fff;
-        }
-
+        .footer-links a:hover { color: #fff; }
         .copyright {
             font-size: .76rem;
             color: rgba(255,255,255,.3);
             margin-top: 1.1rem;
             line-height: 1.7;
         }
-
-        @media (max-width: 1100px) {
-            .playlists-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .episodes-grid {
-                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            }
+        
+        /* Styles spécifiques roadtrips */
+        .hero-road {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            background: linear-gradient(rgba(20,20,25,.7), rgba(20,20,25,.8)), url('https://images.unsplash.com/photo-1558981285-6f0c94958bb6?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat fixed;
+            margin-bottom: 2rem;
         }
-
-        @media (max-width: 980px) {
-            .intro-story-grid {
-                grid-template-columns: 1fr;
-            }
+        .hero-road-content {
+            max-width: 820px;
+            padding: 2rem;
+            text-shadow: 0 2px 15px rgba(0,0,0,.7);
         }
-
+        .hero-road h1 {
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -.02em;
+        }
+        .hero-road h1 span { color: var(--orange); }
+        .hero-road p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            opacity: .95;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        .hero-road .btn-white {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            display: inline-block;
+            transition: all .3s;
+        }
+        .hero-road .btn-white:hover { background: #fff; color: var(--noir); }
+        
+        .stats-band {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 1.2rem 0;
+            margin-top: -2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,.03);
+        }
+        .stats-grid {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.95rem;
+            color: var(--muted);
+        }
+        .stat-item i {
+            color: var(--orange);
+            font-style: normal;
+            font-size: 1.4rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .section-title h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+        }
+        .section-title h2 span { color: var(--orange); }
+        .section-title p {
+            color: var(--muted);
+            max-width: 620px;
+            margin: 0.6rem auto 0;
+            font-size: 1rem;
+        }
+        .section-title .bar {
+            width: 52px;
+            height: 4px;
+            background: var(--orange);
+            border-radius: 2px;
+            margin: 0.8rem auto 0;
+        }
+        
+        .playlists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .playlist-card {
+            background: var(--card);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--border);
+        }
+        .playlist-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0,0,0,.12);
+        }
+        .card-image {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+        }
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .playlist-card:hover .card-image img { transform: scale(1.05); }
+        .card-content { padding: 1.5rem; }
+        .card-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            color: var(--noir);
+        }
+        .card-content p {
+            color: var(--muted);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        .card-meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .card-meta span {
+            background: var(--alt);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--noir);
+        }
+        .card-buttons {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: var(--orange);
+            color: #fff;
+            padding: 0.6rem 1.4rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: background .2s;
+            flex: 1;
+            text-align: center;
+        }
+        .btn-primary:hover { background: var(--orange-dark); }
+        .btn-secondary {
+            background: transparent;
+            color: var(--noir);
+            padding: 0.6rem 1.4rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid var(--border);
+            transition: background .2s;
+            flex: 1;
+            text-align: center;
+        }
+        .btn-secondary:hover { background: var(--alt); }
+        
+        .episodes-section { margin: 4rem 0; }
+        .trip-episodes {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px dashed var(--border);
+        }
+        .trip-episodes:last-child { border-bottom: none; }
+        .trip-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .trip-title span {
+            background: var(--orange);
+            color: #fff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 50px;
+            font-size: 1rem;
+        }
+        .episodes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        .episode-card {
+            background: var(--card);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,.05);
+            border: 1px solid var(--border);
+            transition: transform .2s;
+        }
+        .episode-card:hover { transform: translateY(-4px); }
+        .episode-thumb {
+            aspect-ratio: 16 / 9;
+            background: #ddd;
+            position: relative;
+        }
+        .episode-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .episode-info { padding: 1rem; }
+        .episode-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+        .episode-info p {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 0.8rem;
+        }
+        .episode-link {
+            display: inline-block;
+            color: var(--orange);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .episode-link:hover { text-decoration: underline; }
+        
+        .choice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .choice-card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,.05);
+            border: 1px solid var(--border);
+            transition: all .3s;
+        }
+        .choice-card:hover {
+            background: var(--orange);
+            color: #fff;
+            border-color: var(--orange);
+        }
+        .choice-card:hover .choice-icon { color: #fff; }
+        .choice-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--orange);
+            transition: color .3s;
+        }
+        .choice-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        .choice-card p {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+        .choice-link {
+            font-weight: 700;
+            color: var(--orange);
+            transition: color .3s;
+        }
+        .choice-card:hover .choice-link { color: #fff; }
+        
+        .recent-section {
+            margin: 4rem 0 2rem;
+            padding: 2rem 0;
+            background: var(--alt);
+            border-radius: 30px;
+        }
+        .recent-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        .recent-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,.05);
+        }
+        
+        .cta-final {
+            text-align: center;
+            background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+            color: #fff;
+            padding: 4rem 2rem;
+            border-radius: 30px;
+            margin: 4rem 0;
+        }
+        .cta-final h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+        .cta-final p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-cta {
+            background: #fff;
+            color: var(--orange-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform .2s;
+        }
+        .btn-cta:hover { transform: scale(1.05); }
+        .btn-cta-outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: background .2s;
+        }
+        .btn-cta-outline:hover { background: #fff; color: var(--orange-dark); }
+        
         @media (max-width: 768px) {
-            nav {
-                height: auto;
-                padding: 1rem 4%;
-                flex-direction: column;
-                gap: .8rem;
-            }
-
-            .nav-links {
-                gap: .9rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero-road {
-                min-height: 60vh;
-            }
-
-            .intro-story {
-                margin-top: -28px;
-            }
-
-            .intro-story-grid {
-                padding: 1.4rem;
-            }
-
-            .stats-grid {
-                gap: 1rem;
-                justify-content: flex-start;
-            }
-
-            .card-buttons {
-                flex-direction: column;
-            }
-
-            .trip-title {
-                align-items: flex-start;
-            }
-
-            .recent-grid {
-                padding: 0 1rem;
-            }
-
-            .choice-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .playlists-grid,
-            .episodes-grid,
-            .recent-grid {
-                grid-template-columns: 1fr;
-            }
+            .nav-links { gap: 1rem; }
+            .stats-grid { gap: 1.5rem; }
+            .card-buttons { flex-direction: column; }
+            .choice-grid { grid-template-columns: 1fr; }
         }
+        
+        /* Menu responsive (identique à index) */
+        .has-drop { position: relative; }
+        .has-drop > a::after {
+            content: '▾';
+            font-size: 0.6rem;
+            opacity: 0.7;
+            margin-left: 0.2rem;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            box-shadow: 0 8px 28px rgba(0,0,0,.12);
+            min-width: 175px;
+            padding: .5rem 0;
+            z-index: 999;
+        }
+        .has-drop:hover .dropdown { display: block; }
+        .dropdown a {
+            display: block;
+            padding: .52rem 1.1rem;
+            font-size: .8rem;
+            color: var(--noir);
+            font-weight: 500;
+            transition: background .15s, color .15s;
+        }
+        .dropdown a:hover { background: #fff8f2; color: var(--orange); }
+        .nav-yt { background: var(--orange); color: #fff !important; padding: .42rem 1rem; border-radius: 6px; font-weight: 700 !important; }
+        .nav-yt:hover { background: var(--orange-dark); }
+        .nav-yt-icon { background: #ff0000; color: #fff !important; padding: .42rem 1rem; border-radius: 6px; font-weight: 700 !important; }
+        .nav-yt-icon:hover { background: #cc0000; }
+        .menu-toggle { display: none; }
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 1rem 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                z-index: 1000;
+                gap: 0;
+            }
+            .nav-links.active { display: flex; }
+            .nav-links li { width: 100%; text-align: center; }
+            .nav-links a {
+                display: block;
+                padding: 1rem !important;
+                width: 100%;
+                white-space: normal !important;
+            }
+            .has-drop { position: static; }
+            .dropdown {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                border: none;
+                border-top: 1px solid var(--border);
+                border-bottom: 1px solid var(--border);
+                margin: 0.5rem 0;
+            }
+            .menu-toggle { display: block; font-size: 2rem; background: none; border: none; cursor: pointer; }
+            nav { flex-wrap: wrap; height: auto; min-height: 70px; padding: 0.5rem 4%; }
+            .desktop-only { display: none; }
+            .mobile-only { display: block; }
+        }
+        @media (min-width: 901px) { .mobile-only { display: none !important; } }
     </style>
 </head>
 <body>
 
+<!-- Navigation -->
 <nav>
     <a href="index.html" class="logo">LC<span>D</span>MH</a>
-    <ul class="nav-links">
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Accueil</a></li>
-        <li><a href="roadtrips.html" class="active">Road Trips</a></li>
-        <li><a href="tests-motos.html">Tests</a></li>
-        <li><a href="equipement.html">GPS & Équipement</a></li>
-        <li><a href="codes-promo.html">Partenaires</a></li>
+        <li class="has-drop">
+            <a href="#">Road Trips</a>
+            <div class="dropdown">
+                <a href="roadtrips.html">Tous les road trips</a>
+                <a href="#capnord">Cap Nord 2025</a>
+                <a href="#europe-asie">Europe–Asie 2024</a>
+                <a href="#espagne">Espagne 2023</a>
+                <a href="#alpes">Les Alpes</a>
+            </div>
+        </li>
+        <li class="has-drop">
+            <a href="#">Tests</a>
+            <div class="dropdown">
+                <a href="tests-motos.html">Tests motos</a>
+                <a href="equipement.html">Équipement</a>
+                <a href="intercoms.html">Intercoms</a>
+                <a href="pneus.html">Pneus</a>
+                <a href="photo-video.html">Photo / Vidéo</a>
+                <a href="securite.html">Sécurité</a>
+            </div>
+        </li>
+        <li class="has-drop">
+            <a href="#">GPS</a>
+            <div class="dropdown">
+                <a href="gps.html">Tous les GPS</a>
+                <a href="aoocci.html">Aoocci</a>
+                <a href="carpuride.html">Carpuride</a>
+                <a href="blackview.html">📱 Téléphones renforcés</a>
+            </div>
+        </li>
+        <li class="has-drop">
+            <a href="#">Partenaires</a>
+            <div class="dropdown">
+                <a href="codes-promo.html">Codes promo</a>
+                <a href="blackview.html">Blackview</a>
+                <a href="olight.html">Olight</a>
+                <a href="komobi.html">Komobi</a>
+            </div>
+        </li>
         <li><a href="a-propos.html">À propos</a></li>
-        <li><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt" target="_blank" rel="noopener">▶ S'abonner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="desktop-only"><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt">▶ S'abonner</a></li>
+        <li class="desktop-only"><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon">📺 YouTube</a></li>
+        <li class="mobile-only"><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt">▶ S'abonner</a></li>
+        <li class="mobile-only"><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon">📺 YouTube</a></li>
     </ul>
 </nav>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                navLinks.classList.toggle('active');
+                const mobile = document.querySelectorAll('.mobile-only');
+                mobile.forEach(btn => btn.style.display = navLinks.classList.contains('active') ? 'block' : 'none');
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    document.querySelectorAll('.mobile-only').forEach(btn => btn.style.display = 'none');
+                });
+            });
+        }
+    });
+</script>
+
+<!-- Hero -->
 <section class="hero-road">
     <div class="hero-road-content">
-        <div class="hero-kicker">Voyages moto solo • Découvertes • Playlists YouTube</div>
         <h1>MES <span>ROAD TRIPS</span> MOTO<br>EN EUROPE</h1>
-        <p>Des Alpes au Cap Nord, en passant par l’Espagne et la Cappadoce, je partage ici mes vrais voyages à moto : la route, les paysages, les galères, les émotions, les bivouacs et le plaisir incroyable de partir voir ce qu’il y a plus loin.</p>
-        <div class="hero-buttons">
-            <a href="https://www.youtube.com/@LCDMH" class="btn-white" target="_blank" rel="noopener">📺 Voir la chaîne YouTube</a>
-            <a href="#playlists" class="btn-white-outline">🏍️ Explorer les road trips</a>
-        </div>
+        <p>Du Cap Nord à la Cappadoce, des Alpes à l'Espagne, je partage ici mes vrais road trips moto en solo : la route, les paysages, les galères, les émotions et les découvertes. Chaque voyage est disponible en playlist complète sur YouTube.</p>
+        <a href="https://www.youtube.com/@LCDMH" class="btn-white" target="_blank" rel="noopener">📺 Voir la chaîne YouTube</a>
     </div>
 </section>
 
-<section class="container intro-story">
-    <div class="intro-story-card">
-        <div class="intro-story-grid">
-            <div class="intro-story-text">
-                <h2>La route a pris une place <span>immense</span> dans ma vie</h2>
-                <p>Depuis février 2022, la moto m’a emmené bien plus loin que je l’aurais imaginé. Ce qui devait être au départ un plaisir est devenu une vraie aventure au long cours, faite de paysages grandioses, de bivouacs, d’imprévus, de fatigue parfois… mais surtout d’une liberté incroyable.</p>
-                <p>Voyager à moto, pour moi, ce n’est pas seulement aller d’un point A à un point B. C’est prendre le temps de voir, de ressentir, de découvrir des pays, des routes, des cols, des villages, des ambiances, et de vivre chaque journée avec ce mélange très particulier d’excitation, de doute, d’émerveillement et d’envie d’aller voir encore plus loin.</p>
-                <p>Au fil des années, j’ai commencé par les Alpes, puis l’Espagne, puis la Cappadoce, avant de monter jusqu’au Cap Nord. Et déjà, l’horizon suivant m’appelle : l’Écosse et l’Irlande. <span class="highlight-line">Chaque road trip m’a appris quelque chose sur la route, sur le voyage… et sur moi-même.</span></p>
-
-                <div class="intro-note">
-                    Ici, tu ne trouveras pas des voyages “mis en scène”. Tu trouveras des aventures vécues pour de vrai : la pluie, le froid, les grands espaces, les galères, les belles surprises, les rencontres, et cette envie simple mais puissante de partir découvrir le monde à moto.
-                </div>
-            </div>
-
-            <aside class="timeline-box" aria-label="Chronologie des road trips">
-                <h3>Une aventure qui grandit chaque année</h3>
-                <ul class="timeline-list">
-                    <li>
-                        <div class="timeline-year">2022</div>
-                        <div>
-                            <strong>Les Alpes</strong>
-                            <span>Les premiers grands cols, les paysages de montagne et le plaisir de découvrir que la route peut devenir une vraie passion.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="timeline-year">2023</div>
-                        <div>
-                            <strong>Tour d’Espagne</strong>
-                            <span>La chaleur, les routes plus lointaines, l’impression d’élargir vraiment l’horizon et de prendre confiance.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="timeline-year">2024</div>
-                        <div>
-                            <strong>Europe – Asie jusqu’en Cappadoce</strong>
-                            <span>Un voyage plus ambitieux, plus dépaysant, avec le sentiment très fort de basculer dans une autre dimension du road trip.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="timeline-year">2025</div>
-                        <div>
-                            <strong>Cap Nord</strong>
-                            <span>Le grand Nord, les fjords, la météo, les bivouacs, les doutes, la ténacité… et ce rêve de motard devenu réalité.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="timeline-year">2026</div>
-                        <div>
-                            <strong>Écosse & Irlande</strong>
-                            <span>Le prochain chapitre se prépare déjà, avec une nouvelle promesse de découvertes, de routes mythiques et d’émotions à partager.</span>
-                        </div>
-                    </li>
-                </ul>
-            </aside>
-        </div>
+<!-- Stats band -->
+<div class="stats-band">
+    <div class="container stats-grid">
+        <div class="stat-item"><i>🏍️</i> Voyages moto filmés en conditions réelles</div>
+        <div class="stat-item"><i>📺</i> Playlists complètes sur YouTube</div>
+        <div class="stat-item"><i>⛰️</i> Europe, montagne, grands espaces, aventure</div>
     </div>
-</section>
+</div>
 
-<section class="container">
-    <div class="stats-band">
-        <div class="stats-grid">
-            <div class="stat-item"><i>🏍️</i> Voyages moto filmés en conditions réelles</div>
-            <div class="stat-item"><i>📺</i> Playlists complètes sur YouTube</div>
-            <div class="stat-item"><i>🌍</i> Découvertes, paysages, bivouac et liberté</div>
-        </div>
-    </div>
-</section>
-
-<section class="container" id="playlists">
+<!-- Playlists principales -->
+<div class="container">
     <div class="section-title">
         <h2>Choisir un <span>road trip</span></h2>
         <div class="bar"></div>
-        <p>Chaque voyage a sa personnalité. Certains donnent envie de grands espaces, d’autres de chaleur, de cols mythiques ou de dépaysement total.</p>
+        <p>Mes grandes aventures à moto, prêtes à être vécues en vidéo.</p>
     </div>
 
     <div class="playlists-grid">
-        <article class="playlist-card">
+        <!-- Cap Nord 2025 -->
+        <div class="playlist-card" id="capnord">
             <div class="card-image">
-                <span class="card-badge">2025 • Grand Nord</span>
-                <img src="https://images.unsplash.com/photo-1579033461380-5d47f02a78eb?q=80&w=1974&auto=format&fit=crop" alt="Route et paysage de Norvège pour le road trip Cap Nord">
+                <img src="https://images.unsplash.com/photo-1579033461380-5d47f02a78eb?q=80&w=1974&auto=format&fit=crop" alt="Cap Nord Norvège">
             </div>
             <div class="card-content">
                 <h3>Cap Nord 2025</h3>
-                <p>L’aventure ultime jusqu’au bout de l’Europe du Nord, entre fjords, pluie, solitude, bivouacs et cette sensation grisante d’aller vraiment au bout du voyage.</p>
+                <p>L'aventure ultime jusqu'au bout de l'Europe du Nord, entre fjords, pluie et grands espaces.</p>
                 <div class="card-meta">
                     <span>🇳🇴 Norvège</span>
-                    <span>🌧️ Froid & météo</span>
+                    <span>🌧️ Pluie & froid</span>
                     <span>🏕️ Bivouac</span>
                 </div>
                 <div class="card-buttons">
-                    <a href="https://www.youtube.com/watch?v=aEEJXeNSsdg" class="btn-primary" target="_blank" rel="noopener">▶ Commencer la série</a>
-                    <a href="#episodes-cap-nord" class="btn-secondary">📋 Épisodes vedettes</a>
+                    <a href="#" class="btn-primary">▶️ Voir la playlist</a>
+                    <a href="#" class="btn-secondary">📋 Épisodes</a>
                 </div>
             </div>
-        </article>
+        </div>
 
-        <article class="playlist-card">
+        <!-- Europe – Asie 2024 -->
+        <div class="playlist-card" id="europe-asie">
             <div class="card-image">
-                <span class="card-badge">2024 • Europe à l’Asie</span>
-                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=2076&auto=format&fit=crop" alt="Paysage de Cappadoce pour le road trip Europe Asie">
+                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=2076&auto=format&fit=crop" alt="Cappadoce Turquie">
             </div>
             <div class="card-content">
                 <h3>Europe – Asie 2024</h3>
-                <p>Un voyage hors du temps vers la Cappadoce, avec plus de distance, plus de dépaysement, et ce plaisir unique de sentir qu’on change vraiment d’univers au fil des kilomètres.</p>
+                <p>De l'Europe à la Cappadoce, un voyage hors du temps entre steppes, villages et hospitalité.</p>
                 <div class="card-meta">
                     <span>🇹🇷 Turquie</span>
-                    <span>🏜️ Dépaysement</span>
+                    <span>🏜️ Steppes</span>
                     <span>⛰️ Cappadoce</span>
                 </div>
                 <div class="card-buttons">
-                    <a href="https://www.youtube.com/watch?v=Fblx1mI1teE" class="btn-primary" target="_blank" rel="noopener">▶ Commencer la série</a>
-                    <a href="#episodes-cappadoce" class="btn-secondary">📋 Épisodes vedettes</a>
+                    <a href="#" class="btn-primary">▶️ Voir la playlist</a>
+                    <a href="#" class="btn-secondary">📋 Épisodes</a>
                 </div>
             </div>
-        </article>
+        </div>
 
-        <article class="playlist-card">
+        <!-- Tour d’Espagne 2023 -->
+        <div class="playlist-card" id="espagne">
             <div class="card-image">
-                <span class="card-badge">2023 • Soleil & contrastes</span>
-                <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?q=80&w=2070&auto=format&fit=crop" alt="Route en Espagne pour le road trip moto">
+                <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?q=80&w=2070&auto=format&fit=crop" alt="Route Espagne">
             </div>
             <div class="card-content">
                 <h3>Tour d’Espagne 2023</h3>
-                <p>Un road trip solaire, roulant, vivant, entre chaleur, routes désertes, villages blancs et ce goût très particulier des voyages qui donnent envie de continuer encore.</p>
+                <p>Chaleur, déserts, côtes sauvages et villages blancs : un road trip solaire et accessible.</p>
                 <div class="card-meta">
                     <span>🇪🇸 Espagne</span>
                     <span>☀️ Chaleur</span>
-                    <span>🌊 Contrastes</span>
+                    <span>🏖️ Côtes</span>
                 </div>
                 <div class="card-buttons">
-                    <a href="https://www.youtube.com/watch?v=BAPas-qa5eU" class="btn-primary" target="_blank" rel="noopener">▶ Commencer la série</a>
-                    <a href="#episodes-espagne" class="btn-secondary">📋 Épisodes vedettes</a>
+                    <a href="#" class="btn-primary">▶️ Voir la playlist</a>
+                    <a href="#" class="btn-secondary">📋 Épisodes</a>
                 </div>
             </div>
-        </article>
+        </div>
 
-        <article class="playlist-card">
+        <!-- Les Alpes 2022 -->
+        <div class="playlist-card" id="alpes">
             <div class="card-image">
-                <span class="card-badge">2022 • Le début de l’histoire</span>
-                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop" alt="Cols alpins pour le road trip moto dans les Alpes">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop" alt="Alpes cols">
             </div>
             <div class="card-content">
                 <h3>Les Alpes 2022</h3>
-                <p>Les premiers grands cols, les lacs, la haute montagne et cette révélation simple : oui, la moto peut devenir bien plus qu’un loisir, elle peut devenir une vraie façon de vivre la route.</p>
+                <p>Cols mythiques, lacs glaciaires et routes de haute montagne : le terrain de jeu préféré des motards.</p>
                 <div class="card-meta">
-                    <span>⛰️ Cols mythiques</span>
+                    <span>🇫🇷 France</span>
+                    <span>⛰️ Cols</span>
                     <span>🏞️ Lacs</span>
-                    <span>🇫🇷 Alpes</span>
                 </div>
                 <div class="card-buttons">
-                    <a href="https://www.youtube.com/watch?v=UevfEKcHDjU" class="btn-primary" target="_blank" rel="noopener">▶ Commencer la série</a>
-                    <a href="#episodes-alpes" class="btn-secondary">📋 Épisodes vedettes</a>
+                    <a href="#" class="btn-primary">▶️ Voir la playlist</a>
+                    <a href="#" class="btn-secondary">📋 Épisodes</a>
                 </div>
             </div>
-        </article>
+        </div>
     </div>
-</section>
+</div>
 
-<section class="container episodes-section"><div class="section-title"><h2>Les episodes <span>par voyage</span></h2><div class="bar"></div><p>Tous les vrais episodes YouTube. Cliquez sur &laquo; Voir tous les episodes &raquo; pour la liste complete.</p></div><div class="trip-episodes" id="episodes-cap-nord"><div class="trip-title"><h3>Cap Nord 2025 (Norvege)</h3><span>14 episodes</span></div><div class="episodes-grid"><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=aEEJXeNSsdg" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/aEEJXeNSsdg/hqdefault.jpg" alt="Cap Nord à Moto : 63 ans, 10 000 km en Solo | Road Trip Norvège Honda NT1100 EP1" loading="lazy"></a></div><div class="episode-info"><h4>Cap Nord à Moto : 63 ans, 10 000 km en Solo | Road Trip Norvège Honda NT1100 EP1</h4><a href="https://www.youtube.com/watch?v=aEEJXeNSsdg" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=MNKg781CFh0" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/MNKg781CFh0/hqdefault.jpg" alt="Fjords de Norvège à Moto : Bergen, Gaularfjellet &amp; Bivouac Sauvage | Cap Nord EP" loading="lazy"></a></div><div class="episode-info"><h4>Fjords de Norvège à Moto : Bergen, Gaularfjellet &amp; Bivouac Sauvage | Cap Nord EP</h4><a href="https://www.youtube.com/watch?v=MNKg781CFh0" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=cstTBA6HBGc" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/cstTBA6HBGc/hqdefault.jpg" alt="350 km dans le FROID NORVÉGIEN : Le Vent du Groenland m'a Brisé.EP8. Road trip m" loading="lazy"></a></div><div class="episode-info"><h4>350 km dans le FROID NORVÉGIEN : Le Vent du Groenland m'a Brisé.EP8. Road trip m</h4><a href="https://www.youtube.com/watch?v=cstTBA6HBGc" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=8ZrBLfM8LT8" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/8ZrBLfM8LT8/hqdefault.jpg" alt="700 km jusqu’au Cap Nord… était-ce une erreur ?”" loading="lazy"></a></div><div class="episode-info"><h4>700 km jusqu’au Cap Nord… était-ce une erreur ?”</h4><a href="https://www.youtube.com/watch?v=8ZrBLfM8LT8" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article></div><details style="margin-top:1.5rem;"><summary style="cursor:pointer;font-weight:700;color:var(--orange);font-size:.95rem;padding:.6rem 0;">&#9660; Voir tous les episodes (14)</summary><ol style="margin-top:1rem;padding-left:1.4rem;columns:2;column-gap:2rem;line-height:2.1;font-size:.87rem;"><li><a href="https://www.youtube.com/watch?v=aEEJXeNSsdg" target="_blank" rel="noopener">Cap Nord à Moto : 63 ans, 10 000 km en Solo | Road Trip Norvège Honda NT1100 EP1&amp;</a></li><li><a href="https://www.youtube.com/watch?v=YwiwUpp8yBY" target="_blank" rel="noopener">Meilleures Routes Moto Norvège : Top 7 Incontournables | Road Trip Cap Nord EP2</a></li><li><a href="https://www.youtube.com/watch?v=XbA7du0oX-I" target="_blank" rel="noopener">5 FERRYS, 250 KM DE FOLIE | Stavanger-Bergen à Moto 🚢 EP3. Road  Trip Cap Nord Honda NT 11</a></li><li><a href="https://www.youtube.com/watch?v=MNKg781CFh0" target="_blank" rel="noopener">Fjords de Norvège à Moto : Bergen, Gaularfjellet &amp; Bivouac Sauvage | Cap Nord EP4</a></li><li><a href="https://www.youtube.com/watch?v=L9ZSCWiqNFU" target="_blank" rel="noopener">SOGNEFJORD. Road trip moto Fjords,  Bergen-Balestrand. Norvège Cap Nord EP5</a></li><li><a href="https://www.youtube.com/watch?v=Fzj-lGDwedc" target="_blank" rel="noopener">GEIRANGERFJORD à Moto : Le Plus Beau Fjord de Norvège | Road Trip Cap Nord EP6</a></li><li><a href="https://www.youtube.com/watch?v=PaEMRm_5H0U" target="_blank" rel="noopener">L'ivresse du voyage en moto, La Norvège, Road trip moto Norvège, Cap Nord 2025 EP7</a></li><li><a href="https://www.youtube.com/watch?v=cstTBA6HBGc" target="_blank" rel="noopener">350 km dans le FROID NORVÉGIEN : Le Vent du Groenland m'a Brisé.EP8. Road trip moto CapNor</a></li><li><a href="https://www.youtube.com/watch?v=Q3a39FcIjQo" target="_blank" rel="noopener">Road trip moto en Norvège – Cette nuit-là, j’étais à bout | EP9</a></li><li><a href="https://www.youtube.com/watch?v=VrjDNkzVAZk" target="_blank" rel="noopener">Le Cap Nord ça va mal finir : Cercle Arctique Polaire | Road Trip Moto Norvège EP10</a></li><li><a href="https://www.youtube.com/watch?v=Kq36_wrfvnw" target="_blank" rel="noopener">Tu vas te marrer,...ou pas ? je pète un câble..🤪 Ferry Bodø  Lofoten | Road Trip Moto Norv</a></li><li><a href="https://www.youtube.com/watch?v=aW5Ryq83oO4" target="_blank" rel="noopener">.Lofoten : ce jour-là, quelque chose n’a pas fonctionné.</a></li><li><a href="https://www.youtube.com/watch?v=8ZrBLfM8LT8" target="_blank" rel="noopener">700 km jusqu’au Cap Nord… était-ce une erreur ?”</a></li><li><a href="https://www.youtube.com/watch?v=jKEeq45vtPU" target="_blank" rel="noopener">Voyager en Norvège : ferries, budget, conseils. Guide de voyage Norway. EP14</a></li></ol></details></div><div class="trip-episodes" id="episodes-cappadoce"><div class="trip-title"><h3>Europe - Asie 2024 (Turquie)</h3><span>12 episodes</span></div><div class="episodes-grid"><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=Fblx1mI1teE" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/Fblx1mI1teE/hqdefault.jpg" alt="Road Trip Moto Turquie 🇹🇷 – Le Départ | Col du Mont-Cenis &amp; Lac de Côme en TRK 7" loading="lazy"></a></div><div class="episode-info"><h4>Road Trip Moto Turquie 🇹🇷 – Le Départ | Col du Mont-Cenis &amp; Lac de Côme en TRK 7</h4><a href="https://www.youtube.com/watch?v=Fblx1mI1teE" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=6NtbDiiGgNY" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/6NtbDiiGgNY/hqdefault.jpg" alt="Off-Road (extrême) en Albanie 🇦🇱 | Road Trip Moto en Benelli TRK 702 jusqu’aux M" loading="lazy"></a></div><div class="episode-info"><h4>Off-Road (extrême) en Albanie 🇦🇱 | Road Trip Moto en Benelli TRK 702 jusqu’aux M</h4><a href="https://www.youtube.com/watch?v=6NtbDiiGgNY" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=SY5vAz7iQx8" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/SY5vAz7iQx8/hqdefault.jpg" alt="Cappadoce en moto 🇹🇷 | Montgolfières, galères &amp; Benelli TRK 702 (EP8)" loading="lazy"></a></div><div class="episode-info"><h4>Cappadoce en moto 🇹🇷 | Montgolfières, galères &amp; Benelli TRK 702 (EP8)</h4><a href="https://www.youtube.com/watch?v=SY5vAz7iQx8" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=GdyqmphLdQU" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/GdyqmphLdQU/hqdefault.jpg" alt="Aventure Moto | De l’Europe à l’Asie… la fin du voyage — 10 000 km en TRK 702 (E" loading="lazy"></a></div><div class="episode-info"><h4>Aventure Moto | De l’Europe à l’Asie… la fin du voyage — 10 000 km en TRK 702 (E</h4><a href="https://www.youtube.com/watch?v=GdyqmphLdQU" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article></div><details style="margin-top:1.5rem;"><summary style="cursor:pointer;font-weight:700;color:var(--orange);font-size:.95rem;padding:.6rem 0;">&#9660; Voir tous les episodes (12)</summary><ol style="margin-top:1rem;padding-left:1.4rem;columns:2;column-gap:2rem;line-height:2.1;font-size:.87rem;"><li><a href="https://www.youtube.com/watch?v=Fblx1mI1teE" target="_blank" rel="noopener">Road Trip Moto Turquie 🇹🇷 – Le Départ | Col du Mont-Cenis &amp; Lac de Côme en TRK 702 (EP1)</a></li><li><a href="https://www.youtube.com/watch?v=iHbzhxcOVrA" target="_blank" rel="noopener">Croatie – Cette journée a mal dérapé… | Road trip moto Europe–Asie EP2</a></li><li><a href="https://www.youtube.com/watch?v=ixzZerrhubU" target="_blank" rel="noopener">Road Trip Moto Balkans 🇧🇦🇭🇷🇲🇪 | De Mostar à la Baie de Kotor via Dubrovnik en TRK 702. (EP</a></li><li><a href="https://www.youtube.com/watch?v=CnrUas-r0gE" target="_blank" rel="noopener">Road Trip Moto Europe-Asie | De Kotor à l’Albanie en Benelli TRK 702 – Galères &amp; Aventure </a></li><li><a href="https://www.youtube.com/watch?v=6NtbDiiGgNY" target="_blank" rel="noopener">Off-Road (extrême) en Albanie 🇦🇱 | Road Trip Moto en Benelli TRK 702 jusqu’aux Météores | </a></li><li><a href="https://www.youtube.com/watch?v=iQiEbdyokBg" target="_blank" rel="noopener">700 km à moto en une journée. Des Météores à Istanbul en Benelli TRK 702 | Road Trip (EP6)</a></li><li><a href="https://www.youtube.com/watch?v=Njm4fUFu-Lw" target="_blank" rel="noopener">Istanbul à pied et à moto 🇹🇷 | Immersion, rencontres &amp; Benelli TRK 702 (EP7)</a></li><li><a href="https://www.youtube.com/watch?v=SY5vAz7iQx8" target="_blank" rel="noopener">Cappadoce en moto 🇹🇷 | Montgolfières, galères &amp; Benelli TRK 702 (EP8)</a></li><li><a href="https://www.youtube.com/watch?v=mWKp9bFWQMc" target="_blank" rel="noopener">Road Trip Moto | Göreme &amp; Love Valley 🇹🇷 → Sofia 🇧🇬 | Routes défoncées en Benelli TRK 702</a></li><li><a href="https://www.youtube.com/watch?v=XlpyhrLkfVo" target="_blank" rel="noopener">Transfăgărășan à moto : route EPIC… et mon drone disparaît ! | TRK 702 (EP10)</a></li><li><a href="https://www.youtube.com/watch?v=GdyqmphLdQU" target="_blank" rel="noopener">Aventure Moto | De l’Europe à l’Asie… la fin du voyage — 10 000 km en TRK 702 (EP11)</a></li><li><a href="https://www.youtube.com/watch?v=9pMwGzErbmA" target="_blank" rel="noopener">Road Trip Moto (14 pays) | Benelli TRK 702 &amp; Bivouac sur 10 000 km</a></li></ol></details></div><div class="trip-episodes" id="episodes-espagne"><div class="trip-title"><h3>Tour d'Espagne 2023</h3><span>19 episodes</span></div><div class="episodes-grid"><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=BAPas-qa5eU" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/BAPas-qa5eU/hqdefault.jpg" alt="EP 1. Enfin le grand jour ! : Jour 1, 23 jours 6600 kms &quot;Tous d'Espagne 2023&quot;" loading="lazy"></a></div><div class="episode-info"><h4>EP 1. Enfin le grand jour ! : Jour 1, 23 jours 6600 kms &quot;Tous d'Espagne 2023&quot;</h4><a href="https://www.youtube.com/watch?v=BAPas-qa5eU" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=9e2VVgC-Sqw" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/9e2VVgC-Sqw/hqdefault.jpg" alt="EP06 – Cap vers les Bardenas Reales 🇪🇸 | Aragon à moto – Tour d’Espagne (Jour 7)" loading="lazy"></a></div><div class="episode-info"><h4>EP06 – Cap vers les Bardenas Reales 🇪🇸 | Aragon à moto – Tour d’Espagne (Jour 7)</h4><a href="https://www.youtube.com/watch?v=9e2VVgC-Sqw" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=MxuqmHYv9RU" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/MxuqmHYv9RU/hqdefault.jpg" alt="EP11 1/3 – Bivouac à moto : l’envers du décor 🇪🇸 | Tour d’Espagne (Jour 13)" loading="lazy"></a></div><div class="episode-info"><h4>EP11 1/3 – Bivouac à moto : l’envers du décor 🇪🇸 | Tour d’Espagne (Jour 13)</h4><a href="https://www.youtube.com/watch?v=MxuqmHYv9RU" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=HdF2VSjbON4" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/HdF2VSjbON4/hqdefault.jpg" alt="EP 15 Bivouac solo et dernière route en Espagne 🇪🇸 | Tour d’Espagne à moto. Jour" loading="lazy"></a></div><div class="episode-info"><h4>EP 15 Bivouac solo et dernière route en Espagne 🇪🇸 | Tour d’Espagne à moto. Jour</h4><a href="https://www.youtube.com/watch?v=HdF2VSjbON4" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article></div><details style="margin-top:1.5rem;"><summary style="cursor:pointer;font-weight:700;color:var(--orange);font-size:.95rem;padding:.6rem 0;">&#9660; Voir tous les episodes (19)</summary><ol style="margin-top:1rem;padding-left:1.4rem;columns:2;column-gap:2rem;line-height:2.1;font-size:.87rem;"><li><a href="https://www.youtube.com/watch?v=0jR-I7TrS90" target="_blank" rel="noopener">Préparer un road trip moto de 22 jours en Espagne | Moto chargée &amp; équipement</a></li><li><a href="https://www.youtube.com/watch?v=BAPas-qa5eU" target="_blank" rel="noopener">EP 1. Enfin le grand jour ! : Jour 1, 23 jours 6600 kms &quot;Tous d'Espagne 2023&quot;</a></li><li><a href="https://www.youtube.com/watch?v=tmOiM0ZlorE" target="_blank" rel="noopener">EP02 – Trouver le spot parfait pour bivouaquer 🇫🇷 | Tour d’Espagne à moto (Jour 2)</a></li><li><a href="https://www.youtube.com/watch?v=nV0974c2ZrU" target="_blank" rel="noopener">EP03 – La montagne qui plonge dans la mer 🇫🇷🇪🇸 | Tour d’Espagne à moto (Jour 5)</a></li><li><a href="https://www.youtube.com/watch?v=OVmmCxnXnVo" target="_blank" rel="noopener">EP04 – Traverser la Catalogne par les petites routes 🇪🇸 | Tour d’Espagne à moto (Jour 6)</a></li><li><a href="https://www.youtube.com/watch?v=Un68jTJROrs" target="_blank" rel="noopener">EP05 – Aventure moto en Catalogne 🇪🇸 | Montagnes et vallées sauvages</a></li><li><a href="https://www.youtube.com/watch?v=9e2VVgC-Sqw" target="_blank" rel="noopener">EP06 – Cap vers les Bardenas Reales 🇪🇸 | Aragon à moto – Tour d’Espagne (Jour 7)</a></li><li><a href="https://www.youtube.com/watch?v=wvgvHSkkjGQ" target="_blank" rel="noopener">EP07 – Plongée dans les Bardenas Reales 🇪🇸 | Désert d’Aragon à moto – Tour d’Espagne (Jour</a></li><li><a href="https://www.youtube.com/watch?v=qcSA-qs5smM" target="_blank" rel="noopener">EP08 Galère à Madrid : chute et réparation 🇪🇸 | Tour d’Espagne à moto</a></li><li><a href="https://www.youtube.com/watch?v=OAgMxHPiTco" target="_blank" rel="noopener">EP09 – Châteaux et routes sauvages au lever du jour 🇪🇸 | Tour d’Espagne à moto (Jour 12)</a></li><li><a href="https://www.youtube.com/watch?v=KpgycHTURgE" target="_blank" rel="noopener">Épisode 10 – Châteaux et routes sauvages en Espagne 🇪🇸</a></li><li><a href="https://www.youtube.com/watch?v=MxuqmHYv9RU" target="_blank" rel="noopener">EP11 1/3 – Bivouac à moto : l’envers du décor 🇪🇸 | Tour d’Espagne (Jour 13)</a></li><li><a href="https://www.youtube.com/watch?v=yuAOzDbPLBA" target="_blank" rel="noopener">EP 11 2/3 – Je ne pensais pas que Séville serait aussi belle 🇪🇸 | Tour d’Espagne à moto</a></li><li><a href="https://www.youtube.com/watch?v=d7HafoGtrK4" target="_blank" rel="noopener">EP 11 3/3 – Ronda, beauté vertigineuse 🇪🇸 | Tour d’Espagne à moto (Jour 13)</a></li><li><a href="https://www.youtube.com/watch?v=ly7GGAo9RWU" target="_blank" rel="noopener">J’ai perdu mon drone à Ronda… mission impossible | Épisode 12</a></li><li><a href="https://www.youtube.com/watch?v=8CQzjMLDAKU" target="_blank" rel="noopener">EP13 – Des villages blancs à Grenade 🇪🇸 | Andalousie à moto – Tour d’Espagne (Jour 15)</a></li><li><a href="https://www.youtube.com/watch?v=WyxQ3rzVyhs" target="_blank" rel="noopener">EP14 – L’Alhambra de Grenade, palais et forteresse 🇪🇸 | Tour d’Espagne à moto (Jour 16)</a></li><li><a href="https://www.youtube.com/watch?v=HdF2VSjbON4" target="_blank" rel="noopener">EP 15 Bivouac solo et dernière route en Espagne 🇪🇸 | Tour d’Espagne à moto. Jour 17 –</a></li><li><a href="https://www.youtube.com/watch?v=kb8NdP58LEs" target="_blank" rel="noopener">Ce road trip a failli tout me coûter 🇪🇸 | 5 500 km de moto en Espagne – Le Film</a></li></ol></details></div><div class="trip-episodes" id="episodes-alpes"><div class="trip-title"><h3>Les Alpes (serie complete)</h3><span>9 episodes</span></div><div class="episodes-grid"><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=UevfEKcHDjU" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/UevfEKcHDjU/hqdefault.jpg" alt="Cols mythiques des Alpes à moto – TRK 502 | Ép. 1" loading="lazy"></a></div><div class="episode-info"><h4>Cols mythiques des Alpes à moto – TRK 502 | Ép. 1</h4><a href="https://www.youtube.com/watch?v=UevfEKcHDjU" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=F0wjVN88D_E" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/F0wjVN88D_E/hqdefault.jpg" alt="Alpes en moto : Barcelonnette → Cuneo | Benelli TRK 502. EP3" loading="lazy"></a></div><div class="episode-info"><h4>Alpes en moto : Barcelonnette → Cuneo | Benelli TRK 502. EP3</h4><a href="https://www.youtube.com/watch?v=F0wjVN88D_E" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=WATKVuWzRN4" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/WATKVuWzRN4/hqdefault.jpg" alt="Alpes du Sud en moto : cols, villages et liberté | EP7" loading="lazy"></a></div><div class="episode-info"><h4>Alpes du Sud en moto : cols, villages et liberté | EP7</h4><a href="https://www.youtube.com/watch?v=WATKVuWzRN4" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article></div><details style="margin-top:1.5rem;"><summary style="cursor:pointer;font-weight:700;color:var(--orange);font-size:.95rem;padding:.6rem 0;">&#9660; Voir tous les episodes (9)</summary><ol style="margin-top:1rem;padding-left:1.4rem;columns:2;column-gap:2rem;line-height:2.1;font-size:.87rem;"><li><a href="https://www.youtube.com/watch?v=UevfEKcHDjU" target="_blank" rel="noopener">Cols mythiques des Alpes à moto – TRK 502 | Ép. 1</a></li><li><a href="https://www.youtube.com/watch?v=9GvBpAWy__E" target="_blank" rel="noopener">Gorges de Méouge &amp; Baronnies : 350 km de liberté.  EP2</a></li><li><a href="https://www.youtube.com/watch?v=F0wjVN88D_E" target="_blank" rel="noopener">Alpes en moto : Barcelonnette → Cuneo | Benelli TRK 502. EP3</a></li><li><a href="https://www.youtube.com/watch?v=zvOTRRvdQeE" target="_blank" rel="noopener">ALPES – 240 km d’adrénaline : chute épique au Col de Tende. EP4</a></li><li><a href="https://www.youtube.com/watch?v=8cQ573KasHI" target="_blank" rel="noopener">Col de Tende 1870 m – 14 lacets &amp; une chute inoubliable ! Épisode 5</a></li><li><a href="https://www.youtube.com/watch?v=WATKVuWzRN4" target="_blank" rel="noopener">Alpes du Sud en moto : cols, villages et liberté | EP7</a></li><li><a href="https://www.youtube.com/watch?v=AkLCTHm2xNY" target="_blank" rel="noopener">Alpes en moto : Lautaret &amp; Galibier sous l’orage | EP8-1</a></li><li><a href="https://www.youtube.com/watch?v=aMgL1LC1nMU" target="_blank" rel="noopener">Alpes en moto.  Lautaret, Galibier la pluie et l'orage de montagne en Benelli TRK 502. Ep8</a></li><li><a href="https://www.youtube.com/watch?v=8g2so14gA80" target="_blank" rel="noopener">Alpes en moto. Pas de bringue pendant le road trip moto en Benelli TRK 502. Ep6</a></li></ol></details></div><div class="trip-episodes" id="episodes-france"><div class="trip-title"><h3>Road Trips France</h3><span>47 episodes</span></div><div class="episodes-grid"><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=ili6Tkm6kJw" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/ili6Tkm6kJw/hqdefault.jpg" alt="Tarentaise à moto : cols alpins et routes d’altitude | Road trip Alpes Partie 1" loading="lazy"></a></div><div class="episode-info"><h4>Tarentaise à moto : cols alpins et routes d’altitude | Road trip Alpes Partie 1</h4><a href="https://www.youtube.com/watch?v=ili6Tkm6kJw" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=5cI2rCVRiGw" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/5cI2rCVRiGw/hqdefault.jpg" alt="RGA, en moto et en bivouac. 1800 kilomètres à traver les Alpes." loading="lazy"></a></div><div class="episode-info"><h4>RGA, en moto et en bivouac. 1800 kilomètres à traver les Alpes.</h4><a href="https://www.youtube.com/watch?v=5cI2rCVRiGw" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=NsM2DEysUI0" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/NsM2DEysUI0/hqdefault.jpg" alt="TRK 702-AirFlow A8717-Camping Lone Rider. Vêtements Hiver-Préparation road trip " loading="lazy"></a></div><div class="episode-info"><h4>TRK 702-AirFlow A8717-Camping Lone Rider. Vêtements Hiver-Préparation road trip </h4><a href="https://www.youtube.com/watch?v=NsM2DEysUI0" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article><article class="episode-card"><div class="episode-thumb"><a href="https://www.youtube.com/watch?v=zUmmVjmUIsY" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/zUmmVjmUIsY/hqdefault.jpg" alt="Le cancer du sein, Octobre rose, motardes engagées." loading="lazy"></a></div><div class="episode-info"><h4>Le cancer du sein, Octobre rose, motardes engagées.</h4><a href="https://www.youtube.com/watch?v=zUmmVjmUIsY" class="episode-link" target="_blank" rel="noopener">Voir l'episode &rarr;</a></div></article></div><details style="margin-top:1.5rem;"><summary style="cursor:pointer;font-weight:700;color:var(--orange);font-size:.95rem;padding:.6rem 0;">&#9660; Voir tous les episodes (47)</summary><ol style="margin-top:1rem;padding-left:1.4rem;columns:2;column-gap:2rem;line-height:2.1;font-size:.87rem;"><li><a href="https://www.youtube.com/watch?v=ili6Tkm6kJw" target="_blank" rel="noopener">Tarentaise à moto : cols alpins et routes d’altitude | Road trip Alpes Partie 1</a></li><li><a href="https://www.youtube.com/watch?v=Ig7sfnRf80A" target="_blank" rel="noopener">Road trip moto en Tarentaise ▸ Beaufortain &amp; Mont-Blanc (Partie 2)</a></li><li><a href="https://www.youtube.com/watch?v=QPH5CJRbI0E" target="_blank" rel="noopener">Ballade en Benelli TRK  502 et Leoncino, moto A2.</a></li><li><a href="https://www.youtube.com/watch?v=amxFV0iPxR0" target="_blank" rel="noopener">Sortie moto en Haute-Savoie ▸ Benelli TRK 502 avec un Chapter Harley</a></li><li><a href="https://www.youtube.com/watch?v=5cI2rCVRiGw" target="_blank" rel="noopener">RGA, en moto et en bivouac. 1800 kilomètres à traver les Alpes.</a></li><li><a href="https://www.youtube.com/watch?v=3MrTGcwA_-4" target="_blank" rel="noopener">Road Trip Moto: Découverte des Bauges en savoie.</a></li><li><a href="https://www.youtube.com/watch?v=i1YwQsEgCSQ" target="_blank" rel="noopener">Week-end découverte Annecy, la Venise des Alpes: Pont de l'abîme et tours saint Jacques</a></li><li><a href="https://www.youtube.com/watch?v=hqDzIM7M2qs" target="_blank" rel="noopener">Week-end découverte Annecy, la Venise des Alpes: Les Bauges 2022</a></li><li><a href="https://www.youtube.com/watch?v=VqwvMUWyCO4" target="_blank" rel="noopener">Week-end découverte Annecy, la Venise des Alpes:Ne passez pas à côté de Precherel Bauges 2</a></li><li><a href="https://www.youtube.com/watch?v=89PnfLu9pGA" target="_blank" rel="noopener">Week-end découverte Annecy, la Venise des Alpes: L'Abbaye de Tamié, Bauges 2022.</a></li><li><a href="https://www.youtube.com/watch?v=XFgsUOnTWgk" target="_blank" rel="noopener">: Le château de Miolans : Un secret de Savoie</a></li><li><a href="https://www.youtube.com/watch?v=Wxt4pVsC-ZI" target="_blank" rel="noopener">Week-end découverte Annecy, la Venise des Alpes: château de Duingt vu 4K en drone.</a></li><li><a href="https://www.youtube.com/watch?v=mvEydQ3lpZ4" target="_blank" rel="noopener">Week-end découverte Annecy, la Venise des Alpes : Col de Aravis</a></li><li><a href="https://www.youtube.com/watch?v=zFJGnSVl4og" target="_blank" rel="noopener">Week-end découverte Annecy, la Venise des Alpes: Le col de l'Arpettaz</a></li><li><a href="https://www.youtube.com/watch?v=jq02gt4YWlo" target="_blank" rel="noopener">Week-end découverte Annecy, la Venise des Alpes.  les plus beaux sites de Annecy: Les Arav</a></li><li><a href="https://www.youtube.com/watch?v=NsM2DEysUI0" target="_blank" rel="noopener">TRK 702-AirFlow A8717-Camping Lone Rider. Vêtements Hiver-Préparation road trip moto-Voyag</a></li><li><a href="https://www.youtube.com/watch?v=25QDcsN3K18" target="_blank" rel="noopener">Road Trip Moto, Bonne année des Aravis</a></li><li><a href="https://www.youtube.com/watch?v=zdkuNEHqCjE" target="_blank" rel="noopener">Benelli TRK 702. Moto hiver, les Aravis-La clusaz</a></li><li><a href="https://www.youtube.com/watch?v=1H38LNxAD60" target="_blank" rel="noopener">Sur les Routes de l’Histoire.  Nature et découverte en Moto des Trésors de Haute-Savoie.</a></li><li><a href="https://www.youtube.com/watch?v=v5Ngfsj8X8o" target="_blank" rel="noopener">Col de la Chambotte &amp; Grand Colombier en moto | France</a></li><li><a href="https://www.youtube.com/watch?v=s38cppyYdvo" target="_blank" rel="noopener">Ascension du  Col de l'Arpetaz à Moto: TRK 702 &amp; Tiger 900 en Action</a></li><li><a href="https://www.youtube.com/watch?v=fpZ6pD8lwtc" target="_blank" rel="noopener">Balade moto dans la Maurienne pour aller voir Lacets de Montvernier.</a></li><li><a href="https://www.youtube.com/watch?v=EwPtBFMxypY" target="_blank" rel="noopener">MINI Road Trip Moto R 1200 RT et TRK 702.  Entre Haute-Savoie, Ain et Bugey</a></li><li><a href="https://www.youtube.com/watch?v=tBttggEGOQc" target="_blank" rel="noopener">Le déluge s'abat sur nous. Road trip moto Benelli TRK 702,</a></li><li><a href="https://www.youtube.com/watch?v=Rgrm3xO3mSI" target="_blank" rel="noopener">Road trip jour 4 Benelli TRK 702</a></li><li><a href="https://www.youtube.com/watch?v=3GWcB9oyP8s" target="_blank" rel="noopener">réveil matinal et dans la rosée du matin. Road trip Benelli TRK 702</a></li><li><a href="https://www.youtube.com/watch?v=Wdn-4saXn6Q" target="_blank" rel="noopener">2 motards en balade Ep1. 🏍️ Duel Moto : TRK 702 vs BMW R 1200 RT – Qui Domine la Route ?</a></li><li><a href="https://www.youtube.com/watch?v=4xaqaEltO-0" target="_blank" rel="noopener">Découverte d'un paysage caché après la tempête !</a></li><li><a href="https://www.youtube.com/watch?v=-n2dfOgClTM" target="_blank" rel="noopener">Octobre rose 2024. Organisé par Louli louli et Francois Bernard.</a></li><li><a href="https://www.youtube.com/watch?v=PZpZGOlJ2xQ" target="_blank" rel="noopener">Octobre rose 2024. Organisé par Louli louli et Francois Bernard.</a></li><li><a href="https://www.youtube.com/watch?v=zUmmVjmUIsY" target="_blank" rel="noopener">Le cancer du sein, Octobre rose, motardes engagées.</a></li><li><a href="https://www.youtube.com/watch?v=YU51KbYRZJw" target="_blank" rel="noopener">Ep3. 🏔️ Road Trip Moto – 5 Cols de Légende &amp; Paysages à Couper le Souffle</a></li><li><a href="https://www.youtube.com/watch?v=YU51KbYRZJw" target="_blank" rel="noopener">Ep3. 🏔️ Road Trip Moto – 5 Cols de Légende &amp; Paysages à Couper le Souffle</a></li><li><a href="https://www.youtube.com/watch?v=UNOVNYDJhTo" target="_blank" rel="noopener">Explosion de couleurs dans les Alpes : l’Automne comme jamais vu !</a></li><li><a href="https://www.youtube.com/watch?v=w3h2dD5oCQ4" target="_blank" rel="noopener">Juste pour le plaisir, avec Télégraph Road.</a></li><li><a href="https://www.youtube.com/watch?v=ubb_I0QnQ-M" target="_blank" rel="noopener">Découvre les routes secrètes des Alpes en moto ! Road trip moto  Tracer 9 GT+ vs Honda NT1</a></li><li><a href="https://www.youtube.com/watch?v=ZQgqg4Qxc2Q" target="_blank" rel="noopener">Tu n’as jamais vu ces montagnes comme ça !</a></li><li><a href="https://www.youtube.com/watch?v=o4NSUSvf1eg" target="_blank" rel="noopener">Dernière claque, le road trip est fini!  EP3. Honda NT 1100 et Tracer 9GT dans les Alpes</a></li><li><a href="https://www.youtube.com/watch?v=KvxVwXFjKn4" target="_blank" rel="noopener">Découvre le Luberon à moto avec Yann et Sandra 🚵‍♂️ | Road trip Drôme Provençale</a></li><li><a href="https://www.youtube.com/watch?v=a9Kcqx5J7VU" target="_blank" rel="noopener">Road trip moto. Galibier Express Honda NT 1100</a></li><li><a href="https://www.youtube.com/watch?v=eNVD7c6g3wM" target="_blank" rel="noopener">Alpes Aventure Moto Festival, Barcelonnette en Honda NT 1100 et tracer 9 GT.</a></li><li><a href="https://www.youtube.com/watch?v=dOjvRtEitX4" target="_blank" rel="noopener">Alpes Aventure Moto Festival : J'ai TOUT Raté (Essais, Chute, Moto cassée...) EP2</a></li><li><a href="https://www.youtube.com/watch?v=xQSpEY5EsEc" target="_blank" rel="noopener">Un géant pour toi et facile à faire ! Valcavera le col que tu vas aimer !</a></li><li><a href="https://www.youtube.com/watch?v=moyo4_X1338" target="_blank" rel="noopener">Balade entre Savoie et Haute Savoie</a></li><li><a href="https://www.youtube.com/watch?v=30Pw8c_OW-0" target="_blank" rel="noopener">Road trip moto. BMW 1250RT Honda NT 1100 La bonette</a></li><li><a href="https://www.youtube.com/watch?v=eVi9fzp4MZ0" target="_blank" rel="noopener">Géant, tu vas Adorer, c'est trop beau !!</a></li><li><a href="https://www.youtube.com/watch?v=1JKi34BG_rU" target="_blank" rel="noopener">Vidéo Annecy</a></li></ol></details></div></section>
-
-<section class="container choice-section">
-    <div class="section-title">
-        <h2>Quel road trip <span>choisir ?</span></h2>
-        <div class="bar"></div>
-        <p>Si tu découvres la chaîne, voici le meilleur point d’entrée selon l’ambiance que tu cherches.</p>
-    </div>
-
-    <div class="choice-grid">
-        <article class="choice-card">
-            <div class="choice-icon">🏔️</div>
-            <h3>Tu veux de l’aventure pure ?</h3>
-            <p>Pluie, froid, bivouac, ténacité, grands espaces et sensation d’aller vraiment au bout de quelque chose.</p>
-            <a href="#episodes-cap-nord" class="choice-link">Commence par Cap Nord →</a>
-        </article>
-
-        <article class="choice-card">
-            <div class="choice-icon">🌍</div>
-            <h3>Tu veux du dépaysement total ?</h3>
-            <p>Plus de distance, d’autres ambiances, et ce vrai sentiment de basculer vers un voyage plus loin, plus fort.</p>
-            <a href="#episodes-cappadoce" class="choice-link">Pars vers la Cappadoce →</a>
-        </article>
-
-        <article class="choice-card">
-            <div class="choice-icon">☀️</div>
-            <h3>Tu veux un voyage accessible ?</h3>
-            <p>Du soleil, de la variété, du plaisir immédiat et une belle porte d’entrée dans l’esprit road trip.</p>
-            <a href="#episodes-espagne" class="choice-link">Découvre l’Espagne →</a>
-        </article>
-
-        <article class="choice-card">
-            <div class="choice-icon">⛰️</div>
-            <h3>Tu aimes les cols et la montagne ?</h3>
-            <p>Des routes mythiques, de l’altitude, des lacs et l’essence même du plaisir moto en montagne.</p>
-            <a href="#episodes-alpes" class="choice-link">Va dans les Alpes →</a>
-        </article>
-    </div>
-</section>
-
-<section class="container recent-section">
-    <div class="section-title">
-        <h2>Derniers <span>épisodes</span></h2>
-        <div class="bar"></div>
-        <p>Une sélection récente pour continuer la découverte ou retrouver les dernières mises en ligne.</p>
-    </div>
-
-    <div class="recent-grid">
-        <article class="recent-card">
-            <img src="https://img.youtube.com/vi/aEEJXeNSsdg/hqdefault.jpg" alt="Miniature dernier épisode road trip">
-            <div class="episode-info">
-                <h4>Cap Nord – Le départ</h4>
-                <p>Le début du grand road trip vers le Nord.</p>
-                <a href="https://www.youtube.com/watch?v=aEEJXeNSsdg" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
+<!-- Épisodes vedettes (placeholders) -->
+<section class="container episodes-section">
+    <!-- Cap Nord -->
+    <div class="trip-episodes">
+        <div class="trip-title">
+            <h3>Cap Nord 2025</h3>
+            <span>3 épisodes vedettes</span>
+        </div>
+        <div class="episodes-grid">
+            <div class="episode-card">
+                <div class="episode-thumb"><img src="https://img.youtube.com/vi/xxxxxxxxxxx/hqdefault.jpg" alt=""></div>
+                <div class="episode-info">
+                    <h4>#1 – Le départ vers le Nord</h4>
+                    <p>Premiers kilomètres, premières galères.</p>
+                    <a href="#" class="episode-link">Voir l'épisode →</a>
+                </div>
             </div>
-        </article>
-
-        <article class="recent-card">
-            <img src="https://img.youtube.com/vi/Fblx1mI1teE/hqdefault.jpg" alt="Miniature dernier épisode road trip">
-            <div class="episode-info">
-                <h4>Cappadoce – Montgolfières & galères</h4>
-                <p>L’un des épisodes marquants du voyage en Turquie.</p>
-                <a href="https://www.youtube.com/watch?v=SY5vAz7iQx8" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
+            <div class="episode-card">
+                <div class="episode-thumb"><img src="https://img.youtube.com/vi/yyyyyyyyyyy/hqdefault.jpg" alt=""></div>
+                <div class="episode-info">
+                    <h4>#4 – Nuit sous tente à -5°C</h4>
+                    <p>Bivouac en Laponie.</p>
+                    <a href="#" class="episode-link">Voir l'épisode →</a>
+                </div>
             </div>
-        </article>
-
-        <article class="recent-card">
-            <img src="https://img.youtube.com/vi/BAPas-qa5eU/hqdefault.jpg" alt="Miniature dernier épisode road trip">
-            <div class="episode-info">
-                <h4>Espagne – Mission impossible à Ronda</h4>
-                <p>Un épisode fort du tour d’Espagne.</p>
-                <a href="https://www.youtube.com/watch?v=ly7GGAo9RWU" class="episode-link" target="_blank" rel="noopener">Voir l’épisode →</a>
+            <div class="episode-card">
+                <div class="episode-thumb"><img src="https://img.youtube.com/vi/zzzzzzzzzzz/hqdefault.jpg" alt=""></div>
+                <div class="episode-info">
+                    <h4>#7 – Cap Nord, enfin !</h4>
+                    <p>L'arrivée au bout du monde.</p>
+                    <a href="#" class="episode-link">Voir l'épisode →</a>
+                </div>
             </div>
-        </article>
+        </div>
     </div>
-</section>
 
-<section class="container">
-    <div class="cta-final">
-        <h2>Envie de prendre la route avec moi ?</h2>
-        <p>Retrouve toutes les playlists, les épisodes complets et les prochaines aventures de LCDMH. Des voyages vrais, des découvertes sincères et toujours cette même envie d’aller voir ce qu’il y a derrière le prochain virage.</p>
-        <div class="cta-buttons">
-            <a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="btn-cta" target="_blank" rel="noopener">▶ S’abonner sur YouTube</a>
-            <a href="equipement.html" class="btn-cta-outline">🧭 Voir aussi GPS & Équipement</a>
+    <!-- Europe – Asie -->
+    <div class="trip-episodes">
+        <div class="trip-title">
+            <h3>Europe – Asie 2024</h3>
+            <span>3 épisodes vedettes</span>
+        </div>
+        <div class="episodes-grid">
+            <div class="episode-card">
+                <div class="episode-thumb"><img src="https://img.youtube.com/vi/aaaaaaaaaaa/hqdefault.jpg" alt=""></div>
+                <div class="episode-info">
+                    <h4>#2 – Entrée en Turquie</h4>
+                    <p>Choc culturel et premières rencontres.</p>
+                    <a href="#" class="episode-link">Voir l'épisode →</a>
+                </div>
+            </div>
+            <div class="episode-card">
+                <div class="episode-thumb"><img src="https://img.youtube.com/vi/bbbbbbbbbbb/hqdefault.jpg" alt=""></div>
+                <div class="episode-info">
+                    <h4>#5 – Cappadoce vue de la selle</h4>
+                    <p>Paysages lunaires à moto.</p>
+                    <a href="#" class="episode-link">Voir l'épisode →</a>
+                </div>
+            </div>
+            <div class="episode-card">
+                <div class="episode-thumb"><img src="https://img.youtube.com/vi/ccccccccccc/hqdefault.jpg" alt=""></div>
+                <div class="episode-info">
+                    <h4>#8 – Retour émotions</h4>
+                    <p>Bilan d'un voyage unique.</p>
+                    <a href="#" class="episode-link">Voir l'épisode →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Espagne -->
+    <div class="trip-episodes">
+        <div class="trip-title">
+            <h3>Tour d’Espagne 2023</h3>
+            <span>3 épisodes vedettes</span>
+        </div>
+        <div class="episodes-grid">
+            <div class="episode-card">
+                <div class="episode-thumb"><img src="https://img.youtube.com/vi/ddddddddddd/hqdefault.jpg" alt=""></div>
+                <div class="episode-info">
+                    <h4>#3 – Désert de Tabernas</h4>
+                    <p>Chaleur et paysages de western.</p>
+                    <a href="#" class="episode-link">Voir l'épisode →</a>
+                </div>
+            </div>
+            <div class="episode-card">
+                <div class="episode-thumb"><img src="https://img.youtube.com/vi/eeeeeeeeeee/hqdefault.jpg" alt=""></div>
+                <div class="episode-info">
+                    <h4>#6 – Côte des Calanques</h4>
+                    <p>Entre mer et falaises.</p>
+                    <a href="#" class="episode-link">Voir l'épisode →</a>
+                </div>
+            </div>
+            <div class="episode-card">
+                <div class="episode-thumb"><img src="https://img.youtube.com/vi/fffffffffff/hqdefault.jpg" alt=""></div>
+                <div class="episode-info">
+                    <h4>#9 – Bodegas et routes sinueuses</h4>
+                    <p>Dégustation et virages.</p>
+                    <a href="#" class="episode-link">Voir l'épisode →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alpes -->
+    <div class="trip-episodes">
+        <div class="trip-title">
+            <h3>Les Alpes 2022</h3>
+            <span>3 épisodes vedettes</span>
+        </div>
+        <div class="episodes-grid">
+            <div class="episode-card">
+                <div class="episode-thumb"><img src="https://img.youtube.com/vi/ggggggggggg/hqdefault.jpg" alt=""></div>
+                <div class="episode-info">
+                    <h4>#1 – Col du Galibier</h4>
+                    <p>Un mythe à gravir.</p>
+                    <a href="#" class="episode-link">Voir l'épisode →</a>
+                </div>
+            </div>
+            <div class="episode-card">
+                <div class="episode-thumb"><img src="https://img.youtube.com/vi/hhhhhhhhhhh/hqdefault.jpg" alt=""></div>
+                <div class="episode-info">
+                    <h4>#3 – Lac de Serre-Ponçon</h4>
+                    <p>Bivouac au bord de l'eau.</p>
+                    <a href="#" class="episode-link">Voir l'épisode →</a>
+                </div>
+            </div>
+            <div class="episode-card">
+                <div class="episode-thumb"><img src="https://img.youtube.com/vi/iiiiiiiiiii/hqdefault.jpg" alt=""></div>
+                <div class="episode-info">
+                    <h4>#5 – Route des Grandes Alpes</h4>
+                    <p>L'intégrale en 3 jours.</p>
+                    <a href="#" class="episode-link">Voir l'épisode →</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
+<!-- Section "Quel road trip choisir ?" -->
+<div class="container">
+    <div class="section-title">
+        <h2>Quel road trip <span>choisir ?</span></h2>
+        <div class="bar"></div>
+        <p>Selon tes envies, je te guide vers l'aventure qui te correspond.</p>
+    </div>
+    <div class="choice-grid">
+        <div class="choice-card">
+            <div class="choice-icon">🏔️</div>
+            <h3>Tu veux de l'aventure pure ?</h3>
+            <p>Cap Nord – 10 000 km de défis, de froid et de grands espaces.</p>
+            <a href="#capnord" class="choice-link">Découvrir →</a>
+        </div>
+        <div class="choice-card">
+            <div class="choice-icon">🌍</div>
+            <h3>Tu veux du dépaysement total ?</h3>
+            <p>Europe–Asie – De la Cappadoce aux Balkans, un voyage hors du temps.</p>
+            <a href="#europe-asie" class="choice-link">Découvrir →</a>
+        </div>
+        <div class="choice-card">
+            <div class="choice-icon">☀️</div>
+            <h3>Tu veux un voyage plus accessible ?</h3>
+            <p>Espagne – Chaleur, déserts et côtes sauvages.</p>
+            <a href="#espagne" class="choice-link">Découvrir →</a>
+        </div>
+        <div class="choice-card">
+            <div class="choice-icon">⛰️</div>
+            <h3>Tu aimes les cols et la montagne ?</h3>
+            <p>Alpes – 1800 km de cols mythiques et de lacs glaciaires.</p>
+            <a href="#alpes" class="choice-link">Découvrir →</a>
+        </div>
+    </div>
+</div>
+
+<!-- Derniers épisodes (bas de page) -->
+<section class="recent-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Derniers <span>épisodes</span></h2>
+            <div class="bar"></div>
+        </div>
+        <div class="recent-grid">
+            <div class="recent-card">[Placeholder épisode récent 1]</div>
+            <div class="recent-card">[Placeholder épisode récent 2]</div>
+            <div class="recent-card">[Placeholder épisode récent 3]</div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA final -->
+<div class="container">
+    <div class="cta-final">
+        <h2>Envie de partir avec moi sur la route ?</h2>
+        <p>Retrouve toutes les playlists, les épisodes complets et les tests matériel sur la chaîne LCDMH.</p>
+        <div class="cta-buttons">
+            <a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="btn-cta" target="_blank" rel="noopener">▶ S'abonner sur YouTube</a>
+            <a href="codes-promo.html" class="btn-cta-outline">💰 Voir les codes promo</a>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
 <footer>
     <div class="footer-logo">LC<span>D</span>MH</div>
+    <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">La Chaîne du Motard Heureux · Annecy, France</p>
     <ul class="footer-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="roadtrips.html">Road Trips</a></li>
-        <li><a href="tests-motos.html">Tests</a></li>
-        <li><a href="equipement.html">GPS & Équipement</a></li>
-        <li><a href="codes-promo.html">Partenaires</a></li>
-        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="codes-promo.html">Codes promo</a></li>
+        <li><a href="aoocci.html">Aoocci</a></li>
+        <li><a href="carpuride.html">Carpuride</a></li>
+        <li><a href="blackview.html">Blackview</a></li>
+        <li><a href="komobi.html">Komobi</a></li>
+        <li><a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
     </ul>
-    <div class="copyright">
-        © 2026 LCDMH – La Chaîne du Motard Heureux<br>
-        Road trips moto, découvertes, tests et aventures en solo.
-    </div>
+    <p class="copyright">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves · Annecy, France</p>
 </footer>
-
 </body>
 </html>
+<!-- FIN DU FICHIER : roadtrips.html -->
