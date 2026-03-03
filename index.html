@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LCDMH – La Chaîne du Motard Heureux | Road Trip Moto Europe</title>
+  <meta name="description" content="LCDMH – Road trips moto épiques à travers l'Europe. Cap Nord, Cappadoce, Espagne, Alpes. Codes promo exclusifs.">
+  <meta name="keywords" content="road trip moto Europe, LCDMH, La Chaîne du Motard Heureux, code promo Aoocci, code promo Carpuride, GPS moto, Cap Nord moto, Honda NT1100, bivouac moto">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="LCDMH – La Chaîne du Motard Heureux">
+  <meta property="og:description" content="Road trips moto épiques à travers l'Europe. Codes promo exclusifs GPS moto, équipements et accessoires.">
+  <meta property="og:url" content="https://lcdmh.netlify.app">
+  <link rel="canonical" href="https://lcdmh.netlify.app">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root{
+      --orange:#e67e22;
+      --orange-dark:#d35400;
+      --noir:#1a1a1a;
+      --bg:#f7f7f5;
+      --card:#fff;
+      --border:#e5e5e5;
+      --muted:#777;
+      --alt:#f0ede8;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--noir);line-height:1.65;font-size:16px}
+    h1,h2,h3,h4{font-family:'Montserrat',sans-serif}
+    a{color:inherit;text-decoration:none}
+
+    /* NAV */
+    nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.07);padding:0 4%;height:66px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+    .logo{font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800;color:var(--noir)}
+    .logo span{color:var(--orange)}
+    .nav-links{display:flex;gap:1rem;list-style:none;align-items:center}
+    .nav-links>li>a{font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0}
+    .nav-links>li>a:hover{color:var(--orange)}
+    .has-drop{position:relative}
+    .has-drop>a::after{content:'▾';font-size:.6rem;opacity:.7;margin-left:.2rem}
+    .dropdown{display:none;position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.12);min-width:175px;padding:.5rem 0;z-index:999}
+    .has-drop:hover .dropdown{display:block}
+    .dropdown a{display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s}
+    .dropdown a:hover{background:#fff8f2;color:var(--orange)}
+    .nav-yt{background:var(--orange)!important;color:#fff!important;padding:.42rem 1rem;border-radius:6px;font-weight:700!important}
+    .nav-yt:hover{background:var(--orange-dark)!important}
+    @media(max-width:900px){.nav-links{display:none}}
+
+/* HERO PARALLAXE */
+    .hero{position:relative;min-height:85vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+    .hero-img{position:absolute;inset:0;background:url('images/bandeau-norvege.jpg') center/cover no-repeat fixed;filter:brightness(.55);z-index:0}
+    .hero-content{position:relative;z-index:2;max-width:820px;padding:2rem;text-shadow:0 2px 15px rgba(0,0,0,.7)}
+    .hero-badge{display:inline-block;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.45rem 1.4rem;border-radius:50px;margin-bottom:1.4rem;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+    .hero h1{font-size:clamp(2.4rem,7vw,4.8rem);font-weight:800;line-height:1.08;margin-bottom:1.1rem}
+    .hero h1 em{font-style:normal;color:var(--orange)}
+    .hero p{font-size:1.15rem;opacity:.95;max-width:580px;margin:0 auto 2rem}
+    .hero-stats{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;margin-bottom:2.2rem}
+    .stat-hero b{display:block;font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:800;color:var(--orange)}
+    .stat-hero span{font-size:.78rem;opacity:.9;text-transform:uppercase;letter-spacing:.08em}
+    .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+    .btn{font-family:'Montserrat',sans-serif;font-size:.88rem;font-weight:700;padding:.8rem 1.9rem;border-radius:8px;border:none;cursor:pointer;transition:all .2s;display:inline-block;letter-spacing:.02em;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+    .btn-orange{background:var(--orange);color:#fff}.btn-orange:hover{background:var(--orange-dark)}
+    .btn-white{background:transparent;color:#fff;border:2px solid #fff}.btn-white:hover{background:rgba(255,255,255,.15)}
+
+    /* SECTIONS */
+    .section{padding:72px 6%}
+    .section-alt{background:var(--alt)}
+    .sec-head{text-align:center;margin-bottom:2.8rem}
+    .sec-head h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;margin-bottom:.4rem}
+    .sec-head h2 em{font-style:normal;color:var(--orange)}
+    .sec-head p{color:var(--muted);max-width:620px;margin:.6rem auto 0;font-size:.95rem}
+    .bar{width:52px;height:4px;background:var(--orange);border-radius:2px;margin:.8rem auto 0}
+
+    /* CODES PROMO */
+    .promo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:1.5rem}
+    .promo-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.6rem;display:flex;flex-direction:column;gap:.9rem;box-shadow:0 2px 12px rgba(0,0,0,.05);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+    .promo-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--orange)}
+    .promo-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+    .promo-cat{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
+    .promo-img{width:100%;height:140px;object-fit:contain;background:#f5f4f1;border-radius:8px;padding:8px;margin-bottom:.2rem}
+    .promo-img-placeholder{width:100%;height:140px;background:linear-gradient(135deg,#f5f4f1,#ede9e3);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;color:var(--orange);letter-spacing:.04em;margin-bottom:.2rem}
+    .promo-remise{display:inline-block;background:#fff4e8;color:var(--orange);font-weight:700;font-size:.82rem;padding:.22rem .7rem;border-radius:50px;border:1px solid #ffd9b0}
+    .promo-desc{font-size:.87rem;color:var(--muted);line-height:1.6;flex:1}
+    .code-row{display:flex;align-items:center;justify-content:space-between;background:#f9f9f7;border:1.5px dashed var(--border);border-radius:8px;padding:.65rem .9rem;gap:.6rem}
+    .code-val{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;color:var(--orange);letter-spacing:.05em}
+    .code-sub{font-size:.72rem;color:var(--muted);margin-top:.1rem}
+    .copy-btn{font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;background:var(--noir);color:#fff;border:none;padding:.4rem .85rem;border-radius:6px;cursor:pointer;transition:background .2s;white-space:nowrap}
+    .copy-btn:hover{background:var(--orange)}
+    .copy-btn.ok{background:#27ae60}
+    .promo-page{display:block;text-align:center;font-size:.8rem;font-weight:600;color:var(--orange);border:1.5px solid var(--orange);border-radius:8px;padding:.55rem;transition:all .2s;margin-top:.2rem}
+    .promo-page:hover{background:var(--orange);color:#fff}
+    .promo-ext{display:block;text-align:center;font-size:.76rem;color:var(--muted);margin-top:.3rem;transition:color .2s}
+    .promo-ext:hover{color:var(--orange)}
+
+    /* FILTRES */
+    .filtres{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin-bottom:2.2rem}
+    .f-btn{font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:600;background:#fff;border:1.5px solid var(--border);padding:.5rem 1.3rem;border-radius:50px;cursor:pointer;transition:all .2s;letter-spacing:.02em}
+    .f-btn:hover,.f-btn.on{background:var(--orange);color:#fff;border-color:var(--orange)}
+
+    /* VIDÉOS */
+    .videos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(295px,1fr));gap:1.6rem}
+    .v-card{background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.06);cursor:pointer;transition:transform .2s,box-shadow .2s}
+    .v-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,.12)}
+    .v-card.hide{display:none}
+    .v-thumb{position:relative;width:100%;padding-top:56.25%;background:#e8e8e8;overflow:hidden}
+    .v-thumb img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;transition:transform .3s}
+    .v-card:hover .v-thumb img{transform:scale(1.05)}
+    .v-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2);opacity:0;transition:opacity .2s}
+    .v-card:hover .v-play{opacity:1}
+    .play-circle{width:54px;height:54px;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center}
+    .play-circle svg{fill:#fff;width:22px;height:22px;margin-left:3px}
+    .v-cat{position:absolute;bottom:.7rem;left:.7rem;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.66rem;font-weight:700;padding:.22rem .75rem;border-radius:50px;letter-spacing:.06em;text-transform:uppercase}
+    .v-body{padding:1rem 1.1rem 1.2rem}
+    .v-title{font-family:'Montserrat',sans-serif;font-size:.92rem;font-weight:700;line-height:1.35;margin-bottom:.4rem;color:var(--noir)}
+    .v-desc{font-size:.8rem;color:var(--muted);line-height:1.5;margin-bottom:.5rem}
+    .v-date{font-size:.72rem;color:#bbb;font-weight:500}
+
+    /* YT BAR */
+    .yt-wrap{max-width:660px;margin:2.5rem auto 0}
+    .yt-bar{display:flex;align-items:center;gap:1.2rem;background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:1.2rem 1.6rem;text-decoration:none;color:var(--noir);transition:border-color .2s,box-shadow .2s}
+    .yt-bar:hover{border-color:#ff0000;box-shadow:0 4px 16px rgba(255,0,0,.1)}
+    .yt-ico{width:44px;height:44px;background:#ff0000;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .yt-ico svg{fill:#fff;width:22px;height:22px}
+    .yt-info{flex:1}
+    .yt-name{font-family:'Montserrat',sans-serif;font-size:.97rem;font-weight:700}
+    .yt-sub{font-size:.79rem;color:var(--muted)}
+    .yt-cta{font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:700;color:#ff0000;white-space:nowrap}
+
+    /* ROAD TRIPS */
+    .trips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:1.4rem}
+    .trip{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.6rem;display:flex;flex-direction:column;gap:.7rem;box-shadow:0 2px 10px rgba(0,0,0,.05);transition:all .2s;color:var(--noir)}
+    .trip:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.1);border-color:var(--orange)}
+    .trip-num{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange)}
+    .trip-name{font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:800;line-height:1.25}
+    .trip-desc{font-size:.85rem;color:var(--muted);line-height:1.55;flex:1}
+    .trip-foot{display:flex;align-items:center;justify-content:space-between;padding-top:.7rem;border-top:1px solid var(--border);margin-top:auto}
+    .trip-km{font-size:.74rem;color:var(--muted);font-weight:600}
+    .trip-arr{color:var(--orange);font-size:1.1rem;transition:transform .2s}
+    .trip:hover .trip-arr{transform:translateX(4px)}
+
+    /* ABOUT */
+    .about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+    @media(max-width:768px){.about-wrap{grid-template-columns:1fr}}
+    .about-wrap p{font-size:.95rem;color:var(--muted);margin-bottom:1rem;line-height:1.75}
+    .about-wrap strong{color:var(--noir)}
+    .stats-box{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+    .stat-c{background:#fff;padding:1.4rem;text-align:center}
+    .stat-n{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:800;color:var(--orange);display:block}
+    .stat-l{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+
+    /* FOOTER */
+    footer{background:var(--noir);color:rgba(255,255,255,.65);padding:2.8rem 6%;text-align:center}
+    .f-logo{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:#fff}
+    .f-logo em{font-style:normal;color:var(--orange)}
+    .f-nav{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin:1.2rem 0;list-style:none}
+    .f-nav a{font-size:.8rem;color:rgba(255,255,255,.55);transition:color .2s}
+    .f-nav a:hover{color:var(--orange)}
+    .f-legal{font-size:.76rem;color:rgba(255,255,255,.3);margin-top:1.1rem;line-height:1.7}
+
+    @media(max-width:640px){
+      .section{padding:52px 5%}
+      .hero{min-height:62vh}
+      .hero-stats{gap:1.4rem}
+      .stat-hero b{font-size:1.6rem}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">LC<span>D</span>MH</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li class="has-drop">
+      <a href="#">Road Trips</a>
+      <div class="dropdown">
+        <a href="roadtrips.html">Tous les road trips</a>
+        <a href="roadtrips.html#capnord">Cap Nord 2025</a>
+        <a href="roadtrips.html#europe-asie">Europe–Asie 2024</a>
+        <a href="roadtrips.html#espagne">Espagne 2023</a>
+        <a href="roadtrips.html#alpes">Les Alpes</a>
+      </div>
+    </li>
+    <li class="has-drop">
+      <a href="#">Tests</a>
+      <div class="dropdown">
+        <a href="tests-motos.html">Tests motos</a>
+        <a href="equipement.html">Équipement</a>
+        <a href="intercoms.html">Intercoms</a>
+        <a href="pneus.html">Pneus</a>
+        <a href="photo-video.html">Photo / Vidéo</a>
+        <a href="securite.html">Sécurité</a>
+      </div>
+    </li>
+    <li class="has-drop">
+      <a href="#">GPS</a>
+      <div class="dropdown">
+        <a href="gps.html">Tous les GPS</a>
+        <a href="aoocci.html">Aoocci</a>
+        <a href="carpuride.html">Carpuride</a>
+      </div>
+    </li>
+    <li class="has-drop">
+      <a href="#">Partenaires</a>
+      <div class="dropdown">
+        <a href="codes-promo.html">Codes promo</a>
+        <a href="blackview.html">Blackview</a>
+        <a href="olight.html">Olight</a>
+        <a href="komobi.html">Komobi</a>
+      </div>
+    </li>
+    <li><a href="a-propos.html">À propos</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt" target="_blank" rel="noopener">▶ S'abonner</a></li>
+  </ul>
+</nav>
+
+<!-- HERO PARALLAXE -->
+<section class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🏍️ La Chaîne du Motard Heureux · Annecy, France</div>
+    <h1>Road Trip <em>Moto</em><br>à travers l'Europe</h1>
+    <p>Du Cap Nord en Norvège à la Cappadoce — 72 000 km de liberté, de cols et de bivouacs</p>
+    <div class="hero-stats">
+      <div class="stat-hero"><b>72 000</b><span>Kilomètres</span></div>
+      <div class="stat-hero"><b>14</b><span>Pays</span></div>
+      <div class="stat-hero"><b>1,5 M</b><span>Vues YouTube</span></div>
+      <div class="stat-hero"><b>3</b><span>Motos</span></div>
+    </div>
+    <div class="hero-btns">
+      <a href="#videos" class="btn btn-orange">Voir les vidéos</a>
+      <a href="#promos" class="btn btn-white">Codes promo</a>
+    </div>
+  </div>
+</section>
+
+<!-- CODES PROMO -->
+<section class="section" id="promos">
+  <div class="sec-head">
+    <h2>Codes promo <em>exclusifs</em></h2>
+    <div class="bar"></div>
+    <p>Chaque code correspond à un équipement testé sur ma moto, en conditions réelles, sur de vraies routes.</p>
+  </div>
+  <div class="promo-grid">
+
+    <!-- AOOCCI -->
+    <article class="promo-card">
+      <div class="promo-img-placeholder">AOOCCI</div>
+      <div class="promo-cat">GPS Moto Navigation</div>
+      <div class="promo-remise">Jusqu'à −28%</div>
+      <p class="promo-desc">GPS moto offline testé sur 10 000 km dont le Cap Nord. Navigation sans réseau, CarPlay et Android Auto intégrés.</p>
+      <div class="code-row">
+        <div><div class="code-val">LCDMH28</div><div class="code-sub">−28% · Meilleure remise</div></div>
+        <button class="copy-btn" onclick="copyCode('LCDMH28',this)">Copier</button>
+      </div>
+      <div class="code-row">
+        <div><div class="code-val">LCDMH25</div><div class="code-sub">−25% de réduction</div></div>
+        <button class="copy-btn" onclick="copyCode('LCDMH25',this)">Copier</button>
+      </div>
+      <div class="code-row">
+        <div><div class="code-val">LCDMH</div><div class="code-sub">−22% de réduction</div></div>
+        <button class="copy-btn" onclick="copyCode('LCDMH',this)">Copier</button>
+      </div>
+      <a href="https://aoocci.com/?ref=gvxyhqgv" class="promo-ext" target="_blank" rel="noopener sponsored">Visiter Aoocci.com ↗</a>
+    </article>
+
+    <!-- CARPURIDE -->
+    <article class="promo-card">
+      <div class="promo-img-placeholder">CARPURIDE</div>
+      <div class="promo-cat">Écran GPS Moto</div>
+      <div class="promo-remise">−30% sur tout</div>
+      <p class="promo-desc">Écran CarPlay et Android Auto pour moto. Lisibilité parfaite en plein soleil. Testé sur les routes d'Europe.</p>
+      <div class="code-row">
+        <div><div class="code-val">LCDMH</div><div class="code-sub">−30% sur toute la boutique</div></div>
+        <button class="copy-btn" onclick="copyCode('LCDMH',this)">Copier</button>
+      </div>
+      <a href="https://carpuride.com/?ref=uxcepkkq" class="promo-ext" target="_blank" rel="noopener sponsored">Visiter Carpuride.com ↗</a>
+    </article>
+
+    <!-- AFERIY -->
+    <article class="promo-card">
+      <div class="promo-img-placeholder">AFERIY ⚡</div>
+      <div class="promo-cat">Énergie Portable · Bivouac</div>
+      <div class="promo-remise">Jump Starter −47%</div>
+      <p class="promo-desc">Station Nano 100 et démarreur Jump Starter 2000A. Indispensables pour le voyage autonome en bivouac moto.</p>
+      <div class="code-row">
+        <div><div class="code-val">8JGATT8K</div><div class="code-sub">Nano 100 · Station portable</div></div>
+        <button class="copy-btn" onclick="copyCode('8JGATT8K',this)">Copier</button>
+      </div>
+      <div class="code-row">
+        <div><div class="code-val">LCDMHGK03</div><div class="code-sub">Jump Starter · 149€ → 79€</div></div>
+        <button class="copy-btn" onclick="copyCode('LCDMHGK03',this)">Copier</button>
+      </div>
+      <a href="https://www.amazon.fr/dp/B0F1MR5HD3" class="promo-ext" target="_blank" rel="noopener sponsored">Voir sur Amazon ↗</a>
+    </article>
+
+    <!-- BLACKVIEW -->
+    <article class="promo-card">
+      <div class="promo-img-placeholder">BLACKVIEW</div>
+      <div class="promo-cat">Téléphone Renforcé</div>
+      <p class="promo-desc">Smartphone renforcé Xplore X1 — pluie, chocs, vibrations, froid. Le téléphone du road trip testé en conditions extrêmes.</p>
+      <div class="code-row">
+        <div><div class="code-val">S4KCKFKE6C4K</div><div class="code-sub">Réduction exclusive LCDMH</div></div>
+        <button class="copy-btn" onclick="copyCode('S4KCKFKE6C4K',this)">Copier</button>
+      </div>
+      <a href="https://www.blackview.hk/products/item/xplore-x1" class="promo-ext" target="_blank" rel="noopener sponsored">Voir le Xplore X1 ↗</a>
+    </article>
+
+  </div>
+  <p style="text-align:center;margin-top:1.6rem;font-size:.78rem;color:var(--muted)">* Liens affiliés. Les remises peuvent évoluer — vérifiez toujours sur le site du partenaire.</p>
+</section>
+
+<!-- VIDÉOS -->
+<section class="section section-alt" id="videos">
+  <div class="sec-head">
+    <h2>Les <em>vidéos</em></h2>
+    <div class="bar"></div>
+    <p>Road trips, GPS moto, pneus, intercom, équipement, sécurité — toute la chaîne LCDMH</p>
+  </div>
+
+  <div class="filtres">
+    <button class="f-btn on" data-cat="tous">Tout voir</button>
+    <button class="f-btn" data-cat="roadtrip">🗺️ Road trips</button>
+    <button class="f-btn" data-cat="gps">📡 GPS Moto</button>
+    <button class="f-btn" data-cat="pneu">🛞 Pneus</button>
+    <button class="f-btn" data-cat="intercom">🎧 Intercom</button>
+    <button class="f-btn" data-cat="equipement">🧥 Équipement</button>
+    <button class="f-btn" data-cat="securite">🛡️ Sécurité</button>
+    <button class="f-btn" data-cat="test">🏍️ Tests motos</button>
+    <button class="f-btn" data-cat="photo">🎥 Photo/Vidéo</button>
+  </div>
+
+  <div class="videos-grid">
+    <!-- Road trips -->
+    <article class="v-card" data-cat="roadtrip" onclick="window.open('https://youtu.be/aEEJXeNSsdg','_blank')">
+      <div class="v-thumb"><img src="https://img.youtube.com/vi/aEEJXeNSsdg/hqdefault.jpg" alt="Cap Nord" loading="lazy"><div class="v-play"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><span class="v-cat">Road trip</span></div>
+      <div class="v-body"><div class="v-title">Cap Nord à Moto : 63 ans, 10 000 km en Solo</div><div class="v-desc">10 000 km en solo jusqu'au 71e parallèle.</div><div class="v-date">📅 Juin 2025</div></div>
+    </article>
+    <article class="v-card" data-cat="roadtrip" onclick="window.open('https://youtu.be/YwiwUpp8yBY','_blank')">
+      <div class="v-thumb"><img src="https://img.youtube.com/vi/YwiwUpp8yBY/hqdefault.jpg" alt="Norvège Top 7"><div class="v-play"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><span class="v-cat">Road trip</span></div>
+      <div class="v-body"><div class="v-title">Meilleures Routes Moto Norvège : Top 7</div><div class="v-desc">Les plus belles routes sélectionnées après 10 000 km.</div><div class="v-date">📅 Juin 2025</div></div>
+    </article>
+    <article class="v-card" data-cat="roadtrip" onclick="window.open('https://youtu.be/kb8NdP58LEs','_blank')">
+      <div class="v-thumb"><img src="https://img.youtube.com/vi/kb8NdP58LEs/hqdefault.jpg" alt="Espagne"><div class="v-play"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><span class="v-cat">Road trip</span></div>
+      <div class="v-body"><div class="v-title">5 500 km de moto en Espagne – Le Film</div><div class="v-desc">Tour complet de la péninsule ibérique en solo.</div><div class="v-date">📅 Mai 2024</div></div>
+    </article>
+    <article class="v-card" data-cat="roadtrip" onclick="window.open('https://youtu.be/Fblx1mI1teE','_blank')">
+      <div class="v-thumb"><img src="https://img.youtube.com/vi/Fblx1mI1teE/hqdefault.jpg" alt="Turquie"><div class="v-play"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><span class="v-cat">Road trip</span></div>
+      <div class="v-body"><div class="v-title">Road Trip Moto Turquie – Le Départ</div><div class="v-desc">10 000 km vers la Cappadoce — l'épopée Europe-Asie.</div><div class="v-date">📅 Novembre 2024</div></div>
+    </article>
+
+    <!-- GPS -->
+    <article class="v-card" data-cat="gps" onclick="window.open('https://youtu.be/xj5-sH7pH2w','_blank')">
+      <div class="v-thumb"><img src="https://img.youtube.com/vi/xj5-sH7pH2w/hqdefault.jpg" alt="Aoocci U6"><div class="v-play"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><span class="v-cat">GPS</span></div>
+      <div class="v-body"><div class="v-title">GPS MOTO — Test Aoocci U6</div><div class="v-desc">Test complet offline, CarPlay, Android Auto.</div><div class="v-date">📅 Août 2025</div></div>
+    </article>
+    <article class="v-card" data-cat="gps" onclick="window.open('https://youtu.be/MVHMeX2rrok','_blank')">
+      <div class="v-thumb"><img src="https://img.youtube.com/vi/MVHMeX2rrok/hqdefault.jpg" alt="Aoocci BX"><div class="v-play"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><span class="v-cat">GPS</span></div>
+      <div class="v-body"><div class="v-title">Test GPS Moto Aoocci BX (2025)</div><div class="v-desc">CarPlay, Android Auto et −25% avec le code LCDMH25.</div><div class="v-date">📅 Août 2025</div></div>
+    </article>
+
+    <!-- Pneus -->
+    <article class="v-card" data-cat="pneu" onclick="window.open('https://youtu.be/dKeMlCC2l90','_blank')">
+      <div class="v-thumb"><img src="https://img.youtube.com/vi/dKeMlCC2l90/hqdefault.jpg" alt="Dunlop vs Michelin"><div class="v-play"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><span class="v-cat">Pneus</span></div>
+      <div class="v-body"><div class="v-title">Dunlop Mutant vs Michelin Road 6</div><div class="v-desc">Comparatif terrain après des milliers de kilomètres.</div><div class="v-date">📅 Septembre 2025</div></div>
+    </article>
+    <article class="v-card" data-cat="pneu" onclick="window.open('https://youtu.be/BBGFCW3cmdw','_blank')">
+      <div class="v-thumb"><img src="https://img.youtube.com/vi/BBGFCW3cmdw/hqdefault.jpg" alt="Metzeler"><div class="v-play"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><span class="v-cat">Pneus</span></div>
+      <div class="v-body"><div class="v-title">Test Metzeler RoadTec 02</div><div class="v-desc">Test en montagne — grip, confort et durabilité.</div><div class="v-date">📅 Juin 2025</div></div>
+    </article>
+
+    <!-- Intercoms -->
+    <article class="v-card" data-cat="intercom" onclick="window.open('https://youtu.be/PNlKbmWrKjY','_blank')">
+      <div class="v-thumb"><img src="https://img.youtube.com/vi/PNlKbmWrKjY/hqdefault.jpg" alt="Sena 60S"><div class="v-play"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><span class="v-cat">Intercom</span></div>
+      <div class="v-body"><div class="v-title">Sena 60S : Le Meilleur Son en Moto ?</div><div class="v-desc">Test avec haut-parleurs Harman Kardon.</div><div class="v-date">📅 Septembre 2025</div></div>
+    </article>
+    <article class="v-card" data-cat="intercom" onclick="window.open('https://youtu.be/gn7FkjtpOEM','_blank')">
+      <div class="v-thumb"><img src="https://img.youtube.com/vi/gn7FkjtpOEM/hqdefault.jpg" alt="Sena S50"><div class="v-play"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><span class="v-cat">Intercom</span></div>
+      <div class="v-body"><div class="v-title">Intercom moto Sena S50</div><div class="v-desc">Test complet connectivité et autonomie.</div><div class="v-date">📅 Avril 2023</div></div>
+    </article>
+
+    <!-- Équipement -->
+    <article class="v-card" data-cat="equipement" onclick="window.open('https://youtu.be/r_Qlp0N-aws','_blank')">
+      <div class="v-thumb"><img src="https://img.youtube.com/vi/r_Qlp0N-aws/hqdefault.jpg" alt="HJC RPHA 91"><div class="v-play"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><span class="v-cat">Équipement</span></div>
+      <div class="v-body"><div class="v-title">HJC RPHA 91 : Après 7 000 kilomètres</div><div class="v-desc">Bilan honnête après 7 000 km de route.</div><div class="v-date">📅 Mai 2023</div></div>
+    </article>
+    <article class="v-card" data-cat="equipement" onclick="window.open('https://youtu.be/UWYuXJvxKsM','_blank')">
+      <div class="v-thumb"><img src="https://img.youtube.com/vi/UWYuXJvxKsM/hqdefault.jpg" alt="Équipement froid"><div class="v-play"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><span class="v-cat">Équipement</span></div>
+      <div class="v-body"><div class="v-title">Mon équipement pour affronter le froid</div><div class="v-desc">Testé en Laponie et dans les Alpes.</div><div class="v-date">📅 Décembre 2024</div></div>
+    </article>
+    <article class="v-card" data-cat="equipement" onclick="window.open('https://youtu.be/GzH9CMa0P8g','_blank')">
+      <div class="v-thumb"><img src="https://img.youtube.com/vi/GzH9CMa0P8g/hqdefault.jpg" alt="Kemi Moto"><div class="v-play"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><span class="v-cat">Équipement</span></div>
+      <div class="v-body"><div class="v-title">Kemi Moto : Gilet, Gants et Chaussettes</div><div class="v-desc">Test équipement hivernal chauffant.</div><div class="v-date">📅 Novembre 2023</div></div>
+    </article>
+
+    <!-- Sécurité -->
+    <article class="v-card" data-cat="securite" onclick="window.open('https://youtu.be/KGfovxM_Q7w','_blank')">
+      <div class="v-thumb"><img src="https://img.youtube.com/vi/KGfovxM_Q7w/hqdefault.jpg" alt="Gendarmerie"><div class="v-play"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><span class="v-cat">Sécurité</span></div>
+      <div class="v-body"><div class="v-title">Trajectoires de sécurité avec la Gendarmerie</div><div class="v-desc">Formation avec un motard gendarme.</div><div class="v-date">📅 Avril 2024</div></div>
+    </article>
+    <article class="v-card" data-cat="securite" onclick="window.open('https://youtu.be/mqrxymLts_0','_blank')">
+      <div class="v-thumb"><img src="https://img.youtube.com/vi/mqrxymLts_0/hqdefault.jpg" alt="Virages débutant"><div class="v-play"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><span class="v-cat">Sécurité</span></div>
+      <div class="v-body"><div class="v-title">Virages Moto Débutant : Le SECRET</div><div class="v-desc">Maîtriser sa trajectoire.</div><div class="v-date">📅 Septembre 2025</div></div>
+    </article>
+
+    <!-- Tests motos -->
+    <article class="v-card" data-cat="test" onclick="window.open('https://youtu.be/8oNAzOpJtnI','_blank')">
+      <div class="v-thumb"><img src="https://img.youtube.com/vi/8oNAzOpJtnI/hqdefault.jpg" alt="Honda NT1100"><div class="v-play"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><span class="v-cat">Test moto</span></div>
+      <div class="v-body"><div class="v-title">Honda NT1100 2025 : Test complet</div><div class="v-desc">Ce qu'elle change VRAIMENT.</div><div class="v-date">📅 Juillet 2025</div></div>
+    </article>
+    <article class="v-card" data-cat="test" onclick="window.open('https://youtu.be/g-Gc-I7D38w','_blank')">
+      <div class="v-thumb"><img src="https://img.youtube.com/vi/g-Gc-I7D38w/hqdefault.jpg" alt="TRK 502"><div class="v-play"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><span class="v-cat">Test moto</span></div>
+      <div class="v-body"><div class="v-title">Essai fiabilité Benelli TRK 502</div><div class="v-desc">Retour après 25 000 km.</div><div class="v-date">📅 Mai 2023</div></div>
+    </article>
+
+    <!-- Photo/Video -->
+    <article class="v-card" data-cat="photo" onclick="window.open('https://youtu.be/Bw3MTPP0ea0','_blank')">
+      <div class="v-thumb"><img src="https://img.youtube.com/vi/Bw3MTPP0ea0/hqdefault.jpg" alt="Setup vidéo"><div class="v-play"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><span class="v-cat">Photo/Vidéo</span></div>
+      <div class="v-body"><div class="v-title">Le Matériel Parfait pour Capturer tes Aventures</div><div class="v-desc">Mon setup complet.</div><div class="v-date">📅 Novembre 2024</div></div>
+    </article>
+    <article class="v-card" data-cat="photo" onclick="window.open('https://youtu.be/TMEUulIwbCQ','_blank')">
+      <div class="v-thumb"><img src="https://img.youtube.com/vi/TMEUulIwbCQ/hqdefault.jpg" alt="Fujifilm X-S10"><div class="v-play"><div class="play-circle"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><span class="v-cat">Photo/Vidéo</span></div>
+      <div class="v-body"><div class="v-title">Fujifilm X-S10 Cinematic</div><div class="v-desc">Pourquoi j'utilise cet hybride.</div><div class="v-date">📅 Novembre 2023</div></div>
+    </article>
+  </div>
+
+  <div class="yt-wrap">
+    <a href="https://www.youtube.com/@LCDMH" class="yt-bar" target="_blank" rel="noopener">
+      <div class="yt-ico"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div>
+      <div class="yt-info"><div class="yt-name">LCDMH – La Chaîne du Motard Heureux</div><div class="yt-sub">youtube.com/@LCDMH · 10 000 abonnés · 1,5 M vues</div></div>
+      <div class="yt-cta">Voir toutes les vidéos →</div>
+    </a>
+  </div>
+</section>
+
+<!-- ROAD TRIPS -->
+<section class="section" id="voyages">
+  <div class="sec-head">
+    <h2>Les <em>road trips</em></h2>
+    <div class="bar"></div>
+    <p>Des expéditions documentées en série — du Cap Nord à la Cappadoce</p>
+  </div>
+  <div class="trips-grid">
+    <a href="https://www.youtube.com/playlist?list=PLYEqidd8fqw7deiDBrUW0YxHSV8TjUOmq" class="trip" target="_blank" rel="noopener">
+      <div class="trip-num">01 · 2025</div>
+      <div class="trip-name">Cap Nord — Annecy → Norvège</div>
+      <p class="trip-desc">10 000 km en solo jusqu'au 71e parallèle. Laponie, fjords, nuit blanche.</p>
+      <div class="trip-foot"><span class="trip-km">10 000 km · Solo · Bivouac</span><span class="trip-arr">→</span></div>
+    </a>
+    <a href="https://www.youtube.com/playlist?list=PLYEqidd8fqw6oXyMSFghX_FbRpcx44s5l" class="trip" target="_blank" rel="noopener">
+      <div class="trip-num">02 · 2024</div>
+      <div class="trip-name">De l'Europe à l'Asie</div>
+      <p class="trip-desc">Croatie, Albanie, Monténégro, Grèce, Istanbul, Cappadoce.</p>
+      <div class="trip-foot"><span class="trip-km">12 épisodes · Cappadoce</span><span class="trip-arr">→</span></div>
+    </a>
+    <a href="https://www.youtube.com/playlist?list=PLYEqidd8fqw5KCARDqX-M4L2H3mv_krOh" class="trip" target="_blank" rel="noopener">
+      <div class="trip-num">03 · 2023</div>
+      <div class="trip-name">Tour d'Espagne</div>
+      <p class="trip-desc">5 500 km dans la péninsule ibérique. Routes sinueuses et chaleur.</p>
+      <div class="trip-foot"><span class="trip-km">5 500 km · Espagne</span><span class="trip-arr">→</span></div>
+    </a>
+    <a href="https://www.youtube.com/playlist?list=PLYEqidd8fqw7YNsZfH1C7HlbbX106cCxP" class="trip" target="_blank" rel="noopener">
+      <div class="trip-num">04 · 2023</div>
+      <div class="trip-name">Les Alpes dans tous les sens</div>
+      <p class="trip-desc">Cols mythiques, virages en épingle, panoramas depuis Annecy.</p>
+      <div class="trip-foot"><span class="trip-km">Alpes · France / Italie</span><span class="trip-arr">→</span></div>
+    </a>
+  </div>
+</section>
+
+<!-- À PROPOS -->
+<section class="section section-alt" id="about">
+  <div class="sec-head">
+    <h2>Qui est <em>Yves ?</em></h2>
+    <div class="bar"></div>
+  </div>
+  <div class="about-wrap">
+    <div>
+      <p>Je suis <strong>Yves Vella</strong>, passionné de moto et créateur de <strong>LCDMH — La Chaîne du Motard Heureux</strong>. Permis en 2022, passerelle en 2024.</p>
+      <p>En 3 ans : <strong>72 000 km parcourus</strong> à travers l'Europe. Les Alpes, l'Albanie, le Monténégro, la Croatie, Istanbul, la Cappadoce. Et en 2025 : <strong>10 000 km solo jusqu'au Cap Nord en Norvège</strong>.</p>
+      <p>Je filme en style documentaire cinématique depuis <strong>Annecy</strong> — GoPro Hero 13, DJI Mini 4 Pro, Osmo Pocket 3. Tout produit seul, de la route au montage.</p>
+      <p>3 motos, 72 000 km : <strong>Benelli TRK 502</strong> (28 000 km) → <strong>TRK 702</strong> (18 000 km) → <strong>Honda NT1100</strong> (26 000 km depuis sept. 2024). Les codes promo que je partage, je les ai négociés après avoir <strong>testé les produits moi-même</strong>, sur de vraies routes.</p>
+    </div>
+    <div class="stats-box">
+      <div class="stat-c"><span class="stat-n">72K</span><span class="stat-l">Km parcourus</span></div>
+      <div class="stat-c"><span class="stat-n">10K</span><span class="stat-l">Abonnés</span></div>
+      <div class="stat-c"><span class="stat-n">1,5M</span><span class="stat-l">Vues totales</span></div>
+      <div class="stat-c"><span class="stat-n">2022</span><span class="stat-l">1er permis moto</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-logo">LC<em>D</em>MH</div>
+  <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">La Chaîne du Motard Heureux · Annecy, France</p>
+  <ul class="f-nav">
+    <li><a href="#promos">Codes promo</a></li>
+    <li><a href="aoocci.html">Aoocci</a></li>
+    <li><a href="carpuride.html">Carpuride</a></li>
+    <li><a href="aferiy.html">Aferiy</a></li>
+    <li><a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
+  </ul>
+  <p class="f-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2025 – Yves Vella · Annecy, France</p>
+</footer>
+
+<script>
+  // Filtres vidéos
+  document.querySelectorAll('.f-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('on'));
+      this.classList.add('on');
+      const cat = this.dataset.cat;
+      document.querySelectorAll('.v-card').forEach(card => {
+        card.classList.toggle('hide', cat !== 'tous' && card.dataset.cat !== cat);
+      });
+    });
+  });
+
+  // Copier code promo
+  function copyCode(code, btn) {
+    navigator.clipboard.writeText(code).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = 'Copié ✓';
+      btn.classList.add('ok');
+      setTimeout(() => { btn.textContent = orig; btn.classList.remove('ok'); }, 2000);
+    });
+  }
+</script>
+</body>
+</html>

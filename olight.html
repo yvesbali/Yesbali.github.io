@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olight - Lampes et éclairage bivouac moto - LCDMH</title>
+    <!-- Polices Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Inter", sans-serif;
+            background: #f5f5f5;
+            color: #1e1e1e;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+        }
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo a {
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e1e1e;
+            text-decoration: none;
+        }
+        .logo span {
+            color: #e67e22;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1e1e1e;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #e67e22;
+        }
+        .nav-yt {
+            background: #e67e22;
+            color: white !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        .nav-yt:hover {
+            background: #d35400;
+            color: white;
+        }
+        /* Hero avec parallaxe */
+        .hero {
+            height: 40vh;
+            min-height: 300px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center 30%;
+            background-attachment: fixed;
+            filter: brightness(0.6);
+            z-index: -1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .hero h1 span {
+            color: #e67e22;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        .hero-badge {
+            background: rgba(230, 126, 34, 0.9);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        /* Conteneur principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 5%;
+        }
+        /* Section titre */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        /* Bannière promo */
+        .promo-banner {
+            background: #e67e22;
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+        .promo-content h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .promo-code {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: white;
+            padding: 0.5rem 1rem 0.5rem 1.5rem;
+            border-radius: 50px;
+        }
+        .promo-code span {
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #e67e22;
+        }
+        .promo-code button {
+            background: #1e1e1e;
+            border: none;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .promo-code button:hover {
+            background: #d35400;
+        }
+        /* Grille produits */
+        .produits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .produit-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e0e0e0;
+            transition: transform 0.2s;
+        }
+        .produit-card:hover {
+            transform: translateY(-5px);
+        }
+        .produit-image {
+            height: 250px;
+            overflow: hidden;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .produit-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .produit-info {
+            padding: 2rem;
+        }
+        .produit-nom {
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .produit-marque {
+            color: #e67e22;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .produit-caracs {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        .produit-caracs li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .produit-caracs li:before {
+            content: "✓ ";
+            color: #e67e22;
+            font-weight: 600;
+        }
+        .btn-produit {
+            display: inline-block;
+            background: #1e1e1e;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background 0.2s;
+            margin-top: 1rem;
+        }
+        .btn-produit:hover {
+            background: #e67e22;
+        }
+        /* Grille usages */
+        .usages-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .usage-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 2rem;
+        }
+        .usage-title {
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.5rem;
+            color: #e67e22;
+            margin-bottom: 1rem;
+        }
+        .usage-desc {
+            color: #666;
+        }
+        /* Vidéo à venir */
+        .video-coming {
+            background: #1e1e1e;
+            color: white;
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        .video-coming h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #e67e22;
+        }
+        .video-coming p {
+            color: #aaa;
+            margin-bottom: 2rem;
+        }
+        .coming-badge {
+            background: #e67e22;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 600;
+        }
+        /* Footer */
+        footer {
+            background: #1e1e1e;
+            color: white;
+            padding: 3rem 5%;
+            margin-top: 4rem;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-col a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover {
+            color: #e67e22;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #333;
+            color: #aaa;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-links {
+                justify-content: center;
+            }
+            .usages-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <a href="index.html">LC<span>D</span>MH</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="roadtrips.html">Road Trips</a></li>
+            <li><a href="tests-matos.html">Tests équipements</a></li>
+            <li><a href="tests-motos.html">Tests motos</a></li>
+            <li><a href="securite.html">Sécurité</a></li>
+            <li><a href="gps.html">GPS</a></li>
+            <li><a href="intercoms.html">Intercoms</a></li>
+            <li><a href="pneus.html">Pneus</a></li>
+            <li><a href="blackview.html">Blackview</a></li>
+            <li><a href="olight.html" class="active">Olight</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://www.youtube.com/@LCDMH" class="nav-yt" target="_blank">YouTube</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-image"></div>
+        <div class="hero-content">
+            <div class="hero-badge">PARTENAIRE OFFICIEL</div>
+            <h1>OLIGHT <span>ÉCLAIRAGE</span></h1>
+            <p>Lampes et éclairage pour le bivouac moto et les réparations nocturnes</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Bannière promo -->
+        <div class="promo-banner">
+            <div class="promo-content">
+                <h3>CODE EXCLUSIF LCDMH</h3>
+                <p>-10% sur tout le site Olight France</p>
+            </div>
+            <div class="promo-code">
+                <span>LCDMH10</span>
+                <button onclick="copyText('LCDMH10', this)">COPIER</button>
+            </div>
+        </div>
+
+        <!-- Produits -->
+        <div class="section-title">
+            <h2>MA SÉLECTION OLIGHT</h2>
+            <p>Les lampes que j'utilise en road trip</p>
+        </div>
+
+        <div class="produits-grid">
+            <!-- Perun 3 -->
+            <div class="produit-card">
+                <div class="produit-image">
+                    <img src="https://img.olight.fr/images/products/perun3/perun3-01.jpg" alt="Olight Perun 3" onerror="this.src='https://via.placeholder.com/400x250/f0f0f0/e67e22?text=Perun+3'">
+                </div>
+                <div class="produit-info">
+                    <div class="produit-nom">Perun 3</div>
+                    <div class="produit-marque">Lampe polyvalente</div>
+                    <ul class="produit-caracs">
+                        <li>3000 lumens - éclaire toute la zone</li>
+                        <li>Base aimantée ultra forte</li>
+                        <li>Recharge USB-C magnétique</li>
+                        <li>Portée : 225 mètres</li>
+                        <li>Autonomie : jusqu'à 15 jours</li>
+                        <li>IPX8 (étanche)</li>
+                    </ul>
+                    <p style="color: #666; font-style: italic; margin: 1rem 0;">
+                        "La lampe que j'emmène en Écosse. Idéale pour installer le campement la nuit."
+                    </p>
+                    <a href="https://fr.olight.com/perun-3" class="btn-produit" target="_blank">VOIR LE PRODUIT →</a>
+                </div>
+            </div>
+
+            <!-- Baton 4 Premium -->
+            <div class="produit-card">
+                <div class="produit-image">
+                    <img src="https://img.olight.fr/images/products/baton4/baton4-01.jpg" alt="Olight Baton 4 Premium" onerror="this.src='https://via.placeholder.com/400x250/f0f0f0/e67e22?text=Baton+4'">
+                </div>
+                <div class="produit-info">
+                    <div class="produit-nom">Baton 4 Premium</div>
+                    <div class="produit-marque">Lampe EDC</div>
+                    <ul class="produit-caracs">
+                        <li>1300 lumens</li>
+                        <li>Charge sans-fil (station incluse)</li>
+                        <li>Indicateur batterie digital</li>
+                        <li>Portée : 170 mètres</li>
+                        <li>Poids : 70 grammes</li>
+                        <li>Autonomie : jusqu'à 20 jours</li>
+                    </ul>
+                    <p style="color: #666; font-style: italic; margin: 1rem 0;">
+                        "Lampe compacte, se glisse dans une poche. Idéale pour fouiller dans les sacoches."
+                    </p>
+                    <a href="https://fr.olight.com/baton-4-premium" class="btn-produit" target="_blank">VOIR LE PRODUIT →</a>
+                </div>
+            </div>
+
+            <!-- Array 2 Pro -->
+            <div class="produit-card">
+                <div class="produit-image">
+                    <img src="https://img.olight.fr/images/products/array2pro/array2pro-01.jpg" alt="Olight Array 2 Pro" onerror="this.src='https://via.placeholder.com/400x250/f0f0f0/e67e22?text=Array+2+Pro'">
+                </div>
+                <div class="produit-info">
+                    <div class="produit-nom">Array 2 Pro</div>
+                    <div class="produit-marque">Lampe frontale</div>
+                    <ul class="produit-caracs">
+                        <li>800 lumens</li>
+                        <li>Batterie longue durée intégrée</li>
+                        <li>Bandeau confort réglable</li>
+                        <li>Inclinable 60°</li>
+                        <li>Portée : 100 mètres</li>
+                        <li>Autonomie : 6h en plein phare</li>
+                    </ul>
+                    <p style="color: #666; font-style: italic; margin: 1rem 0;">
+                        "Indispensable pour le bivouac. Monter la tente, cuisiner, lire une carte les mains libres."
+                    </p>
+                    <a href="https://fr.olight.com/array-2-pro" class="btn-produit" target="_blank">VOIR LE PRODUIT →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Usages terrain -->
+        <div class="section-title">
+            <h2>UTILISATION EN BIVOUAC</h2>
+            <p>Pourquoi j'utilise Olight en road trip</p>
+        </div>
+
+        <div class="usages-grid">
+            <div class="usage-card">
+                <div class="usage-title">🏕️ Installation du campement de nuit</div>
+                <div class="usage-desc">
+                    La Perun 3 posée sur un rocher ou aimantée sur un arbre éclaire toute la zone. Montage de tente, préparation du repas, tout devient possible même après le coucher du soleil.
+                </div>
+            </div>
+            <div class="usage-card">
+                <div class="usage-title">🔧 Réparations moto nocturnes</div>
+                <div class="usage-desc">
+                    La base aimantée se fixe directement sur la moto pour éclairer la zone de travail. Mains libres, visibilité parfaite pour réparer sans attendre le matin.
+                </div>
+            </div>
+            <div class="usage-card">
+                <div class="usage-title">🗺️ Lecture de cartes</div>
+                <div class="usage-desc">
+                    La Baton 4 en mode faible éclaire juste ce qu'il faut pour lire une carte sous la tente, sans éblouir.
+                </div>
+            </div>
+            <div class="usage-card">
+                <div class="usage-title">🧗 Exploration</div>
+                <div class="usage-desc">
+                    L'Array 2 Pro en lampe frontale pour les courtes randonnées autour du campement après le coucher du soleil.
+                </div>
+            </div>
+        </div>
+
+        <!-- Vidéo à venir -->
+        <div class="video-coming">
+            <h3>🎥 TEST VIDÉO À VENIR</h3>
+            <p>Le test complet de la Perun 3 et des autres lampes Olight sera disponible fin mars 2026, avant le road trip Écosse.</p>
+            <div class="coming-badge">SORTIE PRÉVUE : FIN MARS 2026</div>
+        </div>
+
+        <!-- Citation -->
+        <div style="background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 15px; padding: 2rem; margin: 2rem 0; text-align: center;">
+            <p style="font-size: 1.2rem; font-style: italic; margin-bottom: 1rem; color: #666;">
+                "La Perun 3 m'accompagne en Écosse. 3000 lumens, base aimantée, autonomie énorme. Pour installer le campement la nuit ou bricoler sur la moto dans le noir, c'est exactement ce qu'il me faut."
+            </p>
+            <p style="font-weight: 600;">— Yves Vella · LCDMH · Road trip Écosse 2026</p>
+        </div>
+
+        <!-- Lien vers Olight France -->
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="https://fr.olight.com" class="btn-produit" style="font-size: 1.2rem; padding: 1rem 3rem;" target="_blank">VOIR TOUS LES PRODUITS OLIGHT →</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>LCDMH</h4>
+                <p>La Chaîne Du Motard Heureux – Road trips, tests et aventures à moto depuis 2022.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="roadtrips.html">Road Trips</a></li>
+                    <li><a href="tests-matos.html">Tests équipements</a></li>
+                    <li><a href="tests-motos.html">Tests motos</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Tests</h4>
+                <ul>
+                    <li><a href="gps.html">GPS moto</a></li>
+                    <li><a href="intercoms.html">Intercoms</a></li>
+                    <li><a href="pneus.html">Pneus</a></li>
+                    <li><a href="blackview.html">Blackview</a></li>
+                    <li><a href="olight.html">Olight</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="a-propos.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://www.youtube.com/@LCDMH" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 LCDMH - La Chaîne Du Motard Heureux
+        </div>
+    </footer>
+
+    <script>
+        function copyText(text, btn) {
+            navigator.clipboard.writeText(text).then(() => {
+                const original = btn.textContent;
+                btn.textContent = 'COPIÉ ✓';
+                btn.style.background = '#d35400';
+                setTimeout(() => {
+                    btn.textContent = original;
+                    btn.style.background = '#1e1e1e';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

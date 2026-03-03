@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests Pneus Moto - Michelin, Dunlop, Metzeler - LCDMH</title>
+    <!-- Polices Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Inter", sans-serif;
+            background: #f5f5f5;
+            color: #1e1e1e;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+        }
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo a {
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e1e1e;
+            text-decoration: none;
+        }
+        .logo span {
+            color: #e67e22;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1e1e1e;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #e67e22;
+        }
+        .nav-yt {
+            background: #e67e22;
+            color: white !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        .nav-yt:hover {
+            background: #d35400;
+            color: white;
+        }
+        /* Hero avec parallaxe */
+        .hero {
+            height: 50vh;
+            min-height: 400px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center 30%;
+            background-attachment: fixed;
+            filter: brightness(0.6);
+            z-index: -1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .hero h1 span {
+            color: #e67e22;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        .hero-badge {
+            background: rgba(230, 126, 34, 0.9);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        /* Conteneur principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 5%;
+        }
+        /* Section titre */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        /* Bannière partenaire - Version discrète et élégante */
+        .partenaire-banner {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+        .partenaire-tag {
+            background: #e67e22;
+            color: white;
+            padding: 0.2rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 0.8rem;
+        }
+        .partenaire-banner h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .partenaire-banner p {
+            color: #666;
+            max-width: 500px;
+        }
+        .btn-partenaire {
+            background: #1e1e1e;
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+        .btn-partenaire:hover {
+            background: #e67e22;
+        }
+        /* Grille comparatif */
+        .comparatif-grid {
+            display: grid;
+            grid-template-columns: 1fr 0.1fr 1fr;
+            gap: 1rem;
+            align-items: center;
+            margin: 3rem 0;
+        }
+        .pneu-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border: 1px solid #e0e0e0;
+        }
+        .pneu-header {
+            background: #1e1e1e;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        .pneu-header h3 {
+            font-size: 2rem;
+            margin-bottom: 0.3rem;
+        }
+        .pneu-header .marque {
+            color: #e67e22;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .pneu-content {
+            padding: 2rem;
+        }
+        .pneu-image {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+        .pneu-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .carac-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .carac-label {
+            font-weight: 600;
+        }
+        .carac-value {
+            color: #e67e22;
+            font-weight: 600;
+        }
+        .pneu-avis {
+            color: #666;
+            font-style: italic;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        .btn-achat {
+            display: inline-block;
+            background: #1e1e1e;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background 0.2s;
+            width: 100%;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .btn-achat:hover {
+            background: #e67e22;
+        }
+        .versus {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #e67e22;
+            text-align: center;
+            background: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            border: 1px solid #e0e0e0;
+        }
+        /* Grille vidéos */
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .video-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: 1px solid #e0e0e0;
+        }
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .video-thumb {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+        .video-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .video-info {
+            padding: 1.5rem;
+        }
+        .video-title {
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+        .video-meta {
+            display: flex;
+            gap: 1rem;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .video-desc {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        /* Autres marques */
+        .autres-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .autre-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .autre-nom {
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .autre-type {
+            color: #e67e22;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .btn-other {
+            display: inline-block;
+            background: #1e1e1e;
+            color: white;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            margin-top: 1rem;
+            transition: background 0.2s;
+        }
+        .btn-other:hover {
+            background: #e67e22;
+        }
+        /* Footer */
+        footer {
+            background: #1e1e1e;
+            color: white;
+            padding: 3rem 5%;
+            margin-top: 4rem;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-col a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover {
+            color: #e67e22;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #333;
+            color: #aaa;
+        }
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 1rem; }
+            .nav-links { justify-content: center; }
+            .comparatif-grid { grid-template-columns: 1fr; }
+            .versus { margin: 1rem auto; }
+            .autres-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><a href="index.html">LC<span>D</span>MH</a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="roadtrips.html">Road Trips</a></li>
+            <li><a href="equipement.html">Équipement moto</a></li>
+            <li><a href="photo-video.html">Photo/Video</a></li>
+            <li><a href="intercoms.html">Intercoms</a></li>
+            <li><a href="tests-motos.html">Tests motos</a></li>
+            <li><a href="securite.html">Sécurité</a></li>
+            <li><a href="gps.html">GPS</a></li>
+            <li><a href="pneus.html" class="active">Pneus</a></li>
+            <li><a href="blackview.html">Blackview</a></li>
+            <li><a href="olight.html">Olight</a></li>
+            <li><a href="komobi.html">KOMOBI</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://www.youtube.com/@LCDMH" class="nav-yt" target="_blank">YouTube</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-image"></div>
+        <div class="hero-content">
+            <div class="hero-badge">ADHÉRENCE & TENUE DE ROUTE</div>
+            <h1>TESTS <span>PNEUS</span></h1>
+            <p>Tests comparatifs en conditions réelles : Michelin, Dunlop, Metzeler. Sur route sèche, mouillée et en montagne.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Bannière partenaire 123pneus.fr - Version discrète et élégante -->
+        <div class="partenaire-banner">
+            <div>
+                <div class="partenaire-tag">PARTENAIRE OFFICIEL</div>
+                <h3>123PNEUS.FR</h3>
+                <p>Commandez vos pneus moto au meilleur prix • Livraison rapide • Service client disponible</p>
+            </div>
+            <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&campaign=123pneus.fr&clickref=Youtube+&clickref2=Site+internet&ued=https%3A%2F%2Fwww.123pneus.fr%2Fpneus-moto.html" class="btn-partenaire" target="_blank" rel="nofollow">
+                VOIR LES OFFRES →
+            </a>
+        </div>
+
+        <!-- Titre comparatif -->
+        <div class="section-title">
+            <h2>COMPARATIF CHOC</h2>
+            <p>Dunlop Mutant vs Michelin Road 6 - Mon avis après des milliers de km</p>
+        </div>
+
+        <!-- Comparatif côte à côte -->
+        <div class="comparatif-grid">
+            <!-- Dunlop Mutant -->
+            <div class="pneu-card">
+                <div class="pneu-header">
+                    <h3>DUNLOP MUTANT</h3>
+                    <div class="marque">Sport & Adventure</div>
+                </div>
+                <div class="pneu-content">
+                    <div class="pneu-image">
+                        <img src="https://img.youtube.com/vi/dKeMlCC2l90/hqdefault.jpg" alt="Dunlop Mutant">
+                    </div>
+                    <div class="carac-item">
+                        <span class="carac-label">Adhérence sèche</span>
+                        <span class="carac-value">★★★★★</span>
+                    </div>
+                    <div class="carac-item">
+                        <span class="carac-label">Adhérence pluie</span>
+                        <span class="carac-value">★★★★☆</span>
+                    </div>
+                    <div class="carac-item">
+                        <span class="carac-label">Maniabilité</span>
+                        <span class="carac-value">★★★★★</span>
+                    </div>
+                    <div class="carac-item">
+                        <span class="carac-label">Longévité</span>
+                        <span class="carac-value">★★★☆☆</span>
+                    </div>
+                    <div class="pneu-avis">
+                        "Plus de maniabilité, angle d'inclinaison plus rapide qu'avec les Road 6. La moto est plus agile en virage."
+                    </div>
+                    <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&campaign=Dunlop+Mutant&clickref=Youtube+&clickref2=Site+internet&ued=https%3A%2F%2Fwww.123pneus.fr%2Fpneus-moto%2Fdunlop-mutant.html" class="btn-achat" target="_blank" rel="nofollow">
+                        VOIR CE PNEU →
+                    </a>
+                </div>
+            </div>
+
+            <div class="versus">VS</div>
+
+            <!-- Michelin Road 6 -->
+            <div class="pneu-card">
+                <div class="pneu-header">
+                    <h3>MICHELIN ROAD 6</h3>
+                    <div class="marque">GT / Routier</div>
+                </div>
+                <div class="pneu-content">
+                    <div class="pneu-image">
+                        <img src="https://img.youtube.com/vi/GmM9HtBfYyA/hqdefault.jpg" alt="Michelin Road 6">
+                    </div>
+                    <div class="carac-item">
+                        <span class="carac-label">Adhérence sèche</span>
+                        <span class="carac-value">★★★★☆</span>
+                    </div>
+                    <div class="carac-item">
+                        <span class="carac-label">Adhérence pluie</span>
+                        <span class="carac-value">★★★★★</span>
+                    </div>
+                    <div class="carac-item">
+                        <span class="carac-label">Maniabilité</span>
+                        <span class="carac-value">★★★★☆</span>
+                    </div>
+                    <div class="carac-item">
+                        <span class="carac-label">Longévité</span>
+                        <span class="carac-value">★★★★★</span>
+                    </div>
+                    <div class="pneu-avis">
+                        "Le meilleur sur le mouillé. Une longévité exceptionnelle, idéal pour les longs road trips."
+                    </div>
+                    <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&campaign=Michelin+Road+6&clickref=Youtube+&clickref2=Site+internet&ued=https%3A%2F%2Fwww.123pneus.fr%2Fpneus-moto%2Fmichelin-road-6.html" class="btn-achat" target="_blank" rel="nofollow">
+                        VOIR CE PNEU →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vidéo comparatif -->
+        <div style="text-align: center; margin: 2rem 0;">
+            <div class="video-card" style="max-width: 500px; margin: 0 auto;" onclick="window.open('https://youtu.be/dKeMlCC2l90', '_blank')">
+                <div class="video-thumb">
+                    <img src="https://img.youtube.com/vi/dKeMlCC2l90/hqdefault.jpg" alt="Comparatif">
+                </div>
+                <div class="video-info">
+                    <div class="video-title">Test Dunlop Mutant vs Michelin Road 6</div>
+                    <div class="video-desc">Mon avis après des milliers de km</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Autres tests -->
+        <div class="section-title" style="margin-top: 4rem;">
+            <h2>AUTRES TESTS PNEUS</h2>
+        </div>
+
+        <div class="videos-grid">
+            <!-- Metzeler RoadTec 02 -->
+            <div class="video-card" onclick="window.open('https://youtu.be/BBGFCW3cmdw', '_blank')">
+                <div class="video-thumb">
+                    <img src="https://img.youtube.com/vi/BBGFCW3cmdw/hqdefault.jpg" alt="Metzeler RoadTec 02">
+                </div>
+                <div class="video-info">
+                    <div class="video-title">Test Metzeler RoadTec 02 en montagne</div>
+                    <div class="video-meta">📅 11 juin 2025</div>
+                    <div class="video-desc">Ce qui m'a surpris en testant le Metzeler RoadTec 02</div>
+                    <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&campaign=Metzeler+RoadTec+02&clickref=Youtube+&clickref2=Site+internet&ued=https%3A%2F%2Fwww.123pneus.fr%2Fpneus-moto%2Fmetzeler-roadtec-02.html" class="btn-achat" style="margin-top: 1rem;" target="_blank" rel="nofollow">VOIR CE PNEU →</a>
+                </div>
+            </div>
+
+            <!-- Michelin Road 6 GT -->
+            <div class="video-card" onclick="window.open('https://youtu.be/GmM9HtBfYyA', '_blank')">
+                <div class="video-thumb">
+                    <img src="https://img.youtube.com/vi/GmM9HtBfYyA/hqdefault.jpg" alt="Michelin Road 6 GT">
+                </div>
+                <div class="video-info">
+                    <div class="video-title">Test Michelin Road 6 - Avis complet</div>
+                    <div class="video-meta">📅 28 novembre 2024</div>
+                    <div class="video-desc">Test des pneus Michelin Road 6 et Road 6 GT après 1400 km</div>
+                    <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&campaign=Michelin+Road+6+GT&clickref=Youtube+&clickref2=Site+internet&ued=https%3A%2F%2Fwww.123pneus.fr%2Fpneus-moto%2Fmichelin-road-6-gt.html" class="btn-achat" style="margin-top: 1rem;" target="_blank" rel="nofollow">VOIR CE PNEU →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Autres marques -->
+        <div class="section-title" style="margin-top: 3rem;">
+            <h2>ÉGALEMENT TESTÉS</h2>
+        </div>
+
+        <div class="autres-grid">
+            <div class="autre-card">
+                <div class="autre-nom">Michelin Road 6 GT</div>
+                <div class="autre-type">Grand Tourisme</div>
+                <div class="autre-avis" style="color: #666; margin: 1rem 0;">Version GT pour les motos lourdes</div>
+                <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&campaign=Michelin+Road+6+GT&clickref=Youtube+&clickref2=Site+internet&ued=https%3A%2F%2Fwww.123pneus.fr%2Fpneus-moto%2Fmichelin-road-6-gt.html" class="btn-other" target="_blank" rel="nofollow">VOIR</a>
+            </div>
+            <div class="autre-card">
+                <div class="autre-nom">Metzeler RoadTec 02</div>
+                <div class="autre-type">Sport-Touring</div>
+                <div class="autre-avis" style="color: #666; margin: 1rem 0;">Polyvalent, bon retour sur le mouillé</div>
+                <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&campaign=Metzeler+RoadTec+02&clickref=Youtube+&clickref2=Site+internet&ued=https%3A%2F%2Fwww.123pneus.fr%2Fpneus-moto%2Fmetzeler-roadtec-02.html" class="btn-other" target="_blank" rel="nofollow">VOIR</a>
+            </div>
+            <div class="autre-card">
+                <div class="autre-nom">Dunlop Mutant</div>
+                <div class="autre-type">Sport Adventure</div>
+                <div class="autre-avis" style="color: #666; margin: 1rem 0;">Maniabilité exceptionnelle</div>
+                <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&campaign=Dunlop+Mutant&clickref=Youtube+&clickref2=Site+internet&ued=https%3A%2F%2Fwww.123pneus.fr%2Fpneus-moto%2Fdunlop-mutant.html" class="btn-other" target="_blank" rel="nofollow">VOIR</a>
+            </div>
+        </div>
+
+        <!-- Mon avis terrain -->
+        <div style="background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 15px; padding: 2rem; margin: 3rem 0; text-align: center;">
+            <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">MON AVIS TERRAIN</h3>
+            <p style="max-width: 800px; margin: 0 auto; color: #666; font-style: italic;">
+                "Le Dunlop Mutant offre une maniabilité exceptionnelle et un angle d'inclinaison plus rapide que le Road 6,mais il manque de longévité, ce qui rend la moto plus agile en virage. Le Michelin Road 6 reste imbattable sur le mouillé et en longévité. Le Metzeler RoadTec 02 m'a surpris par sa polyvalence en montagne."
+            </p>
+            <p style="margin-top: 1rem; font-weight: 600;">— Yves Vella, LCDMH · 50 000 km</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>LCDMH</h4>
+                <p>La Chaîne Du Motard Heureux – Road trips, tests et aventures à moto depuis 2022.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="roadtrips.html">Road Trips</a></li>
+                    <li><a href="equipement.html">Équipement moto</a></li>
+                    <li><a href="photo-video.html">Photo/Video</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Tests</h4>
+                <ul>
+                    <li><a href="intercoms.html">Intercoms</a></li>
+                    <li><a href="tests-motos.html">Tests motos</a></li>
+                    <li><a href="gps.html">GPS moto</a></li>
+                    <li><a href="pneus.html">Pneus</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Partenaires</h4>
+                <ul>
+                    <li><a href="blackview.html">Blackview</a></li>
+                    <li><a href="olight.html">Olight</a></li>
+                    <li><a href="komobi.html">KOMOBI</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 LCDMH - La Chaîne Du Motard Heureux
+        </div>
+    </footer>
+</body>
+</html>
