@@ -13,21 +13,17 @@
     <meta name="author" content="Yves Vella – LCDMH">
 
     <!-- ===== AJOUTS SEO ===== -->
-    <!-- Harmonisation URL Open Graph et Canonical -->
     <meta property="og:title" content="LCDMH – La Chaîne du Motard Heureux">
     <meta property="og:description" content="Road trips moto épiques à travers l'Europe. Codes promo exclusifs GPS moto, équipements et accessoires.">
     <meta property="og:url" content="https://lcdmh.com/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="LCDMH">
-    <!-- TODO: Remplacer par l'URL de votre image Open Graph réelle -->
     <meta property="og:image" content="https://lcdmh.com/images/og-lcdmh.jpg">
     <link rel="canonical" href="https://lcdmh.com/">
 
-    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="LCDMH – Road Trip Moto & Tests Équipement">
     <meta name="twitter:description" content="Road trips moto en Europe et tests terrain : GPS/CarPlay, intercoms, pneus, photo/vidéo, sécurité. LCDMH, la chaîne du motard heureux.">
-    <!-- TODO: Remplacer par l'URL de votre image pour Twitter Card -->
     <meta name="twitter:image" content="https://lcdmh.com/images/og-lcdmh.jpg">
     <!-- ===== FIN AJOUTS SEO ===== -->
 
@@ -43,24 +39,11 @@
           "@type": "Organization",
           "name": "LCDMH – La Chaîne du Motard Heureux",
           "url": "https://lcdmh.com/",
-          "sameAs": [
-            "https://www.youtube.com/@LCDMH"
-          ],
-          "founder": {
-            "@type": "Person",
-            "name": "Yves Vella"
-          }
+          "sameAs": ["https://www.youtube.com/@LCDMH"],
+          "founder": { "@type": "Person", "name": "Yves Vella" }
         },
-        {
-          "@type": "WebSite",
-          "name": "LCDMH",
-          "url": "https://lcdmh.com/"
-        },
-        {
-          "@type": "WebPage",
-          "name": "Accueil",
-          "url": "https://lcdmh.com/"
-        }
+        { "@type": "WebSite", "name": "LCDMH", "url": "https://lcdmh.com/" },
+        { "@type": "WebPage", "name": "Accueil", "url": "https://lcdmh.com/" }
       ]
     }
     </script>
@@ -82,6 +65,7 @@
         body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--noir);line-height:1.65;font-size:16px}
         h1,h2,h3,h4{font-family:'Montserrat',sans-serif}
         a{color:inherit;text-decoration:none}
+
         /* Styles généraux */
         .container{max-width:1200px;margin:0 auto;padding:2rem 5%}
         .section{padding:72px 6%}
@@ -95,6 +79,63 @@
         .btn-orange{background:var(--orange);color:#fff}.btn-orange:hover{background:var(--orange-dark)}
         .btn-white{background:transparent;color:#fff;border:2px solid #fff}.btn-white:hover{background:rgba(255,255,255,.15)}
         .btn-black{background:var(--noir);color:#fff}.btn-black:hover{background:var(--orange)}
+
+        /* ========================================= */
+        /* NAV - styles déplacés du BODY vers le HEAD */
+        /* ========================================= */
+        .has-drop { position: relative; }
+        .has-drop > a::after {
+            content: '▾';
+            font-size: 0.6rem;
+            opacity: 0.7;
+            margin-left: 0.2rem;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            box-shadow: 0 8px 28px rgba(0,0,0,.12);
+            min-width: 175px;
+            padding: .5rem 0;
+            z-index: 999;
+        }
+        /* Desktop */
+        .has-drop:hover .dropdown { display: block; }
+        /* Mobile (toggle JS) */
+        .has-drop.open .dropdown { display: block; }
+
+        .dropdown a {
+            display: block;
+            padding: .52rem 1.1rem;
+            font-size: .8rem;
+            color: var(--noir);
+            font-weight: 500;
+            transition: background .15s, color .15s;
+        }
+        .dropdown a:hover { background: #fff8f2; color: var(--orange); }
+
+        .nav-yt {
+            background: var(--orange);
+            color: #fff !important;
+            padding: .42rem 1rem;
+            border-radius: 6px;
+            font-weight: 700 !important;
+            margin-left: 0.5rem;
+        }
+        .nav-yt:hover { background: var(--orange-dark); }
+
+        .nav-yt-icon {
+            background: #ff0000;
+            color: #fff !important;
+            padding: .42rem 1rem;
+            border-radius: 6px;
+            font-weight: 700 !important;
+        }
+        .nav-yt-icon:hover { background: #cc0000; }
     </style>
 </head>
 <!-- ======================================== -->
@@ -105,68 +146,6 @@
 <!-- ======================================== -->
 <!-- === DÉBUT NAVIGATION =================== -->
 <!-- ======================================== -->
-<style>
-    /* Styles pour le menu déroulant */
-    .has-drop {
-        position: relative;
-    }
-    .has-drop > a::after {
-        content: '▾';
-        font-size: 0.6rem;
-        opacity: 0.7;
-        margin-left: 0.2rem;
-    }
-    .dropdown {
-        display: none;
-        position: absolute;
-        top: calc(100% + 6px);
-        left: 0;
-        background: #fff;
-        border: 1px solid var(--border);
-        border-radius: 10px;
-        box-shadow: 0 8px 28px rgba(0,0,0,.12);
-        min-width: 175px;
-        padding: .5rem 0;
-        z-index: 999;
-    }
-    .has-drop:hover .dropdown {
-        display: block;
-    }
-    .dropdown a {
-        display: block;
-        padding: .52rem 1.1rem;
-        font-size: .8rem;
-        color: var(--noir);
-        font-weight: 500;
-        transition: background .15s, color .15s;
-    }
-    .dropdown a:hover {
-        background: #fff8f2;
-        color: var(--orange);
-    }
-    /* Boutons YouTube */
-    .nav-yt {
-        background: var(--orange);
-        color: #fff !important;
-        padding: .42rem 1rem;
-        border-radius: 6px;
-        font-weight: 700 !important;
-        margin-left: 0.5rem;
-    }
-    .nav-yt:hover {
-        background: var(--orange-dark);
-    }
-    .nav-yt-icon {
-        background: #ff0000;
-        color: #fff !important;
-        padding: .42rem 1rem;
-        border-radius: 6px;
-        font-weight: 700 !important;
-    }
-    .nav-yt-icon:hover {
-        background: #cc0000;
-    }
-</style>
 
 <nav style="background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.07);padding:0 4%;height:66px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100">
     <a href="index.html" class="logo" style="font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800;color:var(--noir)">LC<span style="color:var(--orange)">D</span>MH</a>
@@ -196,15 +175,12 @@
             </div>
         </li>
 
-        <!-- === MENU GPS MODIFIÉ AVEC TÉLÉPHONES RENFORCÉS === -->
         <li class="has-drop">
             <a href="#" style="font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0">GPS</a>
             <div class="dropdown">
-                <!-- Liens corrigé : redirige vers une page existante -->
                 <a href="equipement.html">Tous les GPS / écrans</a>
                 <a href="aoocci.html">Aoocci</a>
                 <a href="carpuride.html">Carpuride</a>
-                <!-- === NOUVELLE LIGNE POUR TÉLÉPHONES RENFORCÉS === -->
                 <a href="blackview.html" style="border-top: 1px solid var(--border); margin-top: 0.3rem; padding-top: 0.5rem;">📱 Téléphones renforcés</a>
             </div>
         </li>
@@ -222,11 +198,11 @@
         <li><a href="a-propos.html" style="font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0">À propos</a></li>
         <li><a href="contact.html" style="font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0">Contact</a></li>
 
-        <!-- DEUX BOUTONS YOUTUBE : S'abonner + YouTube -->
         <li><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt" target="_blank" rel="noopener">▶ S'abonner</a></li>
         <li><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon" target="_blank" rel="noopener">📺 YouTube</a></li>
     </ul>
 </nav>
+
 <!-- ======================================== -->
 <!-- === FIN NAVIGATION ===================== -->
 <!-- ======================================== -->
@@ -876,5 +852,3 @@ document.addEventListener('keydown', (e) => {
   }
 });
 </script>
-</body>
-</html>
