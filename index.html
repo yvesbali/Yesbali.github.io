@@ -234,7 +234,7 @@
 <!-- ======================================== -->
 <!-- === DÉBUT HERO ========================= -->
 <!-- ======================================== -->
-<section style="position:relative;min-height:85vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden">
+<section style="position:relative;min-height:55vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden">
     <div style="position:absolute;inset:0;background:url('images/bandeau-norvege.jpg') center/cover no-repeat fixed;z-index:0"></div>
     <div style="position:relative;z-index:2;max-width:820px;padding:2rem;text-shadow:0 2px 15px rgba(0,0,0,.7)">
         <div style="display:inline-block;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.45rem 1.4rem;border-radius:50px;margin-bottom:1.4rem;box-shadow:0 2px 8px rgba(0,0,0,.2)">🏍️ La Chaîne du Motard Heureux · Annecy, France</div>
@@ -830,5 +830,51 @@
 <!-- ======================================== -->
 <!-- === FIN FOOTER ========================= -->
 <!-- ======================================== -->
+<script>
+function copyText(text, btn){
+  try{
+    navigator.clipboard.writeText(text).then(()=>{
+      if(btn){
+        const old = btn.innerHTML;
+        btn.innerHTML = "✅ Copié";
+        setTimeout(()=>btn.innerHTML = old, 1200);
+      }
+    });
+  }catch(e){
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+  }
+}
+
+/* Menu déroulant : clic pour mobile + fermeture auto */
+document.querySelectorAll('.has-drop > a').forEach(a => {
+  a.addEventListener('click', (e) => {
+    e.preventDefault();
+    const li = a.parentElement;
+
+    document.querySelectorAll('.has-drop.open').forEach(x => {
+      if (x !== li) x.classList.remove('open');
+    });
+
+    li.classList.toggle('open');
+  });
+});
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.has-drop')) {
+    document.querySelectorAll('.has-drop.open').forEach(x => x.classList.remove('open'));
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.has-drop.open').forEach(x => x.classList.remove('open'));
+  }
+});
+</script>
 </body>
 </html>
