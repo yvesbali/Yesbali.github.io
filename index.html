@@ -90,32 +90,56 @@
             opacity: 0.7;
             margin-left: 0.2rem;
         }
-        .dropdown {
-            display: none;
-            position: absolute;
-            top: calc(100% + 6px);
-            left: 0;
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            box-shadow: 0 8px 28px rgba(0,0,0,.12);
-            min-width: 175px;
-            padding: .5rem 0;
-            z-index: 999;
-        }
-        /* Desktop */
-        .has-drop:hover .dropdown { display: block; }
-        /* Mobile (toggle JS) */
-        .has-drop.open .dropdown { display: block; }
+/* Styles pour le menu déroulant */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 8px 28px rgba(0,0,0,.12);
+    min-width: 175px;
+    padding: .5rem 0;
+    z-index: 999;
+    transition: opacity 0.15s;
+    transition-delay: 0.1s;
+}
 
-        .dropdown a {
-            display: block;
-            padding: .52rem 1.1rem;
-            font-size: .8rem;
-            color: var(--noir);
-            font-weight: 500;
-            transition: background .15s, color .15s;
-        }
+/* Desktop - ouverture au survol avec délai */
+.has-drop {
+    position: relative;
+    transition: 0s 0.2s; /* Petit délai avant disparition */
+}
+
+.has-drop:hover .dropdown {
+    display: block;
+}
+
+/* Garde le dropdown ouvert si le lien parent a le focus (utile pour clavier) */
+.has-drop:focus-within .dropdown {
+    display: block;
+}
+
+/* Mobile - ouverture via JS */
+.has-drop.open .dropdown {
+    display: block;
+}
+
+.dropdown a {
+    display: block;
+    padding: .52rem 1.1rem;
+    font-size: .8rem;
+    color: var(--noir);
+    font-weight: 500;
+    transition: background .15s, color .15s;
+}
+
+.dropdown a:hover {
+    background: #fff8f2;
+    color: var(--orange);
+}
         .dropdown a:hover { background: #fff8f2; color: var(--orange); }
 
         .nav-yt {
