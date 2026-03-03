@@ -135,9 +135,11 @@
         .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0; }
         .video-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,.05); border: 1px solid #e0e0e0; cursor: pointer; transition: transform .2s; }
         .video-card:hover { transform: translateY(-5px); }
-        .video-thumb { width: 100%; height: 180px; background: #1e1e1e; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; }
+        .video-thumb { width: 100%; height: 180px; overflow: hidden; background: #000; }
+        .video-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+        .video-card:hover .video-thumb img { transform: scale(1.05); }
         .video-info { padding: 1.5rem; }
-        .video-info h4 { margin-bottom: .5rem; }
+        .video-info h4 { margin-bottom: .5rem; color: #e67e22; }
         .video-info p { color: #666; font-size: .9rem; }
         
         .cta-box { background: linear-gradient(135deg, #e67e22 0%, #d35400 100%); color: white; border-radius: 30px; padding: 2.5rem; text-align: center; margin: 3rem 0; }
@@ -285,7 +287,7 @@
             </div>
         </div>
 
-        <!-- Freinage d'urgence -->
+        <!-- Freinage d'urgence (texte uniquement) -->
         <div class="tip-card">
             <div class="tip-header">
                 <h3>Freinage d'urgence</h3>
@@ -299,6 +301,9 @@
                     <li>✅ Relâchez progressivement en fin de freinage</li>
                     <li>⚠️ Entraînez-vous sur parking sécurisé</li>
                 </ul>
+            </div>
+            <div class="tip-footer">
+                <span style="color: #666; font-style: italic;">Entraînement personnel recommandé</span>
             </div>
         </div>
 
@@ -347,7 +352,7 @@
             </div>
         </div>
 
-        <!-- Gants -->
+        <!-- Gants (texte uniquement) -->
         <div class="tip-card">
             <div class="tip-header">
                 <h3>Gants</h3>
@@ -361,47 +366,64 @@
                     <li>✅ Renforcés au niveau des paumes</li>
                 </ul>
             </div>
+            <div class="tip-footer">
+                <span style="color: #666; font-style: italic;">Équipement de base essentiel</span>
+            </div>
         </div>
 
-        <!-- Gilet airbag -->
+        <!-- Gilet airbag (texte uniquement) -->
         <div class="tip-card">
             <div class="tip-header">
                 <h3>Gilet airbag</h3>
-                <div class="badge">+10 ans</div>
+                <div class="badge">Protection active</div>
             </div>
             <div class="tip-content">
                 <ul>
                     <li>✅ Protection cervicale et dorsale</li>
                     <li>✅ Déclenchement en cas de chute</li>
                     <li>✅ De plus en plus abordable</li>
-                    <li>✅ Testé et recommandé</li>
+                    <li>✅ Recommandé pour la route</li>
                 </ul>
+            </div>
+            <div class="tip-footer">
+                <span style="color: #666; font-style: italic;">Investissement sécurité</span>
             </div>
         </div>
     </div>
 
-    <!-- Vidéos formation -->
+    <!-- Vidéos formation avec MINIATURES -->
     <div class="section-title">
         <h2>MES VIDÉOS FORMATION</h2>
         <div class="bar"></div>
     </div>
     <div class="video-grid">
+        <!-- Trajectoires avec Gendarmerie -->
         <div class="video-card" onclick="window.open('https://youtu.be/KGfovxM_Q7w', '_blank')">
-            <div class="video-thumb">▶️ Trajectoires avec la Gendarmerie</div>
+            <div class="video-thumb">
+                <img src="https://img.youtube.com/vi/KGfovxM_Q7w/hqdefault.jpg" alt="Formation trajectoires de sécurité">
+            </div>
             <div class="video-info">
                 <h4>Formation trajectoires de sécurité</h4>
                 <p>Une journée d'entraînement avec un motard gendarme pour apprendre les bonnes trajectoires.</p>
             </div>
         </div>
+        
+        <!-- Virages débutant -->
         <div class="video-card" onclick="window.open('https://youtu.be/mqrxymLts_0', '_blank')">
-            <div class="video-thumb">▶️ Virages débutant</div>
+            <div class="video-thumb">
+                <img src="https://img.youtube.com/vi/mqrxymLts_0/hqdefault.jpg" alt="Virages Moto Débutant">
+            </div>
             <div class="video-info">
                 <h4>Virages Moto Débutant</h4>
                 <p>Le secret pour maîtriser sa trajectoire et prendre confiance en courbe.</p>
             </div>
         </div>
+        
+        <!-- Équilibre basse vitesse -->
         <div class="video-card" onclick="window.open('https://youtu.be/f2Le-gDPWh4', '_blank')">
-            <div class="video-thumb">▶️ Équilibre basse vitesse</div>
+            <div class="video-thumb">
+                <img src="https://img.youtube.com/vi/f2Le-gDPWh4/hqdefault.jpg" alt="Maîtrisez le lent">
+            </div>
             <div class="video-info">
                 <h4>Maîtrisez le lent</h4>
                 <p>Exercices pour améliorer votre équilibre à basse vitesse et éviter les chutes.</p>
