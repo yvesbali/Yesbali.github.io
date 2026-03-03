@@ -24,7 +24,6 @@
         h1,h2,h3,h4,h5,h6 { font-family: "Montserrat", sans-serif; font-weight: 600; }
         a { text-decoration: none; color: inherit; }
         
-        /* Navigation */
         nav { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 1rem 5%; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; }
         .logo a { font-family: "Montserrat", sans-serif; font-size: 1.5rem; font-weight: 700; color: #1e1e1e; }
         .logo span { color: #e67e22; }
@@ -129,14 +128,14 @@
         .card-content li { padding: .3rem 0; border-bottom: 1px solid #f0f0f0; }
         .card-content li:last-child { border-bottom: none; }
         .card-footer { padding: 1.5rem; border-top: 1px solid #e0e0e0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; }
-        .btn { background: #e67e22; color: white; padding: .5rem 1.2rem; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block; }
+        .btn { background: #e67e22; color: white; padding: .5rem 1.2rem; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block; transition: background .2s; }
         .btn:hover { background: #d35400; }
         .btn-outline { background: transparent; border: 1px solid #e67e22; color: #e67e22; }
         .btn-outline:hover { background: #e67e22; color: white; }
         
-        .comparatif-box { background: white; border-radius: 15px; padding: 2rem; margin: 3rem 0; border: 1px solid #e0e0e0; }
+        .comparatif-box { background: white; border-radius: 15px; padding: 2rem; margin: 3rem 0; border: 1px solid #e0e0e0; overflow-x: auto; }
         .comparatif-box h3 { color: #e67e22; margin-bottom: 1.5rem; }
-        .comparatif-box table { width: 100%; border-collapse: collapse; }
+        .comparatif-box table { width: 100%; border-collapse: collapse; min-width: 600px; }
         .comparatif-box th { background: #f5f5f5; padding: 1rem; text-align: left; }
         .comparatif-box td { padding: 1rem; border-bottom: 1px solid #e0e0e0; }
         
@@ -284,7 +283,7 @@
             </div>
             <div class="card-footer">
                 <span>Testé sur 5 000 km</span>
-                <a href="https://youtu.be/PNlKbmWrKjY" class="btn" target="_blank" rel="noopener">Voir la vidéo</a>
+                <a href="https://youtu.be/PNlKbmWrKjY" class="btn" target="_blank" rel="noopener noreferrer">Voir la vidéo</a>
             </div>
         </div>
 
@@ -305,6 +304,27 @@
                 </ul>
             </div>
             <div class="card-footer">
+                <span>Test disponible</span>
+                <a href="https://www.youtube.com/watch?v=XXX" class="btn" target="_blank" rel="noopener noreferrer">Voir la vidéo</a>
+            </div>
+        </div>
+
+        <!-- Sena 50C (si vous avez) -->
+        <div class="intercom-card">
+            <div class="card-header">
+                <h3>Sena 50C</h3>
+                <div class="badge">Mesh 2.0 + Caméra 4K</div>
+            </div>
+            <div class="card-content">
+                <ul>
+                    <li>🎥 Caméra 4K intégrée</li>
+                    <li>🎧 Qualité audio Harman Kardon</li>
+                    <li>📶 Mesh 2.0 intercom</li>
+                    <li>🔋 Autonomie : 10-12h</li>
+                    <li>💾 Stockage microSD</li>
+                </ul>
+            </div>
+            <div class="card-footer">
                 <span>Test à venir</span>
                 <a href="#" class="btn btn-outline">Bientôt</a>
             </div>
@@ -313,15 +333,50 @@
 
     <!-- Section CARDO -->
     <div class="section-title">
-        <h2>CARDO : À VENIR</h2>
+        <h2>CARDO : MES TESTS</h2>
         <div class="bar"></div>
     </div>
-    <div style="background: white; border-radius: 15px; padding: 2rem; margin: 2rem 0; border: 1px solid #e0e0e0; text-align: center;">
-        <p style="font-style: italic; color: #666;">
-            Des tests Cardo sont prévus prochainement (Packtalk Edge, Packtalk Bold). 
-            Je vous partagerai mon avis sur la qualité audio, la portée du Mesh, 
-            et la compatibilité avec les GPS moto.
-        </p>
+    <div class="intercom-grid">
+        <!-- Cardo Packtalk Edge -->
+        <div class="intercom-card">
+            <div class="card-header">
+                <h3>Cardo Packtalk Edge</h3>
+                <div class="badge">Mesh DMC</div>
+            </div>
+            <div class="card-content">
+                <ul>
+                    <li>🎧 Qualité audio : excellente (JBL)</li>
+                    <li>🔋 Autonomie : 13h</li>
+                    <li>📶 Mesh DMC jusqu'à 15 pilotes</li>
+                    <li>📱 Connexion Bluetooth 5.2</li>
+                    <li>🌧️ Étanchéité IP67</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <span>Test à venir</span>
+                <a href="#" class="btn btn-outline">Bientôt</a>
+            </div>
+        </div>
+
+        <!-- Cardo Packtalk Bold -->
+        <div class="intercom-card">
+            <div class="card-header">
+                <h3>Cardo Packtalk Bold</h3>
+                <div class="badge">Mesh DMC</div>
+            </div>
+            <div class="card-content">
+                <ul>
+                    <li>🎧 Qualité audio : très bonne (JBL)</li>
+                    <li>🔋 Autonomie : 13h</li>
+                    <li>📶 Mesh DMC jusqu'à 15 pilotes</li>
+                    <li>📻 Radio FM intégrée</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <span>Test à venir</span>
+                <a href="#" class="btn btn-outline">Bientôt</a>
+            </div>
+        </div>
     </div>
 
     <!-- Section COMPARATIF -->
@@ -354,6 +409,14 @@
                 <td>Mesh 2.0 + BT</td>
                 <td>24</td>
                 <td>≈ 350€</td>
+            </tr>
+            <tr>
+                <td><strong>Sena 50C</strong></td>
+                <td>⭐⭐⭐⭐</td>
+                <td>10-12h</td>
+                <td>Mesh 2.0 + 4K</td>
+                <td>24</td>
+                <td>≈ 450€</td>
             </tr>
             <tr>
                 <td><strong>Cardo Packtalk Edge</strong></td>
@@ -467,4 +530,3 @@
 </footer>
 </body>
 </html>
-<!-- FIN DU FICHIER : intercoms.html -->
