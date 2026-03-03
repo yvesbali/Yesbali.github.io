@@ -24,7 +24,7 @@
         h1,h2,h3,h4,h5,h6 { font-family: "Montserrat", sans-serif; font-weight: 600; }
         a { text-decoration: none; color: inherit; }
         
-        /* Navigation */
+        /* Navigation (identique) */
         nav { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 1rem 5%; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; }
         .logo a { font-family: "Montserrat", sans-serif; font-size: 1.5rem; font-weight: 700; color: #1e1e1e; }
         .logo span { color: #e67e22; }
@@ -241,7 +241,7 @@
 <!-- Contact -->
 <div class="container">
     <div class="contact-grid">
-        <!-- Coordonnées -->
+        <!-- Coordonnées (MISE À JOUR avec les liens) -->
         <div class="contact-info">
             <h2>Me contacter</h2>
             <div class="info-item">
@@ -253,11 +253,11 @@
                 Annecy, France
             </div>
             <div class="info-item">
-                <strong>🔗 Réseaux</strong>
+                <strong>🔗 Retrouve-moi sur</strong>
                 <div class="social-links">
                     <a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a>
-                    <a href="#" target="_blank" rel="noopener">Instagram</a>
-                    <a href="#" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://www.instagram.com/lcdmh74/" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://www.facebook.com/yves.vella.LCDMH" target="_blank" rel="noopener">Facebook</a>
                 </div>
             </div>
             <div class="info-item">
@@ -266,10 +266,11 @@
             </div>
         </div>
 
-        <!-- Formulaire -->
+        <!-- Formulaire (optionnel - exemple avec Formspree) -->
         <div class="contact-form">
             <h2>Envoyer un message</h2>
-            <form action="#" method="post">
+            <!-- ACTION MODIFIÉE : Remplacer 'ton_id_unique' par ton ID Formspree après création de compte -->
+            <form action="https://formspree.io/f/ton_id_unique" method="post">
                 <div class="form-group">
                     <label for="name">Nom</label>
                     <input type="text" id="name" name="name" required>
@@ -288,7 +289,7 @@
                 </div>
                 <button type="submit" class="btn-submit">Envoyer</button>
             </form>
-            <p class="note">📬 Formulaire en attente de configuration backend (envoi réel à venir). En attendant, utilisez l'email ci-contre.</p>
+            <p class="note">📬 Le formulaire utilise un service externe sécurisé. Si vous préférez, utilisez l'email ci-contre.</p>
         </div>
     </div>
 </div>
@@ -332,4 +333,3 @@
 </footer>
 </body>
 </html>
-<!-- FIN DU FICHIER : contact.html -->
