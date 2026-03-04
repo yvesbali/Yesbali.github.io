@@ -24,17 +24,92 @@
         h1,h2,h3,h4,h5,h6 { font-family: "Montserrat", sans-serif; font-weight: 600; }
         a { text-decoration: none; color: inherit; }
         
-        nav { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 1rem 5%; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; }
-        .logo a { font-family: "Montserrat", sans-serif; font-size: 1.5rem; font-weight: 700; color: #1e1e1e; }
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+        .logo a {
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e1e1e;
+        }
         .logo span { color: #e67e22; }
-        .nav-links { display: flex; gap: 1.4rem; list-style: none; flex-wrap: wrap; align-items: center; }
-        .nav-links a { font-weight: 500; color: #1e1e1e; transition: color .2s; font-size: .9rem; }
-        .nav-links a:hover, .nav-links a.active { color: #e67e22; }
-        .nav-yt { background: #e67e22; color: white !important; padding: .5rem 1.2rem; border-radius: 50px; font-weight: 600 !important; }
+        .nav-links {
+            display: flex;
+            gap: 1.4rem;
+            list-style: none;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .nav-links a {
+            font-weight: 500;
+            color: #1e1e1e;
+            transition: color .2s;
+            font-size: .9rem;
+        }
+        .nav-links a:hover,
+        .nav-links a.active { color: #e67e22; }
+        .nav-yt {
+            background: #e67e22;
+            color: white !important;
+            padding: .5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600 !important;
+        }
         .nav-yt:hover { background: #d35400; }
-        .nav-yt-icon { background: #ff0000; color: white !important; padding: .5rem 1.2rem; border-radius: 50px; font-weight: 600 !important; }
+        .nav-yt-icon {
+            background: #ff0000;
+            color: white !important;
+            padding: .5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600 !important;
+        }
         .nav-yt-icon:hover { background: #cc0000; }
         .menu-toggle { display: none; }
+        
+        /* Menu responsive */
+        .has-drop { position: relative; }
+        .has-drop > a::after {
+            content: '▾';
+            font-size: 0.6rem;
+            opacity: 0.7;
+            margin-left: 0.2rem;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            box-shadow: 0 8px 28px rgba(0,0,0,.12);
+            min-width: 220px;
+            padding: .5rem 0;
+            z-index: 999;
+        }
+        .has-drop:hover .dropdown { display: block; }
+        .dropdown a {
+            display: block;
+            padding: .52rem 1.1rem;
+            font-size: .8rem;
+            color: #1e1e1e;
+            font-weight: 500;
+            transition: background .15s, color .15s;
+        }
+        .dropdown a:hover { background: #fff8f2; color: #e67e22; }
+        
         @media (max-width: 900px) {
             .nav-links {
                 display: none;
@@ -74,85 +149,231 @@
         }
         @media (min-width: 901px) { .mobile-only { display: none !important; } }
         
-        .has-drop { position: relative; }
-        .has-drop > a::after {
-            content: '▾';
-            font-size: 0.6rem;
-            opacity: 0.7;
-            margin-left: 0.2rem;
+        .hero {
+            height: 30vh;
+            min-height: 250px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
         }
-        .dropdown {
-            display: none;
+        .hero-image {
             position: absolute;
-            top: calc(100% + 6px);
-            left: 0;
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            box-shadow: 0 8px 28px rgba(0,0,0,.12);
-            min-width: 175px;
-            padding: .5rem 0;
-            z-index: 999;
+            inset: 0;
+            background-image: url('images/bandeau-norvege.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(.6);
+            z-index: -1;
         }
-        .has-drop:hover .dropdown { display: block; }
-        .dropdown a {
-            display: block;
-            padding: .52rem 1.1rem;
-            font-size: .8rem;
-            color: #1e1e1e;
-            font-weight: 500;
-            transition: background .15s, color .15s;
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
         }
-        .dropdown a:hover { background: #fff8f2; color: #e67e22; }
-        
-        .hero { height: 30vh; min-height: 250px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
-        .hero-image { position: absolute; inset: 0; background-image: url('images/bandeau-norvege.jpg'); background-size: cover; background-position: center; filter: brightness(.6); z-index: -1; }
-        .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 2rem; }
-        .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1rem; text-shadow: 0 2px 10px rgba(0,0,0,.3); }
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,.3);
+        }
         .hero h1 span { color: #e67e22; }
-        .hero p { font-size: 1.1rem; text-shadow: 0 2px 5px rgba(0,0,0,.3); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 2rem 5%; }
-        .section-title { text-align: center; margin-bottom: 3rem; }
-        .section-title h2 { font-size: 2rem; color: #e67e22; margin-bottom: .5rem; }
-        .section-title .bar { width: 52px; height: 4px; background: #e67e22; margin: 0 auto; border-radius: 2px; }
+        .hero p {
+            font-size: 1.1rem;
+            text-shadow: 0 2px 5px rgba(0,0,0,.3);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 5%;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-title h2 {
+            font-size: 2rem;
+            color: #e67e22;
+            margin-bottom: .5rem;
+        }
+        .section-title .bar {
+            width: 52px;
+            height: 4px;
+            background: #e67e22;
+            margin: 0 auto;
+            border-radius: 2px;
+        }
         
-        .intro-box { background: white; border-radius: 20px; padding: 2rem; margin: 2rem 0; border: 1px solid #e0e0e0; text-align: center; }
-        .intercom-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0; }
-        .intercom-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,.05); border: 1px solid #e0e0e0; transition: transform .2s; }
+        .intro-box {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        .intercom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .intercom-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,.05);
+            border: 1px solid #e0e0e0;
+            transition: transform .2s;
+        }
         .intercom-card:hover { transform: translateY(-5px); }
-        .card-header { background: #1e1e1e; color: white; padding: 1.5rem; }
-        .card-header h3 { font-size: 1.8rem; margin-bottom: .3rem; }
-        .card-header .badge { color: #e67e22; font-weight: 600; }
-        .card-content { padding: 1.5rem; }
-        .card-content ul { list-style: none; color: #666; }
-        .card-content li { padding: .3rem 0; border-bottom: 1px solid #f0f0f0; }
+        .card-header {
+            background: #1e1e1e;
+            color: white;
+            padding: 1.5rem;
+        }
+        .card-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: .3rem;
+        }
+        .card-header .badge {
+            color: #e67e22;
+            font-weight: 600;
+        }
+        .card-content {
+            padding: 1.5rem;
+        }
+        .card-content ul {
+            list-style: none;
+            color: #666;
+        }
+        .card-content li {
+            padding: .3rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
         .card-content li:last-child { border-bottom: none; }
-        .card-footer { padding: 1.5rem; border-top: 1px solid #e0e0e0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; }
-        .btn { background: #e67e22; color: white; padding: .5rem 1.2rem; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block; transition: background .2s; }
+        .card-footer {
+            padding: 1.5rem;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+        .btn {
+            background: #e67e22;
+            color: white;
+            padding: .5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+        }
         .btn:hover { background: #d35400; }
-        .btn-outline { background: transparent; border: 1px solid #e67e22; color: #e67e22; }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #e67e22;
+            color: #e67e22;
+        }
         .btn-outline:hover { background: #e67e22; color: white; }
         
-        .comparatif-box { background: white; border-radius: 15px; padding: 2rem; margin: 3rem 0; border: 1px solid #e0e0e0; overflow-x: auto; }
-        .comparatif-box h3 { color: #e67e22; margin-bottom: 1.5rem; }
-        .comparatif-box table { width: 100%; border-collapse: collapse; min-width: 600px; }
-        .comparatif-box th { background: #f5f5f5; padding: 1rem; text-align: left; }
-        .comparatif-box td { padding: 1rem; border-bottom: 1px solid #e0e0e0; }
+        .comparatif-box {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+            border: 1px solid #e0e0e0;
+            overflow-x: auto;
+        }
+        .comparatif-box h3 {
+            color: #e67e22;
+            margin-bottom: 1.5rem;
+        }
+        .comparatif-box table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .comparatif-box th {
+            background: #f5f5f5;
+            padding: 1rem;
+            text-align: left;
+        }
+        .comparatif-box td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
         
-        .tip-box { background: #f8f9fa; border-left: 4px solid #e67e22; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
-        .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0; }
-        .faq-item { background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid #e0e0e0; }
-        .faq-item h4 { color: #e67e22; margin-bottom: .8rem; }
+        .tip-box {
+            background: #f8f9fa;
+            border-left: 4px solid #e67e22;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid #e0e0e0;
+        }
+        .faq-item h4 {
+            color: #e67e22;
+            margin-bottom: .8rem;
+        }
         
-        footer { background: #1e1e1e; color: white; padding: 3rem 5%; margin-top: 4rem; }
-        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
-        .footer-col h4 { color: white; margin-bottom: 1rem; font-size: 1.1rem; }
-        .footer-col p { color: #aaa; font-size: .9rem; line-height: 1.7; }
-        .footer-col ul { list-style: none; }
-        .footer-col li { margin-bottom: .5rem; }
-        .footer-col a { color: #aaa; transition: color .2s; font-size: .9rem; }
+        footer {
+            background: #1e1e1e;
+            color: white;
+            padding: 3rem 5%;
+            margin-top: 4rem;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .footer-col p {
+            color: #aaa;
+            font-size: .9rem;
+            line-height: 1.7;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col li {
+            margin-bottom: .5rem;
+        }
+        .footer-col a {
+            color: #aaa;
+            transition: color .2s;
+            font-size: .9rem;
+        }
         .footer-col a:hover { color: #e67e22; }
-        .copyright { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #333; color: #aaa; font-size: .85rem; }
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #333;
+            color: #aaa;
+            font-size: .85rem;
+        }
         
         @media(max-width: 768px) { 
             nav { flex-direction: column; gap: 1rem; } 
@@ -164,7 +385,7 @@
 
 <!-- Navigation -->
 <nav>
-    <div class="logo"><a href="index.html">LC<span>D</span>MH</a></div>
+    <a href="index.html" class="logo">LC<span>D</span>MH</a>
     <button class="menu-toggle" id="menuToggle">☰</button>
     <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Accueil</a></li>
@@ -184,7 +405,7 @@
                 <a href="tests-motos.html">Tests motos</a>
                 <a href="equipement.html">Équipement</a>
                 <a href="intercoms.html" class="active">Intercoms</a>
-                <a href="pneus.html">Pneus</a>
+                <a href="pneus.html">Pneus (liens affiliés)</a>
                 <a href="photo-video.html">Photo / Vidéo</a>
                 <a href="securite.html">Sécurité</a>
             </div>
@@ -193,18 +414,27 @@
             <a href="#">GPS</a>
             <div class="dropdown">
                 <a href="gps.html">Tous les GPS</a>
-                <a href="aoocci.html">Aoocci</a>
-                <a href="carpuride.html">Carpuride</a>
-                <a href="blackview.html">📱 Téléphones renforcés</a>
+                <a href="aoocci.html">Aoocci (GPS offline)</a>
+                <a href="carpuride.html">Carpuride (écran déporté)</a>
+                <a href="blackview.html">Blackview 📱 (téléphone renforcé)</a>
             </div>
         </li>
         <li class="has-drop">
             <a href="#">Partenaires</a>
-            <div class="dropdown">
-                <a href="codes-promo.html">Codes promo</a>
-                <a href="blackview.html">Blackview</a>
-                <a href="olight.html">Olight</a>
-                <a href="komobi.html">Komobi</a>
+            <div class="dropdown" style="min-width:220px;">
+                <a href="codes-promo.html">💰 Tous les codes promo</a>
+                <div style="border-top:1px solid #e0e0e0; margin:5px 0;"></div>
+                <a href="blackview.html">Blackview 📱 (téléphone renforcé)</a>
+                <a href="olight.html">Olight 🔦 (lampes frontales)</a>
+                <a href="komobi.html">Komobi 📍 (traceur GPS)</a>
+                <a href="aferiy.html">Aferiy ⚡ (batteries / bivouac)</a>
+                <a href="aoocci.html">Aoocci 🧭 (GPS offline)</a>
+                <a href="carpuride.html">Carpuride 📺 (écran CarPlay)</a>
+                <div style="border-top:1px solid #e0e0e0; margin:5px 0;"></div>
+                <a href="pneus.html">🔧 Pneus moto (liens affiliés)</a>
+                <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&campaign=0ac376b3-9268-4626-3ff7-08dbc4da2b3f&clickref=Youtbe&clickref2=site&ued=https%3A%2F%2Fwww.123pneus.fr%2F" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem; font-size:0.75rem;">→ 123pneus.fr</a>
+                <a href="https://www.awin1.com/cread.php?awinmid=7928&awinaffid=2753560&campaign=Summer+sale+2026&clickref=Youtube&clickref2=Site&ued=https%3A%2F%2Fwww.pneus.fr%2Fpneus%2Fmoto" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem; font-size:0.75rem;">→ Pneus-fr</a>
+                <a href="https://www.awin1.com/cread.php?awinmid=7403&awinaffid=2753560&ued=https%3A%2F%2Fwww.pneus-moto.fr%2F" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem; font-size:0.75rem;">→ Pneus-moto.fr</a>
             </div>
         </li>
         <li><a href="a-propos.html">À propos</a></li>
@@ -308,75 +538,19 @@
                 <a href="https://www.youtube.com/watch?v=XXX" class="btn" target="_blank" rel="noopener noreferrer">Voir la vidéo</a>
             </div>
         </div>
-
-        <!-- Sena 50C (si vous avez) -->
-        <div class="intercom-card">
-            <div class="card-header">
-                <h3>Sena 50C</h3>
-                <div class="badge">Mesh 2.0 + Caméra 4K</div>
-            </div>
-            <div class="card-content">
-                <ul>
-                    <li>🎥 Caméra 4K intégrée</li>
-                    <li>🎧 Qualité audio Harman Kardon</li>
-                    <li>📶 Mesh 2.0 intercom</li>
-                    <li>🔋 Autonomie : 10-12h</li>
-                    <li>💾 Stockage microSD</li>
-                </ul>
-            </div>
-            <div class="card-footer">
-                <span>Test à venir</span>
-                <a href="#" class="btn btn-outline">Bientôt</a>
-            </div>
-        </div>
     </div>
 
     <!-- Section CARDO -->
     <div class="section-title">
-        <h2>CARDO : MES TESTS</h2>
+        <h2>CARDO : À VENIR</h2>
         <div class="bar"></div>
     </div>
-    <div class="intercom-grid">
-        <!-- Cardo Packtalk Edge -->
-        <div class="intercom-card">
-            <div class="card-header">
-                <h3>Cardo Packtalk Edge</h3>
-                <div class="badge">Mesh DMC</div>
-            </div>
-            <div class="card-content">
-                <ul>
-                    <li>🎧 Qualité audio : excellente (JBL)</li>
-                    <li>🔋 Autonomie : 13h</li>
-                    <li>📶 Mesh DMC jusqu'à 15 pilotes</li>
-                    <li>📱 Connexion Bluetooth 5.2</li>
-                    <li>🌧️ Étanchéité IP67</li>
-                </ul>
-            </div>
-            <div class="card-footer">
-                <span>Test à venir</span>
-                <a href="#" class="btn btn-outline">Bientôt</a>
-            </div>
-        </div>
-
-        <!-- Cardo Packtalk Bold -->
-        <div class="intercom-card">
-            <div class="card-header">
-                <h3>Cardo Packtalk Bold</h3>
-                <div class="badge">Mesh DMC</div>
-            </div>
-            <div class="card-content">
-                <ul>
-                    <li>🎧 Qualité audio : très bonne (JBL)</li>
-                    <li>🔋 Autonomie : 13h</li>
-                    <li>📶 Mesh DMC jusqu'à 15 pilotes</li>
-                    <li>📻 Radio FM intégrée</li>
-                </ul>
-            </div>
-            <div class="card-footer">
-                <span>Test à venir</span>
-                <a href="#" class="btn btn-outline">Bientôt</a>
-            </div>
-        </div>
+    <div style="background: white; border-radius: 15px; padding: 2rem; margin: 2rem 0; border: 1px solid #e0e0e0; text-align: center;">
+        <p style="font-style: italic; color: #666;">
+            Des tests Cardo sont prévus prochainement (Packtalk Edge, Packtalk Bold). 
+            Je vous partagerai mon avis sur la qualité audio, la portée du Mesh, 
+            et la compatibilité avec les GPS moto.
+        </p>
     </div>
 
     <!-- Section COMPARATIF -->
@@ -409,14 +583,6 @@
                 <td>Mesh 2.0 + BT</td>
                 <td>24</td>
                 <td>≈ 350€</td>
-            </tr>
-            <tr>
-                <td><strong>Sena 50C</strong></td>
-                <td>⭐⭐⭐⭐</td>
-                <td>10-12h</td>
-                <td>Mesh 2.0 + 4K</td>
-                <td>24</td>
-                <td>≈ 450€</td>
             </tr>
             <tr>
                 <td><strong>Cardo Packtalk Edge</strong></td>
@@ -481,14 +647,6 @@
             <a href="codes-promo.html" style="color: #e67e22; font-weight: 600;">Codes promo</a>.
         </p>
     </div>
-
-    <!-- Note sur les prochains tests -->
-    <div style="background: #f8f9fa; border-left: 4px solid #e67e22; padding: 1.5rem; margin: 2rem 0;">
-        <p style="color: #666;">
-            🎧 <strong>À venir :</strong> test du Cardo Packtalk Edge, comparatif Sena 50S vs Cardo, 
-            et un guide d'installation pour casques intégraux.
-        </p>
-    </div>
 </div>
 
 <!-- Footer -->
@@ -530,3 +688,4 @@
 </footer>
 </body>
 </html>
+<!-- FIN DU FICHIER : intercoms.html -->
