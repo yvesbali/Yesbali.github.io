@@ -25,17 +25,91 @@
         a { text-decoration: none; color: inherit; }
         
         /* Navigation */
-        nav { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 1rem 5%; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; }
-        .logo a { font-family: "Montserrat", sans-serif; font-size: 1.5rem; font-weight: 700; color: #1e1e1e; }
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+        .logo a {
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e1e1e;
+        }
         .logo span { color: #e67e22; }
-        .nav-links { display: flex; gap: 1.4rem; list-style: none; flex-wrap: wrap; align-items: center; }
-        .nav-links a { font-weight: 500; color: #1e1e1e; transition: color .2s; font-size: .9rem; }
-        .nav-links a:hover, .nav-links a.active { color: #e67e22; }
-        .nav-yt { background: #e67e22; color: white !important; padding: .5rem 1.2rem; border-radius: 50px; font-weight: 600 !important; }
+        .nav-links {
+            display: flex;
+            gap: 1.4rem;
+            list-style: none;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .nav-links a {
+            font-weight: 500;
+            color: #1e1e1e;
+            transition: color .2s;
+            font-size: .9rem;
+        }
+        .nav-links a:hover,
+        .nav-links a.active { color: #e67e22; }
+        .nav-yt {
+            background: #e67e22;
+            color: white !important;
+            padding: .5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600 !important;
+        }
         .nav-yt:hover { background: #d35400; }
-        .nav-yt-icon { background: #ff0000; color: white !important; padding: .5rem 1.2rem; border-radius: 50px; font-weight: 600 !important; }
+        .nav-yt-icon {
+            background: #ff0000;
+            color: white !important;
+            padding: .5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600 !important;
+        }
         .nav-yt-icon:hover { background: #cc0000; }
         .menu-toggle { display: none; }
+        
+        /* Menu responsive */
+        .has-drop { position: relative; }
+        .has-drop > a::after {
+            content: '▾';
+            font-size: 0.6rem;
+            opacity: 0.7;
+            margin-left: 0.2rem;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            box-shadow: 0 8px 28px rgba(0,0,0,.12);
+            min-width: 220px;
+            padding: .5rem 0;
+            z-index: 999;
+        }
+        .has-drop:hover .dropdown { display: block; }
+        .dropdown a {
+            display: block;
+            padding: .52rem 1.1rem;
+            font-size: .8rem;
+            color: #1e1e1e;
+            font-weight: 500;
+            transition: background .15s, color .15s;
+        }
+        .dropdown a:hover { background: #fff8f2; color: #e67e22; }
+        
         @media (max-width: 900px) {
             .nav-links {
                 display: none;
@@ -75,88 +149,241 @@
         }
         @media (min-width: 901px) { .mobile-only { display: none !important; } }
         
-        .has-drop { position: relative; }
-        .has-drop > a::after {
-            content: '▾';
-            font-size: 0.6rem;
-            opacity: 0.7;
-            margin-left: 0.2rem;
+        .hero {
+            height: 30vh;
+            min-height: 250px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
         }
-        .dropdown {
-            display: none;
+        .hero-image {
             position: absolute;
-            top: calc(100% + 6px);
-            left: 0;
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            box-shadow: 0 8px 28px rgba(0,0,0,.12);
-            min-width: 175px;
-            padding: .5rem 0;
-            z-index: 999;
+            inset: 0;
+            background-image: url('images/bandeau-norvege.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(.6);
+            z-index: -1;
         }
-        .has-drop:hover .dropdown { display: block; }
-        .dropdown a {
-            display: block;
-            padding: .52rem 1.1rem;
-            font-size: .8rem;
-            color: #1e1e1e;
-            font-weight: 500;
-            transition: background .15s, color .15s;
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
         }
-        .dropdown a:hover { background: #fff8f2; color: #e67e22; }
-        
-        .hero { height: 30vh; min-height: 250px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
-        .hero-image { position: absolute; inset: 0; background-image: url('images/bandeau-norvege.jpg'); background-size: cover; background-position: center; filter: brightness(.6); z-index: -1; }
-        .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 2rem; }
-        .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1rem; text-shadow: 0 2px 10px rgba(0,0,0,.3); }
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,.3);
+        }
         .hero h1 span { color: #e67e22; }
-        .hero p { font-size: 1.1rem; text-shadow: 0 2px 5px rgba(0,0,0,.3); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 2rem 5%; }
-        .section-title { text-align: center; margin-bottom: 3rem; }
-        .section-title h2 { font-size: 2rem; color: #e67e22; margin-bottom: .5rem; }
-        .section-title .bar { width: 52px; height: 4px; background: #e67e22; margin: 0 auto; border-radius: 2px; }
+        .hero p {
+            font-size: 1.1rem;
+            text-shadow: 0 2px 5px rgba(0,0,0,.3);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 5%;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-title h2 {
+            font-size: 2rem;
+            color: #e67e22;
+            margin-bottom: .5rem;
+        }
+        .section-title .bar {
+            width: 52px;
+            height: 4px;
+            background: #e67e22;
+            margin: 0 auto;
+            border-radius: 2px;
+        }
         
-        .intro-box { background: white; border-radius: 20px; padding: 2rem; margin: 2rem 0; border: 1px solid #e0e0e0; text-align: center; }
-        .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 3rem 0; }
-        .tip-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,.05); border: 1px solid #e0e0e0; transition: transform .2s; }
+        .intro-box {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .tip-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,.05);
+            border: 1px solid #e0e0e0;
+            transition: transform .2s;
+        }
         .tip-card:hover { transform: translateY(-5px); }
-        .tip-header { background: #1e1e1e; color: white; padding: 1.5rem; }
-        .tip-header h3 { font-size: 1.5rem; margin-bottom: .3rem; }
-        .tip-header .badge { color: #e67e22; font-weight: 600; font-size: .9rem; }
-        .tip-content { padding: 1.5rem; }
-        .tip-content ul { list-style: none; color: #666; }
-        .tip-content li { padding: .3rem 0; border-bottom: 1px solid #f0f0f0; }
+        .tip-header {
+            background: #1e1e1e;
+            color: white;
+            padding: 1.5rem;
+        }
+        .tip-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: .3rem;
+        }
+        .tip-header .badge {
+            color: #e67e22;
+            font-weight: 600;
+            font-size: .9rem;
+        }
+        .tip-content {
+            padding: 1.5rem;
+        }
+        .tip-content ul {
+            list-style: none;
+            color: #666;
+        }
+        .tip-content li {
+            padding: .3rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
         .tip-content li:last-child { border-bottom: none; }
-        .tip-footer { padding: 1.5rem; border-top: 1px solid #e0e0e0; }
-        .btn { background: #e67e22; color: white; padding: .5rem 1.2rem; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block; }
+        .tip-footer {
+            padding: 1.5rem;
+            border-top: 1px solid #e0e0e0;
+        }
+        .btn {
+            background: #e67e22;
+            color: white;
+            padding: .5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+        }
         .btn:hover { background: #d35400; }
         
-        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0; }
-        .video-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,.05); border: 1px solid #e0e0e0; cursor: pointer; transition: transform .2s; }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .video-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,.05);
+            border: 1px solid #e0e0e0;
+            cursor: pointer;
+            transition: transform .2s;
+        }
         .video-card:hover { transform: translateY(-5px); }
-        .video-thumb { width: 100%; height: 180px; overflow: hidden; background: #000; }
-        .video-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+        .video-thumb {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            background: #000;
+        }
+        .video-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .3s;
+        }
         .video-card:hover .video-thumb img { transform: scale(1.05); }
-        .video-info { padding: 1.5rem; }
-        .video-info h4 { margin-bottom: .5rem; color: #e67e22; }
-        .video-info p { color: #666; font-size: .9rem; }
+        .video-info {
+            padding: 1.5rem;
+        }
+        .video-info h4 {
+            margin-bottom: .5rem;
+            color: #e67e22;
+        }
+        .video-info p {
+            color: #666;
+            font-size: .9rem;
+        }
         
-        .cta-box { background: linear-gradient(135deg, #e67e22 0%, #d35400 100%); color: white; border-radius: 30px; padding: 2.5rem; text-align: center; margin: 3rem 0; }
-        .cta-box h3 { font-size: 2rem; margin-bottom: 1rem; }
-        .cta-box p { font-size: 1.1rem; max-width: 700px; margin: 0 auto 1.5rem; }
-        .btn-cta { background: white; color: #e67e22; padding: 1rem 2.5rem; border-radius: 50px; font-weight: 700; font-size: 1.1rem; display: inline-block; transition: transform .2s; }
+        .cta-box {
+            background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+            color: white;
+            border-radius: 30px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        .cta-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .cta-box p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+        }
+        .btn-cta {
+            background: white;
+            color: #e67e22;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: transform .2s;
+        }
         .btn-cta:hover { transform: scale(1.05); }
         
-        footer { background: #1e1e1e; color: white; padding: 3rem 5%; margin-top: 4rem; }
-        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
-        .footer-col h4 { color: white; margin-bottom: 1rem; font-size: 1.1rem; }
-        .footer-col p { color: #aaa; font-size: .9rem; line-height: 1.7; }
-        .footer-col ul { list-style: none; }
-        .footer-col li { margin-bottom: .5rem; }
-        .footer-col a { color: #aaa; transition: color .2s; font-size: .9rem; }
+        footer {
+            background: #1e1e1e;
+            color: white;
+            padding: 3rem 5%;
+            margin-top: 4rem;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .footer-col p {
+            color: #aaa;
+            font-size: .9rem;
+            line-height: 1.7;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col li {
+            margin-bottom: .5rem;
+        }
+        .footer-col a {
+            color: #aaa;
+            transition: color .2s;
+            font-size: .9rem;
+        }
         .footer-col a:hover { color: #e67e22; }
-        .copyright { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #333; color: #aaa; font-size: .85rem; }
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #333;
+            color: #aaa;
+            font-size: .85rem;
+        }
         
         @media(max-width: 768px) { 
             nav { flex-direction: column; gap: 1rem; } 
@@ -168,7 +395,7 @@
 
 <!-- Navigation -->
 <nav>
-    <div class="logo"><a href="index.html">LC<span>D</span>MH</a></div>
+    <a href="index.html" class="logo">LC<span>D</span>MH</a>
     <button class="menu-toggle" id="menuToggle">☰</button>
     <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Accueil</a></li>
@@ -188,7 +415,7 @@
                 <a href="tests-motos.html">Tests motos</a>
                 <a href="equipement.html">Équipement</a>
                 <a href="intercoms.html">Intercoms</a>
-                <a href="pneus.html">Pneus</a>
+                <a href="pneus.html">Pneus (liens affiliés)</a>
                 <a href="photo-video.html">Photo / Vidéo</a>
                 <a href="securite.html" class="active">Sécurité</a>
             </div>
@@ -197,18 +424,27 @@
             <a href="#">GPS</a>
             <div class="dropdown">
                 <a href="gps.html">Tous les GPS</a>
-                <a href="aoocci.html">Aoocci</a>
-                <a href="carpuride.html">Carpuride</a>
-                <a href="blackview.html">📱 Téléphones renforcés</a>
+                <a href="aoocci.html">Aoocci (GPS offline)</a>
+                <a href="carpuride.html">Carpuride (écran déporté)</a>
+                <a href="blackview.html">Blackview 📱 (téléphone renforcé)</a>
             </div>
         </li>
         <li class="has-drop">
             <a href="#">Partenaires</a>
-            <div class="dropdown">
-                <a href="codes-promo.html">Codes promo</a>
-                <a href="blackview.html">Blackview</a>
-                <a href="olight.html">Olight</a>
-                <a href="komobi.html">Komobi</a>
+            <div class="dropdown" style="min-width:220px;">
+                <a href="codes-promo.html">💰 Tous les codes promo</a>
+                <div style="border-top:1px solid #e0e0e0; margin:5px 0;"></div>
+                <a href="blackview.html">Blackview 📱 (téléphone renforcé)</a>
+                <a href="olight.html">Olight 🔦 (lampes frontales)</a>
+                <a href="komobi.html">Komobi 📍 (traceur GPS)</a>
+                <a href="aferiy.html">Aferiy ⚡ (batteries / bivouac)</a>
+                <a href="aoocci.html">Aoocci 🧭 (GPS offline)</a>
+                <a href="carpuride.html">Carpuride 📺 (écran CarPlay)</a>
+                <div style="border-top:1px solid #e0e0e0; margin:5px 0;"></div>
+                <a href="pneus.html">🔧 Pneus moto (liens affiliés)</a>
+                <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&campaign=0ac376b3-9268-4626-3ff7-08dbc4da2b3f&clickref=Youtbe&clickref2=site&ued=https%3A%2F%2Fwww.123pneus.fr%2F" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem; font-size:0.75rem;">→ 123pneus.fr</a>
+                <a href="https://www.awin1.com/cread.php?awinmid=7928&awinaffid=2753560&campaign=Summer+sale+2026&clickref=Youtube&clickref2=Site&ued=https%3A%2F%2Fwww.pneus.fr%2Fpneus%2Fmoto" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem; font-size:0.75rem;">→ Pneus-fr</a>
+                <a href="https://www.awin1.com/cread.php?awinmid=7403&awinaffid=2753560&ued=https%3A%2F%2Fwww.pneus-moto.fr%2F" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem; font-size:0.75rem;">→ Pneus-moto.fr</a>
             </div>
         </li>
         <li><a href="a-propos.html">À propos</a></li>
