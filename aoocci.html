@@ -73,7 +73,7 @@
           "item": {
             "@type": "Product",
             "name": "AOOCCI C3 Plus",
-            "image": "https://img.youtube.com/vi/xxx/hqdefault.jpg",
+            "image": "https://aoocci.fr/cdn/shop/files/c3-plus-ecran-moto-carplay_500x.jpg",
             "description": "Écran CarPlay/Android Auto compact 5\" (854×480, 800 nits), processeur Cortex-A7 single-core, 64MB RAM, TPMS inclus, IP67. Testé sur 3 000 km.",
             "brand": { "@type": "Brand", "name": "AOOCCI" },
             "review": {
@@ -91,7 +91,7 @@
           "item": {
             "@type": "Product",
             "name": "AOOCCI C6 Pro",
-            "image": "https://img.youtube.com/vi/xxx/hqdefault.jpg",
+            "image": "https://aoocci.fr/cdn/shop/files/c6-pro-camera-moto-antivol_500x.jpg",
             "description": "Caméra moto GPS antivol avec écran 6.25\" 1000 nits, double dashcam AHD 1080p (format .TS), mode parking, détection de choc, TPMS, IP67. Testé sur 4 000 km.",
             "brand": { "@type": "Brand", "name": "AOOCCI" },
             "review": {
@@ -248,10 +248,10 @@
         .f-nav a:hover{color:var(--orange)}
         .f-legal{font-size:.76rem;color:rgba(255,255,255,.3);margin-top:1.1rem;line-height:1.7}
         
-        /* Grilles */
+        /* Grilles vidéo */
         .videos-grid{
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 2rem;
             margin: 2rem 0;
         }
@@ -307,7 +307,7 @@
             line-height: 1.5;
         }
         
-        /* Nouveau : Avis personnel avec kilométrage */
+        /* Avis personnel */
         .avis-personnel{
             background: var(--alt);
             padding: 1rem;
@@ -322,7 +322,7 @@
             margin-bottom: 0.3rem;
         }
         
-        /* Nouveau : Points forts / Points faibles */
+        /* Points forts / Points faibles */
         .pros-cons{
             display: flex;
             gap: 1.5rem;
@@ -365,9 +365,10 @@
             color: #2980b9;
         }
         
+        /* Grille produits - CORRIGÉE pour harmonisation */
         .products-grid{
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin: 3rem 0;
         }
@@ -377,6 +378,10 @@
             padding: 2rem;
             border: 1px solid var(--border);
             transition: transform .2s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 800px;
         }
         .product-card:hover{
             transform: translateY(-5px);
@@ -403,8 +408,20 @@
             border-bottom: none;
         }
         .product-card .btn{
-            margin-top: 1.5rem;
+            margin-top: auto;
             display: inline-block;
+            align-self: flex-start;
+        }
+        
+        /* Image produit pour C3 Plus et C6 Pro */
+        .product-image{
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 0.5rem;
         }
         
         .comparatif-table{
@@ -479,9 +496,43 @@
             border-left: 3px solid var(--orange);
         }
         
+        /* Module codes promo actifs (pour combler l'espace) */
+        .promo-module{
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            height: 100%;
+            min-height: 800px;
+            display: flex;
+            flex-direction: column;
+        }
+        .promo-module h4{
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .promo-code{
+            background: rgba(255,255,255,0.2);
+            border: 2px dashed white;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 1rem 0;
+        }
+        .promo-code .code{
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+        
+        @media (max-width: 992px){
+            .products-grid{ grid-template-columns: repeat(2, 1fr); }
+        }
         @media (max-width: 768px){
             .faq-grid{ grid-template-columns: 1fr; }
             .pros-cons{ flex-direction: column; }
+            .products-grid{ grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -644,7 +695,7 @@
 
         <div class="video-card">
             <div class="video-thumb">
-                <img src="https://via.placeholder.com/320x180/f0f0f0/e67e22?text=C3+Plus" alt="Test Aoocci C3 Plus">
+                <img src="https://aoocci.fr/cdn/shop/files/c3-plus-ecran-moto-carplay_500x.jpg" alt="Test Aoocci C3 Plus">
                 <div class="video-category">C3 Plus</div>
             </div>
             <div class="video-info">
@@ -740,7 +791,7 @@
     </table>
 </section>
 
-<!-- Grille produits avec avis personnalisés et points forts/faibles -->
+<!-- Grille produits harmonisée avec module promo -->
 <section class="container">
     <div class="products-grid">
         <!-- U6 / U7 -->
@@ -760,7 +811,7 @@
                         <li>Écran 6.25" 800 nits (1560×720p)</li>
                         <li>Android 14 + Play Store préinstallé</li>
                         <li>Double dashcam 1080p (30 fps, 140°)</li>
-                        <li>TPMS inclus (monitoring pression/température)</li>
+                        <li>TPMS inclus</li>
                         <li>IP67 étanche</li>
                         <li>Stockage microSD jusqu'à 256 Go</li>
                     </ul>
@@ -776,7 +827,7 @@
             </div>
             
             <div class="tech-note">
-                <strong>🔧 Spécifications techniques :</strong> Processeur 8 cœurs, Bluetooth 5.0, Wi-Fi 5.0 GHz, résolution écran 1560×720p, dashcam 1080p@30fps, angle 140°, IP67, batterie non amovible.
+                <strong>🔧 Spécifications :</strong> Processeur 8 cœurs, BT 5.0, Wi-Fi 5GHz, résolution 1560×720p, dashcam 1080p@30fps.
             </div>
             
             <a href="https://aoocci.fr/products/u6-u7-gps-moto-android-6-pouces-navigation-hors-ligne-tpms?_pos=1&_sid=34498bc63&_ss=r&ref=gvxyhqgv&utm_source=lcdmh&utm_medium=site&utm_campaign=aoocci-u6" class="btn btn-orange" target="_blank" rel="sponsored nofollow noopener">VOIR U6/U7 →</a>
@@ -815,8 +866,9 @@
             <a href="https://aoocci.fr/products/carplay-moto-bx-dashcam-detection-angles-morts?_pos=1&_sid=7d2cfbaf4&_ss=r&ref=gvxyhqgv&utm_source=lcdmh&utm_medium=site&utm_campaign=aoocci-bx" class="btn btn-orange" target="_blank" rel="sponsored nofollow noopener">VOIR BX →</a>
         </div>
 
-        <!-- C3 Plus -->
+        <!-- C3 Plus avec image produit -->
         <div class="product-card">
+            <img src="https://aoocci.fr/cdn/shop/files/c3-plus-ecran-moto-carplay_500x.jpg" alt="AOOCCI C3 Plus" class="product-image">
             <h3>C3 Plus</h3>
             <div class="type">CarPlay compact - 5" 800 nits</div>
             
@@ -848,14 +900,15 @@
             </div>
             
             <div class="tech-note">
-                <strong>🔧 Spécifications techniques :</strong> Processeur Cortex-A7, RAM 64MB DDR2, Bluetooth 4.2, Wi-Fi dual-band, dimensions 13.7×8.0×2.1 cm, température -20°C à 80°C.
+                <strong>🔧 Spécifications :</strong> Cortex-A7, RAM 64MB, BT 4.2, Wi-Fi dual-band, dimensions 13.7×8.0×2.1 cm, température -20°C à 80°C.
             </div>
             
             <a href="https://aoocci.fr/products/ecran-carplay-moto-c3-plus-sans-fil-android-auto?ref=gvxyhqgv&utm_source=lcdmh&utm_medium=site&utm_campaign=aoocci-c3plus" class="btn btn-orange" target="_blank" rel="sponsored nofollow noopener">VOIR C3 PLUS →</a>
         </div>
 
-        <!-- C6 Pro -->
+        <!-- C6 Pro avec image produit -->
         <div class="product-card">
+            <img src="https://aoocci.fr/cdn/shop/files/c6-pro-camera-moto-antivol_500x.jpg" alt="AOOCCI C6 Pro" class="product-image">
             <h3>C6 Pro</h3>
             <div class="type">Caméra moto GPS antivol - 6.25" 1000 nits</div>
             
@@ -888,7 +941,7 @@
             </div>
             
             <div class="tech-note">
-                <strong>🔧 Spécifications techniques :</strong> Résolution écran 1560×720p, dashcam AHD 1080p, microSD ≤256 Go, télécommande filaire, dimensions 173×88×21 mm, température -10°C à 60°C.
+                <strong>🔧 Spécifications :</strong> Résolution 1560×720p, dashcam AHD 1080p, microSD ≤256 Go, dimensions 173×88×21 mm, température -10°C à 60°C.
             </div>
             
             <a href="https://aoocci.fr/products/camera-moto-c6-pro-gps-antivol-tpms-carplay?ref=gvxyhqgv&utm_source=lcdmh&utm_medium=site&utm_campaign=aoocci-c6pro" class="btn btn-orange" target="_blank" rel="sponsored nofollow noopener">VOIR C6 PRO →</a>
@@ -921,12 +974,20 @@
             <a href="https://aoocci.fr/products/bm6-bm7-carplay-android-auto-bmw?_pos=1&_sid=e5edf74bf&_ss=r&ref=gvxyhqgv&utm_source=lcdmh&utm_medium=site&utm_campaign=aoocci-bm" class="btn btn-orange" target="_blank" rel="sponsored nofollow noopener">VOIR BM6/BM7 →</a>
         </div>
 
-        <!-- Boutique -->
-        <div class="product-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-            <h3>Tous les GPS</h3>
-            <div class="type">Boutique officielle</div>
-            <p style="color: var(--muted); margin: 1rem 0; text-align: center;">Voir toute la gamme et les accessoires</p>
-            <a href="https://aoocci.fr/?ref=gvxyhqgv&utm_source=lcdmh&utm_medium=site&utm_campaign=aoocci-boutique" class="btn btn-orange" target="_blank" rel="sponsored nofollow noopener">VOIR LA BOUTIQUE →</a>
+        <!-- Module codes promo (pour combler l'espace) -->
+        <div class="promo-module">
+            <h4>🔥 CODES ACTIFS</h4>
+            <div class="promo-code">
+                <div class="code">LCDMH28</div>
+                <div>-28% jusqu'au 31/03/2026</div>
+            </div>
+            <div class="promo-code">
+                <div class="code">LCDMH25</div>
+                <div>-25% permanent</div>
+            </div>
+            <p style="margin-top: auto; font-size: 0.9rem; opacity: 0.9;">
+                Ces codes sont valables sur toute la boutique AOOCCI. N'hésitez pas à les partager !
+            </p>
         </div>
     </div>
 
