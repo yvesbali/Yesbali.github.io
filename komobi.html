@@ -90,7 +90,7 @@
         }
         @media (min-width: 901px) { .mobile-only { display: none !important; } }
         
-        /* Hero avec hauteur réduite à 60vh */
+        /* Hero avec parallaxe réduit (scroll au lieu de fixed) */
         .hero{
             position:relative;
             min-height:60vh;
@@ -100,7 +100,7 @@
             text-align:center;
             color:#fff;
             overflow:hidden;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=2070') center/cover no-repeat fixed;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=2070') center/cover no-repeat scroll;
         }
         .hero-content{
             position:relative;
@@ -197,6 +197,17 @@
             display:flex;
             gap:1rem;
             margin-top:1.5rem;
+            flex-wrap: wrap;
+        }
+        .promo-code {
+            background: #ffd700;
+            color: #1a1a1a;
+            font-weight: 700;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin: 1rem 0;
+            font-size: 1rem;
         }
         
         .why-grid{
@@ -227,17 +238,6 @@
             text-align:center;
         }
         .pending-box h3{color:var(--orange);margin-bottom:1rem}
-        
-        .commission-note{
-            font-size:0.9rem;
-            color:var(--muted);
-            margin:1rem 0;
-            font-style:italic;
-            padding:0.5rem;
-            background:#f9f9f9;
-            border-radius:8px;
-            border-left:3px solid var(--orange);
-        }
         
         footer{
             background:var(--noir);
@@ -365,7 +365,7 @@
     });
 </script>
 
-<!-- Hero avec hauteur réduite -->
+<!-- Hero avec parallaxe réduit -->
 <section class="hero">
     <div class="hero-content">
         <div class="hero-badge">🚨 LE SEUL TRACEUR GPS ANTIVOL AVEC DÉTECTION DE COLLISION</div>
@@ -390,25 +390,25 @@
         </p>
     </div>
 
-    <!-- 3 fonctions clés avec PHOTOS -->
+    <!-- 3 fonctions clés avec PHOTOS MISES À JOUR -->
     <div class="features-grid">
-        <!-- PROTÈGE - Photo cadenas -->
+        <!-- PROTÈGE - Photo antivol (rond barré) -->
         <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1585598320067-c3b9a0c2acb8?q=80&w=1974" alt="Protection moto cadenas" class="feature-img">
+            <img src="https://images.unsplash.com/photo-1605025991907-05b7f5787b4d?q=80&w=1974" alt="Antivol moto protection" class="feature-img">
             <div class="feature-content">
                 <h3>🔒 PROTÈGE ta moto</h3>
                 <p>Localisation GPS en temps réel, alarme anti-vol, géofencing. Votre moto sous surveillance permanente.</p>
             </div>
         </div>
-        <!-- VEILLE - Photo ange gardien -->
+        <!-- VEILLE - Photo ange gardien avec moto -->
         <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1603791445824-0050bd436672?q=80&w=1974" alt="Ange gardien protection" class="feature-img">
+            <img src="https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=2070" alt="Ange gardien motard" class="feature-img">
             <div class="feature-content">
                 <h3>👼 VEILLE sur toi</h3>
                 <p>Détection de chute eCall : en cas d'accident, vos contacts d'urgence sont alertés avec votre position.</p>
             </div>
         </div>
-        <!-- RASSURE - Photo téléphone / famille -->
+        <!-- RASSURE - Photo famille / téléphone -->
         <div class="feature-card">
             <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070" alt="Famille au téléphone" class="feature-img">
             <div class="feature-content">
@@ -418,15 +418,16 @@
         </div>
     </div>
 
-    <!-- Bloc PRODUIT avec image -->
+    <!-- Bloc PRODUIT avec VRAIE IMAGE du boîtier + CODE PROMO 15% -->
     <div class="product-showcase">
-        <img src="https://www.komobimoto.com/wp-content/uploads/2024/01/komobi-traceur-gps-moto-boitier.png" alt="KOMOBI boîtier" onerror="this.src='https://via.placeholder.com/600x400/1e1e1e/e67e22?text=KOMOBI+Boitier'">
+        <img src="https://www.komobimoto.com/wp-content/uploads/2024/01/komobi-gps-tracker-moto-boitier-noir.png" alt="KOMOBI boîtier traceur GPS" onerror="this.src='https://via.placeholder.com/600x400/1e1e1e/e67e22?text=KOMOBI+Boitier'">
         <div>
             <h3 style="font-size: 2rem; color: var(--orange); margin-bottom: 1rem;">Si vous allez en moto, choisissez KOMOBI</h3>
             <p style="color: #666; font-size: 1.1rem; margin-bottom: 1rem;">Le seul traceur GPS antivol avec détection de collision. Une protection complète pour vous et votre machine.</p>
+            <div class="promo-code">🔥 ÉCONOMISEZ 15% AVEC LE CODE : KOMOBI</div>
             <div class="rating">★★★★★ 4,8/5 (350 avis)</div>
             <div class="btn-group">
-                <a href="https://www.komobimoto.com/fr/" class="btn btn-orange" target="_blank" rel="nofollow">🛒 Acheter</a>
+                <a href="https://www.komobimoto.com/fr/" class="btn btn-orange" target="_blank" rel="nofollow">🛒 Acheter -15% avec code KOMOBI</a>
                 <a href="#" class="btn" style="background:#f0f1f5;color:#111;">📊 Standard vs Pro</a>
             </div>
             <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--muted);">* Version Standard : alarme et localisation. Version Pro : + eCall + télémétrie avancée.</p>
@@ -464,11 +465,6 @@
         </div>
     </div>
 
-    <!-- Note commission -->
-    <div class="commission-note">
-        🤝 En cliquant sur ce lien, tu m'aides à obtenir de nouveaux codes promo pour toute la communauté. Merci pour ton soutien !
-    </div>
-
     <!-- Section TEST À VENIR -->
     <div class="pending-box">
         <h3>🔜 TEST EN PRÉPARATION</h3>
@@ -477,16 +473,9 @@
             Dès que j'aurai parcouru plusieurs milliers de kilomètres avec le KOMOBI, je publierai un test complet.
         </p>
         <p style="font-style: italic; margin-bottom: 1.5rem;">En attendant, vous pouvez consulter le site officiel.</p>
-        <a href="https://www.komobimoto.com/fr/" class="btn btn-orange" target="_blank" rel="nofollow">VOIR LE SITE OFFICIEL KOMOBI</a>
+        <a href="https://www.komobimoto.com/fr/" class="btn btn-orange" target="_blank" rel="nofollow">🔗 VOIR LE SITE OFFICIEL KOMOBI (code KOMOBI = -15%)</a>
     </div>
 
-    <!-- Note code promo -->
-    <div style="background: #f8f9fa; border: 1px solid var(--border); border-radius: 15px; padding: 1.5rem; margin: 2rem 0; text-align: center;">
-        <p style="color: #666;">
-            💡 Un code promo LCDMH est en négociation. Dès qu'il sera actif, je le publierai sur la page 
-            <a href="codes-promo.html" style="color: var(--orange); font-weight: 600;">Codes promo</a>.
-        </p>
-    </div>
 </div>
 
 <footer>
