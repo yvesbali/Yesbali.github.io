@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Road Trips Moto en Europe | Playlists LCDMH</title>
-    <meta name="description" content="Les road trips moto de LCDMH : Cap Nord, Europe-Asie, Espagne, Alpes. Playlists complètes, épisodes, aventures et paysages à vivre sur YouTube.">
-    <meta name="keywords" content="road trip moto, voyage moto Europe, Cap Nord moto, Espagne moto, Alpes moto, Cappadoce moto, playlist moto YouTube, LCDMH">
+    <title>Road Trips Moto en Europe et Plus Belles Routes de France | LCDMH</title>
+    <meta name="description" content="Les road trips moto de LCDMH : Cap Nord, Europe-Asie, Espagne, Alpes. Découvrez aussi les plus belles routes de France à moto : Galibier, Bonette, Iseran, Verdon... Playlists complètes et aventures à vivre sur YouTube.">
+    <meta name="keywords" content="road trip moto, plus belles routes de France, cols mythiques Alpes, voyage moto Europe, Cap Nord moto, Espagne moto, Alpes moto, playlist moto YouTube, LCDMH, Annecy moto">
     <meta name="author" content="Yves – LCDMH">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Road Trips Moto en Europe | Playlists LCDMH">
-    <meta property="og:description" content="Revivez les aventures de LCDMH : Cap Nord, Europe-Asie, Espagne, Alpes. Tous les épisodes en playlist.">
+    <meta property="og:title" content="Road Trips Moto en Europe et Plus Belles Routes de France | LCDMH">
+    <meta property="og:description" content="Revivez les aventures de LCDMH et découvrez les plus beaux cols et routes de France à moto.">
     <meta property="og:url" content="https://lcdmh.com/roadtrips.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="LCDMH">
@@ -22,6 +22,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- Balises pour mobile et Search Console -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="google-site-verification" content="">
     
     <!-- Schema.org ItemList avec vraies URLs -->
     <script type="application/ld+json">
@@ -172,7 +177,7 @@
             line-height: 1.7;
         }
         
-        /* Hero avec filtre clair */
+        /* Hero avec ta nouvelle image */
         .hero-road {
             position: relative;
             min-height: 60vh;
@@ -181,11 +186,11 @@
             justify-content: center;
             text-align: center;
             color: #fff;
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('images/bandeau-road-trip.jpg') center/cover no-repeat fixed;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('images/bandeau-roadtrip.jpg') center/cover no-repeat fixed;
             margin-bottom: 2rem;
         }
         .hero-road-content {
-            max-width: 820px;
+            max-width: 900px;
             padding: 2rem;
             text-shadow: 0 2px 15px rgba(0,0,0,.7);
         }
@@ -199,7 +204,7 @@
         .hero-road p {
             font-size: clamp(1rem, 2vw, 1.25rem);
             opacity: .95;
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto 2rem;
         }
         .hero-road .btn-white {
@@ -241,6 +246,27 @@
             font-size: 1.4rem;
         }
         
+        .intro-box {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        .intro-box p {
+            font-size: 1.1rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+        .intro-box strong { color: var(--orange); }
+        .intro-box .highlight {
+            background: var(--alt);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
         .section-title {
             text-align: center;
             margin-bottom: 2.5rem;
@@ -252,7 +278,7 @@
         .section-title h2 span { color: var(--orange); }
         .section-title p {
             color: var(--muted);
-            max-width: 620px;
+            max-width: 720px;
             margin: 0.6rem auto 0;
             font-size: 1rem;
         }
@@ -304,6 +330,7 @@
             color: var(--muted);
             margin-bottom: 1rem;
             font-size: 0.95rem;
+            line-height: 1.6;
         }
         .card-meta {
             display: flex;
@@ -349,6 +376,71 @@
             text-align: center;
         }
         .btn-secondary:hover { background: var(--alt); }
+        
+        /* Nouvelle section : Plus belles routes de France */
+        .routes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+        .route-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,.05);
+            border: 1px solid var(--border);
+            transition: transform 0.3s;
+        }
+        .route-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,.1);
+        }
+        .route-image {
+            height: 160px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .route-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--orange);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .route-content {
+            padding: 1.5rem;
+        }
+        .route-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
+        }
+        .route-altitude {
+            color: var(--orange);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+        .route-desc {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+            font-style: italic;
+            border-left: 3px solid var(--orange);
+            padding-left: 1rem;
+        }
+        .route-link {
+            display: inline-block;
+            color: var(--orange);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .route-link:hover { text-decoration: underline; }
         
         .episodes-section { margin: 4rem 0; }
         .trip-episodes {
@@ -399,6 +491,7 @@
         .episode-info h4 {
             font-size: 1rem;
             margin-bottom: 0.3rem;
+            line-height: 1.4;
         }
         .episode-info p {
             font-size: 0.85rem;
@@ -456,24 +549,60 @@
         }
         .choice-card:hover .choice-link { color: #fff; }
         
-        .recent-section {
-            margin: 4rem 0 2rem;
-            padding: 2rem 0;
-            background: var(--alt);
-            border-radius: 30px;
-        }
+        /* Nouvelle section : Derniers extraits vidéo */
         .recent-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            padding: 0 2rem;
+            margin: 2rem 0;
         }
         .recent-card {
-            background: #fff;
+            background: white;
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,.05);
+            border: 1px solid var(--border);
+            transition: transform .2s;
         }
+        .recent-card:hover { transform: translateY(-4px); }
+        .recent-thumb {
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+        }
+        .recent-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+        .recent-card:hover .recent-thumb img { transform: scale(1.05); }
+        .recent-content {
+            padding: 1.2rem;
+        }
+        .recent-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        .recent-meta {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+            flex-wrap: wrap;
+        }
+        .recent-meta span {
+            background: var(--alt);
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .recent-link {
+            color: var(--orange);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .recent-link:hover { text-decoration: underline; }
         
         .cta-final {
             text-align: center;
@@ -526,6 +655,7 @@
             .stats-grid { gap: 1.5rem; }
             .card-buttons { flex-direction: column; }
             .choice-grid { grid-template-columns: 1fr; }
+            .routes-grid { grid-template-columns: 1fr; }
         }
         
         /* Menu responsive (identique à index) */
@@ -690,11 +820,11 @@
     });
 </script>
 
-<!-- Hero avec filtre clair -->
+<!-- Hero avec ta nouvelle image -->
 <section class="hero-road">
     <div class="hero-road-content">
-        <h1>MES <span>ROAD TRIPS</span> MOTO<br>EN EUROPE</h1>
-        <p>Du Cap Nord à la Cappadoce, des Alpes à l'Espagne, je partage ici mes vrais road trips moto en solo : la route, les paysages, les galères, les émotions et les découvertes. Chaque voyage est disponible en playlist complète sur YouTube.</p>
+        <h1>MES <span>ROAD TRIPS</span> MOTO<br>EN EUROPE & EN FRANCE</h1>
+        <p>Du Cap Nord à la Cappadoce, des Alpes à l'Espagne, je partage ici mes vrais road trips moto en solo : la route, les paysages, les galères, les émotions et les découvertes. Basé à Annecy, mon terrain de jeu favori, c'est la montagne et ses cols mythiques.</p>
         <a href="https://www.youtube.com/@LCDMH" class="btn-white" target="_blank" rel="noopener">📺 Voir la chaîne YouTube</a>
     </div>
 </section>
@@ -702,13 +832,25 @@
 <!-- Stats band -->
 <div class="stats-band">
     <div class="container stats-grid">
-        <div class="stat-item"><i>🏍️</i> Voyages moto filmés en conditions réelles</div>
+        <div class="stat-item"><i>🏍️</i> + de 50 000 km parcourus en solo</div>
+        <div class="stat-item"><i>⛰️</i> Basé à Annecy, au cœur des Alpes</div>
         <div class="stat-item"><i>📺</i> Playlists complètes sur YouTube</div>
-        <div class="stat-item"><i>⛰️</i> Europe, montagne, grands espaces, aventure</div>
     </div>
 </div>
 
-<!-- Playlists principales avec TOUS les liens corrigés -->
+<!-- Introduction enrichie avec ancrage Annecy -->
+<div class="container">
+    <div class="intro-box">
+        <p>
+            <strong>Je suis Yves, le Motard Heureux.</strong> Basé à <span class="highlight">Annecy, en Haute-Savoie</span>, j'ai la chance d'avoir mon terrain de jeu favori à quelques virages de la maison. C'est ici, dans les Alpes, que j'ai appris à rouler en montagne, à apprivoiser les cols et à préparer mes plus grandes aventures.
+        </p>
+        <p style="margin-top:1rem;">
+            Depuis 2022, j'ai accumulé plus de <strong>50 000 km</strong> en solo, à travers l'Europe et la France, pour partager avec vous des road trips authentiques, sans filtre. Du <strong>Cap Nord</strong> à la <strong>Cappadoce</strong>, des <strong>Alpes</strong> à l'<strong>Espagne</strong>, chaque vidéo est une invitation à prendre la route. Découvrez ici toutes mes playlists et mes coups de cœur sur les plus belles routes de France.
+        </p>
+    </div>
+</div>
+
+<!-- Playlists principales avec descriptions enrichies via CSV -->
 <div class="container">
     <div class="section-title">
         <h2>Choisir un <span>road trip</span></h2>
@@ -724,7 +866,7 @@
             </div>
             <div class="card-content">
                 <h3>Cap Nord 2025</h3>
-                <p>L'aventure ultime jusqu'au bout de l'Europe du Nord, entre fjords, pluie et grands espaces.</p>
+                <p>À 63 ans, je prends la route vers le Cap Nord. 10 000 km en solo sur Honda NT1100, sans assistance, sans certitude. Juste l'envie d'aller au bout. Entre fjords, pluie, ferries et bivouacs sauvages, cette aventure m'a mis face à moi-même.</p>
                 <div class="card-meta">
                     <span>🇳🇴 Norvège</span>
                     <span>🌧️ Pluie & froid</span>
@@ -744,7 +886,7 @@
             </div>
             <div class="card-content">
                 <h3>Europe – Asie 2024</h3>
-                <p>De l'Europe à la Cappadoce, un voyage hors du temps entre steppes, villages et hospitalité.</p>
+                <p>10 000 km à travers 14 pays, de l'Italie à la Cappadoce. Entre les Météores, Istanbul et les paysages lunaires de Göreme, cette traversée m'a offert des rencontres inoubliables et des galères mémorables. L'aventure pure.</p>
                 <div class="card-meta">
                     <span>🇹🇷 Turquie</span>
                     <span>🏜️ Steppes</span>
@@ -764,7 +906,7 @@
             </div>
             <div class="card-content">
                 <h3>Tour d’Espagne 2023</h3>
-                <p>Chaleur, déserts, côtes sauvages et villages blancs : un road trip solaire et accessible.</p>
+                <p>22 jours et 6 600 km en solo, de la Catalogne à l'Andalousie. Désert des Bardenas, villages blancs, Ronda, Séville, Grenade... Un road trip solaire, mais aussi des orages et une chute. L'Espagne dans toute sa diversité.</p>
                 <div class="card-meta">
                     <span>🇪🇸 Espagne</span>
                     <span>☀️ Chaleur</span>
@@ -784,7 +926,7 @@
             </div>
             <div class="card-content">
                 <h3>Les Alpes 2022</h3>
-                <p>Cols mythiques, lacs glaciaires et routes de haute montagne : le terrain de jeu préféré des motards.</p>
+                <p>1 800 km de cols mythiques : Galibier, Iseran, Bonette, Tende... De Barcelonnette à Cuneo, en passant par les Baronnies et le Mercantour. L'école de la montagne, là où j'ai appris à vraiment rouler. Et une chute mémorable.</p>
                 <div class="card-meta">
                     <span>🇫🇷 France</span>
                     <span>⛰️ Cols</span>
@@ -799,7 +941,109 @@
     </div>
 </div>
 
-<!-- Épisodes vedettes - liens vérifiés -->
+<!-- NOUVELLE SECTION : LES PLUS BELLES ROUTES DE FRANCE À MOTO -->
+<div class="container">
+    <div class="section-title">
+        <h2>🏞️ Les plus belles <span>routes de France</span> à moto</h2>
+        <div class="bar"></div>
+        <p>De mes bases en Haute-Savoie, je rayonne sur les plus beaux cols et routes de l'Hexagone. Voici une sélection, testée et approuvée.</p>
+    </div>
+
+    <div class="routes-grid">
+        <!-- Col du Galibier -->
+        <div class="route-card">
+            <div class="route-image" style="background-image: url('https://img.youtube.com/vi/UevfEKcHDjU/hqdefault.jpg');">
+                <span class="route-badge">⛰️ 2 642 m</span>
+            </div>
+            <div class="route-content">
+                <h3>Col du Galibier</h3>
+                <div class="route-altitude">Hautes-Alpes / Savoie</div>
+                <div class="route-desc">"Montée express du col du Galibier à moto, en profitant simplement du bruit pur du moteur. Pas de musique, pas de blabla — juste la route, la machine, et l’instant présent."</div>
+                <a href="https://www.youtube.com/watch?v=a9Kcqx5J7VU" class="route-link" target="_blank">Voir la vidéo →</a>
+            </div>
+        </div>
+
+        <!-- Col de la Bonette -->
+        <div class="route-card">
+            <div class="route-image" style="background-image: url('https://img.youtube.com/vi/YYaojU7bgfI/hqdefault.jpg');">
+                <span class="route-badge">⛰️ 2 802 m</span>
+            </div>
+            <div class="route-content">
+                <h3>Col de la Bonette</h3>
+                <div class="route-altitude">Alpes-Maritimes</div>
+                <div class="route-desc">"Le toit de l'Europe. Je part de Barcelonnette pour aller à Cuneo en Italie, en passant par le col de la Bonnette, Isola 2000. Une journée merveilleuse."</div>
+                <a href="https://www.youtube.com/watch?v=YYaojU7bgfI" class="route-link" target="_blank">Voir la vidéo →</a>
+            </div>
+        </div>
+
+        <!-- Col de l'Iseran -->
+        <div class="route-card">
+            <div class="route-image" style="background-image: url('https://img.youtube.com/vi/ddJfPf1E0-s/hqdefault.jpg');">
+                <span class="route-badge">⛰️ 2 764 m</span>
+            </div>
+            <div class="route-content">
+                <h3>Col de l'Iseran</h3>
+                <div class="route-altitude">Savoie</div>
+                <div class="route-desc">"Cols mythiques des Alpes à moto. Premier jour d’un itinéraire intense entre Beaufort, Roselend et l’Iseran, entre panoramas grandioses et météo capricieuse."</div>
+                <a href="https://www.youtube.com/watch?v=UevfEKcHDjU" class="route-link" target="_blank">Voir la vidéo →</a>
+            </div>
+        </div>
+
+        <!-- Col de Tende -->
+        <div class="route-card">
+            <div class="route-image" style="background-image: url('https://img.youtube.com/vi/zvOTRRvdQeE/hqdefault.jpg');">
+                <span class="route-badge">⛰️ 1 870 m</span>
+            </div>
+            <div class="route-content">
+                <h3>Col de Tende</h3>
+                <div class="route-altitude">Alpes-Maritimes / Italie</div>
+                <div class="route-desc">"240 km d’adrénaline : chute épique au Col de Tende. 14 lacets & une chute inoubliable ! La Haute Route du Sel m'a mis à l'épreuve."</div>
+                <a href="https://www.youtube.com/watch?v=zvOTRRvdQeE" class="route-link" target="_blank">Voir la vidéo →</a>
+            </div>
+        </div>
+
+        <!-- Gorges du Verdon -->
+        <div class="route-card">
+            <div class="route-image" style="background-image: url('https://img.youtube.com/vi/9GvBpAWy__E/hqdefault.jpg');">
+                <span class="route-badge">🏞️ Gorges</span>
+            </div>
+            <div class="route-content">
+                <h3>Gorges du Verdon</h3>
+                <div class="route-altitude">Provence-Alpes-Côte d'Azur</div>
+                <div class="route-desc">"350 km de liberté vers les Alpes, à travers les Baronnies provençales et les gorges de Méouge. Chaque virage rappelle pourquoi on roule."</div>
+                <a href="https://www.youtube.com/watch?v=9GvBpAWy__E" class="route-link" target="_blank">Voir la vidéo →</a>
+            </div>
+        </div>
+
+        <!-- Lacets de Montvernier -->
+        <div class="route-card">
+            <div class="route-image" style="background-image: url('https://img.youtube.com/vi/fpZ6pD8lwtc/hqdefault.jpg');">
+                <span class="route-badge">🔄 17 lacets</span>
+            </div>
+            <div class="route-content">
+                <h3>Lacets de Montvernier</h3>
+                <div class="route-altitude">Savoie</div>
+                <div class="route-desc">"Balade moto dans la Maurienne pour aller voir les Lacets de Montvernier. Un chef-d'œuvre de route, 17 virages serrés qui grimpent dans la forêt."</div>
+                <a href="https://www.youtube.com/watch?v=fpZ6pD8lwtc" class="route-link" target="_blank">Voir la vidéo →</a>
+            </div>
+        </div>
+
+        <!-- Cormet de Roselend -->
+        <div class="route-card">
+            <div class="route-image" style="background-image: url('https://img.youtube.com/vi/iXjVX8pPNgw/hqdefault.jpg');">
+                <span class="route-badge">⛰️ 1 968 m</span>
+            </div>
+            <div class="route-content">
+                <h3>Cormet de Roselend</h3>
+                <div class="route-altitude">Savoie</div>
+                <div class="route-desc">"Cormet de Roselend, un col majestueux avec une vue imprenable sur le barrage et les alentours. Un passage obligé pour tout motard en Savoie."</div>
+                <a href="https://www.youtube.com/watch?v=iXjVX8pPNgw" class="route-link" target="_blank">Voir la vidéo →</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Épisodes vedettes - liens vérifiés (inchangé mais descriptions enrichies) -->
 <section class="container episodes-section">
     <!-- Cap Nord 2025 -->
     <div class="trip-episodes">
@@ -815,7 +1059,7 @@
                     </div>
                     <div class="episode-info">
                         <h4>#1 – Cap Nord à Moto</h4>
-                        <p>Le grand départ vers le Nord.</p>
+                        <p>À 63 ans, le grand départ vers le Nord.</p>
                         <span class="episode-link">Voir l'épisode →</span>
                     </div>
                 </a>
@@ -986,7 +1230,7 @@
     </div>
 </section>
 
-<!-- Section "Quel road trip choisir ?" -->
+<!-- Section "Quel road trip choisir ?" (inchangée) -->
 <div class="container">
     <div class="section-title">
         <h2>Quel road trip <span>choisir ?</span></h2>
@@ -1021,20 +1265,64 @@
     </div>
 </div>
 
-<!-- Derniers épisodes (bas de page) -->
-<section class="recent-section">
-    <div class="container">
-        <div class="section-title">
-            <h2>Derniers <span>épisodes</span></h2>
-            <div class="bar"></div>
+<!-- NOUVELLE SECTION : Derniers extraits vidéo (remplace les placeholders) -->
+<div class="container">
+    <div class="section-title">
+        <h2>📺 Derniers <span>extraits vidéo</span></h2>
+        <div class="bar"></div>
+        <p>Les épisodes les plus récents de mes aventures.</p>
+    </div>
+    <div class="recent-grid">
+        <!-- Épisode 1 : Cap Nord -->
+        <div class="recent-card">
+            <a href="https://www.youtube.com/watch?v=8ZrBLfM8LT8" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="recent-thumb">
+                    <img src="https://img.youtube.com/vi/8ZrBLfM8LT8/hqdefault.jpg" alt="700 km jusqu'au Cap Nord">
+                </div>
+                <div class="recent-content">
+                    <h4>700 km jusqu'au Cap Nord… était-ce une erreur ?</h4>
+                    <div class="recent-meta">
+                        <span>🇳🇴 Cap Nord</span>
+                        <span>🎬 Épisode 13</span>
+                    </div>
+                    <span class="recent-link">Voir l'extrait →</span>
+                </div>
+            </a>
         </div>
-        <div class="recent-grid">
-            <div class="recent-card">[Placeholder épisode récent 1]</div>
-            <div class="recent-card">[Placeholder épisode récent 2]</div>
-            <div class="recent-card">[Placeholder épisode récent 3]</div>
+        <!-- Épisode 2 : Transfăgărășan -->
+        <div class="recent-card">
+            <a href="https://www.youtube.com/watch?v=XlpyhrLkfVo" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="recent-thumb">
+                    <img src="https://img.youtube.com/vi/XlpyhrLkfVo/hqdefault.jpg" alt="Transfăgărășan">
+                </div>
+                <div class="recent-content">
+                    <h4>Transfăgărășan à moto : route EPIC… et mon drone disparaît !</h4>
+                    <div class="recent-meta">
+                        <span>🇷🇴 Roumanie</span>
+                        <span>🎬 Europe-Asie</span>
+                    </div>
+                    <span class="recent-link">Voir l'extrait →</span>
+                </div>
+            </a>
+        </div>
+        <!-- Épisode 3 : Automne dans les Alpes -->
+        <div class="recent-card">
+            <a href="https://www.youtube.com/watch?v=UNOVNYDJhTo" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="recent-thumb">
+                    <img src="https://img.youtube.com/vi/UNOVNYDJhTo/hqdefault.jpg" alt="Automne dans les Alpes">
+                </div>
+                <div class="recent-content">
+                    <h4>Explosion de couleurs dans les Alpes : l’Automne comme jamais vu !</h4>
+                    <div class="recent-meta">
+                        <span>🇫🇷 Alpes</span>
+                        <span>🎬 Road trip France</span>
+                    </div>
+                    <span class="recent-link">Voir l'extrait →</span>
+                </div>
+            </a>
         </div>
     </div>
-</section>
+</div>
 
 <!-- CTA final -->
 <div class="container">
@@ -1051,12 +1339,13 @@
 <!-- Footer -->
 <footer>
     <div class="footer-logo">LC<span>D</span>MH</div>
-    <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">La Chaîne du Motard Heureux · Annecy, France</p>
+    <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">La Chaîne du Motard Heureux · Annecy, Haute-Savoie, France</p>
     <ul class="footer-links">
         <li><a href="codes-promo.html">Codes promo</a></li>
         <li><a href="aoocci.html">Aoocci</a></li>
         <li><a href="carpuride.html">Carpuride</a></li>
         <li><a href="blackview.html">Blackview</a></li>
+        <li><a href="olight.html">Olight</a></li>
         <li><a href="komobi.html">Komobi</a></li>
         <li><a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
     </ul>
@@ -1064,3 +1353,4 @@
 </footer>
 </body>
 </html>
+<!-- FIN DU FICHIER : roadtrips.html -->
