@@ -158,13 +158,15 @@ def main():
     trips_dir.mkdir(parents=True, exist_ok=True)
 
     for slug, trip in trips.items():
-        print(f"\nVoyage : {trip['title']}")
+        playlist_id = trip.get("playlist_id", "")
+        if not playlist_id or playlist_id.startswith("PLxxxxx"):
+            print(f"  ⚠️  {trip['title']} — Playlist ID non configuré, ignoré")
+            continue
+        print(f"\n🗺️  Voyage : {trip['title']}")
         feed = build_trip_feed(token, trip)
         dest = trips_dir / f"{slug}.json"
         dest.write_text(json.dumps(feed, ensure_ascii=False, indent=2), encoding="utf-8")
-        print(f"  Sauvegarde : {dest}")
-
-    print("\nTermine.")
+        print(f"  💾 {dest}")
 
 
 if __name__ == "__main__":
