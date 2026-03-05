@@ -21,7 +21,7 @@ MAX_SHORTS  = 4
 SHORT_MAX_S = 65
 
 DATA_DIR   = Path("data")
-TRIPS_FILE = Path("trips.json")
+TRIPS_FILE = Path("voyages.json")
 
 
 def get_access_token() -> str:
@@ -150,7 +150,7 @@ def main():
     print(f"  Sauvegarde : {out}")
 
     if not TRIPS_FILE.exists():
-        print("\ntrips.json introuvable - pas de flux voyage genere")
+        print("\nvoyages.json introuvable - pas de flux voyage genere")
         return
 
     trips = json.loads(TRIPS_FILE.read_text(encoding="utf-8"))
