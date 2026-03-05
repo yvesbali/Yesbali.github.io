@@ -1,5 +1,5 @@
 /**
- * youtube-feed.js — Flux general LCDMH
+ * youtube-feed.js — Flux général LCDMH
  * Usage :
  *   <div id="lcdmh-videos"></div>
  *   <div id="lcdmh-shorts"></div>
@@ -19,6 +19,7 @@
   }
 
   function cardVideo(v) {
+    const desc = v.description ? `<p class="lc-desc">${v.description}</p>` : "";
     return `<a class="lc-card" href="${v.url}" target="_blank" rel="noopener">
       <div class="lc-thumb-box">
         <img src="${v.thumb}" alt="${v.title}" loading="lazy">
@@ -26,6 +27,7 @@
       </div>
       <div class="lc-info">
         <p class="lc-title">${v.title}</p>
+        ${desc}
         <span class="lc-meta">${v.published} · ${fmtViews(v.views)}</span>
       </div>
     </a>`;
@@ -49,44 +51,94 @@
     const s = document.createElement("style");
     s.id = "lc-style";
     s.textContent = `
-      .lc-section { margin: 2rem 0; }
+      .lc-section { margin: 1.5rem 0; }
       .lc-section-title {
-        font-size:1.15rem; font-weight:700; margin-bottom:.75rem;
-        border-left:4px solid #e63946; padding-left:.75rem; color:#e8e8f0;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        border-left: 4px solid #e67e22;
+        padding-left: .75rem;
+        color: #1a1a2e;
+        text-transform: uppercase;
+        letter-spacing: .05em;
       }
       .lc-grid {
-        display:grid;
-        grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-        gap:1.25rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.25rem;
+        max-width: 1100px;
+        margin: 0 auto;
       }
       .lc-grid--shorts {
-        grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        max-width: 1100px;
+        margin: 0 auto;
       }
       .lc-card {
-        display:flex; flex-direction:column;
-        background:#1a1a2e; border:1px solid #2a2a4a;
-        border-radius:10px; overflow:hidden;
-        text-decoration:none; color:#e8e8f0;
-        transition:transform .2s, box-shadow .2s;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border: 1px solid #e8e8e8;
+        border-radius: 10px;
+        overflow: hidden;
+        text-decoration: none;
+        color: #1a1a2e;
+        transition: transform .2s, box-shadow .2s;
       }
-      .lc-card:hover { transform:translateY(-4px); box-shadow:0 8px 24px rgba(0,0,0,.5); }
-      .lc-thumb-box { position:relative; width:100%; padding-top:56.25%; background:#111; overflow:hidden; }
-      .lc-thumb-box--short { padding-top:177.78%; }
-      .lc-thumb-box img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+      .lc-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0,0,0,.12);
+      }
+      .lc-thumb-box {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%;
+        background: #111;
+        overflow: hidden;
+      }
+      .lc-thumb-box--short { padding-top: 177.78%; }
+      .lc-thumb-box img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
       .lc-dur, .lc-badge {
-        position:absolute; bottom:6px; right:8px;
-        background:rgba(0,0,0,.8); color:#fff;
-        font-size:.7rem; padding:2px 6px; border-radius:4px;
+        position: absolute;
+        bottom: 6px;
+        right: 8px;
+        background: rgba(0,0,0,.8);
+        color: #fff;
+        font-size: .7rem;
+        padding: 2px 6px;
+        border-radius: 4px;
       }
-      .lc-badge { background:#e63946; font-weight:700; }
-      .lc-info { padding:.75rem 1rem; flex:1; }
+      .lc-badge { background: #e67e22; font-weight: 700; }
+      .lc-info { padding: .75rem 1rem; flex: 1; }
       .lc-title {
-        margin:0 0 .35rem; font-size:.88rem; font-weight:600; line-height:1.3;
-        display:-webkit-box; -webkit-line-clamp:2;
-        -webkit-box-orient:vertical; overflow:hidden;
+        margin: 0 0 .35rem;
+        font-size: .9rem;
+        font-weight: 700;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        color: #1a1a2e;
       }
-      .lc-meta { font-size:.72rem; color:#7777aa; }
-      .lc-updated { font-size:.7rem; color:#555577; margin-bottom:1rem; }
+      .lc-desc {
+        font-size: .78rem;
+        color: #555;
+        margin: 0 0 .4rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        line-height: 1.4;
+      }
+      .lc-meta { font-size: .72rem; color: #e67e22; font-weight: 600; }
+      .lc-updated { font-size: .7rem; color: #999; margin-bottom: 1rem; text-align: center; }
     `;
     document.head.appendChild(s);
   }
@@ -98,15 +150,16 @@
       const vEl = document.getElementById("lcdmh-videos");
       const sEl = document.getElementById("lcdmh-shorts");
       const upd = (data.updated_at || "").slice(0, 10);
-      if (vEl && data.videos?.length) {
+
+      if (vEl && data.videos && data.videos.length) {
         vEl.innerHTML = `<div class="lc-section">
           <p class="lc-section-title">🎬 Dernières vidéos</p>
           <p class="lc-updated">Mis à jour le ${upd}</p>
           <div class="lc-grid">${data.videos.map(cardVideo).join("")}</div>
         </div>`;
       }
-      if (sEl && data.shorts?.length) {
-        sEl.innerHTML = `<div class="lc-section">
+      if (sEl && data.shorts && data.shorts.length) {
+        sEl.innerHTML = `<div class="lc-section" style="margin-top:2rem">
           <p class="lc-section-title">⚡ Derniers Shorts</p>
           <div class="lc-grid lc-grid--shorts">${data.shorts.map(cardShort).join("")}</div>
         </div>`;
