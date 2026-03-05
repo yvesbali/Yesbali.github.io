@@ -16,8 +16,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 CHANNEL_ID  = "UCsmjag8fMTAqdawlg35T3Bg"
-MAX_VIDEOS  = 4
-MAX_SHORTS  = 6
+MAX_VIDEOS  = 2
+MAX_SHORTS  = 4
 SHORT_MAX_S = 65
 
 DATA_DIR   = Path("data")
