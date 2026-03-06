@@ -414,62 +414,62 @@
             line-height: 1.7;
         }
         
-        /* ===== SECTION VIDÉOS – cards générées par youtube-feed.js ===== */
-        /* Vidéos longues */
-        #lcdmh-videos .video-card,
-        #lcdmh-videos > a,
-        #lcdmh-videos > div {
-            background: #222 !important;
-            border: 1px solid rgba(255,255,255,0.1) !important;
-            border-radius: 14px;
+        /* ===== BADGE DERNIÈRE VIDÉO dans le menu ===== */
+        .nav-last-video {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: #fff0e6;
+            border: 1.5px solid var(--orange);
+            color: var(--noir) !important;
+            padding: 0.3rem 0.9rem 0.3rem 0.6rem !important;
+            border-radius: 50px;
+            font-size: 0.75rem !important;
+            font-weight: 700 !important;
+            text-transform: none !important;
+            letter-spacing: 0 !important;
+            white-space: nowrap;
+            max-width: 200px;
             overflow: hidden;
-            color: #fff !important;
-            transition: transform 0.2s, box-shadow 0.2s;
-            text-decoration: none;
+            text-overflow: ellipsis;
+            transition: background 0.2s, border-color 0.2s;
         }
-        #lcdmh-videos .video-card:hover,
-        #lcdmh-videos > a:hover,
-        #lcdmh-videos > div:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 28px rgba(0,0,0,0.5);
+        .nav-last-video:hover {
+            background: #ffe0cc !important;
+            color: var(--orange) !important;
         }
-        #lcdmh-videos img {
-            width: 100%;
-            display: block;
+        .nav-last-video .dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #e74c3c;
+            flex-shrink: 0;
+            animation: pulse-red 1.6s ease-in-out infinite;
         }
-        #lcdmh-videos .video-title,
-        #lcdmh-videos p,
-        #lcdmh-videos span {
-            color: rgba(255,255,255,0.85) !important;
-            padding: 0.6rem 0.8rem;
+        @keyframes pulse-red {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.7); }
         }
-        /* Shorts */
-        #lcdmh-shorts .short-card,
-        #lcdmh-shorts > a,
-        #lcdmh-shorts > div {
-            background: #1a1a1a !important;
-            border: 1px solid rgba(255,255,255,0.1) !important;
-            border-radius: 14px;
+        .nav-last-video .label-new {
+            color: #e74c3c;
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            flex-shrink: 0;
+        }
+        .nav-last-video .label-title {
+            color: var(--noir);
             overflow: hidden;
-            color: #fff !important;
-            transition: transform 0.2s;
-            text-decoration: none;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
-        #lcdmh-shorts .short-card:hover,
-        #lcdmh-shorts > a:hover,
-        #lcdmh-shorts > div:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-        }
-        #lcdmh-shorts img {
-            width: 100%;
-            display: block;
-        }
-        #lcdmh-shorts .short-title,
-        #lcdmh-shorts p,
-        #lcdmh-shorts span {
-            color: rgba(255,255,255,0.85) !important;
-            padding: 0.5rem 0.7rem;
+        @media (max-width: 1000px) {
+            .nav-last-video {
+                max-width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -536,6 +536,13 @@
         </li>
         <li><a href="a-propos.html">À propos</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li id="nav-last-video-li" class="desktop-only">
+            <a href="#videos" class="nav-last-video" id="nav-last-video-link" title="Voir la dernière vidéo">
+                <span class="dot"></span>
+                <span class="label-new">Nouveau</span>
+                <span class="label-title" id="nav-last-video-title">Dernière vidéo</span>
+            </a>
+        </li>
         <li class="desktop-only"><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt">▶ S'abonner</a></li>
         <li class="desktop-only"><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon">📺 YouTube</a></li>
         <li class="mobile-only"><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt">▶ S'abonner</a></li>
@@ -1090,53 +1097,38 @@
 <!-- ======================================== -->
 <!-- === DÉBUT VIDÉOS ======================= -->
 <!-- ======================================== -->
-<section id="videos" style="padding: 0; background: var(--noir);">
+<section class="section section-alt" id="videos">
 
-    <!-- Bandeau titre -->
-    <div style="background: var(--noir); padding: 3rem 6% 2rem; text-align: center;">
-        <div style="display: inline-flex; align-items: center; gap: 0.8rem; background: var(--orange); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.45rem 1.4rem; border-radius: 50px; margin-bottom: 1.2rem;">
-            🎬 LCDMH · MIS À JOUR AUTOMATIQUEMENT
+    <!-- En-tête avec badge orange -->
+    <div class="sec-head">
+        <div style="display: inline-block; background: var(--orange); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.4rem 1.2rem; border-radius: 50px; margin-bottom: 1rem;">
+            🎬 MIS À JOUR AUTOMATIQUEMENT
         </div>
-        <h2 style="font-family: 'Montserrat', sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; color: #fff; margin-bottom: 0.4rem;">
-            NOUVELLES <span style="color: var(--orange);">VIDÉOS</span>
-        </h2>
-        <div style="width: 52px; height: 4px; background: var(--orange); border-radius: 2px; margin: 0.8rem auto;"></div>
-        <p style="color: rgba(255,255,255,0.55); font-size: 0.95rem; max-width: 560px; margin: 0 auto;">
-            Road trips · GPS moto · Équipement · Pneus · Sécurité
-        </p>
+        <h2>Dernières <em>vidéos</em></h2>
+        <div class="bar"></div>
+        <p>Road trips · GPS moto · Équipement · Pneus · Sécurité</p>
     </div>
 
-    <!-- Bloc vidéos longues -->
-    <div style="padding: 0 6% 2.5rem; background: var(--noir);">
-        <div id="lcdmh-videos" style="display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: center;"></div>
-    </div>
+    <!-- Vidéos longues -->
+    <div id="lcdmh-videos"></div>
 
     <!-- Séparateur Shorts -->
-    <div style="background: #111; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 1rem 6%;">
-        <div style="display: flex; align-items: center; gap: 1rem;">
-            <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.12);"></div>
-            <div style="font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); white-space: nowrap;">
-                ⚡ DERNIERS SHORTS
-            </div>
-            <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.12);"></div>
+    <div style="display: flex; align-items: center; gap: 1rem; margin: 2.5rem 0 1.5rem;">
+        <div style="flex: 1; height: 2px; background: var(--border);"></div>
+        <div style="display: flex; align-items: center; gap: 0.5rem; background: var(--orange); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 1.2rem; border-radius: 50px; white-space: nowrap;">
+            ⚡ DERNIERS SHORTS
         </div>
+        <div style="flex: 1; height: 2px; background: var(--border);"></div>
     </div>
 
-    <!-- Bloc Shorts -->
-    <div style="padding: 1.5rem 6% 3rem; background: #111;">
-        <div id="lcdmh-shorts" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;"></div>
-    </div>
+    <!-- Shorts -->
+    <div id="lcdmh-shorts"></div>
 
-    <!-- CTA YouTube -->
-    <div style="background: var(--noir); padding: 0 6% 3rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.06);">
-        <a href="https://www.youtube.com/@LCDMH" style="display: inline-block; background: var(--orange); color: white; border-radius: 50px; padding: 1rem 2.2rem; text-decoration: none; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.03em; box-shadow: 0 4px 20px rgba(230,126,34,0.35); transition: background 0.2s;" onmouseover="this.style.background='#d35400'" onmouseout="this.style.background='#e67e22'" target="_blank" rel="noopener">
+    <!-- CTA -->
+    <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="https://www.youtube.com/@LCDMH" class="btn btn-orange" target="_blank" rel="noopener">
             🎬 Voir toutes les vidéos sur YouTube →
         </a>
-        <div style="margin-top: 1rem;">
-            <a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" style="display: inline-block; background: transparent; color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 0.6rem 1.6rem; text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--orange)';this.style.color='var(--orange)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.2)';this.style.color='rgba(255,255,255,0.5)'" target="_blank" rel="noopener">
-                ▶ S'abonner à la chaîne
-            </a>
-        </div>
     </div>
 
 </section>
@@ -1162,7 +1154,57 @@
 </footer>
 
 <script>
-    function copyText(text, btn) {
+    // ===== BADGE DERNIÈRE VIDÉO : mise à jour auto depuis youtube-feed.js =====
+    (function() {
+        const titleEl = document.getElementById('nav-last-video-title');
+        const linkEl  = document.getElementById('nav-last-video-link');
+        if (!titleEl) return;
+
+        function extractLatestVideo() {
+            const container = document.getElementById('lcdmh-videos');
+            if (!container) return;
+
+            // Cherche le premier lien ou premier titre dans le container
+            const firstLink  = container.querySelector('a[href*="youtu"]');
+            const firstTitle = container.querySelector('[class*="title"], h3, h4, p, .video-title, .title');
+
+            let title = '';
+            let url   = '#videos';
+
+            if (firstTitle && firstTitle.textContent.trim().length > 3) {
+                title = firstTitle.textContent.trim();
+            }
+            if (firstLink) {
+                url = firstLink.href;
+            }
+
+            if (title) {
+                // Tronque si trop long
+                titleEl.textContent = title.length > 32 ? title.slice(0, 30) + '…' : title;
+                linkEl.href = url;
+                linkEl.target = url.startsWith('http') ? '_blank' : '';
+                linkEl.rel    = url.startsWith('http') ? 'noopener' : '';
+            }
+        }
+
+        // Observer : attend que youtube-feed.js injecte le contenu
+        const observer = new MutationObserver(function(mutations) {
+            const container = document.getElementById('lcdmh-videos');
+            if (container && container.children.length > 0) {
+                extractLatestVideo();
+                observer.disconnect();
+            }
+        });
+
+        const target = document.getElementById('lcdmh-videos');
+        if (target) {
+            observer.observe(target, { childList: true, subtree: true });
+        }
+
+        // Fallback : tente après 3s si le JS externe est lent
+        setTimeout(extractLatestVideo, 3000);
+    })();
+
         navigator.clipboard.writeText(text).then(() => {
             const original = btn.textContent;
             btn.textContent = 'Copié ✓';
