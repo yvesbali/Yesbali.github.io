@@ -15,12 +15,11 @@
     <meta property="og:image" content="https://lcdmh.com/images/aferiy-og.jpg">
     <link rel="canonical" href="https://lcdmh.com/aferiy.html">
 
-    <!-- Balises pour mobile et Search Console -->
+    <!-- Balises pour mobile -->
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="google-site-verification" content="">
 
-    <!-- Préchargement polices -->
+    <!-- Polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" as="style">
@@ -49,11 +48,7 @@
             line-height: 1.65;
             font-size: 16px;
         }
-        h1, h2, h3, h4 {
-            font-family: var(--font-title);
-            font-weight: 700;
-            line-height: 1.2;
-        }
+        h1, h2, h3, h4 { font-family: var(--font-title); font-weight: 700; line-height: 1.2; }
         a { color: inherit; text-decoration: none; }
         img { max-width: 100%; height: auto; display: block; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
@@ -102,7 +97,6 @@
             font-weight: 700;
         }
         .nav-yt:hover { background: var(--orange-dark); color: #fff !important; }
-        
         .has-drop { position: relative; }
         .has-drop > a::after {
             content: '▾';
@@ -174,45 +168,25 @@
             .mobile-only { display: block; }
         }
         @media (min-width: 901px) { .mobile-only { display: none !important; } }
-        
-        /* Hero spécifique AFERIY */
+
+        /* Hero */
         .hero {
             position: relative;
-            min-height: 30vh;
+            min-height: 25vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: #fff;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFlMjIzYztzdG9wLW9wYWNpdHk6MSIgLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMzYTRhNjU7c3RvcC1vcGFjaXR5OjEiIC8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNnKSIgLz48L3N2Zz4=') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFlMjIzYztzdG9wLW9wYWNpdHk6MSIgLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMzYTRhNjU7c3RvcC1vcGFjaXR5OjEiIC8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNnKSIgLz48L3N2Zz4=') center/cover no-repeat;
             margin-bottom: 2rem;
         }
-        .hero-content {
-            max-width: 900px;
-            padding: 2rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
-        }
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-        .hero h1 span {
-            color: var(--orange);
-            display: inline-block;
-            background: rgba(0,0,0,0.3);
-            padding: 0.1rem 0.3rem;
-            border-radius: 4px;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            opacity: 0.95;
-        }
+        .hero-content { max-width: 900px; padding: 2rem; text-shadow: 0 2px 10px rgba(0,0,0,0.7); }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin-bottom: 0.5rem; }
+        .hero h1 span { color: var(--orange); display: inline-block; background: rgba(0,0,0,0.3); padding: 0.1rem 0.3rem; border-radius: 4px; }
+        .hero p { font-size: 1.1rem; max-width: 700px; margin: 0 auto; opacity: 0.95; }
 
-        /* Styles spécifiques produit */
+        /* Card produit (style pneus.html) */
         .product-card {
             background: white;
             border-radius: 2rem;
@@ -227,7 +201,7 @@
             padding: 2rem;
         }
         .product-gallery {
-            background: #f0f4fa;
+            background: var(--alt);
             border-radius: 1.5rem;
             padding: 2rem;
         }
@@ -237,7 +211,7 @@
             padding: 0.5rem 1.2rem;
             border-radius: 40px;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin-bottom: 1.5rem;
             display: inline-block;
         }
@@ -274,9 +248,9 @@
         }
         .thumbnail:hover, .thumbnail.active { border-color: var(--orange); transform: translateY(-3px); }
         .product-info { padding: 1rem 0; }
-        .product-info h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
+        .product-info h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
         .product-tagline {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #3d637b;
             margin-bottom: 1.5rem;
             border-left: 5px solid var(--orange);
@@ -288,7 +262,7 @@
         }
         .feature-list li {
             margin-bottom: 0.9rem;
-            font-size: 1.05rem;
+            font-size: 1rem;
             display: flex;
             gap: 12px;
             align-items: center;
@@ -301,20 +275,10 @@
             margin: 2rem 0;
         }
         .price-label { font-size: 0.95rem; text-transform: uppercase; color: #1f4b6e; }
-        .price-original {
-            font-size: 1.4rem;
-            color: #5f7d99;
-            text-decoration: line-through;
-            margin-right: 0.8rem;
-        }
+        .price-original { font-size: 1.4rem; color: #5f7d99; text-decoration: line-through; margin-right: 0.8rem; }
         .price-value { font-size: 2.6rem; font-weight: 800; color: #0f2a3f; }
         .price-note { font-size: 0.95rem; color: #1f4b6e; margin-top: 8px; }
-        .price-note strong {
-            background: var(--orange);
-            color: #0b1b26;
-            padding: 0.2rem 0.8rem;
-            border-radius: 30px;
-        }
+        .price-note strong { background: var(--orange); color: #0b1b26; padding: 0.2rem 0.8rem; border-radius: 30px; }
         .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
         .btn-primary {
             background: var(--orange);
@@ -348,6 +312,15 @@
             text-decoration: none;
         }
         .btn-secondary:hover { background: #1f4b6e10; border-color: var(--orange); }
+        .support-note {
+            margin-top: 1.2rem;
+            font-size: 0.95rem;
+            background: #fff4e5;
+            padding: 0.7rem 1rem;
+            border-radius: 40px;
+        }
+
+        /* Section vidéo */
         .video-card {
             background: white;
             border-radius: 2rem;
@@ -358,7 +331,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 650;
             margin-bottom: 1.8rem;
         }
@@ -389,6 +362,8 @@
             box-shadow: 0 2px 10px #00000010;
             font-weight: 500;
         }
+
+        /* Playlist row */
         .playlist-row {
             background: #e7f0f7;
             border-radius: 2rem;
@@ -412,6 +387,35 @@
             gap: 8px;
             box-shadow: 0 5px 12px #00000010;
         }
+
+        /* Jump Starter */
+        .jumpstarter-box {
+            background: white;
+            border-radius: 2rem;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .jumpstarter-inner {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+        .jumpstarter-img { flex: 1; min-width: 200px; text-align: center; }
+        .jumpstarter-img img { max-width: 200px; border-radius: 20px; margin: 0 auto; }
+        .jumpstarter-text { flex: 3; }
+        .jumpstarter-text h3 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .code-badge {
+            background: #eaf1f8;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            display: inline-block;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+        .code-badge strong { color: var(--orange); }
+
+        /* Gear grid */
         .companion-gear { margin: 2rem 0; }
         .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
         .section-header h2 { font-size: 1.8rem; font-weight: 650; }
@@ -436,30 +440,8 @@
         .gear-item p { font-size: 0.95rem; color: #3e5e77; margin-bottom: 1rem; flex-grow: 1; }
         .mini-link { color: var(--orange); font-weight: 600; text-decoration: none; border-bottom: 2px solid transparent; }
         .mini-link:hover { border-bottom-color: var(--orange); }
-        .jumpstarter-box {
-            background: white;
-            border-radius: 2rem;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-        .jumpstarter-inner {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            align-items: center;
-        }
-        .jumpstarter-img { flex: 1; min-width: 200px; text-align: center; }
-        .jumpstarter-img img { max-width: 200px; border-radius: 20px; margin: 0 auto; }
-        .jumpstarter-text { flex: 3; }
-        .jumpstarter-text h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-        .code-badge {
-            background: #eaf1f8;
-            padding: 0.5rem 1rem;
-            border-radius: 30px;
-            display: inline-block;
-            margin: 1rem 0;
-        }
-        .code-badge strong { color: var(--orange); }
+
+        /* Footer */
         footer {
             background: var(--noir);
             color: rgba(255,255,255,.65);
@@ -480,9 +462,10 @@
         .footer-links a { font-size: .8rem; color: rgba(255,255,255,.55); transition: color .2s; }
         .footer-links a:hover { color: #fff; }
         .copyright { font-size: .76rem; color: rgba(255,255,255,.3); margin-top: 1.1rem; line-height: 1.7; }
+
         @media (max-width: 800px) {
             .product-grid { grid-template-columns: 1fr; }
-            .product-info h1 { font-size: 2.2rem; }
+            .product-info h1 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -537,7 +520,7 @@
                 <a href="carpuride.html">Carpuride 📺 (écran CarPlay)</a>
                 <div style="border-top:1px solid #e0e0e0; margin:5px 0;"></div>
                 <a href="pneus.html">🔧 Pneus moto (liens affiliés)</a>
-                <!-- Liens affiliés avec UTM pour suivi -->
+                <!-- Liens affiliés avec UTM -->
                 <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&clickref=site-pneus-comparatif&clickref2=123pneus&ued=https%3A%2F%2Fwww.123pneus.fr%2F" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem; font-size:0.75rem;">→ 123pneus.fr</a>
                 <a href="https://www.awin1.com/cread.php?awinmid=7928&awinaffid=2753560&clickref=site-pneus-comparatif&clickref2=pneusfr&ued=https%3A%2F%2Fwww.pneus.fr%2Fpneus%2Fmoto" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem; font-size:0.75rem;">→ Pneus-fr</a>
                 <a href="https://www.awin1.com/cread.php?awinmid=7403&awinaffid=2753560&clickref=site-pneus-comparatif&clickref2=pneusmoto&ued=https%3A%2F%2Fwww.pneus-moto.fr%2F" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem; font-size:0.75rem;">→ Pneus-moto.fr</a>
@@ -586,17 +569,15 @@
     <!-- PRODUIT PRINCIPAL : AFERIY Nano 100 -->
     <div class="product-card">
         <div class="product-grid">
-            <!-- Partie gauche : GALERIE PHOTOS -->
+            <!-- Partie gauche : GALERIE PHOTOS (4 miniatures) -->
             <div class="product-gallery">
                 <span class="badge-test"><i class="fas fa-check-circle"></i> Testé en conditions réelles – Road trip</span>
                 
-                <!-- Image principale (change avec les miniatures) -->
                 <div class="main-image-container">
                     <img id="mainProductImage" src="https://m.media-amazon.com/images/I/61bGpS1OQRL._AC_SX679_.jpg" 
                          alt="AFERIY Nano 100" class="main-image">
                 </div>
                 
-                <!-- Miniatures cliquables -->
                 <div class="thumbnail-row">
                     <img src="https://m.media-amazon.com/images/I/61bGpS1OQRL._AC_SX679_.jpg" 
                          alt="AFERIY Nano 100 vue avant" class="thumbnail active" 
@@ -629,7 +610,6 @@
                     <li><i class="fas fa-weight-hanging"></i> Ultra‑compacte : moins d'1 kg, tient dans une sacoche</li>
                 </ul>
                 
-                <!-- BLOC PRIX avec code promo -->
                 <div class="price-block">
                     <div class="price-label">MEILLEUR PRIX SUR AMAZON</div>
                     <div>
@@ -641,14 +621,13 @@
                     </div>
                 </div>
 
-                <!-- BOUTONS D'ACTION -->
                 <div class="btn-group">
                     <a href="https://www.amazon.fr/dp/B0F1MR5HD3?tag=lcdmh-21" target="_blank" rel="nofollow" class="btn-primary">
                         <i class="fas fa-shopping-cart"></i> Acheter sur Amazon
                     </a>
                     <a href="#video" class="btn-secondary"><i class="fas fa-video"></i> Voir le test</a>
                 </div>
-                <p style="margin-top: 1.2rem; font-size: 0.95rem; background: #fff4e5; padding: 0.7rem 1rem; border-radius: 40px;">
+                <p class="support-note">
                     <i class="fas fa-info-circle" style="color:var(--orange);"></i> 
                     Prix après code <strong>8JGATT8K</strong>. Votre achat via ce lien soutient la chaîne LCDMH 🙏
                 </p>
@@ -656,13 +635,7 @@
         </div>
     </div>
 
-    <!-- SECTION VIDÉO -->
+    <!-- SECTION VIDÉO (avec l'extrait du CSV) -->
     <div class="video-card" id="video">
         <div class="video-title">
             <i class="fab fa-youtube"></i> L'essai terrain : AFERIY Nano 100 en road trip
-        </div>
-        <div class="video-embed">
-            <div class="yt-frame">
-                <iframe src="https://www.youtube.com/embed/D1eLA6LRkLU?rel=0&modestbranding=1" 
-                        allowfullscreen 
-                        title
