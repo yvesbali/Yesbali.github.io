@@ -3,30 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AFERIY Nano 100 & GK03 – Stations électrique et booster pour bivouac moto | LCDMH</title>
-    <meta name="description" content="Tests et avis des produits AFERIY : Nano 100 (station 100W/99Wh) et GK03 Booster (2000A/27500mAh) pour road trip moto. Autonomie, recharge, codes promo exclusifs.">
-    <meta name="keywords" content="aferiy nano 100, aferiy gk03, booster batterie moto, station électrique moto, batterie bivouac, road trip moto électricité">
+    <title>AFERIY Nano 100 & GK03 – Stations électrique pour bivouac moto | LCDMH</title>
+    <meta name="description" content="Test des produits AFERIY : Nano 100 (100W/99Wh) et GK03 Booster (2000A) pour road trip moto. Autonomie, recharge, codes promo exclusifs.">
+    <meta name="keywords" content="aferiy nano 100, aferiy gk03, booster batterie moto, station électrique moto, batterie bivouac">
     <meta name="author" content="Yves – LCDMH">
-    <meta property="og:title" content="AFERIY Nano 100 & GK03 – Stations électrique et booster pour bivouac moto | LCDMH">
+    
+    <!-- Balises Open Graph -->
+    <meta property="og:title" content="AFERIY Nano 100 & GK03 – Énergie pour road trip moto">
     <meta property="og:description" content="Tests complets des produits AFERIY. Autonomie, recharge, utilisation en road trip.">
     <meta property="og:url" content="https://lcdmh.com/aferiy.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="LCDMH">
-    <meta property="og:image" content="https://m.media-amazon.com/images/I/61bGpS1OQRL._AC_SX679_.jpg">
-    <link rel="canonical" href="https://lcdmh.com/aferiy.html">
-
+    <meta property="og:image" content="https://lcdmh.com/images/aferiy-nano-100.jpg">
+    
     <!-- Balises pour mobile -->
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="canonical" href="https://lcdmh.com/aferiy.html">
 
-    <!-- Polices -->
+    <!-- Polices optimisées -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
+        /* Styles identiques à avant... */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --orange: #e67e22;
@@ -53,7 +55,7 @@
         img { max-width: 100%; height: auto; display: block; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
         
-        /* Navigation (copiée depuis pneus.html) */
+        /* Navigation (identique) */
         nav {
             background: #fff;
             box-shadow: 0 2px 12px rgba(0,0,0,.07);
@@ -169,24 +171,24 @@
         }
         @media (min-width: 901px) { .mobile-only { display: none !important; } }
 
-        /* Hero */
+        /* Hero - simplifié pour meilleures performances */
         .hero {
             position: relative;
-            min-height: 25vh;
+            min-height: 20vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: #fff;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFlMjIzYztzdG9wLW9wYWNpdHk6MSIgLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMzYTRhNjU7c3RvcC1vcGFjaXR5OjEiIC8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNnKSIgLz48L3N2Zz4=') center/cover no-repeat;
+            background: #1a2a3a; /* Couleur unie au lieu d'image pour LCP plus rapide */
             margin-bottom: 2rem;
         }
-        .hero-content { max-width: 900px; padding: 2rem; text-shadow: 0 2px 10px rgba(0,0,0,0.7); }
+        .hero-content { max-width: 900px; padding: 2rem; }
         .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin-bottom: 0.5rem; }
-        .hero h1 span { color: var(--orange); display: inline-block; background: rgba(0,0,0,0.3); padding: 0.1rem 0.3rem; border-radius: 4px; }
+        .hero h1 span { color: var(--orange); }
         .hero p { font-size: 1.1rem; max-width: 700px; margin: 0 auto; opacity: 0.95; }
 
-        /* Cards produit */
+        /* Cards produit - optimisées */
         .product-card {
             background: white;
             border-radius: 2rem;
@@ -224,6 +226,7 @@
         .main-image {
             max-width: 380px;
             width: 100%;
+            height: auto; /* Important pour éviter le CLS */
             border-radius: 24px;
             filter: drop-shadow(0 15px 20px rgba(0,30,40,0.3));
             transition: transform 0.2s;
@@ -303,7 +306,7 @@
             border-radius: 40px;
         }
 
-        /* Section vidéo */
+        /* Section vidéo - optimisée */
         .video-card {
             background: white;
             border-radius: 2rem;
@@ -323,6 +326,7 @@
         .yt-frame {
             flex: 2;
             min-width: 300px;
+            max-width: 560px;
             aspect-ratio: 16 / 9;
             background: #1c2e3c;
             border-radius: 28px;
@@ -402,7 +406,7 @@
 </head>
 <body>
 
-<!-- Navigation (copiée depuis pneus.html) -->
+<!-- Navigation -->
 <nav>
     <a href="index.html" class="logo">LC<span>D</span>MH</a>
     <button class="menu-toggle" id="menuToggle">☰</button>
@@ -451,10 +455,6 @@
                 <a href="carpuride.html">Carpuride 📺 (écran CarPlay)</a>
                 <div style="border-top:1px solid #e0e0e0; margin:5px 0;"></div>
                 <a href="pneus.html">🔧 Pneus moto (liens affiliés)</a>
-                <!-- Liens affiliés avec UTM -->
-                <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&clickref=site-pneus-comparatif&clickref2=123pneus&ued=https%3A%2F%2Fwww.123pneus.fr%2F" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem; font-size:0.75rem;">→ 123pneus.fr</a>
-                <a href="https://www.awin1.com/cread.php?awinmid=7928&awinaffid=2753560&clickref=site-pneus-comparatif&clickref2=pneusfr&ued=https%3A%2F%2Fwww.pneus.fr%2Fpneus%2Fmoto" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem; font-size:0.75rem;">→ Pneus-fr</a>
-                <a href="https://www.awin1.com/cread.php?awinmid=7403&awinaffid=2753560&clickref=site-pneus-comparatif&clickref2=pneusmoto&ued=https%3A%2F%2Fwww.pneus-moto.fr%2F" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem; font-size:0.75rem;">→ Pneus-moto.fr</a>
             </div>
         </li>
         <li><a href="a-propos.html">À propos</a></li>
@@ -503,8 +503,12 @@
             <div class="product-gallery">
                 <span class="badge-test"><i class="fas fa-check-circle"></i> Testé en road trip – Vidéo ci-dessous</span>
                 <div class="main-image-container">
-                    <img id="mainProductImage1" src="https://m.media-amazon.com/images/I/61bGpS1OQRL._AC_SX679_.jpg" 
-                         alt="AFERIY Nano 100 station électrique" class="main-image">
+                    <!-- Dimensions explicites pour éviter le CLS -->
+                    <img src="https://m.media-amazon.com/images/I/61bGpS1OQRL._AC_SX679_.jpg" 
+                         alt="AFERIY Nano 100 station électrique portable" 
+                         class="main-image"
+                         width="679" height="679"
+                         loading="lazy">
                 </div>
                 <p style="margin-top: 1rem; color: #1f4b6e; text-align: center;"><i class="fas fa-camera"></i> 100W | 99Wh | USB-C PD</p>
             </div>
@@ -529,7 +533,8 @@
                     </div>
                 </div>
                 <div class="btn-group">
-                    <a href="https://www.amazon.fr/dp/B0F1MR5HD3?tag=lcdmh-21" target="_blank" rel="nofollow" class="btn-primary">
+                    <!-- Liens avec attributs sponsorisés pour Google -->
+                    <a href="https://www.amazon.fr/dp/B0F1MR5HD3?tag=lcdmh-21" target="_blank" rel="sponsored nofollow" class="btn-primary">
                         <i class="fas fa-shopping-cart"></i> Acheter sur Amazon
                     </a>
                     <a href="#video-nano" class="btn-secondary"><i class="fas fa-video"></i> Voir le test</a>
@@ -542,16 +547,18 @@
         </div>
     </div>
 
-    <!-- SECTION VIDÉO NANO 100 (lien YouTube) -->
+    <!-- SECTION VIDÉO NANO 100 -->
     <div class="video-card" id="video-nano">
         <div class="video-title">
             <i class="fab fa-youtube"></i> Test terrain : AFERIY Nano 100 en road trip
         </div>
         <div class="video-embed">
             <div class="yt-frame">
+                <!-- iframe YouTube avec lazy loading -->
                 <iframe src="https://www.youtube.com/embed/D1eLA6LRkLU?rel=0&modestbranding=1" 
                         allowfullscreen 
-                        title="Test AFERIY Nano 100 par LCDMH - autonomie en road trip"></iframe>
+                        title="Test AFERIY Nano 100 par LCDMH - autonomie en road trip"
+                        loading="lazy"></iframe>
             </div>
             <div class="video-desc">
                 <p><i class="fas fa-quote-left"></i> <strong>AFERIY Nano 100 : autonomie électrique en road trip ?</strong></p>
@@ -571,8 +578,11 @@
             <div class="product-gallery">
                 <span class="badge-test"><i class="fas fa-check-circle"></i> Testé en conditions réelles</span>
                 <div class="main-image-container">
-                    <img id="mainProductImage2" src="https://m.media-amazon.com/images/I/61QV1LgCkSL._AC_SX679_.jpg" 
-                         alt="AFERIY GK03 Booster Batterie 2000A" class="main-image">
+                    <img src="https://m.media-amazon.com/images/I/61QV1LgCkSL.__AC_SX300_SY300_QL70_ML2_.jpg" 
+                         alt="AFERIY GK03 Booster Batterie 2000A pour moto et voiture" 
+                         class="main-image"
+                         width="300" height="300"
+                         loading="lazy">
                 </div>
                 <p style="margin-top: 1rem; color: #1f4b6e; text-align: center;"><i class="fas fa-camera"></i> 2000A | 27500mAh | 12V</p>
             </div>
@@ -596,4 +606,32 @@
                     <div class="price-note">
                         <strong><i class="fas fa-tag"></i> Code promo : LCDMHGK03</strong> (valable uniquement sur Amazon.fr)
                     </div>
-                    <p style
+                </div>
+                <div class="btn-group">
+                    <a href="https://www.amazon.fr/dp/B0C1NMW5VP?tag=lcdmh-21" target="_blank" rel="sponsored nofollow" class="btn-primary">
+                        <i class="fas fa-shopping-cart"></i> Acheter sur Amazon
+                    </a>
+                </div>
+                <p class="support-note">
+                    <i class="fas fa-info-circle" style="color:var(--orange);"></i> 
+                    Prix après code <strong>LCDMHGK03</strong>. Votre soutien via ce lien aide la chaîne 🙏
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Équipements compagnons -->
+    <div class="companion-gear">
+        <div class="section-header">
+            <h2><i class="fas fa-campground" style="color:var(--orange); margin-right:10px;"></i> Idéal en bivouac – ces accessoires complètent la Nano 100</h2>
+        </div>
+        <div class="gear-grid">
+            <div class="gear-item">
+                <div class="gear-icon"><i class="fas fa-tent"></i></div>
+                <h4>Lone Rider ADV tente</h4>
+                <p>Bivouac rapide, se monte sur la moto. Testée en Espagne et Turquie.</p>
+                <a href="https://www.youtube.com/watch?v=JEPQCI339VA" target="_blank" class="mini-link"><i class="fab fa-youtube"></i> voir le test</a>
+            </div>
+            <div class="gear-item">
+                <div class="gear-icon"><i class="fas fa-thermometer-half"></i></div>
+                <h4>Kemi
