@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AFERIY Nano 100 – Station électrique pour bivouac moto | LCDMH</title>
-    <!-- Font Awesome (CDN) pour les icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -23,7 +22,6 @@
             margin: 0 auto;
             padding: 2rem 1.5rem;
         }
-        /* Bandeau chaîne */
         .channel-header {
             display: flex;
             align-items: center;
@@ -58,7 +56,6 @@
             font-size: 0.95rem;
             margin-left: 8px;
         }
-        /* Grille produit */
         .product-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -96,46 +93,23 @@
             width: 100%;
             max-width: 380px;
             height: auto;
+            border-radius: 24px;
             filter: drop-shadow(0 15px 20px rgba(0,30,40,0.3));
             transition: transform 0.2s;
         }
         .main-image:hover {
             transform: scale(1.02);
         }
-        .product-thumbs {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        .thumb {
-            width: 70px;
-            height: 70px;
-            background: white;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid transparent;
-            cursor: pointer;
-            transition: 0.2s;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-        }
-        .thumb.active {
-            border-color: #f09b2c;
-        }
-        .thumb i {
-            font-size: 2.2rem;
-            color: #2b4c6b;
-        }
         .product-info {
             padding: 2.5rem 2.5rem 2.5rem 1.5rem;
         }
         .product-info h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 0.5rem;
             color: #0b202b;
+            word-break: break-word;
         }
         .product-tagline {
             font-size: 1.2rem;
@@ -173,14 +147,28 @@
             letter-spacing: 1px;
             color: #1f4b6e;
         }
+        .price-original {
+            font-size: 1.4rem;
+            color: #5f7d99;
+            text-decoration: line-through;
+            margin-right: 0.8rem;
+        }
         .price-value {
             font-size: 2.6rem;
             font-weight: 800;
             color: #0f2a3f;
         }
         .price-note {
+            font-size: 0.95rem;
+            color: #1f4b6e;
+            margin-top: 8px;
+        }
+        .price-note strong {
+            background: #f09b2c;
+            color: #0b1b26;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
             font-size: 0.9rem;
-            color: #385f7a;
         }
         .btn-group {
             display: flex;
@@ -202,6 +190,7 @@
             transition: 0.2s;
             cursor: pointer;
             border: 2px solid transparent;
+            text-decoration: none;
         }
         .btn-primary:hover {
             background: #e28a18;
@@ -219,12 +208,12 @@
             align-items: center;
             gap: 8px;
             transition: 0.2s;
+            text-decoration: none;
         }
         .btn-secondary:hover {
             background: #1f4b6e10;
             border-color: #f09b2c;
         }
-        /* SECTION VIDÉO */
         .video-card {
             background: white;
             border-radius: 2rem;
@@ -285,7 +274,6 @@
             box-shadow: 0 2px 10px #00000010;
             font-weight: 500;
         }
-        /* Équipements compagnons */
         .companion-gear {
             margin-top: 2.8rem;
         }
@@ -349,7 +337,6 @@
         .mini-link:hover {
             border-bottom-color: #f09b2c;
         }
-        /* Playlist extra */
         .playlist-row {
             background: #e7f0f7;
             border-radius: 2rem;
@@ -383,36 +370,36 @@
             text-align: center;
             color: #2f5b78;
         }
-        /* responsive */
         @media (max-width: 800px) {
             .product-grid { grid-template-columns: 1fr; }
             .product-info { padding: 2rem; }
+            .product-info h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 <div class="page-container">
 
-    <!-- header chaîne -->
     <div class="channel-header">
         <div class="channel-logo">🏍️</div>
         <div class="channel-name">LCDMH <span>La Chaîne Du Motard Heureux</span></div>
     </div>
 
-    <!-- PRODUIT PRINCIPAL : AFERIY Nano 100 (extrait du CSV) -->
+    <!-- PRODUIT PRINCIPAL : AFERIY Nano 100 avec IMAGE et PRIX corrigés -->
     <div class="product-grid">
         <div class="product-gallery">
             <span class="badge-test"><i class="fas fa-check-circle"></i> Testé en conditions réelles – Road trip</span>
-            <!-- image principale (icône générique) -->
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%232f5b78'/%3E%3Ctext x='30' y='130' fill='%23f09b2c' font-size='32' font-family='Arial' font-weight='bold'%3EAFERIY%3C/text%3E%3Ctext x='40' y='170' fill='white' font-size='44'%3ENANO 100%3C/text%3E%3C/svg%3E"
-                 alt="AFERIY Nano 100 station électrique" class="main-image">
-            <div class="product-thumbs">
-                <div class="thumb active"><i class="fas fa-bolt"></i></div>
-                <div class="thumb"><i class="fas fa-campground"></i></div>
-                <div class="thumb"><i class="fas fa-motorcycle"></i></div>
+            <!-- IMAGE RÉELLE DU PRODUIT (Placeholder haute résolution - à remplacer par votre propre image) -->
+            <img src="https://m.media-amazon.com/images/I/61bGpS1OQRL._AC_SX679_.jpg" 
+                 alt="AFERIY Nano 100 station électrique portable pour bivouac moto" 
+                 class="main-image"
+                 onerror="this.onerror=null; this.src='https://via.placeholder.com/400x400?text=AFERIY+Nano+100';">
+            <div class="product-thumbs" style="justify-content: center; margin-top: 1rem;">
+                <span style="color: #1f4b6e;"><i class="fas fa-bolt"></i> 100W | 99Wh | USB-C PD</span>
             </div>
         </div>
         <div class="product-info">
+            <!-- Nom corrigé : bien visible -->
             <h1>AFERIY Nano 100</h1>
             <div class="product-tagline">La micro‑centrale électrique pour bivouac & road trip</div>
             <ul class="feature-list">
@@ -422,26 +409,39 @@
                 <li><i class="fas fa-usb"></i> Ports USB‑C (PD) + USB‑A + allume‑cigare 12V</li>
                 <li><i class="fas fa-weight-hanging"></i> Ultra‑compacte : moins d'1 kg, tient dans une sacoche de réservoir</li>
             </ul>
+            
+            <!-- BLOC PRIX avec promo et lien affilié -->
             <div class="price-block">
-                <div class="price-label">prix indicatif</div>
-                <div class="price-value">129 €</div>
-                <div class="price-note"><i class="fas fa-tag"></i> Vérifiez promo ponctuelle sur le site</div>
+                <div class="price-label">Meilleur prix sur Amazon</div>
+                <div>
+                    <span class="price-original">149,99 €</span>
+                    <span class="price-value">129,99 €</span>
+                </div>
+                <div class="price-note">
+                    <strong><i class="fas fa-tag"></i> Code promo : 8JGATT8K</strong> (valable uniquement sur Amazon.fr)
+                </div>
             </div>
+
+            <!-- BOUTONS D'ACTION avec liens affiliés corrigés -->
             <div class="btn-group">
-                <a href="#" class="btn-primary"><i class="fas fa-store"></i> Voir l'offre</a>
-                <a href="#" class="btn-secondary"><i class="fas fa-video"></i> Test vidéo</a>
+                <a href="https://www.amazon.fr/dp/B0F1MR5HD3?tag=lcdmh-21" target="_blank" rel="nofollow" class="btn-primary">
+                    <i class="fas fa-shopping-cart"></i> Acheter sur Amazon
+                </a>
+                <a href="#video" class="btn-secondary"><i class="fas fa-video"></i> Voir le test</a>
             </div>
-            <p style="margin-top: 1.8rem; font-size: 0.95rem; color:#386282"><i class="fas fa-database"></i> Extrait de la playlist « Entretien & équipements moto »</p>
+            <p style="margin-top: 1.2rem; font-size: 0.9rem; background: #fff4e5; padding: 0.5rem 1rem; border-radius: 40px;">
+                <i class="fas fa-info-circle" style="color:#f09b2c;"></i> 
+                Prix après code <strong>8JGATT8K</strong> (saisir sur Amazon). Votre soutien via ce lien aide la chaîne 🙏
+            </p>
         </div>
     </div>
 
-    <!-- SECTION VIDÉO SPÉCIFIQUE AFERIY (depuis le CSV) -->
-    <div class="video-card">
+    <!-- SECTION VIDÉO (ancre #video) -->
+    <div class="video-card" id="video">
         <div class="video-title">
             <i class="fab fa-youtube"></i> L'essai terrain : AFERIY Nano 100 en road trip
         </div>
         <div class="video-embed">
-            <!-- vidéo extraite : D1eLA6LRkLU (première occurrence de la playlist entretien) -->
             <div class="yt-frame">
                 <iframe src="https://www.youtube.com/embed/D1eLA6LRkLU?rel=0&modestbranding=1" 
                         allowfullscreen 
@@ -466,78 +466,69 @@
         <span style="color:#2b5a7a;">#bivouac #électromobilité</span>
     </div>
 
-    <!-- ÉQUIPEMENTS COMPAGNONS – recommandés pour le bivouac (inspiré CSV) -->
+    <!-- AUTRES PRODUITS AFERIY (Jump Starter) avec liens et codes promo -->
+    <div style="background: white; border-radius: 2rem; padding: 2rem; margin: 2rem 0;">
+        <h3 style="margin-bottom: 1.5rem;"><i class="fas fa-bolt" style="background: #f09b2c; padding: 0.4rem; border-radius: 50%; color: white; margin-right: 12px;"></i> Aussi chez AFERIY : le Jump Starter 2000A</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+            <div style="flex: 1; min-width: 200px;">
+                <img src="https://m.media-amazon.com/images/I/61bGpS1OQRL._AC_SX679_.jpg" alt="AFERIY Jump Starter" style="max-width: 200px; border-radius: 20px;">
+            </div>
+            <div style="flex: 3;">
+                <p style="font-size: 1.2rem; font-weight: 600;">AFERIY Jump Starter 2000A</p>
+                <p>Démarreur de batterie 12V pour moto, voiture. Batterie de secours 2000A, USB-C.</p>
+                <p><span style="background: #eaf1f8; padding: 0.5rem 1rem; border-radius: 30px;"><strong>Code promo : LCDMHGK03</strong> (sur Amazon)</span></p>
+                <a href="https://www.amazon.fr/dp/B0C1NMW5VP?tag=lcdmh-21" target="_blank" rel="nofollow" class="btn-primary" style="margin-top: 1rem; padding: 0.7rem 2rem; font-size: 1rem;">
+                    <i class="fas fa-shopping-cart"></i> Voir l'offre
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ÉQUIPEMENTS COMPAGNONS (inchangé mais utile) -->
     <div class="companion-gear">
         <div class="section-header">
             <h2><i class="fas fa-campground" style="color:#f09b2c; margin-right:10px;"></i> Idéal en bivouac – ces accessoires complètent la Nano 100</h2>
             <span class="badge-playlist"><i class="fab fa-youtube"></i> tests disponibles</span>
         </div>
         <div class="gear-grid">
-            <!-- tente Lone Rider (short tour espagne) -->
             <div class="gear-item">
                 <div class="gear-icon"><i class="fas fa-tent"></i></div>
                 <h4>Lone Rider ADV tente</h4>
-                <p>Bivouac rapide, se montage sur la moto. Testée en Espagne et Turquie.</p>
+                <p>Bivouac rapide, se monte sur la moto. Testée en Espagne et Turquie.</p>
                 <a href="https://www.youtube.com/watch?v=JEPQCI339VA" target="_blank" class="mini-link"><i class="fab fa-youtube"></i> voir le test</a>
             </div>
-            <!-- Vêtements chauffants Kemi Moto (hiver/froid) -->
             <div class="gear-item">
                 <div class="gear-icon"><i class="fas fa-thermometer-half"></i></div>
                 <h4>Kemi Moto chauffant</h4>
                 <p>Gants, gilet, chaussettes – autonomie batterie, confort en Laponie.</p>
                 <a href="https://www.youtube.com/watch?v=GzH9CMa0P8g" target="_blank" class="mini-link"><i class="fab fa-youtube"></i> gants & gilet</a>
             </div>
-            <!-- GPS Aoocci U6 (autonome / hors ligne) -->
             <div class="gear-item">
                 <div class="gear-icon"><i class="fas fa-satellite-dish"></i></div>
                 <h4>GPS Aoocci U6 / BX</h4>
                 <p>Navigation offline, dashcam, TPMS. Utilisé sur NT1100 et TRK.</p>
                 <a href="https://www.youtube.com/watch?v=xj5-sH7pH2w" target="_blank" class="mini-link"><i class="fab fa-youtube"></i> test U6</a>
             </div>
-            <!-- Panneaux solaires (option pour Nano) -->
             <div class="gear-item">
                 <div class="gear-icon"><i class="fas fa-solar-panel"></i></div>
-                <h4>Panneau solaire 50W</h4>
+                <h4>Panneau solaire (en attente)</h4>
                 <p>Recharge de la Nano 100 en bivouac prolongé. Pliable, étanche.</p>
-                <span class="mini-link" style="color:#768b9b;"><i class="fas fa-search"></i> bientôt testé</span>
+                <span class="mini-link" style="color:#768b9b;"><i class="fas fa-search"></i> lien prochainement</span>
             </div>
         </div>
     </div>
 
-    <!-- AUTRES EXTRAITS CSV – deux autres vidéo pour illustrer la thématique électricité / batterie -->
-    <div style="margin: 2.5rem 0; background: linear-gradient(145deg, #ffffff, #f6faff); border-radius: 2rem; padding: 2rem;">
-        <h3 style="margin-bottom: 1.5rem;"><i class="fas fa-bolt" style="background: #f09b2c; padding: 0.4rem; border-radius: 50%; color: white; margin-right: 12px;"></i> D'autres tests d'autonomie et d'énergie sur la chaîne</h3>
-        <div style="display: flex; flex-wrap: wrap; gap: 1.8rem;">
-            <!-- vidéo batterie AFERIY (déjà utilisé) + deux autres avec code promo / équipement -->
-            <div style="flex:1 1 250px;">
-                <div style="font-weight:700;">🔋 AFERIY Nano 100</div>
-                <div style="font-size:0.9rem;">(vu ci‑dessus)</div>
-            </div>
-            <div style="flex:1 1 250px;">
-                <div style="font-weight:700;"><i class="fas fa-battery-full"></i> Blackview Xplore X1</div>
-                <div style="font-size:0.95rem;">Téléphone renforcé – batterie 8800 mAh pour GPS hors ligne.</div>
-                <a href="https://www.youtube.com/watch?v=9U7WHJyX0go" target="_blank" style="color:#f09b2c;">regarder l'essai <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div style="flex:1 1 250px;">
-                <div style="font-weight:700;"><i class="fas fa-car-battery"></i> Jump‑starter / powerbank</div>
-                <div style="font-size:0.95rem;">Bientôt un test de booster de batterie pour moto.</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- LIEN RAPIDE VERS PLAYLIST GPS / OFFLINE (où on parle souvent d'autonomie) -->
+    <!-- LIEN VERS PLAYLIST GPS / OFFLINE -->
     <div style="text-align: center; margin: 1.5rem 0 2.5rem;">
         <a href="https://www.youtube.com/playlist?list=PLYEqidd8fqw7sQjyru35StidH_6wRETqy" target="_blank" style="background: #1f4b6e; color: white; padding: 1rem 2.5rem; border-radius: 50px; font-weight: 600; display: inline-block; text-decoration: none;">
             <i class="fas fa-map-signs"></i> Explorer la playlist « GPS moto & navigation embarquée »
         </a>
     </div>
 
-    <!-- FOOTER AVEC MENTION EXTRACT -->
+    <!-- FOOTER AVEC MENTION PARTENARIAT -->
     <div class="footer-note">
-        <p><i class="fas fa-database"></i> Données extraites de l'export « lcdmh_export_playlists_liste-complete.csv ».<br>
-        Vidéo : « AFERIY Nano 100 : autonomie électrique en road trip ? » (ID D1eLA6LRkLU, playlist "Entretien & équipements moto"). <br>
+        <p><i class="fas fa-handshake"></i> Partenariat AFERIY (Amazon) – Codes exclusifs audience LCDMH.<br>
         © LCDMH – La Chaîne Du Motard Heureux – Tests terrain, road trips et aventures moto.</p>
-        <p style="margin-top:1rem;">🏍️ Tous les produits présentés ont été testés en conditions réelles (Alpes, Espagne, Norvège, Turquie).</p>
     </div>
 
 </div>
