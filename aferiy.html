@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://lcdmh.com/aferiy.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="LCDMH">
-    <meta property="og:image" content="https://lcdmh.com/images/aferiy-og.jpg">
+    <meta property="og:image" content="https://m.media-amazon.com/images/I/61bGpS1OQRL._AC_SX679_.jpg">
     <link rel="canonical" href="https://lcdmh.com/aferiy.html">
 
     <!-- Balises pour mobile -->
@@ -230,23 +230,6 @@
             border: 3px solid white;
         }
         .main-image:hover { transform: scale(1.02); }
-        .thumbnail-row {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .thumbnail {
-            width: 80px;
-            height: 80px;
-            border-radius: 16px;
-            border: 3px solid white;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: 0.2s;
-            object-fit: cover;
-        }
-        .thumbnail:hover, .thumbnail.active { border-color: var(--orange); transform: translateY(-3px); }
         .product-info { padding: 1rem 0; }
         .product-info h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
         .product-tagline {
@@ -389,31 +372,6 @@
         .mini-link { color: var(--orange); font-weight: 600; text-decoration: none; border-bottom: 2px solid transparent; }
         .mini-link:hover { border-bottom-color: var(--orange); }
 
-        /* Playlist row */
-        .playlist-row {
-            background: #e7f0f7;
-            border-radius: 2rem;
-            padding: 1.5rem 2rem;
-            margin: 2rem 0;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 2rem;
-        }
-        .playlist-row span { font-weight: 700; font-size: 1.2rem; }
-        .pill-link {
-            background: white;
-            border-radius: 40px;
-            padding: 0.6rem 1.5rem;
-            font-weight: 600;
-            color: #1f4b6e;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 5px 12px #00000010;
-        }
-
         /* Footer */
         footer {
             background: var(--noir);
@@ -548,23 +506,7 @@
                     <img id="mainProductImage1" src="https://m.media-amazon.com/images/I/61bGpS1OQRL._AC_SX679_.jpg" 
                          alt="AFERIY Nano 100 station électrique" class="main-image">
                 </div>
-                <div class="thumbnail-row">
-                    <img src="https://m.media-amazon.com/images/I/61bGpS1OQRL._AC_SX679_.jpg" 
-                         alt="AFERIY Nano 100 vue avant" class="thumbnail active" 
-                         onclick="document.getElementById('mainProductImage1').src=this.src">
-                    <img src="https://m.media-amazon.com/images/I/71bGpS1OQRL._AC_SX679_.jpg" 
-                         alt="AFERIY Nano 100 côté ports" class="thumbnail"
-                         onerror="this.onerror=null; this.src='https://via.placeholder.com/80x80?text=USB-C';"
-                         onclick="document.getElementById('mainProductImage1').src=this.src">
-                    <img src="https://m.media-amazon.com/images/I/71cGpS1OQRL._AC_SX679_.jpg" 
-                         alt="AFERIY Nano 100 avec panneau solaire" class="thumbnail"
-                         onerror="this.onerror=null; this.src='https://via.placeholder.com/80x80?text=Solaire';"
-                         onclick="document.getElementById('mainProductImage1').src=this.src">
-                    <img src="https://m.media-amazon.com/images/I/71dGpS1OQRL._AC_SX679_.jpg" 
-                         alt="AFERIY Nano 100 en bivouac" class="thumbnail"
-                         onerror="this.onerror=null; this.src='https://via.placeholder.com/80x80?text=Bivouac';"
-                         onclick="document.getElementById('mainProductImage1').src=this.src">
-                </div>
+                <p style="margin-top: 1rem; color: #1f4b6e; text-align: center;"><i class="fas fa-camera"></i> 100W | 99Wh | USB-C PD</p>
             </div>
             <div class="product-info">
                 <h1>AFERIY Nano 100</h1>
@@ -618,4 +560,40 @@
                     <span class="chip"><i class="far fa-calendar"></i> Publiée le 6 février 2026</span>
                     <span class="chip" style="margin-left:10px;"><i class="fas fa-eye"></i> Extrait playlist "Entretien & équipements"</span>
                 </div>
-                <a href="https://www.youtube
+                <a href="https://www.youtube.com/watch?v=D1eLA6LRkLU" target="_blank" class="btn-secondary" style="margin-top: 1rem; padding:0.6rem 1.8rem; border-color:var(--orange);"><i class="fab fa-youtube"></i> Voir sur YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUIT 2 : AFERIY GK03 Booster -->
+    <div class="product-card">
+        <div class="product-grid">
+            <div class="product-gallery">
+                <span class="badge-test"><i class="fas fa-check-circle"></i> Testé en conditions réelles</span>
+                <div class="main-image-container">
+                    <img id="mainProductImage2" src="https://m.media-amazon.com/images/I/61QV1LgCkSL._AC_SX679_.jpg" 
+                         alt="AFERIY GK03 Booster Batterie 2000A" class="main-image">
+                </div>
+                <p style="margin-top: 1rem; color: #1f4b6e; text-align: center;"><i class="fas fa-camera"></i> 2000A | 27500mAh | 12V</p>
+            </div>
+            <div class="product-info">
+                <h1>AFERIY GK03 Booster</h1>
+                <div class="product-tagline">Le booster de batterie 12V ultra-compact pour moto et voiture</div>
+                <ul class="feature-list">
+                    <li><i class="fas fa-bolt"></i> Courant de pointe de 2000A – démarre moteurs jusqu'à 6.0L essence ou 3.0L diesel</li>
+                    <li><i class="fas fa-battery-full"></i> Batterie haute capacité de 27500 mAh, combine fonction de démarrage et power bank</li>
+                    <li><i class="fas fa-charging-station"></i> Technologie de charge rapide PD 65W, charge complète en seulement 1,3 heure</li>
+                    <li><i class="fas fa-usb"></i> Double sortie USB (QC3.0 + 5V/2,4A) et port DC 15V/10A, pour recharger plusieurs appareils simultanément</li>
+                    <li><i class="fas fa-lightbulb"></i> Éclairage 3-en-1 (continu / stroboscopique / SOS), idéal pour les situations d'urgence</li>
+                    <li><i class="fas fa-shield-alt"></i> Protection multiple contre les surcharges, courts-circuits et autres risques</li>
+                </ul>
+                <div class="price-block">
+                    <div class="price-label">PROMO EXCLUSIVE SUR AMAZON</div>
+                    <div>
+                        <span class="price-original">99,00 €</span>
+                        <span class="price-value">79,20 €</span>
+                    </div>
+                    <div class="price-note">
+                        <strong><i class="fas fa-tag"></i> Code promo : LCDMHGK03</strong> (valable uniquement sur Amazon.fr)
+                    </div>
+                    <p style
