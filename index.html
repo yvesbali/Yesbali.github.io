@@ -581,7 +581,7 @@
         <li><a href="contact.html">Contact</a></li>
 
         <li id="nav-last-video-li" class="desktop-only">
-            <a href="#" class="nav-last-video" id="nav-last-video-link" title="Voir la dernière vidéo">
+            <a href="#videos" class="nav-last-video" id="nav-last-video-link" title="Voir la dernière vidéo">
                 <span class="dot"></span>
                 <span class="label-new">Nouveau</span>
                 <span class="label-title" id="nav-last-video-title">Dernière vidéo</span>
@@ -1258,6 +1258,19 @@
                 observer.disconnect();
             }
         });
+
+        // Smooth scroll pour le lien nav → #videos (avant que le feed charge)
+        const navLink = document.getElementById('nav-last-video-link');
+        if (navLink) {
+            navLink.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#') && !href.startsWith('#http')) {
+                    e.preventDefault();
+                    const target = document.getElementById(href.slice(1));
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        }
 
         const target = document.getElementById('lcdmh-videos');
         if (target) {
