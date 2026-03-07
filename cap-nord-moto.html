@@ -264,55 +264,164 @@
         .link-card:hover{box-shadow:0 4px 14px rgba(0,0,0,.08);color:var(--orange)}
 
         @media(max-width:600px){.tl-item{gap:1rem}.tl-dot{width:44px;height:44px;font-size:.65rem}.hero-kpis{gap:1rem 2rem}}
-    </style>
+    
+        /* === NAVIGATION === */
+        nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.07);padding:0 4%;height:70px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1000}
+        .logo{font-size:1.45rem;font-weight:900;color:#1a1a2e;text-decoration:none;letter-spacing:-.03em}
+        .logo span{color:#e67e22}
+        .nav-links{display:flex;gap:.5rem 1rem;list-style:none;align-items:center;flex-wrap:wrap;justify-content:flex-end;margin:0;padding:0}
+        .nav-links a{font-size:.78rem;font-weight:600;color:#555;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;white-space:nowrap;padding:.3rem .4rem;transition:color .2s}
+        .nav-links a:hover,.nav-links a.active{color:#e67e22}
+        .nav-links .nav-yt{background:#e67e22;color:#fff!important;padding:.4rem 1rem;border-radius:30px;font-weight:700}
+        .nav-links .nav-yt:hover{background:#cf6d17}
+        .nav-links .nav-yt-icon{background:#ff0000;color:#fff!important;padding:.4rem .8rem;border-radius:6px;font-weight:700;font-size:.75rem}
+        .has-drop{position:relative}
+        .has-drop>a::after{content:' ▾';font-size:.65rem;opacity:.6}
+        .dropdown{display:none;position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1px solid #e8e8e8;border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.12);min-width:200px;padding:.5rem 0;z-index:9999}
+        .dropdown a{display:block;padding:.52rem 1.1rem;font-size:.8rem;color:#1a1a2e!important;font-weight:500;white-space:nowrap;text-transform:none;letter-spacing:normal}
+        .dropdown a:hover{background:#fff8f2;color:#e67e22!important}
+        .nav-last-video{display:inline-flex;align-items:center;gap:.4rem;background:#fff3e0;border:1px solid #f0a500;border-radius:20px;padding:.3rem .8rem;font-size:.72rem!important;font-weight:700!important;color:#e67e22!important;text-transform:none!important;letter-spacing:normal!important;white-space:nowrap;animation:pulse-badge 2.5s infinite}
+        @keyframes pulse-badge{0%,100%{box-shadow:0 0 0 0 rgba(230,126,34,.35)}50%{box-shadow:0 0 0 5px rgba(230,126,34,0)}}
+        .nav-last-video .dot{width:7px;height:7px;background:#e74c3c;border-radius:50%;animation:blink 1.2s infinite}
+        @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+        .nav-last-video .label-new{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+        .menu-toggle{display:none;font-size:1.8rem;cursor:pointer;background:none;border:none;color:#1a1a2e;padding:.5rem}
+        @media(max-width:900px){
+            .nav-links{display:none;flex-direction:column;position:absolute;top:70px;left:0;width:100%;background:#fff;padding:1rem 0;box-shadow:0 10px 20px rgba(0,0,0,.1);z-index:1000;gap:0;align-items:stretch}
+            .nav-links.active{display:flex}
+            .nav-links li{width:100%;text-align:center}
+            .nav-links a{display:block;padding:1rem!important;font-size:.95rem}
+            .has-drop>a::after{display:none}
+            .dropdown{position:static;width:100%;box-shadow:none;border:none;border-top:1px solid #e8e8e8;border-radius:0;padding:0;background:#fafafa}
+            .menu-toggle{display:block}
+            .nav-links .nav-yt,.nav-links .nav-yt-icon{margin:.5rem auto;display:inline-block;width:auto}
+            .desktop-only{display:none!important}
+        }
+        @media(min-width:901px){.mobile-only{display:none!important}}
+        /* === FIN NAVIGATION === */
+        </style>
 </head>
 
 <body>
 
 <!-- ══ NAV ══════════════════════════════════════ -->
-<nav>
+<nav id="lcdmh-nav">
     <a href="index.html" class="logo">LC<span>D</span>MH</a>
-    <button class="menu-toggle" id="menuToggle">☰</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
     <ul class="nav-links" id="navLinks">
+
         <li><a href="index.html">Accueil</a></li>
+
         <li class="has-drop">
-            <a href="roadtrips.html" class="active">Road Trips</a>
+            <a href="roadtrips.html">Road Trips</a>
             <div class="dropdown">
                 <a href="roadtrips.html">Tous les road trips</a>
-                <a href="cap-nord-moto.html" style="color:var(--orange);font-weight:700;">Cap Nord 2025 ←</a>
-                <a href="roadtrips.html#europe-asie">Europe–Asie 2024</a>
+                <a href="cap-nord-moto.html"                style="color:#e67e22;font-weight:700;">🏔️ Cap Nord 2025</a>
+                <a href="europe-asie-moto.html"             style="color:#e67e22;font-weight:700;">🌍 Europe–Asie 2024</a>
+                <a href="alpes-aventure-festival-moto.html" style="color:#e67e22;font-weight:700;">🏔️ Alpes Festival 2025</a>
+                <div style="border-top:1px solid #e0e0e0;margin:5px 0;"></div>
                 <a href="roadtrips.html#espagne">Espagne 2023</a>
                 <a href="roadtrips.html#alpes">Les Alpes</a>
             </div>
         </li>
+
         <li class="has-drop">
             <a href="#">Tests</a>
             <div class="dropdown">
                 <a href="tests-motos.html">Tests motos</a>
                 <a href="equipement.html">Équipement</a>
+                <a href="intercoms.html">Intercoms</a>
                 <a href="pneus.html">Pneus moto</a>
+                <a href="photo-video.html">Photo / Vidéo</a>
                 <a href="securite.html">Sécurité</a>
             </div>
         </li>
+
         <li class="has-drop">
-            <a href="#">Partenaires</a>
+            <a href="#">GPS</a>
             <div class="dropdown">
-                <a href="codes-promo.html">💰 Codes promo</a>
-                <a href="aoocci.html">Aoocci 🧭</a>
-                <a href="komobi.html">Komobi 📍</a>
-                <a href="aferiy.html">Aferiy ⚡</a>
-                <a href="olight.html">Olight 🔦</a>
-                <a href="pneus.html">Pneus moto</a>
+                <a href="gps.html">Tous les GPS</a>
+                <a href="aoocci.html">Aoocci (GPS offline)</a>
+                <a href="carpuride.html">Carpuride (écran déporté)</a>
+                <a href="blackview.html">Blackview 📱 (téléphone renforcé)</a>
             </div>
         </li>
+
+        <li class="has-drop">
+            <a href="#">Partenaires</a>
+            <div class="dropdown" style="min-width:230px;">
+                <a href="codes-promo.html">💰 Tous les codes promo</a>
+                <div style="border-top:1px solid #e0e0e0;margin:5px 0;"></div>
+                <a href="komobi.html">Komobi 📍 (traceur GPS)</a>
+                <a href="aoocci.html">Aoocci 🧭 (GPS offline)</a>
+                <a href="carpuride.html">Carpuride 📺 (écran CarPlay)</a>
+                <a href="blackview.html">Blackview 📱 (téléphone renforcé)</a>
+                <a href="aferiy.html">Aferiy ⚡ (batteries bivouac)</a>
+                <a href="olight.html">Olight 🔦 (lampes frontales)</a>
+                <div style="border-top:1px solid #e0e0e0;margin:5px 0;"></div>
+                <a href="pneus.html">🔧 Pneus moto (liens affiliés)</a>
+                <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&campaign=0ac376b3-9268-4626-3ff7-08dbc4da2b3f&clickref=Youtbe&clickref2=site&ued=https%3A%2F%2Fwww.123pneus.fr%2F" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem;font-size:.75rem;">→ 123pneus.fr</a>
+                <a href="https://www.awin1.com/cread.php?awinmid=7928&awinaffid=2753560&campaign=Summer+sale+2026&clickref=Youtube&clickref2=Site&ued=https%3A%2F%2Fwww.pneus.fr%2Fpneus%2Fmoto" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem;font-size:.75rem;">→ Pneus.fr</a>
+                <a href="https://www.awin1.com/cread.php?awinmid=7403&awinaffid=2753560&ued=https%3A%2F%2Fwww.pneus-moto.fr%2F" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem;font-size:.75rem;">→ Pneus-moto.fr</a>
+            </div>
+        </li>
+
         <li><a href="a-propos.html">À propos</a></li>
-        <li><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt">▶ S'abonner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+
+        <li id="nav-last-video-li" class="desktop-only">
+            <a href="#" class="nav-last-video" id="nav-last-video-link" title="Voir la dernière vidéo">
+                <span class="dot"></span>
+                <span class="label-new">Nouveau</span>
+                <span class="label-title" id="nav-last-video-title">Dernière vidéo</span>
+            </a>
+        </li>
+        <li class="desktop-only"><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt">▶ S'abonner</a></li>
+        <li class="desktop-only"><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon">📺 YouTube</a></li>
+        <li class="mobile-only"><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt">▶ S'abonner</a></li>
+        <li class="mobile-only"><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon">📺 YouTube</a></li>
     </ul>
 </nav>
-<script>
-document.getElementById('menuToggle').addEventListener('click',function(){document.getElementById('navLinks').classList.toggle('active')});
-document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
-</script>
+    <script>
+    // === NAVIGATION JS (dropdown hover + mobile) ===
+    (function(){
+        var isMobile = function(){ return window.innerWidth <= 900; };
+        document.querySelectorAll('#lcdmh-nav .has-drop').forEach(function(item){
+            var dd = item.querySelector('.dropdown');
+            var timer = null;
+            // Desktop : hover avec délai 200ms (évite fermeture trop rapide)
+            item.addEventListener('mouseenter', function(){ if(!isMobile()){ clearTimeout(timer); dd.style.display='block'; }});
+            item.addEventListener('mouseleave', function(){ if(!isMobile()){ timer=setTimeout(function(){ dd.style.display=''; },200); }});
+            dd.addEventListener('mouseenter',   function(){ if(!isMobile()) clearTimeout(timer); });
+            dd.addEventListener('mouseleave',   function(){ if(!isMobile()){ timer=setTimeout(function(){ dd.style.display=''; },200); }});
+            // Mobile : clic
+            item.querySelector(':scope>a').addEventListener('click',function(e){
+                if(isMobile()){
+                    e.preventDefault();
+                    var open = dd.style.display==='block';
+                    document.querySelectorAll('#lcdmh-nav .dropdown').forEach(function(d){ d.style.display=''; });
+                    dd.style.display = open ? '' : 'block';
+                }
+            });
+        });
+        // Mobile toggle
+        document.addEventListener('DOMContentLoaded',function(){
+            var toggle = document.getElementById('menuToggle');
+            var list   = document.getElementById('navLinks');
+            if(!toggle||!list) return;
+            toggle.addEventListener('click',function(e){ e.stopPropagation(); list.classList.toggle('active'); });
+            document.addEventListener('click',function(e){
+                if(!list.contains(e.target)&&!toggle.contains(e.target)) list.classList.remove('active');
+            });
+        });
+        // Active state auto
+        var page = window.location.pathname.split('/').pop()||'index.html';
+        document.querySelectorAll('#lcdmh-nav .nav-links>li>a').forEach(function(a){
+            var h = a.getAttribute('href')||'';
+            if(h && h!='#' && page.indexOf(h.replace('.html',''))!==-1) a.classList.add('active');
+        });
+    })();
+    </script>
 
 <!-- ══ HERO ════════════════════════════════════ -->
 <!-- H1 ciblé : "road trip moto cap nord" + différenciateur "solo 63 ans 10 000 km" -->
