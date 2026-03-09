@@ -1,74 +1,217 @@
 <!-- ======================================== -->
-<!-- FICHIER : nav.html (avec délai corrigé) -->
+<!-- NAVIGATION UNIQUE LCDMH -->
+<!-- Fichier centralisé -->
 <!-- ======================================== -->
-<nav id="lcdmh-nav">
-    <!-- ... ton menu existant (inchangé) ... -->
+<nav id="lcdmh-nav" aria-label="Navigation principale LCDMH">
+  <a class="logo" href="index.html" aria-label="Accueil LCDMH">LC<span>D</span>MH</a>
+
+  <button id="menuToggle" class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+    ☰
+  </button>
+
+  <ul id="navLinks" class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+
+    <li class="has-drop">
+      <a href="#" aria-haspopup="true" aria-expanded="false">Road Trips</a>
+      <div class="dropdown">
+        <a href="roadtrips.html">Tous les road trips</a>
+        <a href="cap-nord-moto.html">Cap Nord 2025</a>
+        <a href="europe-asie-moto.html">Europe–Asie 2024</a>
+        <a href="alpes-aventure-festival-moto.html">Les Alpes</a>
+      </div>
+    </li>
+
+    <li class="has-drop">
+      <a href="#" aria-haspopup="true" aria-expanded="false">Tests & équipements</a>
+      <div class="dropdown">
+        <a href="tests.html">Tous les tests</a>
+        <a href="tests-motos.html">Tests motos</a>
+        <a href="equipement.html">Équipement</a>
+        <a href="intercoms.html">Intercoms</a>
+        <a href="pneus.html">Pneus</a>
+        <a href="photo-video.html">Photo / Vidéo</a>
+        <a href="securite.html">Sécurité</a>
+      </div>
+    </li>
+
+    <li class="has-drop">
+      <a href="#" aria-haspopup="true" aria-expanded="false">Codes promo</a>
+      <div class="dropdown">
+        <a href="codes-promo.html">Tous les codes</a>
+        <a href="aoocci.html">Aoocci</a>
+        <a href="carpuride.html">Carpuride</a>
+        <a href="blackview.html">Blackview</a>
+        <a href="olight.html">Olight</a>
+        <a href="komobi.html">Komobi</a>
+      </div>
+    </li>
+
+    <li class="has-drop">
+      <a href="#" aria-haspopup="true" aria-expanded="false">À propos</a>
+      <div class="dropdown">
+        <a href="a-propos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+        <a href="sitemap.html">Plan du site</a>
+      </div>
+    </li>
+
+    <li><a class="nav-yt" href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
+  </ul>
 </nav>
 
 <style>
-    /* ... tes styles existants (inchangés) ... */
-</style>
+  #lcdmh-nav{
+    --orange:#e67e22;
+    --orange-dark:#d35400;
+    --noir:#1a1a1a;
+    --muted:#666;
+    --border:#e5e5e5;
+    --menu-bg:#ffffff;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    min-height:70px;
+    padding:0 4%;
+    background:var(--menu-bg);
+    box-shadow:0 2px 12px rgba(0,0,0,.07);
+    font-family:'Inter',sans-serif;
+  }
+  #lcdmh-nav *{box-sizing:border-box}
+  #lcdmh-nav a{text-decoration:none}
+  #lcdmh-nav .logo{
+    font-family:'Montserrat',sans-serif;
+    font-size:1.55rem;
+    font-weight:900;
+    color:var(--noir);
+    letter-spacing:-.03em;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  #lcdmh-nav .logo span{color:var(--orange)}
+  #lcdmh-nav .nav-links{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:.5rem 1rem;
+    list-style:none;
+    margin:0;
+    padding:0;
+    flex:1;
+    flex-wrap:wrap;
+  }
+  #lcdmh-nav .nav-links > li{position:relative}
+  #lcdmh-nav .nav-links a{
+    display:block;
+    padding:.38rem .45rem;
+    font-size:.8rem;
+    font-weight:700;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    transition:color .2s, background .2s;
+    white-space:nowrap;
+  }
+  #lcdmh-nav .nav-links a:hover,
+  #lcdmh-nav .nav-links a.active{color:var(--orange)}
+  #lcdmh-nav .has-drop > a::after{
+    content:' ▾';
+    font-size:.65rem;
+    opacity:.7;
+  }
+  #lcdmh-nav .dropdown{
+    display:none;
+    position:absolute;
+    top:calc(100% + 6px);
+    left:0;
+    min-width:220px;
+    padding:.45rem 0;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:12px;
+    box-shadow:0 8px 28px rgba(0,0,0,.12);
+  }
+  #lcdmh-nav .has-drop:hover > .dropdown{display:block}
+  #lcdmh-nav .dropdown a{
+    padding:.62rem 1rem;
+    color:var(--noir);
+    font-size:.85rem;
+    font-weight:600;
+    text-transform:none;
+    letter-spacing:normal;
+  }
+  #lcdmh-nav .dropdown a:hover,
+  #lcdmh-nav .dropdown a.active{
+    color:var(--orange);
+    background:#fff8f2;
+  }
+  #lcdmh-nav .nav-yt{
+    color:#fff !important;
+    background:var(--orange);
+    border-radius:999px;
+    padding:.55rem 1rem;
+  }
+  #lcdmh-nav .nav-yt:hover{background:var(--orange-dark);color:#fff !important}
+  #lcdmh-nav .menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    cursor:pointer;
+    color:var(--noir);
+    font-size:1.9rem;
+    line-height:1;
+    padding:.4rem;
+  }
 
-<script>
-// === NAVIGATION JS avec délai 400ms ===
-(function(){
-    var isMobile = function(){ return window.innerWidth <= 1000; };
-    
-    document.querySelectorAll('#lcdmh-nav .has-drop').forEach(function(item){
-        var dd = item.querySelector('.dropdown');
-        var timer = null;
-        
-        item.addEventListener('mouseenter', function(){ 
-            if(!isMobile()){ 
-                clearTimeout(timer); 
-                dd.style.display='block'; 
-            }
-        });
-        
-        // ✅ DÉLAI PASSÉ DE 200 À 400ms
-        item.addEventListener('mouseleave', function(){ 
-            if(!isMobile()){ 
-                timer=setTimeout(function(){ dd.style.display=''; },400); 
-            }
-        });
-        
-        dd.addEventListener('mouseenter', function(){ 
-            if(!isMobile()) clearTimeout(timer); 
-        });
-        
-        dd.addEventListener('mouseleave', function(){ 
-            if(!isMobile()){ 
-                timer=setTimeout(function(){ dd.style.display=''; },400); 
-            }
-        });
-        
-        // Mobile : clic
-        item.querySelector(':scope>a').addEventListener('click',function(e){
-            if(isMobile()){
-                e.preventDefault();
-                var open = dd.style.display==='block';
-                document.querySelectorAll('#lcdmh-nav .dropdown').forEach(function(d){ d.style.display=''; });
-                dd.style.display = open ? '' : 'block';
-            }
-        });
-    });
-    
-    // Mobile toggle
-    document.addEventListener('DOMContentLoaded',function(){
-        var toggle = document.getElementById('menuToggle');
-        var list   = document.getElementById('navLinks');
-        if(!toggle||!list) return;
-        
-        toggle.addEventListener('click',function(e){ 
-            e.stopPropagation(); 
-            list.classList.toggle('active'); 
-        });
-        
-        document.addEventListener('click',function(e){
-            if(!list.contains(e.target)&&!toggle.contains(e.target)) 
-                list.classList.remove('active');
-        });
-    });
-})();
-</script>
-<!-- ======================================== -->
+  @media (max-width: 1000px){
+    #lcdmh-nav .menu-toggle{display:block}
+    #lcdmh-nav .nav-links{
+      display:none;
+      position:absolute;
+      top:70px;
+      left:0;
+      right:0;
+      width:100%;
+      flex-direction:column;
+      align-items:stretch;
+      gap:0;
+      background:#fff;
+      box-shadow:0 10px 20px rgba(0,0,0,.1);
+      padding:.7rem 0 1rem;
+    }
+    #lcdmh-nav .nav-links.active{display:flex}
+    #lcdmh-nav .nav-links > li{width:100%;text-align:center}
+    #lcdmh-nav .nav-links a{
+      width:100%;
+      padding:1rem !important;
+      white-space:normal;
+    }
+    #lcdmh-nav .has-drop > a::after{display:none}
+    #lcdmh-nav .dropdown{
+      position:static;
+      display:none;
+      min-width:0;
+      margin:.25rem 0 .5rem;
+      border:none;
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+      border-radius:0;
+      box-shadow:none;
+      background:#fafafa;
+    }
+    #lcdmh-nav .has-drop.open > .dropdown{display:block}
+    #lcdmh-nav .dropdown a{padding:.9rem 1.5rem !important}
+    #lcdmh-nav .has-drop:hover > .dropdown{display:none}
+    #lcdmh-nav .has-drop.open:hover > .dropdown{display:block}
+    #lcdmh-nav .nav-yt{
+      display:inline-block;
+      width:auto !important;
+      margin:.5rem auto 0;
+      padding:.7rem 1.1rem !important;
+    }
+  }
+</style>
