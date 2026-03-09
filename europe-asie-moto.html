@@ -308,83 +308,46 @@
 <body>
 
 <!-- NAV -->
-<nav id="lcdmh-nav">
-    <a href="index.html" class="logo">LC<span>D</span>MH</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
-    <ul class="nav-links" id="navLinks">
-
-        <li><a href="index.html">Accueil</a></li>
-
-        <li class="has-drop">
-            <a href="roadtrips.html">Road Trips</a>
-            <div class="dropdown">
-                <a href="roadtrips.html">Tous les road trips</a>
-                <a href="cap-nord-moto.html"                style="color:#e67e22;font-weight:700;">🏔️ Cap Nord 2025</a>
-                <a href="europe-asie-moto.html"             style="color:#e67e22;font-weight:700;">🌍 Europe–Asie 2024</a>
-                <a href="alpes-aventure-festival-moto.html" style="color:#e67e22;font-weight:700;">🏔️ Alpes Festival 2025</a>
-                <div style="border-top:1px solid #e0e0e0;margin:5px 0;"></div>
-                <a href="roadtrips.html#espagne">Espagne 2023</a>
-                <a href="roadtrips.html#alpes">Les Alpes</a>
-            </div>
-        </li>
-
-        <li class="has-drop">
-            <a href="#">Tests</a>
-            <div class="dropdown">
-                <a href="tests-motos.html">Tests motos</a>
-                <a href="equipement.html">Équipement</a>
-                <a href="intercoms.html">Intercoms</a>
-                <a href="pneus.html">Pneus moto</a>
-                <a href="photo-video.html">Photo / Vidéo</a>
-                <a href="securite.html">Sécurité</a>
-            </div>
-        </li>
-
-        <li class="has-drop">
-            <a href="#">GPS</a>
-            <div class="dropdown">
-                <a href="gps.html">Tous les GPS</a>
-                <a href="aoocci.html">Aoocci (GPS offline)</a>
-                <a href="carpuride.html">Carpuride (écran déporté)</a>
-                <a href="blackview.html">Blackview 📱 (téléphone renforcé)</a>
-            </div>
-        </li>
-
-        <li class="has-drop">
-            <a href="#">Partenaires</a>
-            <div class="dropdown" style="min-width:230px;">
-                <a href="codes-promo.html">💰 Tous les codes promo</a>
-                <div style="border-top:1px solid #e0e0e0;margin:5px 0;"></div>
-                <a href="komobi.html">Komobi 📍 (traceur GPS)</a>
-                <a href="aoocci.html">Aoocci 🧭 (GPS offline)</a>
-                <a href="carpuride.html">Carpuride 📺 (écran CarPlay)</a>
-                <a href="blackview.html">Blackview 📱 (téléphone renforcé)</a>
-                <a href="aferiy.html">Aferiy ⚡ (batteries bivouac)</a>
-                <a href="olight.html">Olight 🔦 (lampes frontales)</a>
-                <div style="border-top:1px solid #e0e0e0;margin:5px 0;"></div>
-                <a href="pneus.html">🔧 Pneus moto (liens affiliés)</a>
-                <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&campaign=0ac376b3-9268-4626-3ff7-08dbc4da2b3f&clickref=Youtbe&clickref2=site&ued=https%3A%2F%2Fwww.123pneus.fr%2F" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem;font-size:.75rem;">→ 123pneus.fr</a>
-                <a href="https://www.awin1.com/cread.php?awinmid=7928&awinaffid=2753560&campaign=Summer+sale+2026&clickref=Youtube&clickref2=Site&ued=https%3A%2F%2Fwww.pneus.fr%2Fpneus%2Fmoto" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem;font-size:.75rem;">→ Pneus.fr</a>
-                <a href="https://www.awin1.com/cread.php?awinmid=7403&awinaffid=2753560&ued=https%3A%2F%2Fwww.pneus-moto.fr%2F" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem;font-size:.75rem;">→ Pneus-moto.fr</a>
-            </div>
-        </li>
-
-        <li><a href="a-propos.html">À propos</a></li>
-        <li><a href="contact.html">Contact</a></li>
-
-        <li id="nav-last-video-li" class="desktop-only">
-            <a href="#" class="nav-last-video" id="nav-last-video-link" title="Voir la dernière vidéo">
-                <span class="dot"></span>
-                <span class="label-new">Nouveau</span>
-                <span class="label-title" id="nav-last-video-title">Dernière vidéo</span>
-            </a>
-        </li>
-        <li class="desktop-only"><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt">▶ S'abonner</a></li>
-        <li class="desktop-only"><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon">📺 YouTube</a></li>
-        <li class="mobile-only"><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt">▶ S'abonner</a></li>
-        <li class="mobile-only"><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon">📺 YouTube</a></li>
-    </ul>
-</nav>
+<!-- ======================================== -->
+<!-- DÉBUT NAVIGATION LCDMH (fichier unique) -->
+<!-- ======================================== -->
+<div id="lcdmh-nav-container"></div>
+<script>
+(function() {
+    // Fonction pour charger la navigation
+    function chargerNavigation() {
+        fetch('/nav.html?t=' + Date.now())
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('lcdmh-nav-container').innerHTML = html;
+                
+                // Marquer la page active
+                const page = window.location.pathname.split('/').pop() || 'index.html';
+                document.querySelectorAll('#lcdmh-nav .nav-links > li > a').forEach(link => {
+                    const href = link.getAttribute('href') || '';
+                    if (href && href !== '#' && page.indexOf(href.replace('.html', '')) !== -1) {
+                        link.classList.add('active');
+                    }
+                });
+            })
+            .catch(err => {
+                console.error('❌ Navigation non chargée:', err);
+                // Fallback : navigation minimale
+                document.getElementById('lcdmh-nav-container').innerHTML = 
+                    '<nav style="background:#fff;padding:1rem;"><a href="/" style="color:#e67e22;font-weight:bold;font-size:1.5rem;">LCDMH</a></nav>';
+            });
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', chargerNavigation);
+    } else {
+        chargerNavigation();
+    }
+})();
+</script>
+<!-- ======================================== -->
+<!-- FIN NAVIGATION LCDMH -->
+<!-- ======================================== -->
     <script>
     // === NAVIGATION JS (dropdown hover + mobile) ===
     (function(){
@@ -910,3 +873,4 @@
 
 </body>
 </html>
+
