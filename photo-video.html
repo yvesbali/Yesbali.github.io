@@ -229,18 +229,46 @@
 </head>
 <body>
 
-<nav>
-    <a href="index.html" class="logo">LC<span>D</span>MH</a>
-    <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="roadtrips.html">Road Trips</a></li>
-        <li><a href="tests-motos.html" class="active">Tests</a></li>
-        <li><a href="gps.html">GPS</a></li>
-        <li><a href="codes-promo.html">Codes promo</a></li>
-        <li><a href="a-propos.html">À propos</a></li>
-        <li><a href="https://www.youtube.com/@LCDMH" target="_blank">YouTube</a></li>
-    </ul>
-</nav>
+<!-- ======================================== -->
+<!-- DÉBUT NAVIGATION LCDMH (fichier unique) -->
+<!-- ======================================== -->
+<div id="lcdmh-nav-container"></div>
+<script>
+(function() {
+    // Fonction pour charger la navigation
+    function chargerNavigation() {
+        fetch('/nav.html?t=' + Date.now())
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('lcdmh-nav-container').innerHTML = html;
+                
+                // Marquer la page active
+                const page = window.location.pathname.split('/').pop() || 'index.html';
+                document.querySelectorAll('#lcdmh-nav .nav-links > li > a').forEach(link => {
+                    const href = link.getAttribute('href') || '';
+                    if (href && href !== '#' && page.indexOf(href.replace('.html', '')) !== -1) {
+                        link.classList.add('active');
+                    }
+                });
+            })
+            .catch(err => {
+                console.error('❌ Navigation non chargée:', err);
+                // Fallback : navigation minimale
+                document.getElementById('lcdmh-nav-container').innerHTML = 
+                    '<nav style="background:#fff;padding:1rem;"><a href="/" style="color:#e67e22;font-weight:bold;font-size:1.5rem;">LCDMH</a></nav>';
+            });
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', chargerNavigation);
+    } else {
+        chargerNavigation();
+    }
+})();
+</script>
+<!-- ======================================== -->
+<!-- FIN NAVIGATION LCDMH -->
+<!-- ======================================== -->
 
 <div class="hero-small">
     <div class="breadcrumb">
