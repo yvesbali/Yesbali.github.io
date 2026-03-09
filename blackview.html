@@ -249,38 +249,12 @@
 <!-- ======================================== -->
 <!-- NAVIGATION UNIQUE LCDMH -->
 <!-- ======================================== -->
+<!-- ======================================== -->
+<!-- NAVIGATION UNIQUE LCDMH -->
+<!-- ======================================== -->
 <div id="lcdmh-nav-container"></div>
-<script>
-(function() {
-    // URL absolue vers nav.html sur GitHub
-    const navUrl = '/nav.html?t=' + Date.now();
-    
-    fetch(navUrl)
-        .then(response => {
-            if (!response.ok) throw new Error('HTTP error ' + response.status);
-            return response.text();
-        })
-        .then(html => {
-            document.getElementById('lcdmh-nav-container').innerHTML = html;
-            
-            // Marquer la page active
-            const page = window.location.pathname.split('/').pop() || 'index.html';
-            document.querySelectorAll('#lcdmh-nav .nav-links > li > a').forEach(link => {
-                const href = link.getAttribute('href') || '';
-                if (href && href !== '#' && page.indexOf(href.replace('.html', '')) !== -1) {
-                    link.classList.add('active');
-                }
-            });
-        })
-        .catch(err => {
-            console.error('❌ Navigation non chargée:', err);
-            document.getElementById('lcdmh-nav-container').innerHTML = 
-                '<div style="background:#e67e22;color:white;padding:1rem;text-align:center;">' +
-                '⚠️ Menu temporairement indisponible - <a href="index.html" style="color:white;font-weight:bold;">Accueil</a>' +
-                '</div>';
-        });
-})();
-</script>
+<script src="nav-loader.js"></script>
+<!-- ======================================== -->
 <!-- ======================================== -->
 <!-- ======================================== -->
 
