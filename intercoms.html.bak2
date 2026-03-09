@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sécurité à Moto – Trajectoires, Équipement, Conseils | LCDMH</title>
-    <meta name="description" content="Conseils et formations pour une conduite moto plus sûre : trajectoires de sécurité, freinage, équipement de protection, visibilité.">
-    <meta name="keywords" content="sécurité moto, trajectoire de sécurité, freinage moto, équipement de protection, visibilité motard, formation moto">
+    <title>Tests Intercoms Moto - Sena, Cardo - LCDMH</title>
+    <meta name="description" content="Tests intercoms moto Sena en conditions réelles : qualité audio, micro, Bluetooth, compatibilité GPS CarPlay. Mes avis honnêtes.">
+    <meta name="keywords" content="intercom moto, test Sena, test Cardo, communication moto, Bluetooth moto, casque moto intercom">
     <meta name="author" content="Yves - LCDMH">
-    <meta property="og:title" content="Sécurité à Moto - LCDMH">
-    <meta property="og:description" content="Conseils et formations pour une conduite moto plus sûre : trajectoires, équipement, visibilité.">
-    <meta property="og:url" content="https://lcdmh.com/securite.html">
+    <meta property="og:title" content="Tests Intercoms Moto - LCDMH">
+    <meta property="og:description" content="Tests et avis sur les intercoms moto Sena et Cardo : qualité sonore, autonomie, compatibilité.">
+    <meta property="og:url" content="https://lcdmh.com/intercoms.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="LCDMH">
-    <meta property="og:image" content="https://lcdmh.com/images/securite-og.jpg">
-    <link rel="canonical" href="https://lcdmh.com/securite.html">
+    <meta property="og:image" content="https://lcdmh.com/images/intercoms-og.jpg">
+    <link rel="canonical" href="https://lcdmh.com/intercoms.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -215,13 +215,13 @@
             border: 1px solid #e0e0e0;
             text-align: center;
         }
-        .tips-grid {
+        .intercom-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin: 3rem 0;
         }
-        .tip-card {
+        .intercom-card {
             background: white;
             border-radius: 15px;
             overflow: hidden;
@@ -229,36 +229,40 @@
             border: 1px solid #e0e0e0;
             transition: transform .2s;
         }
-        .tip-card:hover { transform: translateY(-5px); }
-        .tip-header {
+        .intercom-card:hover { transform: translateY(-5px); }
+        .card-header {
             background: #1e1e1e;
             color: white;
             padding: 1.5rem;
         }
-        .tip-header h3 {
-            font-size: 1.5rem;
+        .card-header h3 {
+            font-size: 1.8rem;
             margin-bottom: .3rem;
         }
-        .tip-header .badge {
+        .card-header .badge {
             color: #e67e22;
             font-weight: 600;
-            font-size: .9rem;
         }
-        .tip-content {
+        .card-content {
             padding: 1.5rem;
         }
-        .tip-content ul {
+        .card-content ul {
             list-style: none;
             color: #666;
         }
-        .tip-content li {
+        .card-content li {
             padding: .3rem 0;
             border-bottom: 1px solid #f0f0f0;
         }
-        .tip-content li:last-child { border-bottom: none; }
-        .tip-footer {
+        .card-content li:last-child { border-bottom: none; }
+        .card-footer {
             padding: 1.5rem;
             border-top: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: .5rem;
         }
         .btn {
             background: #e67e22;
@@ -270,76 +274,62 @@
             display: inline-block;
         }
         .btn:hover { background: #d35400; }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #e67e22;
+            color: #e67e22;
+        }
+        .btn-outline:hover { background: #e67e22; color: white; }
         
-        .video-grid {
+        .comparatif-box {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+            border: 1px solid #e0e0e0;
+            overflow-x: auto;
+        }
+        .comparatif-box h3 {
+            color: #e67e22;
+            margin-bottom: 1.5rem;
+        }
+        .comparatif-box table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .comparatif-box th {
+            background: #f5f5f5;
+            padding: 1rem;
+            text-align: left;
+        }
+        .comparatif-box td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .tip-box {
+            background: #f8f9fa;
+            border-left: 4px solid #e67e22;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .faq-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin: 3rem 0;
         }
-        .video-card {
+        .faq-item {
             background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,.05);
-            border: 1px solid #e0e0e0;
-            cursor: pointer;
-            transition: transform .2s;
-        }
-        .video-card:hover { transform: translateY(-5px); }
-        .video-thumb {
-            width: 100%;
-            height: 180px;
-            overflow: hidden;
-            background: #000;
-        }
-        .video-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform .3s;
-        }
-        .video-card:hover .video-thumb img { transform: scale(1.05); }
-        .video-info {
+            border-radius: 12px;
             padding: 1.5rem;
+            border: 1px solid #e0e0e0;
         }
-        .video-info h4 {
-            margin-bottom: .5rem;
+        .faq-item h4 {
             color: #e67e22;
+            margin-bottom: .8rem;
         }
-        .video-info p {
-            color: #666;
-            font-size: .9rem;
-        }
-        
-        .cta-box {
-            background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
-            color: white;
-            border-radius: 30px;
-            padding: 2.5rem;
-            text-align: center;
-            margin: 3rem 0;
-        }
-        .cta-box h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        .cta-box p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 1.5rem;
-        }
-        .btn-cta {
-            background: white;
-            color: #e67e22;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            display: inline-block;
-            transition: transform .2s;
-        }
-        .btn-cta:hover { transform: scale(1.05); }
         
         footer {
             background: #1e1e1e;
@@ -431,20 +421,12 @@
 <!-- ======================================== -->
 <!-- NAVIGATION UNIQUE LCDMH (NE PAS MODIFIER) -->
 <!-- ======================================== -->
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH -->
-<!-- ======================================== -->
 <div id="lcdmh-nav-container"></div>
 <script>
 (function() {
-    // URL absolue vers nav.html sur GitHub
-    const navUrl = 'https://yvesbali.github.io/nav.html?t=' + Date.now();
-    
-    fetch(navUrl)
-        .then(response => {
-            if (!response.ok) throw new Error('HTTP error ' + response.status);
-            return response.text();
-        })
+    // Charger la navigation depuis nav.html (chemin relatif)
+    fetch('nav.html?t=' + Date.now())
+        .then(response => response.text())
         .then(html => {
             document.getElementById('lcdmh-nav-container').innerHTML = html;
             
@@ -459,14 +441,12 @@
         })
         .catch(err => {
             console.error('❌ Navigation non chargée:', err);
+            // Fallback ultra minimal
             document.getElementById('lcdmh-nav-container').innerHTML = 
-                '<div style="background:#e67e22;color:white;padding:1rem;text-align:center;">' +
-                '⚠️ Menu temporairement indisponible - <a href="index.html" style="color:white;font-weight:bold;">Accueil</a>' +
-                '</div>';
+                '<nav style="background:#fff;padding:1rem;"><a href="index.html" style="color:#e67e22;font-weight:bold;font-size:1.5rem;">LCDMH</a></nav>';
         });
 })();
 </script>
-<!-- ======================================== -->
 <!-- ======================================== -->
 
 <!-- Navigation -->
@@ -483,203 +463,180 @@
 <section class="hero">
     <div class="hero-image"></div>
     <div class="hero-content">
-        <h1>SÉCURITÉ <span>À MOTO</span></h1>
-        <p>Conseils, formations et équipements pour rouler en toute sécurité.</p>
+        <h1>INTERCOMS <span>MOTO</span></h1>
+        <p>Tests et avis terrain sur les intercoms Sena et Cardo : qualité sonore, autonomie, compatibilité.</p>
     </div>
 </section>
 
-<!-- Introduction -->
+<!-- Contenu principal -->
 <div class="container">
+    <!-- Introduction -->
     <div class="intro-box">
         <p style="font-size: 1.1rem; color: #666;">
-            Après plus de 72 000 km sur les routes d'Europe, j'ai appris que la sécurité ne se limite pas à l'équipement.
-            C'est une combinaison de bonnes pratiques, d'anticipation, de technique de pilotage et de visibilité.
-            J'ai eu la chance de participer à des formations avec la gendarmerie et des instructeurs professionnels.
-            Voici ce que j'ai appris et que je mets en pratique chaque jour.
+            Depuis mes premiers road trips, l'intercom est devenu un accessoire indispensable : 
+            écouter la musique, passer des appels, communiquer entre motards, ou même recevoir 
+            les instructions du GPS. J'ai testé plusieurs modèles Sena et Cardo sur des milliers 
+            de kilomètres, sous la pluie, dans le vent, en groupe ou en solo. Voici mes retours 
+            d'expérience détaillés.
         </p>
     </div>
 
-    <!-- Section TRAJECTOIRES DE SÉCURITÉ -->
+    <!-- Section SENA -->
     <div class="section-title">
-        <h2>TRAJECTOIRES DE SÉCURITÉ</h2>
+        <h2>SENA : MES TESTS</h2>
         <div class="bar"></div>
     </div>
-    <div class="tips-grid">
-        <!-- Virage -->
-        <div class="tip-card">
-            <div class="tip-header">
-                <h3>Bien prendre un virage</h3>
-                <div class="badge">Technique</div>
+    <div class="intercom-grid">
+        <!-- Sena 60S -->
+        <div class="intercom-card">
+            <div class="card-header">
+                <h3>Sena 60S</h3>
+                <div class="badge">Haut-parleurs Harman Kardon</div>
             </div>
-            <div class="tip-content">
+            <div class="card-content">
                 <ul>
-                    <li>✅ Ralentissez avant le virage, pas dans le virage</li>
-                    <li>✅ Regardez le plus loin possible (là où vous voulez aller)</li>
-                    <li>✅ Positionnez-vous à l'extérieur du virage à l'entrée</li>
-                    <li>✅ Accélérez progressivement en sortie</li>
-                    <li>⚠️ Évitez de freiner en courbe</li>
+                    <li>🎧 Qualité audio : excellente (basses présentes)</li>
+                    <li>🔋 Autonomie réelle : 10-12h (mixte)</li>
+                    <li>📱 Bluetooth 5.0, connexion stable</li>
+                    <li>👥 Jusqu'à 4 pilotes en intercom</li>
+                    <li>🌧️ Étanchéité : résiste à la pluie</li>
+                    <li>🎤 Micro anti-vent efficace</li>
                 </ul>
             </div>
-            <div class="tip-footer">
-                <a href="https://youtu.be/KGfovxM_Q7w" class="btn" target="_blank" rel="noopener">Voir la formation</a>
+            <div class="card-footer">
+                <span>Testé sur 5 000 km</span>
+                <a href="https://youtu.be/PNlKbmWrKjY" class="btn" target="_blank" rel="noopener noreferrer">Voir la vidéo</a>
             </div>
         </div>
 
-        <!-- Freinage d'urgence (texte uniquement) -->
-        <div class="tip-card">
-            <div class="tip-header">
-                <h3>Freinage d'urgence</h3>
-                <div class="badge">Survie</div>
+        <!-- Sena 50S -->
+        <div class="intercom-card">
+            <div class="card-header">
+                <h3>Sena 50S</h3>
+                <div class="badge">Mesh 2.0</div>
             </div>
-            <div class="tip-content">
+            <div class="card-content">
                 <ul>
-                    <li>✅ Serrez fermement le frein avant (80% de la puissance)</li>
-                    <li>✅ Frein arrière en complément (20%)</li>
-                    <li>✅ Gardez la moto droite</li>
-                    <li>✅ Relâchez progressivement en fin de freinage</li>
-                    <li>⚠️ Entraînez-vous sur parking sécurisé</li>
+                    <li>🎧 Qualité audio : très bonne (Harman Kardon)</li>
+                    <li>🔋 Autonomie : 12h (mesh), 14h (Bluetooth)</li>
+                    <li>📶 Mesh 2.0 intercom : connexion instantanée</li>
+                    <li>👥 Jusqu'à 24 pilotes en réseau Mesh</li>
+                    <li>📻 Radio FM intégrée</li>
+                    <li>✅ Idéal pour les grands groupes</li>
                 </ul>
             </div>
-            <div class="tip-footer">
-                <span style="color: #666; font-style: italic;">Entraînement personnel recommandé</span>
-            </div>
-        </div>
-
-        <!-- Regard et anticipation -->
-        <div class="tip-card">
-            <div class="tip-header">
-                <h3>Regard & anticipation</h3>
-                <div class="badge">Clé</div>
-            </div>
-            <div class="tip-content">
-                <ul>
-                    <li>✅ Regardez toujours là où vous voulez aller</li>
-                    <li>✅ Anticipez les trajectoires des autres véhicules</li>
-                    <li>✅ Scannez les intersections, les sorties de garage</li>
-                    <li>✅ Gardez une distance de sécurité suffisante</li>
-                </ul>
-            </div>
-            <div class="tip-footer">
-                <a href="https://youtu.be/mqrxymLts_0" class="btn" target="_blank" rel="noopener">Voir la vidéo</a>
+            <div class="card-footer">
+                <span>Test disponible</span>
+                <a href="https://www.youtube.com/watch?v=XXX" class="btn" target="_blank" rel="noopener noreferrer">Voir la vidéo</a>
             </div>
         </div>
     </div>
 
-    <!-- Section ÉQUIPEMENT DE SÉCURITÉ -->
+    <!-- Section CARDO -->
     <div class="section-title">
-        <h2>ÉQUIPEMENT DE SÉCURITÉ</h2>
+        <h2>CARDO : À VENIR</h2>
         <div class="bar"></div>
     </div>
-    <div class="tips-grid">
-        <!-- Casque -->
-        <div class="tip-card">
-            <div class="tip-header">
-                <h3>Casque</h3>
-                <div class="badge">Indispensable</div>
-            </div>
-            <div class="tip-content">
-                <ul>
-                    <li>✅ Homologué (ECE 22.06)</li>
-                    <li>✅ Bien ajusté, pas trop lâche</li>
-                    <li>✅ Visière claire pour la nuit</li>
-                    <li>✅ Remplacez-le après un choc</li>
-                </ul>
-            </div>
-            <div class="tip-footer">
-                <a href="tests-motos.html" class="btn">Voir les tests</a>
-            </div>
-        </div>
-
-        <!-- Gants (texte uniquement) -->
-        <div class="tip-card">
-            <div class="tip-header">
-                <h3>Gants</h3>
-                <div class="badge">Protection</div>
-            </div>
-            <div class="tip-content">
-                <ul>
-                    <li>✅ Avec coques de protection</li>
-                    <li>✅ Adaptés à la saison</li>
-                    <li>✅ Bonne préhension des commandes</li>
-                    <li>✅ Renforcés au niveau des paumes</li>
-                </ul>
-            </div>
-            <div class="tip-footer">
-                <span style="color: #666; font-style: italic;">Équipement de base essentiel</span>
-            </div>
-        </div>
-
-        <!-- Gilet airbag (texte uniquement) -->
-        <div class="tip-card">
-            <div class="tip-header">
-                <h3>Gilet airbag</h3>
-                <div class="badge">Protection active</div>
-            </div>
-            <div class="tip-content">
-                <ul>
-                    <li>✅ Protection cervicale et dorsale</li>
-                    <li>✅ Déclenchement en cas de chute</li>
-                    <li>✅ De plus en plus abordable</li>
-                    <li>✅ Recommandé pour la route</li>
-                </ul>
-            </div>
-            <div class="tip-footer">
-                <span style="color: #666; font-style: italic;">Investissement sécurité</span>
-            </div>
-        </div>
+    <div style="background: white; border-radius: 15px; padding: 2rem; margin: 2rem 0; border: 1px solid #e0e0e0; text-align: center;">
+        <p style="font-style: italic; color: #666;">
+            Des tests Cardo sont prévus prochainement (Packtalk Edge, Packtalk Bold). 
+            Je vous partagerai mon avis sur la qualité audio, la portée du Mesh, 
+            et la compatibilité avec les GPS moto.
+        </p>
     </div>
 
-    <!-- Vidéos formation avec MINIATURES -->
+    <!-- Section COMPARATIF -->
     <div class="section-title">
-        <h2>MES VIDÉOS FORMATION</h2>
+        <h2>COMPARATIF RAPIDE</h2>
         <div class="bar"></div>
     </div>
-    <div class="video-grid">
-        <!-- Trajectoires avec Gendarmerie -->
-        <div class="video-card" onclick="window.open('https://youtu.be/KGfovxM_Q7w', '_blank')">
-            <div class="video-thumb">
-                <img src="https://img.youtube.com/vi/KGfovxM_Q7w/hqdefault.jpg" alt="Formation trajectoires de sécurité">
-            </div>
-            <div class="video-info">
-                <h4>Formation trajectoires de sécurité</h4>
-                <p>Une journée d'entraînement avec un motard gendarme pour apprendre les bonnes trajectoires.</p>
-            </div>
+    <div class="comparatif-box">
+        <table>
+            <tr>
+                <th>Modèle</th>
+                <th>Qualité audio</th>
+                <th>Autonomie</th>
+                <th>Technologie</th>
+                <th>Nombre pilotes</th>
+                <th>Prix indicatif</th>
+            </tr>
+            <tr>
+                <td><strong>Sena 60S</strong></td>
+                <td>⭐⭐⭐⭐⭐</td>
+                <td>10-12h</td>
+                <td>Bluetooth 5.0</td>
+                <td>4</td>
+                <td>≈ 250€</td>
+            </tr>
+            <tr>
+                <td><strong>Sena 50S</strong></td>
+                <td>⭐⭐⭐⭐</td>
+                <td>12-14h</td>
+                <td>Mesh 2.0 + BT</td>
+                <td>24</td>
+                <td>≈ 350€</td>
+            </tr>
+            <tr>
+                <td><strong>Cardo Packtalk Edge</strong></td>
+                <td>⭐⭐⭐⭐⭐</td>
+                <td>13h</td>
+                <td>Mesh DMC</td>
+                <td>15</td>
+                <td>≈ 380€</td>
+            </tr>
+            <tr>
+                <td><strong>Cardo Packtalk Bold</strong></td>
+                <td>⭐⭐⭐⭐</td>
+                <td>13h</td>
+                <td>Mesh DMC</td>
+                <td>15</td>
+                <td>≈ 330€</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Conseils d'utilisation -->
+    <div class="tip-box">
+        <h3 style="color: #e67e22; margin-bottom: 1rem;">💡 Mes conseils pour bien utiliser votre intercom</h3>
+        <ul style="color: #666; margin-left: 1.5rem;">
+            <li>Mettez à jour le firmware avant un long road trip</li>
+            <li>Positionnez correctement les haut-parleurs dans le casque</li>
+            <li>Utilisez un micro externe pour un meilleur son (si disponible)</li>
+            <li>En groupe, privilégiez le mode Mesh pour une connexion stable</li>
+            <li>Prévoyez une batterie externe pour les longs trajets</li>
+            <li>Désactivez le WiFi en voyage pour économiser la batterie</li>
+        </ul>
+    </div>
+
+    <!-- Section FAQ -->
+    <div class="section-title">
+        <h2>FAQ INTERCOMS</h2>
+        <div class="bar"></div>
+    </div>
+    <div class="faq-grid">
+        <div class="faq-item">
+            <h4>Quelle est la portée réelle d'un intercom ?</h4>
+            <p>En Bluetooth : 800m à 1km en champ libre. En Mesh : la portée s'étend de proche en proche, jusqu'à 5-8 km en groupe.</p>
         </div>
-        
-        <!-- Virages débutant -->
-        <div class="video-card" onclick="window.open('https://youtu.be/mqrxymLts_0', '_blank')">
-            <div class="video-thumb">
-                <img src="https://img.youtube.com/vi/mqrxymLts_0/hqdefault.jpg" alt="Virages Moto Débutant">
-            </div>
-            <div class="video-info">
-                <h4>Virages Moto Débutant</h4>
-                <p>Le secret pour maîtriser sa trajectoire et prendre confiance en courbe.</p>
-            </div>
+        <div class="faq-item">
+            <h4>Puis-je écouter mon GPS et parler en même temps ?</h4>
+            <p>Oui, la plupart des intercoms gèrent le mixage audio (music + intercom). Vérifiez la compatibilité avec votre GPS.</p>
         </div>
-        
-        <!-- Équilibre basse vitesse -->
-        <div class="video-card" onclick="window.open('https://youtu.be/f2Le-gDPWh4', '_blank')">
-            <div class="video-thumb">
-                <img src="https://img.youtube.com/vi/f2Le-gDPWh4/hqdefault.jpg" alt="Maîtrisez le lent">
-            </div>
-            <div class="video-info">
-                <h4>Maîtrisez le lent</h4>
-                <p>Exercices pour améliorer votre équilibre à basse vitesse et éviter les chutes.</p>
-            </div>
+        <div class="faq-item">
+            <h4>Sena ou Cardo : que choisir ?</h4>
+            <p>Sena est plus intuitif, Cardo a un Mesh plus robuste. Les deux sont excellents. Le choix dépend de votre groupe de motards.</p>
+        </div>
+        <div class="faq-item">
+            <h4>L'intercom résiste-t-il à la pluie ?</h4>
+            <p>Oui, tous les modèles récents sont étanches (norme IP67 ou équivalent). J'ai roulé sous des orages sans problème.</p>
         </div>
     </div>
 
-    <!-- CTA -->
-    <div class="cta-box">
-        <h3>💰 Équipez-vous en toute sécurité</h3>
-        <p>Retrouvez mes tests d'équipements et les codes promo exclusifs pour vous protéger sans vous ruiner.</p>
-        <a href="codes-promo.html" class="btn-cta">Voir les codes promo</a>
-    </div>
-
-    <!-- Note -->
+    <!-- Note sur les codes promo -->
     <div style="background: #f8f9fa; border-left: 4px solid #e67e22; padding: 1.5rem; margin: 2rem 0;">
         <p style="color: #666;">
-            🏍️ <strong>Rappel important :</strong> La sécurité n'a pas de prix. Un bon équipement et une formation régulière sont les meilleurs investissements pour profiter pleinement de la route.
+            💡 Des codes promo Sena et Cardo sont disponibles sur la page 
+            <a href="codes-promo.html" style="color: #e67e22; font-weight: 600;">Codes promo</a>.
         </p>
     </div>
 </div>
@@ -723,4 +680,4 @@
 </footer>
 </body>
 </html>
-<!-- FIN DU FICHIER : securite.html -->
+<!-- FIN DU FICHIER : intercoms.html -->

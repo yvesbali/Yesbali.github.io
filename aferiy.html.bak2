@@ -315,20 +315,12 @@
 <!-- ======================================== -->
 <!-- NAVIGATION UNIQUE LCDMH (NE PAS MODIFIER) -->
 <!-- ======================================== -->
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH -->
-<!-- ======================================== -->
 <div id="lcdmh-nav-container"></div>
 <script>
 (function() {
-    // URL absolue vers nav.html sur GitHub
-    const navUrl = 'https://yvesbali.github.io/nav.html?t=' + Date.now();
-    
-    fetch(navUrl)
-        .then(response => {
-            if (!response.ok) throw new Error('HTTP error ' + response.status);
-            return response.text();
-        })
+    // Charger la navigation depuis nav.html (chemin relatif)
+    fetch('nav.html?t=' + Date.now())
+        .then(response => response.text())
         .then(html => {
             document.getElementById('lcdmh-nav-container').innerHTML = html;
             
@@ -343,14 +335,12 @@
         })
         .catch(err => {
             console.error('❌ Navigation non chargée:', err);
+            // Fallback ultra minimal
             document.getElementById('lcdmh-nav-container').innerHTML = 
-                '<div style="background:#e67e22;color:white;padding:1rem;text-align:center;">' +
-                '⚠️ Menu temporairement indisponible - <a href="index.html" style="color:white;font-weight:bold;">Accueil</a>' +
-                '</div>';
+                '<nav style="background:#fff;padding:1rem;"><a href="index.html" style="color:#e67e22;font-weight:bold;font-size:1.5rem;">LCDMH</a></nav>';
         });
 })();
 </script>
-<!-- ======================================== -->
 <!-- ======================================== -->
 
 <!-- ======================================== -->
