@@ -21,6 +21,7 @@
 
   function injectStyles() {
     if (document.getElementById(STYLES_ID)) return;
+
     const style = document.createElement('style');
     style.id = STYLES_ID;
     style.textContent = `
@@ -33,15 +34,21 @@
       .lcdmh-rb-actions{display:flex;flex-wrap:wrap;gap:12px}
       .lcdmh-rb-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 18px;border-radius:999px;font:700 .92rem/1 Inter,Arial,sans-serif;text-decoration:none;transition:transform .15s ease,opacity .15s ease,box-shadow .15s ease;white-space:nowrap;box-shadow:0 3px 10px rgba(0,0,0,.08)}
       .lcdmh-rb-btn:hover{opacity:.96;transform:translateY(-1px)}
-      .lcdmh-rb-btn--gpx{background:#e67e22;color:#fff}
+      .lcdmh-rb-btn--trace{background:#e67e22;color:#fff}
       .lcdmh-rb-btn--pdf{background:#24384d;color:#fff}
       .lcdmh-rb-qr{flex:0 0 168px;min-width:140px;text-align:center}
       .lcdmh-rb-qrbox{background:#fff;border:2px dashed #e67e22;border-radius:14px;padding:12px}
       .lcdmh-rb-qrlabel{font:800 .72rem/1.2 Inter,Arial,sans-serif;color:#24384d;margin-bottom:6px}
       .lcdmh-rb-qr img{width:110px;height:110px;object-fit:contain;margin:0 auto 6px;display:block;border-radius:8px;background:#fff}
       .lcdmh-rb-qrsmall{font:600 .68rem/1.2 Inter,Arial,sans-serif;color:#777}
-      .lcdmh-rb-note{font:600 .74rem/1.3 Inter,Arial,sans-serif;color:#8a8a8a;margin-top:10px}
-      @media (max-width:720px){.lcdmh-rb-wrap{padding:0 4%}.lcdmh-rb-box{padding:18px}.lcdmh-rb-actions{flex-direction:column}.lcdmh-rb-btn{width:100%}.lcdmh-rb-qr{flex-basis:100%}}
+      .lcdmh-rb-note{font:600 .74rem/1.35 Inter,Arial,sans-serif;color:#8a8a8a;margin-top:12px}
+      @media (max-width:720px){
+        .lcdmh-rb-wrap{padding:0 4%}
+        .lcdmh-rb-box{padding:18px}
+        .lcdmh-rb-actions{flex-direction:column}
+        .lcdmh-rb-btn{width:100%}
+        .lcdmh-rb-qr{flex-basis:100%}
+      }
     `;
     document.head.appendChild(style);
   }
@@ -67,9 +74,7 @@
   }
 
   function ensureContainer() {
-    let container = document.getElementById(WIDGET_ID);
-    if (container) return container;
-    return null;
+    return document.getElementById(WIDGET_ID);
   }
 
   function renderTrip(container, trip) {
@@ -79,22 +84,56 @@
     const box = document.createElement('div');
     box.className = 'lcdmh-rb-box';
 
+    const introText =
+      trip.description ||
+      'Télécharge la trace Kurviger, le roadbook PDF et scanne le QR code pour récupérer rapidement les ressources de ce road trip.';
+
+    const traceLabel =
+      trip.trace_label ||
+      'Télécharger la trace Kurviger';
+
+    const noteText =
+      trip.note ||
+      'Note : la trace Kurviger et le roadbook PDF correspondent à la base du road trip réellement effectué. Selon la météo, l’état des routes, les imprévus, la fatigue ou la condition physique, l’itinéraire réel peut avoir légèrement varié.';
+
     const main = document.createElement('div');
     main.className = 'lcdmh-rb-main';
     main.innerHTML =
       '<div class="lcdmh-rb-kicker">📥 Ressources du voyage</div>' +
       '<div class="lcdmh-rb-title">' + escapeHtml(trip.titre || '') + '</div>' +
-      '<div class="lcdmh-rb-text">Télécharge la trace GPX, le roadbook PDF et scanne le QR code pour récupérer rapidement les ressources de ce road trip.</div>';
+      '<div class="lcdmh-rb-text">' + escapeHtml(introText) + '</div>';
 
     const actions = document.createElement('div');
     actions.className = 'lcdmh-rb-actions';
-    if (trip.gpx) actions.appendChild(createButton(trip.gpx, 'lcdmh-rb-btn--gpx', '🗺️', 'Télécharger la trace GPX'));
-    if (trip.roadbook) actions.appendChild(createButton(trip.roadbook, 'lcdmh-rb-btn--pdf', '📖', trip.roadbook_nom || 'Télécharger le roadbook PDF'));
+
+    if (trip.gpx) {
+      actions.appendChild(
+        createButton(trip.gpx, 'lcdmh-rb-btn--trace', '🗺️', traceLabel)
+      );
+    }
+
+    if (trip.roadbook) {
+      actions.appendChild(
+        createButton(
+          trip.roadbook,
+          'lcdmh-rb-btn--pdf',
+          '📖',
+          trip.roadbook_nom || 'Télécharger le roadbook PDF'
+        )
+      );
+    }
 
     if (!actions.children.length) return;
 
     main.appendChild(actions);
-    main.insertAdjacentHTML('beforeend', '<div class="lcdmh-rb-note">Astuce : enregistre le GPX sur ton téléphone avant de partir.</div>');
+
+    if (noteText) {
+      main.insertAdjacentHTML(
+        'beforeend',
+        '<div class="lcdmh-rb-note">' + escapeHtml(noteText) + '</div>'
+      );
+    }
+
     box.appendChild(main);
 
     if (trip.qr_code) {
@@ -115,30 +154,37 @@
 
   async function loadRoadbooksData() {
     let lastError = null;
+
     for (const url of DATA_SOURCES) {
       try {
         const response = await fetch(url, { cache: 'no-store' });
-        if (!response.ok) throw new Error('HTTP ' + response.status + ' sur ' + url);
+        if (!response.ok) {
+          throw new Error('HTTP ' + response.status + ' sur ' + url);
+        }
         return await response.json();
       } catch (err) {
         lastError = err;
       }
     }
+
     throw lastError || new Error('Impossible de charger roadbooks.json');
   }
 
   async function init() {
     const container = ensureContainer();
     if (!container) return;
+
     injectStyles();
 
     try {
       const data = await loadRoadbooksData();
       const current = getCurrentPageName();
       const trips = Array.isArray(data.trips) ? data.trips : [];
+
       const trip = trips.find(function (item) {
         return item && item.actif !== false && normalizePage(item.page) === current;
       });
+
       if (!trip) return;
       renderTrip(container, trip);
     } catch (err) {
