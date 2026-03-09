@@ -3,563 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - LCDMH - La Chaîne Du Motard Heureux</title>
-    <meta name="description" content="Une question, un partenariat ? Contactez Yves de LCDMH -- La Chaîne Du Motard Heureux. Email, réseaux, retrouvez-moi depuis Annecy.">
-    <meta name="keywords" content="contact LCDMH, contacter Yves, partenariat moto, email LCDMH">
-    <meta name="author" content="Yves - LCDMH">
-    <meta property="og:title" content="Contact - LCDMH">
-    <meta property="og:description" content="Contactez Yves de LCDMH pour toute question ou partenariat.">
+    <title>Contact – LCDMH | La Chaîne du Motard Heureux</title>
+    <meta name="description" content="Contactez Yves de LCDMH : questions sur les road trips, partenariats, codes promo, suggestions de vidéos.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lcdmh.com/contact.html">
+    
+    <meta property="og:title" content="Contact – LCDMH">
+    <meta property="og:description" content="Une question ? Un projet ? Contactez-moi directement.">
     <meta property="og:url" content="https://lcdmh.com/contact.html">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="LCDMH">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=2070">
-    <link rel="canonical" href="https://lcdmh.com/contact.html">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: "Inter", sans-serif; background: #f5f5f5; color: #1e1e1e; line-height: 1.6; }
-        h1,h2,h3,h4,h5,h6 { font-family: "Montserrat", sans-serif; font-weight: 600; }
-        a { text-decoration: none; color: inherit; }
+        :root{
+            --orange:#e67e22;
+            --orange-dark:#d35400;
+            --noir:#1a1a1a;
+            --bg:#f7f7f5;
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--noir); line-height: 1.7; }
+        h1, h2 { font-family: 'Montserrat', sans-serif; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 5%; }
         
-        /* Navigation */
         nav {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            padding: 1rem 5%;
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(0,0,0,.07);
+            padding: 0 4%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             position: sticky;
             top: 0;
             z-index: 100;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: .5rem;
         }
-        .logo a {
-            font-family: "Montserrat", sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1e1e1e;
-        }
-        .logo span { color: #e67e22; }
+        .logo { font-family: 'Montserrat', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--noir); }
+        .logo span { color: var(--orange); }
         .nav-links {
             display: flex;
-            gap: 1.4rem;
+            gap: 1.5rem;
             list-style: none;
-            flex-wrap: wrap;
-            align-items: center;
         }
         .nav-links a {
-            font-weight: 500;
-            color: #1e1e1e;
-            transition: color .2s;
-            font-size: .9rem;
+            font-size: .85rem;
+            font-weight: 600;
+            color: #777;
+            text-transform: uppercase;
+            text-decoration: none;
         }
         .nav-links a:hover,
-        .nav-links a.active { color: #e67e22; }
-        .nav-yt {
-            background: #e67e22;
-            color: white !important;
-            padding: .5rem 1.2rem;
-            border-radius: 50px;
-            font-weight: 600 !important;
+        .nav-links a.active {
+            color: var(--orange);
         }
-        .nav-yt:hover { background: #d35400; }
-        .nav-yt-icon {
-            background: #ff0000;
-            color: white !important;
-            padding: .5rem 1.2rem;
-            border-radius: 50px;
-            font-weight: 600 !important;
-        }
-        .nav-yt-icon:hover { background: #cc0000; }
-        .menu-toggle { display: none; }
         
-        /* Menu responsive */
-        .has-drop { position: relative; }
-        .has-drop > a::after {
-            content: '▾';
-            font-size: 0.6rem;
-            opacity: 0.7;
-            margin-left: 0.2rem;
+        .hero-small {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 60px 6%;
+            text-align: center;
         }
-        .dropdown {
-            display: none;
-            position: absolute;
-            top: calc(100% + 6px);
-            left: 0;
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            box-shadow: 0 8px 28px rgba(0,0,0,.12);
-            min-width: 220px;
-            padding: .5rem 0;
-            z-index: 999;
+        .hero-small h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
         }
-        .has-drop:hover .dropdown { display: block; }
-        .dropdown a {
+        
+        .contact-form {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
             display: block;
-            padding: .52rem 1.1rem;
-            font-size: .8rem;
-            color: #1e1e1e;
-            font-weight: 500;
-            transition: background .15s, color .15s;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
         }
-        .dropdown a:hover { background: #fff8f2; color: #e67e22; }
-        
-        @media (max-width: 900px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: white;
-                padding: 1rem 0;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-                z-index: 1000;
-                gap: 0;
-            }
-            .nav-links.active { display: flex; }
-            .nav-links li { width: 100%; text-align: center; }
-            .nav-links a {
-                display: block;
-                padding: 1rem !important;
-                width: 100%;
-                white-space: normal !important;
-            }
-            .has-drop { position: static; }
-            .dropdown {
-                position: static;
-                width: 100%;
-                box-shadow: none;
-                border: none;
-                border-top: 1px solid #e0e0e0;
-                border-bottom: 1px solid #e0e0e0;
-                margin: 0.5rem 0;
-            }
-            .menu-toggle { display: block; font-size: 2rem; background: none; border: none; cursor: pointer; }
-            nav { flex-wrap: wrap; height: auto; min-height: 70px; padding: 0.5rem 4%; }
-            .desktop-only { display: none; }
-            .mobile-only { display: block; }
+        input, textarea, select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #e5e5e5;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.2s;
         }
-        @media (min-width: 901px) { .mobile-only { display: none !important; } }
+        input:focus, textarea:focus, select:focus {
+            border-color: var(--orange);
+            outline: none;
+        }
+        button {
+            background: var(--orange);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: var(--orange-dark);
+        }
         
-        /* Hero avec parallaxe */
-        .hero {
-            position: relative;
-            min-height: 60vh;
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .social-link {
+            background: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            color: white;
-            overflow: hidden;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=2070') center/cover no-repeat fixed;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
         }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 2rem;
-            text-shadow: 0 2px 15px rgba(0,0,0,0.5);
-        }
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            margin-bottom: 1rem;
-        }
-        .hero h1 span { color: #e67e22; }
-        .hero p {
-            font-size: 1.1rem;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 5%;
-        }
-        
-        /* Section contact simplifiée */
-        .contact-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin: 3rem 0;
-            align-items: center;
-        }
-        
-        .contact-image img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            transition: transform .3s;
-        }
-        .contact-image img:hover {
-            transform: scale(1.02);
-        }
-        
-        .contact-info {
-            background: white;
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 1px solid #e0e0e0;
-        }
-        .contact-info h2 {
-            color: #e67e22;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        .info-item {
-            margin-bottom: 1.8rem;
-        }
-        .info-item strong {
-            display: block;
-            font-size: 1.1rem;
-            margin-bottom: .5rem;
-            color: #333;
-        }
-        .info-item a {
-            color: #e67e22;
-            font-weight: 500;
-        }
-        .info-item a:hover {
-            text-decoration: underline;
-        }
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 0.5rem;
-        }
-        .social-links a {
-            display: inline-block;
-            background: #f0f0f0;
-            padding: .5rem 1.2rem;
-            border-radius: 50px;
-            transition: all .2s;
-            font-weight: 500;
-        }
-        .social-links a:hover {
-            background: #e67e22;
-            color: white;
-        }
-        
-        .quote {
-            font-style: italic;
-            color: #666;
-            border-left: 4px solid #e67e22;
-            padding-left: 1.5rem;
-            margin: 2rem 0;
+        .social-link:hover {
+            transform: translateY(-5px);
         }
         
         footer {
-            background: #1e1e1e;
-            color: white;
-            padding: 3rem 5%;
-            margin-top: 4rem;
-        }
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-        }
-        .footer-col h4 {
-            color: white;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-        .footer-col p {
-            color: #aaa;
-            font-size: .9rem;
-            line-height: 1.7;
-        }
-        .footer-col ul {
-            list-style: none;
-        }
-        .footer-col li {
-            margin-bottom: .5rem;
-        }
-        .footer-col a {
-            color: #aaa;
-            transition: color .2s;
-            font-size: .9rem;
-        }
-        .footer-col a:hover {
-            color: #e67e22;
-        }
-        .copyright {
+            background: var(--noir);
+            color: rgba(255,255,255,.65);
+            padding: 3rem 6%;
             text-align: center;
-            padding-top: 2rem;
-            margin-top: 2rem;
-            border-top: 1px solid #333;
-            color: #aaa;
-            font-size: .85rem;
         }
-        
-        @media(max-width: 768px) {
-            .contact-section {
-                grid-template-columns: 1fr;
-            }
-            nav {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .nav-links {
-                justify-content: center;
-                gap: .8rem;
-            }
-        }
-    
-        /* === NAVIGATION === */
-        nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.07);padding:0 4%;height:70px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1000}
-        .logo{font-size:1.45rem;font-weight:900;color:#1a1a2e;text-decoration:none;letter-spacing:-.03em}
-        .logo span{color:#e67e22}
-        .nav-links{display:flex;gap:.5rem 1rem;list-style:none;align-items:center;flex-wrap:wrap;justify-content:flex-end;margin:0;padding:0}
-        .nav-links a{font-size:.78rem;font-weight:600;color:#555;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;white-space:nowrap;padding:.3rem .4rem;transition:color .2s}
-        .nav-links a:hover,.nav-links a.active{color:#e67e22}
-        .nav-links .nav-yt{background:#e67e22;color:#fff!important;padding:.4rem 1rem;border-radius:30px;font-weight:700}
-        .nav-links .nav-yt:hover{background:#cf6d17}
-        .nav-links .nav-yt-icon{background:#ff0000;color:#fff!important;padding:.4rem .8rem;border-radius:6px;font-weight:700;font-size:.75rem}
-        .has-drop{position:relative}
-        .has-drop>a::after{content:' ▾';font-size:.65rem;opacity:.6}
-        .dropdown{display:none;position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1px solid #e8e8e8;border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.12);min-width:200px;padding:.5rem 0;z-index:9999}
-        .dropdown a{display:block;padding:.52rem 1.1rem;font-size:.8rem;color:#1a1a2e!important;font-weight:500;white-space:nowrap;text-transform:none;letter-spacing:normal}
-        .dropdown a:hover{background:#fff8f2;color:#e67e22!important}
-        .nav-last-video{display:inline-flex;align-items:center;gap:.4rem;background:#fff3e0;border:1px solid #f0a500;border-radius:20px;padding:.3rem .8rem;font-size:.72rem!important;font-weight:700!important;color:#e67e22!important;text-transform:none!important;letter-spacing:normal!important;white-space:nowrap;animation:pulse-badge 2.5s infinite}
-        @keyframes pulse-badge{0%,100%{box-shadow:0 0 0 0 rgba(230,126,34,.35)}50%{box-shadow:0 0 0 5px rgba(230,126,34,0)}}
-        .nav-last-video .dot{width:7px;height:7px;background:#e74c3c;border-radius:50%;animation:blink 1.2s infinite}
-        @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-        .nav-last-video .label-new{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
-        .menu-toggle{display:none;font-size:1.8rem;cursor:pointer;background:none;border:none;color:#1a1a2e;padding:.5rem}
-        @media(max-width:900px){
-            .nav-links{display:none;flex-direction:column;position:absolute;top:70px;left:0;width:100%;background:#fff;padding:1rem 0;box-shadow:0 10px 20px rgba(0,0,0,.1);z-index:1000;gap:0;align-items:stretch}
-            .nav-links.active{display:flex}
-            .nav-links li{width:100%;text-align:center}
-            .nav-links a{display:block;padding:1rem!important;font-size:.95rem}
-            .has-drop>a::after{display:none}
-            .dropdown{position:static;width:100%;box-shadow:none;border:none;border-top:1px solid #e8e8e8;border-radius:0;padding:0;background:#fafafa}
-            .menu-toggle{display:block}
-            .nav-links .nav-yt,.nav-links .nav-yt-icon{margin:.5rem auto;display:inline-block;width:auto}
-            .desktop-only{display:none!important}
-        }
-        @media(min-width:901px){.mobile-only{display:none!important}}
-        /* === FIN NAVIGATION === */
-        </style>
+    </style>
 </head>
 <body>
 
-<!-- Navigation -->
-<nav id="lcdmh-nav">
+<nav>
     <a href="index.html" class="logo">LC<span>D</span>MH</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
-    <ul class="nav-links" id="navLinks">
-
+    <ul class="nav-links">
         <li><a href="index.html">Accueil</a></li>
-
-        <li class="has-drop">
-            <a href="roadtrips.html">Road Trips</a>
-            <div class="dropdown">
-                <a href="roadtrips.html">Tous les road trips</a>
-                <a href="cap-nord-moto.html"                style="color:#e67e22;font-weight:700;">🏔️ Cap Nord 2025</a>
-                <a href="europe-asie-moto.html"             style="color:#e67e22;font-weight:700;">🌍 Europe–Asie 2024</a>
-                <a href="alpes-aventure-festival-moto.html" style="color:#e67e22;font-weight:700;">🏔️ Alpes Festival 2025</a>
-                <div style="border-top:1px solid #e0e0e0;margin:5px 0;"></div>
-                <a href="roadtrips.html#espagne">Espagne 2023</a>
-                <a href="roadtrips.html#alpes">Les Alpes</a>
-            </div>
-        </li>
-
-        <li class="has-drop">
-            <a href="#">Tests</a>
-            <div class="dropdown">
-                <a href="tests-motos.html">Tests motos</a>
-                <a href="equipement.html">Équipement</a>
-                <a href="intercoms.html">Intercoms</a>
-                <a href="pneus.html">Pneus moto</a>
-                <a href="photo-video.html">Photo / Vidéo</a>
-                <a href="securite.html">Sécurité</a>
-            </div>
-        </li>
-
-        <li class="has-drop">
-            <a href="#">GPS</a>
-            <div class="dropdown">
-                <a href="gps.html">Tous les GPS</a>
-                <a href="aoocci.html">Aoocci (GPS offline)</a>
-                <a href="carpuride.html">Carpuride (écran déporté)</a>
-                <a href="blackview.html">Blackview 📱 (téléphone renforcé)</a>
-            </div>
-        </li>
-
-        <li class="has-drop">
-            <a href="#">Partenaires</a>
-            <div class="dropdown" style="min-width:230px;">
-                <a href="codes-promo.html">💰 Tous les codes promo</a>
-                <div style="border-top:1px solid #e0e0e0;margin:5px 0;"></div>
-                <a href="komobi.html">Komobi 📍 (traceur GPS)</a>
-                <a href="aoocci.html">Aoocci 🧭 (GPS offline)</a>
-                <a href="carpuride.html">Carpuride 📺 (écran CarPlay)</a>
-                <a href="blackview.html">Blackview 📱 (téléphone renforcé)</a>
-                <a href="aferiy.html">Aferiy ⚡ (batteries bivouac)</a>
-                <a href="olight.html">Olight 🔦 (lampes frontales)</a>
-                <div style="border-top:1px solid #e0e0e0;margin:5px 0;"></div>
-                <a href="pneus.html">🔧 Pneus moto (liens affiliés)</a>
-                <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&campaign=0ac376b3-9268-4626-3ff7-08dbc4da2b3f&clickref=Youtbe&clickref2=site&ued=https%3A%2F%2Fwww.123pneus.fr%2F" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem;font-size:.75rem;">→ 123pneus.fr</a>
-                <a href="https://www.awin1.com/cread.php?awinmid=7928&awinaffid=2753560&campaign=Summer+sale+2026&clickref=Youtube&clickref2=Site&ued=https%3A%2F%2Fwww.pneus.fr%2Fpneus%2Fmoto" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem;font-size:.75rem;">→ Pneus.fr</a>
-                <a href="https://www.awin1.com/cread.php?awinmid=7403&awinaffid=2753560&ued=https%3A%2F%2Fwww.pneus-moto.fr%2F" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem;font-size:.75rem;">→ Pneus-moto.fr</a>
-            </div>
-        </li>
-
+        <li><a href="roadtrips.html">Road Trips</a></li>
+        <li><a href="tests-motos.html">Tests</a></li>
+        <li><a href="gps.html">GPS</a></li>
+        <li><a href="codes-promo.html">Codes promo</a></li>
         <li><a href="a-propos.html">À propos</a></li>
-        <li><a href="contact.html">Contact</a></li>
-
-        <li id="nav-last-video-li" class="desktop-only">
-            <a href="#" class="nav-last-video" id="nav-last-video-link" title="Voir la dernière vidéo">
-                <span class="dot"></span>
-                <span class="label-new">Nouveau</span>
-                <span class="label-title" id="nav-last-video-title">Dernière vidéo</span>
-            </a>
-        </li>
-        <li class="desktop-only"><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt">▶ S'abonner</a></li>
-        <li class="desktop-only"><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon">📺 YouTube</a></li>
-        <li class="mobile-only"><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt">▶ S'abonner</a></li>
-        <li class="mobile-only"><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon">📺 YouTube</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="https://www.youtube.com/@LCDMH" target="_blank">YouTube</a></li>
     </ul>
 </nav>
-    <script>
-    // === NAVIGATION JS (dropdown hover + mobile) ===
-    (function(){
-        var isMobile = function(){ return window.innerWidth <= 900; };
-        document.querySelectorAll('#lcdmh-nav .has-drop').forEach(function(item){
-            var dd = item.querySelector('.dropdown');
-            var timer = null;
-            // Desktop : hover avec délai 200ms (évite fermeture trop rapide)
-            item.addEventListener('mouseenter', function(){ if(!isMobile()){ clearTimeout(timer); dd.style.display='block'; }});
-            item.addEventListener('mouseleave', function(){ if(!isMobile()){ timer=setTimeout(function(){ dd.style.display=''; },200); }});
-            dd.addEventListener('mouseenter',   function(){ if(!isMobile()) clearTimeout(timer); });
-            dd.addEventListener('mouseleave',   function(){ if(!isMobile()){ timer=setTimeout(function(){ dd.style.display=''; },200); }});
-            // Mobile : clic
-            item.querySelector(':scope>a').addEventListener('click',function(e){
-                if(isMobile()){
-                    e.preventDefault();
-                    var open = dd.style.display==='block';
-                    document.querySelectorAll('#lcdmh-nav .dropdown').forEach(function(d){ d.style.display=''; });
-                    dd.style.display = open ? '' : 'block';
-                }
-            });
-        });
-        // Mobile toggle
-        document.addEventListener('DOMContentLoaded',function(){
-            var toggle = document.getElementById('menuToggle');
-            var list   = document.getElementById('navLinks');
-            if(!toggle||!list) return;
-            toggle.addEventListener('click',function(e){ e.stopPropagation(); list.classList.toggle('active'); });
-            document.addEventListener('click',function(e){
-                if(!list.contains(e.target)&&!toggle.contains(e.target)) list.classList.remove('active');
-            });
-        });
-        // Active state auto
-        var page = window.location.pathname.split('/').pop()||'index.html';
-        document.querySelectorAll('#lcdmh-nav .nav-links>li>a').forEach(function(a){
-            var h = a.getAttribute('href')||'';
-            if(h && h!='#' && page.indexOf(h.replace('.html',''))!==-1) a.classList.add('active');
-        });
-    })();
-    </script>
 
-<!-- Hero avec effet parallaxe -->
-<section class="hero">
-    <div class="hero-content">
-        <h1>CONTACT</h1>
-        <p>Une question, un partenariat, une envie d'aventure ? Échangeons ensemble.</p>
+<div class="hero-small">
+    <h1>Contact</h1>
+    <p style="max-width: 600px; margin: 1rem auto 0; opacity: 0.9;">Une question ? Une suggestion ? Parlons-en !</p>
+</div>
+
+<section class="section">
+    <div class="container">
+        
+        <div class="contact-form">
+            <form action="https://formspree.io/f/ton-id-formspree" method="POST">
+                <div class="form-group">
+                    <label>Nom / Prénom</label>
+                    <input type="text" name="name" required placeholder="Yves">
+                </div>
+                
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required placeholder="yves@lcdmh.com">
+                </div>
+                
+                <div class="form-group">
+                    <label>Sujet</label>
+                    <select name="subject">
+                        <option>Question sur un road trip</option>
+                        <option>Partenariat / Collaboration</option>
+                        <option>Code promo</option>
+                        <option>Suggestion de vidéo</option>
+                        <option>Autre</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea name="message" rows="6" required placeholder="Bonjour Yves..."></textarea>
+                </div>
+                
+                <button type="submit">Envoyer le message →</button>
+            </form>
+            <p style="text-align: center; margin-top: 1.5rem; color: #777; font-size: 0.9rem;">
+                Réponse généralement sous 24-48h.
+            </p>
+        </div>
+        
+        <div style="text-align: center; margin: 3rem 0;">
+            <h2 style="margin-bottom: 2rem;">Retrouve-moi aussi sur</h2>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@LCDMH" target="_blank" class="social-link" style="color: #FF0000;">▶️</a>
+                <a href="https://www.instagram.com/lcdmh" target="_blank" class="social-link" style="color: #E4405F;">📷</a>
+                <a href="https://www.facebook.com/lcdmh" target="_blank" class="social-link" style="color: #1877F2;">👤</a>
+            </div>
+        </div>
+        
+        <div style="background: white; border-radius: 12px; padding: 2rem; text-align: center; margin: 3rem 0;">
+            <h3 style="margin-bottom: 1rem;">📧 Email direct</h3>
+            <p style="font-size: 1.3rem; color: var(--orange);">contact@lcdmh.com</p>
+            <p style="color: #777; margin-top: 0.5rem;">Pour les demandes simples et rapides</p>
+        </div>
+        
     </div>
 </section>
 
-<!-- Section contact simplifiée avec photo -->
-<div class="container">
-    <div class="contact-section">
-        <!-- Photo de dame -->
-        <div class="contact-image">
-            <img src="https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=2070" alt="Motarde sur sa moto - LCDMH">
-        </div>
-        
-        <!-- Coordonnées -->
-        <div class="contact-info">
-            <h2>Me contacter</h2>
-            
-            <div class="info-item">
-                <strong>📧 Email</strong>
-                <a href="mailto:yvesbali@gmail.com">yvesbali@gmail.com</a>
-            </div>
-            
-            <div class="info-item">
-                <strong>📍 Basé à</strong>
-                Annecy, Haute-Savoie, France
-            </div>
-            
-            <div class="info-item">
-                <strong>🔗 Retrouve-moi sur</strong>
-                <div class="social-links">
-                    <a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a>
-                    <a href="https://www.instagram.com/lcdmh74/" target="_blank" rel="noopener">Instagram</a>
-                    <a href="https://www.facebook.com/yves.vella.LCDMH" target="_blank" rel="noopener">Facebook</a>
-                </div>
-            </div>
-            
-            <div class="info-item">
-                <strong>🤝 Partenariats</strong>
-                <p>Vous êtes une marque ou un fabricant ? Discutons d'une collaboration. Je teste vos produits en conditions réelles sur mes road trips.</p>
-            </div>
-            
-            <div class="quote">
-                "La route est plus belle quand on la partage. Que ce soit pour un conseil, un partenariat ou simplement pour échanger, n'hésitez pas à m'écrire."
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Footer -->
 <footer>
-    <div class="footer-content">
-        <div class="footer-col">
-            <h4>LCDMH</h4>
-            <p>La Chaîne Du Motard Heureux – Road trips, tests et aventures à moto depuis 2022.</p>
-        </div>
-        <div class="footer-col">
-            <h4>Navigation</h4>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="roadtrips.html">Road Trips</a></li>
-                <li><a href="tests-motos.html">Tests motos</a></li>
-                <li><a href="equipement.html">Équipement</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>GPS & Médias</h4>
-            <ul>
-                <li><a href="gps.html">GPS moto</a></li>
-                <li><a href="photo-video.html">Photo / Vidéo</a></li>
-                <li><a href="intercoms.html">Intercoms</a></li>
-                <li><a href="pneus.html">Pneus</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Partenaires</h4>
-            <ul>
-                <li><a href="codes-promo.html">Codes promo</a></li>
-                <li><a href="blackview.html">Blackview</a></li>
-                <li><a href="olight.html">Olight</a></li>
-                <li><a href="a-propos.html">À propos</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="copyright">&copy; 2026 LCDMH - La Chaîne Du Motard Heureux</div>
+    <div class="footer-logo">LC<em>D</em>MH</div>
+    <p style="margin: 0.5rem 0; color: rgba(255,255,255,0.4);">La Chaîne du Motard Heureux · Annecy, France</p>
+    <ul class="footer-links">
+        <li><a href="roadtrips.html">Road Trips</a></li>
+        <li><a href="gps.html">GPS moto</a></li>
+        <li><a href="codes-promo.html">Codes promo</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
 </footer>
+
 </body>
 </html>
+<!-- FIN DU FICHIER : contact.html -->

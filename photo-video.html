@@ -3,742 +3,414 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matériel Photo & Vidéo Moto - GoPro, Drone, Osmo - LCDMH</title>
-    <meta name="description" content="Tests matériel photo et vidéo pour road trip moto : GoPro Hero, DJI Mini 3 Pro, Osmo Pocket, Fujifilm. Fixations, accessoires, astuces de tournage.">
-    <meta name="keywords" content="matériel vidéo moto, GoPro moto, DJI Mini 3 Pro, Osmo Pocket, fixations moto, vlog moto, LCDMH">
-    <meta name="author" content="Yves - LCDMH">
-    <meta property="og:title" content="Matériel Photo & Vidéo Moto - LCDMH">
-    <meta property="og:description" content="Tests et avis sur le matériel photo/vidéo pour road trips moto : GoPro, DJI, Osmo, Fujifilm.">
-    <meta property="og:url" content="https://lcdmh.com/photo-video.html">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="LCDMH">
-    <meta property="og:image" content="https://lcdmh.com/images/photo-video-og.jpg">
+    <title>Matériel Photo & Vidéo Moto - GoPro, Drone, Osmo | LCDMH</title>
+    <meta name="description" content="Tests de matériel photo/vidéo pour motard : GoPro Hero, DJI Osmo Action, drone Mini 4 Pro, accessoires. Conseils pour filmer en road trip.">
+    <meta name="keywords" content="matériel photo moto, GoPro moto, DJI Osmo Action, drone moto, filmer road trip, accessoires vidéo moto, LCDMH">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://lcdmh.com/photo-video.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Matériel Photo & Vidéo Moto - GoPro, Drone, Osmo | LCDMH">
+    <meta property="og:description" content="Quel matériel pour filmer ses road trips ? Tests GoPro, DJI Osmo, drones. Conseils pour bien filmer à moto.">
+    <meta property="og:url" content="https://lcdmh.com/photo-video.html">
+    <meta property="og:image" content="https://lcdmh.com/images/og-photo-video.jpg">
+    
+    <!-- Schema.org BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://lcdmh.com" },
+        { "@type": "ListItem", "position": 2, "name": "Tests", "item": "https://lcdmh.com/tests-motos.html" },
+        { "@type": "ListItem", "position": 3, "name": "Photo/Vidéo", "item": "https://lcdmh.com/photo-video.html" }
+      ]
+    }
+    </script>
+    
+    <!-- Schema.org CollectionPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Tests Matériel Photo & Vidéo",
+      "description": "Tous les tests de caméras, drones et accessoires pour filmer ses road trips moto.",
+      "url": "https://lcdmh.com/photo-video.html"
+    }
+    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: "Inter", sans-serif; background: #f5f5f5; color: #1e1e1e; line-height: 1.6; }
-        h1,h2,h3,h4,h5,h6 { font-family: "Montserrat", sans-serif; font-weight: 600; }
-        a { text-decoration: none; color: inherit; }
+        :root{
+            --orange:#e67e22;
+            --orange-dark:#d35400;
+            --noir:#1a1a1a;
+            --bg:#f7f7f5;
+            --card:#fff;
+            --border:#e5e5e5;
+            --muted:#777;
+            --alt:#f0ede8;
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--noir); line-height: 1.7; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+        .section { padding: 60px 6%; }
         
-        /* Navigation */
         nav {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            padding: 1rem 5%;
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(0,0,0,.07);
+            padding: 0 4%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             position: sticky;
             top: 0;
             z-index: 100;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: .5rem;
         }
-        .logo a {
-            font-family: "Montserrat", sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1e1e1e;
-        }
-        .logo span { color: #e67e22; }
+        .logo { font-family: 'Montserrat', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--noir); }
+        .logo span { color: var(--orange); }
         .nav-links {
             display: flex;
-            gap: 1.4rem;
+            gap: 1.5rem;
             list-style: none;
-            flex-wrap: wrap;
-            align-items: center;
         }
         .nav-links a {
-            font-weight: 500;
-            color: #1e1e1e;
+            font-size: .85rem;
+            font-weight: 600;
+            color: var(--muted);
+            text-transform: uppercase;
+            text-decoration: none;
             transition: color .2s;
-            font-size: .9rem;
         }
         .nav-links a:hover,
-        .nav-links a.active { color: #e67e22; }
-        .nav-yt {
-            background: #e67e22;
-            color: white !important;
-            padding: .5rem 1.2rem;
-            border-radius: 50px;
-            font-weight: 600 !important;
+        .nav-links a.active {
+            color: var(--orange);
         }
-        .nav-yt:hover { background: #d35400; }
-        .nav-yt-icon {
-            background: #ff0000;
-            color: white !important;
-            padding: .5rem 1.2rem;
-            border-radius: 50px;
-            font-weight: 600 !important;
-        }
-        .nav-yt-icon:hover { background: #cc0000; }
-        .menu-toggle { display: none; }
         
-        /* Menu responsive */
-        .has-drop { position: relative; }
-        .has-drop > a::after {
-            content: '▾';
-            font-size: 0.6rem;
-            opacity: 0.7;
-            margin-left: 0.2rem;
-        }
-        .dropdown {
-            display: none;
-            position: absolute;
-            top: calc(100% + 6px);
-            left: 0;
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            box-shadow: 0 8px 28px rgba(0,0,0,.12);
-            min-width: 220px;
-            padding: .5rem 0;
-            z-index: 999;
-        }
-        .has-drop:hover .dropdown { display: block; }
-        .dropdown a {
-            display: block;
-            padding: .52rem 1.1rem;
-            font-size: .8rem;
-            color: #1e1e1e;
-            font-weight: 500;
-            transition: background .15s, color .15s;
-        }
-        .dropdown a:hover { background: #fff8f2; color: #e67e22; }
-        
-        @media (max-width: 900px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: white;
-                padding: 1rem 0;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-                z-index: 1000;
-                gap: 0;
-            }
-            .nav-links.active { display: flex; }
-            .nav-links li { width: 100%; text-align: center; }
-            .nav-links a {
-                display: block;
-                padding: 1rem !important;
-                width: 100%;
-                white-space: normal !important;
-            }
-            .has-drop { position: static; }
-            .dropdown {
-                position: static;
-                width: 100%;
-                box-shadow: none;
-                border: none;
-                border-top: 1px solid #e0e0e0;
-                border-bottom: 1px solid #e0e0e0;
-                margin: 0.5rem 0;
-            }
-            .menu-toggle { display: block; font-size: 2rem; background: none; border: none; cursor: pointer; }
-            nav { flex-wrap: wrap; height: auto; min-height: 70px; padding: 0.5rem 4%; }
-            .desktop-only { display: none; }
-            .mobile-only { display: block; }
-        }
-        @media (min-width: 901px) { .mobile-only { display: none !important; } }
-        
-        .hero {
-            height: 30vh;
-            min-height: 250px;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+        .hero-small {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a1a1a 100%);
             color: white;
+            padding: 60px 6%;
+            text-align: center;
         }
-        .hero-image {
-            position: absolute;
-            inset: 0;
-            background-image: url('images/bandeau-norvege.jpg');
-            background-size: cover;
-            background-position: center;
-            filter: brightness(.6);
-            z-index: -1;
+        .hero-small h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
         }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 0 2rem;
+        .hero-small h1 em {
+            color: var(--orange);
+            font-style: normal;
         }
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
+        .breadcrumb {
+            color: rgba(255,255,255,0.5);
             margin-bottom: 1rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,.3);
-        }
-        .hero h1 span { color: #e67e22; }
-        .hero p {
-            font-size: 1.1rem;
-            text-shadow: 0 2px 5px rgba(0,0,0,.3);
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 5%;
-        }
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        .section-title h2 {
-            font-size: 2rem;
-            color: #e67e22;
-            margin-bottom: .5rem;
-        }
-        .section-title .bar {
-            width: 52px;
-            height: 4px;
-            background: #e67e22;
-            margin: 0 auto;
-            border-radius: 2px;
         }
         
-        .intro-box {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 2rem 0;
-            border: 1px solid #e0e0e0;
-            text-align: center;
-        }
-        .intro-box p {
-            font-size: 1.1rem;
-            color: #666;
-            line-height: 1.7;
-        }
-        
-        .grid {
+        .camera-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin: 3rem 0;
         }
-        .card {
+        .camera-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,.05);
-            border: 1px solid #e0e0e0;
-            transition: transform .2s;
+            border: 1px solid var(--border);
+            transition: transform 0.2s;
         }
-        .card:hover { transform: translateY(-5px); }
+        .camera-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
         .card-header {
-            background: #1e1e1e;
-            color: white;
-            padding: 1.5rem;
-        }
-        .card-header h3 {
-            font-size: 1.8rem;
-            margin-bottom: .3rem;
-        }
-        .card-header .badge {
-            color: #e67e22;
-            font-weight: 600;
-        }
-        .card-content { padding: 1.5rem; }
-        .card-content ul {
-            list-style: none;
-            color: #666;
-        }
-        .card-content li {
-            padding: .3rem 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .card-content li:last-child { border-bottom: none; }
-        .card-footer {
-            padding: 1.5rem;
-            border-top: 1px solid #e0e0e0;
+            height: 200px;
+            background: linear-gradient(135deg, #f6f9fc 0%, #e9f2f7 100%);
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: .5rem;
+            justify-content: center;
+            font-size: 4rem;
         }
-        .btn {
-            background: #e67e22;
-            color: white;
-            padding: .5rem 1.2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
+        .card-body {
+            padding: 1.5rem;
+        }
+        .card-body h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        .card-body p {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .features {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        .features li {
+            padding: 0.3rem 0;
+            font-size: 0.9rem;
+        }
+        .features li::before {
+            content: '✓';
+            color: var(--orange);
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+        .btn-small {
             display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--orange);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
         }
-        .btn:hover { background: #d35400; }
         
-        .accessoires-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+        .accessories-list {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border);
             margin: 3rem 0;
         }
-        .accessoire-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            border: 1px solid #e0e0e0;
+        .accessory-item {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
         }
-        .accessoire-icon {
-            font-size: 2.5rem;
-            color: #e67e22;
+        .accessory-item:last-child {
+            border-bottom: none;
         }
-        .accessoire-content h3 {
-            margin-bottom: .5rem;
-            color: #e67e22;
+        .accessory-icon {
+            font-size: 2rem;
+            width: 50px;
+            text-align: center;
         }
-        .accessoire-content p {
-            color: #666;
-            font-size: .9rem;
+        .accessory-info {
+            flex: 1;
         }
-        
-        .tip-box {
-            background: #f8f9fa;
-            border-left: 4px solid #e67e22;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 8px 8px 0;
+        .accessory-info h4 {
+            margin-bottom: 0.2rem;
         }
         
         footer {
-            background: #1e1e1e;
-            color: white;
-            padding: 3rem 5%;
-            margin-top: 4rem;
+            background: var(--noir);
+            color: rgba(255,255,255,.65);
+            padding: 3rem 6%;
+            text-align: center;
+            margin-top: 3rem;
         }
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+        }
+        .footer-logo em {
+            font-style: normal;
+            color: var(--orange);
+        }
+        .footer-links {
+            display: flex;
             gap: 2rem;
-        }
-        .footer-col h4 {
-            color: white;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-        .footer-col p {
-            color: #aaa;
-            font-size: .9rem;
-            line-height: 1.7;
-        }
-        .footer-col ul {
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
             list-style: none;
         }
-        .footer-col li {
-            margin-bottom: .5rem;
-        }
-        .footer-col a {
-            color: #aaa;
-            transition: color .2s;
-            font-size: .9rem;
-        }
-        .footer-col a:hover { color: #e67e22; }
-        .copyright {
-            text-align: center;
-            padding-top: 2rem;
-            margin-top: 2rem;
-            border-top: 1px solid #333;
-            color: #aaa;
-            font-size: .85rem;
-        }
-        
-        @media(max-width: 768px) {
-            .accessoires-grid {
-                grid-template-columns: 1fr;
-            }
-            nav {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .nav-links {
-                justify-content: center;
-                gap: .8rem;
-            }
-        }
-    
-        /* === NAVIGATION === */
-        nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.07);padding:0 4%;height:70px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1000}
-        .logo{font-size:1.45rem;font-weight:900;color:#1a1a2e;text-decoration:none;letter-spacing:-.03em}
-        .logo span{color:#e67e22}
-        .nav-links{display:flex;gap:.5rem 1rem;list-style:none;align-items:center;flex-wrap:wrap;justify-content:flex-end;margin:0;padding:0}
-        .nav-links a{font-size:.78rem;font-weight:600;color:#555;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;white-space:nowrap;padding:.3rem .4rem;transition:color .2s}
-        .nav-links a:hover,.nav-links a.active{color:#e67e22}
-        .nav-links .nav-yt{background:#e67e22;color:#fff!important;padding:.4rem 1rem;border-radius:30px;font-weight:700}
-        .nav-links .nav-yt:hover{background:#cf6d17}
-        .nav-links .nav-yt-icon{background:#ff0000;color:#fff!important;padding:.4rem .8rem;border-radius:6px;font-weight:700;font-size:.75rem}
-        .has-drop{position:relative}
-        .has-drop>a::after{content:' ▾';font-size:.65rem;opacity:.6}
-        .dropdown{display:none;position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1px solid #e8e8e8;border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.12);min-width:200px;padding:.5rem 0;z-index:9999}
-        .dropdown a{display:block;padding:.52rem 1.1rem;font-size:.8rem;color:#1a1a2e!important;font-weight:500;white-space:nowrap;text-transform:none;letter-spacing:normal}
-        .dropdown a:hover{background:#fff8f2;color:#e67e22!important}
-        .nav-last-video{display:inline-flex;align-items:center;gap:.4rem;background:#fff3e0;border:1px solid #f0a500;border-radius:20px;padding:.3rem .8rem;font-size:.72rem!important;font-weight:700!important;color:#e67e22!important;text-transform:none!important;letter-spacing:normal!important;white-space:nowrap;animation:pulse-badge 2.5s infinite}
-        @keyframes pulse-badge{0%,100%{box-shadow:0 0 0 0 rgba(230,126,34,.35)}50%{box-shadow:0 0 0 5px rgba(230,126,34,0)}}
-        .nav-last-video .dot{width:7px;height:7px;background:#e74c3c;border-radius:50%;animation:blink 1.2s infinite}
-        @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-        .nav-last-video .label-new{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
-        .menu-toggle{display:none;font-size:1.8rem;cursor:pointer;background:none;border:none;color:#1a1a2e;padding:.5rem}
-        @media(max-width:900px){
-            .nav-links{display:none;flex-direction:column;position:absolute;top:70px;left:0;width:100%;background:#fff;padding:1rem 0;box-shadow:0 10px 20px rgba(0,0,0,.1);z-index:1000;gap:0;align-items:stretch}
-            .nav-links.active{display:flex}
-            .nav-links li{width:100%;text-align:center}
-            .nav-links a{display:block;padding:1rem!important;font-size:.95rem}
-            .has-drop>a::after{display:none}
-            .dropdown{position:static;width:100%;box-shadow:none;border:none;border-top:1px solid #e8e8e8;border-radius:0;padding:0;background:#fafafa}
-            .menu-toggle{display:block}
-            .nav-links .nav-yt,.nav-links .nav-yt-icon{margin:.5rem auto;display:inline-block;width:auto}
-            .desktop-only{display:none!important}
-        }
-        @media(min-width:901px){.mobile-only{display:none!important}}
-        /* === FIN NAVIGATION === */
-        </style>
+    </style>
 </head>
 <body>
 
-<!-- Navigation -->
-<nav id="lcdmh-nav">
+<nav>
     <a href="index.html" class="logo">LC<span>D</span>MH</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
-    <ul class="nav-links" id="navLinks">
-
+    <ul class="nav-links">
         <li><a href="index.html">Accueil</a></li>
-
-        <li class="has-drop">
-            <a href="roadtrips.html">Road Trips</a>
-            <div class="dropdown">
-                <a href="roadtrips.html">Tous les road trips</a>
-                <a href="cap-nord-moto.html"                style="color:#e67e22;font-weight:700;">🏔️ Cap Nord 2025</a>
-                <a href="europe-asie-moto.html"             style="color:#e67e22;font-weight:700;">🌍 Europe–Asie 2024</a>
-                <a href="alpes-aventure-festival-moto.html" style="color:#e67e22;font-weight:700;">🏔️ Alpes Festival 2025</a>
-                <div style="border-top:1px solid #e0e0e0;margin:5px 0;"></div>
-                <a href="roadtrips.html#espagne">Espagne 2023</a>
-                <a href="roadtrips.html#alpes">Les Alpes</a>
-            </div>
-        </li>
-
-        <li class="has-drop">
-            <a href="#">Tests</a>
-            <div class="dropdown">
-                <a href="tests-motos.html">Tests motos</a>
-                <a href="equipement.html">Équipement</a>
-                <a href="intercoms.html">Intercoms</a>
-                <a href="pneus.html">Pneus moto</a>
-                <a href="photo-video.html">Photo / Vidéo</a>
-                <a href="securite.html">Sécurité</a>
-            </div>
-        </li>
-
-        <li class="has-drop">
-            <a href="#">GPS</a>
-            <div class="dropdown">
-                <a href="gps.html">Tous les GPS</a>
-                <a href="aoocci.html">Aoocci (GPS offline)</a>
-                <a href="carpuride.html">Carpuride (écran déporté)</a>
-                <a href="blackview.html">Blackview 📱 (téléphone renforcé)</a>
-            </div>
-        </li>
-
-        <li class="has-drop">
-            <a href="#">Partenaires</a>
-            <div class="dropdown" style="min-width:230px;">
-                <a href="codes-promo.html">💰 Tous les codes promo</a>
-                <div style="border-top:1px solid #e0e0e0;margin:5px 0;"></div>
-                <a href="komobi.html">Komobi 📍 (traceur GPS)</a>
-                <a href="aoocci.html">Aoocci 🧭 (GPS offline)</a>
-                <a href="carpuride.html">Carpuride 📺 (écran CarPlay)</a>
-                <a href="blackview.html">Blackview 📱 (téléphone renforcé)</a>
-                <a href="aferiy.html">Aferiy ⚡ (batteries bivouac)</a>
-                <a href="olight.html">Olight 🔦 (lampes frontales)</a>
-                <div style="border-top:1px solid #e0e0e0;margin:5px 0;"></div>
-                <a href="pneus.html">🔧 Pneus moto (liens affiliés)</a>
-                <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&campaign=0ac376b3-9268-4626-3ff7-08dbc4da2b3f&clickref=Youtbe&clickref2=site&ued=https%3A%2F%2Fwww.123pneus.fr%2F" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem;font-size:.75rem;">→ 123pneus.fr</a>
-                <a href="https://www.awin1.com/cread.php?awinmid=7928&awinaffid=2753560&campaign=Summer+sale+2026&clickref=Youtube&clickref2=Site&ued=https%3A%2F%2Fwww.pneus.fr%2Fpneus%2Fmoto" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem;font-size:.75rem;">→ Pneus.fr</a>
-                <a href="https://www.awin1.com/cread.php?awinmid=7403&awinaffid=2753560&ued=https%3A%2F%2Fwww.pneus-moto.fr%2F" target="_blank" rel="sponsored nofollow noopener" style="padding-left:2rem;font-size:.75rem;">→ Pneus-moto.fr</a>
-            </div>
-        </li>
-
+        <li><a href="roadtrips.html">Road Trips</a></li>
+        <li><a href="tests-motos.html" class="active">Tests</a></li>
+        <li><a href="gps.html">GPS</a></li>
+        <li><a href="codes-promo.html">Codes promo</a></li>
         <li><a href="a-propos.html">À propos</a></li>
-        <li><a href="contact.html">Contact</a></li>
-
-        <li id="nav-last-video-li" class="desktop-only">
-            <a href="#" class="nav-last-video" id="nav-last-video-link" title="Voir la dernière vidéo">
-                <span class="dot"></span>
-                <span class="label-new">Nouveau</span>
-                <span class="label-title" id="nav-last-video-title">Dernière vidéo</span>
-            </a>
-        </li>
-        <li class="desktop-only"><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt">▶ S'abonner</a></li>
-        <li class="desktop-only"><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon">📺 YouTube</a></li>
-        <li class="mobile-only"><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="nav-yt">▶ S'abonner</a></li>
-        <li class="mobile-only"><a href="https://www.youtube.com/@LCDMH" class="nav-yt-icon">📺 YouTube</a></li>
+        <li><a href="https://www.youtube.com/@LCDMH" target="_blank">YouTube</a></li>
     </ul>
 </nav>
-    <script>
-    // === NAVIGATION JS (dropdown hover + mobile) ===
-    (function(){
-        var isMobile = function(){ return window.innerWidth <= 900; };
-        document.querySelectorAll('#lcdmh-nav .has-drop').forEach(function(item){
-            var dd = item.querySelector('.dropdown');
-            var timer = null;
-            // Desktop : hover avec délai 200ms (évite fermeture trop rapide)
-            item.addEventListener('mouseenter', function(){ if(!isMobile()){ clearTimeout(timer); dd.style.display='block'; }});
-            item.addEventListener('mouseleave', function(){ if(!isMobile()){ timer=setTimeout(function(){ dd.style.display=''; },200); }});
-            dd.addEventListener('mouseenter',   function(){ if(!isMobile()) clearTimeout(timer); });
-            dd.addEventListener('mouseleave',   function(){ if(!isMobile()){ timer=setTimeout(function(){ dd.style.display=''; },200); }});
-            // Mobile : clic
-            item.querySelector(':scope>a').addEventListener('click',function(e){
-                if(isMobile()){
-                    e.preventDefault();
-                    var open = dd.style.display==='block';
-                    document.querySelectorAll('#lcdmh-nav .dropdown').forEach(function(d){ d.style.display=''; });
-                    dd.style.display = open ? '' : 'block';
-                }
-            });
-        });
-        // Mobile toggle
-        document.addEventListener('DOMContentLoaded',function(){
-            var toggle = document.getElementById('menuToggle');
-            var list   = document.getElementById('navLinks');
-            if(!toggle||!list) return;
-            toggle.addEventListener('click',function(e){ e.stopPropagation(); list.classList.toggle('active'); });
-            document.addEventListener('click',function(e){
-                if(!list.contains(e.target)&&!toggle.contains(e.target)) list.classList.remove('active');
-            });
-        });
-        // Active state auto
-        var page = window.location.pathname.split('/').pop()||'index.html';
-        document.querySelectorAll('#lcdmh-nav .nav-links>li>a').forEach(function(a){
-            var h = a.getAttribute('href')||'';
-            if(h && h!='#' && page.indexOf(h.replace('.html',''))!==-1) a.classList.add('active');
-        });
-    })();
-    </script>
 
-<!-- Hero -->
-<section class="hero">
-    <div class="hero-image"></div>
-    <div class="hero-content">
-        <h1>PHOTO & <span>VIDÉO</span></h1>
-        <p>Tests matériel pour filmer vos road trips : GoPro, DJI, Osmo, Fujifilm, accessoires.</p>
+<div class="hero-small">
+    <div class="breadcrumb">
+        <a href="index.html">Accueil</a> › 
+        <a href="tests-motos.html">Tests</a> › 
+        <span>Photo & Vidéo</span>
+    </div>
+    <h1>Matériel <em>Photo & Vidéo</em> Moto</h1>
+    <p style="max-width: 700px; margin: 1rem auto 0;">GoPro, DJI Osmo Action, drones, accessoires. Tout pour filmer ses road trips.</p>
+</div>
+
+<section class="section">
+    <div class="container">
+        
+        <h2 style="margin-bottom: 2rem;">📷 Caméras d'action</h2>
+        
+        <div class="camera-grid">
+            <!-- DJI Osmo Action 6 -->
+            <div class="camera-card">
+                <div class="card-header">🎥</div>
+                <div class="card-body">
+                    <h3>DJI Osmo Action 6</h3>
+                    <p>Ma caméra principale depuis 2025</p>
+                    <ul class="features">
+                        <li>4K/120fps, 1080p/240fps</li>
+                        <li>Double écran tactile</li>
+                        <li>Stabilisation RockSteady 4.0</li>
+                        <li>Étanche jusqu'à 18m</li>
+                        <li>Très bonne autonomie</li>
+                    </ul>
+                    <a href="#" class="btn-small">Lire le test →</a>
+                </div>
+            </div>
+            
+            <!-- GoPro Hero 13 -->
+            <div class="camera-card">
+                <div class="card-header">📹</div>
+                <div class="card-body">
+                    <h3>GoPro Hero 13</h3>
+                    <p>La référence, testée en parallèle</p>
+                    <ul class="features">
+                        <li>5,3K/60fps, 4K/120fps</li>
+                        <li>HyperSmooth 6.0</li>
+                        <li>GPS + télémetrie</li>
+                        <li>Très bonne qualité d'image</li>
+                        <li>Moins bonne autonomie</li>
+                    </ul>
+                    <a href="#" class="btn-small">Lire le test →</a>
+                </div>
+            </div>
+            
+            <!-- Insta360 X4 -->
+            <div class="camera-card">
+                <div class="card-header">🔄</div>
+                <div class="card-body">
+                    <h3>Insta360 X4</h3>
+                    <p>Caméra 360° pour effets originaux</p>
+                    <ul class="features">
+                        <li>8K/30fps en 360°</li>
+                        <li>Stabilisation FlowState</li>
+                        <li>Invisible selfie stick</li>
+                        <li>Idéale pour effets "dolly"</li>
+                    </ul>
+                    <a href="#" class="btn-small">Lire le test →</a>
+                </div>
+            </div>
+        </div>
+        
+        <h2 style="margin: 3rem 0 1.5rem;">🚁 Drones pour road trip</h2>
+        
+        <div class="camera-grid">
+            <!-- DJI Mini 4 Pro -->
+            <div class="camera-card">
+                <div class="card-header">🚁</div>
+                <div class="card-body">
+                    <h3>DJI Mini 4 Pro</h3>
+                    <p>Mon drone de voyage</p>
+                    <ul class="features">
+                        <li>Moins de 249g (pas de licence)</li>
+                        <li>4K/60fps HDR</li>
+                        <li>Capteurs d'obstacles omnidirectionnels</li>
+                        <li>Autonomie 45min</li>
+                        <li>Parfait pour voyages</li>
+                    </ul>
+                    <a href="#" class="btn-small">Lire le test →</a>
+                </div>
+            </div>
+            
+            <!-- DJI Air 3 -->
+            <div class="camera-card">
+                <div class="card-header">📸</div>
+                <div class="card-body">
+                    <h3>DJI Air 3</h3>
+                    <p>Double caméra grand-angle/télé</p>
+                    <ul class="features">
+                        <li>Double capteur 48MP</li>
+                        <li>4K/60fps HDR</li>
+                        <li>Stabilisation avancée</li>
+                        <li>Plus lourd (720g)</li>
+                    </ul>
+                    <a href="#" class="btn-small">Lire le test →</a>
+                </div>
+            </div>
+        </div>
+        
+        <h2 style="margin: 3rem 0 1.5rem;">🔧 Accessoires indispensables</h2>
+        
+        <div class="accessories-list">
+            <div class="accessory-item">
+                <div class="accessory-icon">🪫</div>
+                <div class="accessory-info">
+                    <h4>Batteries supplémentaires</h4>
+                    <p style="color: var(--muted);">Toujours avoir 2-3 batteries chargées pour une journée de tournage</p>
+                </div>
+            </div>
+            <div class="accessory-item">
+                <div class="accessory-icon">🎤</div>
+                <div class="accessory-info">
+                    <h4>Microphone extérieur</h4>
+                    <p style="color: var(--muted);">DJI Mic 2 ou Rode Wireless Go pour voix-off en roulant</p>
+                </div>
+            </div>
+            <div class="accessory-item">
+                <div class="accessory-icon">🔌</div>
+                <div class="accessory-info">
+                    <h4>Multiprise USB</h4>
+                    <p style="color: var(--muted);">Pour recharger tout le matériel le soir au camping</p>
+                </div>
+            </div>
+            <div class="accessory-item">
+                <div class="accessory-icon">🧽</div>
+                <div class="accessory-info">
+                    <h4>Chiffons microfibres</h4>
+                    <p style="color: var(--muted);">Pour nettoyer les objectifs (pluie, poussière, insectes)</p>
+                </div>
+            </div>
+            <div class="accessory-item">
+                <div class="accessory-icon">📦</div>
+                <div class="accessory-info">
+                    <h4>Étui de transport</h4>
+                    <p style="color: var(--muted);">Protéger le matériel des chocs et vibrations</p>
+                </div>
+            </div>
+        </div>
+        
+        <div style="background: white; border-radius: 12px; padding: 2rem; margin: 3rem 0; border-left: 4px solid var(--orange);">
+            <h3 style="color: var(--orange); margin-bottom: 1rem;">🎬 Mon conseil</h3>
+            <p style="font-size: 1.1rem;">
+                "Pour filmer à moto, la <strong>DJI Osmo Action 6</strong> est un excellent choix : 
+                stabilisation parfaite, bonne autonomie, double écran pratique. Pour les plans aériens, 
+                le <strong>Mini 4 Pro</strong> est imbattable par sa légèreté et sa qualité. Et n'oubliez pas : 
+                le meilleur matériel ne sert à rien si vous ne l'emmenez pas !"
+            </p>
+            <p style="margin-top: 1rem; font-weight: 700;">— Yves, LCDMH</p>
+        </div>
+        
     </div>
 </section>
 
-<!-- Introduction -->
-<div class="container">
-    <div class="intro-box">
-        <p>
-            Depuis mon premier road trip, j'ai testé de nombreuses caméras et accessoires pour capturer 
-            mes aventures à moto. Du Cap Nord à la Cappadoce, en passant par les Alpes et l'Espagne, 
-            voici mes retours d'expérience sur le matériel qui m'accompagne. Fixations, drones, 
-            caméras embarquées, appareils photo... tout est testé en conditions réelles.
-        </p>
-    </div>
-
-    <!-- Section CAMÉRAS -->
-    <div class="section-title">
-        <h2>CAMÉRAS & DRONES</h2>
-        <div class="bar"></div>
-    </div>
-    <div class="grid">
-        <!-- GoPro Hero -->
-        <div class="card">
-            <div class="card-header">
-                <h3>GoPro Hero</h3>
-                <div class="badge">Caméra embarquée</div>
-            </div>
-            <div class="card-content">
-                <ul>
-                    <li>✅ Qualité d'image : excellente (4K/5K)</li>
-                    <li>✅ Stabilisation HyperSmooth</li>
-                    <li>✅ Étanche (sans boîtier)</li>
-                    <li>✅ Idéale pour les POV moto</li>
-                    <li>🌍 Testée en Norvège, Espagne, Alpes</li>
-                </ul>
-            </div>
-            <div class="card-footer">
-                <span>Test complet</span>
-                <a href="https://youtu.be/Bw3MTPP0ea0" class="btn" target="_blank" rel="noopener noreferrer">Voir la vidéo</a>
-            </div>
-        </div>
-
-        <!-- DJI Mini 3 Pro -->
-        <div class="card">
-            <div class="card-header">
-                <h3>DJI Mini 3 Pro</h3>
-                <div class="badge">Drone</div>
-            </div>
-            <div class="card-content">
-                <ul>
-                    <li>✅ Qualité 4K HDR</li>
-                    <li>✅ Autonomie : 30-40 min</li>
-                    <li>✅ Poids < 250g (pas de licence)</li>
-                    <li>✅ Idéal pour paysages</li>
-                    <li>🌍 Testé en Turquie, Espagne, Alpes</li>
-                </ul>
-            </div>
-            <div class="card-footer">
-                <span>Test complet</span>
-                <a href="https://youtu.be/Ub5iVg5dQ9c" class="btn" target="_blank" rel="noopener noreferrer">Voir la vidéo</a>
-            </div>
-        </div>
-
-        <!-- Osmo Pocket -->
-        <div class="card">
-            <div class="card-header">
-                <h3>DJI Osmo Pocket</h3>
-                <div class="badge">Caméra stabilisée</div>
-            </div>
-            <div class="card-content">
-                <ul>
-                    <li>✅ Stabilisation 3 axes</li>
-                    <li>✅ Ultra compacte</li>
-                    <li>✅ Idéale pour plans dynamiques</li>
-                    <li>✅ Bonne qualité d'image</li>
-                </ul>
-            </div>
-            <div class="card-footer">
-                <span>Test à venir</span>
-                <a href="#" class="btn btn-outline">Bientôt</a>
-            </div>
-        </div>
-
-        <!-- Fujifilm X-S10 -->
-        <div class="card">
-            <div class="card-header">
-                <h3>Fujifilm X-S10</h3>
-                <div class="badge">Appareil photo</div>
-            </div>
-            <div class="card-content">
-                <ul>
-                    <li>✅ Capteur APS-C 26 MP</li>
-                    <li>✅ Stabilisation IBIS</li>
-                    <li>✅ Vidéo 4K 30p</li>
-                    <li>✅ Look argentique (simulations films)</li>
-                </ul>
-            </div>
-            <div class="card-footer">
-                <span>Test complet</span>
-                <a href="https://youtu.be/f8tI6Lm0TKs" class="btn" target="_blank" rel="noopener noreferrer">Voir la vidéo</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Section ACCESSOIRES -->
-    <div class="section-title">
-        <h2>ACCESSOIRES & FIXATIONS</h2>
-        <div class="bar"></div>
-    </div>
-    <div class="accessoires-grid">
-        <!-- Support guidon -->
-        <div class="accessoire-card">
-            <div class="accessoire-icon">🏍️</div>
-            <div class="accessoire-content">
-                <h3>Support guidon</h3>
-                <p>Fixation anti-vibration pour GoPro/Osmo. Permet des plans stables même sur routes dégradées.</p>
-            </div>
-        </div>
-        <!-- Mentonnière casque -->
-        <div class="accessoire-card">
-            <div class="accessoire-icon">🪖</div>
-            <div class="accessoire-content">
-                <h3>Mentonnìère casque</h3>
-                <p>Pour les POV réalistes. Testée avec différents casques (HJC RPHA 91, etc.)</p>
-            </div>
-        </div>
-        <!-- Fixation magnétique -->
-        <div class="accessoire-card">
-            <div class="accessoire-icon">🧲</div>
-            <div class="accessoire-content">
-                <h3>Fixations magnétiques</h3>
-                <p>Pour changer rapidement de point de vue. Idéal pour les plans créatifs.</p>
-            </div>
-        </div>
-        <!-- Batteries externes -->
-        <div class="accessoire-card">
-            <div class="accessoire-icon">🔋</div>
-            <div class="accessoire-content">
-                <h3>Batteries externes</h3>
-                <p>Pour recharger en roulant. Tests avec Aferiy Nano 100 et autres.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Conseils -->
-    <div class="tip-box">
-        <h3 style="color: #e67e22; margin-bottom: 1rem;">💡 Mes astuces pour bien filmer à moto</h3>
-        <ul style="color: #666; margin-left: 1.5rem;">
-            <li><strong>Multipliez les angles</strong> : guidon, casque, arrière, drone</li>
-            <li><strong>Anticipez les batteries</strong> : le froid les vide plus vite</li>
-            <li><strong>Protégez le matos</strong> : sacoches étanches pour les nuits sous tente</li>
-            <li><strong>Variez les plans</strong> : alternez GoPro, drone et appareil photo</li>
-            <li><strong>Pensez au son</strong> : enregistreur externe ou micro-cravate</li>
-            <li><strong>Préparez vos cartes SD</strong> : formatez-les avant le départ</li>
-        </ul>
-    </div>
-
-    <!-- Note commission -->
-    <div style="background: #f8f9fa; border-left: 4px solid #e67e22; padding: 1.5rem; margin: 2rem 0;">
-        <p style="color: #666;">
-            🤝 <strong>Liens affiliés</strong> : Certains liens vers du matériel photo/vidéo peuvent être des liens d'affiliation. 
-            En achetant via ces liens, je touche une petite commission qui m'aide à financer les tests et les road trips. 
-            Pour vous, le prix est le même. Merci pour votre soutien !
-        </p>
-    </div>
-</div>
-
-<!-- Footer -->
 <footer>
-    <div class="footer-content">
-        <div class="footer-col">
-            <h4>LCDMH</h4>
-            <p>La Chaîne Du Motard Heureux – Road trips, tests et aventures à moto depuis 2022.</p>
-        </div>
-        <div class="footer-col">
-            <h4>Navigation</h4>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="roadtrips.html">Road Trips</a></li>
-                <li><a href="tests-motos.html">Tests motos</a></li>
-                <li><a href="equipement.html">Équipement</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>GPS & Médias</h4>
-            <ul>
-                <li><a href="gps.html">GPS moto</a></li>
-                <li><a href="photo-video.html">Photo / Vidéo</a></li>
-                <li><a href="intercoms.html">Intercoms</a></li>
-                <li><a href="pneus.html">Pneus</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Partenaires</h4>
-            <ul>
-                <li><a href="codes-promo.html">Codes promo</a></li>
-                <li><a href="blackview.html">Blackview</a></li>
-                <li><a href="olight.html">Olight</a></li>
-                <li><a href="a-propos.html">À propos</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="copyright">&copy; 2026 LCDMH - La Chaîne Du Motard Heureux</div>
+    <div class="footer-logo">LC<em>D</em>MH</div>
+    <p style="margin: 0.5rem 0; color: rgba(255,255,255,0.4);">La Chaîne du Motard Heureux · Annecy, France</p>
+    <ul class="footer-links">
+        <li><a href="roadtrips.html">Road Trips</a></li>
+        <li><a href="tests-motos.html">Tests motos</a></li>
+        <li><a href="photo-video.html">Photo/Vidéo</a></li>
+        <li><a href="gps.html">GPS moto</a></li>
+    </ul>
 </footer>
+
 </body>
 </html>
 <!-- FIN DU FICHIER : photo-video.html -->
