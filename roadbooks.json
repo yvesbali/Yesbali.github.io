@@ -1,17 +1,13 @@
 {
-  "trips": [
-    {
-      "slug": "cap-nord",
-      "titre": "Cap Nord — Road Trip Norvège 2025",
-      "page": "cap-nord-moto.html",
-      "gpx": "ressources/cap-nord/trace-cap-nord.kurviger",
-      "trace_label": "Télécharger la trace Kurviger",
-      "roadbook": "ressources/cap-nord/roadbook-cap-nord-2025.pdf",
-      "roadbook_nom": "Roadbook Cap Nord — Road Trip Norvège 2025.pdf",
-      "qr_code": "ressources/cap-nord/qr-cap-nord.png",
-      "description": "Télécharge la trace Kurviger, le roadbook PDF et scanne le QR code pour récupérer rapidement les ressources de ce road trip.",
-      "note": "Note : la trace Kurviger et le roadbook PDF correspondent à la base du road trip réellement effectué. Selon la météo, l’état des routes, les imprévus, la fatigue ou la condition physique, l’itinéraire réel peut avoir légèrement varié.",
-      "actif": true
-    }
-  ]
+  "slug": "cap-nord",
+  "titre": "Cap Nord — Road Trip Norvège 2025",
+  "page": "cap-nord-moto.html",
+  "gpx": "roadbook/cap-nord-2025/trace.kurviger",
+  "trace_label": "Télécharger la trace Kurviger",
+  "roadbook": "roadbook/cap-nord-2025/roadbook.pdf",
+  "roadbook_nom": "Roadbook Cap Nord — Road Trip Norvège 2025.pdf",
+  "qr_code": "roadbook/cap-nord-2025/qr.png",
+  "description": "Télécharge la trace Kurviger, le roadbook PDF et scanne le QR code pour récupérer rapidement les ressources de ce road trip.",
+  "note": "Note : la trace Kurviger et le roadbook PDF correspondent à la base du road trip réellement effectué. Selon la météo, l’état des routes, les imprévus, la fatigue ou la condition physique, l’itinéraire réel peut avoir légèrement varié.",
+  "actif": true
 }
