@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tests Équipement Moto – Bagagerie, Gants, Vêtements | LCDMH</title>
-    <meta name="description" content="Tests casques, bagagerie, gants chauffants et accessoires moto en conditions réelles. Tous mes avis pour équiper votre road trip.">
-    <meta name="keywords" content="équipement moto, bagagerie moto, gants chauffants, casque moto, test accessoires moto, road trip équipement">
+    <title>Tests Moto - Essais, Comparatifs, Avis - LCDMH</title>
+    <meta name="description" content="Tests moto en conditions réelles : Honda NT1100, Benelli TRK 702, Triumph Tiger 900, Zontes 703F, Kawasaki ZX-6R. Avis terrain sur trails et routières.">
+    <meta name="keywords" content="test moto, essai moto, Honda NT1100 test, Benelli TRK 702, Triumph Tiger 900, Zontes 703F, Kawasaki ZX-6R, comparatif moto">
     <meta name="author" content="Yves - LCDMH">
-    <meta property="og:title" content="Tests Équipement Moto - LCDMH">
-    <meta property="og:description" content="Tests et avis sur l'équipement moto : casques, bagagerie, vêtements techniques, accessoires.">
-    <meta property="og:url" content="https://lcdmh.com/equipement.html">
+    <meta property="og:title" content="Tests Moto - Essais, Comparatifs, Avis - LCDMH">
+    <meta property="og:description" content="Tests et essais moto en conditions réelles : trails, routières, sportives. Mes avis honnêtes après des milliers de kilomètres.">
+    <meta property="og:url" content="https://lcdmh.com/tests-motos.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="LCDMH">
-    <meta property="og:image" content="https://lcdmh.com/images/equipement-og.jpg">
-    <link rel="canonical" href="https://lcdmh.com/equipement.html">
+    <meta property="og:image" content="https://lcdmh.com/images/tests-motos-og.jpg">
+    <link rel="canonical" href="https://lcdmh.com/tests-motos.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -215,13 +215,19 @@
             border: 1px solid #e0e0e0;
             text-align: center;
         }
-        .cards-grid {
+        .intro-box p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        .motos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin: 3rem 0;
         }
-        .card {
+        .moto-card {
             background: white;
             border-radius: 15px;
             overflow: hidden;
@@ -229,7 +235,7 @@
             border: 1px solid #e0e0e0;
             transition: transform .2s;
         }
-        .card:hover { transform: translateY(-5px); }
+        .moto-card:hover { transform: translateY(-5px); }
         .card-header {
             background: #1e1e1e;
             color: white;
@@ -239,7 +245,7 @@
             font-size: 1.8rem;
             margin-bottom: .3rem;
         }
-        .card-header .type {
+        .card-header .badge {
             color: #e67e22;
             font-weight: 600;
         }
@@ -279,14 +285,35 @@
         }
         .btn-outline:hover { background: #e67e22; color: white; }
         
-        .tip-box {
-            background: #f8f9fa;
-            border-left: 4px solid #e67e22;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 8px 8px 0;
+        .video-mini {
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
         }
-        .tableau-box {
+        .video-mini img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: #e67e22;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .comparatif-box {
             background: white;
             border-radius: 15px;
             padding: 2rem;
@@ -294,21 +321,31 @@
             border: 1px solid #e0e0e0;
             overflow-x: auto;
         }
-        .tableau-box table {
+        .comparatif-box h3 {
+            color: #e67e22;
+            margin-bottom: 1.5rem;
+        }
+        .comparatif-box table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 600px;
         }
-        .tableau-box th {
+        .comparatif-box th {
             background: #f5f5f5;
             padding: 1rem;
             text-align: left;
         }
-        .tableau-box td {
+        .comparatif-box td {
             padding: 1rem;
             border-bottom: 1px solid #e0e0e0;
         }
-        .tableau-box .check { color: #e67e22; font-weight: 700; }
+        
+        .tip-box {
+            background: #f8f9fa;
+            border-left: 4px solid #e67e22;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
         
         footer {
             background: #1e1e1e;
@@ -397,270 +434,337 @@
 </head>
 <body>
 
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH (NE PAS MODIFIER) -->
-<!-- ======================================== -->
-<div id="lcdmh-nav-container"></div>
-<script>
-(function() {
-    // Charger la navigation depuis nav.html (chemin relatif)
-    fetch('nav.html?t=' + Date.now())
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById('lcdmh-nav-container').innerHTML = html;
-            
-            // Marquer la page active
-            const page = window.location.pathname.split('/').pop() || 'index.html';
-            document.querySelectorAll('#lcdmh-nav .nav-links > li > a').forEach(link => {
-                const href = link.getAttribute('href') || '';
-                if (href && href !== '#' && page.indexOf(href.replace('.html', '')) !== -1) {
-                    link.classList.add('active');
-                }
-            });
-        })
-        .catch(err => {
-            console.error('❌ Navigation non chargée:', err);
-            // Fallback ultra minimal
-            document.getElementById('lcdmh-nav-container').innerHTML = 
-                '<nav style="background:#fff;padding:1rem;"><a href="index.html" style="color:#e67e22;font-weight:bold;font-size:1.5rem;">LCDMH</a></nav>';
-        });
-})();
-</script>
-<!-- ======================================== -->
-
 <!-- Navigation -->
 <!-- ======================================== -->
 <!-- DÉBUT NAVIGATION LCDMH (fichier unique) -->
 <!-- ======================================== -->
-
+<div id="lcdmh-nav-container"></div>
+<script>
+(function() {
+    // Fonction pour charger la navigation
+    function chargerNavigation() {
+        fetch('/nav.html?t=' + Date.now())
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('lcdmh-nav-container').innerHTML = html;
+                
+                // Marquer la page active
+                const page = window.location.pathname.split('/').pop() || 'index.html';
+                document.querySelectorAll('#lcdmh-nav .nav-links > li > a').forEach(link => {
+                    const href = link.getAttribute('href') || '';
+                    if (href && href !== '#' && page.indexOf(href.replace('.html', '')) !== -1) {
+                        link.classList.add('active');
+                    }
+                });
+            })
+            .catch(err => {
+                console.error('❌ Navigation non chargée:', err);
+                // Fallback : navigation minimale
+                document.getElementById('lcdmh-nav-container').innerHTML = 
+                    '<nav style="background:#fff;padding:1rem;"><a href="/" style="color:#e67e22;font-weight:bold;font-size:1.5rem;">LCDMH</a></nav>';
+            });
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', chargerNavigation);
+    } else {
+        chargerNavigation();
+    }
+})();
+</script>
 <!-- ======================================== -->
 <!-- FIN NAVIGATION LCDMH -->
 <!-- ======================================== -->
-    
+    <script>
+    // === NAVIGATION JS (dropdown hover + mobile) ===
+    (function(){
+        var isMobile = function(){ return window.innerWidth <= 900; };
+        document.querySelectorAll('#lcdmh-nav .has-drop').forEach(function(item){
+            var dd = item.querySelector('.dropdown');
+            var timer = null;
+            // Desktop : hover avec délai 200ms (évite fermeture trop rapide)
+            item.addEventListener('mouseenter', function(){ if(!isMobile()){ clearTimeout(timer); dd.style.display='block'; }});
+            item.addEventListener('mouseleave', function(){ if(!isMobile()){ timer=setTimeout(function(){ dd.style.display=''; },200); }});
+            dd.addEventListener('mouseenter',   function(){ if(!isMobile()) clearTimeout(timer); });
+            dd.addEventListener('mouseleave',   function(){ if(!isMobile()){ timer=setTimeout(function(){ dd.style.display=''; },200); }});
+            // Mobile : clic
+            item.querySelector(':scope>a').addEventListener('click',function(e){
+                if(isMobile()){
+                    e.preventDefault();
+                    var open = dd.style.display==='block';
+                    document.querySelectorAll('#lcdmh-nav .dropdown').forEach(function(d){ d.style.display=''; });
+                    dd.style.display = open ? '' : 'block';
+                }
+            });
+        });
+        // Mobile toggle
+        document.addEventListener('DOMContentLoaded',function(){
+            var toggle = document.getElementById('menuToggle');
+            var list   = document.getElementById('navLinks');
+            if(!toggle||!list) return;
+            toggle.addEventListener('click',function(e){ e.stopPropagation(); list.classList.toggle('active'); });
+            document.addEventListener('click',function(e){
+                if(!list.contains(e.target)&&!toggle.contains(e.target)) list.classList.remove('active');
+            });
+        });
+        // Active state auto
+        var page = window.location.pathname.split('/').pop()||'index.html';
+        document.querySelectorAll('#lcdmh-nav .nav-links>li>a').forEach(function(a){
+            var h = a.getAttribute('href')||'';
+            if(h && h!='#' && page.indexOf(h.replace('.html',''))!==-1) a.classList.add('active');
+        });
+    })();
+    </script>
 
 <!-- Hero -->
 <section class="hero">
     <div class="hero-image"></div>
     <div class="hero-content">
-        <h1>ÉQUIPEMENT <span>MOTO</span></h1>
-        <p>Tests et avis terrain sur l'équipement du motard : bagagerie, vêtements, accessoires.</p>
+        <h1>TESTS <span>MOTOS</span></h1>
+        <p>Essais et comparatifs en conditions réelles : trails, routières, sportives.</p>
     </div>
 </section>
 
-<!-- Contenu principal -->
+<!-- Introduction -->
 <div class="container">
-    <!-- Introduction -->
     <div class="intro-box">
-        <p style="font-size: 1.1rem; color: #666;">
-            Depuis mon premier road trip en 2022, j'ai testé des dizaines d'équipements : 
-            casques, bagagerie, vêtements techniques, gants chauffants, etc. 
-            Je les utilise en conditions réelles, sous la pluie, dans le froid, sur les routes 
-            de montagne ou d'autoroute. Voici mes retours d'expérience honnêtes, 
-            pour vous aider à choisir ce qui vous convient vraiment.
+        <p>
+            Depuis 2022, j'ai eu l'occasion de tester de nombreuses motos sur des milliers de kilomètres,
+            dans des conditions variées : montagne, autoroute, pluie, froid, routes sinueuses.
+            Voici mes retours d'expérience honnêtes sur chaque modèle, avec leurs qualités et leurs défauts.
         </p>
     </div>
 
-    <!-- Section BAGAGERIE -->
-    <div class="section-title">
-        <h2>BAGAGERIE & TRANSPORT</h2>
-        <div class="bar"></div>
-    </div>
-    <div class="cards-grid">
-        <!-- Lone Rider MiniBag 6L -->
-        <div class="card">
+    <!-- Grille des tests motos -->
+    <div class="motos-grid">
+        
+        <!-- Honda NT1100 -->
+        <div class="moto-card">
             <div class="card-header">
-                <h3>Lone Rider MiniBag 6L</h3>
-                <div class="type">Sacoche étanche</div>
+                <h3>Honda NT1100</h3>
+                <div class="badge">GT / Routière</div>
             </div>
             <div class="card-content">
+                <div class="video-mini" onclick="window.open('https://youtu.be/8oNAzOpJtnI', '_blank')">
+                    <img src="https://img.youtube.com/vi/8oNAzOpJtnI/hqdefault.jpg" alt="Honda NT1100 test">
+                    <span class="play-button">▶</span>
+                </div>
                 <ul>
-                    <li>✅ Étanchéité parfaite (rouleau)</li>
-                    <li>✅ Fixation universelle (scratchs)</li>
-                    <li>✅ Capacité 6L : affaires de pluie, outils</li>
-                    <li>⚠️ Attention aux scratchs qui s'usent</li>
-                    <li>🌍 Testé en Norvège (pluie) et Espagne</li>
+                    <li>✅ Moteur : bicylindre 1084 cm³, 102 ch</li>
+                    <li>✅ Boîte DCT : un régal en voyage</li>
+                    <li>✅ Confort : protection, selle, position</li>
+                    <li>✅ Consommation : 4,5-5 L/100 km</li>
+                    <li>🌍 Testée sur 20 000+ km (Cap Nord, Alpes)</li>
                 </ul>
             </div>
             <div class="card-footer">
-                <span>Test complet</span>
-                <a href="https://www.youtube.com/watch?v=C22Vu27ov00" class="btn" target="_blank" rel="noopener noreferrer">Voir le test</a>
+                <span>+ de 20 000 km</span>
+                <a href="https://youtu.be/8oNAzOpJtnI" class="btn" target="_blank" rel="noopener noreferrer">Voir le test</a>
             </div>
         </div>
 
-        <!-- Sacs réservoir -->
-        <div class="card">
+        <!-- Benelli TRK 702 -->
+        <div class="moto-card">
             <div class="card-header">
-                <h3>Sacs réservoir</h3>
-                <div class="type">Givi, Bagster</div>
+                <h3>Benelli TRK 702</h3>
+                <div class="badge">Trail / Aventure</div>
             </div>
             <div class="card-content">
+                <div class="video-mini" onclick="window.open('https://youtu.be/YktXXQfABS0', '_blank')">
+                    <img src="https://img.youtube.com/vi/YktXXQfABS0/hqdefault.jpg" alt="Benelli TRK 702 test">
+                    <span class="play-button">▶</span>
+                </div>
                 <ul>
-                    <li>✅ Accès facile aux affaires (téléphone, carte)</li>
-                    <li>✅ Fixation aimantée ou sangles</li>
-                    <li>✅ Capacité 3-8L selon modèles</li>
-                    <li>⚠️ Attention aux rayures sur le réservoir</li>
+                    <li>✅ Moteur : bicylindre 698 cm³, 70 ch</li>
+                    <li>✅ Rapport qualité/prix imbattable</li>
+                    <li>✅ Confort : suspensions, selle</li>
+                    <li>✅ Polyvalence : route et chemins</li>
+                    <li>🌍 Testée sur 15 000 km (Europe-Asie)</li>
                 </ul>
             </div>
             <div class="card-footer">
-                <span>Comparatif à venir</span>
+                <span>+ de 15 000 km</span>
+                <a href="https://youtu.be/YktXXQfABS0" class="btn" target="_blank" rel="noopener noreferrer">Voir le test</a>
+            </div>
+        </div>
+
+        <!-- Benelli TRK 502 -->
+        <div class="moto-card">
+            <div class="card-header">
+                <h3>Benelli TRK 502</h3>
+                <div class="badge">Trail / A2</div>
+            </div>
+            <div class="card-content">
+                <div class="video-mini" onclick="window.open('https://youtu.be/g-Gc-I7D38w', '_blank')">
+                    <img src="https://img.youtube.com/vi/g-Gc-I7D38w/hqdefault.jpg" alt="Benelli TRK 502 test">
+                    <span class="play-button">▶</span>
+                </div>
+                <ul>
+                    <li>✅ Moteur : bicylindre 500 cm³, 48 ch</li>
+                    <li>✅ Idéale pour débuter et permis A2</li>
+                    <li>✅ Polyvalence : route et chemins</li>
+                    <li>✅ Excellente autonomie</li>
+                    <li>🌍 Testée sur 25 000 km (Espagne, Alpes)</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <span>+ de 25 000 km</span>
+                <a href="https://youtu.be/g-Gc-I7D38w" class="btn" target="_blank" rel="noopener noreferrer">Voir le test</a>
+            </div>
+        </div>
+
+        <!-- Triumph Tiger 900 GT Pro -->
+        <div class="moto-card">
+            <div class="card-header">
+                <h3>Triumph Tiger 900 GT Pro</h3>
+                <div class="badge">Trail / Routier</div>
+            </div>
+            <div class="card-content">
+                <div class="video-mini" onclick="window.open('https://youtu.be/oLnXMF1BnlM', '_blank')">
+                    <img src="https://img.youtube.com/vi/oLnXMF1BnlM/hqdefault.jpg" alt="Triumph Tiger 900 test">
+                    <span class="play-button">▶</span>
+                </div>
+                <ul>
+                    <li>✅ Moteur : 3 cylindres 888 cm³, 95 ch</li>
+                    <li>✅ Moteur souple et plein à bas régime</li>
+                    <li>✅ Partie cycle exceptionnelle</li>
+                    <li>✅ Équipement complet (Showa, Brembo)</li>
+                    <li>🌍 Testée dans les Alpes</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <span>Test</span>
+                <a href="https://youtu.be/oLnXMF1BnlM" class="btn" target="_blank" rel="noopener noreferrer">Voir le test</a>
+            </div>
+        </div>
+
+        <!-- Zontes 703F -->
+        <div class="moto-card">
+            <div class="card-header">
+                <h3>Zontes 703F</h3>
+                <div class="badge">Trail / Aventure</div>
+            </div>
+            <div class="card-content">
+                <div class="video-mini" onclick="window.open('https://youtu.be/j0lp9AmGMAk', '_blank')">
+                    <img src="https://img.youtube.com/vi/j0lp9AmGMAk/hqdefault.jpg" alt="Zontes 703F test">
+                    <span class="play-button">▶</span>
+                </div>
+                <ul>
+                    <li>✅ Moteur : 3 cylindres 699 cm³, 95 ch</li>
+                    <li>✅ Finition et équipement haut de gamme</li>
+                    <li>✅ Freinage puissant (Brembo)</li>
+                    <li>✅ Rapport équipement/prix impressionnant</li>
+                    <li>🌍 Test en conditions variées</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <span>Test</span>
+                <a href="https://youtu.be/j0lp9AmGMAk" class="btn" target="_blank" rel="noopener noreferrer">Voir le test</a>
+            </div>
+        </div>
+
+        <!-- Kawasaki ZX-6R -->
+        <div class="moto-card">
+            <div class="card-header">
+                <h3>Kawasaki ZX-6R</h3>
+                <div class="badge">Sportive</div>
+            </div>
+            <div class="card-content">
+                <div class="video-mini" onclick="window.open('https://youtu.be/3HFJZWHQEzA', '_blank')">
+                    <img src="https://img.youtube.com/vi/3HFJZWHQEzA/hqdefault.jpg" alt="Kawasaki ZX-6R test">
+                    <span class="play-button">▶</span>
+                </div>
+                <ul>
+                    <li>✅ Moteur : 4 cylindres 636 cm³, 129 ch</li>
+                    <li>✅ Moteur explosif dans les tours</li>
+                    <li>✅ Châssis ultra précis</li>
+                    <li>✅ Position sportive radicale</li>
+                    <li>🌍 Test sur route de montagne</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <span>Test</span>
+                <a href="https://youtu.be/3HFJZWHQEzA" class="btn" target="_blank" rel="noopener noreferrer">Voir le test</a>
+            </div>
+        </div>
+
+        <!-- Suzuki V-Strom 650 -->
+        <div class="moto-card">
+            <div class="card-header">
+                <h3>Suzuki V-Strom 650</h3>
+                <div class="badge">Trail / Routier</div>
+            </div>
+            <div class="card-content">
+                <div class="video-mini" onclick="window.open('https://youtu.be/OM912btEtw0', '_blank')">
+                    <img src="https://img.youtube.com/vi/OM912btEtw0/hqdefault.jpg" alt="Suzuki V-Strom 650 test">
+                    <span class="play-button">▶</span>
+                </div>
+                <ul>
+                    <li>✅ Moteur : bicylindre 645 cm³, 71 ch</li>
+                    <li>✅ Fiabilité légendaire</li>
+                    <li>✅ Confort routier</li>
+                    <li>✅ Polyvalence et simplicité</li>
+                    <li>🌍 Test routier</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <span>Test</span>
+                <a href="https://youtu.be/OM912btEtw0" class="btn" target="_blank" rel="noopener noreferrer">Voir le test</a>
+            </div>
+        </div>
+
+        <!-- BMW R 1300 GS -->
+        <div class="moto-card">
+            <div class="card-header">
+                <h3>BMW R 1300 GS</h3>
+                <div class="badge">Trail / Aventure</div>
+            </div>
+            <div class="card-content">
+                <div class="video-mini" onclick="window.open('https://youtu.be/HxkWyYR9AmM', '_blank')">
+                    <img src="https://img.youtube.com/vi/HxkWyYR9AmM/hqdefault.jpg" alt="BMW R 1300 GS test">
+                    <span class="play-button">▶</span>
+                </div>
+                <ul>
+                    <li>✅ Moteur : boxer 1300 cm³, 145 ch</li>
+                    <li>✅ Technologie ASA (boîte auto)</li>
+                    <li>✅ Confort et performance</li>
+                    <li>✅ Moto référente de la catégorie</li>
+                    <li>🌍 Test en conditions variées</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <span>Test</span>
+                <a href="https://youtu.be/HxkWyYR9AmM" class="btn" target="_blank" rel="noopener noreferrer">Voir le test</a>
             </div>
         </div>
     </div>
 
-    <!-- Section VÊTEMENTS TECHNIQUES -->
-    <div class="section-title">
-        <h2>VÊTEMENTS & PROTECTIONS</h2>
-        <div class="bar"></div>
-    </div>
-    <div class="cards-grid">
-        <!-- Gants chauffants Kemi Moto -->
-        <div class="card">
-            <div class="card-header">
-                <h3>Gants chauffants Kemi Moto</h3>
-                <div class="type">Hiver / Froid</div>
-            </div>
-            <div class="card-content">
-                <ul>
-                    <li>✅ 3 niveaux de chaleur</li>
-                    <li>✅ Batterie lithium (autonomie 4-6h)</li>
-                    <li>✅ Bonne protection contre le vent</li>
-                    <li>⚠️ Un peu épais pour les commandes</li>
-                    <li>🌍 Testés en Norvège (5°C)</li>
-                </ul>
-            </div>
-            <div class="card-footer">
-                <span>Test complet</span>
-                <a href="https://www.youtube.com/watch?v=eNNSnfYyYbM" class="btn" target="_blank" rel="noopener noreferrer">Voir le test</a>
-            </div>
-        </div>
-
-        <!-- Veste chauffante Kemi Moto -->
-        <div class="card">
-            <div class="card-header">
-                <h3>Veste chauffante Kemi Moto</h3>
-                <div class="type">Vêtement technique</div>
-            </div>
-            <div class="card-content">
-                <ul>
-                    <li>✅ Chauffante, idéale pour le froid</li>
-                    <li>✅ Batterie intégrée</li>
-                    <li>✅ Testée en conditions réelles</li>
-                    <li>✅ Complète l'équipement hiver</li>
-                </ul>
-            </div>
-            <div class="card-footer">
-                <span>Test disponible</span>
-                <a href="https://www.youtube.com/watch?v=XwxJY5Bg4Mo" class="btn" target="_blank" rel="noopener noreferrer">Voir le test</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Section ACCESSOIRES -->
-    <div class="section-title">
-        <h2>AUTRES ACCESSOIRES</h2>
-        <div class="bar"></div>
-    </div>
-    <div class="cards-grid">
-        <!-- Éclairage Olight -->
-        <div class="card">
-            <div class="card-header">
-                <h3>Olight Perun 3</h3>
-                <div class="type">Lampe frontale</div>
-            </div>
-            <div class="card-content">
-                <ul>
-                    <li>✅ 3000 lumens max</li>
-                    <li>✅ Batterie 21700 intégrée</li>
-                    <li>✅ IP68 étanche</li>
-                    <li>✅ Idéale pour le bivouac</li>
-                </ul>
-            </div>
-            <div class="card-footer">
-                <span>Test complet</span>
-                <a href="olight.html" class="btn">Voir la page Olight</a>
-            </div>
-        </div>
-
-        <!-- Matériel vidéo -->
-        <div class="card">
-            <div class="card-header">
-                <h3>Fixations caméra</h3>
-                <div class="type">GoPro, Osmo</div>
-            </div>
-            <div class="card-content">
-                <ul>
-                    <li>✅ Supports guidon anti-vibration</li>
-                    <li>✅ Mentonnière pour casque</li>
-                    <li>✅ Fixations magnétiques</li>
-                </ul>
-            </div>
-            <div class="card-footer">
-                <span>Voir page dédiée</span>
-                <a href="photo-video.html" class="btn">Photo / Vidéo</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Tableau récapitulatif -->
-    <div class="tableau-box">
-        <h3 style="margin-bottom: 1.5rem; color: #e67e22;">📋 Équipements testés</h3>
+    <!-- Comparatif rapide -->
+    <div class="comparatif-box">
+        <h3>📊 COMPARATIF RAPIDE</h3>
         <table>
             <tr>
-                <th>Équipement</th>
-                <th>Marque / Modèle</th>
-                <th>Utilisation</th>
-                <th>Avis</th>
-                <th>Note /5</th>
+                <th>Modèle</th>
+                <th>Cylindrée</th>
+                <th>Puissance</th>
+                <th>Poids</th>
+                <th>Usage</th>
             </tr>
-            <tr>
-                <td>Sacoche</td>
-                <td><strong>Lone Rider MiniBag 6L</strong></td>
-                <td>Bivouac, pluie</td>
-                <td>Étanche, pratique</td>
-                <td class="check">4.5</td>
-            </tr>
-            <tr>
-                <td>Gants chauffants</td>
-                <td><strong>Kemi Moto</strong></td>
-                <td>Hiver (5°C)</td>
-                <td>Chauds, bonne autonomie</td>
-                <td class="check">4.0</td>
-            </tr>
-            <tr>
-                <td>Lampe frontale</td>
-                <td><strong>Olight Perun 3</strong></td>
-                <td>Bivouac, nuit</td>
-                <td>Puissante, étanche</td>
-                <td class="check">4.8</td>
-            </tr>
-            <tr>
-                <td>Casque</td>
-                <td><strong>HJC RPHA 91</strong></td>
-                <td>Tous terrains</td>
-                <td>Confortable, insonorisé</td>
-                <td class="check">4.3</td>
-            </tr>
+            <tr><td>Honda NT1100</td><td>1084 cm³</td><td>102 ch</td><td>248 kg</td><td>GT / Routier</td></tr>
+            <tr><td>Benelli TRK 702</td><td>698 cm³</td><td>70 ch</td><td>235 kg</td><td>Trail Aventure</td></tr>
+            <tr><td>Benelli TRK 502</td><td>500 cm³</td><td>48 ch</td><td>235 kg</td><td>Trail A2</td></tr>
+            <tr><td>Triumph Tiger 900</td><td>888 cm³</td><td>95 ch</td><td>225 kg</td><td>Trail Routier</td></tr>
+            <tr><td>Zontes 703F</td><td>699 cm³</td><td>95 ch</td><td>220 kg</td><td>Trail Aventure</td></tr>
+            <tr><td>Kawasaki ZX-6R</td><td>636 cm³</td><td>129 ch</td><td>198 kg</td><td>Sportive</td></tr>
+            <tr><td>Suzuki V-Strom 650</td><td>645 cm³</td><td>71 ch</td><td>215 kg</td><td>Trail Routier</td></tr>
+            <tr><td>BMW R 1300 GS</td><td>1300 cm³</td><td>145 ch</td><td>237 kg</td><td>Trail Aventure</td></tr>
         </table>
     </div>
 
-    <!-- Conseils pratiques -->
-    <div class="tip-box">
-        <h3 style="color: #e67e22; margin-bottom: 1rem;">💡 Mes conseils pour bien choisir son équipement</h3>
-        <ul style="color: #666; margin-left: 1.5rem;">
-            <li><strong>Priorisez la qualité</strong> : un bon équipement dure des années</li>
-            <li><strong>Testez avant d'acheter</strong> : les tailles varient selon les marques</li>
-            <li><strong>Pensez aux conditions</strong> : pluie, froid, chaleur</li>
-            <li><strong>Investissez dans l'étanchéité</strong> : rien de pire qu'un équipement qui prend l'eau</li>
-            <li><strong>Vérifiez les compatibilités</strong> : fixations, intercoms, etc.</li>
-            <li><strong>Ne négligez pas le rangement</strong> : une bonne organisation change tout en road trip</li>
-        </ul>
-    </div>
-
-    <!-- Note sur les prochains tests -->
+    <!-- Note commission -->
     <div style="background: #f8f9fa; border-left: 4px solid #e67e22; padding: 1.5rem; margin: 2rem 0;">
         <p style="color: #666;">
-            🧥 <strong>À venir :</strong> test de vestes étanches (Dainese, Alpinestars), 
-            comparatif de sacs réservoir, et un guide complet sur le layering pour le froid.
+            🤝 Les liens vers les vidéos sont des liens directs YouTube. Certains liens vers des accessoires ou équipements peuvent être des liens d'affiliation. En achetant via ces liens, je touche une petite commission qui m'aide à financer les tests et les road trips. Pour vous, le prix est le même. Merci pour votre soutien !
         </p>
     </div>
 </div>
@@ -704,4 +808,4 @@
 </footer>
 </body>
 </html>
-<!-- FIN DU FICHIER : equipement.html -->
+<!-- FIN DU FICHIER : tests-motos.html -->

@@ -513,48 +513,89 @@
 <!-- ======================================== -->
 
 <body>
-
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH (NE PAS MODIFIER) -->
-<!-- ======================================== -->
-<div id="lcdmh-nav-container"></div>
-<script>
-(function() {
-    // Charger la navigation depuis nav.html (chemin relatif)
-    fetch('nav.html?t=' + Date.now())
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById('lcdmh-nav-container').innerHTML = html;
-            
-            // Marquer la page active
-            const page = window.location.pathname.split('/').pop() || 'index.html';
-            document.querySelectorAll('#lcdmh-nav .nav-links > li > a').forEach(link => {
-                const href = link.getAttribute('href') || '';
-                if (href && href !== '#' && page.indexOf(href.replace('.html', '')) !== -1) {
-                    link.classList.add('active');
-                }
-            });
-        })
-        .catch(err => {
-            console.error('❌ Navigation non chargée:', err);
-            // Fallback ultra minimal
-            document.getElementById('lcdmh-nav-container').innerHTML = 
-                '<nav style="background:#fff;padding:1rem;"><a href="index.html" style="color:#e67e22;font-weight:bold;font-size:1.5rem;">LCDMH</a></nav>';
-        });
-})();
-</script>
-<!-- ======================================== -->
 <!-- ======================================== -->
 <!-- === DÉBUT NAVIGATION =================== -->
 <!-- ======================================== -->
 <!-- ======================================== -->
 <!-- DÉBUT NAVIGATION LCDMH (fichier unique) -->
 <!-- ======================================== -->
-
+<div id="lcdmh-nav-container"></div>
+<script>
+(function() {
+    // Fonction pour charger la navigation
+    function chargerNavigation() {
+        fetch('/nav.html?t=' + Date.now())
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('lcdmh-nav-container').innerHTML = html;
+                
+                // Marquer la page active
+                const page = window.location.pathname.split('/').pop() || 'index.html';
+                document.querySelectorAll('#lcdmh-nav .nav-links > li > a').forEach(link => {
+                    const href = link.getAttribute('href') || '';
+                    if (href && href !== '#' && page.indexOf(href.replace('.html', '')) !== -1) {
+                        link.classList.add('active');
+                    }
+                });
+            })
+            .catch(err => {
+                console.error('❌ Navigation non chargée:', err);
+                // Fallback : navigation minimale
+                document.getElementById('lcdmh-nav-container').innerHTML = 
+                    '<nav style="background:#fff;padding:1rem;"><a href="/" style="color:#e67e22;font-weight:bold;font-size:1.5rem;">LCDMH</a></nav>';
+            });
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', chargerNavigation);
+    } else {
+        chargerNavigation();
+    }
+})();
+</script>
 <!-- ======================================== -->
 <!-- FIN NAVIGATION LCDMH -->
 <!-- ======================================== -->
-    
+    <script>
+    // === NAVIGATION JS (dropdown hover + mobile) ===
+    (function(){
+        var isMobile = function(){ return window.innerWidth <= 900; };
+        document.querySelectorAll('#lcdmh-nav .has-drop').forEach(function(item){
+            var dd = item.querySelector('.dropdown');
+            var timer = null;
+            // Desktop : hover avec délai 200ms (évite fermeture trop rapide)
+            item.addEventListener('mouseenter', function(){ if(!isMobile()){ clearTimeout(timer); dd.style.display='block'; }});
+            item.addEventListener('mouseleave', function(){ if(!isMobile()){ timer=setTimeout(function(){ dd.style.display=''; },200); }});
+            dd.addEventListener('mouseenter',   function(){ if(!isMobile()) clearTimeout(timer); });
+            dd.addEventListener('mouseleave',   function(){ if(!isMobile()){ timer=setTimeout(function(){ dd.style.display=''; },200); }});
+            // Mobile : clic
+            item.querySelector(':scope>a').addEventListener('click',function(e){
+                if(isMobile()){
+                    e.preventDefault();
+                    var open = dd.style.display==='block';
+                    document.querySelectorAll('#lcdmh-nav .dropdown').forEach(function(d){ d.style.display=''; });
+                    dd.style.display = open ? '' : 'block';
+                }
+            });
+        });
+        // Mobile toggle
+        document.addEventListener('DOMContentLoaded',function(){
+            var toggle = document.getElementById('menuToggle');
+            var list   = document.getElementById('navLinks');
+            if(!toggle||!list) return;
+            toggle.addEventListener('click',function(e){ e.stopPropagation(); list.classList.toggle('active'); });
+            document.addEventListener('click',function(e){
+                if(!list.contains(e.target)&&!toggle.contains(e.target)) list.classList.remove('active');
+            });
+        });
+        // Active state auto
+        var page = window.location.pathname.split('/').pop()||'index.html';
+        document.querySelectorAll('#lcdmh-nav .nav-links>li>a').forEach(function(a){
+            var h = a.getAttribute('href')||'';
+            if(h && h!='#' && page.indexOf(h.replace('.html',''))!==-1) a.classList.add('active');
+        });
+    })();
+    </script>
 <!-- ======================================== -->
 <!-- === FIN NAVIGATION ===================== -->
 <!-- ======================================== -->
@@ -1138,7 +1179,82 @@
     <p class="footer-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves · Annecy, France</p>
 </footer>
 
+<script>
+    // ===== BADGE DERNIÈRE VIDÉO : mise à jour auto depuis youtube-feed.js =====
+    (function() {
+        const titleEl = document.getElementById('nav-last-video-title');
+        const linkEl  = document.getElementById('nav-last-video-link');
+        if (!titleEl) return;
 
+        function extractLatestVideo() {
+            const container = document.getElementById('lcdmh-videos');
+            if (!container) return;
+
+            // Cherche le premier lien ou premier titre dans le container
+            const firstLink  = container.querySelector('a[href*="youtu"]');
+            const firstTitle = container.querySelector('[class*="title"], h3, h4, p, .video-title, .title');
+
+            let title = '';
+            let url   = '#videos';
+
+            if (firstTitle && firstTitle.textContent.trim().length > 3) {
+                title = firstTitle.textContent.trim();
+            }
+            if (firstLink) {
+                url = firstLink.href;
+            }
+
+            if (title) {
+                // Tronque si trop long
+                titleEl.textContent = title.length > 32 ? title.slice(0, 30) + '…' : title;
+                linkEl.href = url;
+                linkEl.target = url.startsWith('http') ? '_blank' : '';
+                linkEl.rel    = url.startsWith('http') ? 'noopener' : '';
+            }
+        }
+
+        // Observer : attend que youtube-feed.js injecte le contenu
+        const observer = new MutationObserver(function(mutations) {
+            const container = document.getElementById('lcdmh-videos');
+            if (container && container.children.length > 0) {
+                extractLatestVideo();
+                observer.disconnect();
+            }
+        });
+
+        // Smooth scroll pour le lien nav → #videos (avant que le feed charge)
+        const navLink = document.getElementById('nav-last-video-link');
+        if (navLink) {
+            navLink.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#') && !href.startsWith('#http')) {
+                    e.preventDefault();
+                    const target = document.getElementById(href.slice(1));
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        }
+
+        const target = document.getElementById('lcdmh-videos');
+        if (target) {
+            observer.observe(target, { childList: true, subtree: true });
+        }
+
+        // Fallback : tente après 3s si le JS externe est lent
+        setTimeout(extractLatestVideo, 3000);
+    })();
+
+        navigator.clipboard.writeText(text).then(() => {
+            const original = btn.textContent;
+            btn.textContent = 'Copié ✓';
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.textContent = original;
+                btn.classList.remove('copied');
+            }, 2000);
+        });
+    }
+</script>
 <script src="js/youtube-feed.js"></script>
 </body>
 </html>

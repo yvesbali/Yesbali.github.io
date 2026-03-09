@@ -147,40 +147,42 @@
 <body>
 
 <!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH (NE PAS MODIFIER) -->
+<!-- DÉBUT NAVIGATION LCDMH (fichier unique) -->
 <!-- ======================================== -->
 <div id="lcdmh-nav-container"></div>
 <script>
 (function() {
-    // Charger la navigation depuis nav.html (chemin relatif)
-    fetch('nav.html?t=' + Date.now())
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById('lcdmh-nav-container').innerHTML = html;
-            
-            // Marquer la page active
-            const page = window.location.pathname.split('/').pop() || 'index.html';
-            document.querySelectorAll('#lcdmh-nav .nav-links > li > a').forEach(link => {
-                const href = link.getAttribute('href') || '';
-                if (href && href !== '#' && page.indexOf(href.replace('.html', '')) !== -1) {
-                    link.classList.add('active');
-                }
+    // Fonction pour charger la navigation
+    function chargerNavigation() {
+        fetch('/nav.html?t=' + Date.now())
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('lcdmh-nav-container').innerHTML = html;
+                
+                // Marquer la page active
+                const page = window.location.pathname.split('/').pop() || 'index.html';
+                document.querySelectorAll('#lcdmh-nav .nav-links > li > a').forEach(link => {
+                    const href = link.getAttribute('href') || '';
+                    if (href && href !== '#' && page.indexOf(href.replace('.html', '')) !== -1) {
+                        link.classList.add('active');
+                    }
+                });
+            })
+            .catch(err => {
+                console.error('❌ Navigation non chargée:', err);
+                // Fallback : navigation minimale
+                document.getElementById('lcdmh-nav-container').innerHTML = 
+                    '<nav style="background:#fff;padding:1rem;"><a href="/" style="color:#e67e22;font-weight:bold;font-size:1.5rem;">LCDMH</a></nav>';
             });
-        })
-        .catch(err => {
-            console.error('❌ Navigation non chargée:', err);
-            // Fallback ultra minimal
-            document.getElementById('lcdmh-nav-container').innerHTML = 
-                '<nav style="background:#fff;padding:1rem;"><a href="index.html" style="color:#e67e22;font-weight:bold;font-size:1.5rem;">LCDMH</a></nav>';
-        });
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', chargerNavigation);
+    } else {
+        chargerNavigation();
+    }
 })();
 </script>
-<!-- ======================================== -->
-
-<!-- ======================================== -->
-<!-- DÉBUT NAVIGATION LCDMH (fichier unique) -->
-<!-- ======================================== -->
-
 <!-- ======================================== -->
 <!-- FIN NAVIGATION LCDMH -->
 <!-- ======================================== -->
