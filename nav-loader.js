@@ -99,5 +99,37 @@
         nav.querySelectorAll('.has-drop.open').forEach((item) => item.classList.remove('open'));
       });
     });
+
+    const desktopItems = nav.querySelectorAll('.has-drop');
+    let closeTimer = null;
+
+    function closeAllDesktopMenus() {
+      desktopItems.forEach((item) => item.classList.remove('hover-open'));
+      desktopItems.forEach((item) => {
+        const trigger = item.querySelector(':scope > a');
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    desktopItems.forEach((item) => {
+      const trigger = item.querySelector(':scope > a');
+
+      item.addEventListener('mouseenter', () => {
+        if (window.innerWidth <= 1000) return;
+        if (closeTimer) clearTimeout(closeTimer);
+        closeAllDesktopMenus();
+        item.classList.add('hover-open');
+        if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      });
+
+      item.addEventListener('mouseleave', () => {
+        if (window.innerWidth <= 1000) return;
+        if (closeTimer) clearTimeout(closeTimer);
+        closeTimer = setTimeout(() => {
+          item.classList.remove('hover-open');
+          if (trigger) trigger.setAttribute('aria-expanded', 'false');
+        }, 420);
+      });
+    });
   }
 })();
