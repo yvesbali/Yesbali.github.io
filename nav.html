@@ -1,7 +1,3 @@
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH -->
-<!-- Fichier centralisé -->
-<!-- ======================================== -->
 <nav id="lcdmh-nav" aria-label="Navigation principale LCDMH">
   <a class="logo" href="index.html" aria-label="Accueil LCDMH">LC<span>D</span>MH</a>
 
@@ -16,9 +12,11 @@
       <a href="#" aria-haspopup="true" aria-expanded="false">Road Trips</a>
       <div class="dropdown">
         <a href="roadtrips.html">Tous les road trips</a>
-        <a href="cap-nord-moto.html">Cap Nord 2025</a>
-        <a href="europe-asie-moto.html">Europe–Asie 2024</a>
-        <a href="alpes-aventure-festival-moto.html">Les Alpes</a>
+        <a href="cap-nord-moto.html">🏔️ Cap Nord 2025</a>
+        <a href="europe-asie-moto.html">🌍 Europe–Asie 2024</a>
+        <a href="alpes-aventure-festival-moto.html">⛰️ Alpes Festival 2025</a>
+        <a href="espagne-2023.html">🇪🇸 Espagne 2023</a>
+        <a href="alpes-aventure-festival-moto.html">🏔️ Les Alpes</a>
       </div>
     </li>
 
@@ -56,7 +54,18 @@
       </div>
     </li>
 
-    <li><a class="nav-yt" href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
+    <li class="desktop-only nav-last-video-li">
+      <a class="nav-last-video" href="https://www.youtube.com/@LCDMH/videos" target="_blank" rel="noopener" title="Voir les dernières vidéos">
+        <span class="dot"></span>
+        <span class="label-new">Nouveau</span>
+        <span class="label-title">Dernière vidéo</span>
+      </a>
+    </li>
+    <li class="desktop-only"><a class="nav-subscribe" href="https://www.youtube.com/@LCDMH?sub_confirmation=1" target="_blank" rel="noopener">▶ S'abonner</a></li>
+    <li><a class="nav-yt" href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">📺 YouTube</a></li>
+
+    <li class="mobile-only"><a class="nav-subscribe" href="https://www.youtube.com/@LCDMH?sub_confirmation=1" target="_blank" rel="noopener">▶ S'abonner</a></li>
+    <li class="mobile-only"><a class="nav-last-video mobile-last" href="https://www.youtube.com/@LCDMH/videos" target="_blank" rel="noopener"><span class="dot"></span><span class="label-new">Nouveau</span><span class="label-title">Dernière vidéo</span></a></li>
   </ul>
 </nav>
 
@@ -107,7 +116,7 @@
   #lcdmh-nav .nav-links > li{position:relative}
   #lcdmh-nav .nav-links a{
     display:block;
-    padding:.38rem .45rem;
+    padding:.42rem .45rem;
     font-size:.8rem;
     font-weight:700;
     color:var(--muted);
@@ -126,20 +135,30 @@
   #lcdmh-nav .dropdown{
     display:none;
     position:absolute;
-    top:calc(100% + 6px);
+    top:100%;
     left:0;
-    min-width:220px;
-    padding:.45rem 0;
+    min-width:230px;
+    padding:.55rem 0;
     background:#fff;
     border:1px solid var(--border);
-    border-radius:12px;
-    box-shadow:0 8px 28px rgba(0,0,0,.12);
+    border-radius:14px;
+    box-shadow:0 10px 32px rgba(0,0,0,.14);
+    margin-top:0;
   }
-  #lcdmh-nav .has-drop:hover > .dropdown{display:block}
+  #lcdmh-nav .has-drop::after{
+    content:'';
+    position:absolute;
+    left:0;
+    right:0;
+    top:100%;
+    height:18px;
+  }
+  #lcdmh-nav .has-drop.open > .dropdown,
+  #lcdmh-nav .has-drop.hover-open > .dropdown{display:block}
   #lcdmh-nav .dropdown a{
-    padding:.62rem 1rem;
+    padding:.72rem 1rem;
     color:var(--noir);
-    font-size:.85rem;
+    font-size:.88rem;
     font-weight:600;
     text-transform:none;
     letter-spacing:normal;
@@ -149,35 +168,56 @@
     color:var(--orange);
     background:#fff8f2;
   }
-
-  #lcdmh-nav .dropdown-roadtrips .drop-title{
-    font-weight:700;
-    color:#444;
-    padding-bottom:.9rem;
-    border-bottom:1px solid var(--border);
-    margin-bottom:.2rem;
-  }
-
-  #lcdmh-nav .dropdown-roadtrips a + a{
+  #lcdmh-nav .nav-last-video{
     display:flex;
     align-items:center;
-    gap:.58rem;
+    gap:.45rem;
+    border:1.5px solid rgba(230,126,34,.75);
+    border-radius:999px;
+    padding:.42rem .95rem !important;
+    color:var(--noir) !important;
+    background:#fff8f2;
+    box-shadow:0 1px 3px rgba(0,0,0,.04);
   }
-
-  #lcdmh-nav .dropdown-roadtrips .nav-ico{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:1.2rem;
-    flex:0 0 1.2rem;
+  #lcdmh-nav .nav-last-video .label-new{
+    color:var(--orange);
+    font-weight:800;
   }
-  #lcdmh-nav .nav-yt{
+  #lcdmh-nav .nav-last-video .label-title{
+    color:var(--noir);
+    text-transform:none;
+    letter-spacing:normal;
+    font-weight:700;
+  }
+  #lcdmh-nav .nav-last-video .dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#ff3b30;
+    box-shadow:0 0 0 rgba(255,59,48,.55);
+    animation:lcdmhPulse 1.1s infinite;
+    flex:0 0 auto;
+  }
+  @keyframes lcdmhPulse{
+    0%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,59,48,.55)}
+    70%{transform:scale(1.05);box-shadow:0 0 0 8px rgba(255,59,48,0)}
+    100%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,59,48,0)}
+  }
+  #lcdmh-nav .nav-subscribe{
     color:#fff !important;
     background:var(--orange);
     border-radius:999px;
-    padding:.55rem 1rem;
+    padding:.55rem 1rem !important;
   }
-  #lcdmh-nav .nav-yt:hover{background:var(--orange-dark);color:#fff !important}
+  #lcdmh-nav .nav-subscribe:hover{background:var(--orange-dark);color:#fff !important}
+  #lcdmh-nav .nav-yt{
+    color:#fff !important;
+    background:#ff0000;
+    border-radius:999px;
+    padding:.55rem 1rem !important;
+  }
+  #lcdmh-nav .nav-yt:hover{background:#cc0000;color:#fff !important}
+  #lcdmh-nav .mobile-only{display:none}
   #lcdmh-nav .menu-toggle{
     display:none;
     background:none;
@@ -189,8 +229,13 @@
     padding:.4rem;
   }
 
+  @media (max-width: 1120px){
+    #lcdmh-nav .desktop-only{display:none}
+  }
+
   @media (max-width: 1000px){
     #lcdmh-nav .menu-toggle{display:block}
+    #lcdmh-nav .mobile-only{display:block}
     #lcdmh-nav .nav-links{
       display:none;
       position:absolute;
@@ -213,6 +258,7 @@
       white-space:normal;
     }
     #lcdmh-nav .has-drop > a::after{display:none}
+    #lcdmh-nav .has-drop::after{display:none}
     #lcdmh-nav .dropdown{
       position:static;
       display:none;
@@ -226,14 +272,17 @@
       background:#fafafa;
     }
     #lcdmh-nav .has-drop.open > .dropdown{display:block}
+    #lcdmh-nav .has-drop.hover-open > .dropdown{display:none}
     #lcdmh-nav .dropdown a{padding:.9rem 1.5rem !important}
-    #lcdmh-nav .has-drop:hover > .dropdown{display:none}
-    #lcdmh-nav .has-drop.open:hover > .dropdown{display:block}
-    #lcdmh-nav .nav-yt{
-      display:inline-block;
+    #lcdmh-nav .nav-yt,
+    #lcdmh-nav .nav-subscribe,
+    #lcdmh-nav .nav-last-video{
+      display:inline-flex;
       width:auto !important;
       margin:.5rem auto 0;
-      padding:.7rem 1.1rem !important;
+      padding:.75rem 1.1rem !important;
+      justify-content:center;
     }
+    #lcdmh-nav .nav-last-video.mobile-last .label-title{display:inline}
   }
 </style>
