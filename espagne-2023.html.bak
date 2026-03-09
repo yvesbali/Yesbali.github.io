@@ -228,40 +228,15 @@
 <body>
 
 <!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH (NE PAS MODIFIER) -->
+<!-- NAVIGATION (chargée depuis nav.html)    -->
 <!-- ======================================== -->
 <div id="lcdmh-nav-container"></div>
 <script>
-(function() {
-    // Charger la navigation depuis nav.html (chemin relatif)
     fetch('nav.html?t=' + Date.now())
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById('lcdmh-nav-container').innerHTML = html;
-            
-            // Marquer la page active
-            const page = window.location.pathname.split('/').pop() || 'index.html';
-            document.querySelectorAll('#lcdmh-nav .nav-links > li > a').forEach(link => {
-                const href = link.getAttribute('href') || '';
-                if (href && href !== '#' && page.indexOf(href.replace('.html', '')) !== -1) {
-                    link.classList.add('active');
-                }
-            });
-        })
-        .catch(err => {
-            console.error('❌ Navigation non chargée:', err);
-            // Fallback ultra minimal
-            document.getElementById('lcdmh-nav-container').innerHTML = 
-                '<nav style="background:#fff;padding:1rem;"><a href="index.html" style="color:#e67e22;font-weight:bold;font-size:1.5rem;">LCDMH</a></nav>';
-        });
-})();
+        .then(r => r.text())
+        .then(html => document.getElementById('lcdmh-nav-container').innerHTML = html)
+        .catch(() => document.getElementById('lcdmh-nav-container').innerHTML = '<nav style="background:#fff;padding:1rem;"><a href="/" style="color:#e67e22;">LCDMH</a></nav>');
 </script>
-<!-- ======================================== -->
-
-<!-- ======================================== -->
-<!-- NAVIGATION (chargée depuis nav.html)    -->
-<!-- ======================================== -->
-
 
 <!-- ======================================== -->
 <!-- MODULE ROAD TRIP (ressources + QR)      -->

@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sécurité à Moto – Trajectoires, Équipement, Conseils | LCDMH</title>
-    <meta name="description" content="Conseils et formations pour une conduite moto plus sûre : trajectoires de sécurité, freinage, équipement de protection, visibilité.">
-    <meta name="keywords" content="sécurité moto, trajectoire de sécurité, freinage moto, équipement de protection, visibilité motard, formation moto">
+    <title>Tests Équipement Moto – Bagagerie, Gants, Vêtements | LCDMH</title>
+    <meta name="description" content="Tests casques, bagagerie, gants chauffants et accessoires moto en conditions réelles. Tous mes avis pour équiper votre road trip.">
+    <meta name="keywords" content="équipement moto, bagagerie moto, gants chauffants, casque moto, test accessoires moto, road trip équipement">
     <meta name="author" content="Yves - LCDMH">
-    <meta property="og:title" content="Sécurité à Moto - LCDMH">
-    <meta property="og:description" content="Conseils et formations pour une conduite moto plus sûre : trajectoires, équipement, visibilité.">
-    <meta property="og:url" content="https://lcdmh.com/securite.html">
+    <meta property="og:title" content="Tests Équipement Moto - LCDMH">
+    <meta property="og:description" content="Tests et avis sur l'équipement moto : casques, bagagerie, vêtements techniques, accessoires.">
+    <meta property="og:url" content="https://lcdmh.com/equipement.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="LCDMH">
-    <meta property="og:image" content="https://lcdmh.com/images/securite-og.jpg">
-    <link rel="canonical" href="https://lcdmh.com/securite.html">
+    <meta property="og:image" content="https://lcdmh.com/images/equipement-og.jpg">
+    <link rel="canonical" href="https://lcdmh.com/equipement.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -215,13 +215,13 @@
             border: 1px solid #e0e0e0;
             text-align: center;
         }
-        .tips-grid {
+        .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin: 3rem 0;
         }
-        .tip-card {
+        .card {
             background: white;
             border-radius: 15px;
             overflow: hidden;
@@ -229,36 +229,38 @@
             border: 1px solid #e0e0e0;
             transition: transform .2s;
         }
-        .tip-card:hover { transform: translateY(-5px); }
-        .tip-header {
+        .card:hover { transform: translateY(-5px); }
+        .card-header {
             background: #1e1e1e;
             color: white;
             padding: 1.5rem;
         }
-        .tip-header h3 {
-            font-size: 1.5rem;
+        .card-header h3 {
+            font-size: 1.8rem;
             margin-bottom: .3rem;
         }
-        .tip-header .badge {
+        .card-header .type {
             color: #e67e22;
             font-weight: 600;
-            font-size: .9rem;
         }
-        .tip-content {
-            padding: 1.5rem;
-        }
-        .tip-content ul {
+        .card-content { padding: 1.5rem; }
+        .card-content ul {
             list-style: none;
             color: #666;
         }
-        .tip-content li {
+        .card-content li {
             padding: .3rem 0;
             border-bottom: 1px solid #f0f0f0;
         }
-        .tip-content li:last-child { border-bottom: none; }
-        .tip-footer {
+        .card-content li:last-child { border-bottom: none; }
+        .card-footer {
             padding: 1.5rem;
             border-top: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: .5rem;
         }
         .btn {
             background: #e67e22;
@@ -270,76 +272,43 @@
             display: inline-block;
         }
         .btn:hover { background: #d35400; }
-        
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #e67e22;
+            color: #e67e22;
         }
-        .video-card {
+        .btn-outline:hover { background: #e67e22; color: white; }
+        
+        .tip-box {
+            background: #f8f9fa;
+            border-left: 4px solid #e67e22;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tableau-box {
             background: white;
             border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,.05);
-            border: 1px solid #e0e0e0;
-            cursor: pointer;
-            transition: transform .2s;
-        }
-        .video-card:hover { transform: translateY(-5px); }
-        .video-thumb {
-            width: 100%;
-            height: 180px;
-            overflow: hidden;
-            background: #000;
-        }
-        .video-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform .3s;
-        }
-        .video-card:hover .video-thumb img { transform: scale(1.05); }
-        .video-info {
-            padding: 1.5rem;
-        }
-        .video-info h4 {
-            margin-bottom: .5rem;
-            color: #e67e22;
-        }
-        .video-info p {
-            color: #666;
-            font-size: .9rem;
-        }
-        
-        .cta-box {
-            background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
-            color: white;
-            border-radius: 30px;
-            padding: 2.5rem;
-            text-align: center;
+            padding: 2rem;
             margin: 3rem 0;
+            border: 1px solid #e0e0e0;
+            overflow-x: auto;
         }
-        .cta-box h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+        .tableau-box table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
         }
-        .cta-box p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 1.5rem;
+        .tableau-box th {
+            background: #f5f5f5;
+            padding: 1rem;
+            text-align: left;
         }
-        .btn-cta {
-            background: white;
-            color: #e67e22;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            display: inline-block;
-            transition: transform .2s;
+        .tableau-box td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
         }
-        .btn-cta:hover { transform: scale(1.05); }
+        .tableau-box .check { color: #e67e22; font-weight: 700; }
         
         footer {
             background: #1e1e1e;
@@ -428,248 +397,311 @@
 </head>
 <body>
 
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH (NE PAS MODIFIER) -->
-<!-- ======================================== -->
-<div id="lcdmh-nav-container"></div>
-<script>
-(function() {
-    // Charger la navigation depuis nav.html (chemin relatif)
-    fetch('nav.html?t=' + Date.now())
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById('lcdmh-nav-container').innerHTML = html;
-            
-            // Marquer la page active
-            const page = window.location.pathname.split('/').pop() || 'index.html';
-            document.querySelectorAll('#lcdmh-nav .nav-links > li > a').forEach(link => {
-                const href = link.getAttribute('href') || '';
-                if (href && href !== '#' && page.indexOf(href.replace('.html', '')) !== -1) {
-                    link.classList.add('active');
-                }
-            });
-        })
-        .catch(err => {
-            console.error('❌ Navigation non chargée:', err);
-            // Fallback ultra minimal
-            document.getElementById('lcdmh-nav-container').innerHTML = 
-                '<nav style="background:#fff;padding:1rem;"><a href="index.html" style="color:#e67e22;font-weight:bold;font-size:1.5rem;">LCDMH</a></nav>';
-        });
-})();
-</script>
-<!-- ======================================== -->
-
 <!-- Navigation -->
 <!-- ======================================== -->
 <!-- DÉBUT NAVIGATION LCDMH (fichier unique) -->
 <!-- ======================================== -->
-
+<div id="lcdmh-nav-container"></div>
+<script>
+(function() {
+    // Fonction pour charger la navigation
+    function chargerNavigation() {
+        fetch('/nav.html?t=' + Date.now())
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('lcdmh-nav-container').innerHTML = html;
+                
+                // Marquer la page active
+                const page = window.location.pathname.split('/').pop() || 'index.html';
+                document.querySelectorAll('#lcdmh-nav .nav-links > li > a').forEach(link => {
+                    const href = link.getAttribute('href') || '';
+                    if (href && href !== '#' && page.indexOf(href.replace('.html', '')) !== -1) {
+                        link.classList.add('active');
+                    }
+                });
+            })
+            .catch(err => {
+                console.error('❌ Navigation non chargée:', err);
+                // Fallback : navigation minimale
+                document.getElementById('lcdmh-nav-container').innerHTML = 
+                    '<nav style="background:#fff;padding:1rem;"><a href="/" style="color:#e67e22;font-weight:bold;font-size:1.5rem;">LCDMH</a></nav>';
+            });
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', chargerNavigation);
+    } else {
+        chargerNavigation();
+    }
+})();
+</script>
 <!-- ======================================== -->
 <!-- FIN NAVIGATION LCDMH -->
 <!-- ======================================== -->
-    
+    <script>
+    // === NAVIGATION JS (dropdown hover + mobile) ===
+    (function(){
+        var isMobile = function(){ return window.innerWidth <= 900; };
+        document.querySelectorAll('#lcdmh-nav .has-drop').forEach(function(item){
+            var dd = item.querySelector('.dropdown');
+            var timer = null;
+            // Desktop : hover avec délai 200ms (évite fermeture trop rapide)
+            item.addEventListener('mouseenter', function(){ if(!isMobile()){ clearTimeout(timer); dd.style.display='block'; }});
+            item.addEventListener('mouseleave', function(){ if(!isMobile()){ timer=setTimeout(function(){ dd.style.display=''; },200); }});
+            dd.addEventListener('mouseenter',   function(){ if(!isMobile()) clearTimeout(timer); });
+            dd.addEventListener('mouseleave',   function(){ if(!isMobile()){ timer=setTimeout(function(){ dd.style.display=''; },200); }});
+            // Mobile : clic
+            item.querySelector(':scope>a').addEventListener('click',function(e){
+                if(isMobile()){
+                    e.preventDefault();
+                    var open = dd.style.display==='block';
+                    document.querySelectorAll('#lcdmh-nav .dropdown').forEach(function(d){ d.style.display=''; });
+                    dd.style.display = open ? '' : 'block';
+                }
+            });
+        });
+        // Mobile toggle
+        document.addEventListener('DOMContentLoaded',function(){
+            var toggle = document.getElementById('menuToggle');
+            var list   = document.getElementById('navLinks');
+            if(!toggle||!list) return;
+            toggle.addEventListener('click',function(e){ e.stopPropagation(); list.classList.toggle('active'); });
+            document.addEventListener('click',function(e){
+                if(!list.contains(e.target)&&!toggle.contains(e.target)) list.classList.remove('active');
+            });
+        });
+        // Active state auto
+        var page = window.location.pathname.split('/').pop()||'index.html';
+        document.querySelectorAll('#lcdmh-nav .nav-links>li>a').forEach(function(a){
+            var h = a.getAttribute('href')||'';
+            if(h && h!='#' && page.indexOf(h.replace('.html',''))!==-1) a.classList.add('active');
+        });
+    })();
+    </script>
 
 <!-- Hero -->
 <section class="hero">
     <div class="hero-image"></div>
     <div class="hero-content">
-        <h1>SÉCURITÉ <span>À MOTO</span></h1>
-        <p>Conseils, formations et équipements pour rouler en toute sécurité.</p>
+        <h1>ÉQUIPEMENT <span>MOTO</span></h1>
+        <p>Tests et avis terrain sur l'équipement du motard : bagagerie, vêtements, accessoires.</p>
     </div>
 </section>
 
-<!-- Introduction -->
+<!-- Contenu principal -->
 <div class="container">
+    <!-- Introduction -->
     <div class="intro-box">
         <p style="font-size: 1.1rem; color: #666;">
-            Après plus de 72 000 km sur les routes d'Europe, j'ai appris que la sécurité ne se limite pas à l'équipement.
-            C'est une combinaison de bonnes pratiques, d'anticipation, de technique de pilotage et de visibilité.
-            J'ai eu la chance de participer à des formations avec la gendarmerie et des instructeurs professionnels.
-            Voici ce que j'ai appris et que je mets en pratique chaque jour.
+            Depuis mon premier road trip en 2022, j'ai testé des dizaines d'équipements : 
+            casques, bagagerie, vêtements techniques, gants chauffants, etc. 
+            Je les utilise en conditions réelles, sous la pluie, dans le froid, sur les routes 
+            de montagne ou d'autoroute. Voici mes retours d'expérience honnêtes, 
+            pour vous aider à choisir ce qui vous convient vraiment.
         </p>
     </div>
 
-    <!-- Section TRAJECTOIRES DE SÉCURITÉ -->
+    <!-- Section BAGAGERIE -->
     <div class="section-title">
-        <h2>TRAJECTOIRES DE SÉCURITÉ</h2>
+        <h2>BAGAGERIE & TRANSPORT</h2>
         <div class="bar"></div>
     </div>
-    <div class="tips-grid">
-        <!-- Virage -->
-        <div class="tip-card">
-            <div class="tip-header">
-                <h3>Bien prendre un virage</h3>
-                <div class="badge">Technique</div>
+    <div class="cards-grid">
+        <!-- Lone Rider MiniBag 6L -->
+        <div class="card">
+            <div class="card-header">
+                <h3>Lone Rider MiniBag 6L</h3>
+                <div class="type">Sacoche étanche</div>
             </div>
-            <div class="tip-content">
+            <div class="card-content">
                 <ul>
-                    <li>✅ Ralentissez avant le virage, pas dans le virage</li>
-                    <li>✅ Regardez le plus loin possible (là où vous voulez aller)</li>
-                    <li>✅ Positionnez-vous à l'extérieur du virage à l'entrée</li>
-                    <li>✅ Accélérez progressivement en sortie</li>
-                    <li>⚠️ Évitez de freiner en courbe</li>
+                    <li>✅ Étanchéité parfaite (rouleau)</li>
+                    <li>✅ Fixation universelle (scratchs)</li>
+                    <li>✅ Capacité 6L : affaires de pluie, outils</li>
+                    <li>⚠️ Attention aux scratchs qui s'usent</li>
+                    <li>🌍 Testé en Norvège (pluie) et Espagne</li>
                 </ul>
             </div>
-            <div class="tip-footer">
-                <a href="https://youtu.be/KGfovxM_Q7w" class="btn" target="_blank" rel="noopener">Voir la formation</a>
+            <div class="card-footer">
+                <span>Test complet</span>
+                <a href="https://www.youtube.com/watch?v=C22Vu27ov00" class="btn" target="_blank" rel="noopener noreferrer">Voir le test</a>
             </div>
         </div>
 
-        <!-- Freinage d'urgence (texte uniquement) -->
-        <div class="tip-card">
-            <div class="tip-header">
-                <h3>Freinage d'urgence</h3>
-                <div class="badge">Survie</div>
+        <!-- Sacs réservoir -->
+        <div class="card">
+            <div class="card-header">
+                <h3>Sacs réservoir</h3>
+                <div class="type">Givi, Bagster</div>
             </div>
-            <div class="tip-content">
+            <div class="card-content">
                 <ul>
-                    <li>✅ Serrez fermement le frein avant (80% de la puissance)</li>
-                    <li>✅ Frein arrière en complément (20%)</li>
-                    <li>✅ Gardez la moto droite</li>
-                    <li>✅ Relâchez progressivement en fin de freinage</li>
-                    <li>⚠️ Entraînez-vous sur parking sécurisé</li>
+                    <li>✅ Accès facile aux affaires (téléphone, carte)</li>
+                    <li>✅ Fixation aimantée ou sangles</li>
+                    <li>✅ Capacité 3-8L selon modèles</li>
+                    <li>⚠️ Attention aux rayures sur le réservoir</li>
                 </ul>
             </div>
-            <div class="tip-footer">
-                <span style="color: #666; font-style: italic;">Entraînement personnel recommandé</span>
-            </div>
-        </div>
-
-        <!-- Regard et anticipation -->
-        <div class="tip-card">
-            <div class="tip-header">
-                <h3>Regard & anticipation</h3>
-                <div class="badge">Clé</div>
-            </div>
-            <div class="tip-content">
-                <ul>
-                    <li>✅ Regardez toujours là où vous voulez aller</li>
-                    <li>✅ Anticipez les trajectoires des autres véhicules</li>
-                    <li>✅ Scannez les intersections, les sorties de garage</li>
-                    <li>✅ Gardez une distance de sécurité suffisante</li>
-                </ul>
-            </div>
-            <div class="tip-footer">
-                <a href="https://youtu.be/mqrxymLts_0" class="btn" target="_blank" rel="noopener">Voir la vidéo</a>
+            <div class="card-footer">
+                <span>Comparatif à venir</span>
             </div>
         </div>
     </div>
 
-    <!-- Section ÉQUIPEMENT DE SÉCURITÉ -->
+    <!-- Section VÊTEMENTS TECHNIQUES -->
     <div class="section-title">
-        <h2>ÉQUIPEMENT DE SÉCURITÉ</h2>
+        <h2>VÊTEMENTS & PROTECTIONS</h2>
         <div class="bar"></div>
     </div>
-    <div class="tips-grid">
-        <!-- Casque -->
-        <div class="tip-card">
-            <div class="tip-header">
-                <h3>Casque</h3>
-                <div class="badge">Indispensable</div>
+    <div class="cards-grid">
+        <!-- Gants chauffants Kemi Moto -->
+        <div class="card">
+            <div class="card-header">
+                <h3>Gants chauffants Kemi Moto</h3>
+                <div class="type">Hiver / Froid</div>
             </div>
-            <div class="tip-content">
+            <div class="card-content">
                 <ul>
-                    <li>✅ Homologué (ECE 22.06)</li>
-                    <li>✅ Bien ajusté, pas trop lâche</li>
-                    <li>✅ Visière claire pour la nuit</li>
-                    <li>✅ Remplacez-le après un choc</li>
+                    <li>✅ 3 niveaux de chaleur</li>
+                    <li>✅ Batterie lithium (autonomie 4-6h)</li>
+                    <li>✅ Bonne protection contre le vent</li>
+                    <li>⚠️ Un peu épais pour les commandes</li>
+                    <li>🌍 Testés en Norvège (5°C)</li>
                 </ul>
             </div>
-            <div class="tip-footer">
-                <a href="tests-motos.html" class="btn">Voir les tests</a>
+            <div class="card-footer">
+                <span>Test complet</span>
+                <a href="https://www.youtube.com/watch?v=eNNSnfYyYbM" class="btn" target="_blank" rel="noopener noreferrer">Voir le test</a>
             </div>
         </div>
 
-        <!-- Gants (texte uniquement) -->
-        <div class="tip-card">
-            <div class="tip-header">
-                <h3>Gants</h3>
-                <div class="badge">Protection</div>
+        <!-- Veste chauffante Kemi Moto -->
+        <div class="card">
+            <div class="card-header">
+                <h3>Veste chauffante Kemi Moto</h3>
+                <div class="type">Vêtement technique</div>
             </div>
-            <div class="tip-content">
+            <div class="card-content">
                 <ul>
-                    <li>✅ Avec coques de protection</li>
-                    <li>✅ Adaptés à la saison</li>
-                    <li>✅ Bonne préhension des commandes</li>
-                    <li>✅ Renforcés au niveau des paumes</li>
+                    <li>✅ Chauffante, idéale pour le froid</li>
+                    <li>✅ Batterie intégrée</li>
+                    <li>✅ Testée en conditions réelles</li>
+                    <li>✅ Complète l'équipement hiver</li>
                 </ul>
             </div>
-            <div class="tip-footer">
-                <span style="color: #666; font-style: italic;">Équipement de base essentiel</span>
-            </div>
-        </div>
-
-        <!-- Gilet airbag (texte uniquement) -->
-        <div class="tip-card">
-            <div class="tip-header">
-                <h3>Gilet airbag</h3>
-                <div class="badge">Protection active</div>
-            </div>
-            <div class="tip-content">
-                <ul>
-                    <li>✅ Protection cervicale et dorsale</li>
-                    <li>✅ Déclenchement en cas de chute</li>
-                    <li>✅ De plus en plus abordable</li>
-                    <li>✅ Recommandé pour la route</li>
-                </ul>
-            </div>
-            <div class="tip-footer">
-                <span style="color: #666; font-style: italic;">Investissement sécurité</span>
+            <div class="card-footer">
+                <span>Test disponible</span>
+                <a href="https://www.youtube.com/watch?v=XwxJY5Bg4Mo" class="btn" target="_blank" rel="noopener noreferrer">Voir le test</a>
             </div>
         </div>
     </div>
 
-    <!-- Vidéos formation avec MINIATURES -->
+    <!-- Section ACCESSOIRES -->
     <div class="section-title">
-        <h2>MES VIDÉOS FORMATION</h2>
+        <h2>AUTRES ACCESSOIRES</h2>
         <div class="bar"></div>
     </div>
-    <div class="video-grid">
-        <!-- Trajectoires avec Gendarmerie -->
-        <div class="video-card" onclick="window.open('https://youtu.be/KGfovxM_Q7w', '_blank')">
-            <div class="video-thumb">
-                <img src="https://img.youtube.com/vi/KGfovxM_Q7w/hqdefault.jpg" alt="Formation trajectoires de sécurité">
+    <div class="cards-grid">
+        <!-- Éclairage Olight -->
+        <div class="card">
+            <div class="card-header">
+                <h3>Olight Perun 3</h3>
+                <div class="type">Lampe frontale</div>
             </div>
-            <div class="video-info">
-                <h4>Formation trajectoires de sécurité</h4>
-                <p>Une journée d'entraînement avec un motard gendarme pour apprendre les bonnes trajectoires.</p>
+            <div class="card-content">
+                <ul>
+                    <li>✅ 3000 lumens max</li>
+                    <li>✅ Batterie 21700 intégrée</li>
+                    <li>✅ IP68 étanche</li>
+                    <li>✅ Idéale pour le bivouac</li>
+                </ul>
             </div>
-        </div>
-        
-        <!-- Virages débutant -->
-        <div class="video-card" onclick="window.open('https://youtu.be/mqrxymLts_0', '_blank')">
-            <div class="video-thumb">
-                <img src="https://img.youtube.com/vi/mqrxymLts_0/hqdefault.jpg" alt="Virages Moto Débutant">
-            </div>
-            <div class="video-info">
-                <h4>Virages Moto Débutant</h4>
-                <p>Le secret pour maîtriser sa trajectoire et prendre confiance en courbe.</p>
+            <div class="card-footer">
+                <span>Test complet</span>
+                <a href="olight.html" class="btn">Voir la page Olight</a>
             </div>
         </div>
-        
-        <!-- Équilibre basse vitesse -->
-        <div class="video-card" onclick="window.open('https://youtu.be/f2Le-gDPWh4', '_blank')">
-            <div class="video-thumb">
-                <img src="https://img.youtube.com/vi/f2Le-gDPWh4/hqdefault.jpg" alt="Maîtrisez le lent">
+
+        <!-- Matériel vidéo -->
+        <div class="card">
+            <div class="card-header">
+                <h3>Fixations caméra</h3>
+                <div class="type">GoPro, Osmo</div>
             </div>
-            <div class="video-info">
-                <h4>Maîtrisez le lent</h4>
-                <p>Exercices pour améliorer votre équilibre à basse vitesse et éviter les chutes.</p>
+            <div class="card-content">
+                <ul>
+                    <li>✅ Supports guidon anti-vibration</li>
+                    <li>✅ Mentonnière pour casque</li>
+                    <li>✅ Fixations magnétiques</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <span>Voir page dédiée</span>
+                <a href="photo-video.html" class="btn">Photo / Vidéo</a>
             </div>
         </div>
     </div>
 
-    <!-- CTA -->
-    <div class="cta-box">
-        <h3>💰 Équipez-vous en toute sécurité</h3>
-        <p>Retrouvez mes tests d'équipements et les codes promo exclusifs pour vous protéger sans vous ruiner.</p>
-        <a href="codes-promo.html" class="btn-cta">Voir les codes promo</a>
+    <!-- Tableau récapitulatif -->
+    <div class="tableau-box">
+        <h3 style="margin-bottom: 1.5rem; color: #e67e22;">📋 Équipements testés</h3>
+        <table>
+            <tr>
+                <th>Équipement</th>
+                <th>Marque / Modèle</th>
+                <th>Utilisation</th>
+                <th>Avis</th>
+                <th>Note /5</th>
+            </tr>
+            <tr>
+                <td>Sacoche</td>
+                <td><strong>Lone Rider MiniBag 6L</strong></td>
+                <td>Bivouac, pluie</td>
+                <td>Étanche, pratique</td>
+                <td class="check">4.5</td>
+            </tr>
+            <tr>
+                <td>Gants chauffants</td>
+                <td><strong>Kemi Moto</strong></td>
+                <td>Hiver (5°C)</td>
+                <td>Chauds, bonne autonomie</td>
+                <td class="check">4.0</td>
+            </tr>
+            <tr>
+                <td>Lampe frontale</td>
+                <td><strong>Olight Perun 3</strong></td>
+                <td>Bivouac, nuit</td>
+                <td>Puissante, étanche</td>
+                <td class="check">4.8</td>
+            </tr>
+            <tr>
+                <td>Casque</td>
+                <td><strong>HJC RPHA 91</strong></td>
+                <td>Tous terrains</td>
+                <td>Confortable, insonorisé</td>
+                <td class="check">4.3</td>
+            </tr>
+        </table>
     </div>
 
-    <!-- Note -->
+    <!-- Conseils pratiques -->
+    <div class="tip-box">
+        <h3 style="color: #e67e22; margin-bottom: 1rem;">💡 Mes conseils pour bien choisir son équipement</h3>
+        <ul style="color: #666; margin-left: 1.5rem;">
+            <li><strong>Priorisez la qualité</strong> : un bon équipement dure des années</li>
+            <li><strong>Testez avant d'acheter</strong> : les tailles varient selon les marques</li>
+            <li><strong>Pensez aux conditions</strong> : pluie, froid, chaleur</li>
+            <li><strong>Investissez dans l'étanchéité</strong> : rien de pire qu'un équipement qui prend l'eau</li>
+            <li><strong>Vérifiez les compatibilités</strong> : fixations, intercoms, etc.</li>
+            <li><strong>Ne négligez pas le rangement</strong> : une bonne organisation change tout en road trip</li>
+        </ul>
+    </div>
+
+    <!-- Note sur les prochains tests -->
     <div style="background: #f8f9fa; border-left: 4px solid #e67e22; padding: 1.5rem; margin: 2rem 0;">
         <p style="color: #666;">
-            🏍️ <strong>Rappel important :</strong> La sécurité n'a pas de prix. Un bon équipement et une formation régulière sont les meilleurs investissements pour profiter pleinement de la route.
+            🧥 <strong>À venir :</strong> test de vestes étanches (Dainese, Alpinestars), 
+            comparatif de sacs réservoir, et un guide complet sur le layering pour le froid.
         </p>
     </div>
 </div>
@@ -713,4 +745,4 @@
 </footer>
 </body>
 </html>
-<!-- FIN DU FICHIER : securite.html -->
+<!-- FIN DU FICHIER : equipement.html -->
