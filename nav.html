@@ -1,28 +1,25 @@
 <nav id="lcdmh-nav" aria-label="Navigation principale LCDMH">
-  <a class="logo" href="index.html" aria-label="Accueil LCDMH">LC<span>D</span>MH</a>
+  <a class="lcdmh-logo" href="index.html" aria-label="Accueil LCDMH">LC<span>D</span>MH</a>
 
-  <button id="menuToggle" class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
-    ☰
-  </button>
+  <button id="lcdmh-menu-toggle" class="lcdmh-menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="lcdmh-nav-links">☰</button>
 
-  <ul id="navLinks" class="nav-links">
+  <ul id="lcdmh-nav-links" class="lcdmh-nav-links">
     <li><a href="index.html">Accueil</a></li>
 
-    <li class="has-drop">
-      <a href="#" aria-haspopup="true" aria-expanded="false">Road Trips</a>
-      <div class="dropdown">
+    <li class="lcdmh-has-drop">
+      <a href="#" data-nav-trigger="roadtrips" aria-haspopup="true" aria-expanded="false">Road Trips</a>
+      <div class="lcdmh-dropdown" data-nav-menu="roadtrips">
         <a href="roadtrips.html">Tous les road trips</a>
         <a href="cap-nord-moto.html">🏔️ Cap Nord 2025</a>
         <a href="europe-asie-moto.html">🌍 Europe–Asie 2024</a>
-        <a href="alpes-aventure-festival-moto.html">⛰️ Alpes Festival 2025</a>
         <a href="espagne-2023.html">🇪🇸 Espagne 2023</a>
-        <a href="alpes-aventure-festival-moto.html">🏔️ Les Alpes</a>
+        <a href="alpes-aventure-festival-moto.html">🏍️ Alpes Festival 2025</a>
       </div>
     </li>
 
-    <li class="has-drop">
-      <a href="#" aria-haspopup="true" aria-expanded="false">Tests & équipements</a>
-      <div class="dropdown">
+    <li class="lcdmh-has-drop">
+      <a href="#" data-nav-trigger="tests" aria-haspopup="true" aria-expanded="false">Tests & équipements</a>
+      <div class="lcdmh-dropdown" data-nav-menu="tests">
         <a href="tests.html">Tous les tests</a>
         <a href="tests-motos.html">Tests motos</a>
         <a href="equipement.html">Équipement</a>
@@ -33,9 +30,9 @@
       </div>
     </li>
 
-    <li class="has-drop">
-      <a href="#" aria-haspopup="true" aria-expanded="false">Codes promo</a>
-      <div class="dropdown">
+    <li class="lcdmh-has-drop">
+      <a href="#" data-nav-trigger="codes" aria-haspopup="true" aria-expanded="false">Codes promo</a>
+      <div class="lcdmh-dropdown" data-nav-menu="codes">
         <a href="codes-promo.html">Tous les codes</a>
         <a href="aoocci.html">Aoocci</a>
         <a href="carpuride.html">Carpuride</a>
@@ -45,201 +42,182 @@
       </div>
     </li>
 
-    <li class="has-drop">
-      <a href="#" aria-haspopup="true" aria-expanded="false">À propos</a>
-      <div class="dropdown">
+    <li class="lcdmh-has-drop">
+      <a href="#" data-nav-trigger="apropos" aria-haspopup="true" aria-expanded="false">À propos</a>
+      <div class="lcdmh-dropdown" data-nav-menu="apropos">
         <a href="a-propos.html">À propos</a>
         <a href="contact.html">Contact</a>
         <a href="sitemap.html">Plan du site</a>
       </div>
     </li>
 
-    <li class="desktop-only nav-last-video-li">
-      <a class="nav-last-video" href="https://www.youtube.com/@LCDMH/videos" target="_blank" rel="noopener" title="Voir les dernières vidéos">
-        <span class="dot"></span>
-        <span class="label-new">Nouveau</span>
-        <span class="label-title">Dernière vidéo</span>
-      </a>
-    </li>
-    <li class="desktop-only"><a class="nav-subscribe" href="https://www.youtube.com/@LCDMH?sub_confirmation=1" target="_blank" rel="noopener">▶ S'abonner</a></li>
-    <li><a class="nav-yt" href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">📺 YouTube</a></li>
-
-    <li class="mobile-only"><a class="nav-subscribe" href="https://www.youtube.com/@LCDMH?sub_confirmation=1" target="_blank" rel="noopener">▶ S'abonner</a></li>
-    <li class="mobile-only"><a class="nav-last-video mobile-last" href="https://www.youtube.com/@LCDMH/videos" target="_blank" rel="noopener"><span class="dot"></span><span class="label-new">Nouveau</span><span class="label-title">Dernière vidéo</span></a></li>
+    <li class="lcdmh-desktop-cta"><a class="lcdmh-last-video" href="index.html#videos"><span class="lcdmh-badge-new">NOUVEAU</span><span class="lcdmh-badge-title">Dernière vidéo</span></a></li>
+    <li class="lcdmh-desktop-cta"><a class="lcdmh-subscribe" href="https://www.youtube.com/@LCDMH?sub_confirmation=1" target="_blank" rel="noopener">▶ S'abonner</a></li>
+    <li class="lcdmh-desktop-cta"><a class="lcdmh-youtube" href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">📺 YouTube</a></li>
   </ul>
 </nav>
 
 <style>
   #lcdmh-nav{
-    --orange:#e67e22;
-    --orange-dark:#d35400;
-    --noir:#1a1a1a;
-    --muted:#666;
-    --border:#e5e5e5;
-    --menu-bg:#ffffff;
+    --lcdmh-orange:#e67e22;
+    --lcdmh-orange-dark:#d35400;
+    --lcdmh-black:#1a1a1a;
+    --lcdmh-muted:#555;
+    --lcdmh-border:#e7e7e7;
+    --lcdmh-bg:#ffffff;
     position:sticky;
     top:0;
-    z-index:1000;
+    z-index:2000;
     display:flex;
     align-items:center;
     justify-content:space-between;
     gap:1rem;
-    min-height:70px;
+    min-height:82px;
     padding:0 4%;
-    background:var(--menu-bg);
+    background:var(--lcdmh-bg);
     box-shadow:0 2px 12px rgba(0,0,0,.07);
     font-family:'Inter',sans-serif;
   }
   #lcdmh-nav *{box-sizing:border-box}
   #lcdmh-nav a{text-decoration:none}
-  #lcdmh-nav .logo{
+  #lcdmh-nav .lcdmh-logo{
     font-family:'Montserrat',sans-serif;
-    font-size:1.55rem;
+    font-size:1.72rem;
     font-weight:900;
-    color:var(--noir);
+    color:var(--lcdmh-black);
     letter-spacing:-.03em;
     white-space:nowrap;
     flex-shrink:0;
   }
-  #lcdmh-nav .logo span{color:var(--orange)}
-  #lcdmh-nav .nav-links{
+  #lcdmh-nav .lcdmh-logo span{color:var(--lcdmh-orange)}
+  #lcdmh-nav .lcdmh-nav-links{
     display:flex;
     align-items:center;
     justify-content:flex-end;
-    gap:.5rem 1rem;
+    gap:.55rem 1rem;
     list-style:none;
     margin:0;
     padding:0;
     flex:1;
     flex-wrap:wrap;
   }
-  #lcdmh-nav .nav-links > li{position:relative}
-  #lcdmh-nav .nav-links a{
+  #lcdmh-nav .lcdmh-nav-links>li{position:relative}
+  #lcdmh-nav .lcdmh-nav-links>li>a{
     display:block;
-    padding:.42rem .45rem;
-    font-size:.8rem;
+    padding:.58rem .62rem;
+    font-size:.92rem;
     font-weight:700;
-    color:var(--muted);
+    color:var(--lcdmh-muted);
     text-transform:uppercase;
     letter-spacing:.04em;
-    transition:color .2s, background .2s;
     white-space:nowrap;
+    transition:color .2s ease, background .2s ease;
   }
-  #lcdmh-nav .nav-links a:hover,
-  #lcdmh-nav .nav-links a.active{color:var(--orange)}
-  #lcdmh-nav .has-drop > a::after{
-    content:' ▾';
-    font-size:.65rem;
-    opacity:.7;
-  }
-  #lcdmh-nav .dropdown{
-    display:none;
+  #lcdmh-nav .lcdmh-nav-links>li>a:hover,
+  #lcdmh-nav .lcdmh-nav-links>li>a.active,
+  #lcdmh-nav .lcdmh-has-drop.open>a{color:var(--lcdmh-orange)}
+  #lcdmh-nav .lcdmh-has-drop>a::after{content:' ▾';font-size:.72rem;opacity:.75}
+  #lcdmh-nav .lcdmh-dropdown{
     position:absolute;
-    top:100%;
+    top:calc(100% + 2px);
     left:0;
-    min-width:230px;
+    min-width:275px;
     padding:.55rem 0;
     background:#fff;
-    border:1px solid var(--border);
-    border-radius:14px;
-    box-shadow:0 10px 32px rgba(0,0,0,.14);
-    margin-top:0;
+    border:1px solid var(--lcdmh-border);
+    border-radius:16px;
+    box-shadow:0 14px 34px rgba(0,0,0,.14);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transform:translateY(10px);
+    transition:opacity .22s ease, transform .22s ease, visibility 0s linear .22s;
   }
-  #lcdmh-nav .has-drop::after{
+  #lcdmh-nav .lcdmh-dropdown::before{
     content:'';
     position:absolute;
     left:0;
     right:0;
-    top:100%;
+    top:-18px;
     height:18px;
   }
-  #lcdmh-nav .has-drop.open > .dropdown,
-  #lcdmh-nav .has-drop.hover-open > .dropdown{display:block}
-  #lcdmh-nav .dropdown a{
-    padding:.72rem 1rem;
-    color:var(--noir);
-    font-size:.88rem;
+  #lcdmh-nav .lcdmh-has-drop:hover>.lcdmh-dropdown,
+  #lcdmh-nav .lcdmh-has-drop:focus-within>.lcdmh-dropdown,
+  #lcdmh-nav .lcdmh-has-drop.open>.lcdmh-dropdown{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:translateY(0);
+    transition-delay:0s;
+  }
+  #lcdmh-nav .lcdmh-dropdown a{
+    display:block;
+    padding:.82rem 1.08rem;
+    color:var(--lcdmh-black);
+    font-size:.98rem;
     font-weight:600;
     text-transform:none;
     letter-spacing:normal;
+    white-space:nowrap;
   }
-  #lcdmh-nav .dropdown a:hover,
-  #lcdmh-nav .dropdown a.active{
-    color:var(--orange);
-    background:#fff8f2;
-  }
-  #lcdmh-nav .nav-last-video{
-    display:flex;
+  #lcdmh-nav .lcdmh-dropdown a:hover,
+  #lcdmh-nav .lcdmh-dropdown a.active{background:#fff8f2;color:var(--lcdmh-orange)}
+
+  #lcdmh-nav .lcdmh-last-video{
+    display:inline-flex !important;
     align-items:center;
     gap:.45rem;
-    border:1.5px solid rgba(230,126,34,.75);
-    border-radius:999px;
     padding:.42rem .95rem !important;
-    color:var(--noir) !important;
-    background:#fff8f2;
-    box-shadow:0 1px 3px rgba(0,0,0,.04);
+    border:1px solid #f0a500;
+    border-radius:999px;
+    background:#fff7ef;
+    color:var(--lcdmh-black) !important;
+    text-transform:none !important;
+    letter-spacing:normal !important;
+    font-size:.82rem !important;
+    box-shadow:0 1px 3px rgba(0,0,0,.05);
   }
-  #lcdmh-nav .nav-last-video .label-new{
-    color:var(--orange);
+  #lcdmh-nav .lcdmh-last-video:hover{background:#fff1df;color:var(--lcdmh-orange) !important}
+  #lcdmh-nav .lcdmh-badge-new{
+    color:var(--lcdmh-orange);
+    font-size:.75rem;
     font-weight:800;
+    letter-spacing:.08em;
+    animation:lcdmhPulse 1.4s infinite;
   }
-  #lcdmh-nav .nav-last-video .label-title{
-    color:var(--noir);
-    text-transform:none;
-    letter-spacing:normal;
-    font-weight:700;
-  }
-  #lcdmh-nav .nav-last-video .dot{
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:#ff3b30;
-    box-shadow:0 0 0 rgba(255,59,48,.55);
-    animation:lcdmhPulse 1.1s infinite;
-    flex:0 0 auto;
-  }
-  @keyframes lcdmhPulse{
-    0%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,59,48,.55)}
-    70%{transform:scale(1.05);box-shadow:0 0 0 8px rgba(255,59,48,0)}
-    100%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,59,48,0)}
-  }
-  #lcdmh-nav .nav-subscribe{
+  #lcdmh-nav .lcdmh-badge-title{font-size:.88rem;font-weight:600;color:inherit;text-transform:none}
+  #lcdmh-nav .lcdmh-subscribe,
+  #lcdmh-nav .lcdmh-youtube{
     color:#fff !important;
-    background:var(--orange);
     border-radius:999px;
-    padding:.55rem 1rem !important;
+    padding:.72rem 1.15rem !important;
   }
-  #lcdmh-nav .nav-subscribe:hover{background:var(--orange-dark);color:#fff !important}
-  #lcdmh-nav .nav-yt{
-    color:#fff !important;
-    background:#ff0000;
-    border-radius:999px;
-    padding:.55rem 1rem !important;
-  }
-  #lcdmh-nav .nav-yt:hover{background:#cc0000;color:#fff !important}
-  #lcdmh-nav .mobile-only{display:none}
-  #lcdmh-nav .menu-toggle{
+  #lcdmh-nav .lcdmh-subscribe{background:var(--lcdmh-orange)}
+  #lcdmh-nav .lcdmh-subscribe:hover{background:var(--lcdmh-orange-dark);color:#fff !important}
+  #lcdmh-nav .lcdmh-youtube{background:#ff0000}
+  #lcdmh-nav .lcdmh-youtube:hover{background:#d80000;color:#fff !important}
+
+  #lcdmh-nav .lcdmh-menu-toggle{
     display:none;
     background:none;
     border:none;
     cursor:pointer;
-    color:var(--noir);
-    font-size:1.9rem;
+    color:var(--lcdmh-black);
+    font-size:2rem;
     line-height:1;
-    padding:.4rem;
+    padding:.45rem;
   }
 
-  @media (max-width: 1120px){
-    #lcdmh-nav .desktop-only{display:none}
-  }
+  @keyframes lcdmhPulse{0%,100%{opacity:1}50%{opacity:.35}}
 
-  @media (max-width: 1000px){
-    #lcdmh-nav .menu-toggle{display:block}
-    #lcdmh-nav .mobile-only{display:block}
-    #lcdmh-nav .nav-links{
+  @media (max-width:1100px){
+    #lcdmh-nav{min-height:74px;padding:0 1rem}
+    #lcdmh-nav .lcdmh-logo{font-size:1.48rem}
+    #lcdmh-nav .lcdmh-menu-toggle{display:block}
+    #lcdmh-nav .lcdmh-nav-links{
       display:none;
       position:absolute;
-      top:70px;
+      top:74px;
       left:0;
       right:0;
       width:100%;
@@ -249,40 +227,47 @@
       background:#fff;
       box-shadow:0 10px 20px rgba(0,0,0,.1);
       padding:.7rem 0 1rem;
+      max-height:calc(100vh - 74px);
+      overflow:auto;
     }
-    #lcdmh-nav .nav-links.active{display:flex}
-    #lcdmh-nav .nav-links > li{width:100%;text-align:center}
-    #lcdmh-nav .nav-links a{
+    #lcdmh-nav .lcdmh-nav-links.active{display:flex}
+    #lcdmh-nav .lcdmh-nav-links>li{width:100%;text-align:center}
+    #lcdmh-nav .lcdmh-nav-links>li>a{
       width:100%;
       padding:1rem !important;
+      font-size:.98rem;
       white-space:normal;
     }
-    #lcdmh-nav .has-drop > a::after{display:none}
-    #lcdmh-nav .has-drop::after{display:none}
-    #lcdmh-nav .dropdown{
+    #lcdmh-nav .lcdmh-has-drop>a::after{display:none}
+    #lcdmh-nav .lcdmh-dropdown{
       position:static;
-      display:none;
       min-width:0;
-      margin:.25rem 0 .5rem;
-      border:none;
-      border-top:1px solid var(--border);
-      border-bottom:1px solid var(--border);
-      border-radius:0;
+      width:100%;
       box-shadow:none;
+      border:none;
+      border-top:1px solid #ececec;
+      border-radius:0;
+      padding:0;
       background:#fafafa;
+      max-height:0;
+      overflow:hidden;
+      opacity:1;
+      visibility:visible;
+      pointer-events:auto;
+      transform:none;
+      transition:max-height .25s ease;
     }
-    #lcdmh-nav .has-drop.open > .dropdown{display:block}
-    #lcdmh-nav .has-drop.hover-open > .dropdown{display:none}
-    #lcdmh-nav .dropdown a{padding:.9rem 1.5rem !important}
-    #lcdmh-nav .nav-yt,
-    #lcdmh-nav .nav-subscribe,
-    #lcdmh-nav .nav-last-video{
-      display:inline-flex;
-      width:auto !important;
-      margin:.5rem auto 0;
-      padding:.75rem 1.1rem !important;
+    #lcdmh-nav .lcdmh-dropdown::before{display:none}
+    #lcdmh-nav .lcdmh-has-drop.open>.lcdmh-dropdown{max-height:540px}
+    #lcdmh-nav .lcdmh-dropdown a{white-space:normal}
+    #lcdmh-nav .lcdmh-desktop-cta{padding:0 .8rem}
+    #lcdmh-nav .lcdmh-last-video,
+    #lcdmh-nav .lcdmh-subscribe,
+    #lcdmh-nav .lcdmh-youtube{
+      display:inline-flex !important;
       justify-content:center;
+      width:auto;
+      margin:.4rem auto;
     }
-    #lcdmh-nav .nav-last-video.mobile-last .label-title{display:inline}
   }
 </style>
