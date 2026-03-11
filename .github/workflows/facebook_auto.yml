@@ -1,58 +1,82 @@
 import json
 import re
 import requests
+from bs4 import BeautifulSoup
 import random
-import os
 
 # --- CONFIGURATION ---
+SITE_URL = "https://lcdmh.com"
 WEBHOOK_URL = "https://hook.eu1.make.com/eaa6xfheiv6uriro4ek6hjvcihew6n1f"
 
-def get_yt_id(url):
-    """Extrait l'ID de 11 caractères d'une vidéo YouTube proprement"""
-    pattern = r'(?:v=|embed\/|youtu\.be\/)([a-zA-Z0-9_-]{11})'
-    match = re.search(pattern, url)
-    return match.group(1) if match else None
+def get_site_content():
+    """Scanne la page d'accueil ou le sitemap pour trouver tous les articles"""
+    links = []
+    try:
+        # On récupère la page principale
+        res = requests.get(SITE_URL)
+        soup = BeautifulSoup(res.text, 'html.parser')
+        
+        # On cherche tous les liens vers des pages .html (tes articles)
+        for a in soup.find_all('a', href=True):
+            href = a['href']
+            if href.endswith('.html') and not 'index' in href:
+                full_url = href if href.startswith('http') else f"{SITE_URL}/{href.lstrip('/')}"
+                if full_url not in links:
+                    links.append(full_url)
+    except Exception as e:
+        print(f"Erreur scan site : {e}")
+    return links
 
-# --- LOGIQUE DE SELECTION ---
-# On vérifie s'il y a un nouveau post manuel, sinon on pioche dans les archives
-try:
-    if os.path.exists('facebook_post_selected.json'):
-        with open('facebook_post_selected.json', 'r', encoding='utf-8') as f:
-            data = json.load(f)
-            mode = "production"
+def analyze_page(url):
+    """Analyse une page précise pour extraire titre, catégorie et vidéo"""
+    try:
+        res = requests.get(url)
+        soup = BeautifulSoup(res.text, 'html.parser')
+        
+        title = soup.title.string.replace(' - LCDMH', '') if soup.title else "Souvenir LCDMH"
+        
+        # Extraction de l'ID YouTube
+        yt_match = re.search(r'(?:v=|embed\/|youtu\.be\/)([a-zA-Z0-9_-]{11})', res.text)
+        yt_id = yt_match.group(1) if yt_match else None
+        
+        # Détection de la catégorie par l'URL
+        category = "aventure" # par défaut
+        if "roadtrip" in url or "tour" in url: category = "Roadtrips"
+        elif "test" in url or "essai" in url: category = "Tests Équipement"
+        elif "tuto" in url: category = "Tutos"
+        
+        return {
+            "title": title,
+            "link": url,
+            "yt_id": yt_id,
+            "category": category,
+            "image_url": f"https://img.youtube.com/vi/{yt_id}/hqdefault.jpg" if yt_id else "https://lcdmh.com/images/logo-social.jpg"
+        }
+    except:
+        return None
+
+# --- EXECUTION ---
+print("🔍 Analyse du site lcdmh.com en cours...")
+all_links = get_site_content()
+
+if all_links:
+    # On choisit une page au hasard pour le Flashback
+    chosen_url = random.choice(all_links)
+    post_data = analyze_page(chosen_url)
+    
+    if post_data:
+        payload = {
+            "mode": "flashback",
+            "title": post_data['title'],
+            "category": post_data['category'], # Pour choisir le Board Pinterest
+            "message": f"🔙 FLASHBACK : {post_data['title']}\nOn se replonge dans cette aventure ?",
+            "link": post_data['link'],
+            "image_url": post_data['image_url']
+        }
+        
+        print(f"🚀 Envoi du Flashback : {payload['title']} (Catégorie: {payload['category']})")
+        requests.post(WEBHOOK_URL, json=payload)
     else:
-        # ICI : Ton garage de vidéos 2022/2023 (ajoute tes liens ici)
-        archives = [
-            {"title": "Road Trip Cap Nord", "link": "https://lcdmh.com/cap-nord-moto.html", "yt": "https://youtu.be/dQw4w9WgXcQ"},
-            {"title": "Test Intercom Sena", "link": "https://lcdmh.com/test-sena.html", "yt": "https://youtu.be/dQw4w9WgXcQ"},
-            # Ajoute d'autres lignes comme ça pour tes anciens contenus
-        ]
-        data = random.choice(archives)
-        mode = "flashback"
-except:
-    print("Erreur de lecture, arrêt.")
-    exit()
-
-# --- PREPARATION DU PAYLOAD ---
-video_id = get_yt_id(data.get('yt', ''))
-
-# On utilise hqdefault.jpg car Pinterest l'accepte toujours (contrairement à maxres)
-image_propre = f"https://img.youtube.com/vi/{video_id}/hqdefault.jpg" if video_id else "https://lcdmh.com/images/logo-social.jpg"
-
-payload = {
-    "mode": mode,
-    "title": data.get('title'),
-    "message": f"🔙 FLASHBACK : {data.get('title')}" if mode == "flashback" else data.get('message'),
-    "link": data.get('link'),
-    "image_url": image_propre,
-    "yt_id": video_id
-}
-
-# --- ENVOI A MAKE ---
-print(f"Envoi vers Make ({mode}) : {payload['title']}")
-res = requests.post(WEBHOOK_URL, json=payload)
-
-if res.status_code == 200:
-    print("✅ Données envoyées avec succès !")
+        print("Erreur lors de l'analyse de la page choisie.")
 else:
-    print(f"❌ Erreur {res.status_code}")
+    print("Aucun lien trouvé sur le site.")
