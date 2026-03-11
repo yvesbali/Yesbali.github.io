@@ -1,19 +1,43 @@
-- uses: actions/setup-python@v5
-    with:
-      python-version: "3.11"
+name: Update YouTube feed
 
-  - run: pip install requests
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
 
-  - name: Fetch YouTube data
-    env:
-      YOUTUBE_CLIENT_ID:     ${{ secrets.YOUTUBE_CLIENT_ID }}
-      YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
-      YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
-    run: python fetch_youtube.py
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Nécessaire pour la fusion sécurisée des fichiers
 
-  - name: Commit if changed
-    run: |
-      git config user.name  "github-actions[bot]"
-      git config user.email "github-actions[bot]@users.noreply.github.com"
-      git add data/
-      git diff --cached --quiet || (git commit -m "chore: YouTube feed $(date -u +%Y-%m-%d)" && git push)
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install requests
+
+      - name: Fetch YouTube data
+        env:
+          YOUTUBE_CLIENT_ID:     ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: python fetch_youtube.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          
+          # On vérifie s'il y a de nouvelles données avant de tenter d'enregistrer
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "chore: YouTube feed $(date -u +%Y-%m-%d)"
+            # SECURITÉ : On récupère les changements distants avant de pousser
+            git pull origin main --rebase
+            git push origin main
+          else
+            echo "Aucune nouvelle vidéo détectée."
+          fi
