@@ -74,7 +74,7 @@
     justify-content:space-between;
     gap:1rem;
     min-height:82px;
-    padding:0 4%;
+    padding:0.75rem 4% 0;  /* MODIFIÉ: ajout d'un padding-top de 0.75rem */
     background:var(--lcdmh-bg);
     box-shadow:0 2px 12px rgba(0,0,0,.07);
     font-family:'Inter',sans-serif;
@@ -212,7 +212,10 @@
   @keyframes lcdmhPulse{0%,100%{opacity:1}50%{opacity:.35}}
 
   @media (max-width:1100px){
-    #lcdmh-nav{min-height:74px;padding:0 1rem}
+    #lcdmh-nav{
+      min-height:74px;
+      padding:0.5rem 1rem 0;  /* MODIFIÉ: padding-top réduit mais toujours présent */
+    }
     #lcdmh-nav .lcdmh-logo{font-size:1.48rem}
     #lcdmh-nav .lcdmh-menu-toggle{display:block}
     #lcdmh-nav .lcdmh-nav-links{
