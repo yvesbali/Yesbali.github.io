@@ -3,9 +3,8 @@ name: Facebook Auto
 on:
   workflow_dispatch:
   schedule:
-     - cron: '0 8 * * 0' # S'exécute automatiquement tous les dimanches à 8h00
+    - cron: '0 8 * * 0' # Tous les dimanches à 8h00
 
-# Supprime l'avertissement de dépréciation Node.js 20
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -35,11 +34,9 @@ jobs:
       - name: Run Flashback Scanner
         run: python prepare_facebook_payload.py
 
-      - name: Commit generated files
+      - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .
-          # On enregistre les changements seulement s'il y en a (évite les erreurs)
-          git diff --cached --quiet || git commit -m "Mise à jour automatique du flashback"
-          git pushv
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Mise à jour flashback" && git push)
