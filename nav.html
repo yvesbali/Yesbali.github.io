@@ -70,11 +70,11 @@
     top:0;
     z-index:2000;
     display:flex;
-    align-items:center;
+    align-items:flex-start;  /* MODIFIÉ: de 'center' à 'flex-start' pour aligner par le haut */
     justify-content:space-between;
     gap:1rem;
     min-height:82px;
-    padding:0.75rem 4% 0;  /* MODIFIÉ: ajout d'un padding-top de 0.75rem */
+    padding:0.75rem 4% 0;
     background:var(--lcdmh-bg);
     box-shadow:0 2px 12px rgba(0,0,0,.07);
     font-family:'Inter',sans-serif;
@@ -89,6 +89,7 @@
     letter-spacing:-.03em;
     white-space:nowrap;
     flex-shrink:0;
+    line-height:1.2;  /* AJOUTÉ: pour contrôler la hauteur de ligne */
   }
   #lcdmh-nav .lcdmh-logo span{color:var(--lcdmh-orange)}
   #lcdmh-nav .lcdmh-nav-links{
@@ -113,6 +114,7 @@
     letter-spacing:.04em;
     white-space:nowrap;
     transition:color .2s ease, background .2s ease;
+    line-height:1.2;  /* AJOUTÉ: pour uniformiser avec le logo */
   }
   #lcdmh-nav .lcdmh-nav-links>li>a:hover,
   #lcdmh-nav .lcdmh-nav-links>li>a.active,
@@ -214,7 +216,8 @@
   @media (max-width:1100px){
     #lcdmh-nav{
       min-height:74px;
-      padding:0.5rem 1rem 0;  /* MODIFIÉ: padding-top réduit mais toujours présent */
+      padding:0.5rem 1rem 0;
+      align-items:center;  /* AJOUTÉ: on revient à center pour le mobile */
     }
     #lcdmh-nav .lcdmh-logo{font-size:1.48rem}
     #lcdmh-nav .lcdmh-menu-toggle{display:block}
