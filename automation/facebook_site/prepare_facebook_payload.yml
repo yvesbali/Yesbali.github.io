@@ -1,86 +1,44 @@
-import json
-import re
-import requests
+import json, re, requests, random, os
 from bs4 import BeautifulSoup
-import random
 
-# --- CONFIGURATION ---
 SITE_URL = "https://lcdmh.com"
 WEBHOOK_URL = "https://hook.eu1.make.com/eaa6xfheiv6uriro4ek6hjvcihew6n1f"
 
 def get_site_content():
-    """Scanne la page d'accueil pour trouver tous les articles"""
     links = []
     try:
         res = requests.get(SITE_URL, timeout=15)
         soup = BeautifulSoup(res.text, 'html.parser')
         for a in soup.find_all('a', href=True):
             href = a['href']
-            # On cible les pages d'articles .html
             if href.endswith('.html') and 'index' not in href:
                 full_url = href if href.startswith('http') else f"{SITE_URL}/{href.lstrip('/')}"
-                if full_url not in links:
-                    links.append(full_url)
-    except Exception as e:
-        print(f"Erreur scan site : {e}")
+                if full_url not in links: links.append(full_url)
+    except: pass
     return links
 
 def analyze_page(url):
-    """Analyse une page pour extraire titre, catégorie et image YouTube HQ"""
     try:
         res = requests.get(url, timeout=15)
         soup = BeautifulSoup(res.text, 'html.parser')
         title = soup.title.string.replace(' - LCDMH', '') if soup.title else "Souvenir LCDMH"
-        
-        # Extraction de l'ID YouTube (Essentiel pour Pinterest)
         yt_match = re.search(r'(?:v=|embed\/|youtu\.be\/)([a-zA-Z0-9_-]{11})', res.text)
         yt_id = yt_match.group(1) if yt_match else None
         
-        # --- LOGIQUE DES CATEGORIES ---
+        # Détection des catégories pour Pinterest
         category = "Roadtrips"
-        url_lower = url.lower()
-        if any(x in url_lower or x in title.lower() for x in ["test", "essai", "sena", "casque"]):
-            category = "Tests Équipement"
-        elif any(x in url_lower or x in title.lower() for x in ["tuto", "mecanique", "astuce"]):
-            category = "Tutos Moto"
+        if any(x in url.lower() for x in ["test", "essai", "equipement"]): category = "Tests Équipement"
+        elif "tuto" in url.lower(): category = "Tutos Moto"
         
-        # Image YouTube HQ (Le format que Pinterest accepte sans erreur 400)
-        if yt_id:
-            image_url = f"https://img.youtube.com/vi/{yt_id}/hqdefault.jpg"
-        else:
-            image_url = f"{SITE_URL}/images/logo-social.jpg"
+        # IMAGE REPAREE : On utilise la miniature YouTube qui existe VRAIMENT
+        image_url = f"https://img.youtube.com/vi/{yt_id}/hqdefault.jpg" if yt_id else f"{SITE_URL}/images/logo-social.jpg"
         
-        return {
-            "title": title,
-            "link": url,
-            "category": category,
-            "image_url": image_url
-        }
-    except:
-        return None
+        return {"title": title, "link": url, "category": category, "image_url": image_url}
+    except: return None
 
-# --- EXECUTION EQUILIBRÉE ---
-print("🔍 Analyse équilibrée du site lcdmh.com...")
 all_links = get_site_content()
-
 if all_links:
-    # On prépare des bacs pour chaque catégorie
-    buckets = {"Roadtrips": [], "Tests Équipement": [], "Tutos Moto": []}
-    
-    # On analyse un échantillon pour remplir les catégories
-    for link in random.sample(all_links, min(len(all_links), 30)):
-        data = analyze_page(link)
-        if data:
-            buckets[data['category']].append(data)
-    
-    # On choisit une catégorie au hasard parmi celles qui ne sont pas vides
-    available_categories = [c for c in buckets if buckets[c]]
-    chosen_cat = random.choice(available_categories)
-    
-    # On pioche un article au hasard dans la catégorie choisie
-    post = random.choice(buckets[chosen_cat])
-    
-    payload = {
-        "mode": "flashback",
-        "title": post['title'],
-        "category":
+    post = analyze_page(random.choice(all_links))
+    if post:
+        payload = {"mode": "flashback", "title": post['title'], "category": post['category'], "message": f"🔙 FLASHBACK : {post['title']}", "link": post['link'], "image_url": post['image_url']}
+        requests.post(WEBHOOK_URL, json=payload)
