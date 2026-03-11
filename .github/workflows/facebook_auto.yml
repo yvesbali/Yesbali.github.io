@@ -3,7 +3,11 @@ name: Facebook Auto
 on:
   workflow_dispatch:
   schedule:
-     - cron: '0 8 * * 0' # S'exécute tous les dimanches à 8h
+     - cron: '0 8 * * 0' # S'exécute automatiquement tous les dimanches à 8h00
+
+# Supprime l'avertissement de dépréciation Node.js 20
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 permissions:
   contents: write
@@ -17,7 +21,7 @@ jobs:
         working-directory: automation/facebook_site
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Python
@@ -26,15 +30,6 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4 # On installe les outils nécessaires
+        run: pip install requests beautifulsoup4
 
-      - name: Run Flashback Scanner
-        run: python prepare_facebook_payload.py # On lance l'ouvrier
-
-      - name: Commit generated files
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .
-          git diff --cached --quiet || git commit -m "Mise à jour automatique du flashback"
-          git push
+      -
