@@ -1,45 +1,58 @@
-name: Facebook Auto
+import json
+import re
+import requests
+import random
+import os
 
-on:
-  workflow_dispatch:
-  schedule:
-     - cron: '0 8 * * 0'
-permissions:
-  contents: write
+# --- CONFIGURATION ---
+WEBHOOK_URL = "https://hook.eu1.make.com/eaa6xfheiv6uriro4ek6hjvcihew6n1f"
 
-jobs:
-  build-facebook-payload:
-    runs-on: ubuntu-latest
+def get_yt_id(url):
+    """Extrait l'ID de 11 caractères d'une vidéo YouTube proprement"""
+    pattern = r'(?:v=|embed\/|youtu\.be\/)([a-zA-Z0-9_-]{11})'
+    match = re.search(pattern, url)
+    return match.group(1) if match else None
 
-    defaults:
-      run:
-        working-directory: automation/facebook_site
+# --- LOGIQUE DE SELECTION ---
+# On vérifie s'il y a un nouveau post manuel, sinon on pioche dans les archives
+try:
+    if os.path.exists('facebook_post_selected.json'):
+        with open('facebook_post_selected.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            mode = "production"
+    else:
+        # ICI : Ton garage de vidéos 2022/2023 (ajoute tes liens ici)
+        archives = [
+            {"title": "Road Trip Cap Nord", "link": "https://lcdmh.com/cap-nord-moto.html", "yt": "https://youtu.be/dQw4w9WgXcQ"},
+            {"title": "Test Intercom Sena", "link": "https://lcdmh.com/test-sena.html", "yt": "https://youtu.be/dQw4w9WgXcQ"},
+            # Ajoute d'autres lignes comme ça pour tes anciens contenus
+        ]
+        data = random.choice(archives)
+        mode = "flashback"
+except:
+    print("Erreur de lecture, arrêt.")
+    exit()
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+# --- PREPARATION DU PAYLOAD ---
+video_id = get_yt_id(data.get('yt', ''))
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
+# On utilise hqdefault.jpg car Pinterest l'accepte toujours (contrairement à maxres)
+image_propre = f"https://img.youtube.com/vi/{video_id}/hqdefault.jpg" if video_id else "https://lcdmh.com/images/logo-social.jpg"
 
-      - name: Install requests
-        run: pip install requests
+payload = {
+    "mode": mode,
+    "title": data.get('title'),
+    "message": f"🔙 FLASHBACK : {data.get('title')}" if mode == "flashback" else data.get('message'),
+    "link": data.get('link'),
+    "image_url": image_propre,
+    "yt_id": video_id
+}
 
-      - name: Generate selection
-        run: python select_facebook_post.py
+# --- ENVOI A MAKE ---
+print(f"Envoi vers Make ({mode}) : {payload['title']}")
+res = requests.post(WEBHOOK_URL, json=payload)
 
-      - name: Build Facebook post
-        run: python build_facebook_post_v2.py
-
-      - name: Prepare payload
-        run: python prepare_facebook_payload.py
-
-      - name: Commit generated files
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add facebook_post_selected.json facebook_post_ready.txt facebook_post_ready.json facebook_payload_test.json site_posts_state.json
-          git diff --cached --quiet || git commit -m "Mise à jour automatique du payload Facebook"
-          git push
+if res.status_code == 200:
+    print("✅ Données envoyées avec succès !")
+else:
+    print(f"❌ Erreur {res.status_code}")
