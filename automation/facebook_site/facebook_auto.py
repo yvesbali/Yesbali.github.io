@@ -1,0 +1,71 @@
+import json
+import re
+import requests
+from bs4 import BeautifulSoup
+import random
+
+# --- CONFIGURATION ---
+SITE_URL = "https://lcdmh.com"
+WEBHOOK_URL = "https://hook.eu1.make.com/eaa6xfheiv6uriro4ek6hjvcihew6n1f"
+
+def get_site_content():
+    links = []
+    try:
+        res = requests.get(SITE_URL)
+        res.raise_for_status()
+        soup = BeautifulSoup(res.text, 'html.parser')
+        for a in soup.find_all('a', href=True):
+            href = a['href']
+            if href.endswith('.html') and 'index' not in href:
+                full_url = href if href.startswith('http') else f"{SITE_URL}/{href.lstrip('/')}"
+                if full_url not in links:
+                    links.append(full_url)
+    except Exception as e:
+        print(f"Erreur scan site : {e}")
+    return links
+
+def analyze_page(url):
+    try:
+        res = requests.get(url)
+        soup = BeautifulSoup(res.text, 'html.parser')
+        title = soup.title.string.replace(' - LCDMH', '') if soup.title else "Souvenir LCDMH"
+        yt_match = re.search(r'(?:v=|embed\/|youtu\.be\/)([a-zA-Z0-9_-]{11})', res.text)
+        yt_id = yt_match.group(1) if yt_match else None
+        
+        # --- LOGIQUE DES CATÉGORIES PINTEREST ---
+        url_lower = url.lower()
+        if "norvege" in url_lower: category = "Road Trip Norvège"
+        elif "espagne" in url_lower: category = "Road Trip Espagne"
+        elif "alpes" in url_lower: category = "Road Trip Alpes"
+        elif "pneus" in url_lower: category = "Tests Pneus"
+        elif "intercom" in url_lower: category = "Tests Intercoms"
+        elif "casque" in url_lower: category = "Tests Casques"
+        elif "carpuride" in url_lower or "gps" in url_lower: category = "GPS & Carpuride"
+        elif "tuto" in url_lower: category = "Tutos Mécanique"
+        else: category = "Aventures Moto"
+        
+        return {
+            "title": title,
+            "link": url,
+            "category": category,
+            "image_url": f"https://img.youtube.com/vi/{yt_id}/hqdefault.jpg" if yt_id else "https://lcdmh.com/images/logo-social.jpg"
+        }
+    except:
+        return None
+
+if __name__ == "__main__":
+    all_links = get_site_content()
+    if all_links:
+        chosen_url = random.choice(all_links)
+        post_data = analyze_page(chosen_url)
+        if post_data:
+            payload = {
+                "mode": "flashback",
+                "title": post_data['title'],
+                "category": post_data['category'],
+                "message": f"🔙 FLASHBACK : {post_data['title']}\nOn se replonge dans cette aventure ?",
+                "link": post_data['link'],
+                "image_url": post_data['image_url']
+            }
+            print(f"🚀 Envoi à Make : {payload['title']} -> Tableau : {payload['category']}")
+            requests.post(WEBHOOK_URL, json=payload)
