@@ -1,114 +1,24 @@
-import json
-import re
-import requests
-from bs4 import BeautifulSoup
-import random
+name: Pinterest & Facebook Auto
 
-# --- CONFIGURATION ---
-SITE_URL = "https://lcdmh.com"
-# Ton Webhook Make.com (celui de ton scénario de publication)
-WEBHOOK_URL = "https://hook.eu1.make.com/eaa6xfheiv6uriro4ek6hjvcihew6n1f"
+on:
+  workflow_dispatch: # Pour pouvoir le lancer manuellement pour tester
+  schedule:
+    - cron: '0 8 * * 0' # S'exécute tous les dimanches à 8h00
 
-def get_site_content():
-    """Scanne le site pour trouver tous les articles .html"""
-    links = []
-    try:
-        res = requests.get(SITE_URL)
-        res.raise_for_status()
-        soup = BeautifulSoup(res.text, 'html.parser')
-        
-        for a in soup.find_all('a', href=True):
-            href = a['href']
-            # On ne prend que les pages d'articles, pas l'index ni les liens externes
-            if href.endswith('.html') and 'index' not in href:
-                full_url = href if href.startswith('http') else f"{SITE_URL}/{href.lstrip('/')}"
-                if full_url not in links:
-                    links.append(full_url)
-    except Exception as e:
-        print(f"Erreur lors du scan du site : {e}")
-    return links
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
 
-def analyze_page(url):
-    """Analyse la page pour extraire les infos et déterminer la catégorie Pinterest"""
-    try:
-        res = requests.get(url)
-        res.raise_for_status()
-        soup = BeautifulSoup(res.text, 'html.parser')
-        
-        # Nettoyage du titre (on enlève le suffixe du site)
-        title = soup.title.string.replace(' - LCDMH', '') if soup.title else "Souvenir LCDMH"
-        
-        # Extraction de l'ID YouTube pour l'image
-        yt_match = re.search(r'(?:v=|embed\/|youtu\.be\/)([a-zA-Z0-9_-]{11})', res.text)
-        yt_id = yt_match.group(1) if yt_match else None
-        
-        # --- LOGIQUE DE CATÉGORISATION (Tableaux Pinterest) ---
-        # On définit ici les noms exacts des tableaux que l'on veut sur Pinterest
-        url_lower = url.lower()
-        
-        if "norvege" in url_lower:
-            category = "Road Trip Norvège"
-        elif "espagne" in url_lower:
-            category = "Road Trip Espagne"
-        elif "alpes" in url_lower:
-            category = "Road Trip Alpes"
-        elif "pneus" in url_lower:
-            category = "Tests Pneus"
-        elif "intercom" in url_lower:
-            category = "Tests Intercoms"
-        elif "casque" in url_lower:
-            category = "Tests Casques"
-        elif "carpuride" in url_lower or "gps" in url_lower:
-            category = "GPS & Carpuride"
-        elif "tuto" in url_lower:
-            category = "Tutos Mécanique"
-        elif "equipement" in url_lower or "essai" in url_lower:
-            category = "Tests Équipements"
-        else:
-            category = "Aventures Moto" # Tableau par défaut
-        
-        return {
-            "title": title,
-            "link": url,
-            "yt_id": yt_id,
-            "category": category,
-            "image_url": f"https://img.youtube.com/vi/{yt_id}/hqdefault.jpg" if yt_id else "https://lcdmh.com/images/logo-social.jpg"
-        }
-    except Exception as e:
-        print(f"Erreur lors de l'analyse de la page {url} : {e}")
-        return None
+      - name: Configuration de Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
 
-# --- EXECUTION DU SCRIPT ---
-if __name__ == "__main__":
-    print(f"🔍 Analyse de {SITE_URL} en cours...")
-    all_links = get_site_content()
+      - name: Installation des outils
+        run: pip install requests beautifulsoup4
 
-    if all_links:
-        # Sélection aléatoire pour le concept de "Flashback"
-        chosen_url = random.choice(all_links)
-        post_data = analyze_page(chosen_url)
-        
-        if post_data:
-            # Préparation des données pour Make.com
-            payload = {
-                "mode": "flashback",
-                "title": post_data['title'],
-                "category": post_data['category'], # Nom du tableau Pinterest
-                "message": f"🔙 FLASHBACK : {post_data['title']}\nOn se replonge dans cette aventure ? Retrouvez l'article complet sur le site.",
-                "link": post_data['link'],
-                "image_url": post_data['image_url']
-            }
-            
-            print(f"🚀 Envoi à Make.com : {payload['title']}")
-            print(f"   Destination Pinterest : Tableau '{payload['category']}'")
-            
-            response = requests.post(WEBHOOK_URL, json=payload)
-            
-            if response.status_code == 200:
-                print("✅ Données envoyées avec succès à Make.com")
-            else:
-                print(f"⚠️ Erreur Make.com (Status: {response.status_code})")
-        else:
-            print("❌ Impossible d'analyser la page sélectionnée.")
-    else:
-        print("❌ Aucun lien trouvé sur le site.")
+      - name: Lancement du script de publication
+        run: python automation/facebook_site/facebook_auto.py
