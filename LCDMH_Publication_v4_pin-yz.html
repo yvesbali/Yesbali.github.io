@@ -402,6 +402,7 @@
       <div class="checks">
         <label><input id="videoFb" type="checkbox" checked> FACEBOOK</label>
         <label><input id="videoIg" type="checkbox" checked> INSTAGRAM REELS</label>
+        <label><input id="videoYt" type="checkbox" checked> YOUTUBE</label>
       </div>
       <label>Vidéo (max ~25 Mo — Shorts &lt; 1 min)</label>
       <div class="filepick">
@@ -550,7 +551,7 @@ $("videoBtn").addEventListener("click",async()=>{
   resetStatus("videoStatus"); resetDebug("videoDebug");
   const file=$("videoFile").files[0];
   if(!file){setStatus("videoStatus","err","❌ Sélectionne une vidéo.");return;}
-  if(!$("videoFb").checked&&!$("videoIg").checked){setStatus("videoStatus","err","❌ Coche au moins une plateforme.");return;}
+  if(!$("videoFb").checked&&!$("videoIg").checked&&!$("videoYt").checked){setStatus("videoStatus","err","❌ Coche au moins une plateforme.");return;}
   $("videoBtn").disabled=true;
   setProgress("videoBar","videoPct",0,"Initialisation");
   try{
@@ -566,6 +567,7 @@ $("videoBtn").addEventListener("click",async()=>{
       mediaType:"video",
       publish_fb:$("videoFb").checked,
       publish_ig:$("videoIg").checked,
+      publish_yt:$("videoYt").checked,
       video:{secure_url:d.secure_url}
     };
     setDebug("videoDebug",payload);
