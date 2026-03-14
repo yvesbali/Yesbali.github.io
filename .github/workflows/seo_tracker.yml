@@ -1,0 +1,79 @@
+name: LCDMH – SEO Tracker mensuel
+
+on:
+  schedule:
+    # Tous les 28 jours à 8h UTC (10h Paris)
+    - cron: '0 8 1 * *'
+  workflow_dispatch:  # Permet aussi de lancer manuellement depuis GitHub
+
+jobs:
+  seo-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      # 1. Checkout du repo
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Python
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 3. Dépendances
+      - name: Install dependencies
+        run: |
+          pip install google-auth-oauthlib google-api-python-client anthropic
+
+      # 4. Créer les fichiers de credentials depuis les secrets GitHub
+      - name: Setup credentials
+        run: |
+          echo '${{ secrets.YT_CLIENT_SECRETS }}' > client_secrets.json
+          echo '${{ secrets.YT_TOKEN_ANALYTICS }}' > yt_token_analytics.json
+          echo '${{ secrets.YT_CACHE }}' > videos_cache.json
+          echo '${{ secrets.SEO_STATS }}' > seo_stats.json || echo '{}' > seo_stats.json
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      # 5. Créer le .env
+      - name: Create .env
+        run: |
+          echo "ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }}" > .env
+
+      # 6. Lancer le SEO tracker
+      - name: Run SEO Tracker
+        run: python seo_tracker.py --mode report
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      # 7. Copier le rapport dans le dossier du site
+      - name: Copy report to site
+        run: |
+          mkdir -p seo
+          cp seo_report_*.html seo/seo-report.html || echo "Pas de rapport généré"
+
+      # 8. Commit et push du rapport sur GitHub Pages
+      - name: Push rapport sur lcdmh.com
+        run: |
+          git config user.name "LCDMH Bot"
+          git config user.email "yvesbali@gmail.com"
+          git add seo/seo-report.html
+          git diff --staged --quiet || git commit -m "SEO Report $(date +%Y-%m-%d)"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 9. Sauvegarder les nouvelles stats (pour le prochain mois)
+      - name: Update SEO stats secret
+        run: |
+          echo "Stats à mettre à jour manuellement dans les secrets GitHub si besoin"
+
+      # 10. Envoyer l'email de rapport
+      - name: Envoyer email rapport
+        run: python send_report_email.py
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          REPORT_URL: "https://yvesbali.github.io/seo/seo-report.html"
