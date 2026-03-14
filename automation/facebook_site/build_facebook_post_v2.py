@@ -5,6 +5,7 @@ from pathlib import Path
 INPUT_FILE = "facebook_post_selected.json"
 OUTPUT_TEXT_FILE = "facebook_post_ready.txt"
 OUTPUT_JSON_FILE = "facebook_post_ready.json"
+BASE_URL = "https://lcdmh.com/"
 
 SOUVENIR_HEADERS = [
     "🕰️ Souvenir de road trip",
@@ -87,11 +88,62 @@ PROMO_BRAND_LINES = {
 }
 
 
-def load_json(path):
+def load_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def choose_intro(data):
+def pick_first(data: dict, *keys: str) -> str:
+    for key in keys:
+        value = data.get(key)
+        if value is None:
+            continue
+        if isinstance(value, str):
+            value = value.strip()
+        if value != "":
+            return value
+    return ""
+
+
+def normalize_url(value: str) -> str:
+    value = (value or "").strip()
+    if not value:
+        return ""
+    if value.startswith(("http://", "https://")):
+        return value
+    return BASE_URL + value.lstrip("/")
+
+
+def canonicalize_input(data: dict) -> dict:
+    categorie = pick_first(data, "categorie_semaine", "categorie", "category")
+    titre = pick_first(data, "titre", "title")
+    texte = pick_first(data, "texte", "message", "description")
+    image = normalize_url(pick_first(data, "image", "image_site", "image_url"))
+    url = normalize_url(pick_first(data, "url", "link"))
+    ton = pick_first(data, "ton_facebook")
+
+    if not ton:
+        categorie_lc = categorie.lower()
+        if categorie_lc == "roadtrip":
+            ton = "souvenir"
+        elif categorie_lc == "materiel":
+            ton = "test"
+        elif categorie_lc == "promo":
+            ton = "promo"
+
+    return {
+        "id": pick_first(data, "id", "post_id"),
+        "categorie_semaine": categorie,
+        "ton_facebook": ton,
+        "titre": titre,
+        "texte": texte,
+        "url": url,
+        "image": image,
+        "source_keys": sorted(data.keys()),
+    }
+
+
+
+def choose_intro(data: dict):
     ton = data.get("ton_facebook", "").strip().lower()
     post_id = data.get("id", "").strip().lower()
     titre = data.get("titre", "").strip().lower()
@@ -119,28 +171,31 @@ def choose_intro(data):
     return "🏍️ À revoir", "Je remets ici un contenu utile du site."
 
 
-def build_post(data):
+
+def build_post(data: dict):
     titre = data.get("titre", "").strip()
     image = data.get("image", "").strip()
     texte = data.get("texte", "").strip()
 
     header, intro = choose_intro(data)
 
-    post_long = f"""{header}
+    title_block = f"🏍️ {titre}" if titre else "🏍️ LCDMH"
 
-{intro}
+    parts_long = [header, intro, title_block]
+    if texte:
+        parts_long.append(texte)
+    if data.get("url", "").strip():
+        parts_long.append(f"🔗 {data['url'].strip()}")
 
-🏍️ {titre}
+    parts_short = [header, title_block]
+    if data.get("url", "").strip():
+        parts_short.append(f"🔗 {data['url'].strip()}")
 
-{texte}
-"""
+    post_long = "\n\n".join(parts_long).strip()
+    post_short = "\n\n".join(parts_short).strip()
 
-    post_short = f"""{header}
+    return post_long, post_short, image, header, intro
 
-🏍️ {titre}
-"""
-
-    return post_long.strip(), post_short.strip(), image, header, intro
 
 
 def main():
@@ -154,7 +209,8 @@ def main():
         print("Fichier introuvable :", INPUT_FILE)
         return
 
-    data = load_json(input_path)
+    raw_data = load_json(input_path)
+    data = canonicalize_input(raw_data)
 
     post_long, post_short, image, header, intro = build_post(data)
 
@@ -171,7 +227,8 @@ def main():
         "url": data.get("url", ""),
         "image": image,
         "facebook_post_long": post_long,
-        "facebook_post_short": post_short
+        "facebook_post_short": post_short,
+        "source_keys": data.get("source_keys", []),
     }
 
     output_json_path.write_text(
@@ -190,6 +247,7 @@ def main():
     print("ID :", ready["id"])
     print("Catégorie :", ready["categorie_semaine"])
     print("Ton Facebook :", ready["ton_facebook"])
+    print("Clés source :", ", ".join(ready["source_keys"]))
 
     print("\nFichiers créés :")
     print(OUTPUT_TEXT_FILE)
