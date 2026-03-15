@@ -11,7 +11,7 @@ from datetime import datetime, timedelta
 from typing import Dict, Optional, List
 
 # ========== CONFIGURATION ==========
-WEBHOOK_URL = "VOTRE_URL_WEBHOOK_MAKE_ICI"  # À remplacer
+WEBHOOK_URL = "https://hook.eu1.make.com/rxcntbgy3j9w6yge67xqeg6gd1n4dy69"
 LIBRARY_FILE = "facebook_payload_test.json"  # Fichier bibliothèque
 # ===================================
 
