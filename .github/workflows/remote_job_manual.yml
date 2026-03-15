@@ -1,0 +1,113 @@
+name: LCDMH - Travail distant manuel
+
+on:
+  workflow_dispatch:
+    inputs:
+      job_name:
+        description: "Nom du travail"
+        required: true
+        default: "test-connexion"
+        type: string
+      video_id:
+        description: "ID vidéo YouTube (optionnel)"
+        required: false
+        default: ""
+        type: string
+      note:
+        description: "Note libre"
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  run-remote-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Préparer le dossier de sortie
+        run: |
+          mkdir -p seo/remote-jobs
+
+      - name: Écrire le résultat JSON
+        shell: bash
+        run: |
+          python - << 'PY'
+          import json, os
+          from datetime import datetime, timezone
+
+          data = {
+              "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+              "job_name": os.environ.get("INPUT_JOB_NAME", "test-connexion"),
+              "video_id": os.environ.get("INPUT_VIDEO_ID", ""),
+              "note": os.environ.get("INPUT_NOTE", ""),
+              "runner": os.environ.get("RUNNER_NAME", "unknown"),
+              "repository": os.environ.get("GITHUB_REPOSITORY", "unknown"),
+              "status": "ok"
+          }
+
+          with open("seo/remote-jobs/last-run.json", "w", encoding="utf-8") as f:
+              json.dump(data, f, ensure_ascii=False, indent=2)
+          PY
+        env:
+          INPUT_JOB_NAME: ${{ inputs.job_name }}
+          INPUT_VIDEO_ID: ${{ inputs.video_id }}
+          INPUT_NOTE: ${{ inputs.note }}
+
+      - name: Écrire un mini HTML lisible depuis le site
+        shell: bash
+        run: |
+          python - << 'PY'
+          import json
+          from html import escape
+
+          with open('seo/remote-jobs/last-run.json', 'r', encoding='utf-8') as f:
+              data = json.load(f)
+
+          html = f"""<!doctype html>
+<html lang=\"fr\">
+<head>
+  <meta charset=\"utf-8\">
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+  <title>LCDMH - Travail distant</title>
+  <style>
+    body {{ font-family: Arial, sans-serif; margin: 40px; line-height: 1.5; }}
+    .box {{ max-width: 900px; padding: 24px; border: 1px solid #ddd; border-radius: 12px; }}
+    code, pre {{ background: #f6f6f6; padding: 2px 6px; }}
+    pre {{ padding: 16px; overflow: auto; }}
+  </style>
+</head>
+<body>
+  <div class=\"box\">
+    <h1>LCDMH - Travail distant manuel</h1>
+    <p><strong>Statut :</strong> {escape(data['status'])}</p>
+    <p><strong>Date UTC :</strong> {escape(data['generated_at_utc'])}</p>
+    <p><strong>Travail :</strong> {escape(data['job_name'])}</p>
+    <p><strong>ID vidéo :</strong> {escape(data['video_id']) or '—'}</p>
+    <p><strong>Note :</strong> {escape(data['note']) or '—'}</p>
+    <p><strong>Runner :</strong> {escape(data['runner'])}</p>
+    <p><strong>Dépôt :</strong> {escape(data['repository'])}</p>
+    <h2>JSON brut</h2>
+    <pre>{escape(json.dumps(data, ensure_ascii=False, indent=2))}</pre>
+  </div>
+</body>
+</html>"""
+
+          with open('seo/remote-jobs/index.html', 'w', encoding='utf-8') as f:
+              f.write(html)
+          PY
+
+      - name: Commit et push
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add seo/remote-jobs/last-run.json seo/remote-jobs/index.html
+          git diff --cached --quiet && echo "Aucun changement à pousser" && exit 0
+          git commit -m "maj: travail distant manuel"
+          git push
