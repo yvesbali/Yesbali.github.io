@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LCDMH — Carte de l'Écosystème + Pilotage vivant</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Syne:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #f5f4f0;
+    --bg2: #ffffff;
+    --bg3: #f0ede8;
+    --border: #e0ddd6;
+    --orange: #e67e22;
+    --orange2: #f39c12;
+    --green: #27ae60;
+    --red: #e74c3c;
+    --amber: #d4a017;
+    --blue: #2980b9;
+    --pink: #c0392b;
+    --teal: #16a085;
+    --purple: #8e44ad;
+    --gray: #7f8c8d;
+    --text: #1a1a18;
+    --text2: #6b6b66;
+    --text3: #aaa9a4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; font-size: 15px; line-height: 1.6; }
+
+  /* HEADER */
+  .header {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 28px 48px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .header-icon { font-size: 32px; }
+  .header-title { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+  .header-title span { color: var(--orange); }
+  .header-sub { color: var(--text2); font-size: 12px; font-family: 'DM Mono', monospace; margin-top: 3px; }
+  .badge { margin-left: auto; background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; padding: 5px 12px; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text2); }
+
+  /* NAV TABS */
+  .tabs { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 48px; display: flex; gap: 0; }
+  .tab { padding: 14px 20px; font-size: 13px; font-weight: 600; color: var(--text2); cursor: pointer; border-bottom: 2px solid transparent; transition: all .2s; user-select: none; }
+  .tab:hover { color: var(--text); }
+  .tab.active { color: var(--orange); border-bottom-color: var(--orange); }
+
+  /* PANELS */
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* ═══════════════════════════════ */
+  /* DIAGRAM PANEL                  */
+  /* ═══════════════════════════════ */
+  #diagram-canvas {
+    width: 100%;
+    height: calc(100vh - 130px);
+    position: relative;
+    overflow: hidden;
+    background: var(--bg);
+    background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
+    background-size: 28px 28px;
+    cursor: grab;
+  }
+  #diagram-canvas:active { cursor: grabbing; }
+  #diagram-world { position: absolute; transform-origin: 0 0; }
+
+  /* Nodes */
+  .node {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: transform .15s;
+  }
+  .node:hover { transform: scale(1.08); z-index: 10; }
+  .node-circle {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    border: 3px solid rgba(255,255,255,0.8);
+    transition: box-shadow .2s;
+  }
+  .node:hover .node-circle { box-shadow: 0 4px 20px rgba(0,0,0,0.22); }
+  .node-label {
+    margin-top: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text);
+    text-align: center;
+    max-width: 90px;
+    line-height: 1.3;
+  }
+  .node-sub {
+    font-size: 10px;
+    color: var(--text2);
+    font-family: 'DM Mono', monospace;
+    text-align: center;
+    max-width: 90px;
+  }
+  .node-status {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px; right: 2px;
+    border: 2px solid white;
+  }
+
+  /* Colors */
+  .nc-orange { background: #e67e22; }
+  .nc-green  { background: #27ae60; }
+  .nc-blue   { background: #2980b9; }
+  .nc-red    { background: #e74c3c; }
+  .nc-purple { background: #8e44ad; }
+  .nc-teal   { background: #16a085; }
+  .nc-pink   { background: #e91e8c; }
+  .nc-amber  { background: #d4a017; }
+  .nc-gray   { background: #95a5a6; }
+  .nc-dark   { background: #2c3e50; }
+
+  .dot-green { background: #27ae60; }
+  .dot-amber { background: #f39c12; }
+  .dot-gray  { background: #bdc3c7; }
+
+  /* SVG connections */
+  #connections { position: absolute; top: 0; left: 0; pointer-events: none; overflow: visible; }
+
+  /* Tooltip */
+  .tooltip {
+    position: fixed;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    max-width: 260px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .2s;
+    z-index: 100;
+    font-size: 13px;
+  }
+  .tooltip.show { opacity: 1; }
+  .tooltip-title { font-weight: 700; font-size: 14px; margin-bottom: 6px; }
+  .tooltip-row { display: flex; gap: 8px; margin-top: 4px; }
+  .tooltip-key { color: var(--text2); min-width: 70px; font-size: 12px; }
+  .tooltip-val { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--orange); word-break: break-all; }
+
+  /* Zoom controls */
+  .zoom-controls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 20;
+  }
+  .zoom-btn {
+    width: 36px; height: 36px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--text2);
+    font-weight: 700;
+    transition: background .15s;
+    user-select: none;
+  }
+  .zoom-btn:hover { background: var(--bg3); color: var(--text); }
+
+  /* Legend */
+  .legend {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 11px;
+    z-index: 20;
+  }
+  .legend-title { font-weight: 700; font-size: 11px; color: var(--text2); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+  .legend-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; color: var(--text2); }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .legend-line { width: 24px; height: 2px; flex-shrink: 0; }
+  .line-active { background: var(--orange); }
+  .line-auto { background: var(--teal); }
+  .line-data { background: var(--blue); border-top: 2px dashed var(--blue); background: none; }
+
+  /* ═══════════════════════════════ */
+  /* REFERENCE PANEL                */
+  /* ═══════════════════════════════ */
+  .container { max-width: 1100px; margin: 0 auto; padding: 36px 48px; }
+  .section { margin-bottom: 44px; }
+  .section-title {
+    font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--orange); font-family: 'DM Mono', monospace;
+    margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border);
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { background: var(--bg3); color: var(--text2); font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; font-family: 'DM Mono', monospace; padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+  td { padding: 11px 14px; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: var(--bg3); }
+  .mono { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--orange); }
+  .tag { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 10px; font-family: 'DM Mono', monospace; font-weight: 600; }
+  .tag-green { background: #eafaf1; color: #27ae60; }
+  .tag-gray  { background: #f2f3f4; color: #7f8c8d; }
+  .tag-amber { background: #fef9e7; color: #d4a017; }
+  .tag-orange{ background: #fef0e6; color: #e67e22; }
+  .tag-red   { background: #fdedec; color: #e74c3c; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+  .card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+  .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .card-icon { font-size: 20px; }
+  .card-name { font-size: 14px; font-weight: 700; }
+  .card-contact { font-size: 11px; color: var(--text2); font-family: 'DM Mono', monospace; }
+  .card-row { display: flex; justify-content: space-between; font-size: 12px; padding: 5px 0; border-bottom: 1px solid var(--border); }
+  .card-row:last-child { border-bottom: none; }
+  .card-row-label { color: var(--text2); }
+  .card-row-value { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--orange); text-align: right; max-width: 60%; word-break: break-all; }
+
+  /* FOOTER */
+  .footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 20px 48px; text-align: center; font-size: 11px; color: var(--text3); font-family: 'DM Mono', monospace; }
+
+  html, body { max-width: 100%; overflow-x: hidden; }
+  button, input, textarea, select { font: inherit; }
+  .table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .table-wrap table { min-width: 720px; }
+  .pilot-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 18px; }
+  .stack { display: flex; flex-direction: column; gap: 18px; }
+  .soft-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 14px; padding: 18px; box-shadow: 0 8px 28px rgba(0,0,0,.08); }
+  .soft-card h3 { font-size: 18px; margin-bottom: 8px; }
+  .soft-card p { font-size: 13px; color: var(--text2); }
+  .toolbar-mini { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+  .input, .textarea, .select, .search-input { width: 100%; border: 1px solid var(--border); background: #fff; color: var(--text); border-radius: 12px; padding: 10px 12px; font-size: 14px; }
+  .textarea { min-height: 96px; resize: vertical; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+  .btn { border: 1px solid var(--border); background: var(--bg3); color: var(--text); border-radius: 12px; padding: 10px 12px; font-family: 'DM Mono', monospace; font-size: 11px; cursor: pointer; text-decoration: none; }
+  .btn.primary { background: var(--orange); color: #fff; border-color: var(--orange); }
+  .btn.warn { background: #fef6e7; color: var(--amber); border-color: #eed399; }
+  .btn.red { background: #fff0ee; color: var(--red); border-color: #f0c4bb; }
+  .btn.blue { background: #edf5fb; color: var(--blue); border-color: #cfe1ee; }
+  .source-box { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: start; padding: 14px 16px; border: 1px solid var(--border); border-radius: 12px; background: var(--bg3); margin-top: 12px; }
+  .source-box strong { display: block; font-size: 13px; }
+  .helper, .hint-box { font-size: 12px; color: var(--text2); }
+  .hint-box { margin-top: 10px; padding: 10px 12px; border-radius: 12px; border: 1px dashed var(--border); background: rgba(255,255,255,.55); }
+  .list-toolbar { display: flex; gap: 8px; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .checklist, .loglist { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+  .checkitem, .logitem { border: 1px solid var(--border); background: var(--bg2); border-radius: 14px; padding: 12px 14px; box-shadow: 0 4px 18px rgba(0,0,0,.04); }
+  .checkitem { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; }
+  .checkitem.done .entry-title, .checkitem.done .preview { text-decoration: line-through; opacity: .65; }
+  .entry-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .meta { font-size: 10px; color: var(--text2); font-family: 'DM Mono', monospace; }
+  .preview { margin-top: 5px; font-size: 13px; color: var(--text2); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .entry-top { display: flex; gap: 10px; justify-content: space-between; align-items: start; flex-wrap: wrap; }
+  .entry-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .pill { display: inline-flex; align-items: center; gap: 5px; padding: 4px 8px; border-radius: 999px; font-size: 10px; font-family: 'DM Mono', monospace; border: 1px solid var(--border); background: var(--bg3); color: var(--text2); }
+  .pill.link { color: var(--blue); }
+  .entry-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 12px; color: var(--blue); text-decoration: none; word-break: break-all; }
+  .entry-link:hover { text-decoration: underline; }
+  .actions-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .empty { border: 1px dashed var(--border); border-radius: 14px; padding: 14px; font-size: 13px; color: var(--text2); background: rgba(255,255,255,.55); display: none; }
+  .dialog-backdrop { position: fixed; inset: 0; background: rgba(20,24,28,.48); display: none; align-items: center; justify-content: center; padding: 18px; z-index: 2000; }
+  .dialog-backdrop.open { display: flex; }
+  .dialog { width: min(860px, 100%); max-height: 90vh; overflow: auto; background: var(--bg2); border: 1px solid var(--border); border-radius: 22px; box-shadow: 0 14px 40px rgba(0,0,0,.18); padding: 22px; }
+  .dialog-header { display: flex; gap: 12px; align-items: start; justify-content: space-between; margin-bottom: 16px; }
+  .dialog-title { margin: 0; font-size: 24px; line-height: 1.1; }
+  .dialog-meta { font-size: 11px; color: var(--text2); font-family: 'DM Mono', monospace; margin-top: 8px; }
+  .dialog-section { border: 1px solid var(--border); border-radius: 16px; padding: 14px 16px; background: #fff; margin-top: 12px; }
+  .dialog-section h4 { margin: 0 0 8px; font-size: 12px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--orange); font-family: 'DM Mono', monospace; }
+  .dialog-text { white-space: pre-wrap; word-break: break-word; font-size: 14px; color: var(--text); }
+  .dialog-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+  .hidden-file { display: none; }
+  @media (max-width: 980px) {
+    .header { padding: 20px 18px; align-items: flex-start; flex-wrap: wrap; }
+    .header-title { font-size: 22px; }
+    .badge { margin-left: 0; }
+    .tabs { padding: 0 10px; overflow-x: auto; }
+    .tab { padding: 12px 14px; font-size: 12px; white-space: nowrap; }
+    .container { padding: 24px 16px; }
+    .pilot-grid, .field-row { grid-template-columns: 1fr; }
+    .cards { grid-template-columns: 1fr; }
+    .table-wrap table { min-width: 640px; }
+    #diagram-canvas { height: 72vh; min-height: 440px; }
+    .legend { max-width: calc(100vw - 36px); }
+    .dialog { padding: 16px; }
+    .dialog-title { font-size: 20px; }
+  }
+  @media (max-width: 680px) {
+    body { font-size: 14px; }
+    .header-icon { font-size: 28px; }
+    .header-title { font-size: 20px; }
+    .header-sub { font-size: 11px; }
+    .badge { font-size: 10px; padding: 5px 10px; }
+    .container { padding: 20px 14px; }
+    .card, .soft-card { padding: 14px; }
+    .card-row { flex-direction: column; gap: 2px; }
+    .card-row-value { text-align: left; max-width: 100%; }
+    .checkitem { grid-template-columns: 1fr; }
+    .source-box { grid-template-columns: 1fr; }
+    .table-wrap table { min-width: 560px; }
+    .legend { left: 12px; right: 12px; bottom: 12px; width: auto; }
+    .zoom-controls { right: 12px; bottom: 12px; }
+    .node-label, .node-sub { max-width: 84px; }
+  }
+</style>
+</head>
+<body>
+<div class="header">
+<div class="header-icon">🏍️</div>
+<div>
+<div class="header-title">LCDMH <span>·</span> Carte de l'Écosystème + Pilotage vivant</div>
+<div class="header-sub">La Chaîne du Motard Heureux — lcdmh.com — lecture PC &amp; mobile — stockage local + lecture JSON GitHub si présent</div>
+</div>
+<div class="badge">MAJ : 16 mars 2026</div>
+</div>
+<div class="tabs">
+<div class="tab active" onclick="showPanel('diagram', this)">🗺️ Diagramme</div>
+<div class="tab" onclick="showPanel('reference', this)">📋 Référence technique</div>
+<div class="tab" onclick="showPanel('partenariats', this)">🤝 Partenariats</div>
+<div class="tab" onclick="showPanel('roadtrips', this)">📍 Road trips &amp; Stratégie</div>
+<div class="tab" onclick="showPanel('pilotage', this)">🧭 Pilotage vivant</div></div>
+<!-- ══════════════════════════════════════════ -->
+<!-- PANEL 1 : DIAGRAM                         -->
+<!-- ══════════════════════════════════════════ -->
+<div class="panel active" id="panel-diagram">
+<div id="diagram-canvas">
+<svg id="connections"></svg>
+<div id="diagram-world"></div>
+<div class="legend">
+<div class="legend-title">Légende</div>
+<div class="legend-row"><div class="legend-line line-active"></div> Flux publication</div>
+<div class="legend-row"><div class="legend-line line-auto"></div> Flux automatique</div>
+<div class="legend-row"><div class="legend-line" style="border-top:2px dashed #2980b9;width:24px"></div> Feed / data</div>
+<div class="legend-row"><div class="legend-dot dot-green"></div> Actif</div>
+<div class="legend-row"><div class="legend-dot dot-gray"></div> Inactif / archivé</div>
+</div>
+<div class="zoom-controls">
+<div class="zoom-btn" onclick="zoom(1.2)">+</div>
+<div class="zoom-btn" onclick="zoom(0.8)">−</div>
+<div class="zoom-btn" onclick="resetZoom()" style="font-size:13px">⌂</div>
+</div>
+</div>
+<div class="tooltip" id="tooltip"></div>
+</div>
+<!-- ══════════════════════════════════════════ -->
+<!-- PANEL 2 : REFERENCE                       -->
+<!-- ══════════════════════════════════════════ -->
+<div class="panel" id="panel-reference">
+<div class="container">
+<div class="section">
+<div class="section-title">Scénarios Make.com</div>
+<div class="table-wrap"><table>
+<thead><tr><th>Scénario</th><th>Statut</th><th>Déclencheur</th><th>Routes / Fonctions</th><th>Ops</th></tr></thead>
+<tbody>
+<tr>
+<td><strong>Publication Phots&amp;Videos</strong></td>
+<td><span class="tag tag-green">ACTIF</span></td>
+<td><span class="mono">Webhook immédiat</span></td>
+<td>
+            → photos : FB + IG carousel + Pinterest<br/>
+            → vidéo : IG Reels + FB Upload + YouTube Upload + Playlist
+          </td>
+<td>416</td>
+</tr>
+<tr>
+<td><strong>Post préparé → Facebook</strong></td>
+<td><span class="tag tag-green">ACTIF</span></td>
+<td><span class="mono">Schedulé</span></td>
+<td>site_posts_v1.json → sélection → Facebook Page → marquage publié</td>
+<td>192</td>
+</tr>
+<tr>
+<td>2 Dernières vidéos</td>
+<td><span class="tag tag-gray">SUPPRIMÉ</span></td>
+<td>—</td>
+<td>Remplacé par GitHub Actions feed</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Integration YouTube, Facebook Pages</td>
+<td><span class="tag tag-gray">SUPPRIMÉ</span></td>
+<td>—</td>
+<td>Warning — jamais finalisé</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Upload Video FaceBook-Instagram</td>
+<td><span class="tag tag-gray">SUPPRIMÉ</span></td>
+<td>—</td>
+<td>Remplacé par Publication Phots&amp;Videos</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="section">
+<div class="section-title">Page HTML Publication — Référence technique</div>
+<div class="table-wrap"><table>
+<thead><tr><th>Paramètre</th><th>Valeur</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>URL production</td><td><span class="mono">lcdmh.com/LCDMH_Publication_v4_pin-yz.html</span></td><td>Hébergé GitHub Pages</td></tr>
+<tr><td>PIN d'accès</td><td><span class="mono">0172</span></td><td>Protection accès public</td></tr>
+<tr><td>Webhook Make</td><td><span class="mono">hook.eu1.make.com/rxcntbgy3j9w6yge67xqeg6gd1n4dy69</span></td><td>Scénario Publication Phots&amp;Videos</td></tr>
+<tr><td>Cloudinary cloud</td><td><span class="mono">dwls7akrc</span></td><td></td></tr>
+<tr><td>Cloudinary preset</td><td><span class="mono">instagram_roadtrip_unsigned</span></td><td>Upload direct navigateur</td></tr>
+<tr><td>Taille max vidéo</td><td><span class="mono">~25 Mo</span></td><td>Shorts &lt; 1 min recommandés</td></tr>
+<tr><td>Payload photos</td><td><span class="mono">title, location, description, mode, promo, mediaType, publish_fb/ig/pin, photos[]</span></td><td></td></tr>
+<tr><td>Payload vidéo</td><td><span class="mono">title, location, description, mode, promo, mediaType, publish_fb/ig/yt, video{secure_url}</span></td><td>publish_yt ajouté 13/03/2026</td></tr>
+</tbody>
+</table></div>
+</div>
+<div class="section">
+<div class="section-title">Identifiants Plateformes</div>
+<div class="table-wrap"><table>
+<thead><tr><th>Plateforme</th><th>ID / Compte</th><th>Connexion Make</th><th>Contenu publié</th></tr></thead>
+<tbody>
+<tr><td>YouTube</td><td><span class="mono">yvesbali@gmail.com</span></td><td>My YouTube connection (yves vella)</td><td>Uploads + Playlist Écosse : <span class="mono">PLYEqidd8fqw6JQPvWxf-IuW0ImadFnE3N</span></td></tr>
+<tr><td>Facebook Page</td><td><span class="mono">1011659112033980</span></td><td>Instagram LCDMH (Yves Lcdmh)</td><td>Photos + Vidéos · "Publié par Make"</td></tr>
+<tr><td>Instagram</td><td><span class="mono">17841408510184192</span></td><td>Instagram LCDMH (Yves Lcdmh)</td><td>Reels (vidéo) + Carousel photos (1:1 1080px)</td></tr>
+<tr><td>Pinterest</td><td><span class="mono">Board : 1131318437585225984</span></td><td>My pinterest connection (yesvella)</td><td>Photos uniquement · link : lcdmh.com</td></tr>
+<tr><td>Cloudinary</td><td><span class="mono">dwls7akrc</span></td><td>API Key</td><td>Upload preset unsigned · vidéos + photos</td></tr>
+<tr><td>GitHub</td><td><span class="mono">yvesbali / Yesbali.github.io</span></td><td>—</td><td>Site HTML + scripts automation + roadbooks GPX</td></tr>
+</tbody>
+</table></div>
+</div>
+<div class="section">
+<div class="section-title">Chantiers — État au 13/03/2026</div>
+<div class="table-wrap"><table>
+<thead><tr><th>Priorité</th><th>Tâche</th><th>Statut</th></tr></thead>
+<tbody>
+<tr><td><span class="tag tag-green">✓ Fait</span></td><td>YouTube Upload via Make (titre, description, playlist, tags)</td><td>Validé 13/03/2026</td></tr>
+<tr><td><span class="tag tag-green">✓ Fait</span></td><td>Suppression des 3 scénarios Make inutiles</td><td>13/03/2026</td></tr>
+<tr><td><span class="tag tag-orange">En cours</span></td><td>Bibliothèque de contenu centralisée (site_posts_v1.json enrichi)</td><td>À construire</td></tr>
+<tr><td><span class="tag tag-orange">En cours</span></td><td>Calendrier automatique multi-plateforme (FB + IG + Pinterest)</td><td>À construire</td></tr>
+<tr><td><span class="tag tag-amber">Planifié</span></td><td>Intégration AWIN / KOMOBI</td><td>En attente confirmation</td></tr>
+<tr><td><span class="tag tag-amber">Planifié</span></td><td>Extraction Shorts automatique depuis longs formats (Opus Clip)</td><td>À tester</td></tr>
+<tr><td><span class="tag tag-amber">Planifié</span></td><td>Page Écosse/Irlande 2026 — contenu SEO</td><td>ecosse-irlande.html existant</td></tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<!-- ══════════════════════════════════════════ -->
+<!-- PANEL 3 : PARTENARIATS                    -->
+<!-- ══════════════════════════════════════════ -->
+<div class="panel" id="panel-partenariats">
+<div class="container">
+<div class="section">
+<div class="section-title">Partenariats actifs</div>
+<div class="cards">
+<div class="card">
+<div class="card-header"><div class="card-icon">📡</div><div><div class="card-name">KOMOBI</div><div class="card-contact">Contact : Claudia</div></div></div>
+<div class="card-row"><span class="card-row-label">Produit</span><span class="card-row-value">Traceur GPS moto</span></div>
+<div class="card-row"><span class="card-row-label">Commission</span><span class="card-row-value">10%</span></div>
+<div class="card-row"><span class="card-row-label">Code audience</span><span class="card-row-value">-15% (en attente)</span></div>
+<div class="card-row"><span class="card-row-label">AWIN</span><span class="card-row-value">En exploration</span></div>
+</div>
+<div class="card">
+<div class="card-header"><div class="card-icon">🚗</div><div><div class="card-name">INNOVV ThirdEYE BSD</div><div class="card-contact">Contact : Leo</div></div></div>
+<div class="card-row"><span class="card-row-label">Produit</span><span class="card-row-value">Radar BSD moto</span></div>
+<div class="card-row"><span class="card-row-label">Code promo</span><span class="card-row-value">LCDMH</span></div>
+<div class="card-row"><span class="card-row-label">Lien affilié</span><span class="card-row-value">innovv.com?sca_ref=9864079</span></div>
+</div>
+<div class="card">
+<div class="card-header"><div class="card-icon">🔦</div><div><div class="card-name">Olight Perun 3</div><div class="card-contact">marketing@olightstore.fr — Julie</div></div></div>
+<div class="card-row"><span class="card-row-label">Code promo</span><span class="card-row-value">LCDMH (-30%)</span></div>
+<div class="card-row"><span class="card-row-label">Commission AWIN</span><span class="card-row-value">8%</span></div>
+</div>
+<div class="card">
+<div class="card-header"><div class="card-icon">🗺️</div><div><div class="card-name">Aoocci GPS</div><div class="card-contact">AWIN Publisher ID : 2753560</div></div></div>
+<div class="card-row"><span class="card-row-label">Codes promo</span><span class="card-row-value">LCDMH28 / LCDMH25 / LCDMH</span></div>
+<div class="card-row"><span class="card-row-label">Revenus</span><span class="card-row-value">~800–950€/mois</span></div>
+<div class="card-row"><span class="card-row-label">Account AWIN</span><span class="card-row-value">7928</span></div>
+</div>
+<div class="card">
+<div class="card-header"><div class="card-icon">⚡</div><div><div class="card-name">AFERIY Énergie</div><div class="card-contact">Contact : Jennie</div></div></div>
+<div class="card-row"><span class="card-row-label">Produits</span><span class="card-row-value">Nano 100 + GK03</span></div>
+<div class="card-row"><span class="card-row-label">Codes promo</span><span class="card-row-value">8JGATT8K / LCDMHGK03</span></div>
+<div class="card-row"><span class="card-row-label">Code AWIN</span><span class="card-row-value">S4KCKFKE6C4K</span></div>
+</div>
+<div class="card">
+<div class="card-header"><div class="card-icon">📱</div><div><div class="card-name">Carpuride</div><div class="card-contact">AWIN</div></div></div>
+<div class="card-row"><span class="card-row-label">Produit</span><span class="card-row-value">GPS moto connecté</span></div>
+<div class="card-row"><span class="card-row-label">Code promo</span><span class="card-row-value">LCDMH (-30%)</span></div>
+</div>
+<div class="card">
+<div class="card-header"><div class="card-icon">🖥️</div><div><div class="card-name">Blackview Xplore X1</div><div class="card-contact">AWIN</div></div></div>
+<div class="card-row"><span class="card-row-label">Code promo</span><span class="card-row-value">S4KCKFKE6C4K</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ══════════════════════════════════════════ -->
+<!-- PANEL 4 : ROAD TRIPS & STRATÉGIE         -->
+<!-- ══════════════════════════════════════════ -->
+<div class="panel" id="panel-roadtrips">
+<div class="container">
+<div class="section">
+<div class="section-title">Road trips documentés</div>
+<div class="table-wrap"><table>
+<thead><tr><th>Trip</th><th>Dates</th><th>Distance</th><th>Moto</th><th>Statut</th></tr></thead>
+<tbody>
+<tr><td><strong>Cap Nord (Norvège)</strong></td><td><span class="mono">11 mai – 14 juin 2025</span></td><td>~10 000 km</td><td>Honda NT1100</td><td><span class="tag tag-green">Série en cours</span></td></tr>
+<tr><td><strong>Europe – Asie (Cappadoce)</strong></td><td><span class="mono">2024</span></td><td>—</td><td>Benelli TRK 702</td><td><span class="tag tag-orange">+100% momentum</span></td></tr>
+<tr><td><strong>Écosse &amp; Irlande</strong></td><td><span class="mono">Mai 2026 (planifié)</span></td><td>—</td><td>Honda NT1100</td><td><span class="tag tag-amber">En préparation</span></td></tr>
+</tbody>
+</table></div>
+</div>
+<div class="section">
+<div class="section-title">Stratégie de publication YouTube</div>
+<div class="table-wrap"><table>
+<thead><tr><th>Type</th><th>Horaire</th><th>CTR cible</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Shorts</td><td><span class="mono">Lun 19h / Mer 20h / Ven 19h</span></td><td>42–47%</td><td>Double vague : Short lundi après vidéo longue vendredi 15h</td></tr>
+<tr><td>Vidéos longues</td><td><span class="mono">Vendredi 15h</span></td><td>13–15%</td><td>Soft launch 15h · relaunch Short lundi 19h</td></tr>
+<tr><td>Audience active</td><td><span class="mono">18h – 00h</span></td><td>—</td><td>70%+ push organique = validation algorithme</td></tr>
+</tbody>
+</table></div>
+</div>
+<div class="section">
+<div class="section-title">Matériel de tournage</div>
+<div class="table-wrap"><table>
+<thead><tr><th>Outil</th><th>Usage</th></tr></thead>
+<tbody>
+<tr><td>GoPro Hero 13</td><td>Action / moto embarquée</td></tr>
+<tr><td>DJI Mini 4 Pro</td><td>Drone / vues aériennes</td></tr>
+<tr><td>DJI Osmo Pocket 3</td><td>Tourné main / témoignages</td></tr>
+<tr><td>Fujifilm X-S10</td><td>Photos + vidéo cinématique</td></tr>
+<tr><td>DaVinci Resolve Studio</td><td>Montage · ACES · clé : YNNN1-KF3K2-9CSSM-DM2XS-26JH6</td></tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+
+<div class="panel" id="panel-pilotage">
+<div class="container">
+<div class="section">
+<div class="section-title">Pilotage vivant du projet</div>
+<div class="cards">
+<div class="soft-card">
+<h3>Idées et journal enrichis</h3>
+<p>Ajout, relecture, modification, ouverture des liens et export/import JSON dans le même style visuel que la V2.</p>
+<div class="source-box" id="pilotageSourceBox">
+<div>
+<strong id="pilotageSourceTitle">Source des données : chargement…</strong>
+<div class="meta" id="pilotageSourceMeta">Lecture locale et lecture JSON du site si disponible.</div>
+</div>
+<div class="entry-tags">
+<span class="pill" id="pilotageSourcePill">Initialisation</span>
+</div>
+</div>
+<div class="toolbar-mini">
+<button class="btn blue" id="reloadRemoteBtn" type="button">Charger le JSON du site</button>
+<button class="btn" id="exportFullBtn" type="button">Exporter backup complet</button>
+<button class="btn" id="importFullBtn" type="button">Importer backup complet</button>
+<input accept="application/json" class="hidden-file" id="fullFileInput" type="file"/>
+</div>
+<div class="hint-box">Ancienne version : les données restaient dans le navigateur. Nouvelle version : lecture locale + possibilité de lire <span class="mono">data/pilotage-vivant.json</span> si tu le mets dans GitHub Pages.</div>
+</div>
+<div class="soft-card">
+<h3>PC et téléphone</h3>
+<p>La page reste lisible sur PC et mobile. Les listes passent en une colonne. Les grands tableaux techniques gardent un défilement interne si besoin sans faire déborder toute la page.</p>
+<ul style="padding-left:18px; margin-top:10px; color:var(--text2); font-size:13px;">
+<li>les entrées saisies restent sur l’appareil si tu n’exportes rien ;</li>
+<li>pour partager entre appareils, il faut un JSON commun ;</li>
+<li>tu peux relire les entrées et ouvrir leur lien sur mobile comme sur PC.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section pilot-grid">
+<div class="stack">
+<div class="soft-card">
+<h3>Idées / prochaines pistes</h3>
+<p>Ajoute ici un module, une page, un correctif ou un test à faire.</p>
+<input class="input" id="ideaTitle" placeholder="Titre court de l’idée" type="text"/>
+<textarea class="textarea" id="ideaDetails" placeholder="Détail, rappel ou consigne..."></textarea>
+<div class="field-row">
+<select class="select" id="ideaTag">
+<option>Général</option><option>GitHub</option><option>HTML</option><option>Make</option>
+<option>YouTube</option><option>Road trip</option><option>APP.py</option><option>SEO</option>
+</select>
+<input class="input" id="ideaLink" placeholder="Lien ou chemin à ouvrir (optionnel)" type="text"/>
+</div>
+<div class="toolbar-mini">
+<button class="btn primary" id="addIdeaBtn" type="button">Ajouter l’idée</button>
+<button class="btn" id="exportIdeasBtn" type="button">Exporter les idées</button>
+<button class="btn" id="importIdeasBtn" type="button">Importer les idées</button>
+<button class="btn red" id="clearIdeasBtn" type="button">Vider les idées</button>
+<input accept="application/json" class="hidden-file" id="ideasFileInput" type="file"/>
+</div>
+</div>
+<div class="soft-card">
+<div class="list-toolbar">
+<h3>Liste des idées en cours</h3>
+<div class="helper">Lecture, modification et ouverture disponibles</div>
+</div>
+<input class="search-input" id="ideasSearch" placeholder="Rechercher dans les idées..." type="text"/>
+<ul class="checklist" id="ideasList" style="margin-top:12px"></ul>
+<div class="empty" id="ideasEmpty">Aucune idée enregistrée pour l’instant.</div>
+</div>
+</div>
+<div class="stack">
+<div class="soft-card">
+<h3>Journal des modifications</h3>
+<p>Note ici ce qui a été ajouté, corrigé ou confirmé.</p>
+<input class="input" id="logTitle" placeholder="Titre court de la modification" type="text"/>
+<textarea class="textarea" id="logDetails" placeholder="Qu’est-ce qui a été modifié, ajouté, corrigé ou confirmé ?"></textarea>
+<div class="field-row">
+<input class="input" id="logLink" placeholder="Lien ou chemin à ouvrir (optionnel)" type="text"/>
+<input class="input" id="logSource" placeholder="Source, module ou page concernée (optionnel)" type="text"/>
+</div>
+<div class="toolbar-mini">
+<button class="btn primary" id="addLogBtn" type="button">Ajouter au journal</button>
+<button class="btn" id="exportLogsBtn" type="button">Exporter le journal</button>
+<button class="btn" id="importLogsBtn" type="button">Importer le journal</button>
+<button class="btn red" id="clearLogsBtn" type="button">Vider le journal</button>
+<input accept="application/json" class="hidden-file" id="logsFileInput" type="file"/>
+</div>
+</div>
+<div class="soft-card">
+<div class="list-toolbar">
+<h3>Historique récent</h3>
+<div class="helper">Fiches relisibles et liens ouvrables</div>
+</div>
+<input class="search-input" id="logsSearch" placeholder="Rechercher dans le journal..." type="text"/>
+<ul class="loglist" id="logsList" style="margin-top:12px"></ul>
+<div class="empty" id="logsEmpty">Aucune modification journalisée pour l’instant.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="dialog-backdrop" id="entryDialog">
+<div aria-labelledby="entryDialogTitle" aria-modal="true" class="dialog" role="dialog">
+<div class="dialog-header">
+<div>
+<h3 class="dialog-title" id="entryDialogTitle">Lecture de l’entrée</h3>
+<div class="dialog-meta" id="entryDialogMeta"></div>
+</div>
+<button class="btn" id="closeEntryDialogBtn" type="button">Fermer</button>
+</div>
+<div class="dialog-section">
+<h4>Détails</h4>
+<div class="dialog-text" id="entryDialogText"></div>
+</div>
+<div class="dialog-section" id="entryDialogLinkWrap" style="display:none;">
+<h4>Lien associé</h4>
+<a class="entry-link" href="#" id="entryDialogLink" rel="noopener" target="_blank">Ouvrir le lien</a>
+</div>
+<div class="dialog-actions" id="entryDialogActions"></div>
+</div>
+</div>
+<div class="footer">LCDMH · La Chaîne du Motard Heureux · lcdmh.com · Généré le 16 mars 2026</div>
+<script>
+// ═══════════════════════════════════════════════════════
+// TABS
+// ═══════════════════════════════════════════════════════
+function showPanel(id) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  event.target.classList.add('active');
+  if (id === 'diagram') initDiagram();
+}
+
+// ═══════════════════════════════════════════════════════
+// DIAGRAM
+// ═══════════════════════════════════════════════════════
+const NODES = [
+  // Sources / Outils
+  { id: 'html',       label: 'Page HTML',       sub: 'Publication · PIN 0172', icon: '📄', color: 'nc-purple', x: 400, y: 80,  status: 'green', info: { URL: 'lcdmh.com/LCDMH_Publication_v4_pin-yz.html', PIN: '0172', Webhook: 'hook.eu1.make.com/...' } },
+  { id: 'streamlit',  label: 'App Streamlit',   sub: 'Gestion YouTube / GPX', icon: '⚙️', color: 'nc-purple', x: 160, y: 80,  status: 'green', info: { Fichier: 'app.py', Modules: 'playlists, ressources road trip' } },
+  { id: 'scripts',    label: 'Scripts Python',  sub: 'automation/facebook_site', icon: '🐍', color: 'nc-purple', x: 640, y: 80, status: 'green', info: { Repo: 'yvesbali/Yesbali.github.io', Fichiers: 'prepare_facebook_payload.py · select_facebook_post.py' } },
+
+  // Stockage
+  { id: 'cloudinary', label: 'Cloudinary',      sub: 'dwls7akrc', icon: '☁️', color: 'nc-amber',  x: 280, y: 240, status: 'green', info: { Cloud: 'dwls7akrc', Preset: 'instagram_roadtrip_unsigned', Type: 'Unsigned upload' } },
+  { id: 'github',     label: 'GitHub Pages',    sub: 'yvesbali · main', icon: '🐙', color: 'nc-dark',   x: 520, y: 240, status: 'green', info: { Repo: 'yvesbali/Yesbali.github.io', Branche: 'main', Actions: 'Feed YouTube 8h UTC' } },
+  { id: 'gdrive',     label: 'Google Drive',    sub: 'LCDMH_PRODUCTION', icon: '📁', color: 'nc-teal',   x: 760, y: 240, status: 'green', info: { Dossier: 'LCDMH_PRODUCTION', Transit: '01-TRANSIT', Archives: '02-ARCHIVES' } },
+
+  // Make scénarios
+  { id: 'make1',      label: 'Publication\nPhots&Videos', sub: 'ACTIF · Webhook · 416 ops', icon: '⚡', color: 'nc-green',  x: 280, y: 420, status: 'green', info: { Statut: 'ACTIF', Ops: '416', Déclencheur: 'Webhook immédiat', Plateformes: 'FB + IG + Pinterest + YouTube' } },
+  { id: 'make2',      label: 'Post préparé\n→ Facebook',  sub: 'ACTIF · Schedulé · 192 ops', icon: '📅', color: 'nc-green',  x: 560, y: 420, status: 'green', info: { Statut: 'ACTIF', Ops: '192', Déclencheur: 'Schedulé', Source: 'site_posts_v1.json' } },
+
+  // Plateformes
+  { id: 'youtube',    label: 'YouTube',         sub: 'LCDMH · 10k abonnés', icon: '▶️', color: 'nc-red',    x: 80,  y: 600, status: 'green', info: { Compte: 'yvesbali@gmail.com', Abonnés: '~10 000', Vues: '1,5M+', Connexion: 'My YouTube connection' } },
+  { id: 'facebook',   label: 'Facebook',        sub: 'Page LCDMH', icon: '👤', color: 'nc-blue',   x: 280, y: 600, status: 'green', info: { PageID: '1011659112033980', Connexion: 'Instagram LCDMH (Yves Lcdmh)', Contenu: 'Photos + Vidéos' } },
+  { id: 'instagram',  label: 'Instagram',       sub: 'Reels + Carousel', icon: '📸', color: 'nc-pink',   x: 480, y: 600, status: 'green', info: { AccountID: '17841408510184192', Connexion: 'Instagram LCDMH', Contenu: 'Reels + Carousel 1:1 1080px' } },
+  { id: 'pinterest',  label: 'Pinterest',       sub: 'yvesvella', icon: '📌', color: 'nc-red',    x: 680, y: 600, status: 'green', info: { Board: '1131318437585225984', Connexion: 'My pinterest connection', Contenu: 'Photos uniquement' } },
+  { id: 'site',       label: 'lcdmh.com',       sub: '22 pages HTML', icon: '🌐', color: 'nc-teal',   x: 880, y: 600, status: 'green', info: { URL: 'lcdmh.com', Pages: '22 pages HTML', Feed: 'GitHub Actions · 8h UTC' } },
+];
+
+const EDGES = [
+  // Sources → Stockage
+  { from: 'html',       to: 'cloudinary', color: '#e67e22', label: 'upload médias' },
+  { from: 'scripts',    to: 'github',     color: '#8e44ad', label: 'commits' },
+  { from: 'streamlit',  to: 'gdrive',     color: '#16a085', label: 'fichiers' },
+
+  // Stockage → Make
+  { from: 'cloudinary', to: 'make1',  color: '#e67e22' },
+  { from: 'github',     to: 'make2',  color: '#8e44ad' },
+
+  // Make → Plateformes
+  { from: 'make1', to: 'youtube',   color: '#27ae60' },
+  { from: 'make1', to: 'facebook',  color: '#27ae60' },
+  { from: 'make1', to: 'instagram', color: '#27ae60' },
+  { from: 'make1', to: 'pinterest', color: '#27ae60' },
+  { from: 'make2', to: 'facebook',  color: '#27ae60' },
+
+  // GitHub → Site (feed auto)
+  { from: 'github', to: 'site', color: '#2980b9', dashed: true, label: 'feed auto' },
+  { from: 'youtube', to: 'site', color: '#2980b9', dashed: true },
+
+  // Streamlit → YouTube
+  { from: 'streamlit', to: 'youtube', color: '#16a085', dashed: true },
+];
+
+let scale = 1, offsetX = 40, offsetY = 30;
+let isDragging = false, lastX = 0, lastY = 0;
+let diagramReady = false;
+
+function initDiagram() {
+  if (diagramReady) return;
+  diagramReady = true;
+  const world = document.getElementById('diagram-world');
+  const svg = document.getElementById('connections');
+
+  // Set SVG size large enough
+  svg.setAttribute('width', '2000');
+  svg.setAttribute('height', '1000');
+
+  // Draw edges
+  EDGES.forEach(e => {
+    const from = NODES.find(n => n.id === e.from);
+    const to   = NODES.find(n => n.id === e.to);
+    if (!from || !to) return;
+    const x1 = from.x + 32, y1 = from.y + 32;
+    const x2 = to.x + 32,   y2 = to.y + 32;
+    const midX = (x1+x2)/2, midY = (y1+y2)/2;
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    const d = `M${x1},${y1} C${x1},${midY} ${x2},${midY} ${x2},${y2}`;
+    path.setAttribute('d', d);
+    path.setAttribute('fill', 'none');
+    path.setAttribute('stroke', e.color || '#ccc');
+    path.setAttribute('stroke-width', '2');
+    path.setAttribute('opacity', '0.6');
+    if (e.dashed) path.setAttribute('stroke-dasharray', '6 4');
+    svg.appendChild(path);
+    // Edge label
+    if (e.label) {
+      const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      text.setAttribute('x', midX);
+      text.setAttribute('y', midY - 4);
+      text.setAttribute('text-anchor', 'middle');
+      text.setAttribute('fill', e.color || '#999');
+      text.setAttribute('font-size', '10');
+      text.setAttribute('font-family', 'DM Mono, monospace');
+      text.setAttribute('opacity', '0.8');
+      text.textContent = e.label;
+      svg.appendChild(text);
+    }
+  });
+
+  // Draw nodes
+  NODES.forEach(n => {
+    const el = document.createElement('div');
+    el.className = 'node';
+    el.style.left = n.x + 'px';
+    el.style.top  = n.y + 'px';
+
+    const circle = document.createElement('div');
+    circle.className = 'node-circle ' + n.color;
+    circle.style.position = 'relative';
+    circle.textContent = n.icon;
+
+    const dot = document.createElement('div');
+    dot.className = 'node-status dot-' + (n.status || 'gray');
+    circle.appendChild(dot);
+
+    const label = document.createElement('div');
+    label.className = 'node-label';
+    label.textContent = n.label.replace('\n', '\n');
+
+    const sub = document.createElement('div');
+    sub.className = 'node-sub';
+    sub.textContent = n.sub;
+
+    el.appendChild(circle);
+    el.appendChild(label);
+    el.appendChild(sub);
+
+    // Tooltip
+    el.addEventListener('mouseenter', (ev) => showTooltip(n, ev));
+    el.addEventListener('mousemove',  (ev) => moveTooltip(ev));
+    el.addEventListener('mouseleave', hideTooltip);
+
+    world.appendChild(el);
+  });
+
+  // Pan
+  const canvas = document.getElementById('diagram-canvas');
+  canvas.addEventListener('mousedown', e => { isDragging = true; lastX = e.clientX; lastY = e.clientY; });
+  window.addEventListener('mouseup',   () => { isDragging = false; });
+  window.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    offsetX += e.clientX - lastX;
+    offsetY += e.clientY - lastY;
+    lastX = e.clientX; lastY = e.clientY;
+    applyTransform();
+  });
+  canvas.addEventListener('wheel', e => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? 0.9 : 1.1;
+    scale = Math.min(2, Math.max(0.3, scale * delta));
+    applyTransform();
+  });
+  applyTransform();
+}
+
+function applyTransform() {
+  const world = document.getElementById('diagram-world');
+  const svg   = document.getElementById('connections');
+  const t = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
+  world.style.transform = t;
+  svg.style.transform   = t;
+  svg.style.transformOrigin = '0 0';
+}
+
+function zoom(factor) {
+  scale = Math.min(2, Math.max(0.3, scale * factor));
+  applyTransform();
+}
+
+function resetZoom() {
+  scale = 1; offsetX = 40; offsetY = 30;
+  applyTransform();
+}
+
+function showTooltip(node, ev) {
+  const t = document.getElementById('tooltip');
+  let html = `<div class="tooltip-title">${node.label.replace('\n','')}</div>`;
+  if (node.info) {
+    Object.entries(node.info).forEach(([k,v]) => {
+      html += `<div class="tooltip-row"><span class="tooltip-key">${k}</span><span class="tooltip-val">${v}</span></div>`;
+    });
+  }
+  t.innerHTML = html;
+  t.classList.add('show');
+  moveTooltip(ev);
+}
+function moveTooltip(ev) {
+  const t = document.getElementById('tooltip');
+  t.style.left = (ev.clientX + 16) + 'px';
+  t.style.top  = (ev.clientY - 10) + 'px';
+}
+function hideTooltip() {
+  document.getElementById('tooltip').classList.remove('show');
+}
+
+// Init diagram on load
+window.addEventListener('load', initDiagram);
+</script>
+<script>
+function showPanel(id, el) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  const panel = document.getElementById('panel-' + id);
+  if (panel) panel.classList.add('active');
+  const activeTab = el || Array.from(document.querySelectorAll('.tab')).find(t => (t.getAttribute('onclick') || '').includes("showPanel('" + id + "'"));
+  if (activeTab) activeTab.classList.add('active');
+  if (id === 'diagram') initDiagram();
+}
+
+const STORAGE_KEYS_PILOTAGE = { ideas: 'lcdmh_pilotage_v7_ideas', logs: 'lcdmh_pilotage_v7_logs' };
+const REMOTE_JSON_URL = './data/pilotage-vivant.json';
+let ideas = [];
+let logs = [];
+
+const defaultIdeas = [{
+  id: crypto.randomUUID(),
+  title: 'Créer un JSON partagé pour le pilotage',
+  details: 'Prévoir data/pilotage-vivant.json pour relire les idées et le journal sur plusieurs appareils.',
+  tag: 'GitHub',
+  link: 'data/pilotage-vivant.json',
+  done: false,
+  createdAt: new Date().toISOString()
+}];
+
+const defaultLogs = [{
+  id: crypto.randomUUID(),
+  title: 'Base hybride V2 + pilotage',
+  details: 'Ajout du pilotage vivant, de la relecture des fiches, de l’ouverture des liens et du responsive mobile.',
+  link: '',
+  source: 'LCDMH Ecosysteme',
+  createdAt: new Date().toISOString()
+}];
+
+function hasPilotagePanel() {
+  return !!document.getElementById('ideasList');
+}
+function loadState(key, fallback) {
+  try {
+    const raw = localStorage.getItem(key);
+    return raw ? JSON.parse(raw) : fallback;
+  } catch { return fallback; }
+}
+function saveState(key, value) { localStorage.setItem(key, JSON.stringify(value)); }
+function normalizeIdea(item) {
+  return {
+    id: item.id || crypto.randomUUID(),
+    title: String(item.title || '').trim(),
+    details: String(item.details || '').trim(),
+    tag: String(item.tag || 'Général').trim() || 'Général',
+    link: String(item.link || item.url || '').trim(),
+    done: !!item.done,
+    createdAt: item.createdAt || new Date().toISOString()
+  };
+}
+function normalizeLog(item) {
+  return {
+    id: item.id || crypto.randomUUID(),
+    title: String(item.title || '').trim(),
+    details: String(item.details || '').trim(),
+    link: String(item.link || item.url || '').trim(),
+    source: String(item.source || '').trim(),
+    createdAt: item.createdAt || new Date().toISOString()
+  };
+}
+function formatDate(iso) {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return String(iso || '');
+  return d.toLocaleString('fr-FR', {year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
+}
+function escapeHtml(str) {
+  return String(str).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
+}
+function compactText(str, max=180) {
+  const clean = String(str || '').replace(/\s+/g,' ').trim();
+  return clean.length <= max ? clean : clean.slice(0, max - 1) + '…';
+}
+function looksLikeLink(value) {
+  const v = String(value || '').trim();
+  return /^(https?:\/\/|\.\/|\.\.\/|\/|[\w\-./]+\.html?(#.*)?$|[\w\-./]+\.json(#.*)?$)/i.test(v);
+}
+function resolveLink(value) {
+  const v = String(value || '').trim();
+  if (!v) return '';
+  if (/^https?:\/\//i.test(v)) return v;
+  try { return new URL(v, window.location.href).href; } catch { return v; }
+}
+function createButton(label, className, onClick) {
+  const btn = document.createElement('button');
+  btn.className = className;
+  btn.type = 'button';
+  btn.textContent = label;
+  btn.addEventListener('click', onClick);
+  return btn;
+}
+function openLink(rawLink) {
+  const link = resolveLink(rawLink);
+  if (link) window.open(link, '_blank', 'noopener');
+}
+function closeEntryDialog() {
+  const d = document.getElementById('entryDialog');
+  d.classList.remove('open');
+  d.setAttribute('aria-hidden', 'true');
+  document.getElementById('entryDialogActions').innerHTML = '';
+}
+function showEntryDialog(type, entry) {
+  const title = document.getElementById('entryDialogTitle');
+  const meta = document.getElementById('entryDialogMeta');
+  const text = document.getElementById('entryDialogText');
+  const linkWrap = document.getElementById('entryDialogLinkWrap');
+  const linkEl = document.getElementById('entryDialogLink');
+  const actions = document.getElementById('entryDialogActions');
+  const d = document.getElementById('entryDialog');
+
+  title.textContent = entry.title || 'Sans titre';
+  const bits = [];
+  bits.push(type === 'idea' ? 'Idée / prochaine piste' : 'Journal des modifications');
+  if (type === 'idea' && entry.tag) bits.push(entry.tag);
+  if (type === 'idea' && entry.done) bits.push('Terminée');
+  if (type === 'log' && entry.source) bits.push(entry.source);
+  if (entry.createdAt) bits.push('Ajouté le ' + formatDate(entry.createdAt));
+  meta.textContent = bits.join(' · ');
+  text.textContent = entry.details || 'Aucun détail saisi.';
+
+  if (entry.link && looksLikeLink(entry.link)) {
+    linkWrap.style.display = 'block';
+    linkEl.href = resolveLink(entry.link);
+    linkEl.textContent = resolveLink(entry.link);
+  } else {
+    linkWrap.style.display = 'none';
+    linkEl.removeAttribute('href');
+  }
+
+  actions.innerHTML = '';
+  if (entry.link && looksLikeLink(entry.link)) actions.appendChild(createButton('Ouvrir le lien', 'btn primary', () => openLink(entry.link)));
+  actions.appendChild(createButton('Fermer', 'btn', closeEntryDialog));
+
+  d.classList.add('open');
+  d.setAttribute('aria-hidden', 'false');
+}
+function saveIdeas() { saveState(STORAGE_KEYS_PILOTAGE.ideas, ideas.map(normalizeIdea)); }
+function saveLogs() { saveState(STORAGE_KEYS_PILOTAGE.logs, logs.map(normalizeLog)); }
+function downloadJson(filename, data) {
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename; document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+}
+function setSourceStatus(title, meta, pill) {
+  const titleEl = document.getElementById('pilotageSourceTitle');
+  const metaEl = document.getElementById('pilotageSourceMeta');
+  const pillEl = document.getElementById('pilotageSourcePill');
+  if (titleEl) titleEl.textContent = title;
+  if (metaEl) metaEl.textContent = meta;
+  if (pillEl) pillEl.textContent = pill;
+}
+async function tryLoadRemoteState() {
+  try {
+    const res = await fetch(REMOTE_JSON_URL, { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const parsed = await res.json();
+    if (!parsed || !Array.isArray(parsed.ideas) || !Array.isArray(parsed.logs)) throw new Error('format');
+    ideas = parsed.ideas.map(normalizeIdea).filter(x => x.title);
+    logs = parsed.logs.map(normalizeLog).filter(x => x.title);
+    saveIdeas(); saveLogs();
+    renderIdeas(); renderLogs();
+    setSourceStatus('Source des données : JSON du site chargé', 'Lecture réussie depuis ' + REMOTE_JSON_URL, 'JSON GitHub');
+    return true;
+  } catch (err) {
+    setSourceStatus('Source des données : stockage local du navigateur', 'Aucun JSON du site trouvé ou accessible. Les données restent locales sur cet appareil.', 'Local');
+    return false;
+  }
+}
+function renderIdeas() {
+  const ideasList = document.getElementById('ideasList');
+  const ideasEmpty = document.getElementById('ideasEmpty');
+  const ideasSearch = document.getElementById('ideasSearch');
+  if (!ideasList) return;
+  ideasList.innerHTML = '';
+  const query = (ideasSearch?.value || '').trim().toLowerCase();
+  const filtered = ideas.slice().sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt)).filter(item => {
+    if (!query) return true;
+    return [item.title, item.details, item.tag, item.link].join(' ').toLowerCase().includes(query);
+  });
+  ideasEmpty.style.display = filtered.length ? 'none' : 'block';
+  filtered.forEach(item => {
+    const li = document.createElement('li');
+    li.className = 'checkitem' + (item.done ? ' done' : '');
+
+    const check = document.createElement('input');
+    check.type = 'checkbox';
+    check.checked = !!item.done;
+    check.addEventListener('change', () => { item.done = check.checked; saveIdeas(); renderIdeas(); });
+
+    const body = document.createElement('div');
+    const linkHtml = item.link && looksLikeLink(item.link)
+      ? `<a class="entry-link" href="${escapeHtml(resolveLink(item.link))}" target="_blank" rel="noopener">🔗 ${escapeHtml(resolveLink(item.link))}</a>` : '';
+    body.innerHTML = `
+      <div class="entry-top">
+        <div>
+          <div class="entry-title">${escapeHtml(item.title)}</div>
+          <div class="preview">${escapeHtml(compactText(item.details))}</div>
+          <div class="meta">${escapeHtml(item.tag || 'Général')} · ajouté le ${formatDate(item.createdAt)}${item.done ? ' · terminée' : ''}</div>
+          ${linkHtml}
+        </div>
+        <div class="entry-tags">
+          <span class="pill">${escapeHtml(item.tag || 'Général')}</span>
+          ${item.link && looksLikeLink(item.link) ? '<span class="pill link">Lien</span>' : ''}
+          ${item.done ? '<span class="pill">Terminée</span>' : ''}
+        </div>
+      </div>
+    `;
+
+    const actions = document.createElement('div');
+    actions.className = 'actions-row';
+    actions.appendChild(createButton('Lire', 'btn', () => showEntryDialog('idea', item)));
+    actions.appendChild(createButton('Modifier', 'btn', () => editIdea(item)));
+    if (item.link && looksLikeLink(item.link)) actions.appendChild(createButton('Ouvrir', 'btn primary', () => openLink(item.link)));
+    actions.appendChild(createButton('Vers journal', 'btn warn', () => promoteIdeaToLog(item)));
+    actions.appendChild(createButton('Supprimer', 'btn red', () => {
+      ideas = ideas.filter(x => x.id !== item.id); saveIdeas(); renderIdeas();
+    }));
+
+    body.appendChild(actions);
+    li.appendChild(check);
+    li.appendChild(body);
+    ideasList.appendChild(li);
+  });
+}
+function renderLogs() {
+  const logsList = document.getElementById('logsList');
+  const logsEmpty = document.getElementById('logsEmpty');
+  const logsSearch = document.getElementById('logsSearch');
+  if (!logsList) return;
+  logsList.innerHTML = '';
+  const query = (logsSearch?.value || '').trim().toLowerCase();
+  const filtered = logs.slice().sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt)).filter(item => {
+    if (!query) return true;
+    return [item.title, item.details, item.link, item.source].join(' ').toLowerCase().includes(query);
+  });
+  logsEmpty.style.display = filtered.length ? 'none' : 'block';
+  filtered.forEach(entry => {
+    const li = document.createElement('li');
+    li.className = 'logitem';
+    const linkHtml = entry.link && looksLikeLink(entry.link)
+      ? `<a class="entry-link" href="${escapeHtml(resolveLink(entry.link))}" target="_blank" rel="noopener">🔗 ${escapeHtml(resolveLink(entry.link))}</a>` : '';
+    li.innerHTML = `
+      <div class="entry-top">
+        <div>
+          <div class="meta">${formatDate(entry.createdAt)}${entry.source ? ' · ' + escapeHtml(entry.source) : ''}</div>
+          <div class="entry-title">${escapeHtml(entry.title)}</div>
+          <div class="preview">${escapeHtml(compactText(entry.details))}</div>
+          ${linkHtml}
+        </div>
+        <div class="entry-tags">
+          ${entry.source ? `<span class="pill">${escapeHtml(entry.source)}</span>` : ''}
+          ${entry.link && looksLikeLink(entry.link) ? '<span class="pill link">Lien</span>' : ''}
+        </div>
+      </div>
+    `;
+    const actions = document.createElement('div');
+    actions.className = 'actions-row';
+    actions.appendChild(createButton('Lire', 'btn', () => showEntryDialog('log', entry)));
+    actions.appendChild(createButton('Modifier', 'btn', () => editLog(entry)));
+    if (entry.link && looksLikeLink(entry.link)) actions.appendChild(createButton('Ouvrir', 'btn primary', () => openLink(entry.link)));
+    actions.appendChild(createButton('Supprimer', 'btn red', () => {
+      logs = logs.filter(x => x.id !== entry.id); saveLogs(); renderLogs();
+    }));
+    li.appendChild(actions);
+    logsList.appendChild(li);
+  });
+}
+function editIdea(item) {
+  const title = prompt('Modifier le titre de l’idée', item.title);
+  if (title === null || !title.trim()) return;
+  const details = prompt('Modifier le détail de l’idée', item.details || '');
+  if (details === null) return;
+  const link = prompt('Modifier le lien ou chemin', item.link || '');
+  if (link === null) return;
+  item.title = title.trim(); item.details = details.trim(); item.link = link.trim();
+  saveIdeas(); renderIdeas();
+}
+function editLog(entry) {
+  const title = prompt('Modifier le titre', entry.title);
+  if (title === null || !title.trim()) return;
+  const details = prompt('Modifier le détail', entry.details || '');
+  if (details === null) return;
+  const link = prompt('Modifier le lien ou chemin', entry.link || '');
+  if (link === null) return;
+  const source = prompt('Modifier la source', entry.source || '');
+  if (source === null) return;
+  entry.title = title.trim(); entry.details = details.trim(); entry.link = link.trim(); entry.source = source.trim();
+  saveLogs(); renderLogs();
+}
+function promoteIdeaToLog(item) {
+  logs.unshift(normalizeLog({
+    title: item.title, details: item.details, link: item.link, source: item.tag, createdAt: new Date().toISOString()
+  }));
+  saveLogs(); renderLogs();
+}
+function importJsonFile(file, type) {
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const parsed = JSON.parse(String(reader.result || '{}'));
+      if (type === 'full') {
+        if (!parsed || !Array.isArray(parsed.ideas) || !Array.isArray(parsed.logs)) throw new Error('format');
+        ideas = parsed.ideas.map(normalizeIdea).filter(x => x.title);
+        logs = parsed.logs.map(normalizeLog).filter(x => x.title);
+        saveIdeas(); saveLogs(); renderIdeas(); renderLogs();
+        setSourceStatus('Source des données : backup importé', 'Les données affichées viennent du fichier JSON importé manuellement.', 'Import');
+        return;
+      }
+      if (!Array.isArray(parsed)) throw new Error('format');
+      if (type === 'ideas') { ideas = parsed.map(normalizeIdea).filter(x => x.title); saveIdeas(); renderIdeas(); }
+      if (type === 'logs') { logs = parsed.map(normalizeLog).filter(x => x.title); saveLogs(); renderLogs(); }
+    } catch {
+      alert('Impossible de lire ce fichier JSON.');
+    }
+  };
+  reader.readAsText(file, 'utf-8');
+}
+function bindPilotageEvents() {
+  if (!hasPilotagePanel()) return;
+  document.getElementById('addIdeaBtn').addEventListener('click', () => {
+    const title = document.getElementById('ideaTitle').value.trim();
+    const details = document.getElementById('ideaDetails').value.trim();
+    const tag = document.getElementById('ideaTag').value;
+    const link = document.getElementById('ideaLink').value.trim();
+    if (!title) return;
+    ideas.unshift(normalizeIdea({ title, details, tag, link, done: false, createdAt: new Date().toISOString() }));
+    saveIdeas(); renderIdeas();
+    document.getElementById('ideaTitle').value = '';
+    document.getElementById('ideaDetails').value = '';
+    document.getElementById('ideaLink').value = '';
+  });
+  document.getElementById('addLogBtn').addEventListener('click', () => {
+    const title = document.getElementById('logTitle').value.trim();
+    const details = document.getElementById('logDetails').value.trim();
+    const link = document.getElementById('logLink').value.trim();
+    const source = document.getElementById('logSource').value.trim();
+    if (!title) return;
+    logs.unshift(normalizeLog({ title, details, link, source, createdAt: new Date().toISOString() }));
+    saveLogs(); renderLogs();
+    document.getElementById('logTitle').value = '';
+    document.getElementById('logDetails').value = '';
+    document.getElementById('logLink').value = '';
+    document.getElementById('logSource').value = '';
+  });
+  document.getElementById('exportIdeasBtn').addEventListener('click', () => downloadJson('lcdmh-idees.json', ideas.map(normalizeIdea)));
+  document.getElementById('exportLogsBtn').addEventListener('click', () => downloadJson('lcdmh-journal.json', logs.map(normalizeLog)));
+  document.getElementById('exportFullBtn').addEventListener('click', () => downloadJson('pilotage-vivant.json', { ideas: ideas.map(normalizeIdea), logs: logs.map(normalizeLog) }));
+  document.getElementById('importIdeasBtn').addEventListener('click', () => document.getElementById('ideasFileInput').click());
+  document.getElementById('importLogsBtn').addEventListener('click', () => document.getElementById('logsFileInput').click());
+  document.getElementById('importFullBtn').addEventListener('click', () => document.getElementById('fullFileInput').click());
+  document.getElementById('reloadRemoteBtn').addEventListener('click', () => tryLoadRemoteState());
+  document.getElementById('ideasFileInput').addEventListener('change', e => { importJsonFile(e.target.files[0], 'ideas'); e.target.value = ''; });
+  document.getElementById('logsFileInput').addEventListener('change', e => { importJsonFile(e.target.files[0], 'logs'); e.target.value = ''; });
+  document.getElementById('fullFileInput').addEventListener('change', e => { importJsonFile(e.target.files[0], 'full'); e.target.value = ''; });
+  document.getElementById('clearIdeasBtn').addEventListener('click', () => { if (confirm('Supprimer toutes les idées ?')) { ideas = []; saveIdeas(); renderIdeas(); } });
+  document.getElementById('clearLogsBtn').addEventListener('click', () => { if (confirm('Supprimer tout le journal ?')) { logs = []; saveLogs(); renderLogs(); } });
+  document.getElementById('ideasSearch').addEventListener('input', renderIdeas);
+  document.getElementById('logsSearch').addEventListener('input', renderLogs);
+  document.getElementById('closeEntryDialogBtn').addEventListener('click', closeEntryDialog);
+  document.getElementById('entryDialog').addEventListener('click', e => { if (e.target.id === 'entryDialog') closeEntryDialog(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && document.getElementById('entryDialog').classList.contains('open')) closeEntryDialog(); });
+}
+async function initPilotage() {
+  if (!hasPilotagePanel()) return;
+  ideas = loadState(STORAGE_KEYS_PILOTAGE.ideas, []).map(normalizeIdea).filter(x => x.title);
+  logs = loadState(STORAGE_KEYS_PILOTAGE.logs, []).map(normalizeLog).filter(x => x.title);
+  if (!ideas.length) { ideas = defaultIdeas.map(normalizeIdea); saveIdeas(); }
+  if (!logs.length) { logs = defaultLogs.map(normalizeLog); saveLogs(); }
+  bindPilotageEvents();
+  renderIdeas();
+  renderLogs();
+  await tryLoadRemoteState();
+}
+window.addEventListener('load', initPilotage);
+</script></body>
+</html>
