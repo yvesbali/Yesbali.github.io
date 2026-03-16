@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>LCDMH — Carte de l'Écosystème + Pilotage vivant</title>
+<title>LCDMH — Carte de l'Écosystème + Pilotage vivant responsive v7</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Syne:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
@@ -284,6 +284,12 @@
   .dialog-section h4 { margin: 0 0 8px; font-size: 12px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--orange); font-family: 'DM Mono', monospace; }
   .dialog-text { white-space: pre-wrap; word-break: break-word; font-size: 14px; color: var(--text); }
   .dialog-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+  .editor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .editor-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+  .editor-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--orange); font-family: 'DM Mono', monospace; }
+  .editor-textarea { min-height: 240px; resize: vertical; }
+  .editor-help { font-size: 12px; color: var(--text2); margin-top: 6px; }
+  .editor-actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; margin-top: 18px; }
   .hidden-file { display: none; }
   @media (max-width: 980px) {
     .header { padding: 20px 18px; align-items: flex-start; flex-wrap: wrap; }
@@ -299,6 +305,7 @@
     .legend { max-width: calc(100vw - 36px); }
     .dialog { padding: 16px; }
     .dialog-title { font-size: 20px; }
+    .editor-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 680px) {
     body { font-size: 14px; }
@@ -323,7 +330,7 @@
 <div class="header">
 <div class="header-icon">🏍️</div>
 <div>
-<div class="header-title">LCDMH <span>·</span> Carte de l'Écosystème + Pilotage vivant</div>
+<div class="header-title">LCDMH <span>·</span> Carte de l'Écosystème + Pilotage vivant responsive v7</div>
 <div class="header-sub">La Chaîne du Motard Heureux — lcdmh.com — lecture PC &amp; mobile — stockage local + lecture JSON GitHub si présent</div>
 </div>
 <div class="badge">MAJ : 16 mars 2026</div>
@@ -572,7 +579,7 @@
 <button class="btn" id="importFullBtn" type="button">Importer backup complet</button>
 <input accept="application/json" class="hidden-file" id="fullFileInput" type="file"/>
 </div>
-<div class="hint-box">Ancienne version : les données restaient dans le navigateur. Nouvelle version : lecture locale + possibilité de lire <span class="mono">data/pilotage-vivant.json</span> si tu le mets dans GitHub Pages.</div>
+<div class="hint-box">Ancienne version : les données restaient dans le navigateur. Nouvelle version : lecture locale + possibilité de lire <span class="mono">data/pilotage-LCDMHEcosystemeresponsivev7.json</span> si tu le mets dans GitHub Pages.</div>
 </div>
 <div class="soft-card">
 <h3>PC et téléphone</h3>
@@ -666,6 +673,49 @@
 <a class="entry-link" href="#" id="entryDialogLink" rel="noopener" target="_blank">Ouvrir le lien</a>
 </div>
 <div class="dialog-actions" id="entryDialogActions"></div>
+</div>
+</div>
+<div aria-hidden="true" class="dialog-backdrop" id="editorDialog">
+<div aria-labelledby="editorDialogTitle" aria-modal="true" class="dialog" role="dialog">
+<div class="dialog-header">
+<div>
+<h3 class="dialog-title" id="editorDialogTitle">Édition de l’entrée</h3>
+<div class="dialog-meta" id="editorDialogMeta">Un seul écran pour coller, corriger puis enregistrer.</div>
+</div>
+<button class="btn" id="closeEditorDialogBtn" type="button">Fermer</button>
+</div>
+<div class="editor-field">
+<label class="editor-label" for="editorTitle">Titre</label>
+<input class="input" id="editorTitle" type="text"/>
+</div>
+<div class="editor-field">
+<label class="editor-label" for="editorDetails">Contenu / détail</label>
+<textarea class="textarea editor-textarea" id="editorDetails" placeholder="Tu peux coller ici un texte complet, une note longue, un lien ou une consigne."></textarea>
+<div class="editor-help">Zone large prévue pour coller puis relire avant validation.</div>
+</div>
+<div class="editor-grid">
+<div class="editor-field">
+<label class="editor-label" for="editorTag">Catégorie</label>
+<select class="select" id="editorTag">
+<option>Général</option><option>GitHub</option><option>HTML</option><option>Make</option>
+<option>YouTube</option><option>Road trip</option><option>APP.py</option><option>SEO</option>
+</select>
+</div>
+<div class="editor-field" id="editorSourceWrap" style="display:none;">
+<label class="editor-label" for="editorSource">Source / module</label>
+<input class="input" id="editorSource" type="text"/>
+</div>
+</div>
+<div class="editor-field">
+<label class="editor-label" for="editorLink">Lien ou chemin à ouvrir</label>
+<input class="input" id="editorLink" type="text"/>
+</div>
+<div class="editor-actions">
+<button class="btn" id="editorDuplicateBtn" type="button">Dupliquer le contenu</button>
+<button class="btn" id="editorPasteBtn" type="button">Coller</button>
+<button class="btn" id="editorCancelBtn" type="button">Annuler</button>
+<button class="btn primary" id="editorSaveBtn" type="button">Enregistrer</button>
+</div>
 </div>
 </div>
 <div class="footer">LCDMH · La Chaîne du Motard Heureux · lcdmh.com · Généré le 16 mars 2026</div>
@@ -888,17 +938,17 @@ function showPanel(id, el) {
   if (id === 'diagram') initDiagram();
 }
 
-const STORAGE_KEYS_PILOTAGE = { ideas: 'lcdmh_pilotage_v7_ideas', logs: 'lcdmh_pilotage_v7_logs' };
-const REMOTE_JSON_URL = './data/pilotage-vivant.json';
+const STORAGE_KEYS_PILOTAGE = { ideas: 'lcdmh_pilotage_responsive_v7_ideas', logs: 'lcdmh_pilotage_responsive_v7_logs' };
+const REMOTE_JSON_URL = './data/pilotage-LCDMHEcosystemeresponsivev7.json';
 let ideas = [];
 let logs = [];
 
 const defaultIdeas = [{
   id: crypto.randomUUID(),
   title: 'Créer un JSON partagé pour le pilotage',
-  details: 'Prévoir data/pilotage-vivant.json pour relire les idées et le journal sur plusieurs appareils.',
+  details: 'Prévoir data/pilotage-LCDMHEcosystemeresponsivev7.json pour relire les idées et le journal sur plusieurs appareils.',
   tag: 'GitHub',
-  link: 'data/pilotage-vivant.json',
+  link: 'data/pilotage-LCDMHEcosystemeresponsivev7.json',
   done: false,
   createdAt: new Date().toISOString()
 }];
@@ -973,6 +1023,90 @@ function createButton(label, className, onClick) {
   btn.addEventListener('click', onClick);
   return btn;
 }
+const editorState = { type: null, id: null };
+
+function openEditorDialog(type, entry) {
+  editorState.type = type;
+  editorState.id = entry.id;
+  document.getElementById('editorDialogTitle').textContent = type === 'idea' ? 'Modifier une idée' : 'Modifier une entrée du journal';
+  document.getElementById('editorDialogMeta').textContent = 'Tu peux coller un texte complet, ajuster les champs puis enregistrer en une seule fois.';
+  document.getElementById('editorTitle').value = entry.title || '';
+  document.getElementById('editorDetails').value = entry.details || '';
+  document.getElementById('editorLink').value = entry.link || '';
+  document.getElementById('editorTag').value = entry.tag || 'Général';
+  const sourceWrap = document.getElementById('editorSourceWrap');
+  const sourceInput = document.getElementById('editorSource');
+  if (type === 'idea') {
+    sourceWrap.style.display = 'none';
+    sourceInput.value = '';
+  } else {
+    sourceWrap.style.display = 'flex';
+    sourceInput.value = entry.source || '';
+  }
+  const dialog = document.getElementById('editorDialog');
+  dialog.classList.add('open');
+  dialog.setAttribute('aria-hidden', 'false');
+  setTimeout(() => document.getElementById('editorDetails').focus(), 20);
+}
+
+function closeEditorDialog() {
+  const dialog = document.getElementById('editorDialog');
+  dialog.classList.remove('open');
+  dialog.setAttribute('aria-hidden', 'true');
+  editorState.type = null;
+  editorState.id = null;
+}
+
+async function pasteIntoEditor() {
+  const details = document.getElementById('editorDetails');
+  try {
+    if (navigator.clipboard && navigator.clipboard.readText) {
+      const clip = await navigator.clipboard.readText();
+      const start = details.selectionStart ?? details.value.length;
+      const end = details.selectionEnd ?? details.value.length;
+      details.value = details.value.slice(0, start) + clip + details.value.slice(end);
+      details.focus();
+      const pos = start + clip.length;
+      details.setSelectionRange(pos, pos);
+      return;
+    }
+  } catch (err) {}
+  details.focus();
+}
+
+async function duplicateEditorContent() {
+  const content = document.getElementById('editorDetails').value || '';
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(content);
+    }
+  } catch (err) {}
+}
+
+function saveEditorDialog() {
+  const title = document.getElementById('editorTitle').value.trim();
+  if (!title) { alert('Le titre est obligatoire.'); return; }
+  const details = document.getElementById('editorDetails').value.trim();
+  const link = document.getElementById('editorLink').value.trim();
+  const tag = document.getElementById('editorTag').value || 'Général';
+
+  if (editorState.type === 'idea') {
+    const idx = ideas.findIndex(x => x.id === editorState.id);
+    if (idx === -1) return;
+    ideas[idx] = { ...ideas[idx], title, details, link, tag };
+    saveIdeas();
+    renderIdeas();
+  } else if (editorState.type === 'log') {
+    const idx = logs.findIndex(x => x.id === editorState.id);
+    if (idx === -1) return;
+    const source = document.getElementById('editorSource').value.trim();
+    logs[idx] = { ...logs[idx], title, details, link, source, tag };
+    saveLogs();
+    renderLogs();
+  }
+  closeEditorDialog();
+}
+
 function openLink(rawLink) {
   const link = resolveLink(rawLink);
   if (link) window.open(link, '_blank', 'noopener');
@@ -1152,26 +1286,10 @@ function renderLogs() {
   });
 }
 function editIdea(item) {
-  const title = prompt('Modifier le titre de l’idée', item.title);
-  if (title === null || !title.trim()) return;
-  const details = prompt('Modifier le détail de l’idée', item.details || '');
-  if (details === null) return;
-  const link = prompt('Modifier le lien ou chemin', item.link || '');
-  if (link === null) return;
-  item.title = title.trim(); item.details = details.trim(); item.link = link.trim();
-  saveIdeas(); renderIdeas();
+  openEditorDialog('idea', item);
 }
 function editLog(entry) {
-  const title = prompt('Modifier le titre', entry.title);
-  if (title === null || !title.trim()) return;
-  const details = prompt('Modifier le détail', entry.details || '');
-  if (details === null) return;
-  const link = prompt('Modifier le lien ou chemin', entry.link || '');
-  if (link === null) return;
-  const source = prompt('Modifier la source', entry.source || '');
-  if (source === null) return;
-  entry.title = title.trim(); entry.details = details.trim(); entry.link = link.trim(); entry.source = source.trim();
-  saveLogs(); renderLogs();
+  openEditorDialog('log', entry);
 }
 function promoteIdeaToLog(item) {
   logs.unshift(normalizeLog({
@@ -1229,9 +1347,9 @@ function bindPilotageEvents() {
     document.getElementById('logLink').value = '';
     document.getElementById('logSource').value = '';
   });
-  document.getElementById('exportIdeasBtn').addEventListener('click', () => downloadJson('lcdmh-idees.json', ideas.map(normalizeIdea)));
-  document.getElementById('exportLogsBtn').addEventListener('click', () => downloadJson('lcdmh-journal.json', logs.map(normalizeLog)));
-  document.getElementById('exportFullBtn').addEventListener('click', () => downloadJson('pilotage-vivant.json', { ideas: ideas.map(normalizeIdea), logs: logs.map(normalizeLog) }));
+  document.getElementById('exportIdeasBtn').addEventListener('click', () => downloadJson('pilotage-idees-LCDMHEcosystemeresponsivev7.json', ideas.map(normalizeIdea)));
+  document.getElementById('exportLogsBtn').addEventListener('click', () => downloadJson('pilotage-journal-LCDMHEcosystemeresponsivev7.json', logs.map(normalizeLog)));
+  document.getElementById('exportFullBtn').addEventListener('click', () => downloadJson('pilotage-LCDMHEcosystemeresponsivev7.json', { ideas: ideas.map(normalizeIdea), logs: logs.map(normalizeLog) }));
   document.getElementById('importIdeasBtn').addEventListener('click', () => document.getElementById('ideasFileInput').click());
   document.getElementById('importLogsBtn').addEventListener('click', () => document.getElementById('logsFileInput').click());
   document.getElementById('importFullBtn').addEventListener('click', () => document.getElementById('fullFileInput').click());
@@ -1245,7 +1363,17 @@ function bindPilotageEvents() {
   document.getElementById('logsSearch').addEventListener('input', renderLogs);
   document.getElementById('closeEntryDialogBtn').addEventListener('click', closeEntryDialog);
   document.getElementById('entryDialog').addEventListener('click', e => { if (e.target.id === 'entryDialog') closeEntryDialog(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && document.getElementById('entryDialog').classList.contains('open')) closeEntryDialog(); });
+  document.getElementById('closeEditorDialogBtn').addEventListener('click', closeEditorDialog);
+  document.getElementById('editorCancelBtn').addEventListener('click', closeEditorDialog);
+  document.getElementById('editorSaveBtn').addEventListener('click', saveEditorDialog);
+  document.getElementById('editorPasteBtn').addEventListener('click', pasteIntoEditor);
+  document.getElementById('editorDuplicateBtn').addEventListener('click', duplicateEditorContent);
+  document.getElementById('editorDialog').addEventListener('click', e => { if (e.target.id === 'editorDialog') closeEditorDialog(); });
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    if (document.getElementById('entryDialog').classList.contains('open')) closeEntryDialog();
+    if (document.getElementById('editorDialog').classList.contains('open')) closeEditorDialog();
+  });
 }
 async function initPilotage() {
   if (!hasPilotagePanel()) return;
