@@ -27,9 +27,9 @@
 [TEMPLATE]   Référence CSS : roadbook.css ✅
 [RENDER] Résolution des placeholders...
 [RENDER] ✅ Tous les placeholders résolus
-[RENDER] HTML final : 10219 caractères
+[RENDER] HTML final : 10216 caractères
 [BUILD] ✅ Page principale écrite : F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-ecosse-2026.html
-[BUILD]   Taille HTML : 10219 caractères
+[BUILD]   Taille HTML : 10216 caractères
 [CSS] Recherche du dossier CSS...
 [CSS]   F:\Automate_YT\css → TROUVÉ ✅
 [CSS]   F:\Automate_YT\templates\css → TROUVÉ ✅
@@ -53,21 +53,21 @@
 [VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook.css : ✅ EXISTE
 [VERIFY]   css/roadbook-fusion.css
 [VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook-fusion.css : ✅ EXISTE
-[VERIFY]   ../images/roadtrips/road-trip-moto-ecosse-2026/pexels-pixabay-39391.jpg
+[VERIFY]   /images/roadtrips/road-trip-moto-ecosse-2026/pexels-pixabay-39391.jpg
 [VERIFY]     → F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-ecosse-2026\pexels-pixabay-39391.jpg : ✅ EXISTE
-[VERIFY]   ../roadbooks-html/road-trip-moto-ecosse-2026/index.html
+[VERIFY]   /roadbooks-html/road-trip-moto-ecosse-2026/index.html
 [VERIFY]     → F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-ecosse-2026\index.html : ✅ EXISTE
-[VERIFY]   road-trip-moto-ecosse-2026-journal.html
+[VERIFY]   /roadtrips/road-trip-moto-ecosse-2026-journal.html
 [VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-ecosse-2026-journal.html : ✅ EXISTE
-[VERIFY]   ../kurviger/road-trip-moto-ecosse-2026.kurviger
+[VERIFY]   /kurviger/road-trip-moto-ecosse-2026.kurviger
 [VERIFY]     → F:\RoadBook HTML\test v14\build\kurviger\road-trip-moto-ecosse-2026.kurviger : ✅ EXISTE
-[VERIFY]   ../kurviger/road-trip-moto-ecosse-2026.kurviger
+[VERIFY]   /kurviger/road-trip-moto-ecosse-2026.kurviger
 [VERIFY]     → F:\RoadBook HTML\test v14\build\kurviger\road-trip-moto-ecosse-2026.kurviger : ✅ EXISTE
-[VERIFY]   ../images/roadtrips/road-trip-moto-ecosse-2026/téléchargement.png
+[VERIFY]   /images/roadtrips/road-trip-moto-ecosse-2026/téléchargement.png
 [VERIFY]     → F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-ecosse-2026\téléchargement.png : ✅ EXISTE
-[VERIFY]   ../roadbooks-html/road-trip-moto-ecosse-2026/index.html
+[VERIFY]   /roadbooks-html/road-trip-moto-ecosse-2026/index.html
 [VERIFY]     → F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-ecosse-2026\index.html : ✅ EXISTE
-[VERIFY]   ../roadbooks/road-trip-moto-ecosse-2026-roadbook.pdf
+[VERIFY]   /roadbooks/road-trip-moto-ecosse-2026-roadbook.pdf
 [VERIFY]     → F:\RoadBook HTML\test v14\build\roadbooks\road-trip-moto-ecosse-2026-roadbook.pdf : ✅ EXISTE
 [VERIFY]   /roadtrips.html
 [VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips.html : ❌ MANQUANT
@@ -77,11 +77,22 @@
 [VERIFY]     → F:\RoadBook HTML\test v14\build\a-propos.html : ❌ MANQUANT
 
 [HERO] ═══ VÉRIFICATION IMAGE HERO ═══
-[HERO] Chemin dans le HTML : ../images/roadtrips/road-trip-moto-ecosse-2026/pexels-pixabay-39391.jpg
+[HERO] Chemin dans le HTML : /images/roadtrips/road-trip-moto-ecosse-2026/pexels-pixabay-39391.jpg
 [HERO] Résolu vers : F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-ecosse-2026\pexels-pixabay-39391.jpg
 [HERO] Fichier existe : True
 [HERO] ✅ Taille : 2141 KB
 
 [HTML] ═══ EXTRAIT DU HTML GÉNÉRÉ (hero) ═══
-[HTML] L13: <header class="hero hero-image" style="background-image:url('../images/roadtrips/road-trip-moto-ecosse-2026/pexels-pixabay-39391.jpg')">
+[HTML] L13: <header class="hero hero-image" style="background-image:url('/images/roadtrips/road-trip-moto-ecosse-2026/pexels-pixabay-39391.jpg')">
 [HTML] L14: <div class="wrap hero-inner">
+
+[PUBLIC] ═══ URLS PUBLIQUES ATTENDUES ═══
+[PUBLIC]   Page principale: https://lcdmh.com/roadtrips/road-trip-moto-ecosse-2026.html
+[PUBLIC]   Journal: https://lcdmh.com/roadtrips/road-trip-moto-ecosse-2026-journal.html
+[PUBLIC]   Hero image: https://lcdmh.com/images/roadtrips/road-trip-moto-ecosse-2026/pexels-pixabay-39391.jpg
+[PUBLIC]   QR code: https://lcdmh.com/images/roadtrips/road-trip-moto-ecosse-2026/téléchargement.png
+[PUBLIC]   PDF: https://lcdmh.com/roadbooks/road-trip-moto-ecosse-2026-roadbook.pdf
+[PUBLIC]   Roadbook HTML: https://lcdmh.com/roadbooks-html/road-trip-moto-ecosse-2026/index.html
+[PUBLIC]   Kurviger: https://lcdmh.com/kurviger/road-trip-moto-ecosse-2026.kurviger
+[PUBLIC]   CSS roadbook: https://lcdmh.com/roadtrips/css/roadbook.css
+[PUBLIC]   CSS fusion: https://lcdmh.com/roadtrips/css/roadbook-fusion.css
