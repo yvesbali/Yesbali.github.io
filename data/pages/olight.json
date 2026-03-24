@@ -4,7 +4,7 @@
     "page_type": "product",
     "slug": "olight",
     "last_updated": "2026-03-24",
-    "updated_by": "batch"
+    "updated_by": "Streamlit"
   },
   "seo": {
     "title": "Lampe Frontale Olight Perun 3 - Test Bivouac Moto | LCDMH",
@@ -14,13 +14,39 @@
     "canonical": "https://lcdmh.com/olight.html"
   },
   "hero": {
+    "badge": "",
     "title": "Olight Perun 3",
     "slogan": "La lampe frontale ultime\npour le bivouac moto",
-    "features_line": "🔦 3000 lumens • 🔋 15 jours d'autonomie • 💧 IPX7 étanche • 🔌 Recharge USB-C"
+    "sub_slogan": "Éclaire jusqu'à 160 mètres. Suffisant pour sécuriser un campement ou lire une carte en pleine nuit. Avec sa batterie de 500 mAh, ses 160 mètres de portée et une garantie à vie Olight frappe fort. ",
+    "features_line": "🔦 3000 lumens • 🔋 15 jours d'autonomie • 💧 IPX7 étanche • 🔌 Recharge USB-C",
+    "background_image": ""
   },
   "intro": {
     "text": "La Olight Perun 3 est la lampe que j'utilise depuis le Cap Nord. Puissante, étanche, longue autonomie — elle est devenue indispensable pour les bivouacs moto."
   },
+  "key_features": [
+    {
+      "icon": "🔦",
+      "title": "3000 lumens de puissance",
+      "text": "Éclaire jusqu'à 120 mètres. Suffisant pour sécuriser un campement ou lire une carte en pleine nuit.",
+      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1974",
+      "image_alt": "Lampe frontale puissante bivouac"
+    },
+    {
+      "icon": "💧",
+      "title": "IPX7 — Étanche totale",
+      "text": "Résiste à la pluie battante et à l'immersion 1m/30min. Testée sous la pluie norvégienne pendant 10 000 km.",
+      "image": "https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1974",
+      "image_alt": "Pluie bivouac moto étanche"
+    },
+    {
+      "icon": "🔋",
+      "title": "15 jours d'autonomie",
+      "text": "En mode faible, elle tient 15 jours sans recharge. En usage mixte, je recharge tous les 4-5 jours de road trip.",
+      "image": "https://images.unsplash.com/photo-1473615695634-44a7f4d4f190?q=80&w=1974",
+      "image_alt": "Bivouac moto nuit tente"
+    }
+  ],
   "product": {
     "name": "Olight Perun 3",
     "tagline": "La lampe frontale ultime pour le bivouac moto",
@@ -81,34 +107,12 @@
     "keywords": "olight",
     "max": 4
   },
+  "files": {},
   "partner": {
-    "name": "Olight",
+    "name": "OLIGHT",
     "contact": "Julie — affiliate@olightworld.com",
     "commission": "8%",
     "awin": true,
     "platform": "awin"
-  },
-  "key_features": [
-    {
-      "icon": "🔦",
-      "title": "3000 lumens de puissance",
-      "text": "Éclaire jusqu'à 120 mètres. Suffisant pour sécuriser un campement ou lire une carte en pleine nuit.",
-      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1974",
-      "image_alt": "Lampe frontale puissante bivouac"
-    },
-    {
-      "icon": "💧",
-      "title": "IPX7 — Étanche totale",
-      "text": "Résiste à la pluie battante et à l'immersion 1m/30min. Testée sous la pluie norvégienne pendant 10 000 km.",
-      "image": "https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1974",
-      "image_alt": "Pluie bivouac moto étanche"
-    },
-    {
-      "icon": "🔋",
-      "title": "15 jours d'autonomie",
-      "text": "En mode faible, elle tient 15 jours sans recharge. En usage mixte, je recharge tous les 4-5 jours de road trip.",
-      "image": "https://images.unsplash.com/photo-1473615695634-44a7f4d4f190?q=80&w=1974",
-      "image_alt": "Bivouac moto nuit tente"
-    }
-  ]
+  }
 }
