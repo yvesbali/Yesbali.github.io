@@ -4,7 +4,7 @@
     "page_type": "product",
     "slug": "olight",
     "last_updated": "2026-03-24",
-    "updated_by": "batch"
+    "updated_by": "Streamlit"
   },
   "seo": {
     "title": "Lampe Frontale Olight Perun 3 - Test Bivouac Moto | LCDMH",
@@ -14,13 +14,39 @@
     "canonical": "https://lcdmh.com/olight.html"
   },
   "hero": {
+    "badge": "",
     "title": "Olight Perun 3",
     "slogan": "La lampe frontale ultime\npour le bivouac moto",
-    "features_line": "🔦 3000 lumens • 🔋 15 jours d'autonomie • 💧 IPX7 étanche • 🔌 Recharge USB-C"
+    "sub_slogan": "Une lampe au performance folles : \nLED de qualité supérieure\n3000 lumens\nPortée 160 mètres\nBatterie 5000mAh \nAutonomie 20 jours \net GARANTIE à vie ",
+    "features_line": "🔦 3000 lumens • 🔋 15 jours d'autonomie • 💧 IPX7 étanche • 🔌 Recharge USB-C",
+    "background_image": ""
   },
   "intro": {
     "text": "La Olight Perun 3 est la lampe que j'utilise depuis le Cap Nord. Puissante, étanche, longue autonomie — elle est devenue indispensable pour les bivouacs moto."
   },
+  "key_features": [
+    {
+      "icon": "🔒",
+      "title": "PROTÈGE ta moto",
+      "text": "Localisation GPS en temps réel, alarme anti-vol, géofencing. Votre moto sous surveillance permanente.",
+      "image": "https://images.unsplash.com/photo-1605025991907-05b7f5787b4d?q=80&w=1974",
+      "image_alt": "Antivol moto protection"
+    },
+    {
+      "icon": "👼",
+      "title": "VEILLE sur toi",
+      "text": "Détection de chute eCall : en cas d'accident, vos contacts d'urgence sont alertés avec votre position.",
+      "image": "https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=2070",
+      "image_alt": "Ange gardien motard"
+    },
+    {
+      "icon": "👨‍👩‍👧",
+      "title": "RASSURE tes proches",
+      "text": "Partagez votre position en direct. En cas de problème, votre famille sait où vous êtes et reçoit les alertes.",
+      "image": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070",
+      "image_alt": "Famille au téléphone"
+    }
+  ],
   "product": {
     "name": "Olight Perun 3",
     "tagline": "La lampe frontale ultime pour le bivouac moto",
@@ -47,33 +73,33 @@
   "why_choose": [
     {
       "icon": "🔋",
-      "title": "Autonomie exceptionnelle",
-      "text": "15 jours en mode faible (15 lm). J'ai tenu 4-5 jours en usage mixte sans recharger."
+      "title": "Autonomie longue durée",
+      "text": "Jusqu'à plusieurs semaines en veille. Pas besoin de recharger en plein road trip."
     },
     {
-      "icon": "💧",
-      "title": "Étanchéité IPX7",
-      "text": "Sous la pluie norvégienne, sous la tente humide, elle n'a jamais failli. Immersion 1m / 30min."
+      "icon": "📱",
+      "title": "Application intuitive",
+      "text": "Interface claire, notifications en temps réel. Tout se gère depuis votre smartphone."
     },
     {
-      "icon": "🔍",
-      "title": "Polyvalence totale",
-      "text": "Mode spot pour voir loin, mode flood pour la tente, lumière rouge pour ne pas attirer les insectes."
+      "icon": "🔧",
+      "title": "Installation discrète",
+      "text": "Se cache facilement sur la moto. Indétectable par les voleurs."
     },
     {
-      "icon": "🔌",
-      "title": "Recharge USB-C magnétique",
-      "text": "Se branche même sans voir dans le noir. Recharge sur batterie externe ou allume-cigare."
+      "icon": "📊",
+      "title": "Télémétrie complète",
+      "text": "Analysez vos trajets : vitesse, distance, consommation, angle de courbe."
     },
     {
-      "icon": "💡",
-      "title": "3000 lumens",
-      "text": "Puissance max suffisante pour éclairer un campement entier ou baliser une zone de sécurité."
+      "icon": "🌍",
+      "title": "Pas d'abonnement forcé",
+      "text": "Choisissez votre forfait selon vos besoins. Pas de surprise."
     },
     {
-      "icon": "🪖",
-      "title": "Bandeau confort",
-      "text": "Légère et bien équilibrée sur la tête. Pas de point de pression même après plusieurs heures."
+      "icon": "🤝",
+      "title": "Communauté active",
+      "text": "Entraide et partage d'astuces entre utilisateurs KOMOBI."
     }
   ],
   "videos": {
@@ -81,8 +107,9 @@
     "keywords": "olight",
     "max": 4
   },
+  "files": {},
   "partner": {
-    "name": "Olight",
+    "name": "OLIGHT",
     "contact": "Julie — affiliate@olightworld.com",
     "commission": "8%",
     "awin": true,
