@@ -1,0 +1,54 @@
+name: 🎬 Sync Journal Road Trip
+
+on:
+  schedule:
+    # Tous les soirs à 18h00 UTC (20h heure française en été)
+    - cron: '0 18 * * *'
+  workflow_dispatch:
+    inputs:
+      trip_slug:
+        description: 'Slug du road trip (ex: ecosse-irlande-2026)'
+        required: false
+        default: ''
+      force_all:
+        description: 'Forcer la mise à jour de tous les road trips actifs'
+        type: boolean
+        default: false
+
+jobs:
+  sync-journal:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests jinja2
+
+      - name: Sync journals
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          BRANCH: main
+        run: python .github/scripts/sync_journal.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "Aucun changement à committer."
+          else
+            git commit -m "🎬 [Journal] Mise à jour automatique $(date +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
