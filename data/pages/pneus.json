@@ -1,0 +1,83 @@
+{
+  "_meta": {
+    "schema_version": "1.0",
+    "page_type": "product",
+    "slug": "pneus",
+    "last_updated": "2026-03-24",
+    "updated_by": "batch"
+  },
+  "seo": {
+    "title": "Comparatif Pneus Moto : Dunlop, Michelin, Bridgestone | LCDMH",
+    "description": "Dunlop Mutant, Michelin Road 6, Metzeler RoadTec 02 et Bridgestone T33 testés sur 15 000 km. Verdict terrain sur NT1100 et TRK 702.",
+    "keywords": "test pneu moto, Dunlop Mutant avis, Michelin Road 6 test, Bridgestone T33, comparatif pneu moto, pneu NT1100",
+    "canonical": "https://lcdmh.com/pneus.html"
+  },
+  "hero": {
+    "title": "Comparatif Pneus Moto",
+    "slogan": "Dunlop, Michelin, Bridgestone\nTestés sur 15 000 km",
+    "features_line": "🏍️ Tests terrain • 📊 Comparatif objectif • 🌧️ Pluie & sec • 🗺️ Road trip"
+  },
+  "intro": {
+    "text": "J'ai testé 4 pneus en conditions réelles sur mes road trips en Europe : Dunlop Mutant, Michelin Road 6, Metzeler RoadTec 02 et Bridgestone T33. Voici mon verdict après 15 000 km."
+  },
+  "product": {
+    "name": "Dunlop Mutant / Bridgestone T33",
+    "tagline": "Les meilleurs pneus pour road trip moto",
+    "description": "Mes deux pneus recommandés après 15 000 km de tests : le Dunlop Mutant pour sa polyvalence, le Bridgestone T33 pour son grip.",
+    "rating": 4.6,
+    "rating_count": 0,
+    "affiliate_url": "https://lcdmh.com/codes-promo.html"
+  },
+  "test_status": {
+    "status": "done",
+    "label": "COMPARATIF COMPLET — 15 000 km testés",
+    "text": "4 pneus testés en conditions réelles sur Honda NT1100 et Benelli TRK 702. Routes mouillées, autoroute, cols de montagne, pistes.",
+    "sub_text": "Mon verdict : Dunlop Mutant pour la polyvalence, Bridgestone T33 pour le grip.",
+    "rating": 4.6,
+    "rating_label": "Avis après 15 000 km de comparatif"
+  },
+  "why_choose": [
+    {
+      "icon": "🏆",
+      "title": "Tests objectifs",
+      "text": "J'ai monté et usé chaque pneu sur les mêmes routes, dans les mêmes conditions."
+    },
+    {
+      "icon": "🌧️",
+      "title": "Testés sous la pluie",
+      "text": "Tous les pneus ont été testés sous la pluie en Norvège et dans les Alpes."
+    },
+    {
+      "icon": "📊",
+      "title": "Données réelles",
+      "text": "Distance exacte, conditions, comportement — pas de test en laboratoire."
+    },
+    {
+      "icon": "🗺️",
+      "title": "Road trip complet",
+      "text": "10 000 km au Cap Nord avec le Dunlop Mutant. Le verdict est sans appel."
+    },
+    {
+      "icon": "💰",
+      "title": "Rapport qualité/prix",
+      "text": "Je prends en compte le prix au km, pas seulement le prix d'achat."
+    },
+    {
+      "icon": "🔧",
+      "title": "Montage et usure",
+      "text": "Facilité de montage, usure régulière, durée de vie réelle."
+    }
+  ],
+  "videos": {
+    "enabled": true,
+    "keywords": "pneu,dunlop,bridgestone,michelin",
+    "max": 4
+  },
+  "partner": {
+    "name": "Pneus",
+    "contact": "",
+    "commission": "",
+    "awin": false,
+    "platform": "direct"
+  }
+}
