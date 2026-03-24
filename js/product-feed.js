@@ -194,12 +194,14 @@
   /* ── Chargement ───────────────────────────────────────────────────────────── */
   function init() {
     const container = getContainer();
-    container.innerHTML = '<div style="text-align:center;padding:2rem;color:#999;font-size:.9rem">Chargement des vidéos…</div>';
+
+    // Timeout de sécurité : si rien ne s'affiche après 6s, on vide silencieusement
+    const timeout = setTimeout(() => { container.innerHTML = ''; }, 6000);
 
     fetch(VIDEOS_JSON + '?t=' + Date.now())
       .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(render)
-      .catch(() => { container.innerHTML = ''; });
+      .then(data => { clearTimeout(timeout); render(data); })
+      .catch(() => { clearTimeout(timeout); container.innerHTML = ''; });
   }
 
   document.readyState === 'loading'
