@@ -6,73 +6,17 @@
     <title>Lampe Frontale Olight Perun 3 - Test Bivouac Moto | LCDMH</title>
     <meta name="description" content="Test de la lampe frontale Olight Perun 3 pour bivouac moto : autonomie, puissance, étanchéité. Idéale pour road trips et nuits en tente.">
     <meta name="keywords" content="lampe frontale moto, Olight Perun 3, éclairage bivouac, lampe camping moto, test Olight, LCDMH">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://lcdmh.com/olight.html">
-    
-    <meta property="og:type" content="article">
+    <meta name="author" content="Yves – LCDMH">
     <meta property="og:title" content="Lampe Frontale Olight Perun 3 - Test Bivouac Moto | LCDMH">
-    <meta property="og:description" content="La Perun 3 est-elle la meilleure lampe pour le bivouac moto ? Test complet en conditions réelles.">
+    <meta property="og:description" content="Test de la lampe frontale Olight Perun 3 pour bivouac moto : autonomie, puissance, étanchéité. Idéale pour road trips et nuits en tente.">
     <meta property="og:url" content="https://lcdmh.com/olight.html">
+    <meta property="og:type" content="product">
+    <meta property="og:site_name" content="LCDMH">
     <meta property="og:image" content="https://lcdmh.com/images/og-olight.jpg">
-    
-    <!-- Schema.org Product -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Olight Perun 3",
-      "description": "Lampe frontale rechargeable 3000 lumens pour bivouac moto",
-      "brand": "Olight",
-      "offers": {
-        "@type": "Offer",
-        "price": "89.90",
-        "priceCurrency": "EUR",
-        "availability": "https://schema.org/InStock"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "56"
-      }
-    }
-    </script>
-    
-    <!-- Schema.org BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://lcdmh.com" },
-        { "@type": "ListItem", "position": 2, "name": "Partenaires", "item": "https://lcdmh.com/codes-promo.html" },
-        { "@type": "ListItem", "position": 3, "name": "Olight", "item": "https://lcdmh.com/olight.html" }
-      ]
-    }
-    </script>
-    
-    <!-- FAQ Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Combien de temps tient la batterie ?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Jusqu'à 15 jours en mode faible, 5h en mode max (3000 lumens)." }
-        },
-        {
-          "@type": "Question",
-          "name": "Est-elle étanche pour la pluie ?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Oui, certification IPX7 : résiste à la pluie et à l'immersion temporaire." }
-        }
-      ]
-    }
-    </script>
-    
+    <link rel="canonical" href="https://lcdmh.com/olight.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
+    <script src="js/page-content.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root{
@@ -83,273 +27,401 @@
             --card:#fff;
             --border:#e5e5e5;
             --muted:#777;
+            --alt:#f0ede8;
         }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--noir); line-height: 1.7; }
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
-        .section { padding: 60px 6%; }
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--noir);line-height:1.65;font-size:16px}
+        h1,h2,h3,h4{font-family:'Montserrat',sans-serif}
+        a{color:inherit;text-decoration:none}
         
-        nav {
-            background: #fff;
-            box-shadow: 0 2px 12px rgba(0,0,0,.07);
-            padding: 0 4%;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.07);padding:0 4%;height:66px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+        .logo{font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800;color:var(--noir)}
+        .logo span{color:var(--orange)}
+        .nav-links{display:flex;gap:1rem;list-style:none;align-items:center}
+        .nav-links>li>a{font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0}
+        .nav-links>li>a:hover{color:var(--orange)}
+        .has-drop{position:relative}
+        .has-drop>a::after{content:'▾';font-size:.6rem;opacity:.7;margin-left:.2rem}
+        .dropdown{display:none;position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.12);min-width:175px;padding:.5rem 0;z-index:999}
+        .has-drop:hover .dropdown{display:block}
+        .dropdown a{display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s}
+        .dropdown a:hover{background:#fff8f2;color:var(--orange)}
+        .nav-yt{background:var(--orange)!important;color:#fff!important;padding:.42rem 1rem;border-radius:6px;font-weight:700!important}
+        .nav-yt:hover{background:var(--orange-dark)!important}
+        .nav-yt-icon{background:#ff0000!important;color:#fff!important;padding:.42rem 1rem;border-radius:6px;font-weight:700!important}
+        .nav-yt-icon:hover{background:#cc0000!important}
+        .menu-toggle{display:none}
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 66px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 1rem 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                z-index: 1000;
+                gap: 0;
+            }
+            .nav-links.active { display: flex; }
+            .nav-links li { width: 100%; text-align: center; }
+            .nav-links a {
+                display: block;
+                padding: 1rem !important;
+                width: 100%;
+                white-space: normal !important;
+            }
+            .has-drop { position: static; }
+            .dropdown {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                border: none;
+                border-top: 1px solid var(--border);
+                border-bottom: 1px solid var(--border);
+                margin: 0.5rem 0;
+            }
+            .menu-toggle { display: block; font-size: 2rem; background: none; border: none; cursor: pointer; }
+            nav { flex-wrap: wrap; height: auto; min-height: 66px; padding: 0.5rem 4%; }
+            .desktop-only { display: none; }
+            .mobile-only { display: block; }
         }
-        .logo { font-family: 'Montserrat', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--noir); }
-        .logo span { color: var(--orange); }
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
+        @media (min-width: 901px) { .mobile-only { display: none !important; } }
+        
+        /* Hero avec parallaxe réduit (scroll au lieu de fixed) */
+        .hero{
+            position:relative;
+            min-height:60vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+            color:#fff;
+            overflow:hidden;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=2070') center/cover no-repeat scroll;
         }
-        .nav-links a {
-            font-size: .85rem;
-            font-weight: 600;
-            color: var(--muted);
-            text-transform: uppercase;
-            text-decoration: none;
+        .hero-content{
+            position:relative;
+            z-index:2;
+            max-width:900px;
+            padding:2rem;
+            text-shadow:0 2px 15px rgba(0,0,0,.7);
         }
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--orange);
+        .hero-badge{
+            display:inline-block;
+            background:var(--orange);
+            color:#fff;
+            font-family:'Montserrat',sans-serif;
+            font-size:.75rem;
+            font-weight:700;
+            letter-spacing:.14em;
+            text-transform:uppercase;
+            padding:.45rem 1.4rem;
+            border-radius:50px;
+            margin-bottom:1.4rem;
+            box-shadow:0 2px 8px rgba(0,0,0,.2);
+        }
+        .hero h1{
+            font-size:clamp(2.4rem,7vw,4.8rem);
+            font-weight:800;
+            line-height:1.08;
+            margin-bottom:1.1rem;
+            color:white;
         }
         
-        .hero-product {
-            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-            color: white;
-            padding: 60px 6%;
-            text-align: center;
+        .container{max-width:1200px;margin:0 auto;padding:2rem 5%}
+        .section-title{text-align:center;margin-bottom:3rem}
+        .section-title h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;margin-bottom:.4rem}
+        .section-title h2 em{font-style:normal;color:var(--orange)}
+        .bar{width:52px;height:4px;background:var(--orange);border-radius:2px;margin:.8rem auto 0}
+        .btn{font-family:'Montserrat',sans-serif;font-size:.88rem;font-weight:700;padding:.8rem 1.9rem;border-radius:8px;border:none;cursor:pointer;transition:all .2s;display:inline-block;letter-spacing:.02em;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+        .btn-orange{background:var(--orange);color:#fff}.btn-orange:hover{background:var(--orange-dark)}
+        
+        /* Grille des 3 fonctions avec photos */
+        .features-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:2rem;
+            margin:3rem 0;
         }
-        .hero-product h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
+        .feature-card{
+            background:white;
+            border-radius:15px;
+            overflow:hidden;
+            box-shadow:0 5px 15px rgba(0,0,0,.05);
+            border:1px solid var(--border);
+            transition:transform .2s;
         }
-        .hero-product h1 em {
-            color: var(--orange);
-            font-style: normal;
+        .feature-card:hover{transform:translateY(-5px)}
+        .feature-img{
+            width:100%;
+            height:200px;
+            object-fit:cover;
+            border-bottom:1px solid var(--border);
+        }
+        .feature-content{
+            padding:1.5rem;
+            text-align:center;
+        }
+        .feature-content h3{
+            font-size:1.5rem;
+            margin-bottom:.5rem;
+            color:var(--orange);
         }
         
-        .product-showcase {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin: 3rem 0;
+        /* Bloc produit avec image */
+        .product-showcase{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:2rem;
+            margin:3rem 0;
+            background:white;
+            border-radius:20px;
+            padding:2rem;
+            border:1px solid var(--border);
+            align-items:center;
         }
-        .product-left {
-            background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
-            padding: 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .product-showcase img{
+            width:100%;
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,.1);
         }
-        .product-left img {
-            max-width: 100%;
-            border-radius: 12px;
+        .product-showcase .rating{
+            color:var(--orange);
+            font-size:1.2rem;
+            margin:1rem 0;
         }
-        .product-right {
-            padding: 3rem;
+        .btn-group{
+            display:flex;
+            gap:1rem;
+            margin-top:1.5rem;
+            flex-wrap: wrap;
         }
-        .product-price {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--orange);
-            margin: 1rem 0;
-        }
-        .specs {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        .spec-item {
-            background: #f8f9fa;
-            padding: 0.8rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-        .spec-value {
+        .promo-code {
+            background: #ffd700;
+            color: #1a1a1a;
             font-weight: 700;
-            font-size: 1.1rem;
-        }
-        .spec-label {
-            font-size: 0.8rem;
-            color: var(--muted);
-        }
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: var(--orange);
-            color: white;
+            padding: 0.3rem 1rem;
             border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            width: 100%;
-            text-align: center;
-            font-size: 1.1rem;
-        }
-        .btn:hover {
-            background: var(--orange-dark);
+            display: inline-block;
+            margin: 1rem 0;
+            font-size: 1rem;
         }
         
-        footer {
-            background: var(--noir);
-            color: rgba(255,255,255,.65);
-            padding: 3rem 6%;
-            text-align: center;
-            margin-top: 3rem;
+        .why-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+            gap:2rem;
+            margin:3rem 0;
         }
-        .footer-logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #fff;
+        .why-card{
+            background:white;
+            border-radius:15px;
+            padding:2rem;
+            box-shadow:0 5px 15px rgba(0,0,0,.05);
+            border:1px solid var(--border);
         }
-        .footer-logo em {
-            font-style: normal;
-            color: var(--orange);
+        .why-card h3{
+            color:var(--orange);
+            margin-bottom:1rem;
+            font-size:1.3rem;
         }
-    </style>
+        
+        .pending-box{
+            background:#f8f9fa;
+            border:1px solid var(--border);
+            border-radius:15px;
+            padding:2rem;
+            margin:3rem 0;
+            text-align:center;
+        }
+        .pending-box h3{color:var(--orange);margin-bottom:1rem}
+        
+        footer{
+            background:var(--noir);
+            color:rgba(255,255,255,.65);
+            padding:2.8rem 6%;
+            margin-top:4rem;
+            text-align:center;
+        }
+        .f-logo{
+            font-family:'Montserrat',sans-serif;
+            font-size:1.6rem;
+            font-weight:800;
+            color:#fff;
+        }
+        .f-logo em{font-style:normal;color:var(--orange)}
+        .f-nav{
+            display:flex;
+            gap:1.5rem;
+            justify-content:center;
+            flex-wrap:wrap;
+            margin:1.2rem 0;
+            list-style:none;
+        }
+        .f-nav a{
+            font-size:.8rem;
+            color:rgba(255,255,255,.55);
+            transition:color .2s;
+        }
+        .f-nav a:hover{color:var(--orange)}
+        .f-legal{
+            font-size:.76rem;
+            color:rgba(255,255,255,.3);
+            margin-top:1.1rem;
+            line-height:1.7;
+        }
+        
+        @media (max-width: 768px) {
+            .features-grid{grid-template-columns:1fr}
+            .product-showcase{grid-template-columns:1fr}
+        }
+    
+        /* === NAVIGATION === */
+        nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.07);padding:0 4%;height:70px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1000}
+        .logo{font-size:1.45rem;font-weight:900;color:#1a1a2e;text-decoration:none;letter-spacing:-.03em}
+        .logo span{color:#e67e22}
+        .nav-links{display:flex;gap:.5rem 1rem;list-style:none;align-items:center;flex-wrap:wrap;justify-content:flex-end;margin:0;padding:0}
+        .nav-links a{font-size:.78rem;font-weight:600;color:#555;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;white-space:nowrap;padding:.3rem .4rem;transition:color .2s}
+        .nav-links a:hover,.nav-links a.active{color:#e67e22}
+        .nav-links .nav-yt{background:#e67e22;color:#fff!important;padding:.4rem 1rem;border-radius:30px;font-weight:700}
+        .nav-links .nav-yt:hover{background:#cf6d17}
+        .nav-links .nav-yt-icon{background:#ff0000;color:#fff!important;padding:.4rem .8rem;border-radius:6px;font-weight:700;font-size:.75rem}
+        .has-drop{position:relative}
+        .has-drop>a::after{content:' ▾';font-size:.65rem;opacity:.6}
+        .dropdown{display:none;position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1px solid #e8e8e8;border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.12);min-width:200px;padding:.5rem 0;z-index:9999}
+        .dropdown a{display:block;padding:.52rem 1.1rem;font-size:.8rem;color:#1a1a2e!important;font-weight:500;white-space:nowrap;text-transform:none;letter-spacing:normal}
+        .dropdown a:hover{background:#fff8f2;color:#e67e22!important}
+        .nav-last-video{display:inline-flex;align-items:center;gap:.4rem;background:#fff3e0;border:1px solid #f0a500;border-radius:20px;padding:.3rem .8rem;font-size:.72rem!important;font-weight:700!important;color:#e67e22!important;text-transform:none!important;letter-spacing:normal!important;white-space:nowrap;animation:pulse-badge 2.5s infinite}
+        @keyframes pulse-badge{0%,100%{box-shadow:0 0 0 0 rgba(230,126,34,.35)}50%{box-shadow:0 0 0 5px rgba(230,126,34,0)}}
+        .nav-last-video .dot{width:7px;height:7px;background:#e74c3c;border-radius:50%;animation:blink 1.2s infinite}
+        @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+        .nav-last-video .label-new{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+        .menu-toggle{display:none;font-size:1.8rem;cursor:pointer;background:none;border:none;color:#1a1a2e;padding:.5rem}
+        @media(max-width:900px){
+            .nav-links{display:none;flex-direction:column;position:absolute;top:70px;left:0;width:100%;background:#fff;padding:1rem 0;box-shadow:0 10px 20px rgba(0,0,0,.1);z-index:1000;gap:0;align-items:stretch}
+            .nav-links.active{display:flex}
+            .nav-links li{width:100%;text-align:center}
+            .nav-links a{display:block;padding:1rem!important;font-size:.95rem}
+            .has-drop>a::after{display:none}
+            .dropdown{position:static;width:100%;box-shadow:none;border:none;border-top:1px solid #e8e8e8;border-radius:0;padding:0;background:#fafafa}
+            .menu-toggle{display:block}
+            .nav-links .nav-yt,.nav-links .nav-yt-icon{margin:.5rem auto;display:inline-block;width:auto}
+            .desktop-only{display:none!important}
+        }
+        @media(min-width:901px){.mobile-only{display:none!important}}
+        /* === FIN NAVIGATION === */
+        </style>
 </head>
 <body>
 
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH (NE PAS MODIFIER) -->
-<!-- ======================================== -->
-<!-- ======================================== -->
 <!-- NAVIGATION UNIQUE LCDMH -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH -->
-<!-- ======================================== -->
 <div id="lcdmh-nav-container"></div>
 <script src="nav-loader.js"></script>
-<!-- ======================================== -->
-<!-- ======================================== -->
-<!-- ======================================== -->
 
-<!-- ======================================== -->
-<!-- DÉBUT NAVIGATION LCDMH (fichier unique) -->
-<!-- ======================================== -->
-
-<!-- ======================================== -->
-<!-- FIN NAVIGATION LCDMH -->
-<!-- ======================================== -->
-
-<div class="hero-product">
-    <div class="breadcrumb" style="color: rgba(255,255,255,0.5);">
-        <a href="index.html" style="color: rgba(255,255,255,0.7);">Accueil</a> › 
-        <a href="codes-promo.html" style="color: rgba(255,255,255,0.7);">Partenaires</a> › 
-        <span>Olight</span>
-    </div>
-    <h1>Olight <em>Perun 3</em></h1>
-    <p style="max-width: 600px; margin: 1rem auto;">La lampe frontale ultime pour le bivouac moto : 3000 lumens, autonomie exceptionnelle, étanche.</p>
-</div>
-
-<section class="section">
-    <div class="container">
-        
-        <div class="product-showcase">
-            <div class="product-left">
-                <div style="font-size: 8rem;">🔦</div>
-            </div>
-            <div class="product-right">
-                <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Olight Perun 3</h2>
-                <p style="color: var(--muted);">Lampe frontale rechargeable · 3000 lumens</p>
-                <div class="product-price">89,90 €</div>
-                
-                <div class="specs">
-                    <div class="spec-item">
-                        <div class="spec-value">3000 lm</div>
-                        <div class="spec-label">Puissance max</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-value">15 jours</div>
-                        <div class="spec-label">Autonomie faible</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-value">IPX7</div>
-                        <div class="spec-label">Étanche</div>
-                    </div>
-                    <div class="spec-item">
-                        <div class="spec-value">120 m</div>
-                        <div class="spec-label">Portée</div>
-                    </div>
-                </div>
-                
-                <ul style="list-style: none; margin: 1.5rem 0;">
-                    <li style="padding: 0.3rem 0;">✓ Recharge USB-C magnétique</li>
-                    <li style="padding: 0.3rem 0;">✓ 5 modes + rouge</li>
-                    <li style="padding: 0.3rem 0;">✓ Indicateur de batterie</li>
-                    <li style="padding: 0.3rem 0;">✓ Bandeau confort</li>
-                </ul>
-                
-                <a href="https://fr.olight.com/s/CBMKL0" class="btn" target="_blank" rel="noopener noreferrer">💰 VOIR LA PERUN 3 SUR OLIGHT.FR →</a>
-                <p style="text-align: center; margin-top: 1rem; color: var(--orange); font-weight: 700;">Code LCDMH10 = -10%</p>
-                <p style="text-align: center; margin-top: 0.6rem;">
-                    <a href="https://fr.olight.com/s/DNPEEZ" target="_blank" rel="noopener noreferrer" style="color: var(--noir); font-weight: 600; text-decoration: underline;">
-                        Voir aussi la boutique Olight
-                    </a>
-                </p>
-            </div>
-        </div>
-        
-        <h2 style="margin: 3rem 0 1.5rem;">🏕️ Pourquoi j'utilise cette lampe en bivouac</h2>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-            <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid var(--border);">
-                <h3 style="color: var(--orange);">Autonomie</h3>
-                <p>J'ai tenu 15 jours sans recharger en utilisation modérée (mode faible le soir). La batterie intégrée est généreuse.</p>
-            </div>
-            <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid var(--border);">
-                <h3 style="color: var(--orange);">Étanchéité</h3>
-                <p>Sous la pluie norvégienne, sous la tente humide, elle n'a jamais failli. IPX7 = immersion 1m pendant 30 min.</p>
-            </div>
-            <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid var(--border);">
-                <h3 style="color: var(--orange);">Polyvalence</h3>
-                <p>Mode spot pour voir loin, mode flood pour éclairer la tente, lumière rouge pour ne pas attirer les insectes.</p>
-            </div>
-            <div style="background: white; border-radius: 12px; padding: 1.5rem; border: 1px solid var(--border);">
-                <h3 style="color: var(--orange);">Recharge</h3>
-                <p>Câble magnétique USB-C : se branche même sans voir, parfait dans le noir. Recharge sur batterie externe.</p>
-            </div>
-        </div>
-        
-        <div style="background: #f8f9fa; border-radius: 12px; padding: 2rem; margin: 3rem 0;">
-            <h3 style="margin-bottom: 1rem;">❓ Questions fréquentes</h3>
-            <div style="margin-bottom: 1.5rem;">
-                <h4 style="color: var(--orange);">Combien de temps tient la batterie ?</h4>
-                <p>Jusqu'à 15 jours en mode faible (15 lumens), 5h en mode max (3000 lumens). En usage mixte, je recharge tous les 4-5 jours.</p>
-            </div>
-            <div>
-                <h4 style="color: var(--orange);">Est-elle étanche pour la pluie ?</h4>
-                <p>Oui, certification IPX7 : résiste à la pluie battante et à l'immersion temporaire (1m/30min). Parfaite pour le bivouac sous la pluie.</p>
-            </div>
-        </div>
-        
-        <div style="text-align: center;">
-            <a href="codes-promo.html" class="btn" style="display: inline-block; width: auto; padding: 1rem 2rem;">← Tous les codes promo</a>
-        </div>
-        
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">⏳ Chargement…</div>
+        <h1>OLIGHT</h1>
+        <div class="hero-slogan" style="font-size:2rem;font-weight:800;line-height:1.2;margin-bottom:1.2rem;color:white"></div>
+        <div class="hero-sub-slogan" style="font-size:1.3rem;font-weight:600;margin-bottom:1.2rem;color:#e67e22"></div>
+        <p style="font-size:1rem;font-weight:500;color:white"></p>
     </div>
 </section>
 
-<footer>
-    <div class="footer-logo">LC<em>D</em>MH</div>
-    <p style="margin: 0.5rem 0; color: rgba(255,255,255,0.4);">La Chaîne du Motard Heureux · Annecy, France</p>
-    <ul class="footer-links">
-        <li><a href="roadtrips.html">Road Trips</a></li>
-        <li><a href="tests-motos.html">Tests motos</a></li>
-        <li><a href="gps.html">GPS moto</a></li>
-        <li><a href="codes-promo.html">Codes promo</a></li>
-    </ul>
-</footer>
+<!-- Introduction -->
+<div class="container">
+    <div class="section-title">
+        <p style="font-size:1.2rem;max-width:900px;margin:0 auto;line-height:1.6"></p>
+    </div>
 
+    <!-- 3 fonctions clés -->
+    <div class="features-grid">
+        <div class="feature-card">
+            <img src="" alt="" class="feature-img">
+            <div class="feature-content">
+                <h3></h3>
+                <p></p>
+            </div>
+        </div>
+        <div class="feature-card">
+            <img src="" alt="" class="feature-img">
+            <div class="feature-content">
+                <h3></h3>
+                <p></p>
+            </div>
+        </div>
+        <div class="feature-card">
+            <img src="" alt="" class="feature-img">
+            <div class="feature-content">
+                <h3></h3>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bloc produit -->
+    <div class="product-showcase">
+        <img src="" alt="" onerror="this.style.display='none'">
+        <div>
+            <h3 style="font-size:2rem;color:var(--orange);margin-bottom:1rem"></h3>
+            <p style="color:#666;font-size:1.1rem;margin-bottom:1rem"></p>
+            <div class="promo-code" style="display:none"></div>
+            <div class="rating"></div>
+            <div class="btn-group">
+                <a href="#" class="btn btn-orange" target="_blank" rel="nofollow sponsored"></a>
+            </div>
+            <p style="margin-top:1rem;font-size:0.9rem;color:var(--muted)"></p>
+        </div>
+    </div>
+
+    <!-- Pourquoi choisir -->
+    <h2 style="font-size:2.2rem;text-align:center;margin:3rem 0 1rem">POURQUOI CHOISIR ?</h2>
+    <div class="bar" style="margin:0 auto 2rem"></div>
+    <div class="why-grid">
+        <div class="why-card"><h3></h3><p></p></div>
+        <div class="why-card"><h3></h3><p></p></div>
+        <div class="why-card"><h3></h3><p></p></div>
+        <div class="why-card"><h3></h3><p></p></div>
+        <div class="why-card"><h3></h3><p></p></div>
+        <div class="why-card"><h3></h3><p></p></div>
+    </div>
+
+    <!-- Statut test -->
+    <div class="pending-box">
+        <h3></h3>
+        <p style="margin-bottom:1rem"></p>
+        <p style="font-style:italic;margin-bottom:1.5rem"></p>
+        <a href="#" class="btn btn-orange" target="_blank" rel="nofollow"></a>
+    </div>
+
+    <!-- Vidéos YouTube -->
+    <div id="olight-video-feed"></div>
+    <script
+        src="js/product-feed.js"
+        data-keywords="olight"
+        data-max="4"
+        data-container="olight-video-feed">
+    </script>
+
+</div>
+
+<footer>
+    <div class="f-logo">LC<em>D</em>MH</div>
+    <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">La Chaîne du Motard Heureux · Annecy, France</p>
+    <ul class="f-nav">
+        <li><a href="codes-promo.html">Codes promo</a></li>
+        <li><a href="aoocci.html">Aoocci</a></li>
+        <li><a href="carpuride.html">Carpuride</a></li>
+        <li><a href="blackview.html">Blackview</a></li>
+        <li><a href="olight.html">Olight</a></li>
+        <li><a href="komobi.html">Komobi</a></li>
+        <li><a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
+    </ul>
+    <p class="f-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves · Annecy, France</p>
+</footer>
 </body>
 </html>
-<!-- FIN DU FICHIER : olight.html -->
