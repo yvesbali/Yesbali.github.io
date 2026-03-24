@@ -1,156 +1,106 @@
 /**
  * product-feed.js — LCDMH
  * Affiche les vidéos YouTube liées à une page produit.
- * Lit data/videos.json et filtre par mots-clés.
- * Usage : <script src="js/product-feed.js" data-keywords="komobi,traceur,gps" data-max="4"></script>
+ * Lit data/videos.json et filtre par mots-clés dans le TITRE uniquement.
+ * 
+ * Structure videos.json attendue :
+ *   { videos: [{title, url, thumb, published, ...}], shorts: [{title, short_url, thumb, ...}] }
+ * 
+ * Usage :
+ *   <script src="js/product-feed.js"
+ *           data-keywords="komobi"
+ *           data-max="4"
+ *           data-container="komobi-video-feed">
+ *   </script>
  */
 (function () {
-  const script = document.currentScript;
+  const script   = document.currentScript;
   const keywords = (script.getAttribute('data-keywords') || '').toLowerCase().split(',').map(k => k.trim()).filter(Boolean);
-  const maxVideos = parseInt(script.getAttribute('data-max') || '4', 10);
+  const maxItems = parseInt(script.getAttribute('data-max') || '4', 10);
   const containerId = script.getAttribute('data-container') || 'product-video-feed';
 
   const VIDEOS_JSON = 'data/videos.json';
 
-  // ── Styles injectés une seule fois ──────────────────────────────────────────
+  /* ── Styles (injectés une seule fois) ─────────────────────────────────────── */
   if (!document.getElementById('pf-style')) {
     const style = document.createElement('style');
     style.id = 'pf-style';
     style.textContent = `
-      .pf-section {
-        margin: 3rem 0;
-      }
+      .pf-section { margin: 3rem 0; }
       .pf-title {
         font-family: 'Montserrat', sans-serif;
-        font-size: 1.8rem;
-        font-weight: 800;
-        text-align: center;
-        margin-bottom: 0.4rem;
-        color: #1a1a1a;
+        font-size: 2rem; font-weight: 800;
+        text-align: center; margin-bottom: 0.4rem; color: #1a1a1a;
       }
       .pf-title em { font-style: normal; color: #e67e22; }
-      .pf-bar {
-        width: 52px; height: 4px;
-        background: #e67e22; border-radius: 2px;
-        margin: 0.6rem auto 2rem;
-      }
+      .pf-bar { width: 52px; height: 4px; background: #e67e22; border-radius: 2px; margin: 0.6rem auto 2.2rem; }
       .pf-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 1.5rem;
       }
       .pf-card {
-        background: #fff;
-        border: 1px solid #e5e5e5;
-        border-radius: 14px;
-        overflow: hidden;
-        box-shadow: 0 4px 14px rgba(0,0,0,.06);
+        background: #fff; border: 1px solid #e5e5e5; border-radius: 14px;
+        overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,.06);
         transition: transform .2s, box-shadow .2s;
-        text-decoration: none;
-        color: inherit;
-        display: flex;
-        flex-direction: column;
+        text-decoration: none; color: inherit;
+        display: flex; flex-direction: column;
       }
-      .pf-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 24px rgba(0,0,0,.12);
-      }
+      .pf-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
       .pf-thumb-wrap {
-        position: relative;
-        padding-top: 56.25%;
-        background: #111;
-        overflow: hidden;
+        position: relative; padding-top: 56.25%;
+        background: #222; overflow: hidden;
       }
       .pf-thumb-wrap img {
-        position: absolute;
-        inset: 0;
-        width: 100%; height: 100%;
-        object-fit: cover;
+        position: absolute; inset: 0;
+        width: 100%; height: 100%; object-fit: cover;
         transition: transform .3s;
       }
       .pf-card:hover .pf-thumb-wrap img { transform: scale(1.04); }
       .pf-play {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(0,0,0,.25);
-        transition: background .2s;
-      }
-      .pf-card:hover .pf-play { background: rgba(0,0,0,.4); }
-      .pf-play-icon {
-        width: 52px; height: 52px;
-        background: #e67e22;
-        border-radius: 50%;
+        position: absolute; inset: 0;
         display: flex; align-items: center; justify-content: center;
-        font-size: 1.4rem;
-        box-shadow: 0 4px 14px rgba(0,0,0,.3);
+        background: rgba(0,0,0,.25); transition: background .2s;
       }
-      .pf-type-badge {
-        position: absolute;
-        top: 10px; left: 10px;
-        background: #e67e22;
+      .pf-card:hover .pf-play { background: rgba(0,0,0,.42); }
+      .pf-play-btn {
+        width: 54px; height: 54px; background: #e67e22; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.4rem; box-shadow: 0 4px 14px rgba(0,0,0,.35);
+        color: #fff; line-height: 1;
+      }
+      .pf-badge {
+        position: absolute; top: 10px; left: 10px;
+        font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+        letter-spacing: .06em; padding: 3px 9px; border-radius: 20px;
         color: #fff;
-        font-size: 0.65rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: .06em;
-        padding: 3px 8px;
-        border-radius: 20px;
       }
-      .pf-type-badge.short { background: #ff0000; }
+      .pf-badge-video { background: #e67e22; }
+      .pf-badge-short { background: #ff0000; }
       .pf-body {
         padding: 1rem 1.1rem 1.2rem;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 0.4rem;
+        flex: 1; display: flex; flex-direction: column; gap: 0.3rem;
       }
       .pf-card-title {
         font-family: 'Montserrat', sans-serif;
-        font-size: 0.92rem;
-        font-weight: 700;
-        line-height: 1.35;
-        color: #1a1a1a;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+        font-size: 1rem; font-weight: 700; line-height: 1.35; color: #1a1a1a;
+        display: -webkit-box; -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical; overflow: hidden;
       }
-      .pf-meta {
-        font-size: 0.75rem;
-        color: #888;
-        margin-top: auto;
-        padding-top: 0.4rem;
+      .pf-date { font-size: 0.8rem; color: #999; margin-top: auto; padding-top: 0.4rem; }
+      .pf-more {
+        display: inline-flex; align-items: center; gap: 6px;
+        margin-top: 1.8rem; font-family: 'Montserrat', sans-serif;
+        font-size: 0.9rem; font-weight: 700; color: #e67e22;
+        text-decoration: none; transition: color .2s;
       }
-      .pf-yt-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        margin-top: 1.5rem;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 0.82rem;
-        font-weight: 700;
-        color: #e67e22;
-        text-decoration: none;
-        transition: color .2s;
-      }
-      .pf-yt-link:hover { color: #d35400; }
-      .pf-loading {
-        text-align: center;
-        padding: 2rem;
-        color: #999;
-        font-size: 0.9rem;
-      }
-      @media (max-width: 600px) {
-        .pf-grid { grid-template-columns: 1fr; }
-      }
+      .pf-more:hover { color: #d35400; }
+      @media (max-width: 600px) { .pf-grid { grid-template-columns: 1fr; } }
     `;
     document.head.appendChild(style);
   }
 
-  // ── Créer le conteneur si absent ────────────────────────────────────────────
+  /* ── Conteneur ─────────────────────────────────────────────────────────────── */
   function getContainer() {
     let el = document.getElementById(containerId);
     if (!el) {
@@ -161,109 +111,99 @@
     return el;
   }
 
-  // ── Filtrage par mots-clés ───────────────────────────────────────────────────
-  function matchesKeywords(video) {
+  /* ── Filtrage : le mot-clé principal doit être dans le TITRE ──────────────── */
+  function matches(title) {
     if (!keywords.length) return true;
-    const haystack = [
-      video.title || '',
-      video.description || '',
-      video.tags ? video.tags.join(' ') : ''
-    ].join(' ').toLowerCase();
-    return keywords.some(k => haystack.includes(k));
+    const t = (title || '').toLowerCase();
+    return keywords.some(k => t.includes(k));
   }
 
-  // ── Formater la date ─────────────────────────────────────────────────────────
-  function formatDate(iso) {
-    if (!iso) return '';
-    const d = new Date(iso);
-    if (isNaN(d.getTime())) return '';
-    return d.toLocaleDateString('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' });
+  /* ── Extraire l'ID YouTube depuis une URL ─────────────────────────────────── */
+  function extractId(url) {
+    if (!url) return '';
+    // https://www.youtube.com/watch?v=XXXX  ou  https://youtube.com/shorts/XXXX
+    const m = url.match(/(?:v=|shorts\/)([A-Za-z0-9_-]{11})/);
+    return m ? m[1] : '';
   }
 
-  // ── Construire le HTML d'une carte ──────────────────────────────────────────
-  function buildCard(video) {
-    const videoId = video.video_id || video.id || '';
-    const url = `https://www.youtube.com/watch?v=${videoId}`;
-    const thumb = video.thumbnail || `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
-    const isShort = video.type === 'short';
-    const typeLabel = isShort ? 'Short' : 'Vidéo';
-    const date = formatDate(video.published_at || video.date || '');
+  /* ── Formater la date ─────────────────────────────────────────────────────── */
+  function fmtDate(str) {
+    if (!str) return '';
+    const d = new Date(str);
+    return isNaN(d) ? '' : d.toLocaleDateString('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' });
+  }
+
+  /* ── Construire une carte ─────────────────────────────────────────────────── */
+  function buildCard(item, isShort) {
+    const url   = item.url || item.short_url || '';
+    const id    = extractId(url);
+    const thumb = item.thumb || (id ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg` : '');
+    const date  = fmtDate(item.published);
 
     return `
       <a class="pf-card" href="${url}" target="_blank" rel="noopener noreferrer">
         <div class="pf-thumb-wrap">
-          <img src="${thumb}" alt="${(video.title || '').replace(/"/g, '&quot;')}" loading="lazy">
-          <div class="pf-play">
-            <div class="pf-play-icon">▶</div>
-          </div>
-          <span class="pf-type-badge ${isShort ? 'short' : ''}">${typeLabel}</span>
+          <img src="${thumb}"
+               alt="${(item.title || '').replace(/"/g, '&quot;')}"
+               loading="lazy"
+               onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${id}/mqdefault.jpg'">
+          <div class="pf-play"><div class="pf-play-btn">&#9654;</div></div>
+          <span class="pf-badge ${isShort ? 'pf-badge-short' : 'pf-badge-video'}">${isShort ? 'Short' : 'Vidéo'}</span>
         </div>
         <div class="pf-body">
-          <div class="pf-card-title">${video.title || 'Vidéo LCDMH'}</div>
-          ${date ? `<div class="pf-meta">📅 ${date}</div>` : ''}
+          <div class="pf-card-title">${item.title || 'Vidéo LCDMH'}</div>
+          ${date ? `<div class="pf-date">📅 ${date}</div>` : ''}
         </div>
-      </a>
-    `;
+      </a>`;
   }
 
-  // ── Rendu principal ──────────────────────────────────────────────────────────
-  function render(videos) {
+  /* ── Rendu ────────────────────────────────────────────────────────────────── */
+  function render(data) {
     const container = getContainer();
-    const filtered = videos.filter(matchesKeywords).slice(0, maxVideos);
 
-    if (!filtered.length) {
-      container.innerHTML = '';
-      return;
-    }
+    // Collecter vidéos + shorts correspondant aux mots-clés
+    const videos = (data.videos || []).filter(v => matches(v.title));
+    const shorts = (data.shorts || []).filter(s => matches(s.title));
 
-    // Trier : vidéos longues en premier, puis shorts
-    filtered.sort((a, b) => {
-      if (a.type === b.type) return 0;
-      return a.type === 'short' ? 1 : -1;
-    });
+    // Vidéos longues en premier, puis shorts, limité à maxItems
+    const results = [
+      ...videos.map(v => ({ item: v, isShort: false })),
+      ...shorts.map(s => ({ item: s, isShort: true }))
+    ].slice(0, maxItems);
 
-    const channelUrl = 'https://www.youtube.com/@LCDMH';
+    if (!results.length) { container.innerHTML = ''; return; }
+
+    // Titre dynamique : utilise le premier mot-clé, capitalisé
+    const prodName = (keywords[0] || 'LCDMH').toUpperCase();
 
     container.innerHTML = `
       <div class="pf-section">
-        <div class="pf-title">Mes vidéos sur <em>KOMOBI</em></div>
+        <div class="pf-title">Mes vidéos sur <em>${prodName}</em></div>
         <div class="pf-bar"></div>
         <div class="pf-grid">
-          ${filtered.map(buildCard).join('')}
+          ${results.map(r => buildCard(r.item, r.isShort)).join('')}
         </div>
         <div style="text-align:center">
-          <a class="pf-yt-link" href="${channelUrl}" target="_blank" rel="noopener">
-            ▶ Voir toutes mes vidéos sur YouTube
+          <a class="pf-more" href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">
+            &#9654; Voir toutes mes vidéos sur YouTube
           </a>
         </div>
-      </div>
-    `;
+      </div>`;
   }
 
-  // ── Chargement du JSON ───────────────────────────────────────────────────────
+  /* ── Chargement ───────────────────────────────────────────────────────────── */
   function init() {
     const container = getContainer();
-    container.innerHTML = '<div class="pf-loading">Chargement des vidéos…</div>';
+    container.innerHTML = '<div style="text-align:center;padding:2rem;color:#999;font-size:.9rem">Chargement des vidéos…</div>';
 
-    fetch(VIDEOS_JSON + '?v=' + Date.now())
-      .then(res => {
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        return res.json();
-      })
-      .then(data => {
-        // Accepte { videos: [...] } ou directement un tableau
-        const videos = Array.isArray(data) ? data : (data.videos || data.items || []);
-        render(videos);
-      })
-      .catch(() => {
-        // Silencieux en prod — pas de message d'erreur visible
-        container.innerHTML = '';
-      });
+    fetch(VIDEOS_JSON + '?t=' + Date.now())
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(render)
+      .catch(() => { container.innerHTML = ''; });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  document.readyState === 'loading'
+    ? document.addEventListener('DOMContentLoaded', init)
+    : init();
+
 })();
