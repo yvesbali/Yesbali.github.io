@@ -4,118 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tests Intercoms Moto - Sena, Cardo - LCDMH</title>
-    <meta name="description" content="Tests intercoms moto Sena en conditions réelles : qualité audio, micro, Bluetooth, compatibilité GPS CarPlay. Mes avis honnêtes.">
-    <meta name="keywords" content="intercom moto, test Sena, test Cardo, communication moto, Bluetooth moto, casque moto intercom">
-    <meta name="author" content="Yves - LCDMH">
-    <meta property="og:title" content="Tests Intercoms Moto - LCDMH">
-    <meta property="og:description" content="Tests et avis sur les intercoms moto Sena et Cardo : qualité sonore, autonomie, compatibilité.">
+    <meta name="description" content="Tests intercoms moto Sena et Cardo en conditions réelles : qualité audio, micro, Bluetooth. Mes avis honnêtes.">
+    <meta name="keywords" content="intercom moto, Sena moto, Cardo moto, test intercom moto, bluetooth casque moto">
+    <meta name="author" content="Yves – LCDMH">
+    <meta property="og:title" content="Tests Intercoms Moto - Sena, Cardo - LCDMH">
+    <meta property="og:description" content="Tests intercoms moto Sena et Cardo en conditions réelles : qualité audio, micro, Bluetooth. Mes avis honnêtes.">
     <meta property="og:url" content="https://lcdmh.com/intercoms.html">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="product">
     <meta property="og:site_name" content="LCDMH">
-    <meta property="og:image" content="https://lcdmh.com/images/intercoms-og.jpg">
+    <meta property="og:image" content="https://lcdmh.com/images/og-intercoms.jpg">
     <link rel="canonical" href="https://lcdmh.com/intercoms.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="js/page-content.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: "Inter", sans-serif; background: #f5f5f5; color: #1e1e1e; line-height: 1.6; }
-        h1,h2,h3,h4,h5,h6 { font-family: "Montserrat", sans-serif; font-weight: 600; }
-        a { text-decoration: none; color: inherit; }
+        :root{
+            --orange:#e67e22;
+            --orange-dark:#d35400;
+            --noir:#1a1a1a;
+            --bg:#f7f7f5;
+            --card:#fff;
+            --border:#e5e5e5;
+            --muted:#777;
+            --alt:#f0ede8;
+        }
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--noir);line-height:1.65;font-size:16px}
+        h1,h2,h3,h4{font-family:'Montserrat',sans-serif}
+        a{color:inherit;text-decoration:none}
         
-        /* Navigation */
-        nav {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            padding: 1rem 5%;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: .5rem;
-        }
-        .logo a {
-            font-family: "Montserrat", sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1e1e1e;
-        }
-        .logo span { color: #e67e22; }
-        .nav-links {
-            display: flex;
-            gap: 1.4rem;
-            list-style: none;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        .nav-links a {
-            font-weight: 500;
-            color: #1e1e1e;
-            transition: color .2s;
-            font-size: .9rem;
-        }
-        .nav-links a:hover,
-        .nav-links a.active { color: #e67e22; }
-        .nav-yt {
-            background: #e67e22;
-            color: white !important;
-            padding: .5rem 1.2rem;
-            border-radius: 50px;
-            font-weight: 600 !important;
-        }
-        .nav-yt:hover { background: #d35400; }
-        .nav-yt-icon {
-            background: #ff0000;
-            color: white !important;
-            padding: .5rem 1.2rem;
-            border-radius: 50px;
-            font-weight: 600 !important;
-        }
-        .nav-yt-icon:hover { background: #cc0000; }
-        .menu-toggle { display: none; }
-        
-        /* Menu responsive */
-        .has-drop { position: relative; }
-        .has-drop > a::after {
-            content: '▾';
-            font-size: 0.6rem;
-            opacity: 0.7;
-            margin-left: 0.2rem;
-        }
-        .dropdown {
-            display: none;
-            position: absolute;
-            top: calc(100% + 6px);
-            left: 0;
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            box-shadow: 0 8px 28px rgba(0,0,0,.12);
-            min-width: 220px;
-            padding: .5rem 0;
-            z-index: 999;
-        }
-        .has-drop:hover .dropdown { display: block; }
-        .dropdown a {
-            display: block;
-            padding: .52rem 1.1rem;
-            font-size: .8rem;
-            color: #1e1e1e;
-            font-weight: 500;
-            transition: background .15s, color .15s;
-        }
-        .dropdown a:hover { background: #fff8f2; color: #e67e22; }
-        
+        nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.07);padding:0 4%;height:66px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+        .logo{font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800;color:var(--noir)}
+        .logo span{color:var(--orange)}
+        .nav-links{display:flex;gap:1rem;list-style:none;align-items:center}
+        .nav-links>li>a{font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem 0}
+        .nav-links>li>a:hover{color:var(--orange)}
+        .has-drop{position:relative}
+        .has-drop>a::after{content:'▾';font-size:.6rem;opacity:.7;margin-left:.2rem}
+        .dropdown{display:none;position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.12);min-width:175px;padding:.5rem 0;z-index:999}
+        .has-drop:hover .dropdown{display:block}
+        .dropdown a{display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;transition:background .15s,color .15s}
+        .dropdown a:hover{background:#fff8f2;color:var(--orange)}
+        .nav-yt{background:var(--orange)!important;color:#fff!important;padding:.42rem 1rem;border-radius:6px;font-weight:700!important}
+        .nav-yt:hover{background:var(--orange-dark)!important}
+        .nav-yt-icon{background:#ff0000!important;color:#fff!important;padding:.42rem 1rem;border-radius:6px;font-weight:700!important}
+        .nav-yt-icon:hover{background:#cc0000!important}
+        .menu-toggle{display:none}
         @media (max-width: 900px) {
             .nav-links {
                 display: none;
                 flex-direction: column;
                 position: absolute;
-                top: 70px;
+                top: 66px;
                 left: 0;
                 width: 100%;
                 background: white;
@@ -138,246 +79,204 @@
                 width: 100%;
                 box-shadow: none;
                 border: none;
-                border-top: 1px solid #e0e0e0;
-                border-bottom: 1px solid #e0e0e0;
+                border-top: 1px solid var(--border);
+                border-bottom: 1px solid var(--border);
                 margin: 0.5rem 0;
             }
             .menu-toggle { display: block; font-size: 2rem; background: none; border: none; cursor: pointer; }
-            nav { flex-wrap: wrap; height: auto; min-height: 70px; padding: 0.5rem 4%; }
+            nav { flex-wrap: wrap; height: auto; min-height: 66px; padding: 0.5rem 4%; }
             .desktop-only { display: none; }
             .mobile-only { display: block; }
         }
         @media (min-width: 901px) { .mobile-only { display: none !important; } }
         
-        .hero {
-            height: 30vh;
-            min-height: 250px;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
+        /* Hero avec parallaxe réduit (scroll au lieu de fixed) */
+        .hero{
+            position:relative;
+            min-height:60vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+            color:#fff;
+            overflow:hidden;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=2070') center/cover no-repeat scroll;
         }
-        .hero-image {
-            position: absolute;
-            inset: 0;
-            background-image: url('images/bandeau-norvege.jpg');
-            background-size: cover;
-            background-position: center;
-            filter: brightness(.6);
-            z-index: -1;
+        .hero-content{
+            position:relative;
+            z-index:2;
+            max-width:900px;
+            padding:2rem;
+            text-shadow:0 2px 15px rgba(0,0,0,.7);
         }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 0 2rem;
+        .hero-badge{
+            display:inline-block;
+            background:var(--orange);
+            color:#fff;
+            font-family:'Montserrat',sans-serif;
+            font-size:.75rem;
+            font-weight:700;
+            letter-spacing:.14em;
+            text-transform:uppercase;
+            padding:.45rem 1.4rem;
+            border-radius:50px;
+            margin-bottom:1.4rem;
+            box-shadow:0 2px 8px rgba(0,0,0,.2);
         }
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            margin-bottom: 1rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,.3);
-        }
-        .hero h1 span { color: #e67e22; }
-        .hero p {
-            font-size: 1.1rem;
-            text-shadow: 0 2px 5px rgba(0,0,0,.3);
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 5%;
-        }
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        .section-title h2 {
-            font-size: 2rem;
-            color: #e67e22;
-            margin-bottom: .5rem;
-        }
-        .section-title .bar {
-            width: 52px;
-            height: 4px;
-            background: #e67e22;
-            margin: 0 auto;
-            border-radius: 2px;
+        .hero h1{
+            font-size:clamp(2.4rem,7vw,4.8rem);
+            font-weight:800;
+            line-height:1.08;
+            margin-bottom:1.1rem;
+            color:white;
         }
         
-        .intro-box {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 2rem 0;
-            border: 1px solid #e0e0e0;
-            text-align: center;
+        .container{max-width:1200px;margin:0 auto;padding:2rem 5%}
+        .section-title{text-align:center;margin-bottom:3rem}
+        .section-title h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;margin-bottom:.4rem}
+        .section-title h2 em{font-style:normal;color:var(--orange)}
+        .bar{width:52px;height:4px;background:var(--orange);border-radius:2px;margin:.8rem auto 0}
+        .btn{font-family:'Montserrat',sans-serif;font-size:.88rem;font-weight:700;padding:.8rem 1.9rem;border-radius:8px;border:none;cursor:pointer;transition:all .2s;display:inline-block;letter-spacing:.02em;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+        .btn-orange{background:var(--orange);color:#fff}.btn-orange:hover{background:var(--orange-dark)}
+        
+        /* Grille des 3 fonctions avec photos */
+        .features-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:2rem;
+            margin:3rem 0;
         }
-        .intercom-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+        .feature-card{
+            background:white;
+            border-radius:15px;
+            overflow:hidden;
+            box-shadow:0 5px 15px rgba(0,0,0,.05);
+            border:1px solid var(--border);
+            transition:transform .2s;
         }
-        .intercom-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,.05);
-            border: 1px solid #e0e0e0;
-            transition: transform .2s;
+        .feature-card:hover{transform:translateY(-5px)}
+        .feature-img{
+            width:100%;
+            height:200px;
+            object-fit:cover;
+            border-bottom:1px solid var(--border);
         }
-        .intercom-card:hover { transform: translateY(-5px); }
-        .card-header {
-            background: #1e1e1e;
-            color: white;
-            padding: 1.5rem;
+        .feature-content{
+            padding:1.5rem;
+            text-align:center;
         }
-        .card-header h3 {
-            font-size: 1.8rem;
-            margin-bottom: .3rem;
+        .feature-content h3{
+            font-size:1.5rem;
+            margin-bottom:.5rem;
+            color:var(--orange);
         }
-        .card-header .badge {
-            color: #e67e22;
-            font-weight: 600;
+        
+        /* Bloc produit avec image */
+        .product-showcase{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:2rem;
+            margin:3rem 0;
+            background:white;
+            border-radius:20px;
+            padding:2rem;
+            border:1px solid var(--border);
+            align-items:center;
         }
-        .card-content {
-            padding: 1.5rem;
+        .product-showcase img{
+            width:100%;
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,.1);
         }
-        .card-content ul {
-            list-style: none;
-            color: #666;
+        .product-showcase .rating{
+            color:var(--orange);
+            font-size:1.2rem;
+            margin:1rem 0;
         }
-        .card-content li {
-            padding: .3rem 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .card-content li:last-child { border-bottom: none; }
-        .card-footer {
-            padding: 1.5rem;
-            border-top: 1px solid #e0e0e0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .btn-group{
+            display:flex;
+            gap:1rem;
+            margin-top:1.5rem;
             flex-wrap: wrap;
-            gap: .5rem;
         }
-        .btn {
-            background: #e67e22;
-            color: white;
-            padding: .5rem 1.2rem;
+        .promo-code {
+            background: #ffd700;
+            color: #1a1a1a;
+            font-weight: 700;
+            padding: 0.3rem 1rem;
             border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
             display: inline-block;
-        }
-        .btn:hover { background: #d35400; }
-        .btn-outline {
-            background: transparent;
-            border: 1px solid #e67e22;
-            color: #e67e22;
-        }
-        .btn-outline:hover { background: #e67e22; color: white; }
-        
-        .comparatif-box {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 3rem 0;
-            border: 1px solid #e0e0e0;
-            overflow-x: auto;
-        }
-        .comparatif-box h3 {
-            color: #e67e22;
-            margin-bottom: 1.5rem;
-        }
-        .comparatif-box table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .comparatif-box th {
-            background: #f5f5f5;
-            padding: 1rem;
-            text-align: left;
-        }
-        .comparatif-box td {
-            padding: 1rem;
-            border-bottom: 1px solid #e0e0e0;
+            margin: 1rem 0;
+            font-size: 1rem;
         }
         
-        .tip-box {
-            background: #f8f9fa;
-            border-left: 4px solid #e67e22;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 8px 8px 0;
+        .why-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+            gap:2rem;
+            margin:3rem 0;
         }
-        .faq-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+        .why-card{
+            background:white;
+            border-radius:15px;
+            padding:2rem;
+            box-shadow:0 5px 15px rgba(0,0,0,.05);
+            border:1px solid var(--border);
         }
-        .faq-item {
-            background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            border: 1px solid #e0e0e0;
-        }
-        .faq-item h4 {
-            color: #e67e22;
-            margin-bottom: .8rem;
+        .why-card h3{
+            color:var(--orange);
+            margin-bottom:1rem;
+            font-size:1.3rem;
         }
         
-        footer {
-            background: #1e1e1e;
-            color: white;
-            padding: 3rem 5%;
-            margin-top: 4rem;
+        .pending-box{
+            background:#f8f9fa;
+            border:1px solid var(--border);
+            border-radius:15px;
+            padding:2rem;
+            margin:3rem 0;
+            text-align:center;
         }
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
+        .pending-box h3{color:var(--orange);margin-bottom:1rem}
+        
+        footer{
+            background:var(--noir);
+            color:rgba(255,255,255,.65);
+            padding:2.8rem 6%;
+            margin-top:4rem;
+            text-align:center;
         }
-        .footer-col h4 {
-            color: white;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
+        .f-logo{
+            font-family:'Montserrat',sans-serif;
+            font-size:1.6rem;
+            font-weight:800;
+            color:#fff;
         }
-        .footer-col p {
-            color: #aaa;
-            font-size: .9rem;
-            line-height: 1.7;
+        .f-logo em{font-style:normal;color:var(--orange)}
+        .f-nav{
+            display:flex;
+            gap:1.5rem;
+            justify-content:center;
+            flex-wrap:wrap;
+            margin:1.2rem 0;
+            list-style:none;
         }
-        .footer-col ul {
-            list-style: none;
+        .f-nav a{
+            font-size:.8rem;
+            color:rgba(255,255,255,.55);
+            transition:color .2s;
         }
-        .footer-col li {
-            margin-bottom: .5rem;
-        }
-        .footer-col a {
-            color: #aaa;
-            transition: color .2s;
-            font-size: .9rem;
-        }
-        .footer-col a:hover { color: #e67e22; }
-        .copyright {
-            text-align: center;
-            padding-top: 2rem;
-            margin-top: 2rem;
-            border-top: 1px solid #333;
-            color: #aaa;
-            font-size: .85rem;
+        .f-nav a:hover{color:var(--orange)}
+        .f-legal{
+            font-size:.76rem;
+            color:rgba(255,255,255,.3);
+            margin-top:1.1rem;
+            line-height:1.7;
         }
         
-        @media(max-width: 768px) { 
-            nav { flex-direction: column; gap: 1rem; } 
-            .nav-links { justify-content: center; gap: .8rem; } 
+        @media (max-width: 768px) {
+            .features-grid{grid-template-columns:1fr}
+            .product-showcase{grid-template-columns:1fr}
         }
     
         /* === NAVIGATION === */
@@ -418,250 +317,111 @@
 </head>
 <body>
 
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH (NE PAS MODIFIER) -->
-<!-- ======================================== -->
-<!-- ======================================== -->
 <!-- NAVIGATION UNIQUE LCDMH -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH -->
-<!-- ======================================== -->
 <div id="lcdmh-nav-container"></div>
 <script src="nav-loader.js"></script>
-<!-- ======================================== -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-
-<!-- Navigation -->
-<!-- ======================================== -->
-<!-- DÉBUT NAVIGATION LCDMH (fichier unique) -->
-<!-- ======================================== -->
-
-<!-- ======================================== -->
-<!-- FIN NAVIGATION LCDMH -->
-<!-- ======================================== -->
-    
 
 <!-- Hero -->
 <section class="hero">
-    <div class="hero-image"></div>
     <div class="hero-content">
-        <h1>INTERCOMS <span>MOTO</span></h1>
-        <p>Tests et avis terrain sur les intercoms Sena et Cardo : qualité sonore, autonomie, compatibilité.</p>
+        <div class="hero-badge">⏳ Chargement…</div>
+        <h1>INTERCOMS</h1>
+        <div class="hero-slogan" style="font-size:2rem;font-weight:800;line-height:1.2;margin-bottom:1.2rem;color:white"></div>
+        <div class="hero-sub-slogan" style="font-size:1.3rem;font-weight:600;margin-bottom:1.2rem;color:#e67e22"></div>
+        <p style="font-size:1rem;font-weight:500;color:white"></p>
     </div>
 </section>
 
-<!-- Contenu principal -->
+<!-- Introduction -->
 <div class="container">
-    <!-- Introduction -->
-    <div class="intro-box">
-        <p style="font-size: 1.1rem; color: #666;">
-            Depuis mes premiers road trips, l'intercom est devenu un accessoire indispensable : 
-            écouter la musique, passer des appels, communiquer entre motards, ou même recevoir 
-            les instructions du GPS. J'ai testé plusieurs modèles Sena et Cardo sur des milliers 
-            de kilomètres, sous la pluie, dans le vent, en groupe ou en solo. Voici mes retours 
-            d'expérience détaillés.
-        </p>
-    </div>
-
-    <!-- Section SENA -->
     <div class="section-title">
-        <h2>SENA : MES TESTS</h2>
-        <div class="bar"></div>
+        <p style="font-size:1.2rem;max-width:900px;margin:0 auto;line-height:1.6"></p>
     </div>
-    <div class="intercom-grid">
-        <!-- Sena 60S -->
-        <div class="intercom-card">
-            <div class="card-header">
-                <h3>Sena 60S</h3>
-                <div class="badge">Haut-parleurs Harman Kardon</div>
-            </div>
-            <div class="card-content">
-                <ul>
-                    <li>🎧 Qualité audio : excellente (basses présentes)</li>
-                    <li>🔋 Autonomie réelle : 10-12h (mixte)</li>
-                    <li>📱 Bluetooth 5.0, connexion stable</li>
-                    <li>👥 Jusqu'à 4 pilotes en intercom</li>
-                    <li>🌧️ Étanchéité : résiste à la pluie</li>
-                    <li>🎤 Micro anti-vent efficace</li>
-                </ul>
-            </div>
-            <div class="card-footer">
-                <span>Testé sur 5 000 km</span>
-                <a href="https://youtu.be/PNlKbmWrKjY" class="btn" target="_blank" rel="noopener noreferrer">Voir la vidéo</a>
+
+    <!-- 3 fonctions clés -->
+    <div class="features-grid">
+        <div class="feature-card">
+            <img src="" alt="" class="feature-img">
+            <div class="feature-content">
+                <h3></h3>
+                <p></p>
             </div>
         </div>
-
-        <!-- Sena 50S -->
-        <div class="intercom-card">
-            <div class="card-header">
-                <h3>Sena 50S</h3>
-                <div class="badge">Mesh 2.0</div>
+        <div class="feature-card">
+            <img src="" alt="" class="feature-img">
+            <div class="feature-content">
+                <h3></h3>
+                <p></p>
             </div>
-            <div class="card-content">
-                <ul>
-                    <li>🎧 Qualité audio : très bonne (Harman Kardon)</li>
-                    <li>🔋 Autonomie : 12h (mesh), 14h (Bluetooth)</li>
-                    <li>📶 Mesh 2.0 intercom : connexion instantanée</li>
-                    <li>👥 Jusqu'à 24 pilotes en réseau Mesh</li>
-                    <li>📻 Radio FM intégrée</li>
-                    <li>✅ Idéal pour les grands groupes</li>
-                </ul>
-            </div>
-            <div class="card-footer">
-                <span>Test disponible</span>
-                <a href="https://www.youtube.com/watch?v=XXX" class="btn" target="_blank" rel="noopener noreferrer">Voir la vidéo</a>
+        </div>
+        <div class="feature-card">
+            <img src="" alt="" class="feature-img">
+            <div class="feature-content">
+                <h3></h3>
+                <p></p>
             </div>
         </div>
     </div>
 
-    <!-- Section CARDO -->
-    <div class="section-title">
-        <h2>CARDO : À VENIR</h2>
-        <div class="bar"></div>
-    </div>
-    <div style="background: white; border-radius: 15px; padding: 2rem; margin: 2rem 0; border: 1px solid #e0e0e0; text-align: center;">
-        <p style="font-style: italic; color: #666;">
-            Des tests Cardo sont prévus prochainement (Packtalk Edge, Packtalk Bold). 
-            Je vous partagerai mon avis sur la qualité audio, la portée du Mesh, 
-            et la compatibilité avec les GPS moto.
-        </p>
-    </div>
-
-    <!-- Section COMPARATIF -->
-    <div class="section-title">
-        <h2>COMPARATIF RAPIDE</h2>
-        <div class="bar"></div>
-    </div>
-    <div class="comparatif-box">
-        <table>
-            <tr>
-                <th>Modèle</th>
-                <th>Qualité audio</th>
-                <th>Autonomie</th>
-                <th>Technologie</th>
-                <th>Nombre pilotes</th>
-                <th>Prix indicatif</th>
-            </tr>
-            <tr>
-                <td><strong>Sena 60S</strong></td>
-                <td>⭐⭐⭐⭐⭐</td>
-                <td>10-12h</td>
-                <td>Bluetooth 5.0</td>
-                <td>4</td>
-                <td>≈ 250€</td>
-            </tr>
-            <tr>
-                <td><strong>Sena 50S</strong></td>
-                <td>⭐⭐⭐⭐</td>
-                <td>12-14h</td>
-                <td>Mesh 2.0 + BT</td>
-                <td>24</td>
-                <td>≈ 350€</td>
-            </tr>
-            <tr>
-                <td><strong>Cardo Packtalk Edge</strong></td>
-                <td>⭐⭐⭐⭐⭐</td>
-                <td>13h</td>
-                <td>Mesh DMC</td>
-                <td>15</td>
-                <td>≈ 380€</td>
-            </tr>
-            <tr>
-                <td><strong>Cardo Packtalk Bold</strong></td>
-                <td>⭐⭐⭐⭐</td>
-                <td>13h</td>
-                <td>Mesh DMC</td>
-                <td>15</td>
-                <td>≈ 330€</td>
-            </tr>
-        </table>
-    </div>
-
-    <!-- Conseils d'utilisation -->
-    <div class="tip-box">
-        <h3 style="color: #e67e22; margin-bottom: 1rem;">💡 Mes conseils pour bien utiliser votre intercom</h3>
-        <ul style="color: #666; margin-left: 1.5rem;">
-            <li>Mettez à jour le firmware avant un long road trip</li>
-            <li>Positionnez correctement les haut-parleurs dans le casque</li>
-            <li>Utilisez un micro externe pour un meilleur son (si disponible)</li>
-            <li>En groupe, privilégiez le mode Mesh pour une connexion stable</li>
-            <li>Prévoyez une batterie externe pour les longs trajets</li>
-            <li>Désactivez le WiFi en voyage pour économiser la batterie</li>
-        </ul>
-    </div>
-
-    <!-- Section FAQ -->
-    <div class="section-title">
-        <h2>FAQ INTERCOMS</h2>
-        <div class="bar"></div>
-    </div>
-    <div class="faq-grid">
-        <div class="faq-item">
-            <h4>Quelle est la portée réelle d'un intercom ?</h4>
-            <p>En Bluetooth : 800m à 1km en champ libre. En Mesh : la portée s'étend de proche en proche, jusqu'à 5-8 km en groupe.</p>
-        </div>
-        <div class="faq-item">
-            <h4>Puis-je écouter mon GPS et parler en même temps ?</h4>
-            <p>Oui, la plupart des intercoms gèrent le mixage audio (music + intercom). Vérifiez la compatibilité avec votre GPS.</p>
-        </div>
-        <div class="faq-item">
-            <h4>Sena ou Cardo : que choisir ?</h4>
-            <p>Sena est plus intuitif, Cardo a un Mesh plus robuste. Les deux sont excellents. Le choix dépend de votre groupe de motards.</p>
-        </div>
-        <div class="faq-item">
-            <h4>L'intercom résiste-t-il à la pluie ?</h4>
-            <p>Oui, tous les modèles récents sont étanches (norme IP67 ou équivalent). J'ai roulé sous des orages sans problème.</p>
+    <!-- Bloc produit -->
+    <div class="product-showcase">
+        <img src="" alt="" onerror="this.style.display='none'">
+        <div>
+            <h3 style="font-size:2rem;color:var(--orange);margin-bottom:1rem"></h3>
+            <p style="color:#666;font-size:1.1rem;margin-bottom:1rem"></p>
+            <div class="promo-code" style="display:none"></div>
+            <div class="rating"></div>
+            <div class="btn-group">
+                <a href="#" class="btn btn-orange" target="_blank" rel="nofollow sponsored"></a>
+            </div>
+            <p style="margin-top:1rem;font-size:0.9rem;color:var(--muted)"></p>
         </div>
     </div>
 
-    <!-- Note sur les codes promo -->
-    <div style="background: #f8f9fa; border-left: 4px solid #e67e22; padding: 1.5rem; margin: 2rem 0;">
-        <p style="color: #666;">
-            💡 Des codes promo Sena et Cardo sont disponibles sur la page 
-            <a href="codes-promo.html" style="color: #e67e22; font-weight: 600;">Codes promo</a>.
-        </p>
+    <!-- Pourquoi choisir -->
+    <h2 style="font-size:2.2rem;text-align:center;margin:3rem 0 1rem">POURQUOI CHOISIR ?</h2>
+    <div class="bar" style="margin:0 auto 2rem"></div>
+    <div class="why-grid">
+        <div class="why-card"><h3></h3><p></p></div>
+        <div class="why-card"><h3></h3><p></p></div>
+        <div class="why-card"><h3></h3><p></p></div>
+        <div class="why-card"><h3></h3><p></p></div>
+        <div class="why-card"><h3></h3><p></p></div>
+        <div class="why-card"><h3></h3><p></p></div>
     </div>
+
+    <!-- Statut test -->
+    <div class="pending-box">
+        <h3></h3>
+        <p style="margin-bottom:1rem"></p>
+        <p style="font-style:italic;margin-bottom:1.5rem"></p>
+        <a href="#" class="btn btn-orange" target="_blank" rel="nofollow"></a>
+    </div>
+
+    <!-- Vidéos YouTube -->
+    <div id="intercoms-video-feed"></div>
+    <script
+        src="js/product-feed.js"
+        data-keywords="intercoms"
+        data-max="4"
+        data-container="intercoms-video-feed">
+    </script>
+
 </div>
 
-<!-- Footer -->
 <footer>
-    <div class="footer-content">
-        <div class="footer-col">
-            <h4>LCDMH</h4>
-            <p>La Chaîne Du Motard Heureux – Road trips, tests et aventures à moto depuis 2022.</p>
-        </div>
-        <div class="footer-col">
-            <h4>Navigation</h4>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="roadtrips.html">Road Trips</a></li>
-                <li><a href="tests-motos.html">Tests motos</a></li>
-                <li><a href="equipement.html">Équipement</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>GPS & Médias</h4>
-            <ul>
-                <li><a href="gps.html">GPS moto</a></li>
-                <li><a href="photo-video.html">Photo / Vidéo</a></li>
-                <li><a href="intercoms.html">Intercoms</a></li>
-                <li><a href="pneus.html">Pneus</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Partenaires</h4>
-            <ul>
-                <li><a href="codes-promo.html">Codes promo</a></li>
-                <li><a href="blackview.html">Blackview</a></li>
-                <li><a href="olight.html">Olight</a></li>
-                <li><a href="a-propos.html">À propos</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="copyright">&copy; 2026 LCDMH - La Chaîne Du Motard Heureux</div>
+    <div class="f-logo">LC<em>D</em>MH</div>
+    <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">La Chaîne du Motard Heureux · Annecy, France</p>
+    <ul class="f-nav">
+        <li><a href="codes-promo.html">Codes promo</a></li>
+        <li><a href="aoocci.html">Aoocci</a></li>
+        <li><a href="carpuride.html">Carpuride</a></li>
+        <li><a href="blackview.html">Blackview</a></li>
+        <li><a href="olight.html">Olight</a></li>
+        <li><a href="komobi.html">Komobi</a></li>
+        <li><a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
+    </ul>
+    <p class="f-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves · Annecy, France</p>
 </footer>
 </body>
 </html>
-<!-- FIN DU FICHIER : intercoms.html -->
