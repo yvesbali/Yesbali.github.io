@@ -1,61 +1,39 @@
 <!DOCTYPE html>
-<html lang='fr'>
+<html lang="fr">
 <head>
-<meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<title>Road trip moto Écosse 2026 - Journal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Road trip moto Écosse 2026 - Journal | LCDMH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,Helvetica,sans-serif;background:#f7f7f5;color:#1a1a1a;line-height:1.7}
-a{text-decoration:none;color:inherit} img{max-width:100%;display:block}
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-.topbar{background:#e67e22;color:#fff;text-align:center;padding:12px 16px;font-weight:700}
-.hero{background:linear-gradient(135deg,#163251,#244b73);color:#fff;padding:42px 0 48px}
-.hero h1{font-size:clamp(2.2rem,5vw,3.4rem);margin:18px 0 10px;line-height:1.1}
-.hero p{max-width:860px;opacity:.94}
-.btn{display:inline-block;padding:14px 20px;border-radius:999px;font-weight:700}
-.btn-primary{background:#e67e22;color:#fff}
-.btn-dark{background:#243c5a;color:#fff}
-.section{padding:32px 0}
-.card{background:#fff;border:1px solid #e5e5e5;border-radius:24px;padding:26px;box-shadow:0 10px 28px rgba(18,42,74,.05)}
-.section-kicker{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#e67e22;margin-bottom:10px}
-.section-title{font-size:clamp(1.7rem,3vw,2.2rem);margin-bottom:10px;color:#163251;line-height:1.2}
-.section-intro{color:#536579;margin-bottom:18px}
-.journal-list{display:flex;flex-direction:column;gap:18px}
-.journal-row{display:grid;grid-template-columns:320px 1fr;gap:18px;align-items:stretch;background:#fff;border:1px solid #e5e5e5;border-radius:22px;overflow:hidden}
-.journal-thumb{background:#dfe9f7;min-height:180px}
-.journal-thumb img{width:100%;height:100%;object-fit:cover}
-.journal-content{padding:18px 20px}
-.journal-meta{font-size:.75rem;font-weight:700;color:#e67e22;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
-.journal-content h3{font-size:1.2rem;color:#163251;margin-bottom:8px;line-height:1.3}
-.journal-content p{font-size:.96rem;color:#536579;line-height:1.65}
-.journal-actions{margin-top:14px}
-.empty-state{border:1px dashed #cbd5e1;border-radius:20px;padding:24px;color:#475569;background:#fbfdff}
-.empty-state h3{margin-bottom:8px;color:#163251}
-@media (max-width:900px){
-  .journal-row{grid-template-columns:1fr}
-  .hero h1{font-size:2.1rem}
-}
+:root{--orange:#e67e22;--bleu:#163251;--bleu2:#244b73;--bg:#f5f7fb;--line:#e5e7eb;--muted:#6b7280}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:#111827}
+a{color:inherit;text-decoration:none}
+.header{background:linear-gradient(135deg,var(--bleu),var(--bleu2));color:#fff;padding:56px 24px;text-align:center}
+.header h1{font-family:Montserrat,sans-serif;font-size:clamp(1.9rem,4vw,3rem);margin:0 0 .8rem}
+.header p{max-width:760px;margin:0 auto 1rem;color:#e8edf5;line-height:1.7}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.2rem;border-radius:12px;font-family:Montserrat,sans-serif;font-weight:800;background:var(--orange);color:#fff}
+.wrap{max-width:980px;margin:0 auto;padding:2rem 20px 3rem}
+.journal-card{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 12px 28px rgba(17,24,39,.06);margin-bottom:1.5rem}
+.journal-thumb{height:260px;background:#dce5ef center/cover no-repeat;position:relative}
+.journal-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.58))}
+.journal-thumb span{position:absolute;left:14px;top:14px;z-index:1;background:rgba(255,255,255,.92);padding:.4rem .65rem;border-radius:999px;font-size:.76rem;font-weight:800}
+.journal-body{padding:1.1rem 1.15rem 1.25rem}
+.journal-body h2{margin:0 0 .5rem;font-family:Montserrat,sans-serif;font-size:1.08rem}
+.journal-body p{margin:0;color:var(--muted);line-height:1.7}
 </style>
 </head>
 <body>
-<div class='topbar'>Journal du voyageur — page de travail</div>
-<section class='hero'>
-  <div class='wrap'>
-    <a class='btn btn-primary' href='road-trip-moto-ecosse-2026.html'>← Retour à la page principale</a>
-    <h1>Road trip moto Écosse 2026 — Journal de bord du voyageur</h1>
-    <p>Cette page accueillera les shorts et notes du terrain au fil du voyage. Les publications s&#x27;afficheront les unes sous les autres avec leur titre et leur description.</p>
-  </div>
-</section>
-<main class='wrap'>
-  <section class='section'>
-    <div class='card'>
-      <div class='section-kicker'>Au fil des jours</div>
-      <h2 class='section-title'>Entrées du journal</h2>
-      <p class='section-intro'>Les shorts et vidéos du voyage s'afficheront ici les uns sous les autres, avec leur titre et leur texte d'accompagnement.</p>
-      <div class='journal-list'><article class='journal-row'><div class='journal-thumb'><img src='https://img.youtube.com/vi/70ANYi0gNR8/hqdefault.jpg' alt='Entrée 1'></div><div class='journal-content'><div class='journal-meta'>Entrée 1</div><h3>Vidéo 1</h3><p></p><div class='journal-actions'><a class='btn btn-dark' href='https://youtube.com/shorts/70ANYi0gNR8?feature=share' target='_blank' rel='noopener'>Voir la vidéo</a></div></div></article><article class='journal-row'><div class='journal-thumb'><img src='https://img.youtube.com/vi/70ANYi0gNR8/hqdefault.jpg' alt='Entrée 2'></div><div class='journal-content'><div class='journal-meta'>Entrée 2</div><h3>Vidéo 2</h3><p></p><div class='journal-actions'><a class='btn btn-dark' href='https://youtube.com/shorts/70ANYi0gNR8?feature=share' target='_blank' rel='noopener'>Voir la vidéo</a></div></div></article><article class='journal-row'><div class='journal-thumb'><img src='https://img.youtube.com/vi/B9fZXPGj49g/hqdefault.jpg' alt='Entrée 3'></div><div class='journal-content'><div class='journal-meta'>Entrée 3</div><h3>Vidéo 3</h3><p></p><div class='journal-actions'><a class='btn btn-dark' href='https://youtube.com/shorts/B9fZXPGj49g?feature=share' target='_blank' rel='noopener'>Voir la vidéo</a></div></div></article><article class='journal-row'><div class='journal-thumb'><img src='https://img.youtube.com/vi/G9-31X-_t-Q/hqdefault.jpg' alt='Entrée 4'></div><div class='journal-content'><div class='journal-meta'>Entrée 4</div><h3>Vidéo 4</h3><p></p><div class='journal-actions'><a class='btn btn-dark' href='https://youtube.com/shorts/G9-31X-_t-Q?feature=share' target='_blank' rel='noopener'>Voir la vidéo</a></div></div></article><article class='journal-row'><div class='journal-thumb'><img src='https://img.youtube.com/vi/CsPxbggz29c/hqdefault.jpg' alt='Entrée 5'></div><div class='journal-content'><div class='journal-meta'>Entrée 5</div><h3>Vidéo 5</h3><p></p><div class='journal-actions'><a class='btn btn-dark' href='https://youtube.com/shorts/CsPxbggz29c?feature=share' target='_blank' rel='noopener'>Voir la vidéo</a></div></div></article></div>
-    </div>
-  </section>
+<header class="header">
+  <h1>Road trip moto Écosse 2026 — Journal de bord du voyageur</h1>
+  <p>Suivez l&#x27;aventure au jour le jour. Le journal complet regroupe les entrées quotidiennes, les shorts terrain et les notes publiées pendant le voyage.</p>
+  <a class="btn" href="/roadtrips/road-trip-moto-ecosse-2026.html">← Revenir à la page principale</a>
+</header>
+<main class="wrap">
+  <article class="journal-card"><div class="journal-body"><h2>Le journal arrive bientôt</h2><p>Les shorts et notes publiés pendant le voyage apparaîtront ici automatiquement.</p></div></article>
 </main>
 </body>
 </html>
