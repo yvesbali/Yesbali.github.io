@@ -1,0 +1,124 @@
+{
+  "_meta": {
+    "schema_version": "1.0",
+    "page_type": "product",
+    "slug": "komobi",
+    "last_updated": "2026-03-24",
+    "updated_by": "Yves"
+  },
+
+  "seo": {
+    "title": "KOMOBI – Traceur GPS Antivol Moto, Détection Chute | LCDMH",
+    "description": "KOMOBI : traceur GPS qui protège votre moto du vol, détection de chute eCall, alarme. Localisation temps réel, télémétrie et notification smartphone.",
+    "keywords": "traceur GPS moto, antivol GPS moto, KOMOBI, détection chute moto, eCall moto, sécurité motard, protection moto",
+    "og_image": "https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=2070",
+    "canonical": "https://lcdmh.com/komobi.html"
+  },
+
+  "hero": {
+    "badge": "🚨 LE SEUL TRACEUR GPS ANTIVOL AVEC DÉTECTION DE COLLISION",
+    "title": "KOMOBI",
+    "slogan": "IL TE PROTÈGE.\nIL VEILLE SUR TOI.\nEt tranquillise ta famille.",
+    "sub_slogan": "Le traceur GPS qui ne te lâche pas.\nMême en cas d'accident.",
+    "features_line": "📍 Localisation temps réel • 🆘 Détection chute eCall • 🔔 Alarme anti-vol • 📊 Télémétrie",
+    "background_image": "https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=2070"
+  },
+
+  "intro": {
+    "text": "KOMOBI n'est pas qu'un simple traceur GPS. C'est ton ange gardien sur la route : il protège ta moto contre le vol, veille sur toi en cas de chute avec le système eCall, et alerte automatiquement tes proches pour les rassurer. Parce que ta sécurité et leur tranquillité n'ont pas de prix."
+  },
+
+  "key_features": [
+    {
+      "icon": "🔒",
+      "title": "PROTÈGE ta moto",
+      "text": "Localisation GPS en temps réel, alarme anti-vol, géofencing. Votre moto sous surveillance permanente.",
+      "image": "https://images.unsplash.com/photo-1605025991907-05b7f5787b4d?q=80&w=1974",
+      "image_alt": "Antivol moto protection"
+    },
+    {
+      "icon": "👼",
+      "title": "VEILLE sur toi",
+      "text": "Détection de chute eCall : en cas d'accident, vos contacts d'urgence sont alertés avec votre position.",
+      "image": "https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=2070",
+      "image_alt": "Ange gardien motard"
+    },
+    {
+      "icon": "👨‍👩‍👧",
+      "title": "RASSURE tes proches",
+      "text": "Partagez votre position en direct. En cas de problème, votre famille sait où vous êtes et reçoit les alertes.",
+      "image": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070",
+      "image_alt": "Famille au téléphone"
+    }
+  ],
+
+  "product": {
+    "name": "KOMOBI",
+    "tagline": "Si vous allez en moto, choisissez KOMOBI",
+    "description": "Le seul traceur GPS antivol avec détection de collision. Une protection complète pour vous et votre machine.",
+    "image": "https://www.komobimoto.com/wp-content/uploads/2024/01/komobi-gps-tracker-moto-boitier-noir.png",
+    "image_alt": "KOMOBI boîtier traceur GPS",
+    "rating": 4.8,
+    "rating_count": 350,
+    "promo_code": "KOMOBI",
+    "promo_discount": "-15%",
+    "affiliate_url": "https://www.komobimoto.com/fr/",
+    "note": "* Version Standard : alarme et localisation. Version Pro : + eCall + télémétrie avancée."
+  },
+
+  "test_status": {
+    "status": "pending",
+    "label": "TEST EN PRÉPARATION",
+    "text": "Je n'ai pas encore testé ce produit en conditions réelles. Le partenariat est en cours de discussion. Dès que j'aurai parcouru plusieurs milliers de kilomètres avec le KOMOBI, je publierai un test complet.",
+    "sub_text": "En attendant, vous pouvez consulter le site officiel.",
+    "cta_label": "🔗 VOIR LE SITE OFFICIEL KOMOBI (code KOMOBI = -15%)",
+    "cta_url": "https://www.komobimoto.com/fr/"
+  },
+
+  "why_choose": [
+    {
+      "icon": "🔋",
+      "title": "Autonomie longue durée",
+      "text": "Jusqu'à plusieurs semaines en veille. Pas besoin de recharger en plein road trip."
+    },
+    {
+      "icon": "📱",
+      "title": "Application intuitive",
+      "text": "Interface claire, notifications en temps réel. Tout se gère depuis votre smartphone."
+    },
+    {
+      "icon": "🔧",
+      "title": "Installation discrète",
+      "text": "Se cache facilement sur la moto. Indétectable par les voleurs."
+    },
+    {
+      "icon": "📊",
+      "title": "Télémétrie complète",
+      "text": "Analysez vos trajets : vitesse, distance, consommation, angle de courbe."
+    },
+    {
+      "icon": "🌍",
+      "title": "Pas d'abonnement forcé",
+      "text": "Choisissez votre forfait selon vos besoins. Pas de surprise."
+    },
+    {
+      "icon": "🤝",
+      "title": "Communauté active",
+      "text": "Entraide et partage d'astuces entre utilisateurs KOMOBI."
+    }
+  ],
+
+  "videos": {
+    "enabled": true,
+    "keywords": "komobi",
+    "max": 4
+  },
+
+  "partner": {
+    "name": "KOMOBI",
+    "contact": "Claudia",
+    "commission": "10%",
+    "awin": false,
+    "platform": "direct"
+  }
+}
