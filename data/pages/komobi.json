@@ -6,7 +6,6 @@
     "last_updated": "2026-03-24",
     "updated_by": "Yves"
   },
-
   "seo": {
     "title": "KOMOBI – Traceur GPS Antivol Moto, Détection Chute | LCDMH",
     "description": "KOMOBI : traceur GPS qui protège votre moto du vol, détection de chute eCall, alarme. Localisation temps réel, télémétrie et notification smartphone.",
@@ -14,7 +13,6 @@
     "og_image": "https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=2070",
     "canonical": "https://lcdmh.com/komobi.html"
   },
-
   "hero": {
     "badge": "🚨 LE SEUL TRACEUR GPS ANTIVOL AVEC DÉTECTION DE COLLISION",
     "title": "KOMOBI",
@@ -23,11 +21,9 @@
     "features_line": "📍 Localisation temps réel • 🆘 Détection chute eCall • 🔔 Alarme anti-vol • 📊 Télémétrie",
     "background_image": "https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=2070"
   },
-
   "intro": {
     "text": "KOMOBI n'est pas qu'un simple traceur GPS. C'est ton ange gardien sur la route : il protège ta moto contre le vol, veille sur toi en cas de chute avec le système eCall, et alerte automatiquement tes proches pour les rassurer. Parce que ta sécurité et leur tranquillité n'ont pas de prix."
   },
-
   "key_features": [
     {
       "icon": "🔒",
@@ -51,7 +47,6 @@
       "image_alt": "Famille au téléphone"
     }
   ],
-
   "product": {
     "name": "KOMOBI",
     "tagline": "Si vous allez en moto, choisissez KOMOBI",
@@ -65,7 +60,6 @@
     "affiliate_url": "https://www.komobimoto.com/fr/",
     "note": "* Version Standard : alarme et localisation. Version Pro : + eCall + télémétrie avancée."
   },
-
   "test_status": {
     "status": "pending",
     "label": "TEST EN PRÉPARATION",
@@ -74,7 +68,6 @@
     "cta_label": "🔗 VOIR LE SITE OFFICIEL KOMOBI (code LCDMH = -15%)",
     "cta_url": "https://www.komobimoto.com/fr/"
   },
-
   "why_choose": [
     {
       "icon": "🔋",
@@ -107,13 +100,11 @@
       "text": "Entraide et partage d'astuces entre utilisateurs KOMOBI."
     }
   ],
-
   "videos": {
-    "enabled": true,
+    "enabled": false,
     "keywords": "komobi",
     "max": 4
   },
-
   "partner": {
     "name": "KOMOBI",
     "contact": "Claudia",
