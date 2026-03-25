@@ -1,0 +1,103 @@
+[BUILD] Début du rendu template
+[BUILD]   project_dir = F:\RoadBook HTML\test v14
+[BUILD]   site_root = F:\RoadBook HTML\test v14\build
+[BUILD]   MODULE_DIR = F:\Automate_YT
+[BUILD]   tpl.DEFAULT_TEMPLATES_DIR = F:\Automate_YT\templates
+[MAIN PAGE] _render_main_page appelé
+[MAIN PAGE]   project_dir = F:\RoadBook HTML\test v14
+[MAIN PAGE]   MODULE_DIR = F:\Automate_YT
+[MAIN PAGE] Données construites : 37 clés
+[MAIN PAGE]   title = Road trip incroyable en Italie 
+[MAIN PAGE]   total_km_label = 3 009 km
+[MAIN PAGE]   route_hint = Direct Annecy -Douvres → Camping Clachtoll Beach Campsite
+[MAIN PAGE]   has_shorts = True
+[RENDER] render_page('main_roadtrip') appelé
+[RENDER]   extra_dirs = ['F:\\RoadBook HTML\\test v14', 'F:\\Automate_YT']
+[RENDER]   templates_dir = None
+[TEMPLATE] Recherche de 'main_roadtrip'
+[TEMPLATE] Dossiers de recherche : ['F:\\RoadBook HTML\\test v14', 'F:\\Automate_YT', 'F:\\Automate_YT\\templates', 'F:\\Automate_YT\\templates', 'F:\\Automate_YT']
+[TEMPLATE] Fichiers cherchés : ['template_roadtrip_principal.html', 'Road Trip Moto Écosse & Irlande 2026 _ 10 000 km Solo _ LCDMH.html', 'ecosse-irlande.html']
+[TEMPLATE]   F:\RoadBook HTML\test v14\template_roadtrip_principal.html → absent
+[TEMPLATE]   F:\RoadBook HTML\test v14\Road Trip Moto Écosse & Irlande 2026 _ 10 000 km Solo _ LCDMH.html → absent
+[TEMPLATE]   F:\RoadBook HTML\test v14\ecosse-irlande.html → absent
+[TEMPLATE]   F:\Automate_YT\template_roadtrip_principal.html → TROUVÉ ✅
+[TEMPLATE] ✅ Chargé : F:\Automate_YT\template_roadtrip_principal.html (13025 caractères)
+[TEMPLATE] ✅ Chargé : F:\Automate_YT\template_roadtrip_principal.html (13025 caractères)
+[TEMPLATE]   Placeholders trouvés : 32
+[TEMPLATE]   Référence CSS : roadbook.css ✅
+[RENDER] Résolution des placeholders...
+[RENDER] ✅ Tous les placeholders résolus
+[RENDER] HTML final : 18330 caractères
+[BUILD] ✅ Page principale écrite : F:\RoadBook HTML\test v14\build\roadtrips\road-trip-incroyable-en-italie.html
+[BUILD]   Taille HTML : 18330 caractères
+[CSS] Recherche du dossier CSS...
+[CSS]   F:\Automate_YT\css → TROUVÉ ✅
+[CSS]   F:\Automate_YT\templates\css → TROUVÉ ✅
+[CSS]   F:\Automate_YT\templates\css → TROUVÉ ✅
+[CSS]   F:\Automate_YT\templates\css → TROUVÉ ✅
+[CSS]   F:\Automate_YT\css → TROUVÉ ✅
+[CSS] Dossier source : F:\Automate_YT\css
+[CSS] Dossier cible : F:\RoadBook HTML\test v14\build\roadtrips\css
+[CSS] ✅ Copié : roadbook-blocs.css → F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook-blocs.css
+[CSS] ✅ Copié : roadbook-fusion.css → F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook-fusion.css
+[CSS] ✅ Copié : roadbook.css → F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook.css
+[BUILD] CSS copiés : 3 fichier(s)
+[BUILD] ✅ CSS vérifié : F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook.css EXISTE
+[BUILD] ✅ CSS fusion vérifié : F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook-fusion.css EXISTE
+
+[VERIFY] ═══ VÉRIFICATION DES FICHIERS RÉFÉRENCÉS ═══
+[VERIFY] Page HTML : F:\RoadBook HTML\test v14\build\roadtrips\road-trip-incroyable-en-italie.html
+[VERIFY] Dossier roadtrips : F:\RoadBook HTML\test v14\build\roadtrips
+[VERIFY] Site root : F:\RoadBook HTML\test v14\build
+[VERIFY] URLs trouvées dans le HTML : 24
+[VERIFY]   css/roadbook.css
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook.css : ✅ EXISTE
+[VERIFY]   css/roadbook-fusion.css
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook-fusion.css : ✅ EXISTE
+[VERIFY]   css/roadbook-blocs.css
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook-blocs.css : ✅ EXISTE
+[VERIFY]   /images/roadtrips/road-trip-incroyable-en-italie/pexels-pixabay-39391.jpg
+[VERIFY]     → F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-incroyable-en-italie\pexels-pixabay-39391.jpg : ✅ EXISTE
+[VERIFY]   /roadbooks-html/road-trip-incroyable-en-italie/index.html
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-incroyable-en-italie\index.html : ✅ EXISTE
+[VERIFY]   /roadtrips/road-trip-incroyable-en-italie-journal.html
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\road-trip-incroyable-en-italie-journal.html : ✅ EXISTE
+[VERIFY]   /kurviger/road-trip-incroyable-en-italie.kurviger
+[VERIFY]     → F:\RoadBook HTML\test v14\build\kurviger\road-trip-incroyable-en-italie.kurviger : ✅ EXISTE
+[VERIFY]   /kurviger/road-trip-incroyable-en-italie.kurviger
+[VERIFY]     → F:\RoadBook HTML\test v14\build\kurviger\road-trip-incroyable-en-italie.kurviger : ✅ EXISTE
+[VERIFY]   /roadbooks/road-trip-incroyable-en-italie-roadbook.pdf
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadbooks\road-trip-incroyable-en-italie-roadbook.pdf : ✅ EXISTE
+[VERIFY]   /roadbooks-html/road-trip-incroyable-en-italie/index.html
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-incroyable-en-italie\index.html : ✅ EXISTE
+[VERIFY]   /images/roadtrips/road-trip-incroyable-en-italie/téléchargement.png
+[VERIFY]     → F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-incroyable-en-italie\téléchargement.png : ✅ EXISTE
+[VERIFY]   /roadtrips/road-trip-incroyable-en-italie-journal.html
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\road-trip-incroyable-en-italie-journal.html : ✅ EXISTE
+[VERIFY]   /roadtrips.html
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips.html : ❌ MANQUANT
+[VERIFY]   /roadtrips.html
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips.html : ❌ MANQUANT
+[VERIFY]   /a-propos.html
+[VERIFY]     → F:\RoadBook HTML\test v14\build\a-propos.html : ❌ MANQUANT
+
+[HERO] ═══ VÉRIFICATION IMAGE HERO ═══
+[HERO] Chemin dans le HTML : /images/roadtrips/road-trip-incroyable-en-italie/pexels-pixabay-39391.jpg
+[HERO] Résolu vers : F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-incroyable-en-italie\pexels-pixabay-39391.jpg
+[HERO] Fichier existe : True
+[HERO] ✅ Taille : 2141 KB
+
+[HTML] ═══ EXTRAIT DU HTML GÉNÉRÉ (hero) ═══
+[HTML] L14: <header class="hero hero-image" style="background-image:url('/images/roadtrips/road-trip-incroyable-en-italie/pexels-pixabay-39391.jpg')">
+[HTML] L15: <div class="wrap hero-inner">
+
+[PUBLIC] ═══ URLS PUBLIQUES ATTENDUES ═══
+[PUBLIC]   Page principale: https://lcdmh.com/roadtrips/road-trip-incroyable-en-italie.html
+[PUBLIC]   Journal: https://lcdmh.com/roadtrips/road-trip-incroyable-en-italie-journal.html
+[PUBLIC]   Hero image: https://lcdmh.com/images/roadtrips/road-trip-incroyable-en-italie/pexels-pixabay-39391.jpg
+[PUBLIC]   QR code: https://lcdmh.com/images/roadtrips/road-trip-incroyable-en-italie/téléchargement.png
+[PUBLIC]   PDF: https://lcdmh.com/roadbooks/road-trip-incroyable-en-italie-roadbook.pdf
+[PUBLIC]   Roadbook HTML: https://lcdmh.com/roadbooks-html/road-trip-incroyable-en-italie/index.html
+[PUBLIC]   Kurviger: https://lcdmh.com/kurviger/road-trip-incroyable-en-italie.kurviger
+[PUBLIC]   CSS roadbook: https://lcdmh.com/roadtrips/css/roadbook.css
+[PUBLIC]   CSS fusion: https://lcdmh.com/roadtrips/css/roadbook-fusion.css

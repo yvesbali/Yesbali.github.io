@@ -2,8 +2,11 @@
    roadbook-blocs.css
    Styles pour les blocs refondus :
    - Ressources du voyage (2 colonnes + QR visible)
-   - Immersion du voyage (carte séparée)
+   - Immersion du voyage (carte séparée, barre orange)
    - Journal de bord du voyageur (3 vignettes + CTA)
+   
+   Compatible avec les classes générées par le moteur :
+   short-card, short-thumb, short-body, short-badge
    ══════════════════════════════════════════════ */
 
 /* ─── KICKER COMMUN ─────────────────────────── */
@@ -44,7 +47,10 @@
     background: #f5f5f5;
 }
 
-/* ══ BLOC 1 : RESSOURCES DU VOYAGE ═════════════ */
+
+/* ══════════════════════════════════════════════
+   BLOC 1 : RESSOURCES DU VOYAGE
+   ══════════════════════════════════════════════ */
 .res-card {
     border: 1.5px dashed #e08a3a;
     border-radius: 12px;
@@ -118,7 +124,6 @@
     color: #888;
 }
 
-/* Responsive */
 @media (max-width: 700px) {
     .res-grid {
         grid-template-columns: 1fr;
@@ -129,7 +134,10 @@
     }
 }
 
-/* ══ BLOC 2 : IMMERSION DU VOYAGE ══════════════ */
+
+/* ══════════════════════════════════════════════
+   BLOC 2 : IMMERSION DU VOYAGE
+   ══════════════════════════════════════════════ */
 .imm-card {
     border: 1.5px solid #e5e5e0;
     border-radius: 12px;
@@ -153,14 +161,7 @@
     font-size: 1.25rem;
     font-weight: 700;
     color: #1a1a1a;
-    margin-bottom: .25rem;
-}
-.imm-subtitle {
-    font-size: .88rem;
-    color: #e07422;
-    font-weight: 600;
-    font-style: italic;
-    margin-bottom: .9rem;
+    margin-bottom: .6rem;
 }
 .imm-text {
     font-size: .92rem;
@@ -174,7 +175,10 @@
     margin-bottom: 0;
 }
 
-/* ══ BLOC 3 : JOURNAL DE BORD DU VOYAGEUR ══════ */
+
+/* ══════════════════════════════════════════════
+   BLOC 3 : JOURNAL DE BORD DU VOYAGEUR
+   ══════════════════════════════════════════════ */
 .jnl-card {
     border: 1.5px solid #e5e5e0;
     border-radius: 12px;
@@ -195,18 +199,26 @@
     margin-bottom: 1.3rem;
 }
 
-/* Grille des 3 vignettes shorts */
+/* ── Grille 3 vignettes (override short-card dans jnl-grid) ── */
 .jnl-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
     margin-bottom: 1.4rem;
 }
-.jnl-item {
+
+/* Override des short-card existantes quand dans jnl-grid */
+.jnl-grid .short-card {
     display: flex;
     flex-direction: column;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
 }
-.jnl-thumb {
+.jnl-grid .short-thumb {
     width: 100%;
     aspect-ratio: 16 / 9;
     border-radius: 8px;
@@ -215,13 +227,13 @@
     position: relative;
     background: #f0efe8;
 }
-.jnl-thumb img {
+.jnl-grid .short-thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
-.jnl-thumb::after {
+.jnl-grid .short-thumb::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -229,29 +241,40 @@
     border-radius: 8px;
     pointer-events: none;
 }
-.jnl-entry-label {
+.jnl-grid .short-badge {
+    display: inline-block;
     font-size: .7rem;
     font-weight: 700;
     letter-spacing: .06em;
     text-transform: uppercase;
     color: #e07422;
     margin-bottom: .15rem;
+    background: none;
+    padding: 0;
 }
-.jnl-item h4 {
+.jnl-grid .short-body {
+    padding: 0;
+}
+.jnl-grid .short-body h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: .9rem;
     font-weight: 600;
     color: #1a1a1a;
-    margin-bottom: .5rem;
+    margin-bottom: .3rem;
 }
-.jnl-item .btn {
+.jnl-grid .short-body p {
+    display: none; /* masque le texte redondant "Entrée X" sous le titre */
+}
+.jnl-grid .short-body .btn {
+    display: inline-block;
     align-self: flex-start;
     font-size: .78rem;
     padding: .45rem 1rem;
     border-radius: 5px;
+    margin-top: .4rem;
 }
 
-/* Bandeau CTA orange */
+/* ── Bandeau CTA orange ── */
 .jnl-cta {
     background: #e07422;
     border-radius: 10px;
