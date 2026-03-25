@@ -1,0 +1,28 @@
+{
+  "slug": "road-trip-moto-test",
+  "trip_title": "Road trip moto test ",
+  "trip_year": 2026,
+  "project_dir": "F:\\RoadBook HTML\\test v14",
+  "site_root": "F:\\RoadBook HTML\\test v14\\build",
+  "resource_files": {
+    "hero": "F:\\RoadBook HTML\\test v14\\build\\images\\roadtrips\\road-trip-moto-test\\pexels-pixabay-39391.jpg",
+    "qr": "F:\\RoadBook HTML\\test v14\\build\\images\\roadtrips\\road-trip-moto-test\\téléchargement.png",
+    "kurviger": "F:\\RoadBook HTML\\test v14\\build\\kurviger\\road-trip-moto-test.kurviger",
+    "csv": "F:\\RoadBook HTML\\test v14\\build\\data\\roadtrips\\road-trip-moto-test\\sources\\road-trip-moto-test.csv"
+  },
+  "video_seed_main": [],
+  "journal_entries_json": "F:\\RoadBook HTML\\test v14\\build\\data\\roadtrips\\road-trip-moto-test\\journal_entries.json",
+  "generated": {
+    "roadbook_html_index": "F:\\RoadBook HTML\\test v14\\build\\roadbooks-html\\road-trip-moto-test\\index.html",
+    "roadbook_printable_html": "F:\\RoadBook HTML\\test v14\\build\\roadbooks-html\\road-trip-moto-test\\roadbook_previsionnel.html",
+    "roadbook_pdf": "F:\\RoadBook HTML\\test v14\\build\\roadbooks\\road-trip-moto-test-roadbook.pdf",
+    "roadtrip_page": "F:\\RoadBook HTML\\test v14\\build\\roadtrips\\road-trip-moto-test.html",
+    "journal_page": "F:\\RoadBook HTML\\test v14\\build\\roadtrips\\road-trip-moto-test-journal.html",
+    "build_status": "F:\\RoadBook HTML\\test v14\\build\\data\\roadtrips\\road-trip-moto-test\\build_status.json"
+  },
+  "publication_layout": {
+    "main_page": "road-trip-moto-test.html",
+    "journal_page": "road-trip-moto-test-journal.html",
+    "images_dir": "F:\\RoadBook HTML\\test v14\\build\\images\\roadtrips\\road-trip-moto-test"
+  }
+}
