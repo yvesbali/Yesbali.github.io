@@ -136,32 +136,19 @@
 
 
 /* ══════════════════════════════════════════════
-   BLOC 2 : IMMERSION DU VOYAGE
+   IMMERSION (intégré dans la carte Ressources)
    ══════════════════════════════════════════════ */
-.imm-card {
-    border: 1.5px solid #e5e5e0;
-    border-radius: 12px;
-    padding: 1.8rem 1.8rem 1.5rem;
-    background: #fff;
-    position: relative;
-    overflow: hidden;
+.imm-inner {
+    border-top: 1px solid #e5e5e0;
+    margin-top: 1.4rem;
+    padding-top: 1.2rem;
 }
-.imm-card::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 5px;
-    background: #e07422;
-    border-radius: 12px 0 0 12px;
-}
-.imm-card h2 {
+.imm-inner h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: #1a1a1a;
-    margin-bottom: .6rem;
+    margin-bottom: .5rem;
 }
 .imm-text {
     font-size: .92rem;
