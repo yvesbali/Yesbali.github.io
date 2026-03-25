@@ -1,7 +1,7 @@
 [BUILD] ═══════════════════════════════════════════════════════
 [BUILD] GÉNÉRATION ROAD TRIP — Road trip moto test 
 [BUILD] ═══════════════════════════════════════════════════════
-[BUILD] Démarrage : 2026-03-25T20:31:10
+[BUILD] Démarrage : 2026-03-25T20:56:46
 [BUILD] project_dir = F:\RoadBook HTML\test v14
 [BUILD] site_root = F:\RoadBook HTML\test v14\build
 [BUILD] MODULE_DIR = F:\Automate_YT
@@ -119,7 +119,7 @@
 [VERIFY]   /roadbooks-html/road-trip-moto-test/index.html
 [VERIFY]     → F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-test\index.html : ✅ EXISTE
 [VERIFY]   /roadtrips/road-trip-moto-test-journal.html
-[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-test-journal.html : ❌ MANQUANT
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-test-journal.html : ✅ EXISTE
 [VERIFY]   /kurviger/road-trip-moto-test.kurviger
 [VERIFY]     → F:\RoadBook HTML\test v14\build\kurviger\road-trip-moto-test.kurviger : ✅ EXISTE
 [VERIFY]   /kurviger/road-trip-moto-test.kurviger
@@ -131,7 +131,7 @@
 [VERIFY]   /images/roadtrips/road-trip-moto-test/téléchargement.png
 [VERIFY]     → F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-test\téléchargement.png : ✅ EXISTE
 [VERIFY]   /roadtrips/road-trip-moto-test-journal.html
-[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-test-journal.html : ❌ MANQUANT
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-test-journal.html : ✅ EXISTE
 [VERIFY]   /roadtrips.html
 [VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips.html : ❌ MANQUANT
 [VERIFY]   /roadtrips.html
