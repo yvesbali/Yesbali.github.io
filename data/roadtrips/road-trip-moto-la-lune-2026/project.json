@@ -1,0 +1,56 @@
+{
+  "slug": "road-trip-moto-la-lune-2026",
+  "trip_title": "Road trip moto La lune 2026",
+  "trip_year": 2026,
+  "project_dir": "F:\\RoadBook HTML\\test v14",
+  "site_root": "F:\\RoadBook HTML\\test v14\\build",
+  "resource_files": {
+    "hero": "F:\\RoadBook HTML\\test v14\\build\\images\\roadtrips\\road-trip-moto-la-lune-2026\\pexels-pixabay-39391.jpg",
+    "qr": "F:\\RoadBook HTML\\test v14\\build\\images\\roadtrips\\road-trip-moto-la-lune-2026\\téléchargement.png",
+    "kurviger": "F:\\RoadBook HTML\\test v14\\build\\kurviger\\road-trip-moto-la-lune-2026.kurviger",
+    "csv": "F:\\RoadBook HTML\\test v14\\build\\data\\roadtrips\\road-trip-moto-la-lune-2026\\sources\\road-trip-moto-la-lune-2026.csv"
+  },
+  "video_seed_main": [
+    {
+      "url": "https://www.youtube.com/watch?v=8_7KetvWY4U",
+      "title": "Vidéo 1",
+      "text": "",
+      "date_label": "Entrée 1",
+      "thumb": "https://img.youtube.com/vi/8_7KetvWY4U/hqdefault.jpg",
+      "youtube_id": "8_7KetvWY4U",
+      "title_auto": ""
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=h8BbznWXlug",
+      "title": "Vidéo 2",
+      "text": "",
+      "date_label": "Entrée 2",
+      "thumb": "https://img.youtube.com/vi/h8BbznWXlug/hqdefault.jpg",
+      "youtube_id": "h8BbznWXlug",
+      "title_auto": ""
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Hw-jvbEx8Bo",
+      "title": "Vidéo 3",
+      "text": "",
+      "date_label": "Entrée 3",
+      "thumb": "https://img.youtube.com/vi/Hw-jvbEx8Bo/hqdefault.jpg",
+      "youtube_id": "Hw-jvbEx8Bo",
+      "title_auto": ""
+    }
+  ],
+  "journal_entries_json": "F:\\RoadBook HTML\\test v14\\build\\data\\roadtrips\\road-trip-moto-la-lune-2026\\journal_entries.json",
+  "generated": {
+    "roadbook_html_index": "F:\\RoadBook HTML\\test v14\\build\\roadbooks-html\\road-trip-moto-la-lune-2026\\index.html",
+    "roadbook_printable_html": "F:\\RoadBook HTML\\test v14\\build\\roadbooks-html\\road-trip-moto-la-lune-2026\\roadbook_previsionnel.html",
+    "roadbook_pdf": "F:\\RoadBook HTML\\test v14\\build\\roadbooks\\road-trip-moto-la-lune-2026-roadbook.pdf",
+    "roadtrip_page": "F:\\RoadBook HTML\\test v14\\build\\roadtrips\\road-trip-moto-la-lune-2026.html",
+    "journal_page": "F:\\RoadBook HTML\\test v14\\build\\roadtrips\\road-trip-moto-la-lune-2026-journal.html",
+    "build_status": "F:\\RoadBook HTML\\test v14\\build\\data\\roadtrips\\road-trip-moto-la-lune-2026\\build_status.json"
+  },
+  "publication_layout": {
+    "main_page": "road-trip-moto-la-lune-2026.html",
+    "journal_page": "road-trip-moto-la-lune-2026-journal.html",
+    "images_dir": "F:\\RoadBook HTML\\test v14\\build\\images\\roadtrips\\road-trip-moto-la-lune-2026"
+  }
+}
