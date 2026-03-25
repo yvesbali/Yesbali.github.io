@@ -7,6 +7,7 @@
 <meta name="description" content="Road trip moto Écosse 2026 — préparation du voyage, ressources, journal et future série LCDMH."/>
 <link rel="stylesheet" href="css/roadbook.css"/>
 <link rel="stylesheet" href="css/roadbook-fusion.css"/>
+<link rel="stylesheet" href="css/roadbook-blocs.css"/>
 </head>
 <body>
 <div class="topbar"><div class="wrap"><div>LCDMH · Génération road trip</div><div>Source métier : CSV · Template : HTML/CSS séparés</div></div></div>
@@ -27,31 +28,101 @@
 </header>
 <main>
 <div class="wrap">
-<section class="section">
-<div class="card">
-<h2 class="section-title">Ressources du voyage</h2>
-<p class="section-intro">La page principale reste publiable très tôt, même avant la mise à jour du menu du site. Elle expose déjà les ressources clés du projet et le prévisionnel par journée.</p>
-<div class="resource-grid"><article class="resource-card"><h3>Trace Kurviger</h3><p>Télécharger la trace de navigation du voyage.</p><a class="btn btn-primary" href="/kurviger/road-trip-moto-ecosse-2026.kurviger" rel="noopener" target="_blank" download>Télécharger la trace</a></article><article class="resource-card"><h3>QR code ressources</h3><p>Afficher ou enregistrer le QR code du projet.</p><a class="btn btn-primary" href="/images/roadtrips/road-trip-moto-ecosse-2026/téléchargement.png" rel="noopener" target="_blank">Afficher le QR code</a></article><article class="resource-card"><h3>Roadbook détaillé</h3><p>Consulter le roadbook HTML détaillé jour par jour.</p><a class="btn btn-primary" href="/roadbooks-html/road-trip-moto-ecosse-2026/index.html" rel="noopener" target="_blank">Ouvrir le roadbook</a></article><article class="resource-card"><h3>Roadbook PDF</h3><p>Version imprimable du roadbook.</p><a class="btn btn-dark" href="/roadbooks/road-trip-moto-ecosse-2026-roadbook.pdf" download>Télécharger le PDF</a></article></div>
-<p class="footer-note">La trace Kurviger et le roadbook correspondent à la base du road trip prévu. Selon la météo, l'état des routes, les imprévus, la fatigue ou les opportunités du terrain, l'itinéraire réel pourra évoluer.</p>
-</div>
-</section>
-<section class="section">
-<div class="card">
-<h2 class="section-title">Shorts mis en avant</h2>
-<p class="section-intro">Ces emplacements sont prévus pour recevoir les trois shorts les plus pertinents selon les métriques ou votre choix manuel. Au début du projet, ils peuvent rester provisoires.</p>
-<div class="short-grid"></div>
-</div>
+
+<!-- ══ RESSOURCES + IMMERSION (carte unique) ════ -->
+<section class="section" id="ressources">
+    <div class="bloc-kicker">Ressources du voyage</div>
+    <div class="res-card">
+        <!-- Ressources : 2 colonnes + QR -->
+        <div class="res-grid">
+            <div class="res-left">
+                <h3>Préparer et télécharger</h3>
+                <p>Retrouve ici les ressources utiles du voyage : trace Kurviger, roadbook PDF, version HTML modifiable et accès rapide au journal de bord.</p>
+                <div class="res-btns">
+                    <a class="btn btn-orange" href="/kurviger/road-trip-moto-ecosse-2026.kurviger" rel="noopener" target="_blank" download>Télécharger la trace Kurviger</a>
+                    <a class="btn btn-dark" href="/roadbooks/road-trip-moto-ecosse-2026-roadbook.pdf" download>Roadbook PDF</a>
+                    <a class="btn btn-outline" href="/roadbooks-html/road-trip-moto-ecosse-2026/index.html" rel="noopener" target="_blank">Roadbook HTML</a>
+                </div>
+                <p class="res-note">La trace Kurviger et le roadbook correspondent à la base du road trip prévu. Selon la météo, l'état des routes, les imprévus, la fatigue ou les opportunités du terrain, l'itinéraire réel pourra évoluer.</p>
+            </div>
+            
+            <div class="qr-box">
+                <div class="bloc-kicker">Scan rapide</div>
+                <h4>QR code ressources</h4>
+                <img class="qr-img" src="/images/roadtrips/road-trip-moto-ecosse-2026/téléchargement.png" alt="QR code ressources du voyage Road trip moto Écosse 2026" width="140" height="140"/>
+                <p class="qr-caption">Téléchargement direct depuis le téléphone</p>
+            </div>
+            
+        </div>
+
+        <!-- Immersion : intégré dans la même carte -->
+        
+        <div class="imm-inner">
+            <h3>Immersion du voyage</h3>
+            <div class="imm-text">
+                <p>Ce périple de 30 jours est une immersion totale dans les terres celtes. Tout commence par une remontée express vers le Nord pour franchir la Manche via le Shuttle.
+
+Le tracé nous emmène ensuite vers les Highlands sauvages, puis vers l&#x27;Irlande avant le retour.
+À propos
+La République d&#x27;Irlande occupe la majeure partie de l&#x27;île au large des côtes de l&#x27;Angleterre et du Pays de Galles. Sa capitale, Dublin, est la ville natale d&#x27;écrivains comme Oscar Wilde, et de la Guinness. Le Livre de Kells, datant du IXe siècle, de même que d&#x27;autres manuscrits enluminés sont conservés à la bibliothèque du Trinity College. Surnommée l&#x27;&quot;île d&#x27;émeraude&quot; en raison de son paysage luxuriant, le pays est parsemé de châteaux médiévaux comme le château de Cahir. ― Google</p>
+            </div>
+        </div>
+        
+    </div>
 </section>
 
-<section class="section">
-<div class="card">
-<h2 class="section-title">Immersion du voyage</h2>
-<p>Ce périple de 30 jours est une immersion totale dans les terres celtes. Tout commence par une remontée express vers le Nord pour franchir la Manche via le Shuttle.
+<!-- ══ JOURNAL DE BORD DU VOYAGEUR ══════════════ -->
+<section class="section" id="journal">
+    <div class="jnl-card">
+        <div class="bloc-kicker">Journal de bord du voyageur</div>
+        <h2>Aperçu des entrées déjà présentes</h2>
+        <p class="jnl-intro">Trois shorts de présentation sont visibles ici comme aperçu rapide. Ils serviront à annoncer le voyage, poser l'univers et orienter vers le journal complet.</p>
 
-Le tracé nous emmène ensuite vers les Highlands sauvages, puis vers l&#x27;Irlande avant le retour.</p>
-</div>
+        <div class="jnl-grid">
+            
+<article class="short-card">
+    <div class="short-thumb"><img alt="Plumage a la station service, en direction de le Norvège." src="https://img.youtube.com/vi/ESnXaMrb6CA/hqdefault.jpg"/></div>
+    <div class="short-body">
+        <span class="short-badge">11 mai 2025 · de le Norvège</span>
+        <h3>Plumage a la station service, en direction de le Norvège.</h3>
+        <p>🚀 Nouvelle série : 11 000 km à moto jusqu’au Cap Nord ! Épisode 1 ici 🎬 👉 https://www.youtube.com/watch?v=aEEJXeNSsdg -…</p>
+        <a class="btn btn-dark" href="https://www.youtube.com/watch?v=ESnXaMrb6CA" target="_blank" rel="noopener">Voir le short</a>
+    </div>
+</article>
+
+<article class="short-card">
+    <div class="short-thumb"><img alt="Aalborg - Départ vers le Cap Nord à moto" src="https://img.youtube.com/vi/25OPjQqqfnk/hqdefault.jpg"/></div>
+    <div class="short-body">
+        <span class="short-badge">12 mai 2025 · le Cap Nord</span>
+        <h3>Aalborg - Départ vers le Cap Nord à moto</h3>
+        <p>🛣️ Aalborg, première étape de mon road trip épique vers le Cap Nord ! Direction le Danemark avec ma Honda NT1100 pour d…</p>
+        <a class="btn btn-dark" href="https://www.youtube.com/watch?v=25OPjQqqfnk" target="_blank" rel="noopener">Voir le short</a>
+    </div>
+</article>
+
+<article class="short-card">
+    <div class="short-thumb"><img alt="Ferry vers Hirsthals - Road Trip Cap Nord à Moto EP1" src="https://img.youtube.com/vi/JaEqpHji_jA/hqdefault.jpg"/></div>
+    <div class="short-body">
+        <span class="short-badge">13 mai 2025 · Moto EP1</span>
+        <h3>Ferry vers Hirsthals - Road Trip Cap Nord à Moto EP1</h3>
+        <p>🛳️ Direction le Danemark en ferry depuis Hirsthals ! Premier épisode d&#x27;un road trip épique de 11 000 km à moto jusqu&#x27;au…</p>
+        <a class="btn btn-dark" href="https://www.youtube.com/watch?v=JaEqpHji_jA" target="_blank" rel="noopener">Voir le short</a>
+    </div>
+</article>
+
+        </div>
+
+        <div class="jnl-cta">
+            <div class="jnl-cta-text">
+                <h3>Suivre l'aventure au jour le jour</h3>
+                <p>Le journal complet regroupera les entrées quotidiennes, les étapes du terrain, les shorts remontés et les publications qui viendront enrichir la page principale au fil du voyage.</p>
+            </div>
+            <a class="btn btn-white" href="/roadtrips/road-trip-moto-ecosse-2026-journal.html">Ouvrir le journal complet</a>
+        </div>
+    </div>
 </section>
 
+<!-- ══ ITINÉRAIRE ════════════════════════════════ -->
 <section class="section section-alt" id="itineraire">
     <div class="sec-head">
         <h2>L'itinéraire <em>étape par étape</em></h2>
@@ -152,12 +223,117 @@ Le tracé nous emmène ensuite vers les Highlands sauvages, puis vers l&#x27;Irl
     </div>
 </section>
 
+<!-- ══ GUIDE PRATIQUE ════════════════════════════ -->
+<section class="section" id="guide-pratique">
+    <div class="sec-head">
+        <h2>Guide Pratique : <em>Ce que je Sais Déjà</em></h2>
+        <div class="bar"></div>
+        <p>Préparation en cours — complété après le voyage avec l'expérience réelle</p>
+    </div>
+
+    <div class="guide-grid">
+        <div class="guide-card">
+            <div class="guide-icon">⛴️</div>
+            <h3>Les Ferries</h3>
+            <ul>
+                <li><strong>France → Irlande :</strong> Brittany Ferries (Saint-Malo ou Cherbourg → Dublin/Rosslare)</li>
+                <li>Traversée <strong>18h</strong> depuis Saint-Malo · cabine recommandée</li>
+                <li><strong>Irlande → Écosse :</strong> Stena Line ou P&amp;O (Larne → Cairnryan)</li>
+                <li>Traversée rapide : <strong>2h</strong> seulement</li>
+                <li>Réserver à l'avance en mai (haute saison qui commence)</li>
+            </ul>
+        </div>
+        <div class="highlight-box">
+            <div class="guide-icon">🚗</div>
+            <h3>Conduite à Gauche</h3>
+            <ul>
+                <li>Irlande ET Écosse : circulation à <strong>gauche</strong></li>
+                <li>Premier jour : prudence aux ronds-points et intersections</li>
+                <li>Réflexe à travailler : regarder à droite en sortant d'une rue</li>
+                <li>Les petites routes irlandaises sont très étroites</li>
+                <li>Panneaux en km en République d'Irlande, miles en Écosse</li>
+            </ul>
+        </div>
+        <div class="guide-card">
+            <div class="guide-icon">🏕️</div>
+            <h3>Bivouac en Écosse &amp; Irlande</h3>
+            <ul>
+                <li>Écosse : bivouac <strong>légal partout</strong> (Land Reform Act 2003)</li>
+                <li>Règle : respecter la nature, ne pas rester trop longtemps</li>
+                <li>Irlande : moins codifié, tolérance sur les terres ouvertes</li>
+                <li>Météo capricieuse : tente 4 saisons recommandée</li>
+                <li>Midges (moucherons) en Écosse : prévoir répulsif</li>
+            </ul>
+        </div>
+        <div class="guide-card">
+            <div class="guide-icon">🌧️</div>
+            <h3>Météo &amp; Équipement</h3>
+            <ul>
+                <li>Irlande : il pleut souvent — prévoir équipement imperméable total</li>
+                <li>Écosse en mai : 8–15°C, vent fort sur la côte nord</li>
+                <li>Superposition de couches indispensable</li>
+                <li>Le soleil irlandais est rare mais magique quand il apparaît</li>
+                <li>Ne jamais parier sur une météo stable plus de 2h</li>
+            </ul>
+        </div>
+        <div class="guide-card">
+            <div class="guide-icon">💰</div>
+            <h3>Budget Estimé</h3>
+            <ul>
+                <li>Ferries : ~300–400€ (aller-retour + moto)</li>
+                <li>Essence : ~500–600€ (prix élevés en Irlande et Écosse)</li>
+                <li>Nourriture : 30–50€/jour selon les choix</li>
+                <li>Pubs irlandais (repas) : 15–25€</li>
+                <li>Total estimé : <strong>2 500 à 3 500€</strong> pour 36 jours</li>
+            </ul>
+        </div>
+        <div class="guide-card">
+            <div class="guide-icon">🏍️</div>
+            <h3>La NT1100 pour ce Voyage</h3>
+            <ul>
+                <li>Boîte automatique : idéale pour la conduite à gauche</li>
+                <li>Protection au vent : bonne sur les longues routes</li>
+                <li>GPS Aoocci : indispensable pour les zones sans réseau</li>
+                <li>Valises : vérifier l'étanchéité avant (Irlande = pluie)</li>
+                <li>Pneus : partir avec des neufs, routes abrasives</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
 <!-- ══ SÉRIE VIDÉO À VENIR ══════════════════════ -->
 <section class="section section-alt" id="episodes">
     <div class="sec-head">
         <h2>La Série <em>Road trip moto Écosse 2026</em></h2>
         <div class="bar"></div>
         <p>Les épisodes seront publiés après le voyage — abonne-toi pour ne rien rater</p>
+    </div>
+
+    <div class="coming-soon-grid">
+        <div class="coming-soon-card">
+            <div class="coming-soon-thumb"><span class="coming-soon-ep">EP 1</span><span class="coming-soon-label">Bientôt</span></div>
+            <div class="coming-soon-body"><h3>Le Grand Départ</h3><p>Publication prévue après le voyage</p></div>
+        </div>
+        <div class="coming-soon-card">
+            <div class="coming-soon-thumb"><span class="coming-soon-ep">EP 2</span><span class="coming-soon-label">Bientôt</span></div>
+            <div class="coming-soon-body"><h3>Premières étapes</h3><p>Publication prévue après le voyage</p></div>
+        </div>
+        <div class="coming-soon-card">
+            <div class="coming-soon-thumb"><span class="coming-soon-ep">EP 3</span><span class="coming-soon-label">Bientôt</span></div>
+            <div class="coming-soon-body"><h3>Sur la route</h3><p>Publication prévue après le voyage</p></div>
+        </div>
+        <div class="coming-soon-card">
+            <div class="coming-soon-thumb"><span class="coming-soon-ep">EP 4</span><span class="coming-soon-label">Bientôt</span></div>
+            <div class="coming-soon-body"><h3>Les Highlands</h3><p>Publication prévue après le voyage</p></div>
+        </div>
+        <div class="coming-soon-card">
+            <div class="coming-soon-thumb"><span class="coming-soon-ep">EP 5</span><span class="coming-soon-label">Bientôt</span></div>
+            <div class="coming-soon-body"><h3>North Coast 500</h3><p>Publication prévue après le voyage</p></div>
+        </div>
+        <div class="coming-soon-card">
+            <div class="coming-soon-thumb"><span class="coming-soon-ep">EP 6</span><span class="coming-soon-label">Bientôt</span></div>
+            <div class="coming-soon-body"><h3>Le Bilan</h3><p>Publication prévue après le voyage</p></div>
+        </div>
     </div>
 
     <div style="text-align:center;margin-top:2.5rem">

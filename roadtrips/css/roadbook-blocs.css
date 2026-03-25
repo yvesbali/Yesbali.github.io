@@ -1,13 +1,28 @@
 /* ══════════════════════════════════════════════
-   roadbook-blocs.css
-   Styles pour les blocs refondus :
-   - Ressources du voyage (2 colonnes + QR visible)
-   - Immersion du voyage (carte séparée, barre orange)
-   - Journal de bord du voyageur (3 vignettes + CTA)
+   roadbook-blocs.css v3
+   Design validé — 2 blocs bicolores dans conteneur ombre
    
-   Compatible avec les classes générées par le moteur :
-   short-card, short-thumb, short-body, short-badge
+   Structure HTML attendue :
+   .blocs-wrapper          ← fond beige, padding, ombre
+     .res-card             ← bloc Ressources (crème + dashed orange)
+       .res-grid           ← grille 2 colonnes (contenu + QR)
+       .imm-inner          ← section Immersion intégrée
+     .jnl-card             ← bloc Journal (blanc)
+       .jnl-grid           ← grille 3 vignettes
+       .jnl-cta            ← bandeau CTA orange
    ══════════════════════════════════════════════ */
+
+/* ─── CONTENEUR ENGLOBANT (fond + ombre) ─────── */
+.blocs-wrapper {
+    background: var(--alt, #f0ede8);
+    border-radius: 24px;
+    padding: 2rem;
+    margin: 2.5rem auto;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
 
 /* ─── KICKER COMMUN ─────────────────────────── */
 .bloc-kicker {
@@ -19,7 +34,7 @@
     margin-bottom: .5rem;
 }
 
-/* ─── BOUTONS COMPLÉMENTAIRES ────────────────── */
+/* ─── BOUTONS ────────────────────────────────── */
 .btn.btn-orange {
     background: var(--orange, #e67e22);
     color: #fff;
@@ -30,7 +45,7 @@
 }
 .btn.btn-outline {
     background: transparent;
-    border: 1.5px solid #888;
+    border: 1.5px solid #bbb;
     color: #333;
 }
 .btn.btn-outline:hover {
@@ -39,7 +54,7 @@
 }
 .btn.btn-white {
     background: #fff;
-    color: var(--orange, #e67e22);
+    color: var(--orange-dark, #d35400);
     border: none;
     font-weight: 700;
 }
@@ -49,51 +64,54 @@
 
 
 /* ══════════════════════════════════════════════
-   BLOC 1 : RESSOURCES DU VOYAGE
+   BLOC 1 : RESSOURCES DU VOYAGE (crème + dashed orange)
    ══════════════════════════════════════════════ */
 .res-card {
+    background: #fffaf5;
     border: 1.5px dashed var(--orange, #e67e22);
     border-radius: 18px;
-    padding: 1.6rem 1.6rem 1.4rem;
-    background: var(--card, #fff);
-    box-shadow: 0 3px 10px rgba(0,0,0,.04);
+    padding: 2rem 2.2rem 1.6rem;
+    position: relative;
 }
 .res-grid {
     display: grid;
     grid-template-columns: 1fr 220px;
-    gap: 1.5rem;
+    gap: 1.8rem;
     align-items: start;
 }
 .res-left h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    margin-bottom: .35rem;
+    margin-bottom: .4rem;
     color: #1a1a1a;
 }
 .res-left > p {
-    font-size: .88rem;
-    color: #555;
-    line-height: 1.55;
-    margin-bottom: .9rem;
+    font-size: .92rem;
+    color: #666;
+    line-height: 1.65;
+    margin-bottom: 1rem;
 }
 .res-btns {
     display: flex;
     flex-wrap: wrap;
-    gap: .5rem;
-    margin-bottom: .9rem;
+    gap: .6rem;
+    margin-bottom: 1rem;
 }
 .res-btns .btn {
-    font-size: .82rem;
-    padding: .55rem 1.1rem;
-    border-radius: 6px;
+    font-size: .85rem;
+    padding: .65rem 1.3rem;
+    border-radius: 10px;
     font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 .res-note {
-    font-size: .78rem;
-    color: #888;
+    font-size: .8rem;
+    color: #999;
     font-style: italic;
-    line-height: 1.45;
+    line-height: 1.5;
 }
 
 /* QR box */
@@ -106,7 +124,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: var(--card, #fff);
+    background: #fff;
 }
 .qr-box h4 {
     font-family: 'Montserrat', sans-serif;
@@ -118,12 +136,12 @@
 .qr-img {
     width: 140px;
     height: 140px;
-    border-radius: 6px;
+    border-radius: 8px;
     margin-bottom: .5rem;
 }
 .qr-caption {
     font-size: .72rem;
-    color: #888;
+    color: #999;
 }
 
 @media (max-width: 700px) {
@@ -138,24 +156,24 @@
 
 
 /* ══════════════════════════════════════════════
-   IMMERSION (intégré dans la carte Ressources)
+   IMMERSION (intégrée dans res-card, sous le séparateur)
    ══════════════════════════════════════════════ */
 .imm-inner {
-    border-top: 1px solid var(--border, #e5e5e5);
-    margin-top: 1.4rem;
+    border-top: 1px solid rgba(230,126,34,.15);
+    margin-top: 1.5rem;
     padding-top: 1.2rem;
 }
 .imm-inner h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: #1a1a1a;
     margin-bottom: .5rem;
 }
 .imm-text {
-    font-size: .92rem;
-    color: #444;
-    line-height: 1.75;
+    font-size: .95rem;
+    color: #555;
+    line-height: 1.8;
 }
 .imm-text p {
     margin-bottom: .7rem;
@@ -166,54 +184,61 @@
 
 
 /* ══════════════════════════════════════════════
-   BLOC 3 : JOURNAL DE BORD DU VOYAGEUR
+   BLOC 2 : JOURNAL DE BORD DU VOYAGEUR (blanc)
    ══════════════════════════════════════════════ */
 .jnl-card {
-    border: 1px solid var(--border, #e5e5e5);
+    background: #fff;
+    border: 1px solid var(--border, #e5e5e0);
     border-radius: 18px;
-    padding: 1.8rem;
-    background: var(--card, #fff);
-    box-shadow: 0 3px 10px rgba(0,0,0,.04);
+    padding: 2rem 2.2rem 1.8rem;
+    position: relative;
 }
 .jnl-card > h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #1a1a1a;
     margin-bottom: .4rem;
 }
 .jnl-intro {
-    font-size: .88rem;
-    color: #555;
-    line-height: 1.55;
-    margin-bottom: 1.3rem;
-}
-
-/* ── Grille 3 vignettes (override short-card dans jnl-grid) ── */
-.jnl-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
+    font-size: .92rem;
+    color: #666;
+    line-height: 1.6;
     margin-bottom: 1.4rem;
 }
 
-/* Override des short-card existantes quand dans jnl-grid */
+/* ── Grille 3 vignettes — cartes avec fond ──── */
+.jnl-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 1.5rem;
+}
+
+/* Carte vignette complète */
 .jnl-grid .short-card {
     display: flex;
     flex-direction: column;
-    border: none;
-    box-shadow: none;
-    background: transparent;
+    border: 1px solid #eee;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fafafa;
     padding: 0;
     margin: 0;
-    border-radius: 0;
+    box-shadow: none;
+    transition: box-shadow .2s, transform .15s;
 }
+.jnl-grid .short-card:hover {
+    box-shadow: 0 6px 24px rgba(230,126,34,.12);
+    transform: translateY(-2px);
+}
+
 .jnl-grid .short-thumb {
     width: 100%;
     aspect-ratio: 16 / 9;
-    border-radius: 8px;
+    border-radius: 0;
     overflow: hidden;
-    margin-bottom: .5rem;
+    margin-bottom: 0;
     position: relative;
     background: var(--alt, #f0ede8);
 }
@@ -227,48 +252,58 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,.22), transparent 45%);
-    border-radius: 8px;
+    background: linear-gradient(to top, rgba(0,0,0,.35), transparent 55%);
     pointer-events: none;
 }
+
+/* Badge date+lieu sur la vignette */
 .jnl-grid .short-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
     display: inline-block;
     font-size: .7rem;
     font-weight: 700;
-    letter-spacing: .06em;
+    letter-spacing: .04em;
     text-transform: uppercase;
-    color: var(--orange, #e67e22);
-    margin-bottom: .15rem;
-    background: none;
-    padding: 0;
+    color: #fff;
+    background: var(--orange, #e67e22);
+    padding: 4px 10px;
+    border-radius: 6px;
+    z-index: 2;
 }
+
 .jnl-grid .short-body {
-    padding: 0;
+    padding: 12px 14px;
 }
 .jnl-grid .short-body h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: .9rem;
+    font-size: .95rem;
     font-weight: 600;
     color: #1a1a1a;
     margin-bottom: .3rem;
+    line-height: 1.35;
 }
 .jnl-grid .short-body p {
-    display: none; /* masque le texte redondant "Entrée X" sous le titre */
+    font-size: .85rem;
+    color: #888;
+    line-height: 1.45;
+    margin-bottom: .5rem;
 }
 .jnl-grid .short-body .btn {
     display: inline-block;
     align-self: flex-start;
-    font-size: .78rem;
-    padding: .45rem 1rem;
-    border-radius: 5px;
-    margin-top: .4rem;
+    font-size: .8rem;
+    padding: .5rem 1.1rem;
+    border-radius: 8px;
+    margin-top: .2rem;
 }
 
-/* ── Bandeau CTA orange ── */
+/* ── Bandeau CTA orange gradient ── */
 .jnl-cta {
-    background: var(--orange, #e67e22);
-    border-radius: 12px;
-    padding: 1.2rem 1.5rem;
+    background: linear-gradient(135deg, #d35400, #e67e22);
+    border-radius: 14px;
+    padding: 1.3rem 1.6rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -276,23 +311,30 @@
 }
 .jnl-cta-text h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: #fff;
-    margin-bottom: .2rem;
+    margin-bottom: .3rem;
 }
 .jnl-cta-text p {
-    font-size: .82rem;
+    font-size: .85rem;
     color: rgba(255,255,255,.88);
-    line-height: 1.45;
-    max-width: 500px;
+    line-height: 1.5;
+    max-width: 560px;
 }
 .jnl-cta .btn.btn-white {
     white-space: nowrap;
     flex-shrink: 0;
+    border-radius: 10px;
+    padding: .75rem 1.5rem;
+    font-size: .88rem;
 }
 
 @media (max-width: 700px) {
+    .blocs-wrapper {
+        padding: 1rem;
+        border-radius: 16px;
+    }
     .jnl-grid {
         grid-template-columns: 1fr;
         gap: .8rem;
@@ -303,5 +345,8 @@
     }
     .jnl-cta-text p {
         max-width: none;
+    }
+    .res-card, .jnl-card {
+        padding: 1.4rem;
     }
 }
