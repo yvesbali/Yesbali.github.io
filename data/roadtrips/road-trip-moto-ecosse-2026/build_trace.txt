@@ -23,23 +23,26 @@
 [TEMPLATE]   F:\RoadBook HTML\test v14\template_roadtrip_principal.html → absent
 [TEMPLATE]   F:\RoadBook HTML\test v14\Road Trip Moto Écosse & Irlande 2026 _ 10 000 km Solo _ LCDMH.html → absent
 [TEMPLATE]   F:\RoadBook HTML\test v14\ecosse-irlande.html → absent
-[TEMPLATE]   F:\Automate_YT\template_roadtrip_principal.html → TROUVÉ ✅
-[TEMPLATE] ✅ Chargé : F:\Automate_YT\template_roadtrip_principal.html (13016 caractères)
-[TEMPLATE] ✅ Chargé : F:\Automate_YT\template_roadtrip_principal.html (13016 caractères)
+[TEMPLATE]   F:\Automate_YT\template_roadtrip_principal.html → absent
+[TEMPLATE]   F:\Automate_YT\Road Trip Moto Écosse & Irlande 2026 _ 10 000 km Solo _ LCDMH.html → absent
+[TEMPLATE]   F:\Automate_YT\ecosse-irlande.html → absent
+[TEMPLATE]   F:\Automate_YT\templates\template_roadtrip_principal.html → TROUVÉ ✅
+[TEMPLATE] ✅ Chargé : F:\Automate_YT\templates\template_roadtrip_principal.html (12958 caractères)
+[TEMPLATE] ✅ Chargé : F:\Automate_YT\templates\template_roadtrip_principal.html (12958 caractères)
 [TEMPLATE]   Placeholders trouvés : 32
 [TEMPLATE]   Référence CSS : roadbook.css ✅
 [RENDER] Résolution des placeholders...
 [RENDER] ✅ Tous les placeholders résolus
-[RENDER] HTML final : 19446 caractères
+[RENDER] HTML final : 18585 caractères
 [BUILD] ✅ Page principale écrite : F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-ecosse-2026.html
-[BUILD]   Taille HTML : 19446 caractères
+[BUILD]   Taille HTML : 18585 caractères
 [CSS] Recherche du dossier CSS...
+[CSS]   F:\Automate_YT\templates\css → TROUVÉ ✅
+[CSS]   F:\Automate_YT\templates\templates\css → absent
+[CSS]   F:\Automate_YT\templates\css → TROUVÉ ✅
+[CSS]   F:\Automate_YT\templates\css → TROUVÉ ✅
 [CSS]   F:\Automate_YT\css → TROUVÉ ✅
-[CSS]   F:\Automate_YT\templates\css → TROUVÉ ✅
-[CSS]   F:\Automate_YT\templates\css → TROUVÉ ✅
-[CSS]   F:\Automate_YT\templates\css → TROUVÉ ✅
-[CSS]   F:\Automate_YT\css → TROUVÉ ✅
-[CSS] Dossier source : F:\Automate_YT\css
+[CSS] Dossier source : F:\Automate_YT\templates\css
 [CSS] Dossier cible : F:\RoadBook HTML\test v14\build\roadtrips\css
 [CSS] ✅ Copié : roadbook-blocs.css → F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook-blocs.css
 [CSS] ✅ Copié : roadbook-fusion.css → F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook-fusion.css
