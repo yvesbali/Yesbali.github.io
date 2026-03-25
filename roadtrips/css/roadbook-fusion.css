@@ -176,8 +176,8 @@
 
 /* Fusion validation: partie haute index + partie itineraire ecosse-irlande */
 .topbar{background:#1a1a1a;color:#fff;font-size:.9rem}
-.topbar .wrap{max-width:1200px;margin:0 auto;padding:.7rem 1rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-.wrap{max-width:1200px;margin:0 auto;padding:0 1rem}
+.topbar .wrap{max-width:1400px;margin:0 auto;padding:.7rem 1rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.wrap{max-width:1400px;margin:0 auto;padding:0 1rem}
 .hero.hero-image{min-height:520px;background-size:cover;background-position:center;position:relative;color:#fff}
 .hero.hero-image::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.65))}
 .hero-inner{position:relative;z-index:1;padding:5rem 1rem 4rem}
