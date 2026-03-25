@@ -15,18 +15,18 @@
     font-weight: 700;
     letter-spacing: .08em;
     text-transform: uppercase;
-    color: #e07422;
+    color: var(--orange, #e67e22);
     margin-bottom: .5rem;
 }
 
 /* ─── BOUTONS COMPLÉMENTAIRES ────────────────── */
 .btn.btn-orange {
-    background: #e07422;
+    background: var(--orange, #e67e22);
     color: #fff;
     border: none;
 }
 .btn.btn-orange:hover {
-    background: #c86218;
+    background: var(--orange-dark, #d35400);
 }
 .btn.btn-outline {
     background: transparent;
@@ -39,7 +39,7 @@
 }
 .btn.btn-white {
     background: #fff;
-    color: #e07422;
+    color: var(--orange, #e67e22);
     border: none;
     font-weight: 700;
 }
@@ -52,10 +52,11 @@
    BLOC 1 : RESSOURCES DU VOYAGE
    ══════════════════════════════════════════════ */
 .res-card {
-    border: 1.5px dashed #e08a3a;
-    border-radius: 12px;
+    border: 1.5px dashed var(--orange, #e67e22);
+    border-radius: 18px;
     padding: 1.6rem 1.6rem 1.4rem;
-    background: #fff;
+    background: var(--card, #fff);
+    box-shadow: 0 3px 10px rgba(0,0,0,.04);
 }
 .res-grid {
     display: grid;
@@ -97,14 +98,15 @@
 
 /* QR box */
 .qr-box {
-    border: 1.5px dashed #e08a3a;
-    border-radius: 10px;
+    border: 1.5px dashed var(--orange, #e67e22);
+    border-radius: 14px;
     padding: 1rem;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: var(--card, #fff);
 }
 .qr-box h4 {
     font-family: 'Montserrat', sans-serif;
@@ -139,7 +141,7 @@
    IMMERSION (intégré dans la carte Ressources)
    ══════════════════════════════════════════════ */
 .imm-inner {
-    border-top: 1px solid #e5e5e0;
+    border-top: 1px solid var(--border, #e5e5e5);
     margin-top: 1.4rem;
     padding-top: 1.2rem;
 }
@@ -167,10 +169,11 @@
    BLOC 3 : JOURNAL DE BORD DU VOYAGEUR
    ══════════════════════════════════════════════ */
 .jnl-card {
-    border: 1.5px solid #e5e5e0;
-    border-radius: 12px;
+    border: 1px solid var(--border, #e5e5e5);
+    border-radius: 18px;
     padding: 1.8rem;
-    background: #fff;
+    background: var(--card, #fff);
+    box-shadow: 0 3px 10px rgba(0,0,0,.04);
 }
 .jnl-card > h2 {
     font-family: 'Montserrat', sans-serif;
@@ -212,7 +215,7 @@
     overflow: hidden;
     margin-bottom: .5rem;
     position: relative;
-    background: #f0efe8;
+    background: var(--alt, #f0ede8);
 }
 .jnl-grid .short-thumb img {
     width: 100%;
@@ -234,7 +237,7 @@
     font-weight: 700;
     letter-spacing: .06em;
     text-transform: uppercase;
-    color: #e07422;
+    color: var(--orange, #e67e22);
     margin-bottom: .15rem;
     background: none;
     padding: 0;
@@ -263,8 +266,8 @@
 
 /* ── Bandeau CTA orange ── */
 .jnl-cta {
-    background: #e07422;
-    border-radius: 10px;
+    background: var(--orange, #e67e22);
+    border-radius: 12px;
     padding: 1.2rem 1.5rem;
     display: flex;
     align-items: center;
