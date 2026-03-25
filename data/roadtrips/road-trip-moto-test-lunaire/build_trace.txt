@@ -1,11 +1,11 @@
 [BUILD] ═══════════════════════════════════════════════════════
-[BUILD] GÉNÉRATION ROAD TRIP — Road trip moto Écosse 2026
+[BUILD] GÉNÉRATION ROAD TRIP — Road trip moto test lunaire
 [BUILD] ═══════════════════════════════════════════════════════
-[BUILD] Démarrage : 2026-03-25T19:41:48
+[BUILD] Démarrage : 2026-03-25T19:42:19
 [BUILD] project_dir = F:\RoadBook HTML\test v14
 [BUILD] site_root = F:\RoadBook HTML\test v14\build
 [BUILD] MODULE_DIR = F:\Automate_YT
-[BUILD] slug = road-trip-moto-ecosse-2026
+[BUILD] slug = road-trip-moto-test-lunaire
 [BUILD] trip_year = 2026
 [BUILD] use_online = False
 
@@ -19,13 +19,13 @@
 [DIRS] Dossiers créés :
 [DIRS]   site_root = F:\RoadBook HTML\test v14\build
 [DIRS]   roadtrips = F:\RoadBook HTML\test v14\build\roadtrips
-[DIRS]   data_trip = F:\RoadBook HTML\test v14\build\data\roadtrips\road-trip-moto-ecosse-2026
-[DIRS]   sources = F:\RoadBook HTML\test v14\build\data\roadtrips\road-trip-moto-ecosse-2026\sources
-[DIRS]   images_trip = F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-ecosse-2026
+[DIRS]   data_trip = F:\RoadBook HTML\test v14\build\data\roadtrips\road-trip-moto-test-lunaire
+[DIRS]   sources = F:\RoadBook HTML\test v14\build\data\roadtrips\road-trip-moto-test-lunaire\sources
+[DIRS]   images_trip = F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-test-lunaire
 [DIRS]   kurviger = F:\RoadBook HTML\test v14\build\kurviger
 [DIRS]   roadbooks = F:\RoadBook HTML\test v14\build\roadbooks
-[DIRS]   roadbooks_html = F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-ecosse-2026
-[DIRS]   status = F:\RoadBook HTML\test v14\build\data\roadtrips\road-trip-moto-ecosse-2026
+[DIRS]   roadbooks_html = F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-test-lunaire
+[DIRS]   status = F:\RoadBook HTML\test v14\build\data\roadtrips\road-trip-moto-test-lunaire
 [STEP  18%] Prélecture du CSV…
 [CSV] Points chargés : 42
 [STEP  26%] Calcul des journées…
@@ -35,20 +35,20 @@
 [ENRICH] Enrichissement terminé (online=False)
 [STEP  52%] Génération du roadbook HTML détaillé…
 [ROADBOOK] HTML généré :
-[ROADBOOK]   index = F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-ecosse-2026\index.html
-[ROADBOOK]   jours = F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-ecosse-2026\jours
-[CSS] ✅ roadbook-jour-override.css copié dans F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-ecosse-2026\css
+[ROADBOOK]   index = F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-test-lunaire\index.html
+[ROADBOOK]   jours = F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-test-lunaire\jours
+[CSS] ✅ roadbook-jour-override.css copié dans F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-test-lunaire\css
 [ROADBOOK] ✅ Tous les fichiers roadbook générés
 [STEP  62%] Copie des ressources…
 [COPY] Ressources copiées :
-[COPY]   hero → F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-ecosse-2026\pexels-pixabay-39391.jpg
-[COPY]   qr → F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-ecosse-2026\téléchargement.png
-[COPY]   kurviger → F:\RoadBook HTML\test v14\build\kurviger\road-trip-moto-ecosse-2026.kurviger
-[COPY]   csv → F:\RoadBook HTML\test v14\build\data\roadtrips\road-trip-moto-ecosse-2026\sources\road-trip-moto-ecosse-2026.csv
+[COPY]   hero → F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-test-lunaire\pexels-pixabay-39391.jpg
+[COPY]   qr → F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-test-lunaire\téléchargement.png
+[COPY]   kurviger → F:\RoadBook HTML\test v14\build\kurviger\road-trip-moto-test-lunaire.kurviger
+[COPY]   csv → F:\RoadBook HTML\test v14\build\data\roadtrips\road-trip-moto-test-lunaire\sources\road-trip-moto-test-lunaire.csv
 [STEP  72%] Création du HTML imprimable du PDF…
-[PDF] HTML imprimable créé : F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-ecosse-2026\roadbook_previsionnel.html
+[PDF] HTML imprimable créé : F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-test-lunaire\roadbook_previsionnel.html
 [STEP  80%] Conversion HTML → PDF…
-[PDF] ✅ PDF généré : F:\RoadBook HTML\test v14\build\roadbooks\road-trip-moto-ecosse-2026-roadbook.pdf
+[PDF] ✅ PDF généré : F:\RoadBook HTML\test v14\build\roadbooks\road-trip-moto-test-lunaire-roadbook.pdf
 [STEP  88%] Génération de la page principale du road trip…
 
 [TEMPLATE] ═══ RENDU VIA MOTEUR DE TEMPLATES ═══
@@ -60,7 +60,7 @@
 [MAIN PAGE]   project_dir = F:\RoadBook HTML\test v14
 [MAIN PAGE]   MODULE_DIR = F:\Automate_YT
 [MAIN PAGE] Données construites : 37 clés
-[MAIN PAGE]   title = Road trip moto Écosse 2026
+[MAIN PAGE]   title = Road trip moto test lunaire
 [MAIN PAGE]   total_km_label = 3 009 km
 [MAIN PAGE]   route_hint = Direct Annecy -Douvres → Camping Clachtoll Beach Campsite
 [MAIN PAGE]   has_shorts = False
@@ -83,9 +83,9 @@
 [TEMPLATE]   Référence CSS : roadbook.css ✅
 [RENDER] Résolution des placeholders...
 [RENDER] ✅ Tous les placeholders résolus
-[RENDER] HTML final : 16916 caractères
-[BUILD] ✅ Page principale écrite : F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-ecosse-2026.html
-[BUILD]   Taille HTML : 16916 caractères
+[RENDER] HTML final : 16931 caractères
+[BUILD] ✅ Page principale écrite : F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-test-lunaire.html
+[BUILD]   Taille HTML : 16931 caractères
 [CSS] Recherche du dossier CSS...
 [CSS]   F:\Automate_YT\templates\css → TROUVÉ ✅
 [CSS]   F:\Automate_YT\templates\templates\css → absent
@@ -104,7 +104,7 @@
 [BUILD] ✅ CSS blocs vérifié : F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook-blocs.css EXISTE
 
 [VERIFY] ═══ VÉRIFICATION DES FICHIERS RÉFÉRENCÉS ═══
-[VERIFY] Page HTML : F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-ecosse-2026.html
+[VERIFY] Page HTML : F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-test-lunaire.html
 [VERIFY] Dossier roadtrips : F:\RoadBook HTML\test v14\build\roadtrips
 [VERIFY] Site root : F:\RoadBook HTML\test v14\build
 [VERIFY] URLs trouvées dans le HTML : 18
@@ -114,24 +114,24 @@
 [VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook-fusion.css : ✅ EXISTE
 [VERIFY]   css/roadbook-blocs.css
 [VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook-blocs.css : ✅ EXISTE
-[VERIFY]   /images/roadtrips/road-trip-moto-ecosse-2026/pexels-pixabay-39391.jpg
-[VERIFY]     → F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-ecosse-2026\pexels-pixabay-39391.jpg : ✅ EXISTE
-[VERIFY]   /roadbooks-html/road-trip-moto-ecosse-2026/index.html
-[VERIFY]     → F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-ecosse-2026\index.html : ✅ EXISTE
-[VERIFY]   /roadtrips/road-trip-moto-ecosse-2026-journal.html
-[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-ecosse-2026-journal.html : ✅ EXISTE
-[VERIFY]   /kurviger/road-trip-moto-ecosse-2026.kurviger
-[VERIFY]     → F:\RoadBook HTML\test v14\build\kurviger\road-trip-moto-ecosse-2026.kurviger : ✅ EXISTE
-[VERIFY]   /kurviger/road-trip-moto-ecosse-2026.kurviger
-[VERIFY]     → F:\RoadBook HTML\test v14\build\kurviger\road-trip-moto-ecosse-2026.kurviger : ✅ EXISTE
-[VERIFY]   /roadbooks/road-trip-moto-ecosse-2026-roadbook.pdf
-[VERIFY]     → F:\RoadBook HTML\test v14\build\roadbooks\road-trip-moto-ecosse-2026-roadbook.pdf : ✅ EXISTE
-[VERIFY]   /roadbooks-html/road-trip-moto-ecosse-2026/index.html
-[VERIFY]     → F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-ecosse-2026\index.html : ✅ EXISTE
-[VERIFY]   /images/roadtrips/road-trip-moto-ecosse-2026/téléchargement.png
-[VERIFY]     → F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-ecosse-2026\téléchargement.png : ✅ EXISTE
-[VERIFY]   /roadtrips/road-trip-moto-ecosse-2026-journal.html
-[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-ecosse-2026-journal.html : ✅ EXISTE
+[VERIFY]   /images/roadtrips/road-trip-moto-test-lunaire/pexels-pixabay-39391.jpg
+[VERIFY]     → F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-test-lunaire\pexels-pixabay-39391.jpg : ✅ EXISTE
+[VERIFY]   /roadbooks-html/road-trip-moto-test-lunaire/index.html
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-test-lunaire\index.html : ✅ EXISTE
+[VERIFY]   /roadtrips/road-trip-moto-test-lunaire-journal.html
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-test-lunaire-journal.html : ❌ MANQUANT
+[VERIFY]   /kurviger/road-trip-moto-test-lunaire.kurviger
+[VERIFY]     → F:\RoadBook HTML\test v14\build\kurviger\road-trip-moto-test-lunaire.kurviger : ✅ EXISTE
+[VERIFY]   /kurviger/road-trip-moto-test-lunaire.kurviger
+[VERIFY]     → F:\RoadBook HTML\test v14\build\kurviger\road-trip-moto-test-lunaire.kurviger : ✅ EXISTE
+[VERIFY]   /roadbooks/road-trip-moto-test-lunaire-roadbook.pdf
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadbooks\road-trip-moto-test-lunaire-roadbook.pdf : ✅ EXISTE
+[VERIFY]   /roadbooks-html/road-trip-moto-test-lunaire/index.html
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-test-lunaire\index.html : ✅ EXISTE
+[VERIFY]   /images/roadtrips/road-trip-moto-test-lunaire/téléchargement.png
+[VERIFY]     → F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-test-lunaire\téléchargement.png : ✅ EXISTE
+[VERIFY]   /roadtrips/road-trip-moto-test-lunaire-journal.html
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-test-lunaire-journal.html : ❌ MANQUANT
 [VERIFY]   /roadtrips.html
 [VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips.html : ❌ MANQUANT
 [VERIFY]   /roadtrips.html
@@ -140,23 +140,23 @@
 [VERIFY]     → F:\RoadBook HTML\test v14\build\a-propos.html : ❌ MANQUANT
 
 [HERO] ═══ VÉRIFICATION IMAGE HERO ═══
-[HERO] Chemin dans le HTML : /images/roadtrips/road-trip-moto-ecosse-2026/pexels-pixabay-39391.jpg
-[HERO] Résolu vers : F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-ecosse-2026\pexels-pixabay-39391.jpg
+[HERO] Chemin dans le HTML : /images/roadtrips/road-trip-moto-test-lunaire/pexels-pixabay-39391.jpg
+[HERO] Résolu vers : F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-test-lunaire\pexels-pixabay-39391.jpg
 [HERO] Fichier existe : True
 [HERO] ✅ Taille : 2141 KB
 
 [HTML] ═══ EXTRAIT DU HTML GÉNÉRÉ (hero) ═══
-[HTML] L14: <header class="hero hero-image" style="background-image:url('/images/roadtrips/road-trip-moto-ecosse-2026/pexels-pixabay-39391.jpg')">
+[HTML] L14: <header class="hero hero-image" style="background-image:url('/images/roadtrips/road-trip-moto-test-lunaire/pexels-pixabay-39391.jpg')">
 [HTML] L15: <div class="wrap hero-inner">
 
 [PUBLIC] ═══ URLS PUBLIQUES ATTENDUES ═══
-[PUBLIC]   Page principale: https://lcdmh.com/roadtrips/road-trip-moto-ecosse-2026.html
-[PUBLIC]   Journal: https://lcdmh.com/roadtrips/road-trip-moto-ecosse-2026-journal.html
-[PUBLIC]   Hero image: https://lcdmh.com/images/roadtrips/road-trip-moto-ecosse-2026/pexels-pixabay-39391.jpg
-[PUBLIC]   QR code: https://lcdmh.com/images/roadtrips/road-trip-moto-ecosse-2026/téléchargement.png
-[PUBLIC]   PDF: https://lcdmh.com/roadbooks/road-trip-moto-ecosse-2026-roadbook.pdf
-[PUBLIC]   Roadbook HTML: https://lcdmh.com/roadbooks-html/road-trip-moto-ecosse-2026/index.html
-[PUBLIC]   Kurviger: https://lcdmh.com/kurviger/road-trip-moto-ecosse-2026.kurviger
+[PUBLIC]   Page principale: https://lcdmh.com/roadtrips/road-trip-moto-test-lunaire.html
+[PUBLIC]   Journal: https://lcdmh.com/roadtrips/road-trip-moto-test-lunaire-journal.html
+[PUBLIC]   Hero image: https://lcdmh.com/images/roadtrips/road-trip-moto-test-lunaire/pexels-pixabay-39391.jpg
+[PUBLIC]   QR code: https://lcdmh.com/images/roadtrips/road-trip-moto-test-lunaire/téléchargement.png
+[PUBLIC]   PDF: https://lcdmh.com/roadbooks/road-trip-moto-test-lunaire-roadbook.pdf
+[PUBLIC]   Roadbook HTML: https://lcdmh.com/roadbooks-html/road-trip-moto-test-lunaire/index.html
+[PUBLIC]   Kurviger: https://lcdmh.com/kurviger/road-trip-moto-test-lunaire.kurviger
 [PUBLIC]   CSS roadbook: https://lcdmh.com/roadtrips/css/roadbook.css
 [PUBLIC]   CSS fusion: https://lcdmh.com/roadtrips/css/roadbook-fusion.css
 [PUBLIC]   CSS blocs: https://lcdmh.com/roadtrips/css/roadbook-blocs.css
