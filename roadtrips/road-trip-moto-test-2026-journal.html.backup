@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Road trip moto Écosse 2026 — Journal de bord du voyageur - Journal | LCDMH</title>
+<title>Road trip moto test 2026 — Journal de bord du voyageur - Journal | LCDMH</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -201,14 +201,46 @@ a { color: inherit; text-decoration: none; }
 </head>
 <body>
 <header class="header">
-    <h1>Road trip moto Écosse 2026 — Journal de bord du voyageur</h1>
+    <h1>Road trip moto test 2026 — Journal de bord du voyageur</h1>
     <p class="header-subtitle">Journal de bord du voyageur</p>
     <p>Suivez l&#x27;aventure au jour le jour. Le journal complet regroupe les entrées quotidiennes, les shorts terrain et les notes publiées pendant le voyage.</p>
-    <a class="btn" href="/roadtrips/road-trip-moto-ecosse-2026.html">← Revenir à la page principale</a>
+    <a class="btn" href="/roadtrips/road-trip-moto-test-2026.html">← Revenir à la page principale</a>
 </header>
 <main class="wrap">
     <div class="section-kicker">Entrées du journal</div>
-    <article class="journal-empty"><h2>Le journal arrive bientôt</h2><p>Les shorts et notes publiés pendant le voyage apparaîtront ici automatiquement.</p></article>
+    
+
+        
+
+        <!-- Entree importee le 2026-03-25 22:05 -->
+        <div class="journal-card">
+            <div class="journal-thumb">
+                <span class="journal-badge">25 MARS 2026</span>
+                <a href="https://www.youtube.com/watch?v=do24m4FW3FM" target="_blank">
+                    <img src="https://img.youtube.com/vi/do24m4FW3FM/hqdefault.jpg" alt="Bivouac au Clergeon" loading="lazy">
+                </a>
+            </div>
+            <div class="journal-body">
+                <h3>Bivouac au Clergeon</h3>
+                <p>Dans cette vidéo je vais vous parler du duvet Sonic 0 et puis du matériel que j&#x27;ai utilisé avec le matelas de sol voilà donc je vous ferai une vidéo b</p>
+                <a href="https://www.youtube.com/watch?v=do24m4FW3FM" target="_blank" class="btn">Voir la video</a>
+            </div>
+        </div>
+<!-- Entree importee le 2026-03-25 21:58 -->
+        <div class="journal-card">
+            <div class="journal-thumb">
+                <span class="journal-badge">25 MARS 2026</span>
+                <a href="https://www.youtube.com/watch?v=uI7B5kLR95M" target="_blank">
+                    <img src="https://img.youtube.com/vi/uI7B5kLR95M/hqdefault.jpg" alt="Komobi détecteur de collision, tracker GPS et géolocalisation antivol" loading="lazy">
+                </a>
+            </div>
+            <div class="journal-body">
+                <h3>Komobi détecteur de collision, tracker GPS et géolocalisation antivol</h3>
+                <p>Rouler seul en moto, c’est la liberté totale. Mais en cas de chute, de panne ou de problème loin de tout, une question se pose : qui peut prévenir à v</p>
+                <a href="https://www.youtube.com/watch?v=uI7B5kLR95M" target="_blank" class="btn">Voir la video</a>
+            </div>
+        </div>
+<article class="journal-empty"><h2>Le journal arrive bientôt</h2><p>Les shorts et notes publiés pendant le voyage apparaîtront ici automatiquement.</p></article>
 </main>
 </body>
 </html>
