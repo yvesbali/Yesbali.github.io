@@ -1,9 +1,7 @@
 name: Auto-publish road-trip-moto-sandbox-text
 on:
   schedule:
-    - cron: '50 19 * * *'
-    - cron: '55 19 * * *'
-    - cron: '0 20 * * *'
+    - cron: "0 4 * * *"
   workflow_dispatch:
 
 permissions:
@@ -14,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -33,7 +33,6 @@ jobs:
       - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git diff --cached --quiet || git commit -m "Auto-publish: nouvelles videos road-trip-moto-sandbox-text"
-          git push
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-publish: nouvelles videos road-trip-moto-sandbox-text" && git push)
