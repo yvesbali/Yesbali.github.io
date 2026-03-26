@@ -1,12 +1,7 @@
-name: Auto-publish roadtripsroad-trip-moto-sandbox-test
+name: Auto-publish road-trip-moto-sandbox-test
 on:
   schedule:
-    - cron: '46 17 * * *'
-    - cron: '51 17 * * *'
-    - cron: '56 17 * * *'
-    - cron: '1 18 * * *'
-    - cron: '6 18 * * *'
-    - cron: '11 18 * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -31,12 +26,12 @@ jobs:
           YT_TOKEN_ANALYTICS: ${{ secrets.YT_TOKEN_ANALYTICS }}
         run: |
           python scripts/auto_publish_roadtrip.py \
-            --config data/roadtrips/roadtripsroad-trip-moto-sandbox-test/auto_publish_config.json
+            --config data/roadtrips/road-trip-moto-sandbox-test/auto_publish_config.json
 
       - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          git diff --cached --quiet || git commit -m "Auto-publish: nouvelles videos roadtripsroad-trip-moto-sandbox-test"
+          git diff --cached --quiet || git commit -m "Auto-publish: nouvelles videos road-trip-moto-sandbox-test"
           git push
