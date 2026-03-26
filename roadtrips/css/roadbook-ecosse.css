@@ -1,4 +1,4 @@
-/* roadbook-ecosse.css — Copie EXACTE des styles inline page Ecosse */
+/* roadbook-ecosse.css — EXACTE page Ecosse + fix vignettes */
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--orange:#e67e22;--orange-dark:#d35400;--vert:#2e7d32;--vert-dark:#1b5e20;--noir:#1a1a1a;--bg:#f7f7f5;--card:#fff;--border:#e5e5e5;--muted:#6f7782;--hero1:#163251;--hero2:#244b73}
 body{font-family:Arial,Helvetica,sans-serif !important;background:var(--bg);color:var(--noir);line-height:1.7}
@@ -26,13 +26,13 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 .qr-box img{max-width:190px;margin:10px auto 0;border-radius:12px;background:#fff;padding:10px}
 .intro-copy p{color:#425a74;font-size:1rem;line-height:1.8}
 .journal-preview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.journal-card{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden}
-.journal-card img{aspect-ratio:16/9;object-fit:cover;width:100%}
-.journal-body{padding:16px}
-.journal-meta{font-size:.75rem;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.journal-card{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.journal-card img{aspect-ratio:16/9;object-fit:cover;width:100%;border-radius:20px 20px 0 0}
+.journal-body{padding:16px;display:flex;flex-direction:column;flex:1}
+.journal-meta{font-size:.75rem;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;text-align:center}
 .journal-body h3{font-size:1.05rem;color:#163251;margin-bottom:6px}
 .journal-body p{font-size:.92rem;color:#536579;line-height:1.6}
-.journal-actions{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+.journal-actions{margin-top:auto;padding-top:14px;display:flex;gap:10px;flex-wrap:wrap}
 .follow-box{margin-top:26px;background:#fff8f2 !important;border:1px solid #f1d4ba !important;border-radius:22px !important;padding:22px;display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
 .follow-box h3{font-size:1.35rem;color:#163251 !important;margin-bottom:6px}
 .follow-box p{color:#536579 !important;max-width:740px}
@@ -40,13 +40,13 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 .jnl-cta-text h3{color:#163251 !important}
 .jnl-cta-text p{color:#536579 !important}
 .jnl-cta .btn.btn-white{background:var(--orange) !important;color:#fff !important}
-.journal-preview .short-card{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;padding:0;margin:0;box-shadow:none}
+.journal-preview .short-card{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;padding:0;margin:0;box-shadow:none;display:flex;flex-direction:column}
 .journal-preview .short-thumb{border-radius:0;margin:0;position:relative}
-.journal-preview .short-thumb img{aspect-ratio:16/9;object-fit:cover;width:100%;border-radius:0}
-.journal-preview .short-badge{display:block;font-size:.75rem;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;position:static;background:none;padding:0}
-.journal-preview .short-body{padding:16px}
+.journal-preview .short-thumb img{aspect-ratio:16/9;object-fit:cover;width:100%;border-radius:20px 20px 0 0}
+.journal-preview .short-badge{display:block;font-size:.75rem;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;text-align:center;position:static;background:none;padding:0}
+.journal-preview .short-body{padding:16px;display:flex;flex-direction:column;flex:1}
 .journal-preview .short-body h3{font-size:1.05rem;color:#163251;margin-bottom:6px}
 .journal-preview .short-body p{font-size:.92rem;color:#536579;line-height:1.6}
-.journal-preview .short-body .btn{display:inline-block;padding:14px 20px;border-radius:999px !important;font-weight:700;background:#243c5a !important;color:#fff;font-size:.88rem;margin-top:8px}
+.journal-preview .short-body .btn{display:inline-block;padding:14px 20px;border-radius:999px !important;font-weight:700;background:#243c5a !important;color:#fff;font-size:.88rem;margin-top:auto;align-self:flex-start}
 footer{padding:26px 0 46px;color:#6b7785;font-size:.88rem}
 @media(max-width:900px){.resources-grid,.journal-preview{grid-template-columns:1fr}.hero{min-height:auto}.hero-inner{padding-top:28px;padding-bottom:56px}.resources{margin-top:20px}.follow-box{flex-direction:column;text-align:center}}
