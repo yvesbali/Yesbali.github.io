@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
-"""auto_publish_roadtrip.py — Script execute par GitHub Actions.
+"""auto_publish_roadtrip.py v2 — Script execute par GitHub Actions.
 
-Interroge l'API YouTube pour recuperer les videos d'une playlist,
-compare avec celles deja presentes sur le site, et injecte les nouvelles
-dans le journal de bord + page principale (si < 3 vignettes).
+Utilise les credentials OAuth existants (YT_CLIENT_SECRETS + YT_TOKEN_ANALYTICS)
+pour interroger l'API YouTube, recuperer les videos d'une playlist,
+et injecter les nouvelles dans le journal de bord + page principale.
+
+Secrets GitHub requis (deja configures):
+    YT_CLIENT_SECRETS  — contenu JSON du fichier client_secrets.json
+    YT_TOKEN_ANALYTICS — contenu JSON du token OAuth
 
 Usage (GitHub Actions):
     python scripts/auto_publish_roadtrip.py \
@@ -20,60 +24,82 @@ import json
 import os
 import re
 import sys
-import urllib.request
-import urllib.parse
 from datetime import datetime
 from html import escape
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 
-# === YouTube API ===
+# === YouTube API via OAuth ===
 
-def _get_api_key() -> str:
-    key = os.environ.get("YT_API_KEY", "")
-    if not key:
-        raise RuntimeError("Variable d'environnement YT_API_KEY non definie")
-    return key
+def _setup_credentials() -> Path:
+    """Ecrit les fichiers credentials depuis les variables d'environnement."""
+    creds_dir = Path("/tmp/yt_creds") if not sys.platform.startswith("win") else Path("_yt_creds")
+    creds_dir.mkdir(parents=True, exist_ok=True)
+
+    # Client secrets
+    cs = os.environ.get("YT_CLIENT_SECRETS", "")
+    if cs:
+        (creds_dir / "client_secrets.json").write_text(cs, encoding="utf-8")
+
+    # Token OAuth
+    tok = os.environ.get("YT_TOKEN_ANALYTICS", "")
+    if not tok:
+        tok = os.environ.get("YT_TOKEN", "")
+    if tok:
+        (creds_dir / "token.json").write_text(tok, encoding="utf-8")
+
+    return creds_dir
 
 
-def _yt_api_get(endpoint: str, params: Dict[str, str]) -> Dict[str, Any]:
-    params["key"] = _get_api_key()
-    url = f"https://www.googleapis.com/youtube/v3/{endpoint}?" + urllib.parse.urlencode(params)
-    req = urllib.request.Request(url)
-    with urllib.request.urlopen(req, timeout=15) as resp:
-        return json.loads(resp.read().decode("utf-8"))
+def _get_youtube_service():
+    """Cree un service YouTube Data API v3 via OAuth."""
+    try:
+        from google.oauth2.credentials import Credentials
+        from googleapiclient.discovery import build
+    except ImportError:
+        print("ERREUR: pip install google-api-python-client google-auth")
+        sys.exit(1)
+
+    creds_dir = _setup_credentials()
+    token_path = creds_dir / "token.json"
+
+    if not token_path.exists():
+        print(f"ERREUR: token OAuth introuvable. Secrets GitHub manquants?")
+        sys.exit(1)
+
+    token_data = json.loads(token_path.read_text(encoding="utf-8"))
+    creds = Credentials.from_authorized_user_info(token_data)
+
+    return build("youtube", "v3", credentials=creds)
 
 
 def fetch_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
-    """Recupere toutes les videos d'une playlist YouTube."""
+    """Recupere toutes les videos d'une playlist YouTube via OAuth."""
+    service = _get_youtube_service()
     videos: List[Dict[str, Any]] = []
-    page_token = ""
-    
+    page_token = None
+
     while True:
-        params = {
-            "part": "snippet,contentDetails",
-            "playlistId": playlist_id,
-            "maxResults": "50",
-        }
-        if page_token:
-            params["pageToken"] = page_token
-        
-        data = _yt_api_get("playlistItems", params)
-        
-        for item in data.get("items", []):
+        resp = service.playlistItems().list(
+            part="snippet,contentDetails",
+            playlistId=playlist_id,
+            maxResults=50,
+            pageToken=page_token,
+        ).execute()
+
+        for item in resp.get("items", []):
             snippet = item.get("snippet", {})
             content = item.get("contentDetails", {})
             video_id = content.get("videoId", "")
-            
+
             if not video_id:
                 continue
-            
+
             title = snippet.get("title", "")
             if title in ("Deleted video", "Private video"):
                 continue
-            
-            # Thumbnail
+
             thumbs = snippet.get("thumbnails", {})
             thumb = ""
             for key in ("maxres", "standard", "high", "medium", "default"):
@@ -83,32 +109,28 @@ def fetch_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
                         break
             if not thumb:
                 thumb = f"https://img.youtube.com/vi/{video_id}/hqdefault.jpg"
-            
-            published = snippet.get("publishedAt", "")[:10]
-            description = snippet.get("description", "")
-            
+
             videos.append({
                 "video_id": video_id,
                 "url": f"https://www.youtube.com/watch?v={video_id}",
                 "title": title,
-                "description": description,
+                "description": snippet.get("description", ""),
                 "thumb": thumb,
-                "published": published,
+                "published": snippet.get("publishedAt", "")[:10],
                 "position": snippet.get("position", 0),
             })
-        
-        page_token = data.get("nextPageToken", "")
+
+        page_token = resp.get("nextPageToken")
         if not page_token:
             break
-    
+
     videos.sort(key=lambda v: v.get("position", 0))
     return videos
 
 
-# === Extraction des videos deja presentes ===
+# === Detection des videos deja presentes ===
 
 def _extract_existing_video_ids(html_content: str) -> set:
-    """Extrait les IDs YouTube deja presents dans un fichier HTML."""
     pattern = r'(?:youtube\.com/watch\?v=|youtu\.be/|youtube\.com/shorts/)([A-Za-z0-9_-]{11})'
     return set(re.findall(pattern, html_content))
 
@@ -179,7 +201,6 @@ def inject_into_journal(journal_path: Path, card_html: str) -> bool:
         content = re.sub(pattern, r'\1\n' + card_html, content, count=1, flags=re.IGNORECASE)
         journal_path.write_text(content, encoding="utf-8")
         return True
-    # Fallback: avant journal-empty
     if 'class="journal-empty"' in content:
         idx = content.index('class="journal-empty"')
         tag_start = content.rfind('<', 0, idx)
@@ -210,78 +231,75 @@ def main():
     parser.add_argument("--config", required=True, help="Path to auto_publish_config.json")
     parser.add_argument("--dry-run", action="store_true", help="Ne pas modifier les fichiers")
     args = parser.parse_args()
-    
+
     config_path = Path(args.config)
     if not config_path.exists():
         print(f"ERREUR: config introuvable: {config_path}")
         sys.exit(1)
-    
+
     with open(config_path, "r", encoding="utf-8") as f:
         config = json.load(f)
-    
+
     slug = config["slug"]
     playlist_id = config["playlist_id"]
     journal_rel = config.get("journal_page", f"roadtrips/{slug}-journal.html")
     main_rel = config.get("main_page", f"roadtrips/{slug}.html")
     max_cards = config.get("max_main_cards", 3)
-    
-    # Determiner la racine du repo (on est dans le repo quand GitHub Actions execute)
+
     repo_root = Path(".")
     journal_path = repo_root / journal_rel
     main_path = repo_root / main_rel
-    
+
     print(f"=== Auto-publish pour {slug} ===")
     print(f"Playlist: {config.get('playlist_name', playlist_id)}")
     print(f"Journal: {journal_path} (existe: {journal_path.exists()})")
     print(f"Page principale: {main_path} (existe: {main_path.exists()})")
-    
+
     if not journal_path.exists():
         print(f"ERREUR: journal introuvable: {journal_path}")
         sys.exit(1)
-    
-    # Recuperer les videos de la playlist
+
+    # Recuperer les videos
     print(f"\nRecuperation des videos de la playlist...")
     try:
         videos = fetch_playlist_videos(playlist_id)
     except Exception as exc:
         print(f"ERREUR API YouTube: {exc}")
         sys.exit(1)
-    
+
     print(f"  {len(videos)} video(s) dans la playlist")
-    
+
     if not videos:
         print("Aucune video, rien a faire.")
         return
-    
-    # Identifier les videos deja presentes
+
+    # Videos deja presentes
     journal_content = journal_path.read_text(encoding="utf-8")
     existing_ids = _extract_existing_video_ids(journal_content)
     if main_path.exists():
-        main_content = main_path.read_text(encoding="utf-8")
-        existing_ids.update(_extract_existing_video_ids(main_content))
-    
+        existing_ids.update(_extract_existing_video_ids(main_path.read_text(encoding="utf-8")))
+
     new_videos = [v for v in videos if v["video_id"] not in existing_ids]
     print(f"  {len(new_videos)} nouvelle(s) video(s) a publier")
-    
+
     if not new_videos:
         print("Tout est deja a jour.")
         return
-    
+
     if args.dry_run:
         print("\n[DRY RUN] Videos qui seraient publiees:")
         for v in new_videos:
             print(f"  - {v['title']}")
         return
-    
-    # Injecter les nouvelles videos
+
+    # Injecter
     date_label = _format_date_fr()
     journal_modified = False
     main_modified = False
-    
+
     for i, video in enumerate(new_videos):
         print(f"\n  [{i+1}/{len(new_videos)}] {video['title']}")
-        
-        # Journal de bord: toujours
+
         card = _make_journal_card(video, date_label)
         ok = inject_into_journal(journal_path, card)
         if ok:
@@ -289,16 +307,15 @@ def main():
             print(f"    Journal: OK")
         else:
             print(f"    Journal: ECHEC")
-        
-        # Page principale: si < max_cards
+
         if main_path.exists():
             card = _make_main_card(video, date_label, slug)
             ok = inject_into_main(main_path, card, max_cards)
             if ok:
                 main_modified = True
                 print(f"    Page principale: OK")
-    
-    # Sauvegarder l'etat (quelles videos ont ete publiees)
+
+    # Sauvegarder l'etat
     state_path = config_path.parent / "published_videos.json"
     published = []
     if state_path.exists():
@@ -307,22 +324,18 @@ def main():
                 published = json.load(f)
         except Exception:
             pass
-    
+
     for v in new_videos:
         published.append({
             "video_id": v["video_id"],
             "title": v["title"],
             "published_at": datetime.now().isoformat(timespec="seconds"),
         })
-    
+
     with open(state_path, "w", encoding="utf-8") as f:
         json.dump(published, f, ensure_ascii=False, indent=2)
-    
+
     print(f"\n=== Termine: {len(new_videos)} video(s) publiee(s) ===")
-    if journal_modified:
-        print(f"  Journal modifie: {journal_rel}")
-    if main_modified:
-        print(f"  Page principale modifiee: {main_rel}")
 
 
 if __name__ == "__main__":
