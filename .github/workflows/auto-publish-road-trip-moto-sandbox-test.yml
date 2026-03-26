@@ -1,8 +1,10 @@
-name: Auto-publish road trip videos
+name: Auto-publish road-trip-moto-sandbox-test
 on:
   schedule:
-    - cron: '40 13 * * *'  # Tous les jours a 15:40 heure de Paris
-  workflow_dispatch:  # Declenchement manuel possible
+    - cron: '19 14 * * *'
+    - cron: '24 14 * * *'
+    - cron: '29 14 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -20,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: pip install google-api-python-client google-auth
 
-      - name: Fetch new videos and inject
+      - name: Fetch and inject new videos
         env:
           YT_CLIENT_SECRETS: ${{ secrets.YT_CLIENT_SECRETS }}
           YT_TOKEN_ANALYTICS: ${{ secrets.YT_TOKEN_ANALYTICS }}
@@ -28,7 +30,7 @@ jobs:
           python scripts/auto_publish_roadtrip.py \
             --config data/roadtrips/road-trip-moto-sandbox-test/auto_publish_config.json
 
-      - name: Commit and push
+      - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
