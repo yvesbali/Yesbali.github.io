@@ -1,0 +1,42 @@
+name: Auto-publish roadtripsroad-trip-moto-sandbox-test
+on:
+  schedule:
+    - cron: '46 17 * * *'
+    - cron: '51 17 * * *'
+    - cron: '56 17 * * *'
+    - cron: '1 18 * * *'
+    - cron: '6 18 * * *'
+    - cron: '11 18 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install google-api-python-client google-auth
+
+      - name: Fetch and inject new videos
+        env:
+          YT_CLIENT_SECRETS: ${{ secrets.YT_CLIENT_SECRETS }}
+          YT_TOKEN_ANALYTICS: ${{ secrets.YT_TOKEN_ANALYTICS }}
+        run: |
+          python scripts/auto_publish_roadtrip.py \
+            --config data/roadtrips/roadtripsroad-trip-moto-sandbox-test/auto_publish_config.json
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Auto-publish: nouvelles videos roadtripsroad-trip-moto-sandbox-test"
+          git push
