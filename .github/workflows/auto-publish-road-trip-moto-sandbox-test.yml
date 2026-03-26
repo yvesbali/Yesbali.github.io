@@ -1,9 +1,9 @@
 name: Auto-publish road-trip-moto-sandbox-test
 on:
   schedule:
-    - cron: '19 14 * * *'
-    - cron: '24 14 * * *'
-    - cron: '29 14 * * *'
+    - cron: '15 15 * * *'
+    - cron: '20 15 * * *'
+    - cron: '25 15 * * *'
   workflow_dispatch:
 
 permissions:
@@ -23,12 +23,16 @@ jobs:
         run: pip install google-api-python-client google-auth
 
       - name: Fetch and inject new videos
+        id: inject
         env:
           YT_CLIENT_SECRETS: ${{ secrets.YT_CLIENT_SECRETS }}
           YT_TOKEN_ANALYTICS: ${{ secrets.YT_TOKEN_ANALYTICS }}
         run: |
           python scripts/auto_publish_roadtrip.py \
-            --config data/roadtrips/road-trip-moto-sandbox-test/auto_publish_config.json
+            --config data/roadtrips/road-trip-moto-sandbox-test/auto_publish_config.json 2>&1 | tee /tmp/result.txt
+          echo "log<<EOF" >> $GITHUB_OUTPUT
+          cat /tmp/result.txt >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Commit and push changes
         run: |
@@ -37,3 +41,32 @@ jobs:
           git add -A
           git diff --cached --quiet || git commit -m "Auto-publish: nouvelles videos road-trip-moto-sandbox-test"
           git push
+
+      - name: Send email notification
+        if: always()
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: |
+          python -c "
+          import smtplib
+          from email.mime.text import MIMEText
+          import os
+          log = '''${{ steps.inject.outputs.log }}'''
+          status = 'OK' if '${{ steps.inject.outcome }}' == 'success' else 'ERREUR'
+          msg = MIMEText(f'Statut: {status}\n\nLog:\n{log}', 'plain', 'utf-8')
+          msg['Subject'] = f'LCDMH Auto-publish {status} - road-trip-moto-sandbox-test'
+          msg['From'] = os.environ['GMAIL_USER']
+          msg['To'] = os.environ['GMAIL_USER']
+          with smtplib.SMTP_SSL('smtp.gmail.com', 465) as s:
+              s.login(os.environ['GMAIL_USER'], os.environ['GMAIL_APP_PASSWORD'])
+              s.send_message(msg)
+          print('Email envoye')
+          "
+```
+
+Sauvegarde, ferme notepad, puis :
+```
+git add -A
+git commit -m "Crons 17h15 17h20 17h25 + email notification"
+git push origin main
