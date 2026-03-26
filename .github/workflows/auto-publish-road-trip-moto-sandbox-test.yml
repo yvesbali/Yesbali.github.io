@@ -63,10 +63,3 @@ jobs:
               s.send_message(msg)
           print('Email envoye')
           "
-```
-
-Sauvegarde, ferme notepad, puis :
-```
-git add -A
-git commit -m "Crons 17h15 17h20 17h25 + email notification"
-git push origin main
