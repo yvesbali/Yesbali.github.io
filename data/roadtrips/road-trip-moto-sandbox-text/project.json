@@ -1,0 +1,28 @@
+{
+  "slug": "road-trip-moto-sandbox-text",
+  "trip_title": "roadtripsroad-trip-moto-sandbox-text",
+  "trip_year": 2026,
+  "project_dir": "F:\\RoadBook HTML\\test v14",
+  "site_root": "F:\\RoadBook HTML\\test v14\\build",
+  "resource_files": {
+    "hero": "F:\\RoadBook HTML\\test v14\\build\\images\\roadtrips\\road-trip-moto-sandbox-text\\pexels-pixabay-39391.jpg",
+    "qr": "F:\\RoadBook HTML\\test v14\\build\\images\\roadtrips\\road-trip-moto-sandbox-text\\téléchargement.png",
+    "kurviger": "F:\\RoadBook HTML\\test v14\\build\\kurviger\\road-trip-moto-sandbox-text.kurviger",
+    "csv": "F:\\RoadBook HTML\\test v14\\build\\data\\roadtrips\\road-trip-moto-sandbox-text\\sources\\road-trip-moto-sandbox-text.csv"
+  },
+  "video_seed_main": [],
+  "journal_entries_json": "F:\\RoadBook HTML\\test v14\\build\\data\\roadtrips\\road-trip-moto-sandbox-text\\journal_entries.json",
+  "generated": {
+    "roadbook_html_index": "F:\\RoadBook HTML\\test v14\\build\\roadbooks-html\\road-trip-moto-sandbox-text\\index.html",
+    "roadbook_printable_html": "F:\\RoadBook HTML\\test v14\\build\\roadbooks-html\\road-trip-moto-sandbox-text\\roadbook_previsionnel.html",
+    "roadbook_pdf": "F:\\RoadBook HTML\\test v14\\build\\roadbooks\\road-trip-moto-sandbox-text-roadbook.pdf",
+    "roadtrip_page": "F:\\RoadBook HTML\\test v14\\build\\roadtrips\\road-trip-moto-sandbox-text.html",
+    "journal_page": "F:\\RoadBook HTML\\test v14\\build\\roadtrips\\road-trip-moto-sandbox-text-journal.html",
+    "build_status": "F:\\RoadBook HTML\\test v14\\build\\data\\roadtrips\\road-trip-moto-sandbox-text\\build_status.json"
+  },
+  "publication_layout": {
+    "main_page": "road-trip-moto-sandbox-text.html",
+    "journal_page": "road-trip-moto-sandbox-text-journal.html",
+    "images_dir": "F:\\RoadBook HTML\\test v14\\build\\images\\roadtrips\\road-trip-moto-sandbox-text"
+  }
+}
