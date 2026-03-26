@@ -1,7 +1,7 @@
 name: Auto-publish road trip videos
 on:
   schedule:
-    - cron: '47 6 * * *'  # Tous les jours a 08:47 heure de Paris
+    - cron: '51 6 * * *'  # Tous les jours a 08:47 heure de Paris
   workflow_dispatch:  # Declenchement manuel possible
 
 permissions:
