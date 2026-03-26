@@ -1,9 +1,11 @@
 name: Auto-publish road-trip-moto-sandbox-test
 on:
   schedule:
-    - cron: '19 14 * * *'
-    - cron: '24 14 * * *'
-    - cron: '29 14 * * *'
+    - cron: '30 17 * * *'
+    - cron: '35 17 * * *'
+    - cron: '40 17 * * *'
+    - cron: '45 17 * * *'
+    - cron: '50 17 * * *'
   workflow_dispatch:
 
 permissions:
