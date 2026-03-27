@@ -1,7 +1,7 @@
 [BUILD] ═══════════════════════════════════════════════════════
 [BUILD] GÉNÉRATION ROAD TRIP — road-trip-moto-test-1
 [BUILD] ═══════════════════════════════════════════════════════
-[BUILD] Démarrage : 2026-03-27T09:22:21
+[BUILD] Démarrage : 2026-03-27T13:46:38
 [BUILD] project_dir = F:\RoadBook HTML\test v14
 [BUILD] site_root = F:\RoadBook HTML\test v14\build
 [BUILD] MODULE_DIR = F:\Automate_YT
@@ -11,10 +11,10 @@
 
 [STEP   5%] Analyse du dossier projet…
 [DETECT] Fichiers détectés :
-[DETECT]   CSV : F:\RoadBook HTML\test v14\build\data\roadtrips\road-trip-moto-test-1\sources\road-trip-moto-test-1.csv
+[DETECT]   CSV : F:\RoadBook HTML\test v14\test données roadbook.csv
 [DETECT]   Hero : F:\RoadBook HTML\test v14\pexels-pixabay-39391.jpg
 [DETECT]   QR : F:\RoadBook HTML\test v14\téléchargement.png
-[DETECT]   Kurviger : F:\RoadBook HTML\test v14\build\kurviger\road-trip-moto-test-1.kurviger
+[DETECT]   Kurviger : F:\RoadBook HTML\test v14\Nouveau dossier\build\kurviger\road-trip-moto-test-1.kurviger
 [STEP  12%] Création des dossiers de publication…
 [DIRS] Dossiers créés :
 [DIRS]   site_root = F:\RoadBook HTML\test v14\build
@@ -27,9 +27,9 @@
 [DIRS]   roadbooks_html = F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-test-1
 [DIRS]   status = F:\RoadBook HTML\test v14\build\data\roadtrips\road-trip-moto-test-1
 [STEP  18%] Prélecture du CSV…
-[CSV] Points chargés : 42
+[CSV] Points chargés : 61
 [STEP  26%] Calcul des journées…
-[DAYS] Journées calculées : 8
+[DAYS] Journées calculées : 11
 [DAYS] Avertissements : 0
 [STEP  38%] Enrichissement des journées…
 [ENRICH] Enrichissement terminé (online=True)
@@ -61,8 +61,8 @@
 [MAIN PAGE]   MODULE_DIR = F:\Automate_YT
 [MAIN PAGE] Données construites : 37 clés
 [MAIN PAGE]   title = road-trip-moto-test-1
-[MAIN PAGE]   total_km_label = 3 009 km
-[MAIN PAGE]   route_hint = Direct Annecy -Douvres → Camping Clachtoll Beach Campsite
+[MAIN PAGE]   total_km_label = 3 541 km
+[MAIN PAGE]   route_hint = Direct Annecy -Douvres → Kinloch Campsite
 [MAIN PAGE]   has_shorts = False
 [RENDER] render_page('main_roadtrip') appelé
 [RENDER]   extra_dirs = ['F:\\RoadBook HTML\\test v14', 'F:\\Automate_YT']
@@ -83,9 +83,9 @@
 [TEMPLATE]   Référence CSS : roadbook.css ✅
 [RENDER] Résolution des placeholders...
 [RENDER] ✅ Tous les placeholders résolus
-[RENDER] HTML final : 11951 caractères
+[RENDER] HTML final : 12984 caractères
 [BUILD] ✅ Page principale écrite : F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-test-1.html
-[BUILD]   Taille HTML : 11951 caractères
+[BUILD]   Taille HTML : 12984 caractères
 [CSS] Recherche du dossier CSS...
 [CSS]   F:\Automate_YT\templates\css → TROUVÉ ✅
 [CSS]   F:\Automate_YT\templates\templates\css → absent
