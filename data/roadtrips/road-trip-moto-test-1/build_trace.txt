@@ -1,7 +1,7 @@
 [BUILD] ═══════════════════════════════════════════════════════
-[BUILD] GÉNÉRATION ROAD TRIP — Road trip moto Test 1
+[BUILD] GÉNÉRATION ROAD TRIP — road-trip-moto-test-1
 [BUILD] ═══════════════════════════════════════════════════════
-[BUILD] Démarrage : 2026-03-27T08:27:56
+[BUILD] Démarrage : 2026-03-27T09:22:21
 [BUILD] project_dir = F:\RoadBook HTML\test v14
 [BUILD] site_root = F:\RoadBook HTML\test v14\build
 [BUILD] MODULE_DIR = F:\Automate_YT
@@ -11,10 +11,10 @@
 
 [STEP   5%] Analyse du dossier projet…
 [DETECT] Fichiers détectés :
-[DETECT]   CSV : F:\RoadBook HTML\test v14\Tour d-Ecosse mai 2026 8  jours  .csv
+[DETECT]   CSV : F:\RoadBook HTML\test v14\build\data\roadtrips\road-trip-moto-test-1\sources\road-trip-moto-test-1.csv
 [DETECT]   Hero : F:\RoadBook HTML\test v14\pexels-pixabay-39391.jpg
 [DETECT]   QR : F:\RoadBook HTML\test v14\téléchargement.png
-[DETECT]   Kurviger : F:\RoadBook HTML\test v14\Tour d-Ecosse mai 2026 complet.kurviger
+[DETECT]   Kurviger : F:\RoadBook HTML\test v14\build\kurviger\road-trip-moto-test-1.kurviger
 [STEP  12%] Création des dossiers de publication…
 [DIRS] Dossiers créés :
 [DIRS]   site_root = F:\RoadBook HTML\test v14\build
@@ -60,7 +60,7 @@
 [MAIN PAGE]   project_dir = F:\RoadBook HTML\test v14
 [MAIN PAGE]   MODULE_DIR = F:\Automate_YT
 [MAIN PAGE] Données construites : 37 clés
-[MAIN PAGE]   title = Road trip moto Test 1
+[MAIN PAGE]   title = road-trip-moto-test-1
 [MAIN PAGE]   total_km_label = 3 009 km
 [MAIN PAGE]   route_hint = Direct Annecy -Douvres → Camping Clachtoll Beach Campsite
 [MAIN PAGE]   has_shorts = False
@@ -122,7 +122,7 @@
 [VERIFY]   /roadbooks-html/road-trip-moto-test-1/index.html
 [VERIFY]     → F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-test-1\index.html : ✅ EXISTE
 [VERIFY]   /roadtrips/road-trip-moto-test-1-journal.html
-[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-test-1-journal.html : ❌ MANQUANT
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-test-1-journal.html : ✅ EXISTE
 [VERIFY]   /kurviger/road-trip-moto-test-1.kurviger
 [VERIFY]     → F:\RoadBook HTML\test v14\build\kurviger\road-trip-moto-test-1.kurviger : ✅ EXISTE
 [VERIFY]   /kurviger/road-trip-moto-test-1.kurviger
@@ -134,7 +134,7 @@
 [VERIFY]   /images/roadtrips/road-trip-moto-test-1/téléchargement.png
 [VERIFY]     → F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-test-1\téléchargement.png : ✅ EXISTE
 [VERIFY]   /roadtrips/road-trip-moto-test-1-journal.html
-[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-test-1-journal.html : ❌ MANQUANT
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-test-1-journal.html : ✅ EXISTE
 [VERIFY]   /roadtrips.html
 [VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips.html : ❌ MANQUANT
 [VERIFY]   /roadtrips.html
