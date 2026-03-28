@@ -1,7 +1,7 @@
 [BUILD] ═══════════════════════════════════════════════════════
 [BUILD] GÉNÉRATION ROAD TRIP — road-trip-moto-test-1
 [BUILD] ═══════════════════════════════════════════════════════
-[BUILD] Démarrage : 2026-03-27T21:27:30
+[BUILD] Démarrage : 2026-03-27T22:06:37
 [BUILD] project_dir = F:\RoadBook HTML\test v14
 [BUILD] site_root = F:\RoadBook HTML\test v14\build
 [BUILD] MODULE_DIR = F:\Automate_YT
@@ -11,10 +11,10 @@
 
 [STEP   5%] Analyse du dossier projet…
 [DETECT] Fichiers détectés :
-[DETECT]   CSV : F:\RoadBook HTML\test v14\Nouveau dossier\road-trip-moto-test-1-outputs\road-trip-moto-test-1.csv
+[DETECT]   CSV : None
 [DETECT]   Hero : F:\RoadBook HTML\test v14\pexels-pixabay-39391.jpg
 [DETECT]   QR : F:\RoadBook HTML\test v14\téléchargement.png
-[DETECT]   Kurviger : F:\RoadBook HTML\test v14\files\Ecosse_2026_kurviger_jours\kurviger_jours\Jour01_05-05_Hôtel_Shurland_505.kurviger
+[DETECT]   Kurviger : F:\RoadBook HTML\test v14\Tour d-Ecosse mai 2026 complet.kurviger
 [STEP  12%] Création des dossiers de publication…
 [DIRS] Dossiers créés :
 [DIRS]   site_root = F:\RoadBook HTML\test v14\build
@@ -26,15 +26,19 @@
 [DIRS]   roadbooks = F:\RoadBook HTML\test v14\build\roadbooks
 [DIRS]   roadbooks_html = F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-test-1
 [DIRS]   status = F:\RoadBook HTML\test v14\build\data\roadtrips\road-trip-moto-test-1
-[STEP  18%] Prélecture du CSV…
-[CSV] Points chargés : 58
+[STEP  18%] Conversion .kurviger → points…
+[KURVIGER] Fichier source : F:\RoadBook HTML\test v14\Tour d-Ecosse mai 2026 complet.kurviger
+[KURVIGER] [kurviger] Facteur correction distance : x1.41 (haversine → route)
+[KURVIGER] [kurviger] 29 fichiers .kurviger journaliers generes dans F:\RoadBook HTML\test v14\kurviger_jours
+[KURVIGER] [kurviger] Conversion terminee : 113 points (30 etapes, 83 POIs, 29 jours detectes), 7484 km estimes
+[KURVIGER] ✅ Points générés : 113
 [STEP  26%] Calcul des journées…
-[DAYS] Journées calculées : 11
+[DAYS] Journées calculées : 29
 [DAYS] Avertissements : 0
 [STEP  38%] Enrichissement des journées…
 [ENRICH] Enrichissement terminé (online=True)
 [JOURNEY] ✅ Texte 'Esprit du parcours' généré automatiquement
-[JOURNEY]   Basé sur 11 jours de données
+[JOURNEY]   Basé sur 29 jours de données
 [STEP  52%] Génération du roadbook HTML détaillé…
 [ROADBOOK] HTML généré :
 [ROADBOOK]   index = F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-test-1\index.html
@@ -46,7 +50,8 @@
 [COPY]   hero → F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-test-1\pexels-pixabay-39391.jpg
 [COPY]   qr → F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-test-1\téléchargement.png
 [COPY]   kurviger → F:\RoadBook HTML\test v14\build\kurviger\road-trip-moto-test-1.kurviger
-[COPY]   csv → F:\RoadBook HTML\test v14\build\data\roadtrips\road-trip-moto-test-1\sources\road-trip-moto-test-1.csv
+[COPY]   csv → N/A (source .kurviger)
+[COPY]   kurviger_jours → F:\RoadBook HTML\test v14\build\kurviger\road-trip-moto-test-1_jours
 [STEP  72%] Création du HTML imprimable du PDF…
 [PDF] HTML imprimable créé : F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-test-1\roadbook_previsionnel.html
 [STEP  80%] Conversion HTML → PDF…
@@ -63,8 +68,8 @@
 [MAIN PAGE]   MODULE_DIR = F:\Automate_YT
 [MAIN PAGE] Données construites : 37 clés
 [MAIN PAGE]   title = road-trip-moto-test-1
-[MAIN PAGE]   total_km_label = 3 541 km
-[MAIN PAGE]   route_hint = Direct Annecy -Douvres → Campsite option ?
+[MAIN PAGE]   total_km_label = 7 485 km
+[MAIN PAGE]   route_hint = Direct Annecy -Douvres → Fin de road trip
 [MAIN PAGE]   has_shorts = False
 [RENDER] render_page('main_roadtrip') appelé
 [RENDER]   extra_dirs = ['F:\\RoadBook HTML\\test v14', 'F:\\Automate_YT']
@@ -85,9 +90,9 @@
 [TEMPLATE]   Référence CSS : roadbook.css ✅
 [RENDER] Résolution des placeholders...
 [RENDER] ✅ Tous les placeholders résolus
-[RENDER] HTML final : 13052 caractères
+[RENDER] HTML final : 19948 caractères
 [BUILD] ✅ Page principale écrite : F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-test-1.html
-[BUILD]   Taille HTML : 13052 caractères
+[BUILD]   Taille HTML : 19948 caractères
 [CSS] Recherche du dossier CSS...
 [CSS]   F:\Automate_YT\templates\css → TROUVÉ ✅
 [CSS]   F:\Automate_YT\templates\templates\css → absent
