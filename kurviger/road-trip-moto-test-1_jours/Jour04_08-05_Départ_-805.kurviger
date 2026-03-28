@@ -1,0 +1,92 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvaturefastest"
+  },
+  "details": [
+    "route_information",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1774643115954,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        -3.254957,
+        55.9486,
+        -3.007169,
+        55.972175
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "Camping Clachtoll Beach Campsite - N2-  7/05",
+          "category": "search_result",
+          "latitude": 55.949831,
+          "longitude": -3.007293
+        },
+        {
+          "address": "Pennywell Gardens, Pennywell Gardens 1/27, EH4 4FW Édimbourg Écosse Royaume-Uni",
+          "name": "* visite ?- Room in s13hared flat",
+          "category": "search_result",
+          "latitude": 55.972175,
+          "longitude": -3.254957,
+          "shaping": true
+        },
+        {
+          "name": " Calton Hill",
+          "weight": "curvaturebooster",
+          "category": "search_result",
+          "latitude": 55.953537,
+          "longitude": -3.182452,
+          "shaping": true
+        },
+        {
+          "name": "*visite ? - ÉDIMBOURG",
+          "latitude": 55.9533,
+          "longitude": -3.1883,
+          "shaping": true
+        },
+        {
+          "name": "Victoria Street",
+          "latitude": 55.9506,
+          "longitude": -3.1921,
+          "shaping": true
+        },
+        {
+          "name": " Château Édimbourg",
+          "latitude": 55.9486,
+          "longitude": -3.1999,
+          "shaping": true
+        },
+        {
+          "name": "Départ -8/05",
+          "latitude": 55.949737,
+          "longitude": -3.007169
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}
