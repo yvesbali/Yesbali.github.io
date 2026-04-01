@@ -1,27 +1,29 @@
 name: Auto-publish road-trip-moto-test-1
 on:
   schedule:
-    - cron: '0 4 * * *'
+    - cron: '0 16 * * *'
   workflow_dispatch:
+
 permissions:
   contents: write
+
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install dependencies
-        run: pip install google-api-python-client google-auth reportlab
+
       - name: Fetch and inject new videos
         env:
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
           YT_CLIENT_SECRETS: ${{ secrets.YT_CLIENT_SECRETS }}
           YT_TOKEN_ANALYTICS: ${{ secrets.YT_TOKEN_ANALYTICS }}
-        run: |
-          python scripts/auto_publish_roadtrip.py \
-            --config data/roadtrips/road-trip-moto-test-1/auto_publish_config.json
+        run: python scripts/auto_publish_lite.py --config data/roadtrips/road-trip-moto-test-1/auto_publish_config.json
+
       - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
