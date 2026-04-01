@@ -1182,31 +1182,70 @@ def infer_country(point: CsvPoint) -> str:
     text = (point.description or "").lower()
     lat, lon = point.lat, point.lon
 
-    if any(k in text for k in ["donegal", "achill", "galway", "connemara", "burren", "rosslare", "irlande", "ireland"]):
-        return "Irlande"
-    if any(k in text for k in ["belfast", "causeway", "antrim", "giant's causeway", "malin head", "fishguard", "stonehenge", "écosse", "scotland", "angleterre", "england"]):
-        return "Royaume-Uni"
+    # Mots-clés par pays
+    _COUNTRY_KEYWORDS = {
+        "Irlande": ["donegal", "achill", "galway", "connemara", "burren", "rosslare", "irlande", "ireland", "cork", "dublin", "kerry", "clare"],
+        "Royaume-Uni": ["belfast", "causeway", "antrim", "giant's causeway", "malin head", "fishguard", "stonehenge", "écosse", "scotland", "angleterre", "england", "wales", "edinburgh", "glasgow", "inverness", "skye"],
+        "Slovénie": ["slovenia", "slovénie", "slovenie", "ljubljana", "bled", "triglav", "piran", "koper", "postojna", "bovec", "maribor", "ptuj", "soca", "soča", "vrsic", "vršič"],
+        "Italie": ["italia", "italie", "italy", "roma", "milano", "venezia", "firenze", "napoli", "dolomiti", "stelvio", "toscana", "sicilia", "sardegna"],
+        "Autriche": ["austria", "autriche", "österreich", "wien", "salzburg", "innsbruck", "tirol", "tyrol", "grossglockner", "kärnten"],
+        "France": ["france", "paris", "lyon", "marseille", "bretagne", "normandie", "alsace", "provence", "alpes", "corse", "verdon"],
+        "Suisse": ["suisse", "switzerland", "schweiz", "bern", "zürich", "genève", "geneva", "lugano", "graubünden", "valais"],
+        "Allemagne": ["germany", "allemagne", "deutschland", "berlin", "münchen", "munich", "hamburg", "schwarzwald", "bayern"],
+        "Espagne": ["spain", "espagne", "españa", "madrid", "barcelona", "sevilla", "andalucia", "mallorca"],
+        "Portugal": ["portugal", "lisboa", "porto", "algarve", "faro"],
+        "Norvège": ["norway", "norvège", "norvege", "norge", "oslo", "bergen", "tromsø", "lofoten", "nordkapp"],
+        "Croatie": ["croatia", "croatie", "hrvatska", "dubrovnik", "split", "zagreb", "plitvice"],
+        "Grèce": ["greece", "grèce", "grece", "athènes", "athens", "santorini", "crete", "thessaloniki"],
+        "Roumanie": ["romania", "roumanie", "românia", "bucharest", "transylvania", "brasov", "transfagarasan"],
+    }
+
+    for country, keywords in _COUNTRY_KEYWORDS.items():
+        if any(k in text for k in keywords):
+            return country
+
+    # Détection par GPS
+    _COUNTRY_BBOX = {
+        "Irlande": (51.3, -10.9, 55.6, -5.2),
+        "Royaume-Uni": (49.8, -8.8, 59.0, 2.5),
+        "France": (41.3, -5.2, 51.1, 9.6),
+        "Slovénie": (45.4, 13.3, 46.9, 16.6),
+        "Italie": (36.6, 6.6, 47.1, 18.5),
+        "Autriche": (46.3, 9.5, 49.0, 17.2),
+        "Suisse": (45.8, 5.9, 47.8, 10.5),
+        "Allemagne": (47.2, 5.9, 55.1, 15.0),
+        "Espagne": (36.0, -9.3, 43.8, 3.3),
+        "Portugal": (36.9, -9.5, 42.2, -6.2),
+        "Norvège": (57.9, 4.5, 71.2, 31.1),
+        "Croatie": (42.4, 13.5, 46.6, 19.4),
+        "Grèce": (34.8, 19.3, 41.8, 29.6),
+        "Roumanie": (43.6, 20.3, 48.3, 29.7),
+    }
 
     if lat is not None and lon is not None:
-        if 51.3 <= lat <= 55.6 and -10.9 <= lon <= -5.2:
-            return "Irlande"
-        if 49.8 <= lat <= 59.0 and -8.8 <= lon <= 2.5:
-            return "Royaume-Uni"
+        for country, (lat_min, lon_min, lat_max, lon_max) in _COUNTRY_BBOX.items():
+            if lat_min <= lat <= lat_max and lon_min <= lon <= lon_max:
+                return country
 
-    return "Royaume-Uni"
+    return "Europe"
 
 
 
 def infer_fuel_price(segment_points: List[CsvPoint], uk_price: float, ie_price: float) -> float:
-    ireland_votes = 0
+    """Détermine le prix carburant selon le pays.
+    uk_price = prix en £/L (pays avec Livre Sterling)
+    ie_price = prix en €/L (pays avec Euro ou autre)
+    """
+    uk_countries = {"Royaume-Uni"}
     uk_votes = 0
+    other_votes = 0
     for p in segment_points:
         country = infer_country(p)
-        if country == "Irlande":
-            ireland_votes += 1
-        else:
+        if country in uk_countries:
             uk_votes += 1
-    return ie_price if ireland_votes > uk_votes else uk_price
+        else:
+            other_votes += 1
+    return uk_price if uk_votes > other_votes else ie_price
 
 
 
@@ -2385,10 +2424,10 @@ def generate_pdf_report(days_data: List[Dict[str, Any]], warnings: List[str], tr
         pagesize=A4,
         leftMargin=18*mm,
         rightMargin=18*mm,
-        topMargin=24*mm,
-        bottomMargin=16*mm,
+        topMargin=26*mm,
+        bottomMargin=22*mm,
         title=trip_title,
-        author="ChatGPT",
+        author="Yves Vella — LCDMH",
     )
 
     total_km = sum(int(d.get("km_total", 0)) for d in days_data)
@@ -2429,9 +2468,11 @@ def generate_pdf_report(days_data: List[Dict[str, Any]], warnings: List[str], tr
     if days_data:
         longest = max(days_data, key=lambda d: int(d.get("km_total", 0)))
         lecture_rows[2] = ("Jour le plus long", f"J{longest['day_num']:02d} - {longest['km_total']} km - {point_label(longest['start_stage'])} -> {point_label(longest['end_stage']) if not longest['is_pause_day'] else point_label(longest['start_stage'])}")
-    story.append(Paragraph("Lecture rapide", styles["LCDMH-H2"]))
-    story.append(_pdf_info_table(lecture_rows, styles))
-    story.append(Spacer(1, 6*mm))
+    story.append(KeepTogether([
+        Paragraph("Lecture rapide", styles["LCDMH-H2"]),
+        _pdf_info_table(lecture_rows, styles),
+        Spacer(1, 6*mm),
+    ]))
 
     if warnings:
         warn_text = "<br/>".join(f"• {_pdf_escape(w)}" for w in warnings[:8])
@@ -2476,14 +2517,19 @@ def generate_pdf_report(days_data: List[Dict[str, Any]], warnings: List[str], tr
             ("Temps route", day.get("route_time", "-")),
             ("Carburant estimé", f"{day.get('fuel_cost_eur', 0.0):.2f} €  |  {day.get('fuel_price_eur', 0.0):.3f} €/L"),
         ]
-        story.append(_pdf_info_table(info_rows, styles))
-        story.append(Spacer(1, 4*mm))
+        # Bloc info du jour insécable (ne sera pas coupé entre 2 pages)
+        story.append(KeepTogether([
+            _pdf_info_table(info_rows, styles),
+            Spacer(1, 4*mm),
+        ]))
 
         hi = _pdf_highlights(day, styles)
         if hi is not None:
-            story.append(Paragraph("Points forts du jour", styles["LCDMH-H3"]))
-            story.append(hi)
-            story.append(Spacer(1, 4*mm))
+            story.append(KeepTogether([
+                Paragraph("Points forts du jour", styles["LCDMH-H3"]),
+                hi,
+                Spacer(1, 4*mm),
+            ]))
 
         story.append(Paragraph("Feuille de route détaillée", styles["LCDMH-H3"]))
         story.append(_pdf_timeline_table(day, styles))
