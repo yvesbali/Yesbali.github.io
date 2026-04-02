@@ -7,8 +7,8 @@
     "updated_by": "batch"
   },
   "seo": {
-    "title": "Tests GPS Moto AOOCCI - U6, BX, C3 Plus, C6 Pro - LCDMH",
-    "description": "Tests GPS moto AOOCCI : U6 (offline Android 14), BX (radar BSD), C3 Plus (CarPlay compact), C6 Pro (antivol + dashcam). Avis terrain après 10 000 km.",
+    "title": "Test GPS Moto Aoocci : U6, BX Radar, C3 Plus | Avis 2026",
+    "description": "Tests complets GPS moto Aoocci après 10 000 km : U6 Android offline, BX avec radar angle mort, C3 Plus CarPlay, C6 Pro dashcam. Quel GPS choisir ?",
     "keywords": "GPS moto AOOCCI, test AOOCCI U6, GPS offline moto, CarPlay moto, dashcam moto, code promo AOOCCI",
     "canonical": "https://lcdmh.com/aoocci.html"
   },
@@ -26,10 +26,10 @@
     "description": "4 modèles testés en conditions réelles : U6 (offline), BX (BSD), C3 Plus (CarPlay compact), C6 Pro (antivol + dashcam).",
     "rating": 4.7,
     "rating_count": 180,
-    "promo_code": "LCDMH28",
-    "promo_discount": "-28%",
-    "affiliate_url": "https://www.awin1.com/cread.php?awinmid=&awinaffid=2753560",
-    "note": "Code LCDMH28 = -28% · Code LCDMH25 = -25% · Code LCDMH = réduction standard"
+    "promo_code": "LCDMH25",
+    "promo_discount": "-25%",
+    "affiliate_url": "https://aoocci.fr/products/u6-u7-gps-moto-android-6-pouces-navigation-hors-ligne-tpms?ref=gvxyhqgv",
+    "note": "Code LCDMH25 = -25% · Code LCDMH = réduction standard"
   },
   "test_status": {
     "status": "done",
@@ -38,8 +38,8 @@
     "sub_text": "Mon coup de cœur : le C6 Pro pour son rapport fonctionnalités/prix imbattable.",
     "rating": 4.7,
     "rating_label": "Avis après 10 000 km de tests",
-    "cta_label": "🗺️ VOIR LES GPS AOOCCI (code LCDMH28 = -28%)",
-    "cta_url": "https://www.awin1.com/cread.php?awinmid=&awinaffid=2753560"
+    "cta_label": "🗺️ VOIR LES GPS AOOCCI (code LCDMH25 = -25%)",
+    "cta_url": "https://aoocci.fr/products/u6-u7-gps-moto-android-6-pouces-navigation-hors-ligne-tpms?ref=gvxyhqgv"
   },
   "why_choose": [
     {
@@ -84,5 +84,60 @@
     "commission": "",
     "awin": true,
     "platform": "awin"
-  }
+  },
+  "key_features": [
+    {
+      "icon": "🗺️",
+      "title": "GPS offline Android 14",
+      "text": "Cartes téléchargeables, fonctionne sans réseau. Indispensable dans les zones blanches de Norvège.",
+      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1974",
+      "image_alt": "GPS offline moto AOOCCI"
+    },
+    {
+      "icon": "📡",
+      "title": "Radar BSD",
+      "text": "Détection d'angle mort sur le modèle BX. Alerte visuelle et sonore quand un véhicule approche.",
+      "image": "https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1974",
+      "image_alt": "Radar angle mort moto"
+    },
+    {
+      "icon": "📷",
+      "title": "Dashcam + antivol GPS",
+      "text": "Le C6 Pro filme en continu et intègre un traceur GPS antivol. Deux fonctions en un seul appareil.",
+      "image": "https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=1974",
+      "image_alt": "Dashcam GPS moto AOOCCI"
+    }
+  ],
+  "products": [
+    {
+      "name": "GPS U6 / U7",
+      "promo_code": "LCDMH25",
+      "promo_discount": "-25%",
+      "affiliate_url": "https://aoocci.fr/products/u6-u7-gps-moto-android-6-pouces-navigation-hors-ligne-tpms?ref=gvxyhqgv"
+    },
+    {
+      "name": "CarPlay BX Dashcam",
+      "promo_code": "LCDMH25",
+      "promo_discount": "-25%",
+      "affiliate_url": "https://aoocci.fr/products/carplay-moto-bx-dashcam-detection-angles-morts?ref=gvxyhqgv"
+    },
+    {
+      "name": "Écran CarPlay C3 Plus",
+      "promo_code": "LCDMH25",
+      "promo_discount": "-25%",
+      "affiliate_url": "https://aoocci.fr/products/ecran-carplay-moto-c3-plus-sans-fil-android-auto?ref=gvxyhqgv"
+    },
+    {
+      "name": "Caméra C6 Pro GPS",
+      "promo_code": "LCDMH25",
+      "promo_discount": "-25%",
+      "affiliate_url": "https://aoocci.fr/products/camera-moto-c6-pro-gps-antivol-tpms-carplay?ref=gvxyhqgv"
+    },
+    {
+      "name": "CarPlay BMW BM6 / BM7",
+      "promo_code": "LCDMH25",
+      "promo_discount": "-25%",
+      "affiliate_url": "https://aoocci.fr/products/bm6-bm7-carplay-android-auto-bmw?ref=gvxyhqgv"
+    }
+  ]
 }
