@@ -1,0 +1,43 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "name": "Attention sortie Angleterre conduite à gauche",
+          "weight": "fastest",
+          "latitude": 51.092769,
+          "longitude": 1.114383,
+          "shaping": true
+        },
+        {
+          "name": "*Option couchage ?",
+          "latitude": 51.406889,
+          "longitude": 0.857969,
+          "shaping": true
+        },
+        {
+          "address": "The Shurland Hotel, High Street 79-81, ME12 4EH Swale Angleterre Royaume-Uni",
+          "name": "Couchage Hôtel The Shurland Hotel  5/05",
+          "category": "search_result",
+          "latitude": 51.406944,
+          "longitude": 0.858056
+        },
+        {
+          "address": "Mountpleasant (S bound), Orton Road, CA10 3TN Tebay Angleterre Royaume-Uni",
+          "name": " Old School B&B - 6/05",
+          "category": "search_result",
+          "latitude": 54.434497,
+          "longitude": -2.589463
+        },
+        {
+          "name": "*Camping Clachtoll Beach Campsite option ?  - N1-  7/05",
+          "category": "search_result",
+          "latitude": 55.949831,
+          "longitude": -3.007293
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}
