@@ -7,8 +7,8 @@
     "updated_by": "batch"
   },
   "seo": {
-    "title": "AFERIY – Stations électriques et jump starters pour road trip moto | LCDMH",
-    "description": "Test des stations électriques AFERIY Nano 100 et jump starter 2000A en conditions réelles : Norvège, Albanie, bivouac moto. Code promo exclusif -47%.",
+    "title": "Test AFERIY Nano 100 : Station Électrique pour Bivouac Moto",
+    "description": "Test station AFERIY Nano 100 et jump starter 2000A en bivouac moto : Norvège, Albanie. Autonomie, puissance, fiabilité. Code promo exclusif.",
     "keywords": "AFERIY, station électrique moto, batterie portable bivouac, jump starter moto, Nano 100, code promo AFERIY",
     "canonical": "https://lcdmh.com/aferiy.html"
   },
@@ -28,7 +28,7 @@
     "rating_count": 89,
     "promo_code": "8JGATT8K",
     "promo_discount": "-47%",
-    "affiliate_url": "https://www.awin1.com/cread.php?awinmid=&awinaffid=2753560",
+    "affiliate_url": "https://www.amazon.fr/dp/B0F1MR5HD3?tag=lcdmh-21",
     "note": "Code 8JGATT8K = -47% sur le Nano 100 · Code LCDMHGK03 = réduction sur le GK03"
   },
   "test_status": {
@@ -39,7 +39,7 @@
     "rating": 4.6,
     "rating_label": "Avis après 2 road trips et 35 bivouacs",
     "cta_label": "⚡ VOIR LES PRODUITS AFERIY (code 8JGATT8K = -47%)",
-    "cta_url": "https://www.awin1.com/cread.php?awinmid=&awinaffid=2753560"
+    "cta_url": "https://www.amazon.fr/dp/B0F1MR5HD3?tag=lcdmh-21"
   },
   "why_choose": [
     {
@@ -82,7 +82,42 @@
     "name": "AFERIY",
     "contact": "Jennie",
     "commission": "",
-    "awin": true,
-    "platform": "awin"
-  }
+    "awin": false,
+    "platform": "amazon"
+  },
+  "key_features": [
+    {
+      "icon": "⚡",
+      "title": "100W de puissance",
+      "text": "Charge un ordinateur portable, deux téléphones et une GoPro simultanément.",
+      "image": "https://images.unsplash.com/photo-1609234656432-603f24b79bdf?q=80&w=1974",
+      "image_alt": "Station électrique portable"
+    },
+    {
+      "icon": "🪶",
+      "title": "Ultra léger — moins d'1 kg",
+      "text": "Le Nano 100 pèse moins de 1 kg. Parfait pour les sacoches moto sans surcharger.",
+      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1974",
+      "image_alt": "Batterie légère road trip"
+    },
+    {
+      "icon": "🔋",
+      "title": "Jump starter 2000A",
+      "text": "Démarre une moto ou une voiture avec une batterie à plat. Compact et puissant.",
+      "image": "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?q=80&w=1974",
+      "image_alt": "Jump starter moto"
+    }
+  ],
+  "products": [
+    {
+      "name": "AFERIY Nano 100",
+      "promo_code": "8JGATT8K",
+      "affiliate_url": "https://www.amazon.fr/dp/B0F1MR5HD3?tag=lcdmh-21"
+    },
+    {
+      "name": "Jump Starter 2000A",
+      "promo_code": "LCDMHGK03",
+      "affiliate_url": "https://www.amazon.fr/dp/B0C1NMW5VP?tag=lcdmh-21"
+    }
+  ]
 }

@@ -7,8 +7,8 @@
     "updated_by": "batch"
   },
   "seo": {
-    "title": "BLACKVIEW Xplore X1 – Smartphone renforcé pour road trip moto | LCDMH",
-    "description": "Test du BLACKVIEW Xplore X1 : 20 000 mAh, IP68/IP69K, vision nocturne. Utilisé en Norvège, Albanie, conditions extrêmes. Code promo exclusif LCDMH.",
+    "title": "Test Blackview Xplore X1 : Téléphone Outdoor pour Motard",
+    "description": "Test du Blackview Xplore X1 en road trip moto : 20 000 mAh, IP69K, vision nocturne. Utilisé en Norvège et Albanie. Avis terrain complet.",
     "keywords": "BLACKVIEW Xplore X1, smartphone renforcé moto, téléphone étanche moto, GPS offline, test BLACKVIEW",
     "canonical": "https://lcdmh.com/blackview.html"
   },
@@ -84,5 +84,28 @@
     "commission": "",
     "awin": true,
     "platform": "awin"
-  }
+  },
+  "key_features": [
+    {
+      "icon": "🔋",
+      "title": "20 000 mAh de batterie",
+      "text": "3 jours sans recharger en usage modéré. Peut recharger d'autres appareils via reverse charging.",
+      "image": "https://images.unsplash.com/photo-1609234656432-603f24b79bdf?q=80&w=1974",
+      "image_alt": "Smartphone grosse batterie road trip"
+    },
+    {
+      "icon": "💧",
+      "title": "IP68 / IP69K",
+      "text": "Immergeable et résistant aux jets haute pression. Pluie, lavage, traversées — aucun problème.",
+      "image": "https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1974",
+      "image_alt": "Smartphone étanche IP68 moto"
+    },
+    {
+      "icon": "🌙",
+      "title": "Vision nocturne Sony",
+      "text": "Capteur Sony avec vision nocturne. Parfait pour les bivouacs et les routes de nuit.",
+      "image": "https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=1974",
+      "image_alt": "Vision nocturne smartphone moto"
+    }
+  ]
 }
