@@ -29,7 +29,9 @@
     "rating": 4.6,
     "rating_count": 20,
     "affiliate_url": "https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&ued=https%3A%2F%2Fwww.123pneus.fr%2F",
-    "note": "Liens affiliés — tu paies le même prix, je touche une petite commission. Merci pour le soutien !"
+    "note": "Liens affiliés — tu paies le même prix, je touche une petite commission. Merci pour le soutien !",
+    "promo_code": null,
+    "cta_label": "🛒 Acheter sur 123pneus.fr"
   },
   "test_status": {
     "status": "done",
@@ -75,7 +77,7 @@
   ],
   "videos": {
     "enabled": true,
-    "keywords": "pneu,dunlop,bridgestone,michelin",
+    "keywords": "pneu,dunlop,bridgestone,michelin,mutant,t33",
     "max": 4
   },
   "partner": {

@@ -111,7 +111,9 @@
     const btnMain = showcase.querySelector('.btn-orange');
     if (btnMain && product.affiliate_url) {
       btnMain.href = product.affiliate_url;
-      if (product.promo_code) btnMain.textContent = '🛒 Acheter ' + (product.promo_discount || '') + ' avec code ' + product.promo_code;
+      if (product.cta_label) btnMain.textContent = product.cta_label;
+      else if (product.promo_code) btnMain.textContent = '🛒 Acheter ' + (product.promo_discount || '') + ' avec code ' + product.promo_code;
+      else btnMain.textContent = '🛒 Voir les offres';
     }
 
     // Note légale : dernier <p> dans rightDiv
