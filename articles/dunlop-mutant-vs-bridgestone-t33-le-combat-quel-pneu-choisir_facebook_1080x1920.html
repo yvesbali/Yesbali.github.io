@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, height=1920">
+    <title>LCDMH — Visuel Facebook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --orange: #e67e22;
+            --orange-light: #f39c12;
+            --dark-bg: #1a1a2e;
+            --dark-alt: #16213e;
+            --card-bg: #252545;
+            --white: #ffffff;
+            --gray: #888888;
+            --gray-light: #aaaaaa;
+        }
+        
+        body {
+            width: 1080px;
+            height: 1920px;
+            background: linear-gradient(180deg, var(--dark-bg) 0%, var(--dark-alt) 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .top-bar {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, var(--orange) 0%, var(--orange-light) 100%);
+        }
+        
+        .logo-container {
+            text-align: center;
+            padding-top: 45px;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 44px;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: 2px;
+        }
+        .logo span { color: var(--orange); }
+        
+        .logo-subtitle {
+            font-size: 16px;
+            color: var(--gray);
+            margin-top: 4px;
+        }
+        
+        .image-container {
+            width: 1000px;
+            height: 580px;
+            margin: 25px auto 0;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            background: var(--card-bg);
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .badge {
+            position: absolute;
+            top: 18px; left: 18px;
+            background: linear-gradient(90deg, var(--orange) 0%, var(--orange-light) 100%);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .content {
+            padding: 35px 50px 0;
+            text-align: center;
+        }
+        
+        .title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 44px;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.15;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .subtitle {
+            font-size: 26px;
+            color: var(--orange);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .excerpt {
+            font-size: 19px;
+            color: var(--gray-light);
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto 25px;
+            padding: 18px 28px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            border-left: 4px solid var(--orange);
+            text-align: left;
+        }
+        
+        .separator {
+            width: 150px;
+            height: 3px;
+            background: var(--orange);
+            margin: 0 auto 30px;
+            border-radius: 2px;
+            opacity: 0.6;
+        }
+        
+        .community-box {
+            width: 880px;
+            margin: 0 auto 35px;
+            background: var(--card-bg);
+            border: 2px solid var(--orange);
+            border-radius: 18px;
+            padding: 25px 35px;
+        }
+        
+        .community-title {
+            font-size: 24px;
+            color: var(--white);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .community-stats {
+            font-size: 18px;
+            color: var(--gray-light);
+            margin-bottom: 10px;
+        }
+        
+        .community-cta {
+            font-size: 18px;
+            color: var(--orange);
+            font-weight: 500;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--orange) 0%, var(--orange-light) 100%);
+            color: white;
+            padding: 22px 70px;
+            border-radius: 50px;
+            font-size: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(230, 126, 34, 0.3);
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 50px;
+            left: 0; right: 0;
+            text-align: center;
+        }
+        
+        .url {
+            font-size: 36px;
+            color: var(--white);
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+<div id="lcdmh-nav-container"></div>
+    <div class="top-bar"></div>
+    
+    <div class="logo-container">
+        <div class="logo">LC<span>D</span>MH</div>
+        <div class="logo-subtitle">La Chaîne du Motard Heureux</div>
+    </div>
+    
+    <div class="image-container">
+        <img src="https://i.ytimg.com/vi/9MtNUBVTyK0/hqdefault.jpg" alt="Thumbnail">
+        <div class="badge">🛞 PNEUS</div>
+    </div>
+    
+    <div class="content">
+        <h1 class="title">DUNLOP MUTANT VS BRIDGESTONE T33</h1>
+        <p class="subtitle">Comparatif entre le Dunlop Mutant et le Bridgestone T33 pour aider les motards à choisir le pneu idéal.</p>
+        
+        <div class="excerpt">
+            L'auteur partage son expérience avec le Dunlop Mutant après 4800 km et ses premières impressions sur le Bridgestone T33 après environ 800-1000 km.
+        </div>
+        
+        <div class="separator"></div>
+        
+        <div class="community-box">
+            <div class="community-title">💬 Ce qu'en pensent les autres motards</div>
+            <div class="community-stats">20+ commentaires • Avis terrain</div>
+            <div class="community-cta">Viens voir leurs retours d'expérience →</div>
+        </div>
+        
+        <a href="#" class="cta-button">Voir l'article →</a>
+    </div>
+    
+    <div class="footer">
+        <div class="url">🔗 lcdmh.com</div>
+    </div>
+<script src="../nav-loader.js"></script>
+<script src="../maillage.js"></script>
+</body>
+</html>
