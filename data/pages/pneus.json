@@ -3,12 +3,12 @@
     "schema_version": "1.0",
     "page_type": "product",
     "slug": "pneus",
-    "last_updated": "2026-04-02",
-    "updated_by": "claude"
+    "last_updated": "2026-03-24",
+    "updated_by": "batch"
   },
   "seo": {
-    "title": "Comparatif Pneus Moto : Dunlop, Michelin, Bridgestone | LCDMH",
-    "description": "Dunlop Mutant, Michelin Road 6, Metzeler RoadTec 02 et Bridgestone T33 testés sur 15 000 km. Verdict terrain sur NT1100 et TRK 702.",
+    "title": "Comparatif Pneus Moto 2026 : Dunlop Mutant vs T33 vs Road 6",
+    "description": "Dunlop Mutant, Bridgestone T33, Michelin Road 6 testés sur 15 000 km en road trip. Quel pneu choisir pour ta moto touring ? Verdict terrain + liens.",
     "keywords": "test pneu moto, Dunlop Mutant avis, Michelin Road 6 test, Bridgestone T33, comparatif pneu moto, pneu NT1100",
     "canonical": "https://lcdmh.com/pneus.html"
   },
@@ -24,14 +24,10 @@
     "name": "Dunlop Mutant / Bridgestone T33",
     "tagline": "Les meilleurs pneus pour road trip moto",
     "description": "Mes deux pneus recommandés après 15 000 km de tests : le Dunlop Mutant pour sa polyvalence, le Bridgestone T33 pour son grip.",
-    "image": "https://i.ytimg.com/vi/9MtNUBVTyK0/maxresdefault.jpg",
-    "image_alt": "Dunlop Mutant vs Bridgestone T33 comparatif",
     "rating": 4.6,
-    "rating_count": 20,
+    "rating_count": 0,
     "affiliate_url": "https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&ued=https%3A%2F%2Fwww.123pneus.fr%2F",
-    "note": "Liens affiliés — tu paies le même prix, je touche une petite commission. Merci pour le soutien !",
-    "promo_code": null,
-    "cta_label": "🛒 Acheter sur 123pneus.fr"
+    "cta_label": "🛞 Voir les pneus sur 123pneus.fr"
   },
   "test_status": {
     "status": "done",
@@ -39,9 +35,7 @@
     "text": "4 pneus testés en conditions réelles sur Honda NT1100 et Benelli TRK 702. Routes mouillées, autoroute, cols de montagne, pistes.",
     "sub_text": "Mon verdict : Dunlop Mutant pour la polyvalence, Bridgestone T33 pour le grip.",
     "rating": 4.6,
-    "rating_label": "Avis après 15 000 km de comparatif",
-    "cta_url": "guides/dunlop-mutant-vs-bridgestone-t33-le-combat-quel-pneu-choisir.html",
-    "cta_label": "📖 Lire l'article complet"
+    "rating_label": "Avis après 15 000 km de comparatif"
   },
   "why_choose": [
     {
@@ -77,37 +71,51 @@
   ],
   "videos": {
     "enabled": true,
-    "keywords": "pneu,dunlop,bridgestone,michelin,mutant,t33",
+    "keywords": "pneu,dunlop,bridgestone,michelin",
     "max": 4
   },
   "partner": {
-    "name": "123pneus.fr",
-    "contact": "steffie.bastiaanse@delti.com",
-    "commission": "AWIN",
-    "awin": true,
-    "platform": "awin"
+    "name": "Pneus",
+    "contact": "",
+    "commission": "",
+    "awin": false,
+    "platform": "direct"
   },
   "key_features": [
     {
       "icon": "🏆",
       "title": "Dunlop Mutant",
       "text": "Mon pneu de road trip — 10 000 km au Cap Nord. Polyvalent, pluie/sec, grip constant.",
-      "image": "https://i.ytimg.com/vi/9MtNUBVTyK0/maxresdefault.jpg",
-      "image_alt": "Dunlop Mutant vs Bridgestone T33"
+      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1974",
+      "image_alt": "Pneu moto Dunlop road trip"
     },
     {
       "icon": "🌧️",
       "title": "Testés sous la pluie",
       "text": "Tous les pneus ont été testés sous la pluie en Norvège et dans les Alpes. Verdict terrain.",
-      "image": "https://i.ytimg.com/vi/GCirjWCLgPM/maxresdefault.jpg",
-      "image_alt": "Test pneu moto pluie Norvège"
+      "image": "https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1974",
+      "image_alt": "Pneu moto pluie test"
     },
     {
       "icon": "📊",
       "title": "15 000 km de données",
       "text": "4 pneus comparés sur les mêmes routes, mêmes conditions, mêmes motos. Résultats objectifs.",
-      "image": "https://i.ytimg.com/vi/9MtNUBVTyK0/hqdefault.jpg",
-      "image_alt": "Comparatif pneus moto données terrain"
+      "image": "https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=1974",
+      "image_alt": "Comparatif pneus moto données"
+    }
+  ],
+  "products": [
+    {
+      "name": "123pneus.fr",
+      "affiliate_url": "https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&ued=https%3A%2F%2Fwww.123pneus.fr%2F"
+    },
+    {
+      "name": "pneus-moto.fr",
+      "affiliate_url": "https://www.awin1.com/cread.php?awinmid=7403&awinaffid=2753560&ued=https%3A%2F%2Fwww.pneus-moto.fr%2F"
+    },
+    {
+      "name": "pneus.fr",
+      "affiliate_url": "https://www.awin1.com/cread.php?awinmid=7928&awinaffid=2753560&ued=https%3A%2F%2Fwww.pneus.fr%2Fpneus%2Fmoto"
     }
   ]
 }

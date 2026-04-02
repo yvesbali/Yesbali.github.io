@@ -7,8 +7,8 @@
     "updated_by": "batch"
   },
   "seo": {
-    "title": "Tests Écrans Moto CARPURIDE - CarPlay, Android Auto - LCDMH",
-    "description": "Tests complets des écrans GPS moto CARPURIDE : W702 Pro, W702RS Pro (radar BSD). Avis terrain après 5 000 km de road trips.",
+    "title": "Quel Carpuride Moto Choisir ? Comparatif W702 Pro vs RS 2026",
+    "description": "Test terrain des écrans GPS moto Carpuride après 5 000 km : W702 Pro, W702RS Pro avec radar BSD. Quel modèle choisir ? Avis honnête + code promo -30%.",
     "keywords": "CARPURIDE moto, écran CarPlay moto, GPS moto CarPlay, test CARPURIDE W702, LCDMH",
     "canonical": "https://lcdmh.com/carpuride.html"
   },
@@ -86,5 +86,48 @@
     "commission": "",
     "awin": false,
     "platform": "direct"
-  }
+  },
+  "key_features": [
+    {
+      "icon": "📱",
+      "title": "CarPlay sans fil",
+      "text": "Connexion automatique à l'iPhone dès que tu mets le contact. Pas de câble.",
+      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1974",
+      "image_alt": "CarPlay moto écran"
+    },
+    {
+      "icon": "🗺️",
+      "title": "Navigation native",
+      "text": "Google Maps, Waze, Apple Plans en plein écran directement sur le guidon.",
+      "image": "https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1974",
+      "image_alt": "GPS navigation moto"
+    },
+    {
+      "icon": "🛡️",
+      "title": "Radar BSD W702RS Pro",
+      "text": "Détection d'angle mort intégrée. Alerte visuelle et sonore quand un véhicule approche.",
+      "image": "https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=1974",
+      "image_alt": "Radar détection angle mort moto"
+    }
+  ],
+  "products": [
+    {
+      "name": "W702BS Stereo",
+      "promo_code": "LCDMH",
+      "promo_discount": "-30%",
+      "affiliate_url": "https://carpuride.com/fr/products/carpuride-w702bs-motorcycle-stereo?ref=uxcepkkq"
+    },
+    {
+      "name": "W702S + Support BM05",
+      "promo_code": "LCDMH",
+      "promo_discount": "-30%",
+      "affiliate_url": "https://carpuride.com/fr/collections/motorcycle-7-inch-series/products/carpuride-w702s-motorcycle-stereo-with-universal-mounting-bracket-bm05?ref=uxcepkkq"
+    },
+    {
+      "name": "W702 Plus App",
+      "promo_code": "LCDMH",
+      "promo_discount": "-30%",
+      "affiliate_url": "https://carpuride.com/fr/collections/motorcycle-7-inch-series/products/carpuride-w702-plus-motorcycle-stereo-supports-app-installation?ref=uxcepkkq"
+    }
+  ]
 }

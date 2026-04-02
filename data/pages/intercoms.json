@@ -7,8 +7,8 @@
     "updated_by": "batch"
   },
   "seo": {
-    "title": "Tests Intercoms Moto - Sena, Cardo - LCDMH",
-    "description": "Tests intercoms moto Sena en conditions réelles : qualité audio, micro, Bluetooth, compatibilité GPS CarPlay. Mes avis honnêtes.",
+    "title": "Test Intercom Moto : Sena vs Cardo, Quel Choisir ? | LCDMH",
+    "description": "Tests intercoms moto Sena et Cardo en road trip : qualité audio, micro vent, Bluetooth, autonomie. Mon avis honnête pour bien choisir.",
     "keywords": "intercom moto, Sena moto, Cardo moto, test intercom moto, bluetooth casque moto, LCDMH",
     "canonical": "https://lcdmh.com/intercoms.html"
   },
@@ -82,5 +82,28 @@
     "commission": "",
     "awin": false,
     "platform": "direct"
-  }
+  },
+  "key_features": [
+    {
+      "icon": "🎧",
+      "title": "Audio HD",
+      "text": "Qualité musicale et téléphonique excellente même à 130 km/h sur autoroute.",
+      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1974",
+      "image_alt": "Intercom moto audio qualité"
+    },
+    {
+      "icon": "🗣️",
+      "title": "Intercom moto à moto",
+      "text": "Communication en moto à moto jusqu'à 2 km selon les modèles. Indispensable en groupe.",
+      "image": "https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1974",
+      "image_alt": "Communication intercom groupe moto"
+    },
+    {
+      "icon": "💧",
+      "title": "Résistant à la pluie",
+      "text": "IPX5 minimum sur les modèles testés. Aucun problème sous la pluie pendant des heures.",
+      "image": "https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=1974",
+      "image_alt": "Intercom moto pluie étanche"
+    }
+  ]
 }
