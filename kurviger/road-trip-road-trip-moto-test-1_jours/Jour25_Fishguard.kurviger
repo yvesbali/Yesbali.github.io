@@ -1,0 +1,95 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvaturefastest"
+  },
+  "details": [
+    "route_information",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1774679778384,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        -10.1319,
+        51.7681,
+        -4.979296,
+        52.250676
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "Gap of Dunloe 52.033300° -9.700000° 🎥 DRONE MAJEUR - Défilé montagne 11 km - Kate Kearney's Cottage départ - Route étroite TÔT matin moto ou marche/jaunting car",
+          "category": "search_result",
+          "latitude": 52.000524,
+          "longitude": -9.644451
+        },
+        {
+          "latitude": 51.941795,
+          "longitude": -9.737331,
+          "shaping": true
+        },
+        {
+          "latitude": 51.92839,
+          "longitude": -9.996872,
+          "shaping": true
+        },
+        {
+          "address": "The Kerry Way,  V93 DD83 Kenmare Municipal District Irlande",
+          "name": "*panorama",
+          "category": "search_result",
+          "latitude": 51.7681,
+          "longitude": -10.1319,
+          "shaping": true
+        },
+        {
+          "name": "*point de vue ?",
+          "latitude": 51.834505,
+          "longitude": -9.801865,
+          "shaping": true
+        },
+        {
+          "name": "Spot bivouac ?",
+          "latitude": 51.937688,
+          "longitude": -9.668334,
+          "shaping": true
+        },
+        {
+          "name": "*shutlle info prix ? - Europort - Vers le Pays de Galles (Royaume-Uni)",
+          "latitude": 52.250676,
+          "longitude": -6.33468,
+          "shaping": true
+        },
+        {
+          "name": "Fishguard",
+          "category": "search_result",
+          "latitude": 51.995134,
+          "longitude": -4.979296
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

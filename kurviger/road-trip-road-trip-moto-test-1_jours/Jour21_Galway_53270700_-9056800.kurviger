@@ -1,0 +1,76 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvaturefastest"
+  },
+  "details": [
+    "route_information",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1774679778384,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        -9.953957,
+        53.282817,
+        -9.058523,
+        53.584047
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "address": "Rinvyle ED,  Conamara Municipal District Irlande",
+          "name": "Camping Renvyle Beach Caravan & Camping Park, Renvyle Peninsula, Tully  Ireland",
+          "category": "search_result",
+          "latitude": 53.584047,
+          "longitude": -9.953957
+        },
+        {
+          "name": "*visite ? Clifden (Connemara) 53.544400° -9.934400° Capitale Connemara - Village coloré - Base 1 nuit - B&B/camping",
+          "category": "search_result",
+          "latitude": 53.546938,
+          "longitude": -9.950695,
+          "shaping": true
+        },
+        {
+          "address": "Benbaun,  Conamara Municipal District Irlande",
+          "name": "*point de vue *panorama - Connemara National Park 53.550600° -9.870300° 🎥 DRONE - Paysages sauvages tourbières lacs montagnes -",
+          "category": "search_result",
+          "latitude": 53.5506,
+          "longitude": -9.8703,
+          "shaping": true
+        },
+        {
+          "address": "Dyke Road,  H91 E2A2 Galway Irlande",
+          "name": "*Galway info ? 53.270700° -9.056800° Ville animée culturelle - Latin Quarter - Pubs musique trad ",
+          "category": "search_result",
+          "latitude": 53.282817,
+          "longitude": -9.058523
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

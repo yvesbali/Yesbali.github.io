@@ -1,0 +1,181 @@
+[BUILD] ═══════════════════════════════════════════════════════
+[BUILD] GÉNÉRATION ROAD TRIP — Road trip moto test données enrichies
+[BUILD] ═══════════════════════════════════════════════════════
+[BUILD] Démarrage : 2026-03-30T15:06:58
+[BUILD] project_dir = F:\RoadBook HTML\test v14
+[BUILD] site_root = F:\RoadBook HTML\test v14\build
+[BUILD] MODULE_DIR = F:\Automate_YT
+[BUILD] slug = road-trip-moto-test-donnees-enrichies
+[BUILD] trip_year = 2026
+[BUILD] use_online = True
+
+[STEP   5%] Analyse du dossier projet…
+[DETECT] Fichiers détectés :
+[DETECT]   CSV : None
+[DETECT]   Hero : F:\RoadBook HTML\test v14\pexels-pixabay-39391.jpg
+[DETECT]   QR : F:\RoadBook HTML\test v14\téléchargement.png
+[DETECT]   Kurviger : F:\RoadBook HTML\test v14\Tour d-Ecosse mai 2026 complet.kurviger
+[DETECT]   GPX Sygic : F:\RoadBook HTML\test v14\Sygic Tour d-Ecosse mai 2026 complet.gpx
+[STEP  12%] Création des dossiers de publication…
+[DIRS] Dossiers créés :
+[DIRS]   site_root = F:\RoadBook HTML\test v14\build
+[DIRS]   roadtrips = F:\RoadBook HTML\test v14\build\roadtrips
+[DIRS]   data_trip = F:\RoadBook HTML\test v14\build\data\roadtrips\road-trip-moto-test-donnees-enrichies
+[DIRS]   sources = F:\RoadBook HTML\test v14\build\data\roadtrips\road-trip-moto-test-donnees-enrichies\sources
+[DIRS]   images_trip = F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-test-donnees-enrichies
+[DIRS]   kurviger = F:\RoadBook HTML\test v14\build\kurviger
+[DIRS]   roadbooks = F:\RoadBook HTML\test v14\build\roadbooks
+[DIRS]   roadbooks_html = F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-test-donnees-enrichies
+[DIRS]   status = F:\RoadBook HTML\test v14\build\data\roadtrips\road-trip-moto-test-donnees-enrichies
+[STEP  18%] Conversion .kurviger → points…
+[KURVIGER] Fichier source : F:\RoadBook HTML\test v14\Tour d-Ecosse mai 2026 complet.kurviger
+[KURVIGER] [kurviger] Facteur correction distance : x1.41 (haversine → route)
+[KURVIGER] [kurviger] 29 fichiers .kurviger journaliers generes dans F:\RoadBook HTML\test v14\kurviger_jours
+[KURVIGER] [kurviger] Conversion terminee : 113 points (30 etapes, 83 POIs, 29 jours detectes), 7484 km estimes
+[KURVIGER] ✅ Points générés : 113
+[STEP  22%] Fusion GPS .kurviger → CSV…
+[GPS-V2] ✅ .kurviger : 113 waypoints, 113 matchés, 0 GPS injectés
+[STEP  26%] Calcul des journées…
+[DAYS] Journées calculées : 29
+[DAYS] Avertissements : 0
+[STEP  38%] Enrichissement des journées…
+[ENRICH] Enrichissement terminé (online=True)
+[GPS-V2] Cache geocoding sauvegardé
+[JOURNEY] ✅ Texte 'Esprit du parcours' généré automatiquement
+[JOURNEY]   Basé sur 29 jours de données
+[STEP  52%] Génération du roadbook HTML détaillé…
+[ROADBOOK] HTML généré :
+[ROADBOOK]   index = F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-test-donnees-enrichies\index.html
+[ROADBOOK]   jours = F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-test-donnees-enrichies\jours
+[CSS] ✅ roadbook-jour-override.css copié dans F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-test-donnees-enrichies\css
+[ROADBOOK] ✅ Tous les fichiers roadbook générés
+[STEP  62%] Copie des ressources…
+[COPY] Ressources copiées :
+[COPY]   hero → F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-test-donnees-enrichies\pexels-pixabay-39391.jpg
+[COPY]   qr → F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-test-donnees-enrichies\téléchargement.png
+[COPY]   kurviger → F:\RoadBook HTML\test v14\build\kurviger\road-trip-moto-test-donnees-enrichies.kurviger
+[COPY]   csv → N/A (source .kurviger)
+[COPY]   kurviger_jours → F:\RoadBook HTML\test v14\build\kurviger\road-trip-moto-test-donnees-enrichies_jours
+[STEP  66%] Découpage GPX Sygic par jour…
+[SYGIC] Fichier source : F:\RoadBook HTML\test v14\Sygic Tour d-Ecosse mai 2026 complet.gpx
+[SYGIC] ✅ 28 fichiers GPX Sygic générés dans F:\RoadBook HTML\test v14\build\kurviger\road-trip-moto-test-donnees-enrichies_gpx_sygic
+[STEP  69%] Découpage .kurviger par jour…
+[KURVIGER-JOURS] ✅ 28 fichiers .kurviger par jour dans F:\RoadBook HTML\test v14\build\kurviger\road-trip-moto-test-donnees-enrichies_kurviger_jours
+[STEP  72%] Création du HTML imprimable du PDF…
+[PDF] HTML imprimable créé : F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-test-donnees-enrichies\roadbook_previsionnel.html
+[STEP  80%] Conversion HTML → PDF…
+[PDF] ✅ PDF généré : F:\RoadBook HTML\test v14\build\roadbooks\road-trip-moto-test-donnees-enrichies-roadbook.pdf
+[STEP  88%] Génération de la page principale du road trip…
+
+[TEMPLATE] ═══ RENDU VIA MOTEUR DE TEMPLATES ═══
+[TEMPLATE] tpl.DEFAULT_TEMPLATES_DIR = F:\Automate_YT\templates
+[YOUTUBE] Shorts page principale : 0 vidéo(s)
+[YOUTUBE] Entrées journal : 0 vidéo(s)
+[YOUTUBE] Titres récupérés automatiquement : 0/0
+[MAIN PAGE] _render_main_page appelé
+[MAIN PAGE]   project_dir = F:\RoadBook HTML\test v14
+[MAIN PAGE]   MODULE_DIR = F:\Automate_YT
+[MAIN PAGE] Données construites : 37 clés
+[MAIN PAGE]   title = Road trip moto test données enrichies
+[MAIN PAGE]   total_km_label = 7 485 km
+[MAIN PAGE]   route_hint = Direct Annecy -Douvres → Fin de road trip
+[MAIN PAGE]   has_shorts = False
+[RENDER] render_page('main_roadtrip') appelé
+[RENDER]   extra_dirs = ['F:\\RoadBook HTML\\test v14', 'F:\\Automate_YT']
+[RENDER]   templates_dir = None
+[TEMPLATE] Recherche de 'main_roadtrip'
+[TEMPLATE] Dossiers de recherche : ['F:\\RoadBook HTML\\test v14', 'F:\\Automate_YT', 'F:\\Automate_YT\\templates', 'F:\\Automate_YT\\templates', 'F:\\Automate_YT']
+[TEMPLATE] Fichiers cherchés : ['template_roadtrip_principal.html', 'Road Trip Moto Écosse & Irlande 2026 _ 10 000 km Solo _ LCDMH.html', 'ecosse-irlande.html']
+[TEMPLATE]   F:\RoadBook HTML\test v14\template_roadtrip_principal.html → absent
+[TEMPLATE]   F:\RoadBook HTML\test v14\Road Trip Moto Écosse & Irlande 2026 _ 10 000 km Solo _ LCDMH.html → absent
+[TEMPLATE]   F:\RoadBook HTML\test v14\ecosse-irlande.html → absent
+[TEMPLATE]   F:\Automate_YT\template_roadtrip_principal.html → absent
+[TEMPLATE]   F:\Automate_YT\Road Trip Moto Écosse & Irlande 2026 _ 10 000 km Solo _ LCDMH.html → absent
+[TEMPLATE]   F:\Automate_YT\ecosse-irlande.html → absent
+[TEMPLATE]   F:\Automate_YT\templates\template_roadtrip_principal.html → TROUVÉ ✅
+[TEMPLATE] ✅ Chargé : F:\Automate_YT\templates\template_roadtrip_principal.html (8113 caractères)
+[TEMPLATE] ✅ Chargé : F:\Automate_YT\templates\template_roadtrip_principal.html (8113 caractères)
+[TEMPLATE]   Placeholders trouvés : 34
+[TEMPLATE]   Référence CSS : roadbook.css ✅
+[RENDER] Résolution des placeholders...
+[RENDER] ✅ Tous les placeholders résolus
+[RENDER] HTML final : 20244 caractères
+[BUILD] ✅ Page principale écrite : F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-test-donnees-enrichies.html
+[BUILD]   Taille HTML : 20244 caractères
+[CSS] Recherche du dossier CSS...
+[CSS]   F:\Automate_YT\templates\css → TROUVÉ ✅
+[CSS]   F:\Automate_YT\templates\templates\css → absent
+[CSS]   F:\Automate_YT\templates\css → TROUVÉ ✅
+[CSS]   F:\Automate_YT\templates\css → TROUVÉ ✅
+[CSS]   F:\Automate_YT\css → TROUVÉ ✅
+[CSS] Dossier source : F:\Automate_YT\templates\css
+[CSS] Dossier cible : F:\RoadBook HTML\test v14\build\roadtrips\css
+[CSS] ✅ Copié : roadbook-blocs.css → F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook-blocs.css
+[CSS] ✅ Copié : roadbook-ecosse.css → F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook-ecosse.css
+[CSS] ✅ Copié : roadbook-fusion.css → F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook-fusion.css
+[CSS] ✅ Copié : roadbook-jour-override.css → F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook-jour-override.css
+[CSS] ✅ Copié : roadbook.css → F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook.css
+[BUILD] CSS copiés : 5 fichier(s)
+[BUILD] ✅ CSS vérifié : F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook.css EXISTE
+[BUILD] ✅ CSS fusion vérifié : F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook-fusion.css EXISTE
+[BUILD] ✅ CSS blocs vérifié : F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook-blocs.css EXISTE
+
+[VERIFY] ═══ VÉRIFICATION DES FICHIERS RÉFÉRENCÉS ═══
+[VERIFY] Page HTML : F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-test-donnees-enrichies.html
+[VERIFY] Dossier roadtrips : F:\RoadBook HTML\test v14\build\roadtrips
+[VERIFY] Site root : F:\RoadBook HTML\test v14\build
+[VERIFY] URLs trouvées dans le HTML : 22
+[VERIFY]   css/roadbook.css
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook.css : ✅ EXISTE
+[VERIFY]   css/roadbook-fusion.css
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook-fusion.css : ✅ EXISTE
+[VERIFY]   css/roadbook-blocs.css
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook-blocs.css : ✅ EXISTE
+[VERIFY]   css/roadbook-ecosse.css
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\css\roadbook-ecosse.css : ✅ EXISTE
+[VERIFY]   /images/roadtrips/road-trip-moto-test-donnees-enrichies/pexels-pixabay-39391.jpg
+[VERIFY]     → F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-test-donnees-enrichies\pexels-pixabay-39391.jpg : ✅ EXISTE
+[VERIFY]   /roadbooks-html/road-trip-moto-test-donnees-enrichies/index.html
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-test-donnees-enrichies\index.html : ✅ EXISTE
+[VERIFY]   /roadtrips/road-trip-moto-test-donnees-enrichies-journal.html
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-test-donnees-enrichies-journal.html : ❌ MANQUANT
+[VERIFY]   /kurviger/road-trip-moto-test-donnees-enrichies.kurviger
+[VERIFY]     → F:\RoadBook HTML\test v14\build\kurviger\road-trip-moto-test-donnees-enrichies.kurviger : ✅ EXISTE
+[VERIFY]   /kurviger/road-trip-moto-test-donnees-enrichies.kurviger
+[VERIFY]     → F:\RoadBook HTML\test v14\build\kurviger\road-trip-moto-test-donnees-enrichies.kurviger : ✅ EXISTE
+[VERIFY]   /roadbooks/road-trip-moto-test-donnees-enrichies-roadbook.pdf
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadbooks\road-trip-moto-test-donnees-enrichies-roadbook.pdf : ✅ EXISTE
+[VERIFY]   /roadbooks-html/road-trip-moto-test-donnees-enrichies/index.html
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadbooks-html\road-trip-moto-test-donnees-enrichies\index.html : ✅ EXISTE
+[VERIFY]   /images/roadtrips/road-trip-moto-test-donnees-enrichies/téléchargement.png
+[VERIFY]     → F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-test-donnees-enrichies\téléchargement.png : ✅ EXISTE
+[VERIFY]   /roadtrips/road-trip-moto-test-donnees-enrichies-journal.html
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips\road-trip-moto-test-donnees-enrichies-journal.html : ❌ MANQUANT
+[VERIFY]   /roadtrips.html
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips.html : ❌ MANQUANT
+[VERIFY]   /roadtrips.html
+[VERIFY]     → F:\RoadBook HTML\test v14\build\roadtrips.html : ❌ MANQUANT
+[VERIFY]   /a-propos.html
+[VERIFY]     → F:\RoadBook HTML\test v14\build\a-propos.html : ❌ MANQUANT
+
+[HERO] ═══ VÉRIFICATION IMAGE HERO ═══
+[HERO] Chemin dans le HTML : /images/roadtrips/road-trip-moto-test-donnees-enrichies/pexels-pixabay-39391.jpg
+[HERO] Résolu vers : F:\RoadBook HTML\test v14\build\images\roadtrips\road-trip-moto-test-donnees-enrichies\pexels-pixabay-39391.jpg
+[HERO] Fichier existe : True
+[HERO] ✅ Taille : 2141 KB
+
+[HTML] ═══ EXTRAIT DU HTML GÉNÉRÉ (hero) ═══
+[HTML] L18: <header class="hero hero-image" style="background-image:url('/images/roadtrips/road-trip-moto-test-donnees-enrichies/pexels-pixabay-39391.jpg')">
+[HTML] L19: <div class="wrap hero-inner">
+
+[PUBLIC] ═══ URLS PUBLIQUES ATTENDUES ═══
+[PUBLIC]   Page principale: https://lcdmh.com/roadtrips/road-trip-moto-test-donnees-enrichies.html
+[PUBLIC]   Journal: https://lcdmh.com/roadtrips/road-trip-moto-test-donnees-enrichies-journal.html
+[PUBLIC]   Hero image: https://lcdmh.com/images/roadtrips/road-trip-moto-test-donnees-enrichies/pexels-pixabay-39391.jpg
+[PUBLIC]   QR code: https://lcdmh.com/images/roadtrips/road-trip-moto-test-donnees-enrichies/téléchargement.png
+[PUBLIC]   PDF: https://lcdmh.com/roadbooks/road-trip-moto-test-donnees-enrichies-roadbook.pdf
+[PUBLIC]   Roadbook HTML: https://lcdmh.com/roadbooks-html/road-trip-moto-test-donnees-enrichies/index.html
+[PUBLIC]   Kurviger: https://lcdmh.com/kurviger/road-trip-moto-test-donnees-enrichies.kurviger
+[PUBLIC]   CSS roadbook: https://lcdmh.com/roadtrips/css/roadbook.css
+[PUBLIC]   CSS fusion: https://lcdmh.com/roadtrips/css/roadbook-fusion.css
+[PUBLIC]   CSS blocs: https://lcdmh.com/roadtrips/css/roadbook-blocs.css
