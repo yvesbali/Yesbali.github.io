@@ -23,7 +23,7 @@
   var NAV_URL = "/nav.html";
 
   // ── Charger et injecter ──
-  fetch(NAV_URL, { cache: "no-cache" })
+  if (document.querySelector("nav, #lcdmh-nav, .nav-links, #lcdmh-nav-wrapper")) { return; } fetch(NAV_URL, { cache: "no-cache" })
     .then(function (res) {
       if (!res.ok) throw new Error("nav.html introuvable (" + res.status + ")");
       return res.text();
