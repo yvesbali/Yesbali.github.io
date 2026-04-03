@@ -1,0 +1,61 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvaturefastest"
+  },
+  "details": [
+    "route_information",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1774643115954,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        -2.589463,
+        51.406944,
+        0.858056,
+        54.434497
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "address": "The Shurland Hotel, High Street 79-81, ME12 4EH Swale Angleterre Royaume-Uni",
+          "name": "Couchage Hôtel The Shurland Hotel  5/05",
+          "category": "search_result",
+          "latitude": 51.406944,
+          "longitude": 0.858056
+        },
+        {
+          "address": "Mountpleasant (S bound), Orton Road, CA10 3TN Tebay Angleterre Royaume-Uni",
+          "name": " Old School B&B - 6/05",
+          "category": "search_result",
+          "latitude": 54.434497,
+          "longitude": -2.589463
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

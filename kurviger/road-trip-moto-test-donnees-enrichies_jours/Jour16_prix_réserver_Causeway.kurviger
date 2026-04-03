@@ -1,0 +1,71 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvaturefastest"
+  },
+  "details": [
+    "route_information",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1774679778384,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        -6.515729,
+        55.209218,
+        -6.128912,
+        55.235391
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "*Bivouac ? Game of Thrones - Stormlands Cliff",
+          "latitude": 55.209218,
+          "longitude": -6.128912
+        },
+        {
+          "address": "Whitepark Road,  BT54 6LX Ballintoy Irlande du Nord Royaume-Uni",
+          "name": "*point de vue ?- Carrick-a-Rede 🎥 PHOTO - Pont suspendu 20m hauteur ",
+          "category": "search_result",
+          "latitude": 55.235391,
+          "longitude": -6.33247,
+          "shaping": true
+        },
+        {
+          "name": "N2 - Giant's Causeway 🎥 DRONE MAJEUR - Chaussée basaltique UNESCO - LEVER SOLEIL 6h impératif ! ",
+          "latitude": 55.232596,
+          "longitude": -6.515729,
+          "shaping": true
+        },
+        {
+          "name": "*camping option prix ? *- camping A réserver Causeway Coast Wigwams",
+          "latitude": 55.213724,
+          "longitude": -6.491557
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

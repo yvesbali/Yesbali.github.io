@@ -1,0 +1,48 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "latitude": 46.263769,
+          "longitude": 14.690051,
+          "shaping": true
+        },
+        {
+          "latitude": 46.367542,
+          "longitude": 14.774895,
+          "shaping": true
+        },
+        {
+          "latitude": 46.432385,
+          "longitude": 14.980416,
+          "shaping": true
+        },
+        {
+          "latitude": 46.426144,
+          "longitude": 14.610615,
+          "shaping": true
+        },
+        {
+          "name": "ECO River Camp -22€- N1",
+          "weight": "curvature",
+          "latitude": 46.321423,
+          "longitude": 14.206234
+        },
+        {
+          "weight": "curvature",
+          "latitude": 46.308432,
+          "longitude": 14.204679,
+          "shaping": true
+        },
+        {
+          "weight": "curvature",
+          "latitude": 46.32755,
+          "longitude": 14.165154,
+          "shaping": true
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}

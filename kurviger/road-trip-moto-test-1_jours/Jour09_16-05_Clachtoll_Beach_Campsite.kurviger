@@ -1,0 +1,85 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvaturefastest"
+  },
+  "details": [
+    "route_information",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1774643115954,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        -5.401642,
+        57.960702,
+        -4.399868,
+        58.568887
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "Camping Sango Sands Oasis - 14/05",
+          "category": "search_result",
+          "latitude": 58.568887,
+          "longitude": -4.743589
+        },
+        {
+          "address": "Lairg,  IV27 4AY Écosse Royaume-Uni",
+          "name": "*Highlands infos",
+          "category": "search_result",
+          "latitude": 58.00189,
+          "longitude": -4.399868,
+          "shaping": true
+        },
+        {
+          "name": "saumons sauter.  Départ des randonnées en forê",
+          "latitude": 57.960702,
+          "longitude": -4.408052,
+          "shaping": true
+        },
+        {
+          "name": "*Spot Bivouac  info - Old Man of Stoer",
+          "latitude": 58.234719,
+          "longitude": -5.388386,
+          "shaping": true
+        },
+        {
+          "name": "*Spot Bivouac",
+          "latitude": 58.238647,
+          "longitude": -5.401642,
+          "shaping": true
+        },
+        {
+          "name": "Camping Clachtoll Beach Campsite -16/05",
+          "category": "search_result",
+          "latitude": 58.191199,
+          "longitude": -5.332666
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

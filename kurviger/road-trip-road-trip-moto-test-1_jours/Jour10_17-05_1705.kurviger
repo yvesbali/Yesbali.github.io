@@ -1,0 +1,111 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvaturefastest"
+  },
+  "details": [
+    "route_information",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1774679778384,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        -5.8249,
+        57.443148,
+        -5.019722,
+        58.191199
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "Camping Clachtoll Beach Campsite -16/05",
+          "category": "search_result",
+          "latitude": 58.191199,
+          "longitude": -5.332666
+        },
+        {
+          "name": "* couchage option ? ",
+          "latitude": 58.191181,
+          "longitude": -5.332558,
+          "shaping": true
+        },
+        {
+          "latitude": 58.084411,
+          "longitude": -5.236015,
+          "shaping": true
+        },
+        {
+          "name": "Réserve naturelle de Knockan Crag, Knockan Crag, Elphin, Lairg IV27 4HH, Royaume-Uni",
+          "category": "search_result",
+          "latitude": 57.998866,
+          "longitude": -5.108814,
+          "shaping": true
+        },
+        {
+          "address": "Loch Dubh,  Ullapool Écosse Royaume-Uni",
+          "name": "Ullapool  Hébergement 57.894400° -5.161100° Village pêcheurs pittoresque",
+          "category": "search_result",
+          "latitude": 57.916679,
+          "longitude": -5.162293,
+          "shaping": true
+        },
+        {
+          "address": "Falls of Measach,  IV23 2AB Écosse Royaume-Uni",
+          "name": "Falls Of Measach, A835, Garve IV23 2AB,",
+          "category": "search_result",
+          "latitude": 57.754722,
+          "longitude": -5.019722,
+          "shaping": true
+        },
+        {
+          "latitude": 57.745076,
+          "longitude": -5.64002,
+          "shaping": true
+        },
+        {
+          "latitude": 57.509922,
+          "longitude": -5.642853,
+          "shaping": true
+        },
+        {
+          "name": "Applecross Pass 57.416700° -5.816700° 🎥 DRONE MAJEUR - Bealach na Bà route VERTIGINEUSE ",
+          "category": "search_result",
+          "latitude": 57.443148,
+          "longitude": -5.8249,
+          "shaping": true
+        },
+        {
+          "address": "River Walk,  IV54 8LN Applecross Écosse Royaume-Uni",
+          "name": "J11 - Bivouac ? - 17/05",
+          "category": "search_result",
+          "latitude": 57.446512,
+          "longitude": -5.803628
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}
