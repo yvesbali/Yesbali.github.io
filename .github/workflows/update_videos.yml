@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests reportlab
       - name: Fetch YouTube data
         env:
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
@@ -34,3 +34,4 @@ jobs:
           git commit -m "chore: YouTube feed update"
           git pull --rebase origin main || (git rebase --abort && git checkout --theirs data/ && git add data/ && git rebase --continue)
           git push origin main
+
