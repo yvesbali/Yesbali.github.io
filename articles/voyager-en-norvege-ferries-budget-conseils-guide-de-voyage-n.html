@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Voyager en Norvège : ferries, budget, conseils. Guide de voyage Norway. EP14 | LCDMH</title>
-<meta name="description" content="Voyager en Norvège demande un minimum de préparation. Dans cette vidéo, je te partage un guide pratique basé sur un voyage réel : ferries, budget, iti">
-<link rel="canonical" href="https://lcdmh.com/articles/voyager-en-norvege-ferries-budget-conseils-guide-de-voyage-n.html">
+<meta name="description" content="Voyager en Norvège demande un minimum de préparation. Dans cette vidéo, je te partage un guide pratique basé sur un voyage réel : ferries, budget,…">
+<link rel="canonical" href="https://lcdmh.com/guides/voyager-en-norvege-ferries-budget-conseils-guide-de-voyage-n.html">
 <meta property="og:title" content="Voyager en Norvège : ferries, budget, conseils. Guide de voyage Norway. EP14">
-<meta property="og:description" content="Voyager en Norvège demande un minimum de préparation. Dans cette vidéo, je te partage un guide pratique basé sur un voyage réel : ferries, budget, iti">
+<meta property="og:description" content="Voyager en Norvège demande un minimum de préparation. Dans cette vidéo, je te partage un guide pratique basé sur un voyage réel : ferries, budget,…">
 <meta property="og:image" content="https://i.ytimg.com/vi/jKEeq45vtPU/hqdefault.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -29,7 +29,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-
 .stat-val{font-size:22px;font-weight:800;color:var(--orange)}
 .stat-lbl{font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:1px}
 
-.container{max-width:800px;margin:0 auto;padding:30px 20px}
+.container{max-width:900px;margin:0 auto;padding:30px 20px}
 
 .video{position:relative;padding-bottom:56.25%;margin:30px 0;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.12)}
 .video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
@@ -44,6 +44,7 @@ article li{margin:8px 0}
 .box.tip{border-left:4px solid var(--green);background:linear-gradient(135deg,#e8f5e9,var(--bg2))}
 .box.warn{border-left:4px solid var(--orange);background:linear-gradient(135deg,#fff3e0,var(--bg2))}
 .box.danger{border-left:4px solid var(--red);background:linear-gradient(135deg,#ffebee,var(--bg2))}
+.box.security{border-left:4px solid var(--blue);background:linear-gradient(135deg,#e3f2fd,var(--bg2))}
 .box-title{font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
 
 .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
@@ -61,17 +62,53 @@ td{padding:12px;border-bottom:1px solid var(--border)}
 tr:hover td{background:var(--bg3)}
 .stars{color:var(--orange)}
 
-.faq{background:var(--bg2);border-radius:12px;padding:25px;margin:30px 0}
-.faq h3{margin-bottom:20px}
+.faq{background:var(--bg2);border-radius:12px;padding:25px;margin:30px 0;border:1px solid var(--border)}
+.faq h2{margin:0 0 20px 0;padding-left:0;border-left:none;font-size:20px}
 .faq-item{border-bottom:1px solid var(--border);padding:15px 0}
 .faq-item:last-child{border:none}
-.faq-q{font-weight:600;margin-bottom:8px}
-.faq-a{color:var(--text2);font-size:15px}
+.faq-q{font-weight:600;margin-bottom:8px;color:var(--text)}
+.faq-a{color:var(--text2);font-size:15px;line-height:1.7}
 
-.community{margin:30px 0}
-.comment{background:var(--bg2);padding:15px;border-radius:10px;margin:10px 0;border-left:3px solid var(--orange)}
-.comment-text{font-style:italic}
-.comment-author{font-size:13px;color:var(--text2);margin-top:8px}
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION COMMUNAUTÉ v2.2 — Style Reddit / Avis utilisateurs
+   ═══════════════════════════════════════════════════════════════════════════ */
+.community-section{margin:40px 0;padding:30px;background:var(--bg2);border-radius:16px;border:1px solid var(--border)}
+.community-section h2{margin:0 0 10px 0;padding-left:0;border-left:none;font-size:22px;display:flex;align-items:center;gap:10px}
+.community-intro{color:var(--text2);font-size:15px;margin-bottom:25px}
+
+/* Grille 2 colonnes pour les commentaires */
+.comments-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-bottom:30px}
+@media(max-width:700px){.comments-grid{grid-template-columns:1fr}}
+
+/* Carte commentaire style moderne */
+.comment-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:18px;transition:all 0.2s;position:relative}
+.comment-card:hover{border-color:var(--orange);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+.comment-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--orange);border-radius:4px 0 0 4px;opacity:0;transition:opacity 0.2s}
+.comment-card:hover::before{opacity:1}
+
+.comment-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.comment-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--orange),#f39c12);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px}
+.comment-meta{flex:1}
+.comment-author{font-weight:600;font-size:14px;color:var(--text)}
+.comment-date{font-size:11px;color:var(--text2)}
+
+.comment-text{font-size:15px;line-height:1.6;color:var(--text);margin-bottom:12px}
+.comment-text em{font-style:normal;background:linear-gradient(120deg,rgba(230,126,34,0.15) 0%,rgba(230,126,34,0.15) 100%);padding:0 3px;border-radius:3px}
+
+.comment-footer{display:flex;align-items:center;gap:15px;font-size:12px;color:var(--text2)}
+.comment-likes{display:flex;align-items:center;gap:4px;color:var(--red)}
+.comment-likes svg{width:14px;height:14px}
+
+/* Section Astuces de la communauté */
+.community-tips{background:linear-gradient(135deg,#fff9e6,#fff3cd);border:1px solid #ffc107;border-radius:12px;padding:20px;margin-top:25px}
+.community-tips h3{font-size:16px;font-weight:700;margin-bottom:15px;display:flex;align-items:center;gap:8px;color:#856404}
+.tips-list{list-style:none;padding:0;margin:0}
+.tips-list li{padding:10px 0 10px 28px;border-bottom:1px dashed #ffc107;position:relative;font-size:14px;color:var(--text)}
+.tips-list li:last-child{border:none}
+.tips-list li::before{content:'💡';position:absolute;left:0;top:10px}
+
+/* Compteur de commentaires */
+.comments-count{display:inline-flex;align-items:center;gap:6px;background:var(--bg3);padding:4px 12px;border-radius:20px;font-size:13px;font-weight:600;color:var(--text2);margin-left:10px}
 
 .affiliates{background:#1a1a2e;color:#fff;border-radius:12px;padding:25px;margin:30px 0}
 .affiliates h3{margin-bottom:15px}
@@ -80,6 +117,7 @@ tr:hover td{background:var(--bg3)}
 .aff-link:hover{background:rgba(255,255,255,0.2)}
 .aff-name{font-weight:600}
 .aff-desc{font-size:13px;opacity:0.8}
+.aff-code{display:inline-block;background:var(--orange);padding:3px 8px;border-radius:4px;font-size:11px;font-weight:600;margin-top:5px}
 
 .cta{background:linear-gradient(135deg,var(--orange),#f39c12);color:#fff;padding:35px;border-radius:12px;text-align:center;margin:30px 0}
 .cta h3{font-size:22px;margin-bottom:10px}
@@ -89,88 +127,124 @@ tr:hover td{background:var(--bg3)}
 footer{text-align:center;padding:30px;color:var(--text2);font-size:14px}
 footer a{color:var(--orange);text-decoration:none}
 
-@media(max-width:600px){.stats{flex-wrap:wrap;gap:15px}.product-grid{grid-template-columns:1fr}}
+@media(max-width:600px){
+    .stats{flex-wrap:wrap;gap:15px}
+    .product-grid{grid-template-columns:1fr}
+    .aff-grid{grid-template-columns:1fr}
+    .community-section{padding:20px 15px}
+}
 </style>
 </head>
 <body>
-<script src="/js/lcdmh-nav-loader.js" defer></script>
-<div id="lcdmh-nav-container"></div>
 <header class="header">
-    <div class="header-cat">🗺️ Road Trip</div>
+    <div class="header-cat">🌍 Road Trip Lointain</div>
     <h1>Voyager en Norvège : ferries, budget, conseils. Guide de voyage Norway. EP14</h1>
-    <p class="header-sub">Voyager en Norvège demande un minimum de préparation. Dans cette vidéo, je te partage un guide pratique basé sur un voyage réel : ferries, budget, iti</p>
+    <p class="header-sub">Voyager en Norvège demande un minimum de préparation. Dans cette vidéo, je te partage un guide pratique basé sur un voyage réel : ferries, budget,…</p>
 </header>
 
 <div class="stats">
     <div class="stat"><div class="stat-val">3.0K</div><div class="stat-lbl">vues</div></div>
-    <div class="stat"><div class="stat-val">373</div><div class="stat-lbl">likes</div></div>
+    <div class="stat"><div class="stat-val">375</div><div class="stat-lbl">likes</div></div>
     <div class="stat"><div class="stat-val">5 min</div><div class="stat-lbl">lecture</div></div>
 </div>
 
 <div class="container">
     <div class="video">
-        <iframe src="https://www.youtube.com/embed/jKEeq45vtPU" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/jKEeq45vtPU" allowfullscreen loading="lazy"></iframe>
     </div>
     
     <article>
-        ```html
-<h2>Roadtrip en Norvège : Le guide du motard qui en veut</h2>
+        <article>
+<p>Après 5000 kilomètres et quelques nuits courtes, me voilà de retour de Norvège avec la tête pleine d'images et les sacoches pleines de souvenirs. Ce voyage jusqu'au Cap Nord m'a mené sur des routes que je n'oublierai jamais, entre fjords découpés et paysages de fin du monde. Voici mon retour d'expérience, avec tous les conseils pratiques que j'aurais aimé connaître avant de partir.</p>
 
-<p>La Norvège, ça te tente ? T'as raison. J'ai bouffé 700 bornes et 3h de sommeil pour te concocter ce guide. Ici, pas de fioritures, juste du concret pour ton prochain trip moto. On parle ferries, itinéraires, et bons plans validés sur le terrain.</p>
+<h2>🛣️ La route en bref</h2>
 
-<h3>Les Ferries : Ton passage obligé</h3>
+<p>J'ai choisi de partir de Kristiansand pour remonter la côte ouest jusqu'au Cap Nord, soit environ 2500 km aller. L'itinéraire m'a mené à travers une dizaine de ferries - impossible de les éviter avec tous ces fjords qui découpent le pays. Le retour par la Finlande et la Suède s'est révélé d'un ennui mortel : des lignes droites à perte de vue dans la forêt boréale.</p>
 
-<p>Impossible d'éviter les ferries en Norvège, les fjords sont partout. Voici comment t'en sortir sans te ruiner :</p>
+<p>J'ai fait ce voyage en mai, une période un peu précoce mais qui offre des paysages enneigés magnifiques et surtout une fréquentation touristique réduite. Par contre, arrivé au Cap Nord à minuit et demi avec seulement 3h de sommeil avant d'attaquer les 700 km de retour, j'ai bien senti la fatigue.</p>
 
+<div class="box tip">
+<div class="box-title">💡 Conseil terrain</div>
+<p>Prends le temps de découvrir les petites routes et les villages encaissés dans les fjords. Tu découvriras une Norvège authentique et profonde. N'hésite pas à emprunter les routes sans issue - les plus beaux spots s'y cachent souvent.</p>
+</div>
+
+<h2>🫀 Ce qui m'a marqué</h2>
+
+<h3>La montée en puissance psychologique</h3>
+<p>En prenant cette route dans ce sens, j'ai vraiment ressenti cette montée d'adrénaline, ce crescendo jour après jour en me rapprochant de mon objectif. Psychologiquement, tu as l'impression de monter en puissance vers le bout du monde.</p>
+
+<h3>Le camping de Karasjok, carrefour des motards</h3>
+<p>En m'arrêtant dans ce camping, j'ai eu une sensation particulière : l'impression d'être au cœur d'un lieu de transhumance. Mais ici, ce n'est pas la transhumance des rennes, c'est celle des motards. Certains partent vers le Cap Nord, d'autres en reviennent. Un endroit magique avec des douches impeccables et les camping-cars séparés des tentes - appréciable pour dormir un peu.</p>
+
+<h3>La découverte du peuple Sami</h3>
+<p>Dans cette région où l'immensité de la forêt boréale prend naissance siège le parlement Sami. Ce peuple descend des premiers pionniers arrivés dans le grand nord il y a plus de 10000 ans, héritiers directs des chasseurs-cueilleurs qui ont suivi le retrait des glaces. Je ne pouvais pas passer à côté de cette petite explication.</p>
+
+<h2>🏍️ Pourquoi tu dois y aller</h2>
+
+<p>La Norvège offre des paysages qu'on ne voit nulle part ailleurs. Les fjords qui découpent le pays, les montagnes à perte de vue, cette quiétude qui règne dans les petits villages - tout concourt à créer une expérience unique.</p>
+
+<p>En mai, les paysages enneigés et la flore en pleine renaissance donnent un cachet incroyable au pays. Et surtout, tu évites la saturation touristique de l'été quand les camping-cars et motos envahissent les routes.</p>
+
+<div class="box warn">
+<div class="box-title">⚠️ À savoir</div>
+<p>La Norvège concentre tout son tourisme sur deux ou trois mois. En pleine saison, trouver des routes tranquilles n'est pas gagné. Partir en mai ou septembre peut être une excellente alternative.</p>
+</div>
+
+<h2>🧳 Conseils pratiques</h2>
+
+<h3>Les ferries, incontournables</h3>
+<p>Depuis juillet 2022, les passagers sont gratuits sur tous les ferries publiques - tu ne payes que pour le véhicule. Sur mes 10 ou 15 ferries, je n'en ai payé que deux ou trois.</p>
+
+<p>Pour payer, plusieurs options :</p>
 <ul>
-    <li><b>Gratuité :</b> Depuis juillet 2022, les passagers sont gratuits sur les ferries publiques. Tu paies seulement ta bécane.</li>
-    <li><b>Paiement :</b> Plusieurs options s'offrent à toi :
-        <ul>
-            <li><b>FerryPay :</b> Tu lies ta plaque d'immatriculation à un compte et c'est débité automatiquement. Facile, mais plein tarif.</li>
-            <li><b>À bord :</b> Tu payes en sans contact directement à l'équipage. Simple et efficace.</li>
-            <li><b>AutoPass :</b> Tu verses un acompte de 181€ et tu as 50% de réduction sur les ferries publiques. Intéressant si tu en prends beaucoup.</li>
-        </ul>
-    </li>
-    <li><b>Prix :</b> Compte entre 3 et 6€ pour une petite traversée, 21€ pour Bodo-Lofoten, et 52€ pour le Geirangerfjord (une croisière à lui seul !).</li>
-    <li><b>Horaires :</b> Les petits ferries sont fréquents (toutes les 15-30 minutes). Pour les gros (Bodo-Lofoten), vérifie et réserve à l'avance (site Torgaten Nord).</li>
-    <li><b>L'app indispensable :</b> Entur, le Google Maps norvégien. Horaires de tous les transports en commun, y compris les ferries.</li>
+<li><strong>Ferry Pay</strong> : tu crées un compte, enregistres ta plaque et ta carte bancaire. Débit automatique au tarif plein.</li>
+<li><strong>AutoPass</strong> : 50% de remise sur les ferries publiques moyennant un acompte. Exemple : Bodø-Lofoten passe de 21€ à 10,50€.</li>
+<li><strong>Paiement à bord</strong> : en général sans contact, très facile.</li>
 </ul>
 
-<h3>L'itinéraire : Choisis ton camp</h3>
+<p>Côté prix : 3 à 6€ pour une petite traversée, environ 21€ pour le continent-Lofoten, 52€ pour le Geirangerfjord (mais là c'est une visite à part entière).</p>
 
-<p>Partir de Christiansand et remonter la côte ouest, c'est psychologiquement une bonne option pour monter en puissance. Mais le plus important, c'est :</p>
+<div class="box tip">
+<div class="box-title">💡 Conseil terrain</div>
+<p>Pour les infos horaires, télécharge l'application "Tour" - c'est le Google Maps norvégien en mieux. Elle regroupe tous les horaires de transport public du pays, y compris les ferries.</p>
+</div>
 
-<ul>
-    <li><b>Prends les petites routes :</b> Traverse les villages encaissés dans les fjords, tu découvriras une Norvège authentique et paisible.</li>
-    <li><b>Explore les fjords sans issue :</b> Ça vaut le détour.</li>
-</ul>
+<h3>Réservations indispensables</h3>
+<p>Les petits ferries qui traversent les fjords fonctionnent en continu (toutes les 15-30 minutes). Par contre, les gros ferries comme Bodø-Moskenes pour les Lofoten n'ont que 2 à 4 départs par jour et peuvent être complets en haute saison. Réserve quelques jours avant sur le site Torgaten Nord.</p>
 
-<div class="box warn"><div class="box-title">⚠️ Attention</div>Le retour par la Finlande et la Suède ? Oublie. Des lignes droites à n'en plus finir, un ennui mortel. Redescends plutôt par l'intérieur des terres norvégiennes, même si c'est plus long.</div>
+<h3>Budget approximatif</h3>
+<p>J'aurais économisé seulement 12€ avec AutoPass sur les ferries payants - la majorité étant gratuits, Ferry Pay aurait suffi dans mon cas.</p>
 
-<h3>Le meilleur moment pour y aller ?</h3>
+<div class="box warn">
+<div class="box-title">⚠️ À savoir</div>
+<p>Les ferries privées comme le Geirangerfjord ne donnent aucune réduction avec AutoPass. Tu payes plein tarif.</p>
+</div>
 
-<p>Mai, c'est peut-être un peu tôt, mais les paysages enneigés et la faible fréquentation touristique compensent largement. Évite la cohue des camping-cars en pleine saison.</p>
+<h2>✨ Le mot de la fin</h2>
 
-<h3>Le spot camping à ne pas manquer</h3>
+<p>Ce voyage m'a marqué profondément. Malgré la fatigue - ces 700 km après une nuit de 3h ont été rudes -, j'ai découvert un pays d'une beauté saisissante. La quiétude qui règne dans ces territoires du bout du monde fait du bien à l'âme.</p>
 
-<p>Karasjok. Camping tranquille, douches au top, et surtout, les camping-cars sont séparés des campeurs. Un vrai plus pour dormir sur tes deux oreilles.</p>
+<p>Si j'ai un regret, c'est d'avoir choisi le retour par la Finlande. La prochaine fois, je redescendrai par l'intérieur des terres norvégiennes - plus long, plus coûteux, plus fatigant, mais tellement plus riche.</p>
 
-<h3>Un peu de culture</h3>
+<p>Alors si la Norvège te fait de l'œil, fonce. Prends ton temps, découvre les petites routes, arrête-toi dans les villages. Ce pays te réserve des émotions que tu n'es pas près d'oublier.</p>
 
-<p>Profite de ton passage dans la région pour découvrir le peuple Sami et son histoire. Un petit goût de "vague à l'âme" garanti.</p>
-
-<h3>Verdict</h3>
-
-<p>La Norvège à moto, c'est une claque visuelle et sensorielle. Prépare bien tes ferries, choisis ton itinéraire avec soin, et profite de la quiétude des paysages. Tu ne seras pas déçu.</p>
-```
+</article>
     </article>
+    
+    <div class="box security">
+    <div class="box-title">🛡️ Voyage en sécurité avec KOMOBI</div>
+    <p>Pour un road trip aussi lointain, un traceur GPS est indispensable. 
+    <strong>KOMOBI</strong> permet de localiser ta moto en temps réel, recevoir des alertes 
+    en cas de mouvement suspect, et partager ton trajet avec tes proches.</p>
+    <p>👉 <a href="https://komobi.fr" target="_blank" rel="nofollow sponsored" style="color:var(--blue);font-weight:600;">Découvrir KOMOBI</a> — Partenaire LCDMH (-15%)</p>
+</div>
     
     
     
     
     
     <div class="faq">
-<h3>❓ Questions fréquentes</h3>
+<h2>❓ FAQ — Vos questions</h2>
 <div class="faq-item">
             <div class="faq-q">Q: Yves,
 Encore une très bonne vidéo qui va nous permettre de se préparer au mieux pour les moments difficiles mais les points positifs de la Norvège sont bien plus importants.
@@ -214,14 +288,162 @@ Dom</div>
         </div>
 </div>
     
+    <div class="community-section">
+<h2>💬 Ce que la communauté en pense <span class="comments-count">8 avis</span></h2>
+<p class="community-intro">Les retours et expériences partagés par les motards de la communauté LCDMH.</p>
+<div class="comments-grid">
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <div class="comment-avatar">@</div>
+                <div class="comment-meta">
+                    <div class="comment-author">@@claudemo5389</div>
+                    <div class="comment-date">2026-02-18</div>
+                </div>
+            </div>
+            <div class="comment-text">Encore bravo d'avoir eu la force d'accomplir un tel voyage qui demande pas mal d'énergie, mais tellement merveilleux. Et merci pour ces précieux conseils.</div>
+            <div class="comment-footer">
+                
+            </div>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <div class="comment-avatar">@</div>
+                <div class="comment-meta">
+                    <div class="comment-author">@@JeanLassourie-x7n</div>
+                    <div class="comment-date">2026-02-10</div>
+                </div>
+            </div>
+            <div class="comment-text">Excellente vidéo utile très intéressante beaucoup de conseils quelques belles images ça donne envie merci. Jean.</div>
+            <div class="comment-footer">
+                
+            </div>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <div class="comment-avatar">@</div>
+                <div class="comment-meta">
+                    <div class="comment-author">@@jean-lucd165</div>
+                    <div class="comment-date">2026-02-09</div>
+                </div>
+            </div>
+            <div class="comment-text">Merci Yves pour ces très précieux conseils. "Un homme averti en vaut deux"! Ton reportage honnête nous montre qu'il faudra bien se connaître et doser l'énergie. Une journée de 1000 km en moto c'est pas évident. La pluie ,le vent, des nuits aléatoires concourent à augmenter la fatigue. Merci pour tout. Encore une fois ton expérience est vraiment utile. Bonne continuation et bravo pour le travail pour filmer et monter ces belles images ✌️✌️✌️ ...ça mérite bien trois V sur l'échelle des valeureux explorateurs.🙏</div>
+            <div class="comment-footer">
+                
+            </div>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <div class="comment-avatar">@</div>
+                <div class="comment-meta">
+                    <div class="comment-author">@@philfazer</div>
+                    <div class="comment-date">2026-02-09</div>
+                </div>
+            </div>
+            <div class="comment-text">👍✌</div>
+            <div class="comment-footer">
+                <span class="comment-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 1</span>
+            </div>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <div class="comment-avatar">@</div>
+                <div class="comment-meta">
+                    <div class="comment-author">@@colibri6818</div>
+                    <div class="comment-date">2026-02-09</div>
+                </div>
+            </div>
+            <div class="comment-text">Merci pour toutes ces infos et les splendides vidéos que tu as partagé. La meilleure chaîne de roadtrips moto et surtout le meilleur état d'esprit. Super 😊</div>
+            <div class="comment-footer">
+                
+            </div>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <div class="comment-avatar">@</div>
+                <div class="comment-meta">
+                    <div class="comment-author">@@laurentaznar2430</div>
+                    <div class="comment-date">2026-02-24</div>
+                </div>
+            </div>
+            <div class="comment-text">Merci Yves 🙏 Tes conseils sont précieux.
+Et bravo pour tes vidéos... je sais à quel point cette passion est chronophage !😉
+La Norvège sera certainement une de mes prochaines destinations.</div>
+            <div class="comment-footer">
+                
+            </div>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <div class="comment-avatar">@</div>
+                <div class="comment-meta">
+                    <div class="comment-author">@@yannickrignol86</div>
+                    <div class="comment-date">2026-02-04</div>
+                </div>
+            </div>
+            <div class="comment-text">Merci pour toutes les infos. Encore de belles images. Une vidéo précieuse à conserver pour rien oublier d'important le jour du départ. Merci</div>
+            <div class="comment-footer">
+                
+            </div>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <div class="comment-avatar">@</div>
+                <div class="comment-meta">
+                    <div class="comment-author">@@olivierborsay6776</div>
+                    <div class="comment-date">2026-02-10</div>
+                </div>
+            </div>
+            <div class="comment-text">Bravo et bonne nouvelle saison.</div>
+            <div class="comment-footer">
+                
+            </div>
+        </div>
+</div>
+</div>
     
+    <div class="community-tips">
+<h3>💡 Astuces de la communauté</h3>
+<ul class="tips-list">
+<li>Encore bravo d'avoir eu la force d'accomplir un tel voyage qui demande pas mal d'énergie, mais tellement merveilleux. Et merci pour ces précieux...</li>
+<li>Excellente vidéo utile très intéressante beaucoup de conseils quelques belles images ça donne envie merci. Jean.</li>
+<li>Merci Yves pour ces très précieux conseils. "Un homme averti en vaut deux"! Ton reportage honnête nous montre qu'il faudra bien se connaître et doser...</li>
+<li>Merci Yves 🙏 Tes conseils sont précieux.
+Et bravo pour tes vidéos... je sais à quel point cette passion est chronophage !😉
+La Norvège sera...</li>
+<li>Merci pour toutes les infos. Encore de belles images. Une vidéo précieuse à conserver pour rien oublier d'important le jour du départ. Merci</li>
+</ul>
+</div>
     
     <div class="affiliates">
 <h3>🛒 Où acheter</h3>
 <div class="aff-grid">
-<a href="https://www.amazon.fr/b?node=1898125031&tag=lcdmh-21" class="aff-link" target="_blank" rel="nofollow sponsored">
-            <div class="aff-name">Amazon Équipement</div>
-            <div class="aff-desc">Tout l'équipement moto</div>
+<a href="https://carpuride.com/fr/?ref=uxcepkkq" class="aff-link" target="_blank" rel="nofollow sponsored">
+            <div class="aff-name">Carpuride</div>
+            <div class="aff-desc">GPS offline indispensable — Code LCDMH = -30%</div>
+            <div class="aff-code">Code: LCDMH</div>
+        </a>
+<a href="https://komobi.fr" class="aff-link" target="_blank" rel="nofollow sponsored">
+            <div class="aff-name">KOMOBI</div>
+            <div class="aff-desc">🛡️ Voyage en sécurité — Traceur GPS antivol</div>
+            
+        </a>
+<a href="https://www.awin1.com/cread.php?awinmid=63859&awinaffid=2753560" class="aff-link" target="_blank" rel="nofollow sponsored">
+            <div class="aff-name">Olight</div>
+            <div class="aff-desc">Lampe bivouac indispensable — Code LCDMH = -30%</div>
+            <div class="aff-code">Code: LCDMH</div>
+        </a>
+<a href="https://www.amazon.fr/stores/AFERIY?tag=lcdmh-21" class="aff-link" target="_blank" rel="nofollow sponsored">
+            <div class="aff-name">AFERIY</div>
+            <div class="aff-desc">Station énergie pour bivouac autonome</div>
+            <div class="aff-code">Code: 8JGATT8K</div>
         </a>
 </div></div>
     
@@ -234,9 +456,7 @@ Dom</div>
 
 <footer>
     <p>🏍️ <a href="https://lcdmh.com">LCDMH</a> — La Chaîne Du Motard Heureux</p>
-    <p>Mis à jour le 01/04/2026</p>
+    <p>Mis à jour le 03/04/2026</p>
 </footer>
-<script src="../nav-loader.js"></script>
-<script src="../maillage.js"></script>
 </body>
 </html>
