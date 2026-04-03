@@ -1,0 +1,95 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvaturefastest"
+  },
+  "details": [
+    "route_information",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1774643115954,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        -3.844335,
+        55.949737,
+        -2.7967,
+        56.768338
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "Départ -8/05",
+          "latitude": 55.949737,
+          "longitude": -3.007169
+        },
+        {
+          "name": "Glasgow",
+          "category": "search_result",
+          "latitude": 55.979699,
+          "longitude": -3.369777,
+          "shaping": true
+        },
+        {
+          "address": "West (Main) Stand, Stadium Way, FK2 9EE Falkirk Écosse Royaume-Uni",
+          "name": "Stirling Castle 56.116500° -3.936900° Château historique - Arrêt 1h - Batailles indépendance écossaise",
+          "category": "search_result",
+          "latitude": 56.005,
+          "longitude": -3.7539,
+          "shaping": true
+        },
+        {
+          "address": "The Cottage Kitchen, Logies Lane 5, KY16 9NL St Andrews Écosse Royaume-Uni",
+          "name": "Visite St Andrews Pier Edge Viewpoint",
+          "category": "search_result",
+          "latitude": 56.3398,
+          "longitude": -2.7967,
+          "shaping": true
+        },
+        {
+          "category": "search_result",
+          "latitude": 56.588229,
+          "longitude": -3.339844,
+          "shaping": true
+        },
+        {
+          "name": "Visite Blair Castle Gardens",
+          "category": "search_result",
+          "latitude": 56.767255,
+          "longitude": -3.842425,
+          "shaping": true
+        },
+        {
+          "address": "America Park,  PH18 5SR Blair Atholl Écosse Royaume-Uni",
+          "name": "Blair Castle N2 (prix_indicatif alternatives_proches) - 10/05",
+          "category": "search_result",
+          "latitude": 56.768338,
+          "longitude": -3.844335
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

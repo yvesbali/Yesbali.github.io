@@ -1,0 +1,49 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "address": "Queen Street,  AB10 1AN Aberdeen Écosse Royaume-Uni",
+          "category": "search_result",
+          "latitude": 57.1497,
+          "longitude": -2.0943,
+          "shaping": true
+        },
+        {
+          "category": "search_result",
+          "latitude": 57.17804,
+          "longitude": -2.121477,
+          "shaping": true
+        },
+        {
+          "name": "*interet ? - Visite ville ",
+          "category": "search_result",
+          "latitude": 57.477095,
+          "longitude": -4.226877,
+          "shaping": true
+        },
+        {
+          "address": "Ben Loyal, Wester Greengates, IV10 8AA Fortrose Écosse Royaume-Uni",
+          "name": "*Fortrose Bay Campsite option ? - 13/05",
+          "category": "search_result",
+          "latitude": 57.57871,
+          "longitude": -4.118187
+        },
+        {
+          "name": "*Bivouac/camping ?",
+          "latitude": 57.677895,
+          "longitude": -4.000418,
+          "shaping": true
+        },
+        {
+          "name": " *Ferry info prix ? - Cromarty 8h/18h Nigg Fréquence  30 minutes",
+          "latitude": 57.683861,
+          "longitude": -4.036885,
+          "shaping": true
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}
