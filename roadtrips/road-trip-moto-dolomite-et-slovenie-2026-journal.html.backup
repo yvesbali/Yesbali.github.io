@@ -209,7 +209,44 @@ a { color: inherit; text-decoration: none; }
 </header>
 <main class="wrap">
     <div class="section-kicker">Entrées du journal</div>
-    <article class="journal-empty"><h2>Le journal arrive bientôt</h2><p>Les shorts et notes publiés pendant le voyage apparaîtront ici automatiquement.</p></article>
+    
+
+        
+
+        <!-- Entree auto-publiee le 2026-04-03 11:29 -->
+        <div class="journal-card">
+            <div class="journal-thumb">
+                <span class="journal-badge">1 AVRIL 2026</span>
+                <a href="https://www.youtube.com/watch?v=O8q1huBFy40" target="_blank">
+                    <img src="https://i.ytimg.com/vi/O8q1huBFy40/maxresdefault.jpg" alt="Road Trip Moto Slovénie &amp; Dolomites 2026" loading="lazy">
+                </a>
+            </div>
+            <div class="journal-body">
+                <h3>Road Trip Moto Slovénie &amp; Dolomites 2026</h3>
+                <p>💬 Tipeee : https://fr.tipeee.com/lcdmh
+
+📍 AOOCCI BX/U6 : https://aoocci.com/products/bx-motorcycle-carplay-dashcam-smart-bsd?ref=gvxyhqgv&amp;variant=42923929960536
+Code : LCDMH25
+📍 Carpuride : https://carpuride.com/?ref=uxcepkkq
+🎟 Code Carpuride -30% : ...</p>
+                <a href="https://www.youtube.com/watch?v=O8q1huBFy40" target="_blank" style="display:inline-block;width:auto;max-width:fit-content;padding:.55rem 1.2rem;background:#1a1a1a;color:#fff;border-radius:8px;font-size:.85rem;font-weight:600;text-decoration:none;">Voir la video</a>
+            </div>
+        </div>
+<!-- Entree auto-publiee le 2026-04-03 11:29 -->
+        <div class="journal-card">
+            <div class="journal-thumb">
+                <span class="journal-badge">2 AVRIL 2026</span>
+                <a href="https://www.youtube.com/watch?v=hhrLLNlc4as" target="_blank">
+                    <img src="https://i.ytimg.com/vi/hhrLLNlc4as/maxresdefault.jpg" alt="Test du jeudi soir" loading="lazy">
+                </a>
+            </div>
+            <div class="journal-body">
+                <h3>Test du jeudi soir</h3>
+                <p>Test de publication vidéo à 21h23</p>
+                <a href="https://www.youtube.com/watch?v=hhrLLNlc4as" target="_blank" style="display:inline-block;width:auto;max-width:fit-content;padding:.55rem 1.2rem;background:#1a1a1a;color:#fff;border-radius:8px;font-size:.85rem;font-weight:600;text-decoration:none;">Voir la video</a>
+            </div>
+        </div>
+<article class="journal-empty"><h2>Le journal arrive bientôt</h2><p>Les shorts et notes publiés pendant le voyage apparaîtront ici automatiquement.</p></article>
 </main>
 </body>
 </html>
