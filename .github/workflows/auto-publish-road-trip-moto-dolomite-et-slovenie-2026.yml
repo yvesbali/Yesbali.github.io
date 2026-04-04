@@ -41,7 +41,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install google-api-python-client google-auth
+        run: pip install google-api-python-client google-auth reportlab
 
       - name: Fetch and inject new videos
         env:
@@ -58,3 +58,4 @@ jobs:
           git add -A
           git diff --cached --quiet || git commit -m "Auto-publish: nouvelles videos road-trip-moto-dolomite-et-slovenie-2026"
           git push
+
