@@ -27,7 +27,7 @@ jobs:
           YT_CLIENT_SECRETS: ${{ secrets.YT_CLIENT_SECRETS }}
           YT_TOKEN_ANALYTICS: ${{ secrets.YT_TOKEN_ANALYTICS }}
         run: |
-          python scripts/auto_publish_roadtrip.py \
+          python scripts/auto_publish_lite.py \
             --config data/roadtrips/road-trip-moto-dolomite-et-slovenie-2026/auto_publish_config.json
 
       - name: Commit and push changes
