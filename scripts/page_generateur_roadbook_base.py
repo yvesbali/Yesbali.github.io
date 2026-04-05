@@ -181,8 +181,9 @@ def extract_coords(text: str) -> Tuple[Optional[float], Optional[float]]:
 
 _DAY_RE = re.compile(r"\bJ\s*(\d{1,2})(?:\s*[-/]\s*(\d{1,2}))?\b", re.I)
 _DATE_RANGE_RE = re.compile(r"\b(\d{1,2})-(\d{1,2})(?:/(\d{2}))?\b")
-_START_DATE_RE = re.compile(r"\bDépart\s+(\d{1,2})\s+([A-Za-zÀ-ÿ]+)\s+(\d{4})\b", re.I)
-_START_DATE_SLASH_RE = re.compile(r"\bDépart\s+(\d{1,2})[/-](\d{1,2})[/-](\d{4})\b", re.I)
+# Accepte : "Départ 4 mai 2026", "Départ le 4 mai 2026", "Départ du 4 mai 2026"
+_START_DATE_RE = re.compile(r"\bDépart\s+(?:le\s+|du\s+)?(\d{1,2})\s+([A-Za-zÀ-ÿ]+)\s+(\d{4})\b", re.I)
+_START_DATE_SLASH_RE = re.compile(r"\bDépart\s+(?:le\s+|du\s+)?(\d{1,2})[/-](\d{1,2})[/-](\d{4})\b", re.I)
 _GENERIC_DATE_RE = re.compile(r"\b(\d{1,2})[/-](\d{1,2})[/-](\d{4})\b")
 _NIGHTS_RE = re.compile(r"(?<![A-Z0-9])N\s*(\d+)\b", re.I)
 
@@ -898,17 +899,39 @@ def enrich_timeline_item(
     sections = extraire_sections(gemini_text) if gemini_text and callable(extraire_sections) else _extraire_sections_multiligne_local(gemini_text or "")
 
     # ═══ PARSING DES QUESTIONS *xxx ? (V2 — avec GPS + location) ═══
-    parsed_question = None
+    # Supporte les questions multiples séparées par | dans une même ligne CSV
+    parsed_questions_list = []
     if QUESTIONS_MODULE_AVAILABLE and questions_module:
         raw_text = item.get("raw") or item.get("label") or ""
-        if raw_text.strip().startswith("*") and "?" in raw_text:
+        # Détecter toute question *xxx ? dans le texte
+        import re as _re_q
+        _q_matches = _re_q.findall(r"\*[^?]+\?", raw_text)
+        
+        # Extraire le sujet contextuel (partie avant le premier * ou premier |)
+        _context_subject = ""
+        if "|" in raw_text:
+            _parts = [p.strip() for p in raw_text.split("|")]
+            for _p in _parts:
+                if _p and not _p.strip().startswith("*") and not _re_q.match(r"^\s*N\d+\s*$", _p):
+                    # Nettoyer le sujet : retirer prix, dates, etc.
+                    _ctx = _re_q.sub(r"\s*-\s*\d+\s*[€£CHF]+.*$", "", _p).strip(" -|")
+                    _ctx = _re_q.sub(r"\s*\d+\s*[€£CHF]+.*$", "", _ctx).strip(" -|")
+                    if len(_ctx) > 2:
+                        _context_subject = _ctx
+                        break
+        
+        for _q_match in _q_matches:
             try:
-                # V2 : passer lat/lon au parser pour classifier les questions sans mot-clé
                 parsed_question = questions_module.parse_question(
-                    raw_text, lat=lat, lon=lon,
+                    _q_match.strip(), lat=lat, lon=lon,
                 )
                 if parsed_question:
-                    item["parsed_question"] = {
+                    # Si la question n'a pas de sujet propre, utiliser le contexte
+                    if not parsed_question.subject or parsed_question.subject == _q_match.strip():
+                        if _context_subject:
+                            parsed_question.subject = _context_subject
+                    
+                    pq_data = {
                         "raw": parsed_question.raw_text,
                         "type": parsed_question.question_type.name if parsed_question.question_type else "UNKNOWN",
                         "subject": parsed_question.subject,
@@ -920,7 +943,6 @@ def enrich_timeline_item(
                     # ═══ ENRICHISSEMENT WEB V2 — avec reverse geocoding ═══
                     if WEB_ENRICHMENT_AVAILABLE and web_enrichment and use_online:
                         try:
-                            # V2 : résoudre le lieu via le Location Engine
                             resolved_location = None
                             if LOCATION_ENGINE_AVAILABLE and location_engine and lat is not None and lon is not None:
                                 try:
@@ -928,14 +950,13 @@ def enrich_timeline_item(
                                 except Exception:
                                     pass
 
-                            # V2 : passer location au moteur d'enrichissement
                             enrichment_result = web_enrichment.enrich_question(
                                 parsed_question,
                                 location=resolved_location,
                             )
                             if enrichment_result and enrichment_result.main_info:
-                                item["parsed_question"]["is_resolved"] = True
-                                item["parsed_question"]["enrichment"] = {
+                                pq_data["is_resolved"] = True
+                                pq_data["enrichment"] = {
                                     "main_info": enrichment_result.main_info,
                                     "price_range": enrichment_result.price_range,
                                     "tips": enrichment_result.tips[:5] if enrichment_result.tips else [],
@@ -945,7 +966,7 @@ def enrich_timeline_item(
                                     "quality_score": enrichment_result.quality_score,
                                 }
                             elif enrichment_result and enrichment_result.tips:
-                                item["parsed_question"]["enrichment"] = {
+                                pq_data["enrichment"] = {
                                     "main_info": "",
                                     "price_range": "",
                                     "tips": enrichment_result.tips[:5],
@@ -956,8 +977,16 @@ def enrich_timeline_item(
                                 }
                         except Exception as e:
                             print(f"[ENRICHMENT] Erreur pour {parsed_question.subject}: {e}")
+                    
+                    parsed_questions_list.append(pq_data)
             except Exception:
                 pass
+    
+    # Stocker la première question dans parsed_question (compatibilité)
+    # ET toutes les questions dans parsed_questions (nouveau)
+    if parsed_questions_list:
+        item["parsed_question"] = parsed_questions_list[0]
+        item["parsed_questions"] = parsed_questions_list
 
     item.update({
         "lat": lat,
@@ -1231,20 +1260,35 @@ def infer_country(point: CsvPoint) -> str:
 
 
 
-def infer_fuel_price(segment_points: List[CsvPoint], uk_price: float, ie_price: float) -> float:
-    """Détermine le prix carburant selon le pays.
-    uk_price = prix en £/L (pays avec Livre Sterling)
-    ie_price = prix en €/L (pays avec Euro ou autre)
+def infer_fuel_price(segment_points: List[CsvPoint], uk_price: float, ie_price: float, fuel_prices_by_country: dict = None) -> float:
+    """Détermine le prix carburant moyen pondéré par pays sur un segment.
+    
+    Si fuel_prices_by_country est fourni (ex: {"France": 1.85, "Slovénie": 1.55}),
+    calcule la moyenne pondérée par le nombre de points dans chaque pays.
+    Sinon, fallback uk_price / ie_price.
     """
-    uk_countries = {"Royaume-Uni"}
-    uk_votes = 0
-    other_votes = 0
+    if not segment_points:
+        return ie_price
+    
+    # Compter les points par pays
+    country_counts = {}
     for p in segment_points:
         country = infer_country(p)
-        if country in uk_countries:
-            uk_votes += 1
-        else:
-            other_votes += 1
+        country_counts[country] = country_counts.get(country, 0) + 1
+    
+    # Si on a des prix par pays, calculer la moyenne pondérée
+    if fuel_prices_by_country and country_counts:
+        total_points = sum(country_counts.values())
+        weighted_price = 0.0
+        for country, count in country_counts.items():
+            price = fuel_prices_by_country.get(country, ie_price)
+            weighted_price += price * (count / total_points)
+        return round(weighted_price, 3)
+    
+    # Fallback : UK vs reste
+    uk_countries = {"Royaume-Uni"}
+    uk_votes = sum(v for k, v in country_counts.items() if k in uk_countries)
+    other_votes = sum(v for k, v in country_counts.items() if k not in uk_countries)
     return uk_price if uk_votes > other_votes else ie_price
 
 
@@ -1445,7 +1489,7 @@ def _build_business_segments(points: List[CsvPoint]) -> Tuple[List[Tuple[CsvPoin
     return segments, warnings
 
 
-def build_days(points: List[CsvPoint], conso_l_100: float, uk_price: float, ie_price: float) -> Tuple[List[Dict[str, Any]], List[str]]:
+def build_days(points: List[CsvPoint], conso_l_100: float, uk_price: float, ie_price: float, fuel_prices_by_country: dict = None) -> Tuple[List[Dict[str, Any]], List[str]]:
     warnings: List[str] = []
 
     start_date, start_warnings = _extract_trip_start_date(points)
@@ -1486,7 +1530,7 @@ def build_days(points: List[CsvPoint], conso_l_100: float, uk_price: float, ie_p
                 "mais le calcul aboutit à 0 km."
             )
 
-        fuel_price = infer_fuel_price(segment_points, uk_price=uk_price, ie_price=ie_price)
+        fuel_price = infer_fuel_price(segment_points, uk_price=uk_price, ie_price=ie_price, fuel_prices_by_country=fuel_prices_by_country)
         fuel_cost = round((km_total / 100.0) * conso_l_100 * fuel_price, 2)
 
         nights_after_end = _parse_nights_count(end.description, default=1 if end.symbol == "Ⓥ" else 0)
@@ -2336,6 +2380,114 @@ def _pdf_summary_table(days_data: List[Dict[str, Any]], styles) -> Table:
     return table
 
 
+def _pdf_accommodations_table(days_data: List[Dict[str, Any]], styles) -> Table:
+    """
+    Génère un tableau récapitulatif des hébergements avec coordonnées GPS.
+    
+    Colonnes : Jour | Hébergement | Type | Prix | GPS
+    """
+    data = [[
+        Paragraph("<b>Jour</b>", styles["LCDMH-Body"]),
+        Paragraph("<b>Hébergement</b>", styles["LCDMH-Body"]),
+        Paragraph("<b>Type</b>", styles["LCDMH-Body"]),
+        Paragraph("<b>Prix</b>", styles["LCDMH-Body"]),
+        Paragraph("<b>GPS</b>", styles["LCDMH-Body"]),
+    ]]
+    
+    for d in days_data:
+        if d.get("is_pause_day"):
+            continue  # Pas d'hébergement les jours de pause
+        
+        end_stage = d.get("end_stage")
+        if not end_stage:
+            continue
+        
+        # Extraire le nom de l'hébergement
+        hebergement_name = point_label(end_stage)
+        if not hebergement_name or hebergement_name == "-":
+            continue
+        
+        # Détecter le type d'hébergement - chercher dans nom + description
+        search_text = ((end_stage.description or "") + " " + (hebergement_name or "")).lower()
+        if "bivouac" in search_text or "sauvage" in search_text:
+            type_nuit = "🏕️ Bivouac"
+        elif "camping" in search_text or "camp " in search_text or "kamp" in search_text:
+            type_nuit = "⛺ Camping"
+        elif "hotel" in search_text or "hôtel" in search_text or "ibis" in search_text:
+            type_nuit = "🏨 Hôtel"
+        elif "b&b" in search_text or "guesthouse" in search_text or "guest house" in search_text or "room and breakfast" in search_text or "gasthof" in search_text:
+            type_nuit = "🛏️ B&B"
+        elif "hostel" in search_text or "auberge" in search_text:
+            type_nuit = "🛏️ Auberge"
+        else:
+            type_nuit = "🏠 Autre"
+        
+        # Extraire le prix depuis la description
+        prix_str = "-"
+        price_match = re.search(r"(\d+)\s*[€£]|[€£]\s*(\d+)|(\d+)\s*(?:EUR|GBP|CHF)", desc_lower, re.I)
+        if price_match:
+            prix = price_match.group(1) or price_match.group(2) or price_match.group(3)
+            # Détecter la devise
+            if "£" in search_text or "gbp" in desc_lower.lower():
+                prix_str = f"{prix} £"
+            elif "chf" in search_text:
+                prix_str = f"{prix} CHF"
+            else:
+                prix_str = f"{prix} €"
+        
+        # Coordonnées GPS
+        lat = getattr(end_stage, "lat", None) or d.get("end_stage_lat")
+        lon = getattr(end_stage, "lon", None) or d.get("end_stage_lon")
+        
+        # Chercher dans la timeline si pas trouvé
+        if (lat is None or lon is None) and d.get("timeline"):
+            for item in reversed(d["timeline"]):
+                if item.get("lat") is not None and item.get("lon") is not None:
+                    lat, lon = item["lat"], item["lon"]
+                    break
+        
+        if lat is not None and lon is not None:
+            gps_str = f"{lat:.4f}, {lon:.4f}"
+        else:
+            gps_str = "-"
+        
+        data.append([
+            Paragraph(f"J{d['day_num']:02d}", styles["LCDMH-Body"]),
+            Paragraph(_pdf_escape(hebergement_name[:45] + ("..." if len(hebergement_name) > 45 else "")), styles["LCDMH-Small"]),
+            Paragraph(type_nuit, styles["LCDMH-Small"]),
+            Paragraph(prix_str, styles["LCDMH-Body"]),
+            Paragraph(gps_str, styles["LCDMH-Small"]),
+        ])
+    
+    if len(data) == 1:
+        # Pas d'hébergements trouvés
+        data.append([
+            Paragraph("-", styles["LCDMH-Body"]),
+            Paragraph("Aucun hébergement détecté", styles["LCDMH-Small"]),
+            Paragraph("-", styles["LCDMH-Small"]),
+            Paragraph("-", styles["LCDMH-Body"]),
+            Paragraph("-", styles["LCDMH-Small"]),
+        ])
+    
+    table = Table(data, colWidths=[18*mm, 62*mm, 28*mm, 22*mm, 46*mm], repeatRows=1)
+    table.setStyle(TableStyle([
+        ("BACKGROUND", (0,0), (-1,0), PDF_NAVY),
+        ("TEXTCOLOR", (0,0), (-1,0), colors.white),
+        ("BACKGROUND", (0,1), (-1,-1), colors.white),
+        ("ROWBACKGROUNDS", (0,1), (-1,-1), [colors.white, PDF_BG]),
+        ("BOX", (0,0), (-1,-1), 0.8, PDF_BORDER),
+        ("INNERGRID", (0,0), (-1,-1), 0.4, PDF_BORDER),
+        ("LEFTPADDING", (0,0), (-1,-1), 6),
+        ("RIGHTPADDING", (0,0), (-1,-1), 6),
+        ("TOPPADDING", (0,0), (-1,-1), 6),
+        ("BOTTOMPADDING", (0,0), (-1,-1), 6),
+        ("VALIGN", (0,0), (-1,-1), "MIDDLE"),
+        ("ALIGN", (0,0), (0,-1), "CENTER"),
+        ("ALIGN", (3,0), (3,-1), "CENTER"),
+    ]))
+    return table
+
+
 def _pdf_timeline_table(day_data: Dict[str, Any], styles) -> Table:
     data = [[
         Paragraph("<b>Km</b>", styles["LCDMH-Body"]),
@@ -2494,6 +2646,13 @@ def generate_pdf_report(days_data: List[Dict[str, Any]], warnings: List[str], tr
     story.append(Spacer(1, 2*mm))
     story.append(_pdf_summary_table(days_data, styles))
 
+    # ═══ RÉCAPITULATIF DES HÉBERGEMENTS AVEC GPS ═══
+    story.append(Spacer(1, 8*mm))
+    story.append(Paragraph("📍 Récapitulatif des hébergements", styles["LCDMH-H2"]))
+    story.append(Paragraph("Liste des nuits avec type, prix indicatif et coordonnées GPS pour navigation.", styles["LCDMH-Subtitle"]))
+    story.append(Spacer(1, 2*mm))
+    story.append(_pdf_accommodations_table(days_data, styles))
+
     for day in days_data:
         story.append(PageBreak())
         title = Table([[Paragraph(f"J{day['day_num']:02d} - {_pdf_escape(day.get('day_date') or 'Date à vérifier')}", styles["LCDMH-DayTitle"]), Paragraph(f"{day.get('km_total', 0)} km", styles["LCDMH-DayTitle"]) ]], colWidths=[138*mm, 32*mm])
@@ -2572,36 +2731,44 @@ def write_outputs(days_data: List[Dict[str, Any]], warnings: List[str], trip_tit
     # ═══ GÉNÉRATION DE LA PAGE RÉCAPITULATIVE DES QUESTIONS ═══
     questions_path = out_dir / "questions.html"
     if WEB_ENRICHMENT_AVAILABLE and web_enrichment:
-        # Collecter toutes les questions
+        # Collecter toutes les questions (y compris multiples par item)
         all_enrichment_results = []
         for d in days_data:
             for item in d.get("timeline", []):
-                pq = item.get("parsed_question")
-                if pq and QUESTIONS_MODULE_AVAILABLE and questions_module:
-                    # Recréer l'objet ParsedQuestion
-                    parsed_q = questions_module.ParsedQuestion(
-                        raw_text=pq.get("raw", ""),
-                        question_type=getattr(questions_module.QuestionType, pq.get("type", "UNKNOWN"), questions_module.QuestionType.UNKNOWN),
-                        actions=[getattr(questions_module.ActionType, a, questions_module.ActionType.INFO) for a in pq.get("actions", [])],
-                        subject=pq.get("subject", ""),
-                        known_price=pq.get("known_price"),
-                        day_num=d.get("day_num"),
-                        date_str=d.get("day_date", ""),
-                    )
-                    
-                    # Créer l'EnrichmentResult
-                    enrichment = pq.get("enrichment", {})
-                    result = web_enrichment.EnrichmentResult(
-                        question=parsed_q,
-                        main_info=enrichment.get("main_info", ""),
-                        price_range=enrichment.get("price_range", ""),
-                        tips=enrichment.get("tips", []),
-                        warnings=enrichment.get("warnings", []),
-                        links=[(t, u) for t, u in enrichment.get("links", [])],
-                        source=enrichment.get("source", ""),
-                        quality_score=enrichment.get("quality_score", 0),
-                    )
-                    all_enrichment_results.append(result)
+                # V2 : itérer sur parsed_questions (liste) si disponible
+                pq_list = item.get("parsed_questions", [])
+                if not pq_list:
+                    # Fallback : ancienne clé unique parsed_question
+                    pq_single = item.get("parsed_question")
+                    if pq_single:
+                        pq_list = [pq_single]
+                
+                for pq in pq_list:
+                    if pq and QUESTIONS_MODULE_AVAILABLE and questions_module:
+                        # Recréer l'objet ParsedQuestion
+                        parsed_q = questions_module.ParsedQuestion(
+                            raw_text=pq.get("raw", ""),
+                            question_type=getattr(questions_module.QuestionType, pq.get("type", "UNKNOWN"), questions_module.QuestionType.UNKNOWN),
+                            actions=[getattr(questions_module.ActionType, a, questions_module.ActionType.INFO) for a in pq.get("actions", [])],
+                            subject=pq.get("subject", ""),
+                            known_price=pq.get("known_price"),
+                            day_num=d.get("day_num"),
+                            date_str=d.get("day_date", ""),
+                        )
+                        
+                        # Créer l'EnrichmentResult
+                        enrichment = pq.get("enrichment", {})
+                        result = web_enrichment.EnrichmentResult(
+                            question=parsed_q,
+                            main_info=enrichment.get("main_info", ""),
+                            price_range=enrichment.get("price_range", ""),
+                            tips=enrichment.get("tips", []),
+                            warnings=enrichment.get("warnings", []),
+                            links=[(t, u) for t, u in enrichment.get("links", [])],
+                            source=enrichment.get("source", ""),
+                            quality_score=enrichment.get("quality_score", 0),
+                        )
+                        all_enrichment_results.append(result)
         
         if all_enrichment_results:
             questions_html = web_enrichment.generate_questions_summary_html(
@@ -2834,3 +3001,4 @@ def page_generateur_roadbook() -> None:
 
 if __name__ == "__main__":
     page_generateur_roadbook()
+
