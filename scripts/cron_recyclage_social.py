@@ -1,20 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Cron Recyclage Social LCDMH
-============================
+Cron Recyclage Social LCDMH — v2 (sans yt-dlp)
+=================================================
 Script autonome pour GitHub Actions.
-Lit le planning, publie les shorts du jour via Make webhook.
+Lit le planning, recupere la miniature YouTube HD,
+uploade sur Cloudinary, envoie a Make pour publication FB/IG.
+
+Plus de telechargement video = plus de blocage YouTube bot.
 """
 
 import json
 import os
-import shutil
-import subprocess
 import sys
 import tempfile
 from datetime import date
 from pathlib import Path
+
+import requests
 
 # ══════════════════════════════════════════════════════════════════
 # CONFIG
@@ -49,55 +52,63 @@ def save_json(path, data):
 
 
 # ══════════════════════════════════════════════════════════════════
-# TELECHARGER SHORT
+# RECUPERER THUMBNAIL YOUTUBE (sans yt-dlp)
 # ══════════════════════════════════════════════════════════════════
-def telecharger_short(video_url, video_id):
-    tmp_dir = tempfile.mkdtemp(prefix="lcdmh_short_")
-    output_path = os.path.join(tmp_dir, f"{video_id}.mp4")
+def get_thumbnail_url(video_id):
+    """
+    Recupere la meilleure miniature YouTube disponible.
+    Essaie dans l'ordre : maxresdefault > sddefault > hqdefault.
+    Pas besoin d'API key ni de token — les thumbnails sont publiques.
+    """
+    resolutions = [
+        f"https://img.youtube.com/vi/{video_id}/maxresdefault.jpg",   # 1280x720
+        f"https://img.youtube.com/vi/{video_id}/sddefault.jpg",       # 640x480
+        f"https://img.youtube.com/vi/{video_id}/hqdefault.jpg",       # 480x360
+    ]
+
+    for url in resolutions:
+        try:
+            r = requests.head(url, timeout=10, allow_redirects=True)
+            # YouTube renvoie une image grise de 120x90 si la resolution n'existe pas
+            content_length = int(r.headers.get("Content-Length", 0))
+            if r.status_code == 200 and content_length > 5000:
+                return url
+        except Exception:
+            continue
+
+    # Fallback absolu
+    return f"https://img.youtube.com/vi/{video_id}/hqdefault.jpg"
+
+
+def telecharger_thumbnail(video_id):
+    """Telecharge la miniature YouTube en local et retourne le chemin."""
+    url = get_thumbnail_url(video_id)
+    log(f"Thumbnail: {url}")
 
     try:
-        import yt_dlp
-        opts = {
-            "quiet": True,
-            "no_warnings": True,
-            "outtmpl": output_path,
-            "format": "best[ext=mp4][height<=1080]/best[ext=mp4]/best",
-        }
-        with yt_dlp.YoutubeDL(opts) as ydl:
-            ydl.download([video_url])
-    except ImportError:
-        exe = shutil.which("yt-dlp")
-        if not exe:
-            log("yt-dlp non disponible")
-            return None
-        cmd = [exe, "-f", "best[ext=mp4][height<=1080]/best[ext=mp4]/best",
-               "-o", output_path, "--no-warnings", video_url]
-        result = subprocess.run(cmd, capture_output=True, text=True)
-        if result.returncode != 0:
-            log(f"yt-dlp erreur: {result.stderr[:200]}")
-            return None
+        r = requests.get(url, timeout=30)
+        r.raise_for_status()
+
+        tmp_dir = tempfile.mkdtemp(prefix="lcdmh_thumb_")
+        filepath = os.path.join(tmp_dir, f"{video_id}.jpg")
+
+        with open(filepath, "wb") as f:
+            f.write(r.content)
+
+        size_kb = len(r.content) / 1024
+        log(f"Thumbnail telechargee: {size_kb:.0f} Ko")
+        return filepath
+
     except Exception as e:
-        log(f"Erreur telechargement: {e}")
+        log(f"Erreur telechargement thumbnail: {e}")
         return None
 
-    if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-        return output_path
-
-    for f in os.listdir(tmp_dir):
-        fp = os.path.join(tmp_dir, f)
-        if os.path.getsize(fp) > 0:
-            return fp
-
-    return None
-
 
 # ══════════════════════════════════════════════════════════════════
-# UPLOAD CLOUDINARY
+# UPLOAD CLOUDINARY (image au lieu de video)
 # ══════════════════════════════════════════════════════════════════
 def uploader_cloudinary(filepath, video_id):
-    import requests
-
-    url = f"https://api.cloudinary.com/v1_1/{CLOUDINARY_CLOUD}/video/upload"
+    url = f"https://api.cloudinary.com/v1_1/{CLOUDINARY_CLOUD}/image/upload"
 
     try:
         with open(filepath, "rb") as f:
@@ -105,11 +116,10 @@ def uploader_cloudinary(filepath, video_id):
                 url,
                 data={
                     "upload_preset": CLOUDINARY_PRESET,
-                    "public_id": f"recyclage_shorts/{video_id}",
-                    "resource_type": "video",
+                    "public_id": f"recyclage_thumbs/{video_id}",
                 },
-                files={"file": (f"{video_id}.mp4", f, "video/mp4")},
-                timeout=180,
+                files={"file": (f"{video_id}.jpg", f, "image/jpeg")},
+                timeout=60,
             )
 
         if response.status_code == 200:
@@ -127,13 +137,13 @@ def uploader_cloudinary(filepath, video_id):
 # ══════════════════════════════════════════════════════════════════
 # ENVOYER A MAKE
 # ══════════════════════════════════════════════════════════════════
-def envoyer_make(video_url, caption, plateforme, youtube_url):
-    import requests
-
+def envoyer_make(image_url, caption, plateforme, youtube_url):
     payload = {
         "pin": MAKE_PIN,
         "platform": plateforme.lower(),
-        "video_url": video_url,
+        "media_type": "image",
+        "image_url": image_url,
+        "video_url": youtube_url,
         "caption": caption,
         "youtube_url": youtube_url,
     }
@@ -223,7 +233,7 @@ def main():
 
     historique = load_json(HISTORIQUE_FILE, [])
 
-    # Grouper par video_id pour ne telecharger qu'une fois
+    # Grouper par video_id pour ne telecharger la thumbnail qu'une fois
     videos = {}
     for p in pubs_jour:
         vid = p.get("video_id", "")
@@ -238,17 +248,16 @@ def main():
         video = data["video"]
         pubs = data["publications"]
 
-        # 1. Telecharger
-        video_url = video.get("url", f"https://www.youtube.com/watch?v={vid}")
-        log(f"Telechargement: {video.get('titre', '')[:50]}...")
-        filepath = telecharger_short(video_url, vid)
+        # 1. Telecharger la thumbnail YouTube (pas la video !)
+        log(f"Recuperation thumbnail: {video.get('titre', '')[:50]}...")
+        filepath = telecharger_thumbnail(vid)
 
         if not filepath:
-            log(f"ECHEC telechargement: {vid}")
+            log(f"ECHEC thumbnail: {vid}")
             echecs += len(pubs)
             continue
 
-        # 2. Upload Cloudinary
+        # 2. Upload Cloudinary (image)
         log(f"Upload Cloudinary: {vid}...")
         cloudinary_url = uploader_cloudinary(filepath, vid)
 
