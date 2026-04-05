@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Cron Recyclage Social LCDMH — v3 (yt-dlp + cookies)
-=====================================================
+Cron Recyclage Social LCDMH — v4 (yt-dlp + deno + cookies)
+=============================================================
 Script autonome pour GitHub Actions.
 Lit le planning, telecharge le short YouTube via yt-dlp + cookies,
 uploade la video sur Cloudinary, envoie a Make pour publication FB/IG.
@@ -97,7 +97,6 @@ def telecharger_video(video_id):
         else:
             log(f"yt-dlp erreur (code {result.returncode})")
             if result.stderr:
-                # Afficher les 3 dernieres lignes d'erreur
                 err_lines = result.stderr.strip().split("\n")
                 for line in err_lines[-3:]:
                     log(f"  stderr: {line}")
@@ -198,13 +197,10 @@ def envoyer_make(media_url, caption, plateforme, youtube_url, media_type="video"
         "media_type": media_type,
         "caption": caption,
         "youtube_url": youtube_url,
+        # Toujours envoyer les deux champs — Make routera selon media_type
+        "video_url": media_url,
+        "image_url": media_url,
     }
-
-    # Champ specifique selon le type de media
-    if media_type == "video":
-        payload["video_url"] = media_url
-    else:
-        payload["image_url"] = media_url
 
     try:
         response = requests.post(
