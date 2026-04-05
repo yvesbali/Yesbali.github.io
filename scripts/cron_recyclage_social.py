@@ -272,6 +272,16 @@ def nettoyer(filepath):
 # ══════════════════════════════════════════════════════════════════
 # MAIN
 # ══════════════════════════════════════════════════════════════════
+def deja_publie(historique, video_id, plateforme, date_str):
+    """Verifie si cette video a deja ete publiee sur cette plateforme a cette date."""
+    for h in historique:
+        if (h.get("video_id") == video_id
+                and h.get("plateforme", "").lower() == plateforme.lower()
+                and h.get("date") == date_str):
+            return True
+    return False
+
+
 def main():
     today_str = str(date.today())
     log(f"Date du jour: {today_str}")
@@ -286,13 +296,27 @@ def main():
         log("Aucune publication prevue aujourd'hui")
         sys.exit(0)
 
-    log(f"{len(pubs_jour)} publication(s) prevue(s)")
-
     historique = load_json(HISTORIQUE_FILE, [])
+
+    # Filtrer les publications deja faites
+    pubs_nouvelles = []
+    for p in pubs_jour:
+        vid = p.get("video_id", "")
+        plat = p.get("plateforme", "")
+        if deja_publie(historique, vid, plat, today_str):
+            log(f"SKIP (deja publie): {vid} sur {plat}")
+        else:
+            pubs_nouvelles.append(p)
+
+    if not pubs_nouvelles:
+        log("Toutes les publications du jour ont deja ete faites")
+        sys.exit(0)
+
+    log(f"{len(pubs_nouvelles)} publication(s) a faire ({len(pubs_jour) - len(pubs_nouvelles)} deja faites)")
 
     # Grouper par video_id pour ne telecharger qu'une fois
     videos = {}
-    for p in pubs_jour:
+    for p in pubs_nouvelles:
         vid = p.get("video_id", "")
         if vid not in videos:
             videos[vid] = {"video": p, "publications": []}
