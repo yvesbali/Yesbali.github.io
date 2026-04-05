@@ -1,7 +1,7 @@
 name: Recyclage Social LCDMH
 on:
   schedule:
-    - cron: '50 10 * * *'
+    - cron: '08 11 * * *'
   workflow_dispatch:
 permissions:
   contents: write
