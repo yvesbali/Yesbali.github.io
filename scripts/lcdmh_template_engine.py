@@ -303,10 +303,28 @@ def timeline_item_html(
     subtitle: str = "",
     region: str = "",
     km_label: str = "",
+    highlight: str = "",
     dot_class: str = "orange",
+    description_immersive: str = "",
+    moment_fort: str = "",
+    stay_type: str = "",
 ) -> str:
-    """Génère un élément de timeline."""
+    """Génère un élément de timeline enrichi avec description immersive."""
     km_tag = f'<span class="tl-tag orange">{html_escape(km_label)}</span>' if km_label else ""
+    # Description immersive remplace le highlight géologique si disponible
+    if description_immersive:
+        highlight_html = f'<p class="tl-highlight">{html_escape(description_immersive)}</p>'
+    elif highlight:
+        highlight_html = f'<p class="tl-highlight">🏔️ {html_escape(highlight)}</p>'
+    else:
+        highlight_html = ""
+    # Moment fort
+    moment_html = f'<p class="tl-moment">✨ {html_escape(moment_fort)}</p>' if moment_fort else ""
+    # Région
+    region_html = f'<span class="tl-tag">🌍 {html_escape(region)}</span>' if region else ""
+    # Type hébergement
+    stay_icons = {"Bivouac": "⛺", "Camping": "🏕️", "Hotel": "🏨", "B&B": "🛏️"}
+    stay_html = f'<span class="tl-tag">{stay_icons.get(stay_type, "")} {html_escape(stay_type)}</span>' if stay_type else ""
     return f"""
 <div class="tl-item">
   <div class="tl-dot {html_escape(dot_class)}">J{index}</div>
@@ -314,7 +332,10 @@ def timeline_item_html(
     <div class="tl-ep">{html_escape(date_label)}</div>
     <h3>{html_escape(title)}</h3>
     <p>{html_escape(subtitle)}</p>
-    <span class="tl-tag">{html_escape(region)}</span>
+    {highlight_html}
+    {moment_html}
+    {region_html}
+    {stay_html}
     {km_tag}
   </div>
 </div>
@@ -325,15 +346,29 @@ def timeline_html(days: List[Dict[str, Any]], limit: int = 30) -> str:
     """Génère la timeline complète à partir des données de jours."""
     items = []
     for idx, day in enumerate((days or [])[:limit], 1):
-        title = _day_title(day, idx)
+        # Utiliser le titre nettoyé si disponible
+        if day.get("clean_start_stage") or day.get("clean_end_stage"):
+            start = day.get("clean_start_stage", "")
+            end = day.get("clean_end_stage", "")
+            if start and end and start != end:
+                title = f"{start} → {end}"
+            else:
+                title = start or end or _day_title(day, idx)
+        else:
+            title = _day_title(day, idx)
         sub = _day_subtitle(day, idx)
         region = _day_region(day)
+        highlight = _day_highlight(day)
         date_label = _day_date(day, idx)
-        km = day.get("distance_km")
+        km = day.get("distance_km") or day.get("km_total")
         try:
             km_label = f"≈ {float(km):.0f} km" if km else ""
         except (ValueError, TypeError):
             km_label = ""
+        # Nouvelles clés immersives
+        description_immersive = day.get("description_immersive", "")
+        moment_fort = day.get("moment_fort", "")
+        stay_type = day.get("stay_type", "")
         items.append(timeline_item_html(
             index=idx,
             date_label=date_label,
@@ -341,6 +376,10 @@ def timeline_html(days: List[Dict[str, Any]], limit: int = 30) -> str:
             subtitle=sub,
             region=region,
             km_label=km_label,
+            highlight=highlight,
+            description_immersive=description_immersive,
+            moment_fort=moment_fort,
+            stay_type=stay_type,
         ))
     return "".join(items)
 
@@ -677,7 +716,9 @@ def _day_date(day: Dict[str, Any], index: int) -> str:
 
 
 def _day_region(day: Dict[str, Any]) -> str:
-    for key in ("regions_label", "regions", "area_label", "areas", "country_label", "countries", "places_label", "places_text", "summary"):
+    """Extrait les régions/pays traversés pour l'affichage timeline."""
+    # 1. Clés explicites de régions
+    for key in ("regions_label", "regions", "area_label", "areas", "country_label", "countries", "places_label", "places_text"):
         value = day.get(key)
         if isinstance(value, list):
             clean = [str(v).strip() for v in value if str(v).strip()]
@@ -687,6 +728,61 @@ def _day_region(day: Dict[str, Any]) -> str:
             text = _safe(value)
             if text:
                 return _truncate(text, 90)
+    
+    # 2. Extraire depuis la timeline enrichie
+    timeline = day.get("timeline") or []
+    regions_set = set()
+    for item in timeline:
+        region = _safe(item.get("region"))
+        country = _safe(item.get("country"))
+        if region and region not in regions_set:
+            regions_set.add(region)
+        if country and country not in regions_set:
+            regions_set.add(country)
+    if regions_set:
+        return " • ".join(list(regions_set)[:3])
+    
+    # 3. Fallback summary
+    summary = _safe(day.get("summary"))
+    if summary:
+        return _truncate(summary, 90)
+    
+    return ""
+
+
+def _day_highlight(day: Dict[str, Any]) -> str:
+    """Extrait le point fort / highlight du jour pour l'affichage timeline.
+    
+    Cherche dans les données enrichies : géologie, must_see, conseil_route, etc.
+    """
+    # 1. Clés explicites de highlight
+    for key in ("highlight", "point_fort", "focus", "must_see_summary"):
+        value = _safe(day.get(key))
+        if value:
+            return _truncate(value, 100)
+    
+    # 2. Extraire depuis la timeline enrichie (premier point remarquable)
+    timeline = day.get("timeline") or []
+    for item in timeline:
+        # Géologie
+        geology = _safe(item.get("geology"))
+        if geology and len(geology) > 20:
+            return _truncate(geology, 100)
+        # Must see
+        must_see = _safe(item.get("must_see"))
+        if must_see and len(must_see) > 20:
+            return _truncate(must_see, 100)
+        # Conseil route
+        advice = _safe(item.get("advice"))
+        if advice and len(advice) > 20:
+            return _truncate(advice, 100)
+    
+    # 3. Chercher dans les clés directes du jour
+    for key in ("geology", "geologie", "must_see", "a_ne_pas_rater", "advice", "conseil_route"):
+        value = _safe(day.get(key))
+        if value and len(value) > 20:
+            return _truncate(value, 100)
+    
     return ""
 
 

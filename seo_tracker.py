@@ -62,15 +62,15 @@ DIM    = lambda t: _c(t, "2")
 
 def banner(t, s=""):
     w = 64
-    print(); print("═"*w)
+    print(); print("="*w)
     print(f"  {BOLD(t)}")
     if s: print(f"  {DIM(s)}")
-    print("═"*w)
+    print(); print("="*w)
 
-def ok(m):   print(GREEN(f"  ✓  {m}"))
-def warn(m): print(YELLOW(f"  ⚠  {m}"))
-def err(m):  print(RED(f"  ✗  {m}"))
-def info(m): print(CYAN(f"  →  {m}"))
+def ok(m):   print(GREEN(f"  OK  {m}"))
+def warn(m): print(YELLOW(f"  ATTENTION  {m}"))
+def err(m):  print(RED(f"  ERREUR  {m}"))
+def info(m): print(CYAN(f"  ->  {m}"))
 
 # ─────────────────────────────────────────────────────────────────────────────
 #  AUTHENTIFICATION
@@ -140,43 +140,63 @@ def get_video_stats(yt_anal, video_id: str, days_back: int = 30) -> dict:
 
     return {}
 
-def get_impression_stats(yt_anal, video_id: str, days_back: int = 30) -> dict:
-    """
-    Récupère les stats d'engagement depuis YouTube Analytics.
-    Note : impressions/CTR ne sont pas disponibles par vidéo via Analytics API.
-    On utilise les vues + likes comme proxy de visibilité.
-    """
-    end_date   = datetime.now().strftime("%Y-%m-%d")
-    start_date = (datetime.now() - timedelta(days=days_back)).strftime("%Y-%m-%d")
+def estimate_impressions_from_sources(views, sources):
+    """Estime CTR et impressions depuis les sources de trafic."""
+    if views == 0:
+        return {"impressions": 0, "ctr": 0, "source": "api_estimate", "confidence": "none"}
+    CTR_BY_SOURCE = {
+        "YT_SEARCH": 0.055, "RELATED_VIDEO": 0.035, "SUBSCRIBER": 0.15,
+        "NOTIFICATION": 0.25, "YT_CHANNEL": 0.10, "PLAYLIST": 0.08,
+        "EXT_URL": 0.0, "SHORTS": 0.0, "NO_LINK_OTHER": 0.03,
+    }
+    total_imp = 0
+    views_ok = 0
+    for sn, sd in sources.items():
+        sv = sd.get("views", 0)
+        ec = CTR_BY_SOURCE.get(sn, 0.04)
+        if ec > 0 and sv > 0:
+            total_imp += sv / ec
+            views_ok += sv
+    if total_imp == 0 and views > 0:
+        total_imp = views / 0.05
+        conf = "low"
+    elif views_ok < views * 0.3:
+        conf = "low"
+    else:
+        conf = "medium"
+    est_ctr = (views / total_imp * 100) if total_imp > 0 else 0
+    return {"impressions": int(round(total_imp)), "ctr": round(est_ctr, 2), "source": "api_estimate", "confidence": conf}
 
-    try:
-        resp = yt_anal.reports().query(
-            ids="channel==MINE",
-            startDate=start_date,
-            endDate=end_date,
-            metrics="views,likes,comments,shares",
-            dimensions="video",
-            filters=f"video=={video_id}",
-            maxResults=1,
-        ).execute()
 
-        rows = resp.get("rows", [])
-        if rows:
-            r = rows[0]
-            views  = int(r[1])
-            likes  = int(r[2])
-            # Taux d'engagement = (likes + comments + shares) / vues * 100
-            engage = int(r[2]) + int(r[3]) + int(r[4])
-            eng_rate = round(engage / views * 100, 2) if views > 0 else 0
-            return {
-                "impressions": views,   # On utilise les vues comme proxy
-                "ctr":         eng_rate, # Taux d'engagement comme proxy CTR
-                "likes":       likes,
-            }
-    except Exception as e:
-        warn(f"Stats engagement erreur ({video_id}) : {e}")
+def get_impression_stats(video_id, views, sources):
+    """CTR/impressions hybride : CSV YouTube Studio si dispo, sinon estimation API."""
+    import csv as _csv
+    csv_path = Path(__file__).parent / "yt_studio_export.csv"
+    if csv_path.exists():
+        try:
+            lines = csv_path.read_text(encoding="utf-8-sig").strip().splitlines()
+            reader = _csv.reader(lines)
+            headers = [h.strip().lower() for h in next(reader)]
+            imp_col = ctr_col = None
+            for i, h in enumerate(headers):
+                if "impression" in h and "ctr" not in h and "taux" not in h:
+                    imp_col = i
+                if "ctr" in h or ("taux" in h and "clic" in h):
+                    ctr_col = i
+            if imp_col is not None:
+                for row in reader:
+                    if video_id in str(row):
+                        raw_imp = row[imp_col].replace(",", "").replace(" ", "").replace("\xa0", "") or "0"
+                        imp_val = float(raw_imp)
+                        ctr_val = 0
+                        if ctr_col:
+                            raw_ctr = row[ctr_col].replace("%", "").replace(",", ".").replace(" ", "").replace("\xa0", "") or "0"
+                            ctr_val = float(raw_ctr)
+                        return {"impressions": int(imp_val), "ctr": round(ctr_val, 2), "source": "youtube_studio_csv", "confidence": "high"}
+        except Exception:
+            pass
+    return estimate_impressions_from_sources(views, sources)
 
-    return {}
 
 def get_traffic_sources(yt_anal, video_id: str, days_back: int = 30) -> dict:
     """
@@ -242,8 +262,8 @@ def snapshot(yt, yt_anal, video_ids: list = None):
         info(f"  [{i}/{len(videos_to_track)}] {vid_id}")
 
         base  = get_video_stats(yt_anal, vid_id, days_back=30)
-        impr  = get_impression_stats(yt_anal, vid_id, days_back=30)
         srcs  = get_traffic_sources(yt_anal, vid_id, days_back=30)
+        impr  = get_impression_stats(vid_id, base.get("views", 0), srcs)
 
         entry = {
             "taken_at":    now,
@@ -267,7 +287,7 @@ def snapshot(yt, yt_anal, video_ids: list = None):
             stats[vid_id]["snapshots"] = stats[vid_id]["snapshots"][-12:]
 
     STATS_FILE.write_text(json.dumps(stats, ensure_ascii=False, indent=2), encoding="utf-8")
-    ok(f"Snapshot sauvegardé → {STATS_FILE.name}")
+    ok(f"Snapshot sauvegardé -> {STATS_FILE.name}")
     return stats
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -281,12 +301,22 @@ def trend_arrow(before, after):
         return f"<span style='color:#27ae60'>↑ +{diff:.1f}</span>"
     elif diff < 0:
         return f"<span style='color:#e74c3c'>↓ {diff:.1f}</span>"
-    return "<span style='color:#888'>→ =</span>"
+    return "<span style='color:#888'>-> =</span>"
 
 def diagnostic(ctr_before, ctr_after, views_before, views_after):
     """Diagnostic automatique : description OK ou vignette à retravailler ?"""
     if ctr_after is None:
         return "⏳ En attente de données J+30"
+
+    # Si CTR=0 des deux cotes, diagnostiquer sur les vues
+    if (ctr_before or 0) == 0 and (ctr_after or 0) == 0:
+        vd = (views_after or 0) - (views_before or 0)
+        if vd > 0:
+            return "📈 <b>Vues en hausse</b> — tendance positive"
+        elif vd < 0:
+            return "📉 <b>Vues en baisse</b> — vérifier saisonnalité"
+        else:
+            return "➡️ <b>Stable</b> — pas de changement significatif"
 
     ctr_delta  = (ctr_after  or 0) - (ctr_before  or 0)
     view_delta = (views_after or 0) - (views_before or 0)
@@ -300,7 +330,7 @@ def diagnostic(ctr_before, ctr_after, views_before, views_after):
     elif ctr_delta >= 0 and view_delta < 0:
         return "📉 <b>Vues en baisse</b> — vérifier saisonnalité"
     else:
-        return "⚠️ <b>Résultat neutre</b> — attendre J+60 pour confirmer"
+        return "ATTENTION️ <b>Résultat neutre</b> — attendre J+60 pour confirmer"
 
 def generate_report(stats: dict, yt):
     """Génère le rapport HTML comparatif."""
@@ -404,8 +434,8 @@ def generate_report(stats: dict, yt):
 
 <div class="legend">
   <h3>📖 Guide de lecture</h3>
-  <p>✅ <b>Description efficace</b> — Le CTR augmente après optimisation → la description + thumbnail fonctionnent</p>
-  <p>🖼️ <b>Vignette à retravailler</b> — Le CTR baisse ou stagne → la description est OK mais la vignette bloque</p>
+  <p>✅ <b>Description efficace</b> — Le CTR augmente après optimisation -> la description + thumbnail fonctionnent</p>
+  <p>🖼️ <b>Vignette à retravailler</b> — Le CTR baisse ou stagne -> la description est OK mais la vignette bloque</p>
   <p>⏳ <b>En attente</b> — Snapshot initial pris, mesure J+30 pas encore disponible</p>
   <p style="color:#888;font-size:12px;margin-top:8px">Les flèches ↑↓ comparent la dernière mesure vs le snapshot initial (baseline avant optimisation)</p>
 </div>
@@ -429,21 +459,21 @@ def generate_report(stats: dict, yt):
 </html>"""
 
     REPORT_FILE.write_text(html, encoding="utf-8")
-    ok(f"Rapport → {REPORT_FILE.name}")
+    ok(f"Rapport -> {REPORT_FILE.name}")
     return REPORT_FILE
 
 # ─────────────────────────────────────────────────────────────────────────────
 #  POINT D'ENTRÉE
 # ─────────────────────────────────────────────────────────────────────────────
 def main():
-    ap = argparse.ArgumentParser(description="LCDMH – SEO Tracker")
+    ap = argparse.ArgumentParser(description="LCDMH – SEO Tracker v2 (Hybrid)")
     ap.add_argument("--mode",  default="auto", choices=["snapshot", "report", "auto"])
     ap.add_argument("--video", default=None, help="ID vidéo spécifique")
     ap.add_argument("--days",  default=30, type=int, help="Fenêtre d'analyse en jours")
     args = ap.parse_args()
 
     banner(
-        "LCDMH – SEO Tracker",
+        "LCDMH – SEO Tracker v2 (Hybrid)",
         f"Mode : {args.mode.upper()}  |  {datetime.now().strftime('%d/%m/%Y %H:%M')}"
     )
 
@@ -475,10 +505,15 @@ def main():
             pass
 
     print()
-    info(f"Stats sauvegardées → {STATS_FILE.name}")
+    info(f"Stats sauvegardées -> {STATS_FILE.name}")
     if args.mode != "snapshot":
-        info(f"Rapport HTML → {REPORT_FILE.name}")
+        info(f"Rapport HTML -> {REPORT_FILE.name}")
         info("Pour un suivi mensuel, relance ce script dans 30 jours")
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
