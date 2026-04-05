@@ -25,6 +25,7 @@ jobs:
       - name: Fetch and inject new videos
         env:
           YT_CLIENT_SECRETS: ${{ secrets.YT_CLIENT_SECRETS }}
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
           YT_TOKEN_ANALYTICS: ${{ secrets.YT_TOKEN_ANALYTICS }}
         run: |
           python scripts/auto_publish_lite.py \
