@@ -19,6 +19,19 @@
 (function () {
   "use strict";
 
+  // ── Google Analytics 4 ──
+  (function() {
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=G-5DP7XR1C7W";
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-5DP7XR1C7W");
+  })();
+
+
   // ── Configuration ──
   var NAV_URL = "/nav.html";
 
