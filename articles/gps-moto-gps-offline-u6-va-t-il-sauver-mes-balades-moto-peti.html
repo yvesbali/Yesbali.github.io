@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPS MOTO. GPS Offline U6 va-t-il sauver mes balades moto ? petit test.... | LCDMH</title>
+<meta name="description" content="🚀 Épreuve réelle du GPS moto U6 AOOCCI – test complet en conditions de route
+
+Aujourd’hui, je mets le GPS moto U6 d’AOOCCI à l’épreuve dans des…">
+<link rel="canonical" href="https://lcdmh.com/guides/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti.html">
+<meta property="og:title" content="GPS MOTO. GPS Offline U6 va-t-il sauver mes balades moto ? petit test....">
+<meta property="og:description" content="🚀 Épreuve réelle du GPS moto U6 AOOCCI – test complet en conditions de route
+
+Aujourd’hui, je mets le GPS moto U6 d’AOOCCI à l’épreuve dans des…">
+<meta property="og:image" content="images/Aoocci GPS offline-t -+++++.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg:#f8f9fa; --bg2:#fff; --bg3:#f1f3f4;
+    --border:#e0e0e0; --orange:#e67e22; --green:#27ae60;
+    --red:#e74c3c; --blue:#2980b9; --text:#1a1a1a; --text2:#666;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:17px;line-height:1.8}
+
+.header{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);color:#fff;padding:50px 20px 70px;text-align:center}
+.header-cat{display:inline-block;background:var(--orange);padding:6px 16px;border-radius:20px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}
+.header h1{font-size:clamp(26px,4vw,38px);font-weight:800;max-width:800px;margin:0 auto 15px;line-height:1.3}
+.header-sub{font-size:16px;opacity:0.85;max-width:600px;margin:0 auto}
+
+.stats{display:flex;justify-content:center;gap:30px;padding:20px;background:var(--bg2);border-radius:12px;margin:-35px auto 30px;max-width:450px;box-shadow:0 4px 15px rgba(0,0,0,0.1)}
+.stat{text-align:center}
+.stat-val{font-size:22px;font-weight:800;color:var(--orange)}
+.stat-lbl{font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:1px}
+
+.container{max-width:900px;margin:0 auto;padding:30px 20px}
+
+.video{position:relative;padding-bottom:56.25%;margin:30px 0;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.12)}
+.video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+
+article h2{font-size:22px;font-weight:700;margin:40px 0 15px;padding-left:12px;border-left:4px solid var(--orange)}
+article h3{font-size:18px;font-weight:600;margin:25px 0 12px;color:var(--text)}
+article p{margin:15px 0}
+article ul,article ol{margin:15px 0;padding-left:25px}
+article li{margin:8px 0}
+
+.box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:20px;margin:25px 0}
+.box.tip{border-left:4px solid var(--green);background:linear-gradient(135deg,#e8f5e9,var(--bg2))}
+.box.warn{border-left:4px solid var(--orange);background:linear-gradient(135deg,#fff3e0,var(--bg2))}
+.box.danger{border-left:4px solid var(--red);background:linear-gradient(135deg,#ffebee,var(--bg2))}
+.box.security{border-left:4px solid var(--blue);background:linear-gradient(135deg,#e3f2fd,var(--bg2))}
+.box-title{font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
+.product{background:var(--bg2);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all 0.2s}
+.product:hover{border-color:var(--orange);box-shadow:0 5px 20px rgba(230,126,34,0.15)}
+.product-img{width:100%;height:180px;object-fit:contain;background:var(--bg3);padding:15px}
+.product-info{padding:15px}
+.product-brand{font-size:11px;color:var(--orange);font-weight:600;text-transform:uppercase}
+.product-name{font-size:16px;font-weight:700;margin:5px 0}
+.product-link{display:inline-block;background:var(--orange);color:#fff;padding:8px 18px;border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;margin-top:10px}
+
+table{width:100%;border-collapse:collapse;margin:25px 0;font-size:15px}
+th{background:#1a1a2e;color:#fff;padding:12px;text-align:left;font-weight:600}
+td{padding:12px;border-bottom:1px solid var(--border)}
+tr:hover td{background:var(--bg3)}
+.stars{color:var(--orange)}
+
+.faq{background:var(--bg2);border-radius:12px;padding:25px;margin:30px 0;border:1px solid var(--border)}
+.faq h2{margin:0 0 20px 0;padding-left:0;border-left:none;font-size:20px}
+.faq-item{border-bottom:1px solid var(--border);padding:15px 0}
+.faq-item:last-child{border:none}
+.faq-q{font-weight:600;margin-bottom:8px;color:var(--text)}
+.faq-a{color:var(--text2);font-size:15px;line-height:1.7}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION COMMUNAUTÉ v2.2 — Style Reddit / Avis utilisateurs
+   ═══════════════════════════════════════════════════════════════════════════ */
+.community-section{margin:40px 0;padding:30px;background:var(--bg2);border-radius:16px;border:1px solid var(--border)}
+.community-section h2{margin:0 0 10px 0;padding-left:0;border-left:none;font-size:22px;display:flex;align-items:center;gap:10px}
+.community-intro{color:var(--text2);font-size:15px;margin-bottom:25px}
+
+/* Grille 2 colonnes pour les commentaires */
+.comments-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-bottom:30px}
+@media(max-width:700px){.comments-grid{grid-template-columns:1fr}}
+
+/* Carte commentaire style moderne */
+.comment-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:18px;transition:all 0.2s;position:relative}
+.comment-card:hover{border-color:var(--orange);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+.comment-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--orange);border-radius:4px 0 0 4px;opacity:0;transition:opacity 0.2s}
+.comment-card:hover::before{opacity:1}
+
+.comment-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.comment-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--orange),#f39c12);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px}
+.comment-meta{flex:1}
+.comment-author{font-weight:600;font-size:14px;color:var(--text)}
+.comment-date{font-size:11px;color:var(--text2)}
+
+.comment-text{font-size:15px;line-height:1.6;color:var(--text);margin-bottom:12px}
+.comment-text em{font-style:normal;background:linear-gradient(120deg,rgba(230,126,34,0.15) 0%,rgba(230,126,34,0.15) 100%);padding:0 3px;border-radius:3px}
+
+.comment-footer{display:flex;align-items:center;gap:15px;font-size:12px;color:var(--text2)}
+.comment-likes{display:flex;align-items:center;gap:4px;color:var(--red)}
+.comment-likes svg{width:14px;height:14px}
+
+/* Section Astuces de la communauté */
+.community-tips{background:linear-gradient(135deg,#fff9e6,#fff3cd);border:1px solid #ffc107;border-radius:12px;padding:20px;margin-top:25px}
+.community-tips h3{font-size:16px;font-weight:700;margin-bottom:15px;display:flex;align-items:center;gap:8px;color:#856404}
+.tips-list{list-style:none;padding:0;margin:0}
+.tips-list li{padding:10px 0 10px 28px;border-bottom:1px dashed #ffc107;position:relative;font-size:14px;color:var(--text)}
+.tips-list li:last-child{border:none}
+.tips-list li::before{content:'💡';position:absolute;left:0;top:10px}
+
+/* Compteur de commentaires */
+.comments-count{display:inline-flex;align-items:center;gap:6px;background:var(--bg3);padding:4px 12px;border-radius:20px;font-size:13px;font-weight:600;color:var(--text2);margin-left:10px}
+
+.affiliates{background:#1a1a2e;color:#fff;border-radius:12px;padding:25px;margin:30px 0}
+.affiliates h3{margin-bottom:15px}
+.aff-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.aff-link{display:block;background:rgba(255,255,255,0.1);padding:15px;border-radius:8px;color:#fff;text-decoration:none;transition:background 0.2s}
+.aff-link:hover{background:rgba(255,255,255,0.2)}
+.aff-name{font-weight:600}
+.aff-desc{font-size:13px;opacity:0.8}
+.aff-code{display:inline-block;background:var(--orange);padding:3px 8px;border-radius:4px;font-size:11px;font-weight:600;margin-top:5px}
+
+.cta{background:linear-gradient(135deg,var(--orange),#f39c12);color:#fff;padding:35px;border-radius:12px;text-align:center;margin:30px 0}
+.cta h3{font-size:22px;margin-bottom:10px}
+.cta p{opacity:0.9;margin-bottom:20px}
+.cta-btn{display:inline-block;background:#fff;color:var(--orange);padding:12px 30px;border-radius:30px;text-decoration:none;font-weight:700}
+
+footer{text-align:center;padding:30px;color:var(--text2);font-size:14px}
+footer a{color:var(--orange);text-decoration:none}
+
+@media(max-width:600px){
+    .stats{flex-wrap:wrap;gap:15px}
+    .product-grid{grid-template-columns:1fr}
+    .aff-grid{grid-template-columns:1fr}
+    .community-section{padding:20px 15px}
+}
+</style>
+</head>
+<body>
+<script src="/js/lcdmh-nav-loader.js" defer></script>
+<header class="header">
+    <div class="header-cat">🛞 Pneus</div>
+    <h1>GPS MOTO. GPS Offline U6 va-t-il sauver mes balades moto ? petit test....</h1>
+    <p class="header-sub">🚀 Épreuve réelle du GPS moto U6 AOOCCI – test complet en conditions de route
+
+Aujourd’hui, je mets le GPS moto U6 d’AOOCCI à l’épreuve dans des…</p>
+</header>
+
+<div class="stats">
+    <div class="stat"><div class="stat-val">4.9K</div><div class="stat-lbl">vues</div></div>
+    <div class="stat"><div class="stat-val">288</div><div class="stat-lbl">likes</div></div>
+    <div class="stat"><div class="stat-val">5 min</div><div class="stat-lbl">lecture</div></div>
+</div>
+
+<div class="container">
+    <div class="video">
+        <iframe src="https://www.youtube.com/embed/YQkKJ7BOvBY" allowfullscreen loading="lazy"></iframe>
+    </div>
+    
+    <article>
+        <article>
+<p>Petit test en situation réelle avec le GPS U6 que j'ai installé récemment sur ma NT. De retour du Cap Nord il y a quelques mois, j'avais pris du retard sur mes montages et j'en profite aujourd'hui pour te faire un vrai retour terrain sur cet appareil qui remplace mon téléphone Android pour la navigation.</p>
+
+<p>Direction les magnifiques villages savoyards, notamment vers Doucy-en-Bauges - j'adore franchement ce coin. L'occasion parfaite pour tester ce GPS offline et répondre aux questions que vous m'avez posées.</p>
+
+<h2>🔍 Présentation du GPS U6</h2>
+<figure style="margin:1.5rem auto;text-align:center;max-width:700px;"><img src="images/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti/aoocci-u6-android-system-motorcycle-main-navi.webp" alt="aoocci-u6-android-system-motorcycle-main-navi" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.1);" loading="lazy"><figcaption style="font-size:0.85rem;color:#777;margin-top:0.5rem;">aoocci-u6-android-system-motorcycle-main-navi</figcaption></figure>
+
+
+<h3>Un GPS offline pour motards</h3>
+<figure style="margin:1.5rem auto;text-align:center;max-width:700px;"><img src="images/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti/en-situation.jpg" alt="en situation" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.1);" loading="lazy"><figcaption style="font-size:0.85rem;color:#777;margin-top:0.5rem;">en situation</figcaption></figure>
+
+<p>Le principe du U6, c'est de faire de la navigation sans avoir besoin de réseau. Il fonctionne uniquement avec les satellites GPS, ce qui est plutôt cool quand tu n'as plus de réseau en montagne. Attention, il faut quand même que l'application installée soit capable de marcher hors réseau - j'avais expliqué tout ça dans ma précédente vidéo.</p>
+
+<h3>Installation et positionnement</h3>
+<figure style="margin:1.5rem auto;text-align:center;max-width:700px;"><img src="images/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti/Infos-technique-u6.webp" alt="Infos technique u6" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.1);" loading="lazy"><figcaption style="font-size:0.85rem;color:#777;margin-top:0.5rem;">Infos technique u6</figcaption></figure>
+
+<p>J'ai réussi à positionner l'écran juste au-dessus de celui de la NT. C'est super confortable, il est dans la ligne de mire sans gêner mon champ de vision. Ça c'est vraiment top. Pour l'instant c'est encore un peu le bazar dans les fils parce que je peaufine l'installation, mais il va venir se fixer sur la casquette avec une petite pince.</p>
+
+<div class="box tip">
+<div class="box-title">💡 Conseil terrain</div>
+<p>Avoir les deux écrans en pleine ligne de mire, c'est vraiment sécuritaire pour la navigation et bigrement efficace.</p>
+</div>
+
+<h2>🏍️ Retour terrain</h2>
+<figure style="margin:1.5rem auto;text-align:center;max-width:700px;"><img src="images/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti/afficgae-GPS.jpg" alt="afficgae GPS" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.1);" loading="lazy"><figcaption style="font-size:0.85rem;color:#777;margin-top:0.5rem;">afficgae GPS</figcaption></figure>
+
+
+<h3>Navigation avec Magic Hort</h3>
+<figure style="margin:1.5rem auto;text-align:center;max-width:700px;"><img src="images/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti/aoocci-u6-Camera-Installation-Guide.webp" alt="aoocci-u6-Camera-Installation-Guide" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.1);" loading="lazy"><figcaption style="font-size:0.85rem;color:#777;margin-top:0.5rem;">aoocci-u6-Camera-Installation-Guide</figcaption></figure>
+
+<p>J'ai testé Magic Hort comme application - c'est sympa. L'avantage c'est qu'en plus tu peux importer tes points GPX. Tu fais tout ton tracé sur PC avec Kurviger par exemple, puis tu l'importes. J'ai testé, ça marche, aucun problème. Tu importes ton fichier dans le téléphone, tu l'ouvres et il bascule automatiquement.</p>
+
+<p>La navigation est vachement sympa, j'aime bien la lisibilité de la carte. On a de bonnes indications avec des flèches en superposition - je trouve que c'est plutôt bien fait.</p>
+
+<h3>Fonctionnalités pratiques</h3>
+<figure style="margin:1.5rem auto;text-align:center;max-width:700px;"><img src="images/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti/aoocci-u6-motorcycle-desc-screen.webp" alt="aoocci-u6-motorcycle-desc-screen" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.1);" loading="lazy"><figcaption style="font-size:0.85rem;color:#777;margin-top:0.5rem;">aoocci-u6-motorcycle-desc-screen</figcaption></figure>
+
+<p>J'ai programmé la limitation de vitesse - dès que tu la dépasses, tu as un petit message classique. On peut aussi programmer les alertes radar. Tu peux même signaler un radar sur l'application s'il y en a un.</p>
+
+<p>La réception satellite est plutôt bonne - une quinzaine captés, aucun problème pour naviguer. Quand tu redémarres après un arrêt, il faut bien 30 secondes pour que ça reparte, mais la navigation et la musique reprennent là où ça en était.</p>
+
+<h3>Luminosité et lisibilité</h3>
+<figure style="margin:1.5rem auto;text-align:center;max-width:700px;"><img src="images/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti/ensituation-2.jpg" alt="ensituation 2" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.1);" loading="lazy"><figcaption style="font-size:0.85rem;color:#777;margin-top:0.5rem;">ensituation 2</figcaption></figure>
+
+<p>Dès qu'on est à l'ombre, l'écran est carrément génial. En plein soleil, même avec le soleil sur le côté de l'appareil, l'écran reste vachement lumineux - et je n'étais même pas au maximum de luminosité. C'est largement suffisant.</p>
+
+<div class="box warn">
+<div class="box-title">⚠️ À savoir</div>
+<p>Branché sur un Thunder Box qui démarre et arrête l'appareil automatiquement avec la moto, il faut compter 30 secondes de redémarrage à chaque fois.</p>
+</div>
+
+<h3>Capteurs de pression et température</h3>
+<figure style="margin:1.5rem auto;text-align:center;max-width:700px;"><img src="images/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti/capteur-pression-pn,neus-Aoocci-U6.jpg" alt="capteur pression pn,neus Aoocci U6" style="width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.1);" loading="lazy"><figcaption style="font-size:0.85rem;color:#777;margin-top:0.5rem;">capteur pression pn,neus Aoocci U6</figcaption></figure>
+
+<p>Certains disent que les capteurs de pression, ça sert à rien. Effectivement, si tu roules en été au bord de la mer, peut-être. Mais moi je roule en hiver et en montagne, et je peux te dire que je suis bien content de savoir quand mes pneus sont à 0°C - tu es carrément plus vigilant que quand on t'annonce 5 ou 10°C.</p>
+
+<p>En hiver en montagne, savoir si les pneus sont chauds ou pas, c'est important. Et tu t'aperçois que dès que tu t'arrêtes, la gomme refroidit très très vite.</p>
+
+<h3>Fonction caméra</h3>
+<p>D'autres ont dit que la partie caméra ne sert à rien. Question de point de vue. Si demain matin tu as un problème d'accrochage, tu seras peut-être bien content d'avoir les caméras pour te justifier si tu es dans ton bon droit. Tu peux verrouiller le fichier pour qu'il ne s'efface pas.</p>
+
+<h3>Commandes vocales</h3>
+<p>Avec le U6, je récupère les commandes vocales du Sena pour avancer et reculer sur les morceaux de musique, chose que je ne peux pas faire quand l'intercom est connecté à la NT - là il faut que j'utilise les boutons. Pour baisser ou augmenter le volume, c'est indifférent sur les deux.</p>
+
+<h2>🎯 À qui ça s'adresse</h2>
+
+<p>Ce GPS U6 s'adresse aux motards qui :</p>
+<ul>
+<li>Roulent souvent en montagne ou dans des zones sans réseau</li>
+<li>Veulent un système de navigation indépendant du téléphone</li>
+<li>Apprécient les fonctions multi-usage (caméra, capteurs pneus)</li>
+<li>Cherchent une solution complète pour leurs voyages</li>
+</ul>
+
+<div class="box security">
+<div class="box-title">🛡️ Sécurité</div>
+<p>En hiver et en montagne, les capteurs de température et pression des pneus apportent une vraie valeur ajoutée pour la sécurité.</p>
+</div>
+
+<h2>⚖️ Mon verdict</h2>
+
+<p>Dans l'ensemble, au niveau fonctionnalités et usage en roulage, les quelques limitations qu'il y a ne sont pas vraiment un frein. Le positionnement au-dessus de l'écran NT est parfait, la navigation est claire et efficace.</p>
+
+<p>Le rapport prestation/prix me semble correct pour un appareil aussi complet. C'est bigrement bien étudié et ça fait le boulot pour préparer la moto au prochain voyage.</p>
+
+<p>Bon, maintenant j'ai tellement de retard sur mes vidéos que ça va me calmer un peu pour les voyages, sinon je vais me retrouver avec des montages à faire pendant 1000 ans !</p>
+</article>
+    </article>
+    
+    
+    
+    <h2>🔍 Produits mentionnés</h2>
+<div class="product-grid">
+
+        <div class="product">
+            <img src="https://aoocci.fr/cdn/shop/files/aoocci-gps-moto.jpg" alt="GPS Moto" class="product-img" onerror="this.style.display='none'">
+            <div class="product-info">
+                <div class="product-brand">Aoocci</div>
+                <div class="product-name">GPS Moto</div>
+                <a href="https://aoocci.fr/?ref=gvxyhqgv" class="product-link" target="_blank">Voir le produit →</a>
+            </div>
+        </div>
+</div>
+    
+    
+    
+    <div class="faq">
+<h2>❓ FAQ — Vos questions</h2>
+<div class="faq-item">
+            <div class="faq-q">Q: Salut Yves ✌️
+Encore merci pour cette vidéo qui, au delà de découvrir les jolis environs d'Annecy, nous permet de vraiment approfondir nos connaissances sur cet appareil intéressant !
+Comme je le disais en commentaire la fois d'avant, c'est bigrement complet et bien étudié...
+
+Dis, placer (et fixer, car il faut que ça tienne) les dash cams, et faire courir les fils, tout ça... C'est pas trop galère ?
+
+Quant à l'antenne GPS, où diantre la positionnes-tu ?
+
+Deux petits points sont à mon avis à améliorer encore :
+La luminosité en plein soleil, quand ça tape directement dessus... 800nits ça paraît juste quand même ?
+Et un support avec des broches ou connecteurs, ou un truc comme ça, pour permettre de placer/retirer l'appareil sans détricoter des câbles, ce qui doit être plus long et fastidieux si tu les as bien logés pour les rendre discrets...
+
+Mais en tous cas bravo pour le rapport prestation/prix 👍
+
+Et merci à ton assistant-petit-fils pour sa collaboration 😅
+
+Vive toi !
+Et longue vie ✌️ 
+
+(PS: tu... Tu as activé l'alerte de dépassement de vitesse, TOI ??! 🤣 N'didjouss' !! )</div>
+            <div class="faq-a">En cours de réponse...</div>
+        </div>
+<div class="faq-item">
+            <div class="faq-q">Q: Merci beaucoup Yves et merci aussi bien sûr à Anthony, ton super assistant vidéo qui se débrouille plutôt bien !
+Cet appareil me semble de plus en plus judicieux au fil de tes vidéos.
+Ton code promo est valable combien de temps, stp ?</div>
+            <div class="faq-a">En cours de réponse...</div>
+        </div>
+<div class="faq-item">
+            <div class="faq-q">Q: Salut Yves, merci pour cette découverte, en ce qui concerne les Bauges je suis d'accord avec toi, c'est très joli, j'adore égélement le Bugey, pas très loin et plein de surprises ! Est-ce que je peux utiliser Liberty rider sur le U6 ?</div>
+            <div class="faq-a">En cours de réponse...</div>
+        </div>
+<div class="faq-item">
+            <div class="faq-q">Q: Salut Yves pourrais-tu me dire avec quel système tu a pu installer l’écran à cet endroit sur la NT ?? En te remerciant 🙏 à bientôt 🤗✌️</div>
+            <div class="faq-a">En cours de réponse...</div>
+        </div>
+<div class="faq-item">
+            <div class="faq-q">Q: Hello Yves,
+À choisir avec le Carpuride, tu partirais avec lequel?
+Bonnes routes!!</div>
+            <div class="faq-a">En cours de réponse...</div>
+        </div>
+<div class="faq-item">
+            <div class="faq-q">Q: Je suis intéressé par un U6 ou U7 mais avant de franchir le pas, savez-vous quels cartes il contient hors réseau ?</div>
+            <div class="faq-a">En cours de réponse...</div>
+        </div>
+</div>
+    
+    <div class="community-section">
+<h2>💬 Ce que la communauté en pense <span class="comments-count">8 avis</span></h2>
+<p class="community-intro">Les retours et expériences partagés par les motards de la communauté LCDMH.</p>
+<div class="comments-grid">
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <div class="comment-avatar">@</div>
+                <div class="comment-meta">
+                    <div class="comment-author">@@jmdrummy8190</div>
+                    <div class="comment-date">2025-08-04</div>
+                </div>
+            </div>
+            <div class="comment-text">Salut, trop sage ton assistant, en plus il a super bien filmé... La relève arrive... Merci à toi. 👍✌️🙋‍♂️</div>
+            <div class="comment-footer">
+                <span class="comment-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 1</span>
+            </div>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <div class="comment-avatar">@</div>
+                <div class="comment-meta">
+                    <div class="comment-author">@@auguste148</div>
+                    <div class="comment-date">2025-08-04</div>
+                </div>
+            </div>
+            <div class="comment-text">Bonsoir Yves, merci de ce retour et de partager ce beau paysage.✌️</div>
+            <div class="comment-footer">
+                
+            </div>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <div class="comment-avatar">@</div>
+                <div class="comment-meta">
+                    <div class="comment-author">@@colibri6818</div>
+                    <div class="comment-date">2025-08-04</div>
+                </div>
+            </div>
+            <div class="comment-text">Intéressant et surtout belles images de Haute Savoie.😊</div>
+            <div class="comment-footer">
+                
+            </div>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <div class="comment-avatar">@</div>
+                <div class="comment-meta">
+                    <div class="comment-author">@@philippesobocinski4565</div>
+                    <div class="comment-date">2025-08-20</div>
+                </div>
+            </div>
+            <div class="comment-text">Belle vidéo !  J'attends le test du BX après celui du U6 pour faire mon choix.</div>
+            <div class="comment-footer">
+                <span class="comment-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 1</span>
+            </div>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <div class="comment-avatar">@</div>
+                <div class="comment-meta">
+                    <div class="comment-author">@@PascalPrautois</div>
+                    <div class="comment-date">2025-08-04</div>
+                </div>
+            </div>
+            <div class="comment-text">Bonjour et merci pour le retour sur ce GPS multi-fonction. J'ai pu découvrir grâce à tes vidéos le massif de Bauges en Juillet, et je me suis régalé ! Avec ma compagne nous avons visité le château de Miolans avant de partir dans le massif par la D911, au passage une montée bien sympathique en duo ;-) , et ensuite quelle récompense d'arriver sur le plateau au milieu de ces montagnes magnifiques, ne n'avions plus de mot pour décrire ce qui était sous nos yeux ! Le clou du parcours c'est bien la descente sur le lac d'Annecy par la D10B. Retour ensuite sur Chapareillan (notre location), en passant par un arrêt gouter à l'auberge des Grotte Cascade et Tyroliennes de Seythenex et ensuite pause silence à l'Abbaye Notre-Dame de Tamié. Bref un parcours de rêve que je recommande car très peu de monde sur les routes. J'ai filmé le tout en 360, je t'enverrai le lien lorsque j'aurai fais mes montages courant septembre. Encore merci pour toutes ces belles découvertes.</div>
+            <div class="comment-footer">
+                
+            </div>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <div class="comment-avatar">@</div>
+                <div class="comment-meta">
+                    <div class="comment-author">@@AgnesRegat</div>
+                    <div class="comment-date">2025-08-04</div>
+                </div>
+            </div>
+            <div class="comment-text">Belle vidéo.</div>
+            <div class="comment-footer">
+                
+            </div>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <div class="comment-avatar">@</div>
+                <div class="comment-meta">
+                    <div class="comment-author">@@yannf.7633</div>
+                    <div class="comment-date">2025-08-04</div>
+                </div>
+            </div>
+            <div class="comment-text">Salut Yves ✌️
+Encore merci pour cette vidéo qui, au delà de découvrir les jolis environs d'Annecy, nous permet de vraiment approfondir nos connaissances sur cet appareil intéressant !
+Comme je le disais en commentaire la fois d'avant, c'est bigrement complet et bien étudié...
+
+Dis, placer (et fixer, car il faut que ça tienne) les dash cams, et faire courir les fils, tout ça... C'est pas trop galère ?
+
+Quant à l'antenne GPS, où diantre la positionnes-tu ?
+
+Deux petits points sont à mon avis à améliorer encore :
+La luminosité en plein soleil, quand ça tape directement dessus... 800nits ça paraît juste quand même ?
+Et un support avec des broches ou connecteurs, ou un truc comme ça, pour permettre de placer/retirer l'appareil sans détricoter des câbles, ce qui doit être plus long et fastidieux si tu les as bien logés pour les rendre discrets...
+
+Mais en tous cas bravo pour le rapport prestation/prix 👍
+
+Et merci à ton assistant-petit-fils pour sa collaboration 😅
+
+Vive toi !
+Et longue vie ✌️ 
+
+(PS: tu... Tu as activé l'alerte de dépassement de vitesse, TOI ??! 🤣 N'didjouss' !! )</div>
+            <div class="comment-footer">
+                <span class="comment-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 2</span>
+            </div>
+        </div>
+
+        <div class="comment-card">
+            <div class="comment-header">
+                <div class="comment-avatar">@</div>
+                <div class="comment-meta">
+                    <div class="comment-author">@@pascalbeauquis7269</div>
+                    <div class="comment-date">2025-08-05</div>
+                </div>
+            </div>
+            <div class="comment-text">Bonjour Yves très bonne vidéo d.information juste La Compote Doucy en Bauges c.est pas là yaute c’est le 73 je suis juste un peu chauvin hahaha continue on aime bcp tes vidéos au plaisir de te croiser sur nos belles routes</div>
+            <div class="comment-footer">
+                
+            </div>
+        </div>
+</div>
+</div>
+    
+    <div class="community-tips">
+<h3>💡 Astuces de la communauté</h3>
+<ul class="tips-list">
+<li>Bonjour et merci pour le retour sur ce GPS multi-fonction. J'ai pu découvrir grâce à tes vidéos le massif de Bauges en Juillet, et je me suis régalé...</li>
+</ul>
+</div>
+    
+    <div class="affiliates">
+<h3>🛒 Où acheter</h3>
+<div class="aff-grid">
+<a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&ued=https%3A%2F%2Fwww.123pneus.fr%2F" class="aff-link" target="_blank" rel="nofollow sponsored">
+            <div class="aff-name">123pneus.fr</div>
+            <div class="aff-desc">Large choix, livraison chez garagiste</div>
+            
+        </a>
+<a href="https://www.awin1.com/cread.php?awinmid=7403&awinaffid=2753560&ued=https%3A%2F%2Fwww.pneus-moto.fr%2F" class="aff-link" target="_blank" rel="nofollow sponsored">
+            <div class="aff-name">Pneus-moto.fr</div>
+            <div class="aff-desc">100% moto, excellent rapport qualité/prix</div>
+            
+        </a>
+</div></div>
+    
+    <div class="cta">
+        <h3>🏍️ Rejoins la communauté LCDMH</h3>
+        <p>Road trips, tests, conseils... Ne rate rien !</p>
+        <a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" class="cta-btn">S'abonner</a>
+    </div>
+</div>
+
+<footer>
+    <p>🏍️ <a href="https://lcdmh.com">LCDMH</a> — La Chaîne Du Motard Heureux</p>
+    <p>Mis à jour le 06/04/2026</p>
+</footer>
+<script src="../maillage.js"></script>
+<!-- Republié le 2026-04-06 10:20:01 -->
+</body>
+</html>
