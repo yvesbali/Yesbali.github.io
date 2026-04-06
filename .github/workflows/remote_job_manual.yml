@@ -1,0 +1,70 @@
+name: Remote Job Manual
+
+on:
+  workflow_dispatch:
+    inputs:
+      job_name:
+        description: "Nom du job"
+        required: true
+        type: string
+      video_id:
+        description: "ID vidéo YouTube"
+        required: false
+        type: string
+      note:
+        description: "Note libre"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  remote-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Préparer dossier de sortie
+        run: |
+          mkdir -p seo/remote-jobs
+
+      - name: Écrire last-run.json
+        run: |
+          cat > seo/remote-jobs/last-run.json <<'EOF'
+          {
+            "job_name": "${{ inputs.job_name }}",
+            "video_id": "${{ inputs.video_id }}",
+            "note": "${{ inputs.note }}",
+            "status": "ok"
+          }
+          EOF
+
+      - name: Écrire index.html
+        run: |
+          cat > seo/remote-jobs/index.html <<'EOF'
+          <!doctype html>
+          <html lang="fr">
+          <head>
+            <meta charset="utf-8">
+            <title>Remote Jobs LCDMH</title>
+          </head>
+          <body>
+            <h1>Remote Jobs LCDMH</h1>
+            <p>Dernier job lancé avec succès.</p>
+            <p>Job : ${{ inputs.job_name }}</p>
+            <p>Vidéo : ${{ inputs.video_id }}</p>
+            <p>Note : ${{ inputs.note }}</p>
+          </body>
+          </html>
+          EOF
+
+      - name: Commit et push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add seo/remote-jobs/last-run.json seo/remote-jobs/index.html
+          git commit -m "Update remote job output" || echo "Aucun changement à commit"
+          git push
