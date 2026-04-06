@@ -1,0 +1,63 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "latitude": 46.422772,
+          "longitude": 11.930466,
+          "shaping": true
+        },
+        {
+          "latitude": 46.533359,
+          "longitude": 11.774254,
+          "shaping": true
+        },
+        {
+          "name": "Passo Sella",
+          "category": "pass",
+          "latitude": 46.600629,
+          "longitude": 11.597786,
+          "shaping": true
+        },
+        {
+          "latitude": 46.66169,
+          "longitude": 11.749535,
+          "shaping": true
+        },
+        {
+          "latitude": 46.537255,
+          "longitude": 11.788502,
+          "shaping": true
+        },
+        {
+          "latitude": 46.494315,
+          "longitude": 11.861458,
+          "shaping": true
+        },
+        {
+          "name": "Passo Falzarego",
+          "latitude": 46.442352,
+          "longitude": 11.985183,
+          "shaping": true
+        },
+        {
+          "name": "Hotel TEA DOLOMITI – Lago di Alleghe  - 66€ - N1",
+          "latitude": 46.4096,
+          "longitude": 12.020086
+        },
+        {
+          "latitude": 46.471916,
+          "longitude": 11.980934,
+          "shaping": true
+        },
+        {
+          "latitude": 46.519186,
+          "longitude": 12.031059,
+          "shaping": true
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}
