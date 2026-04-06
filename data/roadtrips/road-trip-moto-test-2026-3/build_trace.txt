@@ -1,13 +1,13 @@
 [BUILD] ═══════════════════════════════════════════════════════
 [BUILD] GÉNÉRATION ROAD TRIP — Road trip moto Test 2026-3
 [BUILD] ═══════════════════════════════════════════════════════
-[BUILD] Démarrage : 2026-04-06T10:59:47
+[BUILD] Démarrage : 2026-04-06T15:50:37
 [BUILD] project_dir = F:\RoadBook HTML\V15
 [BUILD] site_root = F:\RoadBook HTML\V15\build
 [BUILD] MODULE_DIR = F:\Automate_YT
 [BUILD] slug = road-trip-moto-test-2026-3
 [BUILD] trip_year = 2026
-[BUILD] use_online = False
+[BUILD] use_online = True
 
 [STEP   5%] Analyse du dossier projet…
 [DETECT] Fichiers détectés :
@@ -35,7 +35,7 @@
 [DAYS] Journées calculées : 17
 [DAYS] Avertissements : 0
 [STEP  38%] Enrichissement des journées…
-[ENRICH] Enrichissement de base terminé (online=False)
+[ENRICH] Enrichissement de base terminé (online=True)
 [STEP  45%] Enrichissement Claude (descriptions immersives)…
 [CLAUDE-ENRICH] Enrichissement de 17 jours via Claude API...
 [CLAUDE-ENRICH] Resume extrait : 17 jours
@@ -43,7 +43,10 @@
 [CLAUDE-ENRICH] Reponse parsee : 17 jours enrichis
 [CLAUDE-ENRICH] 17/17 jours enrichis avec descriptions immersives
 [CLAUDE-ENRICH] Cout estime : ~0.002 EUR
-[ENRICH] Enrichissement terminé (online=False)
+[CLAUDE-WAYPOINTS] 58 waypoints a enrichir
+[CLAUDE-WAYPOINTS] 34/58 waypoints enrichis
+[CLAUDE-WAYPOINTS] Cout estime waypoints : ~0.006 EUR
+[ENRICH] Enrichissement terminé (online=True)
 [GPS-V2] Cache geocoding sauvegardé
 [JOURNEY] ✅ Texte 'Esprit du parcours' généré automatiquement
 [JOURNEY]   Basé sur 17 jours de données
@@ -101,9 +104,9 @@
 [TEMPLATE]   CSS inline détecté (pas de fichier externe)
 [RENDER] Résolution des placeholders...
 [RENDER] ✅ Tous les placeholders résolus
-[RENDER] HTML final : 29634 caractères
+[RENDER] HTML final : 29630 caractères
 [BUILD] ✅ Page principale écrite : F:\RoadBook HTML\V15\build\roadtrips\road-trip-moto-test-2026-3.html
-[BUILD]   Taille HTML : 29634 caractères
+[BUILD]   Taille HTML : 29630 caractères
 [CSS] Recherche du dossier CSS...
 [CSS]   F:\Automate_YT\templates\css → TROUVÉ ✅
 [CSS]   F:\Automate_YT\templates\templates\css → absent
