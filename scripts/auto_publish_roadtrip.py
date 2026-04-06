@@ -1,15 +1,18 @@
 # -*- coding: utf-8 -*-
 """
-LCDMH — Auto-publish Road Trip CLI v1.0
+LCDMH — Auto-publish Road Trip CLI v3.0
 =======================================
 Script CLI pour GitHub Actions qui surveille une playlist YouTube
 et injecte automatiquement les nouvelles vidéos dans les pages road trip.
 
+v3.0: 
+- Top 3 shorts par NOMBRE DE VUES sur la page principale
+- Journal : toutes les vidéos en ordre chronologique
+- Formatage corrigé pour correspondre au CSS
+- Ignore les "Deleted video" et "Private video"
+
 Usage:
     python auto_publish_roadtrip.py --config data/roadtrips/xxx/auto_publish_config.json
-
-Le script lit la config, récupère les vidéos de la playlist YouTube,
-et injecte les nouvelles dans le journal + page principale.
 """
 
 import argparse
@@ -17,12 +20,11 @@ import json
 import os
 import re
 import shutil
-import subprocess
 import sys
 from datetime import datetime
 from html import escape
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Set
 
 # ═══════════════════════════════════════════════════════════════════
 #  CONFIGURATION
@@ -68,13 +70,14 @@ def get_youtube_service():
     return build("youtube", "v3", credentials=creds)
 
 
-def fetch_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
-    """Récupère toutes les vidéos d'une playlist YouTube."""
+def fetch_playlist_videos_with_stats(playlist_id: str) -> List[Dict[str, Any]]:
+    """Récupère toutes les vidéos d'une playlist YouTube AVEC les statistiques (vues)."""
     service = get_youtube_service()
     
     items: List[Dict[str, Any]] = []
     token = None
     
+    # Récupérer les items de la playlist
     while True:
         response = service.playlistItems().list(
             part="snippet,contentDetails",
@@ -88,17 +91,19 @@ def fetch_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
         if not token:
             break
     
-    # Récupérer les métadonnées détaillées des vidéos
+    # Récupérer les IDs des vidéos
     video_ids = [item.get("contentDetails", {}).get("videoId", "") for item in items]
     video_ids = [v for v in video_ids if v]
     
+    # Récupérer les métadonnées ET statistiques des vidéos
     videos_meta: Dict[str, Dict] = {}
     for i in range(0, len(video_ids), 50):
         chunk = video_ids[i:i+50]
         if not chunk:
             continue
+        # IMPORTANT: On ajoute "statistics" pour avoir viewCount
         resp = service.videos().list(
-            part="snippet,contentDetails,status",
+            part="snippet,contentDetails,status,statistics",
             id=",".join(chunk),
             maxResults=50
         ).execute()
@@ -115,7 +120,14 @@ def fetch_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
         meta = videos_meta.get(video_id, {})
         snippet = meta.get("snippet", item.get("snippet", {}))
         content = meta.get("contentDetails", {})
+        statistics = meta.get("statistics", {})
         position = item.get("snippet", {}).get("position", 0)
+        
+        # Vérifier si la vidéo est disponible
+        title = snippet.get("title", "")
+        if "Deleted video" in title or "Private video" in title:
+            print(f"   ⚠️ Vidéo ignorée (supprimée/privée): {video_id}")
+            continue
         
         # Calculer la durée
         duration_s = parse_iso8601_duration(content.get("duration", ""))
@@ -123,6 +135,10 @@ def fetch_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
         # Extraire la date de publication
         published = snippet.get("publishedAt", "")
         date_label = format_date_label(published) if published else ""
+        
+        # Récupérer le nombre de vues
+        view_count = int(statistics.get("viewCount", 0))
+        like_count = int(statistics.get("likeCount", 0))
         
         # Thumbnail
         thumbs = snippet.get("thumbnails", {})
@@ -137,17 +153,17 @@ def fetch_playlist_videos(playlist_id: str) -> List[Dict[str, Any]]:
         result.append({
             "video_id": video_id,
             "url": f"https://www.youtube.com/watch?v={video_id}",
-            "title": snippet.get("title", f"Vidéo {position + 1}"),
+            "title": title,
             "description": snippet.get("description", ""),
             "thumb": thumb,
             "date_label": date_label,
             "published_at": published,
             "position": position,
             "is_short": 0 < duration_s <= 70,
+            "view_count": view_count,
+            "like_count": like_count,
         })
     
-    # Trier par position
-    result.sort(key=lambda x: x.get("position", 0))
     return result
 
 
@@ -183,20 +199,20 @@ def format_date_label(iso_date: str) -> str:
 #  DÉTECTION VIDÉOS DÉJÀ INJECTÉES
 # ═══════════════════════════════════════════════════════════════════
 
-def get_injected_video_ids(html_path: Path) -> List[str]:
+def get_injected_video_ids(html_path: Path) -> Set[str]:
     """Extrait les IDs des vidéos déjà injectées dans une page HTML."""
     if not html_path.exists():
-        return []
+        return set()
     
     content = html_path.read_text(encoding="utf-8", errors="replace")
     
-    # Pattern pour trouver les URLs YouTube
     patterns = [
         r'youtube\.com/watch\?v=([a-zA-Z0-9_-]{11})',
         r'youtube\.com/embed/([a-zA-Z0-9_-]{11})',
         r'youtube\.com/shorts/([a-zA-Z0-9_-]{11})',
         r'youtu\.be/([a-zA-Z0-9_-]{11})',
         r'data-video-id="([a-zA-Z0-9_-]{11})"',
+        r'img\.youtube\.com/vi/([a-zA-Z0-9_-]{11})/',
     ]
     
     video_ids = set()
@@ -204,164 +220,225 @@ def get_injected_video_ids(html_path: Path) -> List[str]:
         matches = re.findall(pattern, content)
         video_ids.update(matches)
     
-    return list(video_ids)
+    return video_ids
 
 
 # ═══════════════════════════════════════════════════════════════════
-#  GÉNÉRATION HTML
+#  GÉNÉRATION HTML - JOURNAL (format horizontal)
 # ═══════════════════════════════════════════════════════════════════
 
 def generate_journal_entry_html(video: Dict[str, Any]) -> str:
-    """Génère le HTML d'une entrée journal."""
+    """Génère le HTML d'une entrée journal (format carte horizontale)."""
     title = escape(video.get("title", ""))
-    desc = escape(video.get("description", "")[:200])
+    desc_raw = video.get("description", "")
+    # Nettoyer la description (enlever les liens, limiter la longueur)
+    desc_clean = re.sub(r'http\S+', '', desc_raw)
+    desc_clean = re.sub(r'---.*', '', desc_clean, flags=re.DOTALL)
+    desc = escape(desc_clean.strip()[:180])
+    
     thumb = video.get("thumb", "")
     url = video.get("url", "")
     date_label = video.get("date_label", "")
+    video_id = video.get("video_id", "")
+    view_count = video.get("view_count", 0)
     
-    return f'''
-        <article class="journal-card" data-video-id="{video.get('video_id', '')}">
-            <a href="{url}" target="_blank" rel="noopener" class="journal-card-link">
-                <div class="journal-thumb">
-                    <img src="{thumb}" alt="{title}" loading="lazy">
-                    <span class="play-icon">▶</span>
-                </div>
-                <div class="journal-content">
-                    <time class="journal-date">{date_label}</time>
-                    <h3 class="journal-title">{title}</h3>
-                    <p class="journal-excerpt">{desc}</p>
-                </div>
-            </a>
-        </article>'''
+    return f'''<article class="journal-card" data-video-id="{video_id}">
+<div class="journal-thumb" style="background-image:url('{thumb}')">
+<img src="{thumb}" alt="{title}" loading="lazy">
+<span class="journal-badge">{date_label}</span>
+</div>
+<div class="journal-body">
+<h2>{title}</h2>
+<p>{desc}{'...' if len(desc) >= 180 else ''}</p>
+<p style="font-size:.8rem;color:#999;margin-top:.5rem">👁️ {view_count:,} vues</p>
+<a class="btn-sm" href="{url}" target="_blank" rel="noopener">Voir la vidéo ▶</a>
+</div>
+</article>'''
 
 
-def generate_main_card_html(video: Dict[str, Any], journal_href: str = "") -> str:
-    """Génère le HTML d'une carte pour la page principale."""
+# ═══════════════════════════════════════════════════════════════════
+#  GÉNÉRATION HTML - PAGE PRINCIPALE (grille 3 colonnes)
+# ═══════════════════════════════════════════════════════════════════
+
+def generate_main_card_html(video: Dict[str, Any], entry_num: int = 1) -> str:
+    """Génère le HTML d'une carte pour la page principale (format grille)."""
     title = escape(video.get("title", ""))
+    desc_raw = video.get("description", "")
+    desc_clean = re.sub(r'http\S+', '', desc_raw)
+    desc_clean = re.sub(r'---.*', '', desc_clean, flags=re.DOTALL)
+    desc = escape(desc_clean.strip()[:100])
+    
     thumb = video.get("thumb", "")
     url = video.get("url", "")
+    video_id = video.get("video_id", "")
+    view_count = video.get("view_count", 0)
     date_label = video.get("date_label", "")
-    href = journal_href if journal_href else url
     
-    return f'''
-        <a href="{href}" class="jnl-card" data-video-id="{video.get('video_id', '')}">
-            <div class="jnl-thumb">
-                <img src="{thumb}" alt="{title}" loading="lazy">
-            </div>
-            <div class="jnl-info">
-                <span class="jnl-date">{date_label}</span>
-                <h4>{title}</h4>
-            </div>
-        </a>'''
+    return f'''<article class="jc" data-video-id="{video_id}">
+<img src="{thumb}" alt="{title}">
+<div class="jb">
+<div class="jm">{date_label} • 👁️ {view_count:,} vues</div>
+<h3>{title[:50]}{'...' if len(title) > 50 else ''}</h3>
+<p>{desc}{'...' if len(desc) >= 100 else ''}</p>
+<div class="ja"><a class="btn btn-d" href="{url}" target="_blank" rel="noopener">Voir le short</a></div>
+</div>
+</article>'''
 
 
 # ═══════════════════════════════════════════════════════════════════
-#  INJECTION HTML
+#  INJECTION HTML - JOURNAL
 # ═══════════════════════════════════════════════════════════════════
 
-def inject_into_journal(journal_path: Path, video: Dict[str, Any]) -> Dict[str, Any]:
-    """Injecte une vidéo dans le fichier journal HTML."""
-    result = {"ok": False, "message": "", "trace": []}
+def rebuild_journal(journal_path: Path, videos: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """
+    Reconstruit entièrement la section journal avec toutes les vidéos.
+    Trie par date de publication (plus récent en premier).
+    """
+    result = {"ok": False, "message": "", "trace": [], "count": 0}
     
     if not journal_path.exists():
         result["message"] = f"Journal introuvable: {journal_path}"
         return result
     
     content = journal_path.read_text(encoding="utf-8")
-    entry_html = generate_journal_entry_html(video)
     
-    # Patterns d'insertion (après l'ouverture de la section)
-    patterns = [
-        (r'(<div[^>]*class="[^"]*section-kicker[^"]*"[^>]*>[^<]*</div>\s*)', r'\1\n' + entry_html),
-        (r'(<section[^>]*class="[^"]*journal-entries[^"]*"[^>]*>)', r'\1\n' + entry_html),
-        (r'(<div[^>]*class="[^"]*journal-entries[^"]*"[^>]*>)', r'\1\n' + entry_html),
-    ]
+    # Trier les vidéos par date de publication (plus récent en premier)
+    videos_sorted = sorted(
+        videos,
+        key=lambda v: v.get("published_at", ""),
+        reverse=True
+    )
     
-    inserted = False
-    for pattern, replacement in patterns:
-        if re.search(pattern, content, re.IGNORECASE):
-            content = re.sub(pattern, replacement, content, count=1, flags=re.IGNORECASE)
-            result["trace"].append(f"✅ Pattern matché")
-            inserted = True
-            break
+    # Générer le HTML pour toutes les vidéos
+    entries_html = []
+    for video in videos_sorted:
+        entry = generate_journal_entry_html(video)
+        entries_html.append(entry)
     
-    if not inserted:
-        # Fallback: chercher la première journal-card et insérer avant
-        if 'class="journal-card"' in content:
-            idx = content.index('class="journal-card"')
-            tag_start = content.rfind('<', 0, idx)
-            if tag_start >= 0:
-                content = content[:tag_start] + entry_html + '\n        ' + content[tag_start:]
-                inserted = True
-                result["trace"].append("✅ Fallback matché")
+    # Chercher le point d'insertion
+    # Pattern: après <div class="section-kicker">Entrées du journal</div>
+    # et remplacer jusqu'à </main> ou <article class="journal-empty">
     
-    if not inserted:
-        result["message"] = "Point d'insertion introuvable dans le journal"
+    kicker_pattern = r'(<div class="section-kicker">Entrées du journal</div>)'
+    
+    if re.search(kicker_pattern, content, re.IGNORECASE):
+        # Trouver la position après le kicker
+        match = re.search(kicker_pattern, content, re.IGNORECASE)
+        insert_pos = match.end()
+        
+        # Trouver la fin de la section (</main> ou journal-empty)
+        remaining = content[insert_pos:]
+        
+        # Chercher journal-empty ou </main>
+        end_match = re.search(r'<article class="journal-empty">.*?</article>|</main>', remaining, re.DOTALL)
+        
+        if end_match:
+            # Construire le nouveau contenu
+            if '<article class="journal-empty">' in end_match.group():
+                # Remplacer journal-empty par les vraies entrées
+                new_content = (
+                    content[:insert_pos] + 
+                    "\n" + "\n".join(entries_html) + "\n" +
+                    content[insert_pos + end_match.start() + len(end_match.group()):]
+                )
+            else:
+                # Insérer avant </main>
+                new_content = (
+                    content[:insert_pos] + 
+                    "\n" + "\n".join(entries_html) + "\n" +
+                    remaining
+                )
+            
+            result["ok"] = True
+            result["trace"].append(f"✅ {len(entries_html)} entrées insérées après section-kicker")
+        else:
+            # Fallback: insérer juste après le kicker
+            new_content = (
+                content[:insert_pos] + 
+                "\n" + "\n".join(entries_html) + "\n" +
+                content[insert_pos:]
+            )
+            result["ok"] = True
+            result["trace"].append(f"✅ {len(entries_html)} entrées (fallback)")
+    else:
+        result["message"] = "Section-kicker 'Entrées du journal' non trouvé"
         return result
     
     # Backup + écriture
     backup = journal_path.with_suffix(".html.backup")
     shutil.copy2(journal_path, backup)
-    journal_path.write_text(content, encoding="utf-8")
+    journal_path.write_text(new_content, encoding="utf-8")
     
-    result["ok"] = True
-    result["message"] = f"Vidéo injectée dans {journal_path.name}"
+    result["count"] = len(entries_html)
+    result["message"] = f"{len(entries_html)} entrées dans le journal"
     return result
 
 
-def inject_into_main(main_path: Path, video: Dict[str, Any], journal_href: str = "") -> Dict[str, Any]:
-    """Injecte une vidéo dans la page principale HTML."""
-    result = {"ok": False, "message": "", "trace": []}
+# ═══════════════════════════════════════════════════════════════════
+#  INJECTION HTML - PAGE PRINCIPALE (Top 3 par vues)
+# ═══════════════════════════════════════════════════════════════════
+
+def inject_top_videos_into_main(main_path: Path, videos: List[Dict[str, Any]], max_cards: int = 3) -> Dict[str, Any]:
+    """
+    Injecte les TOP vidéos (par nombre de vues) dans la page principale.
+    Utilise les marqueurs <!-- AUTO-PUBLISH-SHORTS-START --> et <!-- AUTO-PUBLISH-SHORTS-END -->
+    """
+    result = {"ok": False, "message": "", "trace": [], "count": 0}
     
     if not main_path.exists():
         result["message"] = f"Page principale introuvable: {main_path}"
         return result
     
     content = main_path.read_text(encoding="utf-8")
-    entry_html = generate_main_card_html(video, journal_href)
     
-    # Patterns d'insertion
-    patterns = [
-        (r'(<div[^>]*class="[^"]*journal-preview[^"]*"[^>]*>)', r'\1\n' + entry_html),
-        (r'(<div[^>]*class="[^"]*jnl-grid[^"]*"[^>]*>)', r'\1\n' + entry_html),
-        (r'(<div[^>]*class="[^"]*coming-soon-grid[^"]*"[^>]*>)', r'\1\n' + entry_html),
-    ]
+    # Vérifier si les marqueurs existent
+    start_marker = "<!-- AUTO-PUBLISH-SHORTS-START -->"
+    end_marker = "<!-- AUTO-PUBLISH-SHORTS-END -->"
     
-    inserted = False
-    for pattern, replacement in patterns:
-        if re.search(pattern, content, re.IGNORECASE):
-            content = re.sub(pattern, replacement, content, count=1, flags=re.IGNORECASE)
-            inserted = True
-            break
-    
-    if not inserted:
-        # Fallback
-        if 'class="jnl-card"' in content:
-            idx = content.index('class="jnl-card"')
-            tag_start = content.rfind('<', 0, idx)
-            if tag_start >= 0:
-                content = content[:tag_start] + entry_html + '\n        ' + content[tag_start:]
-                inserted = True
-    
-    if not inserted:
-        result["message"] = "Point d'insertion introuvable sur la page principale"
+    if start_marker not in content or end_marker not in content:
+        result["message"] = "Marqueurs AUTO-PUBLISH-SHORTS non trouvés"
+        result["trace"].append("❌ Marqueurs START/END absents dans la page")
         return result
     
+    # TRIER PAR NOMBRE DE VUES (décroissant)
+    videos_by_views = sorted(
+        videos,
+        key=lambda v: v.get("view_count", 0),
+        reverse=True
+    )
+    
+    # Afficher le classement
+    print(f"\n   📊 Classement par vues:")
+    for i, v in enumerate(videos_by_views[:5]):
+        marker = "⭐" if i < max_cards else "  "
+        print(f"      {marker} {i+1}. {v['title'][:40]}... ({v['view_count']:,} vues)")
+    
+    # Générer le HTML pour les top vidéos
+    cards_html = []
+    for i, video in enumerate(videos_by_views[:max_cards]):
+        card = generate_main_card_html(video, entry_num=i + 1)
+        cards_html.append(card)
+    
+    # Construire le nouveau contenu entre les marqueurs
+    new_content = "\n" + "\n".join(cards_html) + "\n"
+    
+    # Remplacer le contenu entre les marqueurs
+    pattern = re.escape(start_marker) + r'.*?' + re.escape(end_marker)
+    replacement = start_marker + new_content + end_marker
+    
+    new_page_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+    
+    # Backup + écriture
     backup = main_path.with_suffix(".html.backup")
     shutil.copy2(main_path, backup)
-    main_path.write_text(content, encoding="utf-8")
+    main_path.write_text(new_page_content, encoding="utf-8")
     
     result["ok"] = True
-    result["message"] = f"Vidéo injectée dans {main_path.name}"
+    result["count"] = len(cards_html)
+    result["message"] = f"Top {len(cards_html)} vidéos (par vues) injectées"
+    result["trace"].append(f"✅ Top {len(cards_html)} par nombre de vues")
+    
     return result
-
-
-def count_main_cards(main_path: Path) -> int:
-    """Compte le nombre de cartes vidéo sur la page principale."""
-    if not main_path.exists():
-        return 0
-    content = main_path.read_text(encoding="utf-8", errors="replace")
-    return len(re.findall(r'class="jnl-card"', content))
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -384,7 +461,8 @@ def main():
         config = json.load(f)
     
     print("=" * 60)
-    print("LCDMH — Auto-publish Road Trip CLI")
+    print("LCDMH — Auto-publish Road Trip CLI v3.0")
+    print("🎯 Top 3 par VUES + Journal complet")
     print(f"Config: {config_path}")
     print("=" * 60)
     
@@ -400,7 +478,7 @@ def main():
     print(f"   ID: {playlist_id}")
     print(f"   Journal: {journal_page}")
     print(f"   Main: {main_page}")
-    print(f"   Max cards: {max_main_cards}")
+    print(f"   Max cards (top vues): {max_main_cards}")
     
     # Chemins des fichiers HTML
     journal_path = REPO_ROOT / journal_page
@@ -414,83 +492,65 @@ def main():
         print(f"\n❌ Le fichier journal n'existe pas: {journal_path}")
         sys.exit(1)
     
-    # Récupérer les vidéos de la playlist
-    print(f"\n🎬 Récupération des vidéos YouTube...")
+    # Récupérer les vidéos de la playlist AVEC les stats
+    print(f"\n🎬 Récupération des vidéos YouTube (avec statistiques)...")
     try:
-        videos = fetch_playlist_videos(playlist_id)
-        print(f"   {len(videos)} vidéos trouvées dans la playlist")
+        videos = fetch_playlist_videos_with_stats(playlist_id)
+        print(f"   ✅ {len(videos)} vidéos valides trouvées")
     except Exception as e:
         print(f"❌ Erreur YouTube API: {e}")
         sys.exit(1)
     
     if not videos:
-        print("   Aucune vidéo dans la playlist.")
+        print("   Aucune vidéo valide dans la playlist.")
         sys.exit(0)
     
-    # Trouver les vidéos déjà injectées
-    journal_injected = set(get_injected_video_ids(journal_path))
-    main_injected = set(get_injected_video_ids(main_path)) if main_path.exists() else set()
-    
-    print(f"\n📊 État actuel:")
-    print(f"   Vidéos dans journal: {len(journal_injected)}")
-    print(f"   Vidéos dans main: {len(main_injected)}")
-    
-    # Trouver les nouvelles vidéos
-    new_videos = [v for v in videos if v["video_id"] not in journal_injected]
-    
-    if not new_videos:
-        print("\n✅ Aucune nouvelle vidéo à injecter.")
-        sys.exit(0)
-    
-    print(f"\n🆕 {len(new_videos)} nouvelle(s) vidéo(s) à injecter:")
-    for v in new_videos:
-        print(f"   • {v['title'][:50]}...")
+    # Afficher les stats globales
+    total_views = sum(v.get("view_count", 0) for v in videos)
+    print(f"   📊 Total vues playlist: {total_views:,}")
     
     if args.dry_run:
         print("\n🔍 Mode dry-run: aucune modification effectuée.")
+        print("\n   Vidéos (triées par vues):")
+        for v in sorted(videos, key=lambda x: x.get("view_count", 0), reverse=True):
+            print(f"      • {v['title'][:40]}... ({v['view_count']:,} vues)")
         sys.exit(0)
     
-    # Injecter les nouvelles vidéos
-    injected_count = 0
-    current_main_cards = count_main_cards(main_path) if main_path.exists() else 0
-    journal_href = f"/roadtrips/{slug}-journal.html" if slug else ""
+    # Reconstruire le journal avec toutes les vidéos
+    print(f"\n📖 Reconstruction du journal...")
+    result_journal = rebuild_journal(journal_path, videos)
+    if result_journal["ok"]:
+        print(f"   ✅ {result_journal['message']}")
+        for trace in result_journal.get("trace", []):
+            print(f"      {trace}")
+    else:
+        print(f"   ❌ {result_journal['message']}")
     
-    for video in new_videos:
-        print(f"\n→ Injection: {video['title'][:40]}...")
-        
-        # Toujours injecter dans le journal
-        result = inject_into_journal(journal_path, video)
-        if result["ok"]:
-            print(f"   ✅ Journal OK")
-            injected_count += 1
+    # Injecter le TOP 3 par vues dans la page principale
+    if main_path.exists():
+        print(f"\n🏆 Injection TOP {max_main_cards} par vues dans la page principale...")
+        result_main = inject_top_videos_into_main(main_path, videos, max_main_cards)
+        if result_main["ok"]:
+            print(f"   ✅ {result_main['message']}")
+            for trace in result_main.get("trace", []):
+                print(f"      {trace}")
         else:
-            print(f"   ❌ Journal: {result['message']}")
-            continue
-        
-        # Injecter dans la page principale si on n'a pas atteint la limite
-        if main_path.exists() and current_main_cards < max_main_cards:
-            result_main = inject_into_main(main_path, video, journal_href)
-            if result_main["ok"]:
-                print(f"   ✅ Main OK")
-                current_main_cards += 1
-            else:
-                print(f"   ⚠️ Main: {result_main['message']}")
-        elif current_main_cards >= max_main_cards:
-            print(f"   ℹ️ Main: limite {max_main_cards} cartes atteinte")
+            print(f"   ❌ {result_main['message']}")
+            for trace in result_main.get("trace", []):
+                print(f"      {trace}")
     
     # Mettre à jour la date dans la config
     config["updated_at"] = datetime.now().isoformat()
+    config["last_video_count"] = len(videos)
+    config["last_total_views"] = total_views
     with open(config_path, "w", encoding="utf-8") as f:
         json.dump(config, f, ensure_ascii=False, indent=2)
     
     print(f"\n{'='*60}")
-    print(f"✅ {injected_count} vidéo(s) injectée(s)")
+    print(f"✅ Journal: {result_journal.get('count', 0)} vidéos (ordre chronologique)")
+    print(f"✅ Page principale: Top {max_main_cards} par nombre de vues")
     print(f"{'='*60}")
     
-    if injected_count == 0:
-        sys.exit(0)
-    
-    # Note: Le commit/push est géré par le workflow GitHub Actions
     sys.exit(0)
 
 
