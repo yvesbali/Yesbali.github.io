@@ -1,9 +1,8 @@
 name: Update YouTube feed
-
 on:
   schedule:
-    - cron: "0 6 * * *" # Se réveille tous les matins à 6h00
-  workflow_dispatch:   # Permet de le lancer à la main
+    - cron: '0 6 * * *'  # Tous les jours à 6h UTC
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -12,29 +11,32 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: '3.12'
 
       - name: Install dependencies
         run: pip install requests
 
-      - name: Fetch YouTube data
+      - name: Fetch YouTube videos
         env:
+          # Méthode recommandée (unifiée)
+          YT_TOKEN_ANALYTICS: ${{ secrets.YT_TOKEN_ANALYTICS }}
+          # Méthode legacy (fallback) - peut être supprimée si YT_TOKEN_ANALYTICS fonctionne
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
         run: python fetch_youtube.py
 
-      - name: Commit if changed
+      - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main
           git add data/
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: YouTube feed update" && git push)
+          git diff --cached --quiet || git commit -m "chore: YouTube feed update"
+          git push
