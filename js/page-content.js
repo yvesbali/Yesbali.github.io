@@ -4,8 +4,13 @@
  * Sélecteurs robustes, exécution garantie après DOM ready.
  */
 (function () {
-  const slug = location.pathname.split('/').pop().replace('.html', '') || 'index';
-  const JSON_URL = 'data/pages/' + slug + '.json';
+  // Gère /aferiy.html ET /aferiy/ (Hugo)
+  let slug = location.pathname.replace(/\/$/, '').split('/').pop().replace('.html', '') || 'index';
+  if (slug === '' || slug === 'index') {
+    const parts = location.pathname.replace(/\/$/, '').split('/').filter(p => p);
+    slug = parts[parts.length - 1] || 'index';
+  }
+  const JSON_URL = '/data/pages/' + slug + '.json';
 
   function $(sel, ctx) { return (ctx || document).querySelector(sel); }
   function $$(sel, ctx) { return Array.from((ctx || document).querySelectorAll(sel)); }
