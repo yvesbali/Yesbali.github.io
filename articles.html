@@ -463,12 +463,12 @@ img{display:block;width:100%;height:auto}
 .noscript-fallback{
     max-width:var(--max);
     margin:1rem auto 0;
-    padding:0 1.5rem;
+    padding:0 var(--side-padding);
     color:var(--muted);
     font-size:.9rem;
 }
 
-@media (max-width:1100px){
+
     :root{
         --side-padding:2rem;
     }
@@ -506,6 +506,63 @@ img{display:block;width:100%;height:auto}
         grid-template-columns:1fr;
     }
 }
+
+/* PARTENAIRES SIDEBAR */
+.sidebar-partners{
+    margin-top:1.2rem;
+}
+.partners-intro{
+    color:var(--muted);
+    font-size:.85rem;
+    margin-bottom:1rem;
+}
+.partner-block{
+    display:grid;
+    grid-template-columns:42px 1fr auto;
+    gap:.75rem;
+    align-items:center;
+    padding:.85rem;
+    margin-bottom:.65rem;
+    background:linear-gradient(135deg,#fff 0%,#fefefe 100%);
+    border:1px solid var(--border);
+    border-radius:12px;
+    transition:all .2s ease;
+}
+.partner-block:hover{
+    border-color:var(--orange);
+    box-shadow:0 4px 12px rgba(230,126,34,.12);
+    transform:translateY(-2px);
+}
+.partner-icon{
+    width:42px;
+    height:42px;
+    display:grid;
+    place-items:center;
+    background:#fff5e8;
+    border-radius:10px;
+    font-size:1.3rem;
+}
+.partner-info strong{
+    display:block;
+    font-size:.92rem;
+    color:var(--noir);
+    margin-bottom:.15rem;
+}
+.partner-info span{
+    font-size:.78rem;
+    color:var(--muted);
+}
+.partner-code{
+    font-size:.7rem;
+    font-weight:800;
+    text-transform:uppercase;
+    background:var(--orange);
+    color:#fff;
+    padding:.35rem .6rem;
+    border-radius:6px;
+    white-space:nowrap;
+}
+
 </style>
 </head>
 <body>
@@ -556,6 +613,58 @@ img{display:block;width:100%;height:auto}
                     <a class="quick-link" href="#sidebar-populaires">🔥 Populaires</a>
                 </div>
             </div>
+        
+            <!-- BLOC PARTENAIRES -->
+            <div class="sidebar-card sidebar-partners">
+                <h3>💡 Mes partenaires</h3>
+                <p class="partners-intro">Codes promos exclusifs LCDMH</p>
+
+                <a href="https://www.awin1.com/cread.php?awinmid=63859&awinaffid=2753560" target="_blank" rel="noopener" class="partner-block">
+                    <div class="partner-icon">💡</div>
+                    <div class="partner-info">
+                        <strong>Olight Perun 3</strong>
+                        <span>Lampes bivouac</span>
+                    </div>
+                    <div class="partner-code">LCDMH -30%</div>
+                </a>
+
+                <a href="https://carpuride.com/fr/?ref=uxcepkkq" target="_blank" rel="noopener" class="partner-block">
+                    <div class="partner-icon">🗺️</div>
+                    <div class="partner-info">
+                        <strong>Carpuride</strong>
+                        <span>GPS CarPlay moto</span>
+                    </div>
+                    <div class="partner-code">LCDMH -30%</div>
+                </a>
+
+                <a href="https://aoocci.fr/?ref=gvxyhqgv" target="_blank" rel="noopener" class="partner-block">
+                    <div class="partner-icon">🗺️</div>
+                    <div class="partner-info">
+                        <strong>AOOCCI U6</strong>
+                        <span>GPS + Dashcam</span>
+                    </div>
+                    <div class="partner-code">LCDMH-28</div>
+                </a>
+
+                <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&ued=https%3A%2F%2Fwww.123pneus.fr%2F" target="_blank" rel="noopener" class="partner-block">
+                    <div class="partner-icon">🛞</div>
+                    <div class="partner-info">
+                        <strong>123pneus.fr</strong>
+                        <span>Livraison garage</span>
+                    </div>
+                    <div class="partner-code">Affiliation</div>
+                </a>
+
+                <a href="https://innovv.com?sca_ref=9864079.mA62YtPAg9" target="_blank" rel="noopener" class="partner-block">
+                    <div class="partner-icon">📹</div>
+                    <div class="partner-info">
+                        <strong>INNOVV K5</strong>
+                        <span>Dashcam moto</span>
+                    </div>
+                    <div class="partner-code">LCDMH -8%</div>
+                </a>
+            </div>
+
         </aside>
     </div>
 </header>
@@ -639,12 +748,64 @@ img{display:block;width:100%;height:auto}
                     <a class="full-btn" href="https://www.youtube.com/@LCDMH?sub_confirmation=1">▶ S’abonner sur YouTube</a>
                 </div>
             </div>
+        
+            <!-- BLOC PARTENAIRES -->
+            <div class="sidebar-card sidebar-partners">
+                <h3>💡 Mes partenaires</h3>
+                <p class="partners-intro">Codes promos exclusifs LCDMH</p>
+
+                <a href="https://www.awin1.com/cread.php?awinmid=63859&awinaffid=2753560" target="_blank" rel="noopener" class="partner-block">
+                    <div class="partner-icon">💡</div>
+                    <div class="partner-info">
+                        <strong>Olight Perun 3</strong>
+                        <span>Lampes bivouac</span>
+                    </div>
+                    <div class="partner-code">LCDMH -30%</div>
+                </a>
+
+                <a href="https://carpuride.com/fr/?ref=uxcepkkq" target="_blank" rel="noopener" class="partner-block">
+                    <div class="partner-icon">🗺️</div>
+                    <div class="partner-info">
+                        <strong>Carpuride</strong>
+                        <span>GPS CarPlay moto</span>
+                    </div>
+                    <div class="partner-code">LCDMH -30%</div>
+                </a>
+
+                <a href="https://aoocci.fr/?ref=gvxyhqgv" target="_blank" rel="noopener" class="partner-block">
+                    <div class="partner-icon">🗺️</div>
+                    <div class="partner-info">
+                        <strong>AOOCCI U6</strong>
+                        <span>GPS + Dashcam</span>
+                    </div>
+                    <div class="partner-code">LCDMH-28</div>
+                </a>
+
+                <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&ued=https%3A%2F%2Fwww.123pneus.fr%2F" target="_blank" rel="noopener" class="partner-block">
+                    <div class="partner-icon">🛞</div>
+                    <div class="partner-info">
+                        <strong>123pneus.fr</strong>
+                        <span>Livraison garage</span>
+                    </div>
+                    <div class="partner-code">Affiliation</div>
+                </a>
+
+                <a href="https://innovv.com?sca_ref=9864079.mA62YtPAg9" target="_blank" rel="noopener" class="partner-block">
+                    <div class="partner-icon">📹</div>
+                    <div class="partner-info">
+                        <strong>INNOVV K5</strong>
+                        <span>Dashcam moto</span>
+                    </div>
+                    <div class="partner-code">LCDMH -8%</div>
+                </a>
+            </div>
+
         </aside>
     </section>
 </div>
 
 <footer class="footer-articles">
-    <p id="footer-count">📖 17 articles publiés — Mis à jour automatiquement</p>
+    <p id="footer-count">📖 18 articles publiés — Mis à jour automatiquement</p>
     <p style="margin-top:.5rem;">
         <a href="https://www.youtube.com/@LCDMH?sub_confirmation=1">▶ S'abonner sur YouTube pour ne rien rater</a>
     </p>
@@ -688,7 +849,7 @@ const ARTICLES = [
     alt: "T33 vs Road 6 — Comparatif Terrain",
     tag: "Test • Pneus",
     title: "T33 vs Road 6 — Comparatif Terrain",
-    excerpt: "Bridgestone T33 vs Michelin Road 6 : mon comparatif après des milliers de kilomètres sur NT1100 et TRK 702.",
+    excerpt: "Bridgestone T33 vs Michelin Road 6 : mon comparatif après des milliers de kilomètres.",
     category: "tests-materiel"
   },
   {
