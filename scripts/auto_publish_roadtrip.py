@@ -1,21 +1,19 @@
 # -*- coding: utf-8 -*-
 """
-LCDMH — Auto-publish Road Trip CLI v3.1
+LCDMH — Auto-publish Road Trip CLI v3.2
 =======================================
 Script CLI pour GitHub Actions qui surveille une playlist YouTube
 et injecte automatiquement les nouvelles vidéos dans les pages road trip.
 
-v3.1 (07/04/2026):
-- FILTRE STRICT : seules les vidéos PUBLIQUES sont importées
-- Ignore "Deleted video", "Private video" (titre YouTube)
-- Ignore status.privacyStatus != "public" (private, unlisted)
-- Ignore les vidéos sans métadonnées (pas accessible)
+v3.2 (07/04/2026):
+- SANS FILTRE PUBLIC : importe TOUTES les vidéos (même unlisted)
+- Parfait pour les pages road trip en test (non accessibles dans le menu)
+- Ignore seulement "Deleted video" et "Private video" (titre générique)
 
 v3.0: 
 - Top 3 shorts par NOMBRE DE VUES sur la page principale
 - Journal : toutes les vidéos en ordre chronologique
 - Formatage corrigé pour correspondre au CSS
-- Ignore les "Deleted video" et "Private video"
 
 Usage:
     python auto_publish_roadtrip.py --config data/roadtrips/xxx/auto_publish_config.json
@@ -130,28 +128,25 @@ def fetch_playlist_videos_with_stats(playlist_id: str) -> List[Dict[str, Any]]:
         status = meta.get("status", {})
         position = item.get("snippet", {}).get("position", 0)
         
-        # ═══ FILTRE DE VISIBILITÉ ═══
-        # Vérifier le statut de confidentialité de la vidéo
-        privacy_status = status.get("privacyStatus", "")
-        
         # Vérifier si la vidéo est disponible via son titre
         title = snippet.get("title", "")
         
-        # ═══ RÈGLES DE FILTRAGE ═══
-        # 1. Ignorer les vidéos supprimées ou privées (titre générique YouTube)
+        # ═══ RÈGLES DE FILTRAGE (MINIMAL) ═══
+        # Ignorer SEULEMENT les vidéos supprimées ou privées (titre générique YouTube)
         if "Deleted video" in title or "Private video" in title:
-            print(f"   ⚠️ Vidéo ignorée (supprimée/privée - titre): {video_id}")
+            print(f"   ⚠️ Vidéo ignorée (supprimée/privée): {video_id}")
             continue
         
-        # 2. Ignorer les vidéos non publiques (private, unlisted)
-        if privacy_status and privacy_status != "public":
-            print(f"   ⚠️ Vidéo ignorée (statut {privacy_status}): {title[:40]}... [{video_id}]")
-            continue
-        
-        # 3. Ignorer les vidéos sans métadonnées (vidéo pas accessible)
+        # Ignorer les vidéos sans métadonnées (vidéo pas accessible)
         if not meta:
             print(f"   ⚠️ Vidéo ignorée (pas de métadonnées): {video_id}")
             continue
+        
+        # NOTE: On n'ignore PAS les vidéos unlisted (non répertoriées)
+        # car c'est utile pour les pages road trip en test
+        privacy_status = status.get("privacyStatus", "public")
+        if privacy_status != "public":
+            print(f"   📌 Vidéo incluse (statut {privacy_status}): {title[:40]}...")
         
         # Calculer la durée
         duration_s = parse_iso8601_duration(content.get("duration", ""))
@@ -485,9 +480,9 @@ def main():
         config = json.load(f)
     
     print("=" * 60)
-    print("LCDMH — Auto-publish Road Trip CLI v3.1")
+    print("LCDMH — Auto-publish Road Trip CLI v3.2")
     print("🎯 Top 3 par VUES + Journal complet")
-    print("🔒 Filtre: UNIQUEMENT les vidéos PUBLIQUES")
+    print("📌 Mode TEST: inclut les vidéos non répertoriées")
     print(f"Config: {config_path}")
     print("=" * 60)
     
@@ -521,13 +516,13 @@ def main():
     print(f"\n🎬 Récupération des vidéos YouTube (avec statistiques)...")
     try:
         videos = fetch_playlist_videos_with_stats(playlist_id)
-        print(f"   ✅ {len(videos)} vidéos valides trouvées")
+        print(f"   ✅ {len(videos)} vidéos trouvées (inclut unlisted)")
     except Exception as e:
         print(f"❌ Erreur YouTube API: {e}")
         sys.exit(1)
     
     if not videos:
-        print("   Aucune vidéo valide dans la playlist.")
+        print("   Aucune vidéo dans la playlist.")
         sys.exit(0)
     
     # Afficher les stats globales

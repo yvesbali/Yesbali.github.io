@@ -1,6 +1,13 @@
+# -*- coding: utf-8 -*-
 """
 fetch_youtube.py — Feed YouTube automatique pour lcdmh.com
 Appelé par GitHub Actions (update_videos.yml) tous les matins à 6h UTC.
+
+v2.0 (07/04/2026):
+- FILTRE STRICT : seules les vidéos PUBLIQUES sont importées
+- Ignore "Deleted video", "Private video" (titre YouTube)
+- Ignore status.privacyStatus != "public" (private, unlisted)
+- Auth unifiée via YT_TOKEN_ANALYTICS (même système que auto_publish)
 
 Produit :
   data/videos.json          → lu par js/youtube-feed.js (page d'accueil)
@@ -17,13 +24,9 @@ from pathlib import Path
 
 import requests
 
-# ─────────────────────────────────────────────────────────────
-# CONFIGURATION (secrets injectés par GitHub Actions)
-# ─────────────────────────────────────────────────────────────
-CLIENT_ID = os.environ.get("YOUTUBE_CLIENT_ID")
-CLIENT_SECRET = os.environ.get("YOUTUBE_CLIENT_SECRET")
-REFRESH_TOKEN = os.environ.get("YOUTUBE_REFRESH_TOKEN")
-
+# ═══════════════════════════════════════════════════════════════════
+# CONFIGURATION
+# ═══════════════════════════════════════════════════════════════════
 CHANNEL_ID = "UCsmjag8fMTAqdawlg35T3Bg"  # LCDMH
 
 # Seuil en secondes pour distinguer un Short d'une vidéo longue
@@ -33,27 +36,67 @@ SHORT_MAX_SECONDS = 65
 MAX_RECENT_VIDEOS = 12
 MAX_RECENT_SHORTS = 8
 
-# ─────────────────────────────────────────────────────────────
-# AUTH
-# ─────────────────────────────────────────────────────────────
+
+# ═══════════════════════════════════════════════════════════════════
+# AUTH — Système unifié via YT_TOKEN_ANALYTICS
+# ═══════════════════════════════════════════════════════════════════
 def get_access_token():
-    """Récupère un access token frais via le refresh token OAuth2."""
-    r = requests.post("https://oauth2.googleapis.com/token", data={
-        "client_id": CLIENT_ID,
-        "client_secret": CLIENT_SECRET,
-        "refresh_token": REFRESH_TOKEN,
-        "grant_type": "refresh_token",
-    })
-    r.raise_for_status()
-    token = r.json().get("access_token")
-    if not token:
-        raise RuntimeError(f"Pas d'access_token dans la réponse : {r.json()}")
-    return token
+    """
+    Récupère un access token frais via le refresh token OAuth2.
+    Utilise YT_TOKEN_ANALYTICS (JSON complet) comme les autres scripts.
+    Fallback sur les 3 secrets séparés pour compatibilité.
+    """
+    # Méthode 1 : YT_TOKEN_ANALYTICS (recommandé)
+    token_json = os.environ.get("YT_TOKEN_ANALYTICS", "")
+    if token_json:
+        try:
+            token_data = json.loads(token_json)
+            client_id = token_data.get("client_id")
+            client_secret = token_data.get("client_secret")
+            refresh_token = token_data.get("refresh_token")
+            
+            if all([client_id, client_secret, refresh_token]):
+                print("  🔑 Auth via YT_TOKEN_ANALYTICS")
+                r = requests.post("https://oauth2.googleapis.com/token", data={
+                    "client_id": client_id,
+                    "client_secret": client_secret,
+                    "refresh_token": refresh_token,
+                    "grant_type": "refresh_token",
+                })
+                r.raise_for_status()
+                token = r.json().get("access_token")
+                if token:
+                    return token
+        except (json.JSONDecodeError, KeyError) as e:
+            print(f"  ⚠️ Erreur parsing YT_TOKEN_ANALYTICS: {e}")
+    
+    # Méthode 2 : 3 secrets séparés (fallback/legacy)
+    client_id = os.environ.get("YOUTUBE_CLIENT_ID")
+    client_secret = os.environ.get("YOUTUBE_CLIENT_SECRET")
+    refresh_token = os.environ.get("YOUTUBE_REFRESH_TOKEN")
+    
+    if all([client_id, client_secret, refresh_token]):
+        print("  🔑 Auth via secrets séparés (legacy)")
+        r = requests.post("https://oauth2.googleapis.com/token", data={
+            "client_id": client_id,
+            "client_secret": client_secret,
+            "refresh_token": refresh_token,
+            "grant_type": "refresh_token",
+        })
+        r.raise_for_status()
+        token = r.json().get("access_token")
+        if token:
+            return token
+    
+    raise RuntimeError(
+        "Aucune méthode d'auth disponible. "
+        "Configurez YT_TOKEN_ANALYTICS ou les 3 secrets YOUTUBE_CLIENT_ID/SECRET/REFRESH_TOKEN"
+    )
 
 
-# ─────────────────────────────────────────────────────────────
+# ═══════════════════════════════════════════════════════════════════
 # YOUTUBE API HELPERS
-# ─────────────────────────────────────────────────────────────
+# ═══════════════════════════════════════════════════════════════════
 def iso8601_to_seconds(duration_str):
     """Convertit une durée ISO 8601 (PT1H2M33S) en secondes."""
     m = re.match(r"PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", duration_str or "")
@@ -105,9 +148,10 @@ def get_playlist_videos(token, playlist_id, max_results=50):
             if not video_id:
                 continue
 
-            # Ignorer les vidéos supprimées ou privées
+            # Ignorer les vidéos supprimées ou privées (titre générique YouTube)
             title = snippet.get("title", "")
             if title in ("Deleted video", "Private video"):
+                print(f"   ⚠️ Ignorée (titre): {title}")
                 continue
 
             videos.append({
@@ -129,13 +173,20 @@ def get_playlist_videos(token, playlist_id, max_results=50):
     return videos
 
 
-def enrich_with_details(token, videos):
-    """Ajoute durée et vues via l'endpoint videos (par batch de 50)."""
+def enrich_with_details_and_filter(token, videos):
+    """
+    Ajoute durée et vues via l'endpoint videos (par batch de 50).
+    FILTRE LES VIDÉOS NON-PUBLIQUES (unlisted, private).
+    """
+    filtered_videos = []
+    
     for i in range(0, len(videos), 50):
         batch = videos[i:i + 50]
         ids = ",".join(v["video_id"] for v in batch)
+        
+        # IMPORTANT: On récupère aussi "status" pour avoir privacyStatus
         r = requests.get("https://www.googleapis.com/youtube/v3/videos", params={
-            "part": "contentDetails,statistics",
+            "part": "contentDetails,statistics,status",
             "id": ids,
             "access_token": token,
         })
@@ -147,9 +198,29 @@ def enrich_with_details(token, videos):
 
         for v in batch:
             detail = details_map.get(v["video_id"], {})
+            
+            # ═══ FILTRE DE VISIBILITÉ ═══
+            status = detail.get("status", {})
+            privacy_status = status.get("privacyStatus", "")
+            
+            # Ignorer les vidéos non-publiques
+            if privacy_status and privacy_status != "public":
+                print(f"   ⚠️ Ignorée (statut {privacy_status}): {v['title'][:40]}...")
+                continue
+            
+            # Ignorer les vidéos sans métadonnées
+            if not detail:
+                print(f"   ⚠️ Ignorée (pas de métadonnées): {v['video_id']}")
+                continue
+            
+            # Enrichir avec durée et vues
             duration_iso = detail.get("contentDetails", {}).get("duration", "")
             v["duration_s"] = iso8601_to_seconds(duration_iso)
             v["views"] = int(detail.get("statistics", {}).get("viewCount", 0))
+            
+            filtered_videos.append(v)
+    
+    return filtered_videos
 
 
 def split_videos_shorts(videos):
@@ -174,9 +245,9 @@ def split_videos_shorts(videos):
     return longs, shorts
 
 
-# ─────────────────────────────────────────────────────────────
+# ═══════════════════════════════════════════════════════════════════
 # GÉNÉRATION DES JSON
-# ─────────────────────────────────────────────────────────────
+# ═══════════════════════════════════════════════════════════════════
 def build_main_feed(token):
     """Construit data/videos.json (feed général de la page d'accueil)."""
     print("  Récupération de la playlist Uploads...")
@@ -185,10 +256,13 @@ def build_main_feed(token):
 
     # Récupérer assez de vidéos pour avoir du contenu dans les deux catégories
     raw = get_playlist_videos(token, uploads_id, max_results=80)
-    print(f"  {len(raw)} vidéos récupérées")
+    print(f"  {len(raw)} vidéos récupérées (avant filtrage)")
 
-    enrich_with_details(token, raw)
-    videos, shorts = split_videos_shorts(raw)
+    # Enrichir ET filtrer les vidéos non-publiques
+    filtered = enrich_with_details_and_filter(token, raw)
+    print(f"  {len(filtered)} vidéos PUBLIQUES conservées")
+    
+    videos, shorts = split_videos_shorts(filtered)
 
     feed = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
@@ -207,7 +281,7 @@ def build_trip_feeds(token):
     """Construit data/trips/{slug}.json pour chaque voyage dans trips.json."""
     trips_path = Path("trips.json")
     if not trips_path.exists():
-        print("  ⚠️  trips.json absent, pas de feed par voyage")
+        print("  ⚠️ trips.json absent, pas de feed par voyage")
         return
 
     trips = json.loads(trips_path.read_text(encoding="utf-8"))
@@ -219,14 +293,14 @@ def build_trip_feeds(token):
 
         # Ignorer les playlist_id fictifs
         if not playlist_id or "xxxx" in playlist_id.lower():
-            print(f"  ⏭️  {slug} — playlist_id fictif, ignoré")
+            print(f"  ⏭️ {slug} — playlist_id fictif, ignoré")
             continue
 
         print(f"  Playlist {slug} ({playlist_id})...")
         try:
             raw = get_playlist_videos(token, playlist_id, max_results=50)
-            enrich_with_details(token, raw)
-            videos, shorts = split_videos_shorts(raw)
+            filtered = enrich_with_details_and_filter(token, raw)
+            videos, shorts = split_videos_shorts(filtered)
 
             feed = {
                 "updated_at": datetime.now(timezone.utc).isoformat(),
@@ -245,25 +319,35 @@ def build_trip_feeds(token):
             print(f"  ❌ {slug} — erreur : {e}")
 
 
-# ─────────────────────────────────────────────────────────────
+# ═══════════════════════════════════════════════════════════════════
 # MAIN
-# ─────────────────────────────────────────────────────────────
+# ═══════════════════════════════════════════════════════════════════
 if __name__ == "__main__":
-    print("🎬 LCDMH — Mise à jour du feed YouTube")
+    print("🎬 LCDMH — Mise à jour du feed YouTube v2.0")
+    print("🔒 Filtre: UNIQUEMENT les vidéos PUBLIQUES")
     print(f"  Date : {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
 
-    if not all([CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN]):
-        print("❌ Secrets manquants (YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET, YOUTUBE_REFRESH_TOKEN)")
-        print("   Configure-les dans Settings > Secrets > Actions de ton dépôt GitHub.")
+    # Vérifier qu'au moins une méthode d'auth est disponible
+    has_unified = bool(os.environ.get("YT_TOKEN_ANALYTICS"))
+    has_legacy = all([
+        os.environ.get("YOUTUBE_CLIENT_ID"),
+        os.environ.get("YOUTUBE_CLIENT_SECRET"),
+        os.environ.get("YOUTUBE_REFRESH_TOKEN"),
+    ])
+    
+    if not has_unified and not has_legacy:
+        print("❌ Aucune méthode d'authentification disponible.")
+        print("   Option 1 (recommandé): Configurez YT_TOKEN_ANALYTICS")
+        print("   Option 2 (legacy): Configurez YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET, YOUTUBE_REFRESH_TOKEN")
         exit(1)
 
     token = get_access_token()
-    print("  🔑 Token OAuth2 obtenu")
+    print("  ✅ Token OAuth2 obtenu")
 
     print("\n📺 Feed général (data/videos.json)")
     build_main_feed(token)
 
-    print("\n🗺️  Feeds par voyage (data/trips/)")
+    print("\n🗺️ Feeds par voyage (data/trips/)")
     build_trip_feeds(token)
 
     print("\n✅ Terminé.")
