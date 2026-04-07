@@ -1,5 +1,5 @@
-(() => {
-  const container = document.getElementById('lcdmh-nav-container');
+﻿(() => {
+  const container = document.getElementById('lcdmh-nav');
   if (!container) return;
 
   fetch('nav.html?v=' + Date.now(), { cache: 'no-store' })
@@ -12,8 +12,8 @@
       initLCDMHNav();
     })
     .catch((error) => {
-      console.error('Navigation non chargée :', error);
-      container.innerHTML = '<div style="background:#e67e22;color:#fff;padding:1rem;text-align:center;font-family:Arial,sans-serif;">Menu temporairement indisponible — <a href="index.html" style="color:#fff;font-weight:bold;">Accueil</a></div>';
+      console.error('Navigation non chargÃ©e :', error);
+      container.innerHTML = '<div style="background:#e67e22;color:#fff;padding:1rem;text-align:center;font-family:Arial,sans-serif;">Menu temporairement indisponible â€” <a href="index.html" style="color:#fff;font-weight:bold;">Accueil</a></div>';
     });
 
   function initLCDMHNav() {
