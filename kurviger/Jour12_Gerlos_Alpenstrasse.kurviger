@@ -1,0 +1,84 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "address": "Pri Kumerčih,  Bovec Slovénie",
+          "category": "search_result",
+          "latitude": 46.338025,
+          "longitude": 13.645278,
+          "shaping": true
+        },
+        {
+          "name": "Camping Trenta — 16€ - N1 ",
+          "latitude": 46.389109,
+          "longitude": 13.747472,
+          "shaping": true
+        },
+        {
+          "latitude": 46.415522,
+          "longitude": 13.741096,
+          "shaping": true
+        },
+        {
+          "name": "Entrée du col du Vršič (côté Trenta), Début des lacets pavés mythiques.",
+          "weight": "curvature",
+          "category": "search_result",
+          "latitude": 46.424547,
+          "longitude": 13.743553,
+          "shaping": true
+        },
+        {
+          "name": "Sommet du Vršič Pass (1611 m)",
+          "weight": "curvature",
+          "latitude": 46.439028,
+          "longitude": 13.748092,
+          "shaping": true
+        },
+        {
+          "name": "Fin de la descente du col.",
+          "latitude": 46.484579,
+          "longitude": 13.78898,
+          "shaping": true
+        },
+        {
+          "latitude": 46.494234,
+          "longitude": 13.736054,
+          "shaping": true
+        },
+        {
+          "category": "pass",
+          "latitude": 46.869111,
+          "longitude": 13.885345,
+          "shaping": true
+        },
+        {
+          "category": "pass",
+          "latitude": 47.062989,
+          "longitude": 12.818298,
+          "shaping": true
+        },
+        {
+          "name": "Camping Maria - 25€ - N1",
+          "category": "search_result",
+          "latitude": 47.27453,
+          "longitude": 12.420366
+        },
+        {
+          "name": "Chutes de Krimml",
+          "latitude": 47.214088,
+          "longitude": 12.165985,
+          "shaping": true
+        },
+        {
+          "name": "Gerlos Alpenstrasse",
+          "latitude": 47.242415,
+          "longitude": 12.088394,
+          "shaping": true
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}
