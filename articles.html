@@ -4,403 +4,957 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Articles LCDMH — Road Trips, Tests Matériel, Guides Moto</title>
-<meta name="description" content="Tous les articles LCDMH : road trips moto en Europe, tests matériel (Olight, Dunlop, Carpuride), guides pratiques bivouac et nettoyage moto.">
+<meta name="description" content="Tous les articles LCDMH : road trips moto en Europe, tests matériel, guides pratiques, bivouac, GPS, pneus et retours d'expérience terrain.">
 <meta property="og:title" content="Articles LCDMH — Road Trips, Tests Matériel, Guides Moto">
-<meta property="og:description" content="Tous les articles LCDMH : road trips moto en Europe, tests matériel, guides pratiques.">
+<meta property="og:description" content="Road trips, tests matériel, guides pratiques — tous mes retours d'expérience terrain.">
 <meta property="og:url" content="https://lcdmh.com/articles.html">
+<meta property="og:image" content="https://i.ytimg.com/vi/VpqbQruf1CE/hqdefault.jpg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LCDMH">
 <link rel="canonical" href="https://lcdmh.com/articles.html">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-:root {
-    --orange: #e67e22;
-    --orange-dark: #d35400;
-    --noir: #1a1a1a;
-    --bg: #f7f7f5;
-    --alt: #f0ede8;
-    --card: #fff;
-    --border: #e5e5e5;
-    --muted: #777;
+:root{
+    --orange:#e67e22;
+    --orange-dark:#d35400;
+    --noir:#1a1a1a;
+    --bg:#f7f7f5;
+    --alt:#f0ede8;
+    --card:#fff;
+    --border:#e5e5e5;
+    --muted:#777;
+    --hero1:#1a2b4a;
+    --hero2:#2c3e50;
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+    --radius:18px;
+    --max:1140px;
 }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--noir); line-height: 1.7; }
-a { color: inherit; text-decoration: none; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--noir);
+    line-height:1.7;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:auto}
 
-.hero-articles {
-    background: linear-gradient(135deg, #1a2b4a 0%, #2c3e50 100%);
-    color: #fff;
-    padding: 3rem 1rem;
-    text-align: center;
-}
-.hero-articles h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    margin-bottom: 0.5rem;
-}
-.hero-articles p {
-    font-size: 1.05rem;
-    color: rgba(255,255,255,0.8);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.wrap { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-
-.category-section {
-    padding: 2.5rem 0 1rem;
-}
-.category-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--noir);
-    margin-bottom: 0.3rem;
-}
-.category-bar {
-    width: 50px;
-    height: 4px;
-    background: var(--orange);
-    border-radius: 2px;
-    margin-bottom: 1.5rem;
+.wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 1.5rem;
 }
 
-.articles-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1.2rem;
+.hero-articles{
+    background:linear-gradient(135deg,var(--hero1) 0%,var(--hero2) 100%);
+    color:#fff;
+    padding:3.2rem 1rem 2.4rem;
+}
+.hero-grid{
+    max-width:var(--max);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:1.2rem;
+    align-items:stretch;
+}
+.hero-main,
+.hero-side-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:22px;
+    box-shadow:var(--shadow);
+}
+.hero-main{
+    padding:1.8rem;
+}
+.hero-kicker{
+    display:inline-block;
+    font-size:.78rem;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:#ffd7a1;
+    margin-bottom:.7rem;
+}
+.hero-main h1{
+    font-family:'Montserrat',sans-serif;
+    font-size:clamp(2rem,4vw,3rem);
+    line-height:1.08;
+    margin-bottom:.65rem;
+}
+.hero-main p{
+    font-size:1rem;
+    color:rgba(255,255,255,.86);
+    max-width:58ch;
+}
+.hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.8rem;
+    margin-top:1.25rem;
+}
+.hero-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:44px;
+    padding:0 1rem;
+    border-radius:999px;
+    font-weight:700;
+    font-size:.92rem;
+    transition:.2s ease;
+}
+.hero-btn-primary{
+    background:var(--orange);
+    color:#fff;
+}
+.hero-btn-primary:hover{background:var(--orange-dark)}
+.hero-btn-secondary{
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.08);
+    color:#fff;
+}
+.hero-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:.8rem;
+}
+.hero-side-card{
+    padding:1.1rem;
+}
+.hero-side-card h2{
+    font-family:'Montserrat',sans-serif;
+    font-size:1.02rem;
+    margin-bottom:.9rem;
+}
+.stat{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:14px;
+    padding:.9rem;
+    text-align:center;
+}
+.stat strong{
+    display:block;
+    font-size:1.35rem;
+    line-height:1;
+    margin-bottom:.3rem;
+    color:#fff;
+}
+.stat span{
+    font-size:.82rem;
+    color:rgba(255,255,255,.76);
+}
+.quick-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.6rem;
+}
+.quick-link{
+    display:inline-flex;
+    align-items:center;
+    min-height:36px;
+    padding:0 .9rem;
+    border-radius:999px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+    color:#fff;
+    font-size:.88rem;
+    font-weight:600;
 }
 
-.article-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
-    display: flex;
-    flex-direction: column;
+.toolbar{
+    padding:1.3rem 0 .3rem;
 }
-.article-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+.toolbar-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr .8fr;
+    gap:.9rem;
 }
-
-.article-thumb {
-    width: 100%;
-    aspect-ratio: 16/9;
-    background: var(--alt);
-    overflow: hidden;
-}
-.article-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.tool{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    min-height:54px;
+    display:flex;
+    align-items:center;
+    padding:0 1rem;
+    color:var(--muted);
+    box-shadow:0 6px 20px rgba(0,0,0,.04);
 }
 
-.article-body {
-    padding: 1.1rem 1.2rem 1.3rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+.section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:1rem;
+    margin-bottom:1rem;
 }
-.article-tag {
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--orange);
-    margin-bottom: 0.4rem;
+.section-head h2{
+    font-family:'Montserrat',sans-serif;
+    font-size:1.45rem;
+    line-height:1.1;
 }
-.article-body h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.35;
-    margin-bottom: 0.4rem;
-    color: var(--noir);
+.section-head p{
+    color:var(--muted);
+    margin-top:.4rem;
 }
-.article-body p {
-    font-size: 0.88rem;
-    color: var(--muted);
-    line-height: 1.5;
-    flex: 1;
-}
-.article-btn {
-    display: inline-block;
-    margin-top: 0.8rem;
-    padding: 0.55rem 1.2rem;
-    background: var(--orange);
-    color: #fff;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    transition: background 0.2s;
-    align-self: flex-start;
-}
-.article-btn:hover {
-    background: var(--orange-dark);
+.section-link{
+    color:var(--orange-dark);
+    font-weight:700;
+    white-space:nowrap;
 }
 
-.footer-articles {
-    text-align: center;
-    padding: 2rem 1rem;
-    color: var(--muted);
-    font-size: 0.85rem;
+.featured-block{
+    padding:1rem 0 0;
+}
+.featured-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:1.2rem;
+}
+.featured-main,
+.featured-mini,
+.article-card,
+.sidebar-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+}
+.featured-main{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    min-height:340px;
+}
+.featured-image,
+.featured-mini-image,
+.article-thumb{
+    background:var(--alt);
+    overflow:hidden;
+}
+.featured-image img,
+.featured-mini-image img,
+.article-thumb img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+.featured-body,
+.featured-mini-body,
+.article-body{
+    padding:1.15rem 1.2rem 1.3rem;
+}
+.article-tag,
+.meta-line{
+    font-size:.75rem;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:var(--orange);
+    margin-bottom:.45rem;
+}
+.featured-body h3{
+    font-family:'Montserrat',sans-serif;
+    font-size:1.6rem;
+    line-height:1.16;
+    margin-bottom:.55rem;
+}
+.featured-body p,
+.featured-mini-body p,
+.article-body p{
+    color:var(--muted);
+}
+.featured-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.7rem;
+    margin-top:1rem;
+}
+.featured-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:42px;
+    padding:0 1rem;
+    border-radius:999px;
+    font-size:.9rem;
+    font-weight:700;
+}
+.featured-btn-primary{
+    background:var(--orange);
+    color:#fff;
+}
+.featured-btn-secondary{
+    background:#fff;
+    border:1px solid var(--border);
+    color:var(--noir);
+}
+.featured-side{
+    display:grid;
+    gap:1.1rem;
+}
+.featured-mini{
+    display:grid;
+    grid-template-columns:140px 1fr;
+    min-height:160px;
+}
+.featured-mini-body h3{
+    font-family:'Montserrat',sans-serif;
+    font-size:1rem;
+    line-height:1.25;
+    margin-bottom:.35rem;
 }
 
-@media (max-width: 640px) {
-    .articles-grid {
-        grid-template-columns: 1fr;
+.main-layout{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 320px;
+    gap:1.2rem;
+    margin-top:1.8rem;
+}
+.category-section{
+    padding:1.6rem 0 0;
+}
+.category-title{
+    font-family:'Montserrat',sans-serif;
+    font-size:1.35rem;
+    font-weight:700;
+    color:var(--noir);
+    margin-bottom:.25rem;
+}
+.category-bar{
+    width:54px;
+    height:4px;
+    background:var(--orange);
+    border-radius:999px;
+    margin-bottom:1.2rem;
+}
+.articles-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:1.1rem;
+}
+.article-card{
+    transition:transform .2s ease, box-shadow .2s ease;
+    display:flex;
+    flex-direction:column;
+}
+.article-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 28px rgba(0,0,0,.10);
+}
+.article-thumb{
+    aspect-ratio:16/9;
+}
+.article-body{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+.article-body h3{
+    font-family:'Montserrat',sans-serif;
+    font-size:1rem;
+    font-weight:700;
+    line-height:1.35;
+    margin-bottom:.45rem;
+}
+.article-btn{
+    display:inline-block;
+    margin-top:.85rem;
+    padding:.58rem 1.15rem;
+    background:var(--orange);
+    color:#fff;
+    border-radius:8px;
+    font-weight:600;
+    font-size:.85rem;
+    align-self:flex-start;
+    transition:background .2s ease;
+}
+.article-btn:hover{background:var(--orange-dark)}
+
+.sidebar-card{
+    padding:1.2rem;
+    position:sticky;
+    top:18px;
+}
+.sidebar-card h3{
+    font-family:'Montserrat',sans-serif;
+    font-size:1.05rem;
+    margin-bottom:.9rem;
+}
+.popular-list{
+    display:grid;
+    gap:.7rem;
+}
+.popular-item{
+    display:grid;
+    grid-template-columns:30px 1fr;
+    gap:.7rem;
+    align-items:flex-start;
+    padding:.75rem 0;
+    border-top:1px solid var(--border);
+}
+.popular-item:first-child{
+    border-top:0;
+    padding-top:0;
+}
+.popular-rank{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:#fff5e8;
+    color:var(--orange-dark);
+    font-weight:800;
+    font-size:.84rem;
+}
+.popular-item strong{
+    display:block;
+    line-height:1.28;
+    margin-bottom:.22rem;
+    font-size:.95rem;
+}
+.popular-item span{
+    color:var(--muted);
+    font-size:.84rem;
+}
+.sidebar-box{
+    margin-top:1rem;
+    padding:1rem;
+    border-radius:16px;
+    background:linear-gradient(135deg,#fff7ed 0%,#fff 100%);
+    border:1px solid #f2d8b3;
+}
+.sidebar-box p{
+    color:var(--muted);
+    font-size:.9rem;
+    margin-bottom:.8rem;
+}
+.sidebar-box .full-btn{
+    width:100%;
+    justify-content:center;
+    display:inline-flex;
+    min-height:42px;
+    align-items:center;
+    background:var(--orange);
+    color:#fff;
+    border-radius:10px;
+    font-weight:700;
+    padding:0 1rem;
+}
+
+.footer-articles{
+    text-align:center;
+    padding:2rem 1rem 2.4rem;
+    color:var(--muted);
+    font-size:.85rem;
+}
+.footer-articles a{
+    color:var(--orange);
+    font-weight:700;
+}
+
+.noscript-fallback{
+    max-width:var(--max);
+    margin:1rem auto 0;
+    padding:0 1.5rem;
+    color:var(--muted);
+    font-size:.9rem;
+}
+
+@media (max-width:1100px){
+    .hero-grid,
+    .featured-grid,
+    .main-layout,
+    .featured-main{
+        grid-template-columns:1fr;
+    }
+    .toolbar-grid{
+        grid-template-columns:1fr 1fr;
+    }
+    .sidebar-card{
+        position:static;
+    }
+}
+@media (max-width:760px){
+    .wrap{padding:0 1rem}
+    .hero-articles{padding:2.4rem 1rem 1.8rem}
+    .hero-stats,
+    .toolbar-grid{
+        grid-template-columns:1fr;
+    }
+    .featured-mini{
+        grid-template-columns:1fr;
+    }
+    .section-head{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+    .articles-grid{
+        grid-template-columns:1fr;
     }
 }
 </style>
-
-<meta property="og:image" content="https://i.ytimg.com/vi/cstTBA6HBGc/hqdefault.jpg">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="LCDMH">
 </head>
 <body>
-<div id="lcdmh-nav"></div><script src="/js/lcdmh-nav-loader.js" defer></script>
 
-<div class="hero-articles">
-    <h1>📖 Articles LCDMH</h1>
-    <p>Road trips, tests matériel, guides pratiques — tous mes retours d'expérience terrain</p>
-</div>
+<div id="lcdmh-nav"></div>
+<script src="/js/lcdmh-nav-loader.js" defer></script>
+
+<header class="hero-articles">
+    <div class="hero-grid">
+        <section class="hero-main">
+            <span class="hero-kicker">LCDMH • Hub articles</span>
+            <h1>Articles road trip moto, tests matériel et guides pratiques</h1>
+            <p>
+                Retours d’expérience terrain, voyages moto, bivouac, GPS, pneus, équipement et conseils pratiques :
+                retrouve ici les articles LCDMH classés par univers pour naviguer plus facilement.
+            </p>
+            <div class="hero-actions">
+                <a class="hero-btn hero-btn-primary" href="#a-la-une">Voir l’article à la une</a>
+                <a class="hero-btn hero-btn-secondary" href="#road-trips">Voir les catégories</a>
+            </div>
+        </section>
+
+        <aside class="hero-side">
+            <div class="hero-side-card">
+                <h2>Vue d’ensemble</h2>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <strong id="stat-total-articles">17</strong>
+                        <span>articles</span>
+                    </div>
+                    <div class="stat">
+                        <strong>3</strong>
+                        <span>grandes familles</span>
+                    </div>
+                    <div class="stat">
+                        <strong>1</strong>
+                        <span>article à la une</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-side-card">
+                <h2>Entrées rapides</h2>
+                <div class="quick-links">
+                    <a class="quick-link" href="#road-trips">🏍️ Road Trips</a>
+                    <a class="quick-link" href="#tests-materiel">🔧 Tests matériel</a>
+                    <a class="quick-link" href="#guides-pratiques">🧭 Guides pratiques</a>
+                    <a class="quick-link" href="#sidebar-populaires">🔥 Populaires</a>
+                </div>
+            </div>
+        </aside>
+    </div>
+</header>
+
+<noscript>
+    <div class="noscript-fallback">
+        Cette page fonctionne mieux avec JavaScript activé, car l’article à la une et les sections sont générés automatiquement.
+    </div>
+</noscript>
 
 <div class="wrap">
+    <section class="toolbar" aria-label="Outils de lecture">
+        <div class="toolbar-grid">
+            <div class="tool">🔎 Une page pensée pour mieux mettre en avant les meilleurs articles</div>
+            <div class="tool">📂 Classement par catégories</div>
+            <div class="tool">↕️ Article à la une modifiable facilement</div>
+        </div>
+    </section>
 
-<!-- ══ ROAD TRIPS ══ -->
-<section class="category-section">
-    <h2 class="category-title">🏍️ Road Trips</h2>
-    <div class="category-bar"></div>
-    <div class="articles-grid">
+    <section class="featured-block" id="a-la-une">
+        <div class="section-head">
+            <div>
+                <h2>À la une</h2>
+                <p>Un article principal mis en avant, modifiable chaque semaine sans toucher à toute la page.</p>
+            </div>
+            <a class="section-link" href="#road-trips">Voir toutes les catégories →</a>
+        </div>
 
-        <a href="articles/350-km-dans-le-froid-norvegien-le-vent-du-groenland-ma-brise.html" class="article-card">
-            <div class="article-thumb">
-                <img src="https://i.ytimg.com/vi/cstTBA6HBGc/hqdefault.jpg" alt="350 km dans le froid norvégien" loading="lazy">
-            </div>
-            <div class="article-body">
-                <span class="article-tag">Road Trip • Norvège</span>
-                <h3>350 km dans le froid norvégien : le vent du Groenland m'a brisé</h3>
-                <p>Le récit d'une étape éprouvante au Cap Nord, entre vent glacial et routes désertes.</p>
-                <span class="article-btn">Lire l'article →</span>
-            </div>
-        </a>
+        <div class="featured-grid">
+            <article class="featured-main" id="featured-main"></article>
+            <div class="featured-side" id="featured-side"></div>
+        </div>
+    </section>
 
-        <a href="articles/geirangerfjord-a-moto-le-plus-beau-fjord-de-norvege-road-tri.html" class="article-card">
-            <div class="article-thumb">
-                <img src="https://i.ytimg.com/vi/Fzj-lGDwedc/hqdefault.jpg" alt="Geirangerfjord à moto" loading="lazy">
-            </div>
-            <div class="article-body">
-                <span class="article-tag">Road Trip • Norvège</span>
-                <h3>Geirangerfjord à moto : le plus beau fjord de Norvège</h3>
-                <p>L'arrivée au Geirangerfjord, un moment suspendu entre montagne et mer.</p>
-                <span class="article-btn">Lire l'article →</span>
-            </div>
-        </a>
+    <section class="main-layout">
+        <main>
+            <section class="category-section" id="road-trips">
+                <div class="section-head">
+                    <div>
+                        <h2>🏍️ Road Trips</h2>
+                        <p>Voyages, étapes, paysages, préparation et récits de route.</p>
+                    </div>
+                </div>
+                <div class="category-bar"></div>
+                <div class="articles-grid" id="grid-road-trips"></div>
+            </section>
 
-        <a href="articles/le-cap-nord-ca-va-mal-finir-cercle-arctique-polaire-road-tri.html" class="article-card">
-            <div class="article-thumb">
-                <img src="https://i.ytimg.com/vi/VpqbQruf1CE/hqdefault.jpg" alt="Le Cap Nord" loading="lazy">
-            </div>
-            <div class="article-body">
-                <span class="article-tag">Road Trip • Cap Nord</span>
-                <h3>Le Cap Nord, ça va mal finir ! Cercle arctique polaire</h3>
-                <p>Quand la route vers le Cap Nord devient un défi mental et physique.</p>
-                <span class="article-btn">Lire l'article →</span>
-            </div>
-        </a>
+            <section class="category-section" id="tests-materiel">
+                <div class="section-head">
+                    <div>
+                        <h2>🔧 Tests Matériel</h2>
+                        <p>GPS, pneus, éclairage, smartphone, batterie, bivouac et retours terrain.</p>
+                    </div>
+                </div>
+                <div class="category-bar"></div>
+                <div class="articles-grid" id="grid-tests-materiel"></div>
+            </section>
 
-        <a href="articles/alpes-en-moto-barcelonnette-cuneo-benelli-trk-502-ep3.html" class="article-card">
-            <div class="article-thumb">
-                <img src="https://i.ytimg.com/vi/F0wjVN88D_E/hqdefault.jpg" alt="Alpes en moto" loading="lazy">
-            </div>
-            <div class="article-body">
-                <span class="article-tag">Road Trip • Alpes</span>
-                <h3>Les Alpes en moto : Barcelonnette – Cuneo</h3>
-                <p>Traversée des Alpes du sud sur la Benelli TRK 502, cols et panoramas.</p>
-                <span class="article-btn">Lire l'article →</span>
-            </div>
-        </a>
+            <section class="category-section" id="guides-pratiques">
+                <div class="section-head">
+                    <div>
+                        <h2>🧭 Guides pratiques</h2>
+                        <p>Conseils utiles, préparation voyage, entretien et sujets evergreen.</p>
+                    </div>
+                </div>
+                <div class="category-bar"></div>
+                <div class="articles-grid" id="grid-guides-pratiques"></div>
+            </section>
+        </main>
 
-        <a href="articles/voyager-en-norvege-ferries-budget-conseils-guide-de-voyage-n.html" class="article-card">
-            <div class="article-thumb">
-                <img src="https://i.ytimg.com/vi/jKEeq45vtPU/hqdefault.jpg" alt="Guide Norvège ferries" loading="lazy">
-            </div>
-            <div class="article-body">
-                <span class="article-tag">Guide • Norvège</span>
-                <h3>Voyager en Norvège : ferries, budget, conseils</h3>
-                <p>Guide pratique pour préparer un road trip moto en Norvège.</p>
-                <span class="article-btn">Lire l'article →</span>
-            </div>
-        </a>
+        <aside>
+            <div class="sidebar-card" id="sidebar-populaires">
+                <h3>Articles populaires</h3>
+                <div class="popular-list" id="popular-list"></div>
 
-
-        <a href="articles/preparation-pour-le-voyage-road-trip-en-trk-702.html" class="article-card">
-            <div class="article-thumb">
-                <img src="https://i.ytimg.com/vi/6CzUoVpP7yY/hqdefault.jpg" alt="Préparation pour le voyage ? Road trip en TRK 702" loading="lazy">
+                <div class="sidebar-box">
+                    <h3 style="margin-top:0;">Chaîne YouTube</h3>
+                    <p>
+                        Les articles prolongent les vidéos : tests, road trips, matériel et retours d’expérience terrain.
+                    </p>
+                    <a class="full-btn" href="https://www.youtube.com/@LCDMH?sub_confirmation=1">▶ S’abonner sur YouTube</a>
+                </div>
             </div>
-            <div class="article-body">
-                <span class="article-tag">Road Trip • Préparation</span>
-                <h3>Préparation pour le voyage ? Road trip en TRK 702</h3>
-                <p>Comment préparer sa moto et ses bagages pour un road trip longue distance en Benelli TRK 702.</p>
-                <span class="article-btn">Lire l'article →</span>
-            </div>
-        </a>
-        <a href="articles/cols-mythiques-des-alpes-a-moto-trk-502-ep-1.html" class="article-card">
-            <div class="article-thumb">
-                <img src="https://i.ytimg.com/vi/UevfEKcHDjU/hqdefault.jpg" alt="Cols mythiques des Alpes à moto – TRK 502" loading="lazy">
-            </div>
-            <div class="article-body">
-                <span class="article-tag">Road Trip • Alpes</span>
-                <h3>Cols mythiques des Alpes à moto – TRK 502</h3>
-                <p>Road trip moto dans les Alpes à la découverte des cols mythiques.</p>
-                <span class="article-btn">Lire l'article →</span>
-            </div>
-        </a>
-
-    </div>
-</section>
-
-<!-- ══ TESTS MATÉRIEL ══ -->
-<section class="category-section">
-    <h2 class="category-title">🔧 Tests Matériel</h2>
-    <div class="category-bar"></div>
-    <div class="articles-grid">
-
-        <a href="articles/lampe-olight-perun-3-lampe-frontale-parfaite-en-bivouac-test.html" class="article-card">
-            <div class="article-thumb">
-                <img src="https://i.ytimg.com/vi/eJtSU-JAdB0/hqdefault.jpg" alt="Test Olight Perun 3" loading="lazy">
-            </div>
-            <div class="article-body">
-                <span class="article-tag">Test • Éclairage</span>
-                <h3>Olight Perun 3 : la lampe frontale parfaite pour le bivouac moto</h3>
-                <p>Test complet de la Perun 3 après 10 000 km et 35 nuits en bivouac.</p>
-                <span class="article-btn">Lire l'article →</span>
-            </div>
-        </a>
-
-        <a href="articles/dunlop-mutant-vs-bridgestone-t33-le-combat-quel-pneu-choisir.html" class="article-card">
-            <div class="article-thumb">
-                <img src="https://i.ytimg.com/vi/9MtNUBVTyK0/hqdefault.jpg" alt="Dunlop Mutant vs T33" loading="lazy">
-            </div>
-            <div class="article-body">
-                <span class="article-tag">Test • Pneus</span>
-                <h3>Dunlop Mutant vs Bridgestone T33 : le combat, quel pneu choisir ?</h3>
-                <p>Comparatif terrain après 15 000 km sur NT1100 et TRK 702.</p>
-                <span class="article-btn">Lire l'article →</span>
-            </div>
-        </a>
-
-        <a href="articles/guide-nettoyage-bulle-moto.html" class="article-card">
-            <div class="article-thumb">
-                <img src="https://i.ytimg.com/vi/8KZbbN9Df8o/hqdefault.jpg" alt="Nettoyage bulle moto" loading="lazy">
-            </div>
-            <div class="article-body">
-                <span class="article-tag">Guide • Entretien</span>
-                <h3>Guide nettoyage bulle moto : la méthode qui marche</h3>
-                <p>Comment nettoyer sa bulle sans la rayer — ma méthode testée.</p>
-                <span class="article-btn">Lire l'article →</span>
-            </div>
-        </a>
-
-        <a href="articles/aferiy-nano-100-autonomie-electrique-en-road-trip.html" class="article-card">
-            <div class="article-thumb">
-                <img src="articles/images/aferiy-nano-100-autonomie-electrique-en-road-trip/AFERIY_Station_d_alimentation_portable_de_31_000_mAh_99_2_Wh_100w_8_1000x.webp" alt="AFERIY Nano 100" loading="lazy">
-            </div>
-            <div class="article-body">
-                <span class="article-tag">Test • Batterie</span>
-                <h3>AFERIY Nano 100 : autonomie électrique en road trip ?</h3>
-                <p>Test complet de la station portable 100W en conditions réelles de voyage moto.</p>
-                <span class="article-btn">Lire l'article →</span>
-            </div>
-        </a>
-
-        <a href="articles/bivouac-moto-comment-bien-dormir-en-tente-test-nemo-sonic-0.html" class="article-card">
-            <div class="article-thumb">
-                <img src="https://i.ytimg.com/vi/rtTkJv3yGiE/hqdefault.jpg" alt="Bivouac moto : comment bien dormir en tente ? Test Nemo Sonic 0°" loading="lazy">
-            </div>
-            <div class="article-body">
-                <span class="article-tag">Test • Équipement</span>
-                <h3>Bivouac moto : comment bien dormir en tente ? Test Nemo Sonic 0°</h3>
-                <p>Test complet du sac de couchage Nemo Sonic 0° en conditions réelles de bivouac moto.</p>
-                <span class="article-btn">Lire l'article →</span>
-            </div>
-        </a>
-
-        <a href="articles/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti.html" class="article-card">
-            <div class="article-thumb">
-                <img src="https://i.ytimg.com/vi/YQkKJ7BOvBY/hqdefault.jpg" alt="GPS MOTO : GPS Offline U6 va-t-il sauver mes balades moto ?" loading="lazy">
-            </div>
-            <div class="article-body">
-                <span class="article-tag">Test • GPS</span>
-                <h3>GPS MOTO : GPS Offline U6 va-t-il sauver mes balades moto ?</h3>
-                <p>Test du GPS Aoocci U6 avec navigation offline, TPMS et dashcam intégrée.</p>
-                <span class="article-btn">Lire l'article →</span>
-            </div>
-        </a>
-
-        <a href="articles/blackview-xplore-x1-le-telephone-qui-ne-lache-jamais-en-road.html" class="article-card">
-            <div class="article-thumb">
-                <img src="https://i.ytimg.com/vi/_lV1S1_JXd0/hqdefault.jpg" alt="Blackview Xplore X1 : le téléphone qui ne lâche jamais en road-trip" loading="lazy">
-            </div>
-            <div class="article-body">
-                <span class="article-tag">Test • Smartphone</span>
-                <h3>Blackview Xplore X1 : le téléphone qui ne lâche jamais en road-trip</h3>
-                <p>Test du smartphone renforcé Blackview Xplore X1 après des milliers de km sous la pluie et le froid.</p>
-                <span class="article-btn">Lire l'article →</span>
-            </div>
-        </a>
-
-        <a href="articles/quel-telephone-pour-road-trip-blackview-x1-renforce-pluie-ch.html" class="article-card">
-            <div class="article-thumb">
-                <img src="https://i.ytimg.com/vi/AYjFZ1QfCWY/hqdefault.jpg" alt="Quel téléphone pour road trip ? Blackview X1 renforcé" loading="lazy">
-            </div>
-            <div class="article-body">
-                <span class="article-tag">Test • Smartphone</span>
-                <h3>Quel téléphone pour road trip ? Blackview X1 renforcé</h3>
-                <p>Comparatif et retour terrain sur le Blackview X1 : pluie, chocs, froid — il résiste à tout.</p>
-                <span class="article-btn">Lire l'article →</span>
-            </div>
-        </a>
-
-        <a href="articles/radar-moto-comment-ca-marche.html" class="article-card">
-            <div class="article-thumb">
-                <img src="https://i.ytimg.com/vi/iRlT5tt7c8I/hqdefault.jpg" alt="Radar moto, comment ça marche ?" loading="lazy">
-            </div>
-            <div class="article-body">
-                <span class="article-tag">Test • Sécurité</span>
-                <h3>Radar moto, comment ça marche ?</h3>
-                <p>Tout comprendre sur les radars moto : fonctionnement, détection et conseils pratiques.</p>
-                <span class="article-btn">Lire l'article →</span>
-            </div>
-        </a>
-        <a href="articles/retour-honda-nt-1100-a-26000-kms.html" class="article-card">
-            <div class="article-thumb">
-                <img src="https://i.ytimg.com/vi/CRZoDxRCnfM/hqdefault.jpg" alt="Retour Honda NT 1100 a 26000 kms" loading="lazy">
-            </div>
-            <div class="article-body">
-                <span class="article-tag">Test • Moto</span>
-                <h3>Retour Honda NT 1100 a 26000 kms</h3>
-                <p>26 000 km avec la Honda NT1100, il est temps de faire un vrai bilan.</p>
-                <span class="article-btn">Lire l'article →</span>
-            </div>
-        </a>
-
-    </div>
-</section>
+        </aside>
+    </section>
 </div>
-<div class="footer-articles">
-    <p>📖 17 articles publiés — Mis à jour le 06/04/2026</p>
-    <p style="margin-top:0.5rem;"><a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" style="color:var(--orange);font-weight:600;">▶ S'abonner sur YouTube pour ne rien rater</a></p>
-</div>
+
+<footer class="footer-articles">
+    <p id="footer-count">📖 17 articles publiés — Mis à jour automatiquement</p>
+    <p style="margin-top:.5rem;">
+        <a href="https://www.youtube.com/@LCDMH?sub_confirmation=1">▶ S'abonner sur YouTube pour ne rien rater</a>
+    </p>
+</footer>
+
+<script>
+/*
+===========================================================
+CONFIGURATION SIMPLE
+===========================================================
+
+POUR CHANGER L'ARTICLE À LA UNE :
+- remplace simplement la valeur de FEATURED_SLUG
+- une fois par semaine si tu veux
+- exemple :
+  const FEATURED_SLUG = "gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti";
+
+POUR CHANGER LES ARTICLES POPULAIRES :
+- modifie simplement le tableau POPULAR_SLUGS
+*/
+
+const FEATURED_SLUG = "le-cap-nord-ca-va-mal-finir-cercle-arctique-polaire-road-tri";
+
+const FEATURED_SECONDARY_SLUGS = [
+  "350-km-dans-le-froid-norvegien-le-vent-du-groenland-ma-brise",
+  "voyager-en-norvege-ferries-budget-conseils-guide-de-voyage-n"
+];
+
+const POPULAR_SLUGS = [
+  "le-cap-nord-ca-va-mal-finir-cercle-arctique-polaire-road-tri",
+  "dunlop-mutant-vs-bridgestone-t33-le-combat-quel-pneu-choisir",
+  "voyager-en-norvege-ferries-budget-conseils-guide-de-voyage-n",
+  "gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti"
+];
+
+const ARTICLES = [
+  {
+    slug: "350-km-dans-le-froid-norvegien-le-vent-du-groenland-ma-brise",
+    href: "articles/350-km-dans-le-froid-norvegien-le-vent-du-groenland-ma-brise.html",
+    img: "https://i.ytimg.com/vi/cstTBA6HBGc/hqdefault.jpg",
+    alt: "350 km dans le froid norvégien",
+    tag: "Road Trip • Norvège",
+    title: "350 km dans le froid norvégien : le vent du Groenland m'a brisé",
+    excerpt: "Le récit d'une étape éprouvante au Cap Nord, entre vent glacial et routes désertes.",
+    category: "road-trips"
+  },
+  {
+    slug: "geirangerfjord-a-moto-le-plus-beau-fjord-de-norvege-road-tri",
+    href: "articles/geirangerfjord-a-moto-le-plus-beau-fjord-de-norvege-road-tri.html",
+    img: "https://i.ytimg.com/vi/Fzj-lGDwedc/hqdefault.jpg",
+    alt: "Geirangerfjord à moto",
+    tag: "Road Trip • Norvège",
+    title: "Geirangerfjord à moto : le plus beau fjord de Norvège",
+    excerpt: "L'arrivée au Geirangerfjord, un moment suspendu entre montagne et mer.",
+    category: "road-trips"
+  },
+  {
+    slug: "le-cap-nord-ca-va-mal-finir-cercle-arctique-polaire-road-tri",
+    href: "articles/le-cap-nord-ca-va-mal-finir-cercle-arctique-polaire-road-tri.html",
+    img: "https://i.ytimg.com/vi/VpqbQruf1CE/hqdefault.jpg",
+    alt: "Le Cap Nord",
+    tag: "Road Trip • Cap Nord",
+    title: "Le Cap Nord, ça va mal finir ! Cercle arctique polaire",
+    excerpt: "Quand la route vers le Cap Nord devient un défi mental et physique.",
+    category: "road-trips"
+  },
+  {
+    slug: "alpes-en-moto-barcelonnette-cuneo-benelli-trk-502-ep3",
+    href: "articles/alpes-en-moto-barcelonnette-cuneo-benelli-trk-502-ep3.html",
+    img: "https://i.ytimg.com/vi/F0wjVN88D_E/hqdefault.jpg",
+    alt: "Alpes en moto",
+    tag: "Road Trip • Alpes",
+    title: "Les Alpes en moto : Barcelonnette – Cuneo",
+    excerpt: "Traversée des Alpes du sud sur la Benelli TRK 502, cols et panoramas.",
+    category: "road-trips"
+  },
+  {
+    slug: "voyager-en-norvege-ferries-budget-conseils-guide-de-voyage-n",
+    href: "articles/voyager-en-norvege-ferries-budget-conseils-guide-de-voyage-n.html",
+    img: "https://i.ytimg.com/vi/jKEeq45vtPU/hqdefault.jpg",
+    alt: "Guide Norvège ferries",
+    tag: "Guide • Norvège",
+    title: "Voyager en Norvège : ferries, budget, conseils",
+    excerpt: "Guide pratique pour préparer un road trip moto en Norvège.",
+    category: "guides-pratiques"
+  },
+  {
+    slug: "preparation-pour-le-voyage-road-trip-en-trk-702",
+    href: "articles/preparation-pour-le-voyage-road-trip-en-trk-702.html",
+    img: "https://i.ytimg.com/vi/6CzUoVpP7yY/hqdefault.jpg",
+    alt: "Préparation pour le voyage ? Road trip en TRK 702",
+    tag: "Road Trip • Préparation",
+    title: "Préparation pour le voyage ? Road trip en TRK 702",
+    excerpt: "Comment préparer sa moto et ses bagages pour un road trip longue distance en Benelli TRK 702.",
+    category: "road-trips"
+  },
+  {
+    slug: "cols-mythiques-des-alpes-a-moto-trk-502-ep-1",
+    href: "articles/cols-mythiques-des-alpes-a-moto-trk-502-ep-1.html",
+    img: "https://i.ytimg.com/vi/UevfEKcHDjU/hqdefault.jpg",
+    alt: "Cols mythiques des Alpes à moto – TRK 502",
+    tag: "Road Trip • Alpes",
+    title: "Cols mythiques des Alpes à moto – TRK 502",
+    excerpt: "Road trip moto dans les Alpes à la découverte des cols mythiques.",
+    category: "road-trips"
+  },
+  {
+    slug: "lampe-olight-perun-3-lampe-frontale-parfaite-en-bivouac-test",
+    href: "articles/lampe-olight-perun-3-lampe-frontale-parfaite-en-bivouac-test.html",
+    img: "https://i.ytimg.com/vi/eJtSU-JAdB0/hqdefault.jpg",
+    alt: "Test Olight Perun 3",
+    tag: "Test • Éclairage",
+    title: "Olight Perun 3 : la lampe frontale parfaite pour le bivouac moto",
+    excerpt: "Test complet de la Perun 3 après 10 000 km et 35 nuits en bivouac.",
+    category: "tests-materiel"
+  },
+  {
+    slug: "dunlop-mutant-vs-bridgestone-t33-le-combat-quel-pneu-choisir",
+    href: "articles/dunlop-mutant-vs-bridgestone-t33-le-combat-quel-pneu-choisir.html",
+    img: "https://i.ytimg.com/vi/9MtNUBVTyK0/hqdefault.jpg",
+    alt: "Dunlop Mutant vs T33",
+    tag: "Test • Pneus",
+    title: "Dunlop Mutant vs Bridgestone T33 : le combat, quel pneu choisir ?",
+    excerpt: "Comparatif terrain après 15 000 km sur NT1100 et TRK 702.",
+    category: "tests-materiel"
+  },
+  {
+    slug: "guide-nettoyage-bulle-moto",
+    href: "articles/guide-nettoyage-bulle-moto.html",
+    img: "https://i.ytimg.com/vi/8KZbbN9Df8o/hqdefault.jpg",
+    alt: "Nettoyage bulle moto",
+    tag: "Guide • Entretien",
+    title: "Guide nettoyage bulle moto : la méthode qui marche",
+    excerpt: "Comment nettoyer sa bulle sans la rayer — ma méthode testée.",
+    category: "guides-pratiques"
+  },
+  {
+    slug: "aferiy-nano-100-autonomie-electrique-en-road-trip",
+    href: "articles/aferiy-nano-100-autonomie-electrique-en-road-trip.html",
+    img: "articles/images/aferiy-nano-100-autonomie-electrique-en-road-trip/AFERIY_Station_d_alimentation_portable_de_31_000_mAh_99_2_Wh_100w_8_1000x.webp",
+    alt: "AFERIY Nano 100",
+    tag: "Test • Batterie",
+    title: "AFERIY Nano 100 : autonomie électrique en road trip ?",
+    excerpt: "Test complet de la station portable 100W en conditions réelles de voyage moto.",
+    category: "tests-materiel"
+  },
+  {
+    slug: "bivouac-moto-comment-bien-dormir-en-tente-test-nemo-sonic-0",
+    href: "articles/bivouac-moto-comment-bien-dormir-en-tente-test-nemo-sonic-0.html",
+    img: "https://i.ytimg.com/vi/rtTkJv3yGiE/hqdefault.jpg",
+    alt: "Bivouac moto : comment bien dormir en tente ? Test Nemo Sonic 0°",
+    tag: "Test • Équipement",
+    title: "Bivouac moto : comment bien dormir en tente ? Test Nemo Sonic 0°",
+    excerpt: "Test complet du sac de couchage Nemo Sonic 0° en conditions réelles de bivouac moto.",
+    category: "tests-materiel"
+  },
+  {
+    slug: "gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti",
+    href: "articles/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti.html",
+    img: "https://i.ytimg.com/vi/YQkKJ7BOvBY/hqdefault.jpg",
+    alt: "GPS MOTO : GPS Offline U6 va-t-il sauver mes balades moto ?",
+    tag: "Test • GPS",
+    title: "GPS MOTO : GPS Offline U6 va-t-il sauver mes balades moto ?",
+    excerpt: "Test du GPS Aoocci U6 avec navigation offline, TPMS et dashcam intégrée.",
+    category: "tests-materiel"
+  },
+  {
+    slug: "blackview-xplore-x1-le-telephone-qui-ne-lache-jamais-en-road",
+    href: "articles/blackview-xplore-x1-le-telephone-qui-ne-lache-jamais-en-road.html",
+    img: "https://i.ytimg.com/vi/_lV1S1_JXd0/hqdefault.jpg",
+    alt: "Blackview Xplore X1 : le téléphone qui ne lâche jamais en road-trip",
+    tag: "Test • Smartphone",
+    title: "Blackview Xplore X1 : le téléphone qui ne lâche jamais en road-trip",
+    excerpt: "Test du smartphone renforcé Blackview Xplore X1 après des milliers de km sous la pluie et le froid.",
+    category: "tests-materiel"
+  },
+  {
+    slug: "quel-telephone-pour-road-trip-blackview-x1-renforce-pluie-ch",
+    href: "articles/quel-telephone-pour-road-trip-blackview-x1-renforce-pluie-ch.html",
+    img: "https://i.ytimg.com/vi/AYjFZ1QfCWY/hqdefault.jpg",
+    alt: "Quel téléphone pour road trip ? Blackview X1 renforcé",
+    tag: "Test • Smartphone",
+    title: "Quel téléphone pour road trip ? Blackview X1 renforcé",
+    excerpt: "Comparatif et retour terrain sur le Blackview X1 : pluie, chocs, froid — il résiste à tout.",
+    category: "tests-materiel"
+  },
+  {
+    slug: "radar-moto-comment-ca-marche",
+    href: "articles/radar-moto-comment-ca-marche.html",
+    img: "https://i.ytimg.com/vi/iRlT5tt7c8I/hqdefault.jpg",
+    alt: "Radar moto, comment ça marche ?",
+    tag: "Test • Sécurité",
+    title: "Radar moto, comment ça marche ?",
+    excerpt: "Tout comprendre sur les radars moto : fonctionnement, détection et conseils pratiques.",
+    category: "guides-pratiques"
+  },
+  {
+    slug: "retour-honda-nt-1100-a-26000-kms",
+    href: "articles/retour-honda-nt-1100-a-26000-kms.html",
+    img: "https://i.ytimg.com/vi/CRZoDxRCnfM/hqdefault.jpg",
+    alt: "Retour Honda NT 1100 a 26000 kms",
+    tag: "Test • Moto",
+    title: "Retour Honda NT 1100 a 26000 kms",
+    excerpt: "26 000 km avec la Honda NT1100, il est temps de faire un vrai bilan.",
+    category: "tests-materiel"
+  }
+];
+
+function getArticleBySlug(slug){
+    return ARTICLES.find(article => article.slug === slug) || null;
+}
+
+function createArticleCard(article){
+    return `
+        <a href="${article.href}" class="article-card">
+            <div class="article-thumb">
+                <img src="${article.img}" alt="${escapeHtml(article.alt)}" loading="lazy">
+            </div>
+            <div class="article-body">
+                <span class="article-tag">${escapeHtml(article.tag)}</span>
+                <h3>${escapeHtml(article.title)}</h3>
+                <p>${escapeHtml(article.excerpt)}</p>
+                <span class="article-btn">Lire l'article →</span>
+            </div>
+        </a>
+    `;
+}
+
+function createFeaturedMain(article){
+    if(!article){ return ""; }
+    return `
+        <div class="featured-image">
+            <img src="${article.img}" alt="${escapeHtml(article.alt)}" loading="eager">
+        </div>
+        <div class="featured-body">
+            <div class="meta-line">${escapeHtml(article.tag)} • Article à la une</div>
+            <h3>${escapeHtml(article.title)}</h3>
+            <p>${escapeHtml(article.excerpt)}</p>
+            <div class="featured-actions">
+                <a class="featured-btn featured-btn-primary" href="${article.href}">Lire l'article</a>
+                <a class="featured-btn featured-btn-secondary" href="#road-trips">Voir les catégories</a>
+            </div>
+        </div>
+    `;
+}
+
+function createFeaturedMini(article){
+    if(!article){ return ""; }
+    return `
+        <a href="${article.href}" class="featured-mini">
+            <div class="featured-mini-image">
+                <img src="${article.img}" alt="${escapeHtml(article.alt)}" loading="lazy">
+            </div>
+            <div class="featured-mini-body">
+                <div class="meta-line">${escapeHtml(article.tag)}</div>
+                <h3>${escapeHtml(article.title)}</h3>
+                <p>${escapeHtml(article.excerpt)}</p>
+            </div>
+        </a>
+    `;
+}
+
+function createPopularItem(article, index){
+    if(!article){ return ""; }
+    return `
+        <a href="${article.href}" class="popular-item">
+            <div class="popular-rank">${index + 1}</div>
+            <div>
+                <strong>${escapeHtml(article.title)}</strong>
+                <span>${escapeHtml(article.tag)}</span>
+            </div>
+        </a>
+    `;
+}
+
+function escapeHtml(str){
+    return String(str)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+}
+
+function renderPage(){
+    const featured = getArticleBySlug(FEATURED_SLUG) || ARTICLES[0];
+    const featuredSecondaries = FEATURED_SECONDARY_SLUGS
+        .map(getArticleBySlug)
+        .filter(Boolean)
+        .filter(article => article.slug !== featured.slug)
+        .slice(0, 2);
+
+    const popularArticles = POPULAR_SLUGS
+        .map(getArticleBySlug)
+        .filter(Boolean)
+        .slice(0, 4);
+
+    const roadTrips = ARTICLES.filter(article => article.category === "road-trips");
+    const testsMateriel = ARTICLES.filter(article => article.category === "tests-materiel");
+    const guidesPratiques = ARTICLES.filter(article => article.category === "guides-pratiques");
+
+    document.getElementById("featured-main").innerHTML = createFeaturedMain(featured);
+    document.getElementById("featured-side").innerHTML = featuredSecondaries.map(createFeaturedMini).join("");
+
+    document.getElementById("grid-road-trips").innerHTML = roadTrips.map(createArticleCard).join("");
+    document.getElementById("grid-tests-materiel").innerHTML = testsMateriel.map(createArticleCard).join("");
+    document.getElementById("grid-guides-pratiques").innerHTML = guidesPratiques.map(createArticleCard).join("");
+
+    document.getElementById("popular-list").innerHTML = popularArticles.map(createPopularItem).join("");
+
+    document.getElementById("stat-total-articles").textContent = String(ARTICLES.length);
+    document.getElementById("footer-count").textContent = `📖 ${ARTICLES.length} articles publiés — Page articles mise à jour`;
+}
+
+document.addEventListener("DOMContentLoaded", renderPage);
+</script>
 
 <script src="maillage.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
