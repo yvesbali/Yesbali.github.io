@@ -29,7 +29,6 @@
     --shadow:0 10px 30px rgba(0,0,0,.08);
     --radius:18px;
     --max:1140px;
-    --side-padding:2.5rem;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -45,13 +44,13 @@ img{display:block;width:100%;height:auto}
 .wrap{
     max-width:var(--max);
     margin:0 auto;
-    padding:0 var(--side-padding);
+    padding:0 1.5rem;
 }
 
 .hero-articles{
     background:linear-gradient(135deg,var(--hero1) 0%,var(--hero2) 100%);
     color:#fff;
-    padding:3.2rem var(--side-padding) 2.4rem;
+    padding:3.2rem 1rem 2.4rem;
 }
 .hero-grid{
     max-width:var(--max);
@@ -463,15 +462,12 @@ img{display:block;width:100%;height:auto}
 .noscript-fallback{
     max-width:var(--max);
     margin:1rem auto 0;
-    padding:0 var(--side-padding);
+    padding:0 1.5rem;
     color:var(--muted);
     font-size:.9rem;
 }
 
-
-    :root{
-        --side-padding:2rem;
-    }
+@media (max-width:1100px){
     .hero-grid,
     .featured-grid,
     .main-layout,
@@ -486,11 +482,8 @@ img{display:block;width:100%;height:auto}
     }
 }
 @media (max-width:760px){
-    :root{
-        --side-padding:1.25rem;
-    }
-    .wrap{padding:0 var(--side-padding)}
-    .hero-articles{padding:2.4rem var(--side-padding) 1.8rem}
+    .wrap{padding:0 1rem}
+    .hero-articles{padding:2.4rem 1rem 1.8rem}
     .hero-stats,
     .toolbar-grid{
         grid-template-columns:1fr;
@@ -562,7 +555,6 @@ img{display:block;width:100%;height:auto}
     border-radius:6px;
     white-space:nowrap;
 }
-
 </style>
 </head>
 <body>
@@ -613,7 +605,7 @@ img{display:block;width:100%;height:auto}
                     <a class="quick-link" href="#sidebar-populaires">🔥 Populaires</a>
                 </div>
             </div>
-        
+
             <!-- BLOC PARTENAIRES -->
             <div class="sidebar-card sidebar-partners">
                 <h3>💡 Mes partenaires</h3>
@@ -664,7 +656,6 @@ img{display:block;width:100%;height:auto}
                     <div class="partner-code">LCDMH -8%</div>
                 </a>
             </div>
-
         </aside>
     </div>
 </header>
@@ -748,7 +739,7 @@ img{display:block;width:100%;height:auto}
                     <a class="full-btn" href="https://www.youtube.com/@LCDMH?sub_confirmation=1">▶ S’abonner sur YouTube</a>
                 </div>
             </div>
-        
+
             <!-- BLOC PARTENAIRES -->
             <div class="sidebar-card sidebar-partners">
                 <h3>💡 Mes partenaires</h3>
@@ -799,13 +790,12 @@ img{display:block;width:100%;height:auto}
                     <div class="partner-code">LCDMH -8%</div>
                 </a>
             </div>
-
         </aside>
     </section>
 </div>
 
 <footer class="footer-articles">
-    <p id="footer-count">📖 18 articles publiés — Mis à jour automatiquement</p>
+    <p id="footer-count">📖 17 articles publiés — Mis à jour automatiquement</p>
     <p style="margin-top:.5rem;">
         <a href="https://www.youtube.com/@LCDMH?sub_confirmation=1">▶ S'abonner sur YouTube pour ne rien rater</a>
     </p>
