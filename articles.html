@@ -500,60 +500,71 @@ img{display:block;width:100%;height:auto}
     }
 }
 
-/* PARTENAIRES SIDEBAR */
+/* ENCARTS PARTENAIRES SIDEBAR */
 .sidebar-partners{
-    margin-top:1.2rem;
+    margin-top:1.5rem;
 }
-.partners-intro{
-    color:var(--muted);
-    font-size:.85rem;
+.sidebar-partners h3{
+    font-family:'Montserrat',sans-serif;
+    font-size:1.05rem;
     margin-bottom:1rem;
 }
-.partner-block{
-    display:grid;
-    grid-template-columns:42px 1fr auto;
-    gap:.75rem;
-    align-items:center;
-    padding:.85rem;
-    margin-bottom:.65rem;
-    background:linear-gradient(135deg,#fff 0%,#fefefe 100%);
+.partner-card{
+    display:block;
+    background:var(--card);
     border:1px solid var(--border);
-    border-radius:12px;
+    border-radius:14px;
+    overflow:hidden;
+    margin-bottom:1rem;
     transition:all .2s ease;
+    text-decoration:none;
+    color:inherit;
 }
-.partner-block:hover{
+.partner-card:hover{
     border-color:var(--orange);
-    box-shadow:0 4px 12px rgba(230,126,34,.12);
+    box-shadow:0 6px 20px rgba(230,126,34,.15);
     transform:translateY(-2px);
 }
-.partner-icon{
-    width:42px;
-    height:42px;
-    display:grid;
-    place-items:center;
-    background:#fff5e8;
-    border-radius:10px;
-    font-size:1.3rem;
+.partner-card-img{
+    height:130px;
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-color:#f5f5f5;
+    position:relative;
 }
-.partner-info strong{
-    display:block;
-    font-size:.92rem;
-    color:var(--noir);
-    margin-bottom:.15rem;
+.partner-card-body{
+    padding:.9rem 1rem;
 }
-.partner-info span{
-    font-size:.78rem;
-    color:var(--muted);
-}
-.partner-code{
+.partner-card-cat{
     font-size:.7rem;
-    font-weight:800;
     text-transform:uppercase;
+    letter-spacing:.06em;
+    color:var(--orange);
+    font-weight:700;
+    margin-bottom:.25rem;
+}
+.partner-card-title{
+    font-family:'Montserrat',sans-serif;
+    font-size:.95rem;
+    font-weight:700;
+    margin-bottom:.3rem;
+    color:var(--noir);
+}
+.partner-card-desc{
+    font-size:.82rem;
+    color:var(--muted);
+    margin-bottom:.6rem;
+    line-height:1.35;
+}
+.partner-card-code{
+    display:inline-block;
     background:var(--orange);
     color:#fff;
-    padding:.35rem .6rem;
+    font-size:.72rem;
+    font-weight:700;
+    padding:.35rem .7rem;
     border-radius:6px;
-    white-space:nowrap;
 }
 </style>
 </head>
@@ -606,55 +617,70 @@ img{display:block;width:100%;height:auto}
                 </div>
             </div>
 
-            <!-- BLOC PARTENAIRES -->
+            <!-- ENCARTS PARTENAIRES -->
             <div class="sidebar-card sidebar-partners">
-                <h3>💡 Mes partenaires</h3>
-                <p class="partners-intro">Codes promos exclusifs LCDMH</p>
-
-                <a href="https://www.awin1.com/cread.php?awinmid=63859&awinaffid=2753560" target="_blank" rel="noopener" class="partner-block">
-                    <div class="partner-icon">💡</div>
-                    <div class="partner-info">
-                        <strong>Olight Perun 3</strong>
-                        <span>Lampes bivouac</span>
+                <h3>🤝 Mes partenaires</h3>
+                
+                <a href="https://carpuride.com/fr/?ref=uxcepkkq" target="_blank" rel="noopener" class="partner-card">
+                    <div class="partner-card-img" style="background-image:url('https://carpuride.com/cdn/shop/files/W903-02_1000x.jpg');background-size:cover;"></div>
+                    <div class="partner-card-body">
+                        <div class="partner-card-cat">GPS CarPlay moto</div>
+                        <div class="partner-card-title">Carpuride W903</div>
+                        <div class="partner-card-desc">L'écran CarPlay qui a changé mes road trips</div>
+                        <span class="partner-card-code">Code LCDMH -30%</span>
                     </div>
-                    <div class="partner-code">LCDMH -30%</div>
                 </a>
 
-                <a href="https://carpuride.com/fr/?ref=uxcepkkq" target="_blank" rel="noopener" class="partner-block">
-                    <div class="partner-icon">🗺️</div>
-                    <div class="partner-info">
-                        <strong>Carpuride</strong>
-                        <span>GPS CarPlay moto</span>
+                <a href="https://aoocci.fr/?ref=gvxyhqgv" target="_blank" rel="noopener" class="partner-card">
+                    <div class="partner-card-img" style="background-image:url('https://aoocci.fr/cdn/shop/files/U6-main_1000x.jpg');background-size:cover;"></div>
+                    <div class="partner-card-body">
+                        <div class="partner-card-cat">GPS + Dashcam</div>
+                        <div class="partner-card-title">AOOCCI U6</div>
+                        <div class="partner-card-desc">Tout-en-un : GPS offline, TPMS, dashcam</div>
+                        <span class="partner-card-code">Code LCDMH-28</span>
                     </div>
-                    <div class="partner-code">LCDMH -30%</div>
                 </a>
 
-                <a href="https://aoocci.fr/?ref=gvxyhqgv" target="_blank" rel="noopener" class="partner-block">
-                    <div class="partner-icon">🗺️</div>
-                    <div class="partner-info">
-                        <strong>AOOCCI U6</strong>
-                        <span>GPS + Dashcam</span>
+                <a href="https://www.awin1.com/cread.php?awinmid=63859&awinaffid=2753560" target="_blank" rel="noopener" class="partner-card">
+                    <div class="partner-card-img" style="background-image:url('https://www.olightstore.fr/media/catalog/product/cache/59f0239c7e7df4751c7183886b74de89/p/e/perun_3_mini_white_11.jpg');background-size:contain;"></div>
+                    <div class="partner-card-body">
+                        <div class="partner-card-cat">Éclairage bivouac</div>
+                        <div class="partner-card-title">Olight Perun 3</div>
+                        <div class="partner-card-desc">La frontale parfaite pour le bivouac</div>
+                        <span class="partner-card-code">Code LCDMH -30%</span>
                     </div>
-                    <div class="partner-code">LCDMH-28</div>
                 </a>
 
-                <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&ued=https%3A%2F%2Fwww.123pneus.fr%2F" target="_blank" rel="noopener" class="partner-block">
-                    <div class="partner-icon">🛞</div>
-                    <div class="partner-info">
-                        <strong>123pneus.fr</strong>
-                        <span>Livraison garage</span>
+                <a href="https://komobi.com" target="_blank" rel="noopener" class="partner-card">
+                    <div class="partner-card-img" style="background-image:url('https://komobi.com/wp-content/uploads/2023/03/komobi-pro-plus-tracker.png');background-size:contain;"></div>
+                    <div class="partner-card-body">
+                        <div class="partner-card-cat">Sécurité moto</div>
+                        <div class="partner-card-title">KOMOBI Tracker</div>
+                        <div class="partner-card-desc">Tu sais toujours où est ta moto</div>
+                        <span class="partner-card-code">-15% LCDMH</span>
                     </div>
-                    <div class="partner-code">Affiliation</div>
                 </a>
 
-                <a href="https://innovv.com?sca_ref=9864079.mA62YtPAg9" target="_blank" rel="noopener" class="partner-block">
-                    <div class="partner-icon">📹</div>
-                    <div class="partner-info">
-                        <strong>INNOVV K5</strong>
-                        <span>Dashcam moto</span>
+                <a href="https://innovv.com?sca_ref=9864079.mA62YtPAg9" target="_blank" rel="noopener" class="partner-card">
+                    <div class="partner-card-img" style="background-image:url('https://innovv.com/wp-content/uploads/2023/04/K5-main.jpg');background-size:cover;"></div>
+                    <div class="partner-card-body">
+                        <div class="partner-card-cat">Dashcam moto</div>
+                        <div class="partner-card-title">INNOVV K5</div>
+                        <div class="partner-card-desc">Dashcam discrète, preuves solides</div>
+                        <span class="partner-card-code">Code LCDMH -8%</span>
                     </div>
-                    <div class="partner-code">LCDMH -8%</div>
                 </a>
+
+                <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&ued=https%3A%2F%2Fwww.123pneus.fr%2F" target="_blank" rel="noopener" class="partner-card">
+                    <div class="partner-card-img" style="background:linear-gradient(135deg,#e67e22 0%,#d35400 100%);display:flex;align-items:center;justify-content:center;"><span style="font-size:2.5rem;color:#fff;">🛞</span></div>
+                    <div class="partner-card-body">
+                        <div class="partner-card-cat">Pneus moto</div>
+                        <div class="partner-card-title">123pneus.fr</div>
+                        <div class="partner-card-desc">Livrés chez ton garagiste</div>
+                        <span class="partner-card-code">Affiliation</span>
+                    </div>
+                </a>
+
             </div>
         </aside>
     </div>
@@ -740,55 +766,70 @@ img{display:block;width:100%;height:auto}
                 </div>
             </div>
 
-            <!-- BLOC PARTENAIRES -->
+            <!-- ENCARTS PARTENAIRES -->
             <div class="sidebar-card sidebar-partners">
-                <h3>💡 Mes partenaires</h3>
-                <p class="partners-intro">Codes promos exclusifs LCDMH</p>
-
-                <a href="https://www.awin1.com/cread.php?awinmid=63859&awinaffid=2753560" target="_blank" rel="noopener" class="partner-block">
-                    <div class="partner-icon">💡</div>
-                    <div class="partner-info">
-                        <strong>Olight Perun 3</strong>
-                        <span>Lampes bivouac</span>
+                <h3>🤝 Mes partenaires</h3>
+                
+                <a href="https://carpuride.com/fr/?ref=uxcepkkq" target="_blank" rel="noopener" class="partner-card">
+                    <div class="partner-card-img" style="background-image:url('https://carpuride.com/cdn/shop/files/W903-02_1000x.jpg');background-size:cover;"></div>
+                    <div class="partner-card-body">
+                        <div class="partner-card-cat">GPS CarPlay moto</div>
+                        <div class="partner-card-title">Carpuride W903</div>
+                        <div class="partner-card-desc">L'écran CarPlay qui a changé mes road trips</div>
+                        <span class="partner-card-code">Code LCDMH -30%</span>
                     </div>
-                    <div class="partner-code">LCDMH -30%</div>
                 </a>
 
-                <a href="https://carpuride.com/fr/?ref=uxcepkkq" target="_blank" rel="noopener" class="partner-block">
-                    <div class="partner-icon">🗺️</div>
-                    <div class="partner-info">
-                        <strong>Carpuride</strong>
-                        <span>GPS CarPlay moto</span>
+                <a href="https://aoocci.fr/?ref=gvxyhqgv" target="_blank" rel="noopener" class="partner-card">
+                    <div class="partner-card-img" style="background-image:url('https://aoocci.fr/cdn/shop/files/U6-main_1000x.jpg');background-size:cover;"></div>
+                    <div class="partner-card-body">
+                        <div class="partner-card-cat">GPS + Dashcam</div>
+                        <div class="partner-card-title">AOOCCI U6</div>
+                        <div class="partner-card-desc">Tout-en-un : GPS offline, TPMS, dashcam</div>
+                        <span class="partner-card-code">Code LCDMH-28</span>
                     </div>
-                    <div class="partner-code">LCDMH -30%</div>
                 </a>
 
-                <a href="https://aoocci.fr/?ref=gvxyhqgv" target="_blank" rel="noopener" class="partner-block">
-                    <div class="partner-icon">🗺️</div>
-                    <div class="partner-info">
-                        <strong>AOOCCI U6</strong>
-                        <span>GPS + Dashcam</span>
+                <a href="https://www.awin1.com/cread.php?awinmid=63859&awinaffid=2753560" target="_blank" rel="noopener" class="partner-card">
+                    <div class="partner-card-img" style="background-image:url('https://www.olightstore.fr/media/catalog/product/cache/59f0239c7e7df4751c7183886b74de89/p/e/perun_3_mini_white_11.jpg');background-size:contain;"></div>
+                    <div class="partner-card-body">
+                        <div class="partner-card-cat">Éclairage bivouac</div>
+                        <div class="partner-card-title">Olight Perun 3</div>
+                        <div class="partner-card-desc">La frontale parfaite pour le bivouac</div>
+                        <span class="partner-card-code">Code LCDMH -30%</span>
                     </div>
-                    <div class="partner-code">LCDMH-28</div>
                 </a>
 
-                <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&ued=https%3A%2F%2Fwww.123pneus.fr%2F" target="_blank" rel="noopener" class="partner-block">
-                    <div class="partner-icon">🛞</div>
-                    <div class="partner-info">
-                        <strong>123pneus.fr</strong>
-                        <span>Livraison garage</span>
+                <a href="https://komobi.com" target="_blank" rel="noopener" class="partner-card">
+                    <div class="partner-card-img" style="background-image:url('https://komobi.com/wp-content/uploads/2023/03/komobi-pro-plus-tracker.png');background-size:contain;"></div>
+                    <div class="partner-card-body">
+                        <div class="partner-card-cat">Sécurité moto</div>
+                        <div class="partner-card-title">KOMOBI Tracker</div>
+                        <div class="partner-card-desc">Tu sais toujours où est ta moto</div>
+                        <span class="partner-card-code">-15% LCDMH</span>
                     </div>
-                    <div class="partner-code">Affiliation</div>
                 </a>
 
-                <a href="https://innovv.com?sca_ref=9864079.mA62YtPAg9" target="_blank" rel="noopener" class="partner-block">
-                    <div class="partner-icon">📹</div>
-                    <div class="partner-info">
-                        <strong>INNOVV K5</strong>
-                        <span>Dashcam moto</span>
+                <a href="https://innovv.com?sca_ref=9864079.mA62YtPAg9" target="_blank" rel="noopener" class="partner-card">
+                    <div class="partner-card-img" style="background-image:url('https://innovv.com/wp-content/uploads/2023/04/K5-main.jpg');background-size:cover;"></div>
+                    <div class="partner-card-body">
+                        <div class="partner-card-cat">Dashcam moto</div>
+                        <div class="partner-card-title">INNOVV K5</div>
+                        <div class="partner-card-desc">Dashcam discrète, preuves solides</div>
+                        <span class="partner-card-code">Code LCDMH -8%</span>
                     </div>
-                    <div class="partner-code">LCDMH -8%</div>
                 </a>
+
+                <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&ued=https%3A%2F%2Fwww.123pneus.fr%2F" target="_blank" rel="noopener" class="partner-card">
+                    <div class="partner-card-img" style="background:linear-gradient(135deg,#e67e22 0%,#d35400 100%);display:flex;align-items:center;justify-content:center;"><span style="font-size:2.5rem;color:#fff;">🛞</span></div>
+                    <div class="partner-card-body">
+                        <div class="partner-card-cat">Pneus moto</div>
+                        <div class="partner-card-title">123pneus.fr</div>
+                        <div class="partner-card-desc">Livrés chez ton garagiste</div>
+                        <span class="partner-card-code">Affiliation</span>
+                    </div>
+                </a>
+
             </div>
         </aside>
     </section>
