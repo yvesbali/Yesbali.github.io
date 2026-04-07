@@ -1,0 +1,25 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "name": "Campeggio Cistella - 15€ - N1",
+          "latitude": 46.228722,
+          "longitude": 8.29961
+        },
+        {
+          "latitude": 46.161702,
+          "longitude": 8.780994,
+          "shaping": true
+        },
+        {
+          "latitude": 46.320912,
+          "longitude": 9.397345,
+          "shaping": true
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}

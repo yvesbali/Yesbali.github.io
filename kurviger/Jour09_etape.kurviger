@@ -1,0 +1,47 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "latitude": 46.263769,
+          "longitude": 14.690051,
+          "shaping": true
+        },
+        {
+          "latitude": 46.367542,
+          "longitude": 14.774895,
+          "shaping": true
+        },
+        {
+          "name": "Gostilna s prenocisci Danica -67€ - N1",
+          "category": "search_result",
+          "latitude": 46.340751,
+          "longitude": 15.423973,
+          "shaping": true
+        },
+        {
+          "name": "Hotel Lent Dravska ulica 9, 2000 Maribor -77€ - N1 |*visite ? ",
+          "weight": "curvature",
+          "category": "search_result",
+          "latitude": 46.556507,
+          "longitude": 15.645309
+        },
+        {
+          "name": "Bivouac ",
+          "category": "search_result",
+          "latitude": 46.497683,
+          "longitude": 15.554581,
+          "shaping": true
+        },
+        {
+          "category": "search_result",
+          "latitude": 46.466951,
+          "longitude": 15.344467,
+          "shaping": true
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}
