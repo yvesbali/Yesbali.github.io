@@ -1,19 +1,19 @@
 ======================================================================
 AUDIT COMPLET LCDMH - RÉSUMÉ
-Date : 2026-04-07 12:20:45
+Date : 2026-04-07 12:30:40
 ======================================================================
 
 📊 STATISTIQUES
-   Total pages HTML : 181
-   Pages avec menu : 3
-   Liens internes OK : 1140
+   Total pages HTML : 81
+   Pages avec menu : 6
+   Liens internes OK : 495
    Images OK : 56
 
-⚠️ PROBLÈMES DÉTECTÉS : 193
-   - Pages sans menu : 178
-   - Liens cassés : 4
+⚠️ PROBLÈMES DÉTECTÉS : 85
+   - Pages sans menu : 75
+   - Liens cassés : 2
    - Images manquantes : 8
-   - Erreurs diverses : 3
+   - Erreurs diverses : 0
 
 ----------------------------------------------------------------------
 DÉTAILS CI-DESSOUS
@@ -25,7 +25,7 @@ DÉTAILS CI-DESSOUS
 [INFO] Pages à la racine : 28
 [INFO] Articles : 17
 [INFO] Pages roadtrips : 4
-[INFO] Autres pages : 132
+[INFO] Autres pages : 32
 
 --- Pages à la racine ---
   - a-propos.html
@@ -79,8 +79,8 @@ DÉTAILS CI-DESSOUS
 ======================================================================
 2. VÉRIFICATION DES MENUS (nav-loader.js)
 ======================================================================
-[INFO] Pages avec nav-loader.js : 3
-[INFO] Pages SANS menu : 178
+[INFO] Pages avec nav-loader.js : 6
+[INFO] Pages SANS menu : 75
 [INFO] Pages avec menu EN DUR : 0
 
 --- ⚠️ PAGES SANS MENU ---
@@ -127,9 +127,6 @@ DÉTAILS CI-DESSOUS
   ❌ articles\radar-moto-comment-ca-marche.html
   ❌ articles\retour-honda-nt-1100-a-26000-kms.html
   ❌ articles\voyager-en-norvege-ferries-budget-conseils-guide-de-voyage-n.html
-  ❌ roadtrips\road-trip-cap-nord-2025-journal.html
-  ❌ roadtrips\road-trip-cap-nord-2025.html
-  ❌ roadtrips\road-trip-moto-test-2026-3-journal.html
   ❌ seo\seo-report.html
   ❌ seo\remote-jobs\index.html
   ❌ roadbooks-html\road-trip-cap-nord-2025\index.html
@@ -137,106 +134,6 @@ DÉTAILS CI-DESSOUS
   ❌ roadbooks-html\road-trip-moto-dolomite-et-slovenie-2026\index.html
   ❌ roadbooks-html\road-trip-moto-dolomite-et-slovenie-2026\questions.html
   ❌ roadbooks-html\road-trip-moto-dolomite-et-slovenie-2026\roadbook_previsionnel.html
-  ❌ roadbooks-html\road-trip-moto-test-2026\index.html
-  ❌ roadbooks-html\road-trip-moto-test-2026\questions.html
-  ❌ roadbooks-html\road-trip-moto-test-2026\roadbook_previsionnel.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-1\index.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-1\questions.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-1\roadbook_previsionnel.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-2\index.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-2\questions.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-2\roadbook_previsionnel.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-3\index.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-3\questions.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-3\roadbook_previsionnel.html
-  ❌ roadbooks-html\road-trip-moto-teste-publication\index.html
-  ❌ roadbooks-html\road-trip-moto-teste-publication\questions.html
-  ❌ roadbooks-html\road-trip-moto-teste-publication\roadbook_previsionnel.html
-  ❌ roadbooks-html\road-trip-moto-teste-publication\jours\jour-01.html
-  ❌ roadbooks-html\road-trip-moto-teste-publication\jours\jour-02.html
-  ❌ roadbooks-html\road-trip-moto-teste-publication\jours\jour-03.html
-  ❌ roadbooks-html\road-trip-moto-teste-publication\jours\jour-04.html
-  ❌ roadbooks-html\road-trip-moto-teste-publication\jours\jour-05.html
-  ❌ roadbooks-html\road-trip-moto-teste-publication\jours\jour-06.html
-  ❌ roadbooks-html\road-trip-moto-teste-publication\jours\jour-07.html
-  ❌ roadbooks-html\road-trip-moto-teste-publication\jours\jour-08.html
-  ❌ roadbooks-html\road-trip-moto-teste-publication\jours\jour-09.html
-  ❌ roadbooks-html\road-trip-moto-teste-publication\jours\jour-10.html
-  ❌ roadbooks-html\road-trip-moto-teste-publication\jours\jour-11.html
-  ❌ roadbooks-html\road-trip-moto-teste-publication\jours\jour-12.html
-  ❌ roadbooks-html\road-trip-moto-teste-publication\jours\jour-13.html
-  ❌ roadbooks-html\road-trip-moto-teste-publication\jours\jour-14.html
-  ❌ roadbooks-html\road-trip-moto-teste-publication\jours\jour-15.html
-  ❌ roadbooks-html\road-trip-moto-teste-publication\jours\jour-16.html
-  ❌ roadbooks-html\road-trip-moto-teste-publication\jours\jour-17.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-3\jours\jour-01.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-3\jours\jour-02.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-3\jours\jour-03.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-3\jours\jour-04.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-3\jours\jour-05.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-3\jours\jour-06.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-3\jours\jour-07.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-3\jours\jour-08.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-3\jours\jour-09.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-3\jours\jour-10.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-3\jours\jour-11.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-3\jours\jour-12.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-3\jours\jour-13.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-3\jours\jour-14.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-3\jours\jour-15.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-3\jours\jour-16.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-3\jours\jour-17.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-2\jours\jour-01.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-2\jours\jour-02.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-2\jours\jour-03.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-2\jours\jour-04.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-2\jours\jour-05.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-2\jours\jour-06.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-2\jours\jour-07.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-2\jours\jour-08.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-2\jours\jour-09.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-2\jours\jour-10.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-2\jours\jour-11.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-2\jours\jour-12.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-2\jours\jour-13.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-2\jours\jour-14.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-2\jours\jour-15.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-2\jours\jour-16.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-2\jours\jour-17.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-1\jours\jour-01.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-1\jours\jour-02.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-1\jours\jour-03.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-1\jours\jour-04.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-1\jours\jour-05.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-1\jours\jour-06.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-1\jours\jour-07.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-1\jours\jour-08.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-1\jours\jour-09.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-1\jours\jour-10.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-1\jours\jour-11.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-1\jours\jour-12.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-1\jours\jour-13.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-1\jours\jour-14.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-1\jours\jour-15.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-1\jours\jour-16.html
-  ❌ roadbooks-html\road-trip-moto-test-2026-1\jours\jour-17.html
-  ❌ roadbooks-html\road-trip-moto-test-2026\jours\jour-01.html
-  ❌ roadbooks-html\road-trip-moto-test-2026\jours\jour-02.html
-  ❌ roadbooks-html\road-trip-moto-test-2026\jours\jour-03.html
-  ❌ roadbooks-html\road-trip-moto-test-2026\jours\jour-04.html
-  ❌ roadbooks-html\road-trip-moto-test-2026\jours\jour-05.html
-  ❌ roadbooks-html\road-trip-moto-test-2026\jours\jour-06.html
-  ❌ roadbooks-html\road-trip-moto-test-2026\jours\jour-07.html
-  ❌ roadbooks-html\road-trip-moto-test-2026\jours\jour-08.html
-  ❌ roadbooks-html\road-trip-moto-test-2026\jours\jour-09.html
-  ❌ roadbooks-html\road-trip-moto-test-2026\jours\jour-10.html
-  ❌ roadbooks-html\road-trip-moto-test-2026\jours\jour-11.html
-  ❌ roadbooks-html\road-trip-moto-test-2026\jours\jour-12.html
-  ❌ roadbooks-html\road-trip-moto-test-2026\jours\jour-13.html
-  ❌ roadbooks-html\road-trip-moto-test-2026\jours\jour-14.html
-  ❌ roadbooks-html\road-trip-moto-test-2026\jours\jour-15.html
-  ❌ roadbooks-html\road-trip-moto-test-2026\jours\jour-16.html
-  ❌ roadbooks-html\road-trip-moto-test-2026\jours\jour-17.html
   ❌ roadbooks-html\road-trip-moto-dolomite-et-slovenie-2026\jours\jour-01.html
   ❌ roadbooks-html\road-trip-moto-dolomite-et-slovenie-2026\jours\jour-02.html
   ❌ roadbooks-html\road-trip-moto-dolomite-et-slovenie-2026\jours\jour-03.html
@@ -266,25 +163,23 @@ DÉTAILS CI-DESSOUS
 ======================================================================
 3. VÉRIFICATION DES LIENS INTERNES
 ======================================================================
-[INFO] Liens internes OK : 1140
-[INFO] Liens externes : 2122
-[INFO] Liens CASSÉS : 4
+[INFO] Liens internes OK : 495
+[INFO] Liens externes : 924
+[INFO] Liens CASSÉS : 2
 
 --- ❌ LIENS CASSÉS (404 potentiels) ---
 
-  📄 nav.html
-      → /dunlop-mutant-vs-bridgestone-t33-le-combat-quel-pneu-choisir.html
-      → /https://www.youtube.com/@LCDMH?sub_confirmation=1
-      → /https://www.youtube.com/@LCDMH
-
   📄 roadtrips\road-trip-cap-nord-2025-journal.html
       → /roadtrips/.html
+
+  📄 roadtrips\road-trip-moto-test-2026-3.html
+      → /roadbooks-html/road-trip-moto-test-2026-3/index.html
 
 ======================================================================
 4. VÉRIFICATION DES IMAGES
 ======================================================================
 [INFO] Images locales OK : 56
-[INFO] Images externes (CDN) : 182
+[INFO] Images externes (CDN) : 177
 [INFO] Images MANQUANTES : 8
 
 --- ❌ IMAGES MANQUANTES ---
@@ -309,34 +204,13 @@ DÉTAILS CI-DESSOUS
 5. ANALYSE DU MENU (nav.html)
 ======================================================================
 [INFO] Liens dans le menu : 33
-
---- ❌ LIENS CASSÉS DANS LE MENU ---
-  ❌ /dunlop-mutant-vs-bridgestone-t33-le-combat-quel-pneu-choisir.html
-  ❌ /https://www.youtube.com/@LCDMH?sub_confirmation=1
-  ❌ /https://www.youtube.com/@LCDMH
+[INFO] ✅ Tous les liens du menu sont valides
 
 ======================================================================
 6. VÉRIFICATION SITEMAP
 ======================================================================
-[INFO] URLs dans sitemap : 180
-
---- ❌ URLs SITEMAP CASSÉES ---
-  ❌ https://lcdmh.com/roadtrips/ecosse-2026.html
-  ❌ https://lcdmh.com/roadtrips/road-trip-incroyable-en-italie-journal.html
-  ❌ https://lcdmh.com/roadtrips/road-trip-incroyable-en-italie.html
-  ❌ https://lcdmh.com/roadtrips/road-trip-moto-amerique-2026-journal.html
-  ❌ https://lcdmh.com/roadtrips/road-trip-moto-amerique-2026.html
-  ❌ https://lcdmh.com/roadtrips/road-trip-moto-test-1-journal.html
-  ❌ https://lcdmh.com/roadtrips/road-trip-moto-test-1.html
-  ❌ https://lcdmh.com/roadtrips/road-trip-moto-test-donnees-enrichies-journal.html
-  ❌ https://lcdmh.com/roadtrips/road-trip-moto-test-donnees-enrichies.html
-  ❌ https://lcdmh.com/roadtrips/road-trip-road-trip-moto-test-1-journal.html
-  ❌ https://lcdmh.com/roadtrips/road-trip-road-trip-moto-test-1.html
-  ❌ https://lcdmh.com/roadbooks-html/road-trip-moto-amerique-2026/
-  ❌ https://lcdmh.com/roadbooks-html/road-trip-moto-amerique-2026/jours/jour-01.html
-  ❌ https://lcdmh.com/roadbooks-html/road-trip-moto-amerique-2026/jours/jour-02.html
-  ❌ https://lcdmh.com/roadbooks-html/road-trip-moto-amerique-2026/jours/jour-03.html
-  ... et 113 autres
+[INFO] URLs dans sitemap : 74
+[INFO] ✅ Toutes les URLs du sitemap sont valides
 
 ======================================================================
 7. VÉRIFICATION PAGE ARTICLES
