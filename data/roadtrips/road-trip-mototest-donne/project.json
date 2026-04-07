@@ -1,0 +1,28 @@
+{
+  "slug": "road-trip-mototest-donne",
+  "trip_title": "Road trip mototest donne",
+  "trip_year": 2026,
+  "project_dir": "C:\\Users\\yvesv\\Desktop\\test v1",
+  "site_root": "C:\\Users\\yvesv\\Desktop\\test v1\\build",
+  "resource_files": {
+    "hero": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\images\\roadtrips\\road-trip-mototest-donne\\heqder.jpg",
+    "qr": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\images\\roadtrips\\road-trip-mototest-donne\\téléchargement.png",
+    "kurviger": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\kurviger\\road-trip-mototest-donne.kurviger",
+    "csv": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\data\\roadtrips\\road-trip-mototest-donne\\sources\\road-trip-mototest-donne.csv"
+  },
+  "video_seed_main": [],
+  "journal_entries_json": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\data\\roadtrips\\road-trip-mototest-donne\\journal_entries.json",
+  "generated": {
+    "roadbook_html_index": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\roadbooks-html\\road-trip-mototest-donne\\index.html",
+    "roadbook_printable_html": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\roadbooks-html\\road-trip-mototest-donne\\roadbook_previsionnel.html",
+    "roadbook_pdf": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\roadbooks\\road-trip-mototest-donne-roadbook.pdf",
+    "roadtrip_page": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\roadtrips\\road-trip-mototest-donne.html",
+    "journal_page": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\roadtrips\\road-trip-mototest-donne-journal.html",
+    "build_status": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\data\\roadtrips\\road-trip-mototest-donne\\build_status.json"
+  },
+  "publication_layout": {
+    "main_page": "road-trip-mototest-donne.html",
+    "journal_page": "road-trip-mototest-donne-journal.html",
+    "images_dir": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\images\\roadtrips\\road-trip-mototest-donne"
+  }
+}
