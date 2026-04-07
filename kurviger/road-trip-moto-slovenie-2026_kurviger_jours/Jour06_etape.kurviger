@@ -1,0 +1,29 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "address": "Strmca, Strmca 30, 6232 Postojna Slovénie",
+          "name": "Bivouac",
+          "category": "search_result",
+          "latitude": 45.837745,
+          "longitude": 14.204695
+        },
+        {
+          "weight": "curvature",
+          "latitude": 45.90023,
+          "longitude": 14.457418,
+          "shaping": true
+        },
+        {
+          "weight": "curvature",
+          "latitude": 45.922453,
+          "longitude": 14.481643,
+          "shaping": true
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}

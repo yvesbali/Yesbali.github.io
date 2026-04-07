@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Road trip moto Test 2026-3 — Journal de bord du voyageur - Journal | LCDMH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+    --orange: #e67e22;
+    --orange-dark: #d35400;
+    --bleu: #163251;
+    --bleu2: #244b73;
+    --bg: #f7f7f5;
+    --alt: #f0ede8;
+    --card: #fff;
+    --border: #e5e5e5;
+    --noir: #1a1a1a;
+    --muted: #777;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--noir); line-height: 1.7; }
+a { color: inherit; text-decoration: none; }
+
+/* ─── HEADER ─── */
+.header {
+    background: linear-gradient(135deg, var(--bleu), var(--bleu2));
+    color: #fff;
+    padding: 56px 24px;
+    text-align: center;
+}
+.header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    font-weight: 800;
+    margin: 0 0 .3rem;
+}
+.header-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgba(255,255,255,.6);
+    margin: 0 0 .8rem;
+}
+.header p {
+    max-width: 700px;
+    margin: 0 auto 1.2rem;
+    color: #e0e5ed;
+    font-size: .95rem;
+    line-height: 1.7;
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: .7rem 1.4rem;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: .88rem;
+    background: var(--orange);
+    color: #fff;
+    transition: background .2s;
+}
+.btn:hover { background: var(--orange-dark); }
+
+/* ─── WRAP ─── */
+.wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 20px 3rem;
+}
+
+/* ─── KICKER SECTION ─── */
+.section-kicker {
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: .8rem;
+}
+.section-count {
+    font-size: .88rem;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+}
+
+/* ─── JOURNAL CARD HORIZONTAL ─── */
+.journal-card {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,.04);
+    margin-bottom: 1.2rem;
+    transition: box-shadow .2s, transform .15s;
+}
+.journal-card:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,.08);
+    transform: translateY(-2px);
+}
+
+/* Thumbnail gauche */
+.journal-thumb {
+    position: relative;
+    background: var(--alt) center/cover no-repeat;
+    min-height: 180px;
+}
+.journal-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.journal-thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,.05), rgba(0,0,0,.2));
+    pointer-events: none;
+}
+.journal-badge {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    z-index: 1;
+    background: var(--orange);
+    color: #fff;
+    padding: .3rem .7rem;
+    border-radius: 999px;
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+/* Corps droite */
+.journal-body {
+    padding: 1.3rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.journal-body h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 .4rem;
+    color: var(--noir);
+}
+.journal-body p {
+    margin: 0 0 .8rem;
+    color: var(--muted);
+    font-size: .9rem;
+    line-height: 1.6;
+}
+.journal-body .btn-sm {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: .5rem 1rem;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: .78rem;
+    background: var(--noir);
+    color: #fff;
+    transition: background .2s;
+}
+.journal-body .btn-sm:hover { background: #333; }
+
+/* ─── ÉTAT VIDE ─── */
+.journal-empty {
+    background: var(--card);
+    border: 1px dashed var(--border);
+    border-radius: 18px;
+    padding: 2.5rem;
+    text-align: center;
+    color: var(--muted);
+}
+.journal-empty h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: .5rem;
+    color: var(--noir);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 640px) {
+    .journal-card {
+        grid-template-columns: 1fr;
+    }
+    .journal-thumb {
+        min-height: 200px;
+    }
+}
+</style>
+</head>
+<body>
+<header class="header">
+    <h1>Road trip moto Test 2026-3 — Journal de bord du voyageur</h1>
+    <p class="header-subtitle">Journal de bord du voyageur</p>
+    <p>Suivez l&#x27;aventure au jour le jour. Le journal complet regroupe les entrées quotidiennes, les shorts terrain et les notes publiées pendant le voyage.</p>
+    <a class="btn" href="/roadtrips/road-trip-moto-test-2026-3.html">← Revenir à la page principale</a>
+</header>
+<main class="wrap">
+    <div class="section-kicker">Entrées du journal</div>
+    
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        <article class="journal-card" data-video-id="qS-YbBw9xeU">
+            <a href="https://www.youtube.com/watch?v=qS-YbBw9xeU" target="_blank" rel="noopener" class="journal-card-link">
+                <div class="journal-thumb">
+                    <img src="https://i.ytimg.com/vi/qS-YbBw9xeU/maxresdefault.jpg" alt="Voyage en Slovénie" loading="lazy">
+                    <span class="play-icon">▶</span>
+                </div>
+                <div class="journal-content">
+                    <time class="journal-date">4 AVRIL 2026</time>
+                    <h3 class="journal-title">Voyage en Slovénie</h3>
+                    <p class="journal-excerpt">Je teste aujourd&#x27;hui la description de mon voyage en Slovénie en passant par les dolomites
+
+---
+📍 Viuz-la-Chiésaz, Auvergne-Rhône-Alpes, France (45.8069, 6.0568) (45.8069,6.0568)
+🗓️ Jour 4
+🌤️ 12°C · S</p>
+                </div>
+            </a>
+        </article><article class="journal-card" data-video-id="JdOak7A46Do">
+            <a href="https://www.youtube.com/watch?v=JdOak7A46Do" target="_blank" rel="noopener" class="journal-card-link">
+                <div class="journal-thumb">
+                    <img src="https://i.ytimg.com/vi/JdOak7A46Do/hqdefault.jpg" alt="Slovénie" loading="lazy">
+                    <span class="play-icon">▶</span>
+                </div>
+                <div class="journal-content">
+                    <time class="journal-date">4 AVRIL 2026</time>
+                    <h3 class="journal-title">Slovénie</h3>
+                    <p class="journal-excerpt">Test playlist Slovénie bam bam bam alors uniquement ou.
+
+---
+📍 Viuz-la-Chiésaz, Auvergne-Rhône-Alpes, France (45.8069, 6.0568) (45.8069,6.0568)</p>
+                </div>
+            </a>
+        </article><article class="journal-card" data-video-id="Aj2G9qiNecc">
+            <a href="https://www.youtube.com/watch?v=Aj2G9qiNecc" target="_blank" rel="noopener" class="journal-card-link">
+                <div class="journal-thumb">
+                    <img src="https://i.ytimg.com/vi/Aj2G9qiNecc/hqdefault.jpg" alt="Slovénie" loading="lazy">
+                    <span class="play-icon">▶</span>
+                </div>
+                <div class="journal-content">
+                    <time class="journal-date">4 AVRIL 2026</time>
+                    <h3 class="journal-title">Slovénie</h3>
+                    <p class="journal-excerpt"></p>
+                </div>
+            </a>
+        </article><article class="journal-card" data-video-id="taTVUW32nHQ">
+            <a href="https://www.youtube.com/watch?v=taTVUW32nHQ" target="_blank" rel="noopener" class="journal-card-link">
+                <div class="journal-thumb">
+                    <img src="https://i.ytimg.com/vi/taTVUW32nHQ/hqdefault.jpg" alt="Slovénie" loading="lazy">
+                    <span class="play-icon">▶</span>
+                </div>
+                <div class="journal-content">
+                    <time class="journal-date">4 AVRIL 2026</time>
+                    <h3 class="journal-title">Slovénie</h3>
+                    <p class="journal-excerpt"></p>
+                </div>
+            </a>
+        </article><article class="journal-card" data-video-id="sLj-AlbDUH0">
+            <a href="https://www.youtube.com/watch?v=sLj-AlbDUH0" target="_blank" rel="noopener" class="journal-card-link">
+                <div class="journal-thumb">
+                    <img src="https://i.ytimg.com/vi/sLj-AlbDUH0/maxresdefault.jpg" alt="Col du Semnoz" loading="lazy">
+                    <span class="play-icon">▶</span>
+                </div>
+                <div class="journal-content">
+                    <time class="journal-date">4 AVRIL 2026</time>
+                    <h3 class="journal-title">Col du Semnoz</h3>
+                    <p class="journal-excerpt"></p>
+                </div>
+            </a>
+        </article><article class="journal-card" data-video-id="hhrLLNlc4as">
+            <a href="https://www.youtube.com/watch?v=hhrLLNlc4as" target="_blank" rel="noopener" class="journal-card-link">
+                <div class="journal-thumb">
+                    <img src="https://i.ytimg.com/vi/hhrLLNlc4as/maxresdefault.jpg" alt="Test du jeudi soir" loading="lazy">
+                    <span class="play-icon">▶</span>
+                </div>
+                <div class="journal-content">
+                    <time class="journal-date">2 AVRIL 2026</time>
+                    <h3 class="journal-title">Test du jeudi soir</h3>
+                    <p class="journal-excerpt">Test de publication vidéo à 21h23</p>
+                </div>
+            </a>
+        </article><article class="journal-card" data-video-id="O8q1huBFy40">
+            <a href="https://www.youtube.com/watch?v=O8q1huBFy40" target="_blank" rel="noopener" class="journal-card-link">
+                <div class="journal-thumb">
+                    <img src="https://i.ytimg.com/vi/O8q1huBFy40/maxresdefault.jpg" alt="Road Trip Moto Slovénie &amp; Dolomites 2026" loading="lazy">
+                    <span class="play-icon">▶</span>
+                </div>
+                <div class="journal-content">
+                    <time class="journal-date">1 AVRIL 2026</time>
+                    <h3 class="journal-title">Road Trip Moto Slovénie &amp; Dolomites 2026</h3>
+                    <p class="journal-excerpt">💬 Tipeee : https://fr.tipeee.com/lcdmh
+
+📍 AOOCCI BX/U6 : https://aoocci.com/products/bx-motorcycle-carplay-dashcam-smart-bsd?ref=gvxyhqgv&amp;variant=42923929960536
+Code : LCDMH25
+📍 Carpuride : https://ca</p>
+                </div>
+            </a>
+        </article><article class="journal-card" data-video-id="0BIZY0Du6R0">
+            <a href="https://www.youtube.com/watch?v=0BIZY0Du6R0" target="_blank" rel="noopener" class="journal-card-link">
+                <div class="journal-thumb">
+                    <img src="https://img.youtube.com/vi/0BIZY0Du6R0/hqdefault.jpg" alt="Deleted video" loading="lazy">
+                    <span class="play-icon">▶</span>
+                </div>
+                <div class="journal-content">
+                    <time class="journal-date">9 MARS 2026</time>
+                    <h3 class="journal-title">Deleted video</h3>
+                    <p class="journal-excerpt">This video is unavailable.</p>
+                </div>
+            </a>
+        </article><article class="journal-card" data-video-id="Uh9LbEwftbs">
+            <a href="https://www.youtube.com/watch?v=Uh9LbEwftbs" target="_blank" rel="noopener" class="journal-card-link">
+                <div class="journal-thumb">
+                    <img src="https://i.ytimg.com/vi/Uh9LbEwftbs/hqdefault.jpg" alt="Bulle moto ErMax : plus de flux d&#x27;air, moins de protection ?" loading="lazy">
+                    <span class="play-icon">▶</span>
+                </div>
+                <div class="journal-content">
+                    <time class="journal-date">11 MARS 2026</time>
+                    <h3 class="journal-title">Bulle moto ErMax : plus de flux d&#x27;air, moins de protection ?</h3>
+                    <p class="journal-excerpt">--- LCDMH DEBUT DESCRIPTION ---
+J&#x27;ai remplacé ma bulle touring Puig par une Air Max. Moins de protection contre le vent, mais plus de flux d&#x27;air : je vous explique pourquoi ce choix.
+
+Après deux ans d</p>
+                </div>
+            </a>
+        </article><article class="journal-card" data-video-id="8KZbbN9Df8o">
+            <a href="https://www.youtube.com/watch?v=8KZbbN9Df8o" target="_blank" rel="noopener" class="journal-card-link">
+                <div class="journal-thumb">
+                    <img src="https://i.ytimg.com/vi/8KZbbN9Df8o/maxresdefault.jpg" alt="Nettoyage bulle de moto : ma méthode sans rayures [Tuto LCDMH]" loading="lazy">
+                    <span class="play-icon">▶</span>
+                </div>
+                <div class="journal-content">
+                    <time class="journal-date">7 MARS 2026</time>
+                    <h3 class="journal-title">Nettoyage bulle de moto : ma méthode sans rayures [Tuto LCDMH]</h3>
+                    <p class="journal-excerpt">Ta bulle de moto est rayée et laiteuse ? Tu utilises probablement le mauvais produit ! Le nettoyage bulle moto avec du produit à vitre est l&#x27;erreur classique qui détruit ton pare-brise. Je te révèle m</p>
+                </div>
+            </a>
+        </article><article class="journal-card" data-video-id="D1eLA6LRkLU">
+            <a href="https://www.youtube.com/watch?v=D1eLA6LRkLU" target="_blank" rel="noopener" class="journal-card-link">
+                <div class="journal-thumb">
+                    <img src="https://i.ytimg.com/vi/D1eLA6LRkLU/maxresdefault.jpg" alt="AFERIY Nano 100 : autonomie électrique en road trip ?" loading="lazy">
+                    <span class="play-icon">▶</span>
+                </div>
+                <div class="journal-content">
+                    <time class="journal-date">12 FÉVRIER 2026</time>
+                    <h3 class="journal-title">AFERIY Nano 100 : autonomie électrique en road trip ?</h3>
+                    <p class="journal-excerpt">Quand on part en road trip moto, l’électricité devient vite un problème. Smartphone, caméra, GPS…
+J’ai testé une petite batterie portable AFERIY Nano 100 pour voir si elle peut vraiment apporter de l’</p>
+                </div>
+            </a>
+        </article><article class="journal-empty"><h2>Le journal arrive bientôt</h2><p>Les shorts et notes publiés pendant le voyage apparaîtront ici automatiquement.</p></article>
+</main>
+</body>
+</html>

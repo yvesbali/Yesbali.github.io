@@ -1,0 +1,33 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "latitude": 46.446137,
+          "longitude": 11.589546,
+          "shaping": true
+        },
+        {
+          "name": "Kamp Fiesa | 25€ - N2 | ",
+          "category": "search_result",
+          "latitude": 46.474035,
+          "longitude": 11.741048
+        },
+        {
+          "name": "Passo Sella",
+          "category": "pass",
+          "latitude": 46.508967,
+          "longitude": 11.757431,
+          "shaping": true
+        },
+        {
+          "latitude": 46.549302,
+          "longitude": 11.823832,
+          "shaping": true
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}

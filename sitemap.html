@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan du site LCDMH – Toutes les pages du motard heureux</title>
+  <meta name="description" content="Plan du site lcdmh.com : retrouvez toutes les pages de La Chaîne du Motard Heureux — road trips, tests GPS, équipements, codes promo et vidéos YouTube.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://lcdmh.com/sitemap.html">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--orange:#e67e22;--noir:#1a1a1a;--bg:#f7f7f5;--card:#fff;--border:#e5e5e5;--muted:#777}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--noir);line-height:1.5}
+    h1,h2,h3{font-family:'Montserrat',sans-serif}
+    a{color:inherit;text-decoration:none}
+
+    nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.07);padding:0 6%;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
+    .logo{font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:800}
+    .logo em{font-style:normal;color:var(--orange)}
+
+    .page-header{background:var(--noir);color:#fff;padding:3rem 6%;text-align:center}
+    .page-header h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;margin-bottom:.5rem}
+    .page-header h1 em{font-style:normal;color:var(--orange)}
+    .page-header p{color:rgba(255,255,255,.6);font-size:.95rem}
+
+    .sitemap{padding:52px 6%;max-width:1280px;margin:0 auto}
+
+    /* GROUPE */
+    .group{margin-bottom:3rem}
+    .group-title{
+      font-family:'Montserrat',sans-serif;
+      font-size:.7rem;font-weight:700;
+      letter-spacing:.2em;text-transform:uppercase;
+      color:var(--orange);
+      margin-bottom:1.1rem;
+      display:flex;align-items:center;gap:.7rem;
+    }
+    .group-title::after{content:'';flex:1;height:1px;background:var(--border)}
+
+    .pages-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.9rem}
+
+    /* CARTE PAGE */
+    .page-card{
+      background:var(--card);
+      border:1.5px solid var(--border);
+      border-radius:12px;
+      padding:1.1rem 1.2rem;
+      display:flex;align-items:flex-start;gap:.85rem;
+      transition:all .18s;
+      cursor:pointer;
+      position:relative;
+    }
+    .page-card:hover{border-color:var(--orange);box-shadow:0 4px 18px rgba(230,126,34,.12);transform:translateY(-2px)}
+    .page-card.main{border-color:var(--orange);background:#fff9f5}
+    .page-icon{
+      font-size:1.4rem;flex-shrink:0;
+      width:36px;height:36px;
+      background:#f7f7f5;border-radius:8px;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .page-card.main .page-icon{background:#fff3e8}
+    .page-info{}
+    .page-name{font-family:'Montserrat',sans-serif;font-size:.88rem;font-weight:700;color:var(--noir);line-height:1.2;margin-bottom:.25rem}
+    .page-file{font-size:.7rem;color:var(--muted);font-family:monospace;background:#f5f5f5;padding:.15rem .4rem;border-radius:4px;display:inline-block}
+    .page-desc{font-size:.75rem;color:var(--muted);margin-top:.35rem;line-height:1.4}
+    .page-badge{
+      position:absolute;top:.6rem;right:.7rem;
+      font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+      background:var(--orange);color:#fff;
+      padding:.18rem .5rem;border-radius:50px;
+    }
+    .page-badge.new{background:#27ae60}
+    .page-badge.updated{background:#2980b9}
+
+    /* Arbre de navigation */
+    .tree{
+      background:var(--card);border:1px solid var(--border);border-radius:14px;
+      padding:2rem;margin-bottom:3rem;
+    }
+    .tree h3{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;margin-bottom:1.4rem;color:var(--noir)}
+    .tree-root{display:flex;flex-direction:column;gap:.4rem;font-size:.82rem}
+    .t-item{display:flex;align-items:center;gap:.6rem;padding:.35rem .5rem;border-radius:6px;transition:background .15s}
+    .t-item:hover{background:#f9f9f7}
+    .t-item a{color:var(--noir);font-weight:500;transition:color .15s}
+    .t-item:hover a{color:var(--orange)}
+    .t-indent{padding-left:1.8rem;border-left:2px solid var(--border);margin-left:.9rem}
+    .t-dot{width:7px;height:7px;border-radius:50%;background:var(--orange);flex-shrink:0}
+    .t-dot-sm{width:5px;height:5px;border-radius:50%;background:#ddd;flex-shrink:0}
+    .t-cat{font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin:1rem 0 .3rem;display:block}
+
+    /* STATS */
+    .stats-bar{
+      display:flex;gap:1.5rem;flex-wrap:wrap;
+      background:var(--card);border:1px solid var(--border);border-radius:12px;
+      padding:1.4rem 2rem;margin-bottom:2.5rem;
+      align-items:center;
+    }
+    .sbar-item{text-align:center;flex:1;min-width:80px}
+    .sbar-n{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:var(--orange);display:block}
+    .sbar-l{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.09em;font-weight:600}
+    .sbar-div{width:1px;background:var(--border);height:40px;flex-shrink:0}
+
+    footer{background:var(--noir);color:rgba(255,255,255,.55);padding:2rem 6%;text-align:center;font-size:.8rem;margin-top:3rem}
+    footer a{color:var(--orange)}
+  
+        /* === NAVIGATION === */
+        nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.07);padding:0 4%;height:70px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1000}
+        .logo{font-size:1.45rem;font-weight:900;color:#1a1a2e;text-decoration:none;letter-spacing:-.03em}
+        .logo span{color:#e67e22}
+        .nav-links{display:flex;gap:.5rem 1rem;list-style:none;align-items:center;flex-wrap:wrap;justify-content:flex-end;margin:0;padding:0}
+        .nav-links a{font-size:.78rem;font-weight:600;color:#555;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;white-space:nowrap;padding:.3rem .4rem;transition:color .2s}
+        .nav-links a:hover,.nav-links a.active{color:#e67e22}
+        .nav-links .nav-yt{background:#e67e22;color:#fff!important;padding:.4rem 1rem;border-radius:30px;font-weight:700}
+        .nav-links .nav-yt:hover{background:#cf6d17}
+        .nav-links .nav-yt-icon{background:#ff0000;color:#fff!important;padding:.4rem .8rem;border-radius:6px;font-weight:700;font-size:.75rem}
+        .has-drop{position:relative}
+        .has-drop>a::after{content:' ▾';font-size:.65rem;opacity:.6}
+        .dropdown{display:none;position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:1px solid #e8e8e8;border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.12);min-width:200px;padding:.5rem 0;z-index:9999}
+        .dropdown a{display:block;padding:.52rem 1.1rem;font-size:.8rem;color:#1a1a2e!important;font-weight:500;white-space:nowrap;text-transform:none;letter-spacing:normal}
+        .dropdown a:hover{background:#fff8f2;color:#e67e22!important}
+        .nav-last-video{display:inline-flex;align-items:center;gap:.4rem;background:#fff3e0;border:1px solid #f0a500;border-radius:20px;padding:.3rem .8rem;font-size:.72rem!important;font-weight:700!important;color:#e67e22!important;text-transform:none!important;letter-spacing:normal!important;white-space:nowrap;animation:pulse-badge 2.5s infinite}
+        @keyframes pulse-badge{0%,100%{box-shadow:0 0 0 0 rgba(230,126,34,.35)}50%{box-shadow:0 0 0 5px rgba(230,126,34,0)}}
+        .nav-last-video .dot{width:7px;height:7px;background:#e74c3c;border-radius:50%;animation:blink 1.2s infinite}
+        @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+        .nav-last-video .label-new{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+        .menu-toggle{display:none;font-size:1.8rem;cursor:pointer;background:none;border:none;color:#1a1a2e;padding:.5rem}
+        @media(max-width:900px){
+            .nav-links{display:none;flex-direction:column;position:absolute;top:70px;left:0;width:100%;background:#fff;padding:1rem 0;box-shadow:0 10px 20px rgba(0,0,0,.1);z-index:1000;gap:0;align-items:stretch}
+            .nav-links.active{display:flex}
+            .nav-links li{width:100%;text-align:center}
+            .nav-links a{display:block;padding:1rem!important;font-size:.95rem}
+            .has-drop>a::after{display:none}
+            .dropdown{position:static;width:100%;box-shadow:none;border:none;border-top:1px solid #e8e8e8;border-radius:0;padding:0;background:#fafafa}
+            .menu-toggle{display:block}
+            .nav-links .nav-yt,.nav-links .nav-yt-icon{margin:.5rem auto;display:inline-block;width:auto}
+            .desktop-only{display:none!important}
+        }
+        @media(min-width:901px){.mobile-only{display:none!important}}
+        /* === FIN NAVIGATION === */
+        </style>
+
+<meta property="og:title" content="Plan du site LCDMH – Toutes les pages du motard heureux">
+<meta property="og:description" content="Plan du site lcdmh.com : retrouvez toutes les pages de La Chaîne du Motard Heureux — road trips, tests GPS, équipements, codes promo et vidéos YouTube.">
+<meta property="og:image" content="https://lcdmh.com/images/lcdmh-og-default.jpg">
+<meta property="og:url" content="https://lcdmh.com/sitemap.html">
+</head>
+<body><script src="/js/lcdmh-nav-loader.js" defer></script>
+
+<!-- ======================================== -->
+<!-- NAVIGATION UNIQUE LCDMH (NE PAS MODIFIER) -->
+<!-- ======================================== -->
+<!-- ======================================== -->
+<!-- NAVIGATION UNIQUE LCDMH -->
+<!-- ======================================== -->
+<!-- ======================================== -->
+<!-- NAVIGATION UNIQUE LCDMH -->
+<!-- ======================================== -->
+<!-- ======================================== -->
+<!-- ======================================== -->
+<!-- ======================================== -->
+
+<!-- ======================================== -->
+<!-- DÉBUT NAVIGATION LCDMH (fichier unique) -->
+<!-- ======================================== -->
+
+<!-- ======================================== -->
+<!-- FIN NAVIGATION LCDMH -->
+<!-- ======================================== -->
+    
+
+<div class="page-header">
+  <h1>Plan du site <em>LCDMH</em></h1>
+  <p>Toutes les pages du site – lcdmh.netlify.app</p>
+</div>
+
+<div class="sitemap">
+
+  <!-- STATS -->
+  <div class="stats-bar" style="margin-top:2rem">
+    <div class="sbar-item"><span class="sbar-n">16</span><span class="sbar-l">Pages</span></div>
+    <div class="sbar-div"></div>
+    <div class="sbar-item"><span class="sbar-n">5</span><span class="sbar-l">Catégories</span></div>
+    <div class="sbar-div"></div>
+    <div class="sbar-item"><span class="sbar-n">5</span><span class="sbar-l">Pages partenaires</span></div>
+    <div class="sbar-div"></div>
+    <div class="sbar-item"><span class="sbar-n">72K</span><span class="sbar-l">Km terrain</span></div>
+  </div>
+
+  <!-- ARBRE NAVIGATION -->
+  <div class="tree">
+    <h3>🗂️ Structure de navigation</h3>
+    <div class="tree-root">
+
+      <div class="t-item"><div class="t-dot"></div><a href="index.html"><strong>Accueil</strong> — index.html</a></div>
+
+      <div style="margin:.5rem 0 .2rem 1.5rem">
+        <span class="t-cat">Road Trips</span>
+        <div class="t-indent">
+          <div class="t-item"><div class="t-dot-sm"></div><a href="roadtrips.html">Tous les road trips</a></div>
+        </div>
+      </div>
+
+      <div style="margin:.5rem 0 .2rem 1.5rem">
+        <span class="t-cat">Tests & Équipements</span>
+        <div class="t-indent">
+          <div class="t-item"><div class="t-dot-sm"></div><a href="/tests-motos.html">Tous les tests</a></div>
+          <div class="t-item"><div class="t-dot-sm"></div><a href="tests-motos.html">Tests motos</a></div>
+          <div class="t-item"><div class="t-dot-sm"></div><a href="equipement.html">Équipement</a></div>
+          <div class="t-item"><div class="t-dot-sm"></div><a href="intercoms.html">Intercoms</a></div>
+          <div class="t-item"><div class="t-dot-sm"></div><a href="pneus.html">Pneus</a></div>
+          <div class="t-item"><div class="t-dot-sm"></div><a href="photo-video.html">Photo / Vidéo</a></div>
+          <div class="t-item"><div class="t-dot-sm"></div><a href="securite.html">Sécurité moto</a></div>
+        </div>
+      </div>
+
+      <div style="margin:.5rem 0 .2rem 1.5rem">
+        <span class="t-cat">Partenaires & Codes promo</span>
+        <div class="t-indent">
+          <div class="t-item"><div class="t-dot-sm"></div><a href="codes-promo.html">Tous les codes promo</a></div>
+          <div class="t-item"><div class="t-dot-sm"></div><a href="aoocci.html">Aoocci GPS</a></div>
+          <div class="t-item"><div class="t-dot-sm"></div><a href="carpuride.html">Carpuride</a></div>
+          <div class="t-item"><div class="t-dot-sm"></div><a href="blackview.html">Blackview Xplore X1</a></div>
+          <div class="t-item"><div class="t-dot-sm"></div><a href="olight.html">Olight</a></div>
+          <div class="t-item"><div class="t-dot-sm"></div><a href="komobi.html">Komobi</a></div>
+        </div>
+      </div>
+
+      <div style="margin:.5rem 0 .2rem 1.5rem">
+        <span class="t-cat">À propos & Contact</span>
+        <div class="t-indent">
+          <div class="t-item"><div class="t-dot-sm"></div><a href="a-propos.html">À propos</a></div>
+          <div class="t-item"><div class="t-dot-sm"></div><a href="contact.html">Contact</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PAGE PAR PAGE -->
+
+  <div class="group">
+    <div class="group-title">🏠 Page principale</div>
+    <div class="pages-grid">
+      <a href="index.html" class="page-card main">
+        <div class="page-icon">🏠</div>
+        <div class="page-info">
+          <div class="page-name">Accueil</div>
+          <div class="page-file">index.html</div>
+          <div class="page-desc">Hero, codes promo, vidéos filtrées, road trips, à propos</div>
+        </div>
+        <span class="page-badge">PRINCIPAL</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-title">🗺️ Road Trips</div>
+    <div class="pages-grid">
+      <a href="roadtrips.html" class="page-card">
+        <div class="page-icon">🗺️</div>
+        <div class="page-info">
+          <div class="page-name">Road Trips</div>
+          <div class="page-file">roadtrips.html</div>
+          <div class="page-desc">Cap Nord, Europe-Asie, Espagne, Alpes</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-title">🔧 Tests & Équipements</div>
+    <div class="pages-grid">
+      <a href="/tests-motos.html" class="page-card">
+        <div class="page-icon">🔧</div>
+        <div class="page-info">
+          <div class="page-name">Tous les tests</div>
+          <div class="page-file">tests.html</div>
+          <div class="page-desc">Vue d'ensemble de tous les tests</div>
+        </div>
+      </a>
+      <a href="tests-motos.html" class="page-card">
+        <div class="page-icon">🏍️</div>
+        <div class="page-info">
+          <div class="page-name">Tests motos</div>
+          <div class="page-file">tests-motos.html</div>
+          <div class="page-desc">Benelli TRK 502/702, Honda NT1100</div>
+        </div>
+      </a>
+      <a href="equipement.html" class="page-card">
+        <div class="page-icon">🧥</div>
+        <div class="page-info">
+          <div class="page-name">Équipement</div>
+          <div class="page-file">equipement.html</div>
+          <div class="page-desc">Casques, vêtements, accessoires moto</div>
+        </div>
+      </a>
+      <a href="intercoms.html" class="page-card">
+        <div class="page-icon">🎧</div>
+        <div class="page-info">
+          <div class="page-name">Intercoms</div>
+          <div class="page-file">intercoms.html</div>
+          <div class="page-desc">Sena 50S, 60S, comparatifs</div>
+        </div>
+      </a>
+      <a href="pneus.html" class="page-card">
+        <div class="page-icon">🛞</div>
+        <div class="page-info">
+          <div class="page-name">Pneus</div>
+          <div class="page-file">pneus.html</div>
+          <div class="page-desc">Michelin, Dunlop, Metzeler — tests terrain</div>
+        </div>
+      </a>
+      <a href="photo-video.html" class="page-card">
+        <div class="page-icon">🎥</div>
+        <div class="page-info">
+          <div class="page-name">Photo / Vidéo</div>
+          <div class="page-file">photo-video.html</div>
+          <div class="page-desc">GoPro, DJI, Osmo Pocket, setups</div>
+        </div>
+      </a>
+      <a href="securite.html" class="page-card">
+        <div class="page-icon">🛡️</div>
+        <div class="page-info">
+          <div class="page-name">Sécurité moto</div>
+          <div class="page-file">securite.html</div>
+          <div class="page-desc">Trajectoires, techniques, formation gendarmerie</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-title">🏷️ Partenaires & Codes promo</div>
+    <div class="pages-grid">
+      <a href="codes-promo.html" class="page-card main">
+        <div class="page-icon">🏷️</div>
+        <div class="page-info">
+          <div class="page-name">Tous les codes promo</div>
+          <div class="page-file">codes-promo.html</div>
+          <div class="page-desc">Tous les codes exclusifs LCDMH réunis</div>
+        </div>
+      </a>
+      <a href="aoocci.html" class="page-card">
+        <div class="page-icon">📡</div>
+        <div class="page-info">
+          <div class="page-name">Aoocci GPS</div>
+          <div class="page-file">aoocci.html</div>
+          <div class="page-desc">GPS U6/BX · Code LCDMH28 · −28%</div>
+        </div>
+      </a>
+      <a href="carpuride.html" class="page-card">
+        <div class="page-icon">🖥️</div>
+        <div class="page-info">
+          <div class="page-name">Carpuride</div>
+          <div class="page-file">carpuride.html</div>
+          <div class="page-desc">Écran CarPlay W702 · Code LCDMH · −30%</div>
+        </div>
+      </a>
+      <a href="blackview.html" class="page-card">
+        <div class="page-icon">📱</div>
+        <div class="page-info">
+          <div class="page-name">Blackview Xplore X1</div>
+          <div class="page-file">blackview.html</div>
+          <div class="page-desc">Smartphone renforcé · Carrousel 14 photos</div>
+        </div>
+        <span class="page-badge new">NOUVEAU</span>
+      </a>
+      <a href="olight.html" class="page-card">
+        <div class="page-icon">🔦</div>
+        <div class="page-info">
+          <div class="page-name">Olight</div>
+          <div class="page-file">olight.html</div>
+          <div class="page-desc">Éclairage moto Olight — test terrain</div>
+        </div>
+      </a>
+      <a href="komobi.html" class="page-card">
+        <div class="page-icon">🔒</div>
+        <div class="page-info">
+          <div class="page-name">Komobi</div>
+          <div class="page-file">komobi.html</div>
+          <div class="page-desc">Antivol connecté Komobi — test & avis</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-title">👤 À propos & Contact</div>
+    <div class="pages-grid">
+      <a href="a-propos.html" class="page-card">
+        <div class="page-icon">👤</div>
+        <div class="page-info">
+          <div class="page-name">À propos</div>
+          <div class="page-file">a-propos.html</div>
+          <div class="page-desc">Yves, 65 ans, 72 000 km — le motard heureux</div>
+        </div>
+        <span class="page-badge updated">MAJ</span>
+      </a>
+      <a href="contact.html" class="page-card">
+        <div class="page-icon">✉️</div>
+        <div class="page-info">
+          <div class="page-name">Contact</div>
+          <div class="page-file">contact.html</div>
+          <div class="page-desc">Formulaire de contact, partenariats</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <strong style="color:#fff">LCDMH</strong> – lcdmh.netlify.app · 
+  <a href="index.html">Accueil</a> · 
+  <a href="https://www.youtube.com/@LCDMH" target="_blank">YouTube</a>
+</footer>
+
+
+<script src="maillage.js"></script>
+</body>
+</html>
+
