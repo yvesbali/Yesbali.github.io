@@ -38,6 +38,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Pull latest changes
+        run: git pull --rebase origin main
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -57,7 +60,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin main
           git add -A
           git diff --cached --quiet || git commit -m "Auto-publish: nouvelles videos road-trip-moto-test-2026-3"
           git push
