@@ -121,29 +121,8 @@
         .btn-outline{background:transparent;color:var(--orange);border:2px solid var(--orange)}.btn-outline:hover{background:var(--orange);color:#fff}
 
         /* NAV (gardée identique) */
-        nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.07);padding:0 4%;height:70px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-        .logo{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:var(--noir)}
-        .logo span{color:var(--orange)}
-        .nav-links{display:flex;gap:.5rem 1rem;list-style:none;align-items:center;flex-wrap:wrap;justify-content:flex-end}
-        .nav-links a{font-size:.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;transition:color .2s;white-space:nowrap;padding:.3rem .4rem}
-        .nav-links a:hover,.nav-links a.active{color:var(--orange)}
-        .nav-links .nav-yt{background:var(--orange);color:#fff!important;padding:.4rem 1rem;border-radius:30px;font-weight:700}
-        .has-drop{position:relative}
-        .has-drop>a::after{content:'▾';font-size:.6rem;opacity:.7;margin-left:.2rem}
-        .dropdown{display:none;position:absolute;top:calc(100%+6px);left:0;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,.12);min-width:175px;padding:.5rem 0;z-index:999}
-        .has-drop:hover .dropdown{display:block}
-        .dropdown a{display:block;padding:.52rem 1.1rem;font-size:.8rem;color:var(--noir);font-weight:500;white-space:nowrap;text-transform:none;letter-spacing:normal}
-        .dropdown a:hover{background:#fff8f2;color:var(--orange)}
-        .menu-toggle{display:none;font-size:1.8rem;cursor:pointer;background:none;border:none;color:var(--noir);padding:.5rem}
         @media(max-width:900px){
-            .nav-links{display:none;flex-direction:column;position:absolute;top:70px;left:0;width:100%;background:#fff;padding:1rem 0;box-shadow:0 10px 20px rgba(0,0,0,.1);z-index:1000;gap:0;align-items:stretch}
-            .nav-links.active{display:flex}
-            .nav-links li{width:100%;text-align:center}
-            .nav-links a{display:block;padding:1rem!important;font-size:.95rem}
-            .has-drop:hover .dropdown,.has-drop.active .dropdown{display:block;position:static;width:100%;box-shadow:none;border:none;border-top:1px solid var(--border)}
-            .menu-toggle{display:block}
-            .nav-links .nav-yt{margin:.5rem auto;display:inline-block;width:auto}
-        }
+            }
 
         /* HERO - ALPES (même structure que hero-nord) */
         .hero-alpes{
