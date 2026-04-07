@@ -1,0 +1,74 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvaturefastest"
+  },
+  "details": [
+    "route_information",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1774643115954,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        -6.579794,
+        56.874699,
+        -5.433095,
+        57.431991
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "address": "Kinloch Campsite Reception,  IV55 8YE Dunvegan - Dùn Bheagain Écosse Royaume-Uni",
+          "name": "Kinloch Campsite",
+          "category": "search_result",
+          "latitude": 57.431991,
+          "longitude": -6.579794
+        },
+        {
+          "name": "*les Ferry pools Piscine des féés ? ",
+          "category": "search_result",
+          "latitude": 57.251102,
+          "longitude": -6.271648,
+          "shaping": true
+        },
+        {
+          "name": "*visite panorama ?",
+          "latitude": 57.249999,
+          "longitude": -6.272442,
+          "shaping": true
+        },
+        {
+          "address": "Glenfinnan Viaduct Trail,  PH37 4LT Glenfinnan Écosse Royaume-Uni",
+          "name": "*train horaire - train harry potter passe 4 fois par jour sur le viaduc.20 à 30 minutes avant car il est parfois en avance",
+          "category": "search_result",
+          "latitude": 56.874699,
+          "longitude": -5.433095
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvaturefastest"
+  },
+  "details": [
+    "route_information",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1774643115954,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        -6.128912,
+        54.597528,
+        -5.032466,
+        55.209218
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "address": "Top Up Tap, Agnew Crescent, DG9 7LW Stranraer Écosse Royaume-Uni",
+          "name": "Hotel Lakeview Guest House sympa",
+          "category": "search_result",
+          "latitude": 54.906206,
+          "longitude": -5.032466
+        },
+        {
+          "address": "Lane 1,  DG9 8RG Cairnryan Écosse Royaume-Uni",
+          "name": "*ferry_info - 15h30, 19h30, 23h30 check-in 45 à 60 minutes",
+          "category": "search_result",
+          "latitude": 54.98382,
+          "longitude": -5.032768,
+          "shaping": true
+        },
+        {
+          "name": "*point_de_vue",
+          "category": "search_result",
+          "latitude": 54.629438,
+          "longitude": -5.917511,
+          "shaping": true
+        },
+        {
+          "name": "Belfast 4 à 6h de visite Capitale Irlande du Nord - Titanic Belfast ",
+          "category": "search_result",
+          "latitude": 54.597528,
+          "longitude": -5.927124,
+          "shaping": true
+        },
+        {
+          "latitude": 55.057633,
+          "longitude": -5.982785,
+          "shaping": true
+        },
+        {
+          "latitude": 55.19546,
+          "longitude": -6.099687,
+          "shaping": true
+        },
+        {
+          "name": "Bivouac Game of Thrones - Stormlands Cliff",
+          "latitude": 55.209218,
+          "longitude": -6.128912
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

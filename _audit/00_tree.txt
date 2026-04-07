@@ -1,0 +1,91 @@
+Structure du dossier pour le volume Youtube
+Le numéro de série du volume est DCC2-FE5B
+F:.
+¦   a-propos.html
+¦   aferiy.html
+¦   alpes-aventure-festival-moto.html
+¦   alpes-cols-mythiques.html
+¦   aoocci.html
+¦   blackview.html
+¦   cap-nord-moto.html
+¦   carpuride.html
+¦   CNAME
+¦   codes-promo.html
+¦   contact.html
+¦   ecosse-irlande.html
+¦   equipement.html
+¦   espagne-2023.html
+¦   europe-asie-moto.html
+¦   fetch_youtube.py
+¦   gps.html
+¦   index.html
+¦   intercoms.html
+¦   komobi.html
+¦   LCDMH_Publication_v4_pin-yz.html
+¦   les-alpes-dans-tous-les-sens.html
+¦   nav-loader.js
+¦   nav.html
+¦   olight.html
+¦   photo-video.html
+¦   pneus.html
+¦   projet_lcdmh.md
+¦   README.md
+¦   roadbooks-widget.js
+¦   roadbooks.json
+¦   roadtrips.html
+¦   robots.txt
+¦   securite.html
+¦   send_report_email.py
+¦   seo_stats.json
+¦   seo_tracker.py
+¦   sitemap.html
+¦   sitemap.xml
+¦   test.txt
+¦   tests-motos.html
+¦   tests.html
+¦   trips.json
+¦   widget-roadtrip-snippet.html
+¦   
++---.github
+¦   ¦   .garder
+¦   ¦   
+¦   +---workflows
+¦           .garder
+¦           facebook_auto.yml
+¦           facebook_publisher.py
+¦           README_INSTALLATION.md
+¦           remote_job_manual.yml
+¦           seo_tracker.yml
+¦           update_videos.yml
+¦           
++---data
+¦   ¦   .gitkeep
+¦   ¦   videos.json
+¦   ¦   
+¦   +---trips
+¦           .gitkeep
+¦           cap-nord-2025.json
+¦           ecosse-irlande-2025.json
+¦           
++---images
+¦       aferiy-booster-batterie.webp
+¦       aferiy_station_alimentation_portable_.webp
+¦       bandeau-aoocci.png
+¦       bandeau-gps-aoocci-carpuride.png
+¦       bandeau-norvege.jpg
+¦       bandeau-pneus.png
+¦       bandeau-road-trip.jpg
+¦       bandeau-roadtrip.jpg
+¦       ecran-moto.jpg
+¦       les_alpes.jpg
+¦       photo-yves.jpg
+¦       xplore_x1-1.png
+¦       xplore_x1-2.png
+¦       
++---js
+¦       trip-feed.js
+¦       youtube-feed.js
+¦       
++---_audit
+        00_tree.txt
+        
