@@ -2,7 +2,7 @@
   const container = document.getElementById('lcdmh-nav');
   if (!container) return;
 
-  fetch('nav.html?v=' + Date.now(), { cache: 'no-store' })
+  fetch('/nav.html?v=' + Date.now(), { cache: 'no-store' })
     .then((response) => {
       if (!response.ok) throw new Error('HTTP ' + response.status);
       return response.text();
