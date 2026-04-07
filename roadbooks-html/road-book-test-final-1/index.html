@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Road book test final 1</title>
+
+<style>
+body {
+    margin:0;
+    background:#e5e7eb;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#0f172a;
+    font-size:17px;
+}
+.wrapper {
+    max-width:1360px;
+    margin:24px auto;
+    background:#ffffff;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+}
+.header {
+    background:#172554;
+    color:white;
+    padding:26px 30px;
+    border-bottom:4px solid #f97316;
+}
+.top-header-actions, .top-actions {
+    display:flex;
+    gap:12px;
+    margin-top:14px;
+    flex-wrap:wrap;
+}
+.top-btn {
+    display:inline-block;
+    background:#24324f;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:999px;
+    font-weight:bold;
+    font-size:14px;
+}
+.top-metrics {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    padding:24px 28px 12px 28px;
+}
+.metric {
+    background:#f8fafc;
+    border:1px solid #cbd5e1;
+    border-radius:14px;
+    padding:16px;
+    text-align:center;
+}
+.metric .big {
+    font-size:20px;
+    font-weight:bold;
+    color:#ea580c;
+}
+.info-box {
+    margin:8px 28px 16px 28px;
+    background:#f8fafc;
+    border:1px solid #cbd5e1;
+    border-left:4px solid #f97316;
+    border-radius:14px;
+    padding:18px;
+}
+.legend {
+    margin:0 0 10px 0;
+    padding:14px 28px;
+    border-top:1px solid #cbd5e1;
+    border-bottom:1px solid #cbd5e1;
+    background:#fff;
+}
+.content {
+    padding:18px 28px 8px 28px;
+}
+.comment-box {
+    margin:0 28px 24px 28px;
+    background:#f8fafc;
+    border:1px solid #cbd5e1;
+    border-radius:16px;
+    padding:18px;
+}
+.comment-box textarea {
+    width:100%;
+    min-height:140px;
+    border:1px solid #cbd5e1;
+    border-radius:12px;
+    padding:12px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:17px;
+    resize:vertical;
+    box-sizing:border-box;
+}
+.comment-actions {
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:12px;
+}
+.comment-btn {
+    border:none;
+    background:#172554;
+    color:#fff;
+    padding:10px 16px;
+    border-radius:999px;
+    cursor:pointer;
+    font-weight:bold;
+}
+.comment-btn.secondary { background:#64748b; }
+.comment-btn.mic { background:#ea580c; }
+.footer-nav {
+    display:flex;
+    justify-content:space-between;
+    padding:0 28px 24px 28px;
+    gap:12px;
+}
+small.meta {
+    color:#64748b;
+    display:block;
+    margin-top:6px;
+}
+.status {
+    margin-top:10px;
+    color:#64748b;
+    font-size:14px;
+}
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(360px,1fr));
+    gap:16px;
+    padding:24px 28px 28px 28px;
+}
+@media (max-width:900px) {
+    .top-metrics { grid-template-columns:repeat(2,1fr); }
+}
+</style>
+
+</head>
+<body>
+<div class="wrapper">
+    <div class="header">
+        <h1 style="margin:0;">🗺️ Road book test final 1</h1>
+        <div class="meta">LCDMH · Road trip en préparation — itinéraire prévisionnel susceptible d'évoluer</div>
+        <div class="top-actions">
+            <a class="top-btn" href="questions.html">❓ Questions à résoudre</a>
+            <a class="top-btn" href="https://lcdmh.com/LCDMH_Publication_v4_pin-yz.html">📤 Upload photos</a>
+        </div>
+    </div>
+    <div class="grid">
+        
+        <a href="jours/jour-01.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J01 · 04/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    1000 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Direct Annecy - Douvres → Hôtel The Shurland Hotel 5/05</h2>
+            <p style="margin:0;color:#475569;">11h24 · 5 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-02.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J02 · 05/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    535 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Hôtel The Shurland Hotel 5/05 → Old School B&amp;B - 6/05</h2>
+            <p style="margin:0;color:#475569;">6h49 · 2 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-03.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J03 · 06/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    216 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Old School B&amp;B - 6/05 → Camping Clachtoll Beach Campsite option ?</h2>
+            <p style="margin:0;color:#475569;">3h05 · 2 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-04.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J04 · 07/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    55 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Camping Clachtoll Beach Campsite option ? → Départ - 8/05</h2>
+            <p style="margin:0;color:#475569;">1h34 · 7 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-05.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J05 · 08/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    260 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Départ - 8/05 → Blair Castle option ?</h2>
+            <p style="margin:0;color:#475569;">4h30 · 7 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-06.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J06 · 10/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    193 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Blair Castle option ? → Bivouac ? ? - 12/05</h2>
+            <p style="margin:0;color:#475569;">2h49 · 8 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-07.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J07 · 11/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    241 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Bivouac ? ? - 12/05 → Fortrose Bay Campsite option ? - 13/05</h2>
+            <p style="margin:0;color:#475569;">4h03 · 6 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-08.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J08 · 12/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    337 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Fortrose Bay Campsite option ? - 13/05 → Camping Sango Sands Oasis - 14/05</h2>
+            <p style="margin:0;color:#475569;">5h29 · 10 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-09.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J09 · 13/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    201 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Camping Sango Sands Oasis - 14/05 → Camping Clachtoll Beach Campsite - 16/05</h2>
+            <p style="margin:0;color:#475569;">2h52 · 6 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-10.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J10 · 14/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    246 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Camping Clachtoll Beach Campsite - 16/05 → Bivouac ? - 17/05</h2>
+            <p style="margin:0;color:#475569;">3h52 · 10 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-11.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J11 · 15/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    258 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Bivouac ? - 17/05 → Kinloch Campsite</h2>
+            <p style="margin:0;color:#475569;">4h11 · 6 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-12.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J12 · 16/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    160 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Kinloch Campsite → train harry potter info ? passe 4 fois par jour sur le viaduc.20 à 30 minutes avant car il est parfois en avance</h2>
+            <p style="margin:0;color:#475569;">2h59 · 4 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-13.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J13 · 17/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    54 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">train harry potter info ? passe 4 fois par jour sur le viaduc.20 à 30 minutes avant car il est parfois en avance → Camping Glencoe Visitor Centre - National Trust for Scotland</h2>
+            <p style="margin:0;color:#475569;">0h55 · 4 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-14.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J14 · 18/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    285 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Camping Glencoe Visitor Centre - National Trust for Scotland → Hotel Lakeview Guest House sympa</h2>
+            <p style="margin:0;color:#475569;">4h22 · 6 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-15.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J15 · 19/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    194 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Hotel Lakeview Guest House sympa → Bivouac ? ? Game of Thrones - Stormlands Cliff</h2>
+            <p style="margin:0;color:#475569;">5h40 · 7 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-16.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J16 · 20/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    33 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Bivouac ? ? Game of Thrones - Stormlands Cliff → camping option prix ? * - camping A réserver Causeway Coast Wigwams</h2>
+            <p style="margin:0;color:#475569;">0h32 · 4 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-17.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J17 · 21/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    226 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">camping option prix ? * - camping A réserver Causeway Coast Wigwams → campings option ? - Option Bivouac</h2>
+            <p style="margin:0;color:#475569;">4h11 · 7 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-18.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J18 · 22/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    167 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">campings option ? - Option Bivouac → Donegal Town Château Donegal - Village charmant</h2>
+            <p style="margin:0;color:#475569;">2h55 · 4 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-19.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J19 · 23/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    229 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Donegal Town Château Donegal - Village charmant → Achill Island info ? 🎥 DRONE MAJEUR - Plus grande île Irlande</h2>
+            <p style="margin:0;color:#475569;">3h49 · 2 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-20.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J20 · 24/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    133 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Achill Island info ? 🎥 DRONE MAJEUR - Plus grande île Irlande → Camping Renvyle Beach Caravan &amp; Camping Park, Renvyle Peninsula, Tully Ireland</h2>
+            <p style="margin:0;color:#475569;">2h11 · 5 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-21.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J21 · 25/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    89 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Camping Renvyle Beach Caravan &amp; Camping Park, Renvyle Peninsula, Tully Ireland → Bivouac ? ? - Galway info ? Ville animée culturelle</h2>
+            <p style="margin:0;color:#475569;">1h36 · 4 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-22.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J22 · 26/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    69 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Bivouac ? ? - Galway info ? Ville animée culturelle → Poulnabrone Dolmen 🎥 PHOTO - Tombe mégalithique 5000 ans</h2>
+            <p style="margin:0;color:#475569;">1h08 · 3 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-23.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J23 · 27/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    101 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Poulnabrone Dolmen 🎥 PHOTO - Tombe mégalithique 5000 ans → Visite ? Loop Head 🎥 DRONE - Péninsule phare isolée</h2>
+            <p style="margin:0;color:#475569;">1h21 · 2 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-24.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J24 · 28/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    145 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Visite ? Loop Head 🎥 DRONE - Péninsule phare isolée → Gap of Dunloe 🎥 DRONE MAJEUR - Défilé montagne 11 km</h2>
+            <p style="margin:0;color:#475569;">2h42 · 2 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-25.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J25 · 29/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    538 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Gap of Dunloe 🎥 DRONE MAJEUR - Défilé montagne 11 km → Fishguard</h2>
+            <p style="margin:0;color:#475569;">13h26 · 8 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-26.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J26 · 30/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    272 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Fishguard → Visite ? Le village carte postale</h2>
+            <p style="margin:0;color:#475569;">3h58 · 3 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-27.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J27 · 31/05/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    62 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Visite ? Le village carte postale → Visite ? drone photo point_de_vue - Stonehenge</h2>
+            <p style="margin:0;color:#475569;">1h08 · 2 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-28.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J28 · 01/06/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    375 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Visite ? drone photo point_de_vue - Stonehenge → Prix B&amp;B - Prévoir Hotel</h2>
+            <p style="margin:0;color:#475569;">5h56 · 3 points utiles retenus</p>
+        </a>
+        
+        <a href="jours/jour-29.html" style="
+            display:block;
+            text-decoration:none;
+            color:#0f172a;
+            background:#fff;
+            border:1px solid #cbd5e1;
+            border-radius:16px;
+            padding:18px;">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+                <strong style="font-size:20px;color:#172554;">J29 · 02/06/2026</strong>
+                <span style="background:#f59e0b;color:white;padding:6px 12px;border-radius:999px;font-weight:bold;">
+                    812 km
+                </span>
+            </div>
+            <h2 style="margin:12px 0 8px 0;">Prix B&amp;B - Prévoir Hotel → Fin de road trip</h2>
+            <p style="margin:0;color:#475569;">8h46 · 2 points utiles retenus</p>
+        </a>
+        
+    </div>
+</div>
+</body>
+</html>

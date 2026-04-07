@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>J01 · 04/05/2026</title>
+
+<style>
+body {
+    margin:0;
+    background:#e5e7eb;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#0f172a;
+    font-size:17px;
+}
+.wrapper {
+    max-width:1360px;
+    margin:24px auto;
+    background:#ffffff;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+}
+.header {
+    background:#172554;
+    color:white;
+    padding:26px 30px;
+    border-bottom:4px solid #f97316;
+}
+.top-header-actions, .top-actions {
+    display:flex;
+    gap:12px;
+    margin-top:14px;
+    flex-wrap:wrap;
+}
+.top-btn {
+    display:inline-block;
+    background:#24324f;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:999px;
+    font-weight:bold;
+    font-size:14px;
+}
+.top-metrics {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    padding:24px 28px 12px 28px;
+}
+.metric {
+    background:#f8fafc;
+    border:1px solid #cbd5e1;
+    border-radius:14px;
+    padding:16px;
+    text-align:center;
+}
+.metric .big {
+    font-size:20px;
+    font-weight:bold;
+    color:#ea580c;
+}
+.info-box {
+    margin:8px 28px 16px 28px;
+    background:#f8fafc;
+    border:1px solid #cbd5e1;
+    border-left:4px solid #f97316;
+    border-radius:14px;
+    padding:18px;
+}
+.legend {
+    margin:0 0 10px 0;
+    padding:14px 28px;
+    border-top:1px solid #cbd5e1;
+    border-bottom:1px solid #cbd5e1;
+    background:#fff;
+}
+.content {
+    padding:18px 28px 8px 28px;
+}
+.comment-box {
+    margin:0 28px 24px 28px;
+    background:#f8fafc;
+    border:1px solid #cbd5e1;
+    border-radius:16px;
+    padding:18px;
+}
+.comment-box textarea {
+    width:100%;
+    min-height:140px;
+    border:1px solid #cbd5e1;
+    border-radius:12px;
+    padding:12px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:17px;
+    resize:vertical;
+    box-sizing:border-box;
+}
+.comment-actions {
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:12px;
+}
+.comment-btn {
+    border:none;
+    background:#172554;
+    color:#fff;
+    padding:10px 16px;
+    border-radius:999px;
+    cursor:pointer;
+    font-weight:bold;
+}
+.comment-btn.secondary { background:#64748b; }
+.comment-btn.mic { background:#ea580c; }
+.footer-nav {
+    display:flex;
+    justify-content:space-between;
+    padding:0 28px 24px 28px;
+    gap:12px;
+}
+small.meta {
+    color:#64748b;
+    display:block;
+    margin-top:6px;
+}
+.status {
+    margin-top:10px;
+    color:#64748b;
+    font-size:14px;
+}
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(360px,1fr));
+    gap:16px;
+    padding:24px 28px 28px 28px;
+}
+@media (max-width:900px) {
+    .top-metrics { grid-template-columns:repeat(2,1fr); }
+}
+</style>
+
+<link rel="stylesheet" href="../css/roadbook-jour-override.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="header">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;">
+            <h1 style="margin:0;">J01 · 04/05/2026</h1>
+            <div style="background:#f59e0b;color:white;padding:10px 18px;border-radius:999px;font-weight:bold;">
+                1000 km
+            </div>
+        </div>
+        <div class="top-header-actions">
+            <a class="top-btn" href="../index.html">🗺️ Index</a>
+            <a class="top-btn" href="../questions.html">❓ Questions</a>
+            <a class="top-btn" href="https://lcdmh.com/LCDMH_Publication_v4_pin-yz.html">📤 Upload photos</a>
+        </div>
+    </div>
+
+    <div class="top-metrics">
+        <div class="metric"><div class="big">1000</div>Kilomètres</div>
+        <div class="metric"><div class="big">11h24</div>Temps route</div>
+        <div class="metric"><div class="big">101.72 €</div>Carburant estimé</div>
+        <div class="metric"><div class="big">6.5</div>/100 km</div>
+    </div>
+
+    <div class="info-box">
+        <div><strong>🏁 Départ du matin :</strong> Direct Annecy - Douvres</div>
+        <div><strong>🏁 Arrivée du soir :</strong> Hôtel The Shurland Hotel 5/05</div>
+        <small class="meta"><strong>Étape départ :</strong> Départ 4 mai 2026 J1 - Direct Annecy -Douvres</small>
+        <small class="meta"><strong>Étape arrivée :</strong> Couchage Hôtel The Shurland Hotel 5/05</small>
+        <small class="meta"><strong>Prix carburant appliqué :</strong> 1.565 €/L</small>
+        <small class="meta"><strong>Points utiles retenus :</strong> 5 (instructions de navigation ignorées)</small>
+    </div>
+
+    <div class="legend">
+        <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#22c55e;color:white;">Départ</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#ea580c;color:white;">Étape</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#64748b;color:white;">Passage</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#8b5cf6;color:white;">Spot drone</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#0891b2;color:white;">Ferry</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#2563eb;color:white;">Train</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#0f766e;color:white;">Spot photo</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#dc2626;color:white;">Alerte</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#3b82f6;color:white;">Arrivée</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#7c3aed;color:white;">Base / pause</span>
+    </div>
+
+    
+        <div class="info-box" style="background:#fafafa;border:1px solid #e5e5e5;">
+            <h2 style="margin:0 0 10px 0;color:#1a2b56;">❓ Questions du jour <a href="../questions.html" style="font-size:14px;color:#f97316;margin-left:10px;">Voir toutes →</a></h2>
+            <p style='font-size:12px;color:#666;margin-bottom:10px;'>✅ 2 résolu(s) · ⏳ 0 en attente</p>
+            <ul style="margin:0;padding:0;list-style:none;">
+                
+            <li style="margin-bottom:12px;padding:12px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:0 8px 8px 0;">
+                <div style="display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap;">
+                    <span style="font-size:20px;">🚂</span>
+                    <div style="flex:1;">
+                        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+                            <strong style="color:#1a1a1a;">Calais Trouver Point Gps Passage Avec La</strong>
+                             <span style='color:#22c55e;font-weight:bold;'>€50-120</span>
+                            <span style='background:#dcfce7;color:#166534;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:bold;'>RÉSOLU</span>
+                        </div>
+                        <div style="margin-top:4px;"><span style='background:#e0e7ff;color:#4338ca;padding:2px 8px;border-radius:4px;font-size:11px;'>INFO</span> <span style='background:#e0e7ff;color:#4338ca;padding:2px 8px;border-radius:4px;font-size:11px;'>RESERVATION</span> <span style='background:#e0e7ff;color:#4338ca;padding:2px 8px;border-radius:4px;font-size:11px;'>PRIX</span></div>
+                        <div style='font-weight:bold;color:#166534;margin-top:6px;'>✅ Eurotunnel Le Shuttle (Calais → Folkestone)</div><div style='font-size:12px;color:#555;margin-top:4px;'>📍 Peuplingues, Pas-de-Calais · Durée traversée: 35 minutes · Arriver: Arriver 45 min avant</div><div style='margin-top:6px;'><a href='https://www.eurotunnel.com' target='_blank' style='font-size:11px;color:#4338ca;margin-right:8px;'>Réserver</a></div><div style='font-size:10px;color:#999;margin-top:4px;'>Source: Base de données LCDMH</div>
+                    </div>
+                </div>
+            </li>
+        
+            <li style="margin-bottom:12px;padding:12px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:0 8px 8px 0;">
+                <div style="display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap;">
+                    <span style="font-size:20px;">🛏️</span>
+                    <div style="flex:1;">
+                        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+                            <strong style="color:#1a1a1a;">*Option couchage ?</strong>
+                            
+                            <span style='background:#dcfce7;color:#166534;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:bold;'>RÉSOLU</span>
+                        </div>
+                        <div style="margin-top:4px;"><span style='background:#e0e7ff;color:#4338ca;padding:2px 8px;border-radius:4px;font-size:11px;'>OPTION</span></div>
+                        <div style='font-weight:bold;color:#166534;margin-top:6px;'>✅ Pour un motard solo en Écosse/Irlande avec tente et budget serré, voici des options à Eastchurch, Kent :</div><div style='font-size:12px;color:#555;margin-top:4px;'>📍 Eastchurch, Kent · 🌍 Zone: southeast england · Camping:** Cherchez des campings municipaux ou &quot;farm campsites&quot;. Ils sont souvent les moins chers. V</div><div style='margin-top:6px;'><a href='https://www.booking.com/searchresults.html?ss=Eastchurch+Kent' target='_blank' style='font-size:11px;color:#4338ca;margin-right:8px;'>Booking.com</a></div><div style='font-size:10px;color:#999;margin-top:4px;'>Source: Gemini 2.0 Flash</div>
+                    </div>
+                </div>
+            </li>
+        
+            </ul>
+        </div>
+        
+
+    
+        <div class="info-box">
+            <h2 style="margin:0 0 10px 0;">⭐ Points forts du jour</h2>
+            <ul style="margin:0;padding-left:20px;color:#334155;">
+                <li><strong>Shuttle info reservation prix ? - Calais Attention Trouver Point GPS Passage avec la navette</strong> — ferry</li>
+            </ul>
+        </div>
+        
+
+    <div class="content">
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #22c55e;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">0 km</div>
+                <div style="font-size:13px;color:#64748b;">0h00</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #2</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Direct Annecy - Douvres</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#22c55e;color:white;">Départ</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">Départ 4 mai 2026 J1 - Direct Annecy -Douvres</p>
+                <p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> Calcaire &amp; Granite — Calcaire carbonifère, granite de Dartmoor, craie de Douvres.</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> Fais un point carburant, météo et lumière avant de repartir.</p>
+                <div style="font-size:12px;color:#94a3b8;">
+                    45.809835, 6.062085 · Royaume-Uni
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/maps?q=45.809835,6.062085" target="_blank" rel="noopener">Maps</a> · <a href="https://www.google.com/search?q=Direct+Annecy+-+Douvres" target="_blank" rel="noopener">Recherche</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #0891b2;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">856 km</div>
+                <div style="font-size:13px;color:#64748b;">8h57</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #3</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Shuttle info reservation prix ? - Calais Attention Trouver Point GPS Passage avec la navette</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#0891b2;color:white;">Ferry</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">*shuttle info reservation prix ? - Calais Attention Trouver Point GPS Passage avec la navette</p>
+                <p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> Calcaire &amp; Granite — Calcaire carbonifère, granite de Dartmoor, craie de Douvres.</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> Vérifie l’horaire du jour et présente-toi en avance à l’embarquement.</p>
+                <details style="margin:10px 0;background:#f0fdf4;border:1px solid #86efac;border-left:4px solid #22c55e;border-radius:8px;overflow:hidden;">
+                    <summary style="padding:12px;cursor:pointer;font-weight:bold;color:#166534;list-style:none;display:flex;align-items:center;gap:8px;">
+                        <span style="transition:transform 0.2s;">▶</span> ✅ Infos enrichies : Eurotunnel Le Shuttle (Calais → Folkestone)
+                    </summary>
+                    <div style="padding:0 12px 12px 12px;border-top:1px solid #86efac;">
+                        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px;"><span style="font-size:18px;">🚂</span><strong style="color:#166534;">✅ Eurotunnel Le Shuttle (Calais → Folkestone)</strong></div><div style="color:#15803d;font-weight:bold;font-size:1.1rem;margin-top:6px;">💰 €50-120</div><div style="font-size:13px;color:#334155;margin-top:6px;">📍 Peuplingues, Pas-de-Calais · Durée traversée: 35 minutes · Arriver: Arriver 45 min avant</div><div style="margin-top:8px;"><a href="https://www.eurotunnel.com" target="_blank" style="display:inline-block;padding:4px 10px;background:#dcfce7;color:#166534;border-radius:6px;font-size:12px;text-decoration:none;margin-right:6px;">Réserver</a></div><div style="font-size:10px;color:#999;margin-top:8px;">📍 Source: Base de données LCDMH</div>
+                    </div>
+                </details>
+                <div style="font-size:12px;color:#94a3b8;">
+                    50.923489, 1.777725 · Royaume-Uni
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/maps?q=50.923489,1.777725" target="_blank" rel="noopener">Maps</a> · <a href="https://www.google.com/search?q=Shuttle+info+reservation+prix+%3F+-+Calais+Attention+Trouver+Point+GPS+Passage+avec+la+navette" target="_blank" rel="noopener">Recherche</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #64748b;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">927 km</div>
+                <div style="font-size:13px;color:#64748b;">10h21</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #4</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Attention sortie Angleterre conduite à gauche</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#64748b;color:white;">Passage</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">Attention sortie Angleterre conduite à gauche</p>
+                <p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> Calcaire &amp; Granite — Calcaire carbonifère, granite de Dartmoor, craie de Douvres.</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> Fais un point carburant, météo et lumière avant de repartir.</p>
+                <div style="font-size:12px;color:#94a3b8;">
+                    51.092769, 1.114383 · Royaume-Uni
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/maps?q=51.092769,1.114383" target="_blank" rel="noopener">Maps</a> · <a href="https://www.google.com/search?q=Attention+sortie+Angleterre+conduite+%C3%A0+gauche" target="_blank" rel="noopener">Recherche</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #64748b;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">1000 km</div>
+                <div style="font-size:13px;color:#64748b;">11h24</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #5</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Option couchage ?</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#64748b;color:white;">Passage</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">*Option couchage ?</p>
+                <p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> Calcaire &amp; Granite — Calcaire carbonifère, granite de Dartmoor, craie de Douvres.</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> Fais un point carburant, météo et lumière avant de repartir.</p>
+                <details style="margin:10px 0;background:#f0fdf4;border:1px solid #86efac;border-left:4px solid #22c55e;border-radius:8px;overflow:hidden;">
+                    <summary style="padding:12px;cursor:pointer;font-weight:bold;color:#166534;list-style:none;display:flex;align-items:center;gap:8px;">
+                        <span style="transition:transform 0.2s;">▶</span> ✅ Infos enrichies : Pour un motard solo en Écosse/Irlande avec tente e
+                    </summary>
+                    <div style="padding:0 12px 12px 12px;border-top:1px solid #86efac;">
+                        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px;"><span style="font-size:18px;">🛏️</span><strong style="color:#166534;">✅ Pour un motard solo en Écosse/Irlande avec tente et budget serré, voici des options à Eastchurch, Kent :</strong></div><div style="font-size:13px;color:#334155;margin-top:6px;">📍 Eastchurch, Kent · 🌍 Zone: southeast england · Camping:** Cherchez des campings municipaux ou &quot;farm campsites&quot;. Ils sont souvent les moins chers. V</div><div style="margin-top:8px;"><a href="https://www.booking.com/searchresults.html?ss=Eastchurch+Kent" target="_blank" style="display:inline-block;padding:4px 10px;background:#dcfce7;color:#166534;border-radius:6px;font-size:12px;text-decoration:none;margin-right:6px;">Booking.com</a></div><div style="font-size:10px;color:#999;margin-top:8px;">📍 Source: Gemini 2.0 Flash</div>
+                    </div>
+                </details>
+                <div style="font-size:12px;color:#94a3b8;">
+                    51.406889, 0.857969 · Royaume-Uni
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/maps?q=51.406889,0.857969" target="_blank" rel="noopener">Maps</a> · <a href="https://www.google.com/search?q=Option+couchage+%3F" target="_blank" rel="noopener">Recherche</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #3b82f6;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">1000 km</div>
+                <div style="font-size:13px;color:#64748b;">11h24</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #6</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Hôtel The Shurland Hotel 5/05</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#3b82f6;color:white;">Arrivée</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">Couchage Hôtel The Shurland Hotel 5/05</p>
+                <p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> Calcaire &amp; Granite — Calcaire carbonifère, granite de Dartmoor, craie de Douvres.</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> Pense au check-in et au ravitaillement avant la fermeture.</p>
+                <div style="font-size:12px;color:#94a3b8;">
+                    51.406944, 0.858056 · Royaume-Uni
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/maps?q=51.406944,0.858056" target="_blank" rel="noopener">Maps</a> · <a href="https://www.google.com/search?q=H%C3%B4tel+The+Shurland+Hotel+5%2F05" target="_blank" rel="noopener">Recherche</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="comment-box">
+        <h2 style="margin-top:0;">🗣️ Commentaire du jour J01</h2>
+        <textarea id="commentaire-jour" placeholder="Tu peux écrire ou dicter ton commentaire ici..."></textarea>
+        <div class="comment-actions">
+            <button id="btn-mic-comment" class="comment-btn mic">🎤 Micro</button>
+            <button id="btn-save-comment" class="comment-btn">💾 Enregistrer</button>
+            <button id="btn-clear-comment" class="comment-btn secondary">🗑️ Effacer</button>
+        </div>
+        <div id="commentaire-status" class="status">Prêt.</div>
+    </div>
+
+    <div class="footer-nav">
+        <span></span>
+        <a href="../index.html" style="color:#172554;text-decoration:none;">🗺️ Master planning</a>
+        <a href="jour-02.html" style="color:#ea580c;text-decoration:none;">Jour suivant →</a>
+    </div>
+</div>
+
+<script>
+(function() {
+    const storageKey = "roadbook_comment_J01";
+    const textarea = document.getElementById("commentaire-jour");
+    const status = document.getElementById("commentaire-status");
+    const btnSave = document.getElementById("btn-save-comment");
+    const btnClear = document.getElementById("btn-clear-comment");
+    const btnMic = document.getElementById("btn-mic-comment");
+
+    function setStatus(msg) {
+        if (status) status.textContent = msg;
+    }
+
+    function loadComment() {
+        const saved = localStorage.getItem(storageKey);
+        if (saved && textarea) {
+            textarea.value = saved;
+            setStatus("Commentaire rechargé depuis cet appareil.");
+        }
+    }
+
+    function saveComment() {
+        if (!textarea) return;
+        localStorage.setItem(storageKey, textarea.value || "");
+        setStatus("Commentaire enregistré sur cet appareil.");
+    }
+
+    function clearComment() {
+        if (!textarea) return;
+        textarea.value = "";
+        localStorage.removeItem(storageKey);
+        setStatus("Commentaire effacé sur cet appareil.");
+    }
+
+    if (btnSave) btnSave.addEventListener("click", saveComment);
+    if (btnClear) btnClear.addEventListener("click", clearComment);
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+        if (btnMic) {
+            btnMic.disabled = true;
+            btnMic.title = "Reconnaissance vocale non supportée par ce navigateur";
+        }
+        setStatus("Micro non supporté par ce navigateur.");
+    } else {
+        const recognition = new SpeechRecognition();
+        recognition.lang = "fr-FR";
+        recognition.interimResults = false;
+        recognition.continuous = false;
+
+        if (btnMic) {
+            btnMic.addEventListener("click", function() {
+                setStatus("Écoute en cours...");
+                recognition.start();
+            });
+        }
+
+        recognition.onresult = function(event) {
+            const text = event.results[0][0].transcript;
+            if (textarea) {
+                if (textarea.value && !textarea.value.endsWith(" ")) {
+                    textarea.value += " ";
+                }
+                textarea.value += text;
+            }
+            saveComment();
+            setStatus("Texte dicté et enregistré.");
+        };
+
+        recognition.onerror = function() {
+            setStatus("Erreur micro ou dictée interrompue.");
+        };
+
+        recognition.onend = function() {
+            if ((textarea && textarea.value) || localStorage.getItem(storageKey)) {
+                setStatus("Prêt.");
+            }
+        };
+    }
+
+    loadComment();
+})();
+</script>
+
+</body>
+</html>
