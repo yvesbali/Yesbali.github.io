@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>road-trip-moto-test-1 - PDF</title>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+:root { --primary:#1a2b56; --accent:#f97316; --bg-light:#f8fafc; --white:#fff; --text:#334155; --border:#e2e8f0; }
+body { font-family:'Segoe UI',system-ui,sans-serif; margin:0; padding:0; background:#64748b; color:var(--text); line-height:1.4; }
+.page { width:210mm; min-height:297mm; margin:20px auto; background:#fff; padding:20mm; box-shadow:0 15px 35px rgba(0,0,0,.35); box-sizing:border-box; position:relative; page-break-after:always; }
+header { background:var(--primary); color:white; padding:15px 25px; margin:-20mm -20mm 30px -20mm; display:flex; justify-content:space-between; align-items:center; box-shadow:0 4px 10px rgba(0,0,0,.15); }
+.hero { text-align:center; margin-bottom:30px; }
+.hero h1 { color:var(--primary); font-size:3.3rem; margin:5px 0; text-transform:uppercase; letter-spacing:3px; }
+.hero .meta { color:#64748b; font-size:1.1rem; font-weight:bold; }
+.stats-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:15px; margin-bottom:25px; }
+.tile { border:1px solid var(--border); border-radius:12px; padding:15px; text-align:center; background:#fdfdfd; box-shadow:0 5px 12px rgba(0,0,0,.08); }
+.tile i { font-size:1.8rem; color:var(--accent); margin-bottom:10px; display:block; }
+.tile-val { font-size:1.5rem; font-weight:bold; color:var(--primary); display:block; }
+.tile-label { font-size:.8rem; color:#64748b; text-transform:uppercase; font-weight:bold; }
+.stay-tile { border:1px solid var(--border); border-radius:12px; padding:25px; margin-bottom:30px; display:flex; justify-content:space-around; background:#fdfdfd; box-shadow:0 5px 12px rgba(0,0,0,.08); }
+.stay-item { text-align:center; }
+.stay-item i { color:var(--accent); font-size:1.5rem; display:block; margin-bottom:8px; }
+.stay-item span { font-weight:bold; font-size:1rem; color:var(--primary); }
+.journey-box { border:1px solid var(--border); background:#f8fafc; padding:25px; border-radius:15px; box-shadow:0 6px 15px rgba(0,0,0,.08); }
+.journey-text { font-size:1rem; color:#475569; text-align:justify; columns:2; column-gap:40px; }
+.journey-box h2 { color:var(--primary); margin-top:0; font-size:1.5rem; border-bottom:2px solid var(--accent); padding-bottom:10px; }
+.admin-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.admin-card { border-left:5px solid var(--accent); background:#fffaf5; padding:20px; border-radius:0 12px 12px 0; box-shadow:0 5px 12px rgba(0,0,0,.08); }
+.admin-card h3 { margin:0 0 10px 0; font-size:1.1rem; color:var(--primary); text-transform:uppercase; }
+.admin-card ul { margin:0; padding-left:18px; }
+.expert-card { border:1px solid var(--border); padding:15px; border-radius:12px; background:#fdfdfd; box-shadow:0 5px 12px rgba(0,0,0,.08); }
+.expert-card h3 { margin:0 0 10px 0; color:var(--primary); font-size:1rem; border-bottom:1px solid var(--accent); padding-bottom:5px; }
+.qr-box { background:var(--primary); color:white; padding:20px; border-radius:15px; display:flex; align-items:center; justify-content:space-between; margin:20px 0; box-shadow:0 8px 20px rgba(0,0,0,.2); gap:20px; }
+.qr-box img { background:white; padding:8px; border-radius:10px; width:110px; height:110px; object-fit:contain; }
+.route-table { width:100%; border-collapse:collapse; font-size:.8rem; margin-top:15px; box-shadow:0 5px 15px rgba(0,0,0,.05); }
+.route-table th { background:var(--primary); color:white; text-align:left; padding:8px; }
+.route-table td { padding:8px; border-bottom:1px solid #eee; vertical-align:top; }
+.day-num { color:var(--accent); font-weight:bold; }
+footer { position:absolute; bottom:10mm; left:20mm; right:20mm; border-top:1px solid #eee; padding-top:10px; font-size:.8rem; color:#94a3b8; display:flex; justify-content:space-between; }
+
+/* === CORRECTIF POUR L'IMPRESSION PDF === */
+@page {
+    size: A4;
+    margin: 0 !important; /* Retire les marges forcées par le navigateur (les dates/urls moches) */
+}
+
+@media print { 
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    body { 
+        background: #fff !important; 
+        margin: 0 !important;
+        padding: 0 !important;
+    } 
+    .page { 
+        margin: 0 !important; 
+        min-height: auto !important;
+        border: none !important; 
+        page-break-after: always !important; 
+        box-shadow: none !important;
+    }
+    .route-table { page-break-inside: auto !important; }
+    .route-table tr { page-break-inside: avoid !important; }
+}
+/* ======================================= */
+
+</style>
+</head>
+<body>
+<div class='page'>
+  <header>
+    <div style='font-weight:bold;'>LCDMH - ROADBOOK MOTO 2026</div>
+    <div style='background:var(--accent); padding:4px 12px; border-radius:4px; font-weight:bold; font-size:.8rem;'>PRÉVISIONNEL</div>
+  </header>
+  <div class='hero'>
+    <p style='text-transform:uppercase; letter-spacing:2px; color:#64748b; font-weight:bold;'>Roadbook prévisionnel</p>
+    <h1>road-trip-moto-test-1</h1>
+    <p class='meta'>Du 04/05/2026 au 02/06/2026 • Honda NT1100 • Solo</p>
+  </div>
+  <div class='stats-grid'>
+    <div class='tile'><i class='fa-solid fa-road'></i><span class='tile-val'>7,486 km</span><span class='tile-label'>Distance</span></div>
+    <div class='tile'><i class='fa-solid fa-wallet'></i><span class='tile-val'>~3317 €</span><span class='tile-label'>Budget total</span></div>
+    <div class='tile'><i class='fa-solid fa-file-lines'></i><span class='tile-val'>29</span><span class='tile-label'>Jours calculés</span></div>
+    <div class='tile'><i class='fa-solid fa-calendar-days'></i><span class='tile-val'>04/05/2026 → 02/06/2026</span><span class='tile-label'>Période</span></div>
+  </div>
+  <div class='stay-tile'>
+    <div class='stay-item'><i class='fa-solid fa-tents'></i><span>9 Campings</span></div>
+    <div class='stay-item'><i class='fa-solid fa-mountain'></i><span>4 Bivouacs</span></div>
+    <div class='stay-item'><i class='fa-solid fa-hotel'></i><span>4 Hôtels / B&B</span></div>
+  </div>
+  <div class='expert-card' style='margin-bottom:20px;'>
+    <h3><i class='fa-solid fa-coins'></i> Budget Prévisionnel</h3>
+    <table style='width:100%; font-size:.9rem; border-collapse:collapse; margin-top:10px;'>
+      <tr style='border-bottom:1px solid #eee;'><td style='padding:6px 0;'><i class='fa-solid fa-gas-pump' style='color:var(--accent);width:20px;'></i> Carburant</td><td style='text-align:right; font-weight:bold;'>~1122 €</td></tr>
+      <tr style='border-bottom:1px solid #eee;'><td style='padding:6px 0;'><i class='fa-solid fa-bed' style='color:var(--accent);width:20px;'></i> Hébergements</td><td style='text-align:right; font-weight:bold;'>745 €</td></tr>
+      <tr style='font-size:.8rem; color:#666;'><td style='padding:2px 0 2px 24px;'>9 nuits x 15 EUR = 135 EUR</td><td></td></tr>
+      <tr style='font-size:.8rem; color:#666;'><td style='padding:2px 0 2px 24px;'>2 nuits x 70 EUR = 140 EUR</td><td></td></tr>
+      <tr style='font-size:.8rem; color:#666;'><td style='padding:2px 0 2px 24px;'>2 nuits x 55 EUR = 110 EUR</td><td></td></tr>
+      <tr style='font-size:.8rem; color:#666;'><td style='padding:2px 0 6px 24px;'>4 nuits x 0 EUR = 0 EUR</td><td></td></tr>
+      <tr style='border-bottom:1px solid #eee;'><td style='padding:6px 0;'><i class='fa-solid fa-utensils' style='color:var(--accent);width:20px;'></i> Alimentation (50 €/jour x 29 jours)</td><td style='text-align:right; font-weight:bold;'>1450 €</td></tr>
+      <tr style='background:#f0f9ff; font-weight:bold; font-size:1.1rem;'><td style='padding:10px 0; color:var(--primary);'>TOTAL ESTIMÉ</td><td style='text-align:right; color:var(--accent); font-size:1.2rem;'>~3317 €</td></tr>
+    </table>
+  </div>
+  <div class='journey-box'>
+    <h2><i class='fa-solid fa-map-location-dot'></i> L'Esprit du Parcours</h2>
+    <div class='journey-text'>Cette grande traversée de 29 jours couvre plus de 7 486 km entre Irlande et Royaume-Uni. Au programme : 9 nuits en camping, 5 bivouacs, 3 nuits en hôtel et 1 nuit en B&amp;B.
+
+Points forts : Dunnottar Castle, Durness.
+
+Une aventure à moto où chaque étape promet son lot de découvertes et de rencontres.</div>
+  </div>
+  <footer><span>Roadbook Moto - Yves Vella</span><span>Page 1</span></footer>
+</div>
+<div class='page'>
+  <h2 style='color:var(--primary); border-bottom:3px solid var(--accent); padding-bottom:10px;'>Informations Essentielles</h2>
+  <div class='admin-grid' style='margin-top:30px;'>
+    <div class='admin-card'><h3>Documents</h3><ul><li>Passeport ou CNI valide selon votre situation.</li><li>Carte grise, permis, assurance et assistance.</li><li>Copies numériques des papiers conseillées.</li><li>Carte Européenne d&#x27;Assurance Maladie (CEAM) recommandée.</li><li>Assurance voyage conseillée pour le UK (post-Brexit).</li></ul></div>
+    <div class='admin-card'><h3>Monnaies & Conversion</h3><ul><li>Royaume-Uni : Livre Sterling (£) — £1 ≈ €1.17</li><li>Règle simple : prix en £ + 20% = prix en €</li><li>Irlande : Euro (€).</li><li>Carte bancaire conseillée pour tout le voyage.</li></ul></div>
+    <div class='admin-card'><h3>Sur la route</h3><ul><li>Conduite à gauche au Royaume-Uni et Irlande.</li><li>Vitesses UK : 30 mph (48 km/h) ville, 60 mph (96 km/h) route, 70 mph (112 km/h) autoroute.</li><li>Ronds-points : priorité à droite (sens horaire).</li><li>Surveiller météo, vent et ferries.</li><li>Cartes hors-ligne conseillées sur téléphone et GPS.</li></ul></div>
+    <div class='admin-card'><h3>Téléphone & Urgences</h3><ul><li>Indicatif UK : +44 | Irlande : +353 | France : +33</li><li>Urgences UK : 999 (police, pompiers, ambulance)</li><li>Urgences Irlande : 112 ou 999</li><li>Ambassade FR Londres : +44 20 7073 1000</li><li>Ambassade FR Dublin : +353 1 277 5000</li></ul></div>
+  </div>
+  <div style='display:grid; grid-template-columns:1fr 1fr; gap:15px; margin-top:20px;'>
+    <div class='expert-card'><h3>Résumé</h3><ul style='padding-left:15px; font-size:.85rem; margin-top:10px;'><li>Départ : 04/05/2026</li><li>Retour : 02/06/2026</li><li>Zone : road-trip-moto-test-1</li></ul></div>
+    <div class='expert-card'><h3>Équipement</h3><ul style='padding-left:15px; font-size:.85rem; margin-top:10px;'><li>Combinaison pluie complète.</li><li>Batteries caméra / drone chargées.</li><li>Petite marge carburant et imprévus.</li></ul></div>
+  </div>
+  <div class='expert-card' style='margin-top:15px;'><h3>Rituel du matin</h3><ul style='padding-left:15px; font-size:.85rem; margin-top:10px;'><li>Pression pneus, niveau huile, météo.</li><li>Batteries caméras / drone et cartes mémoire.</li><li>Horaires ferry / shuttle revérifiés.</li></ul></div>
+  <footer><span>Roadbook Moto - Yves Vella</span><span>Page 2</span></footer>
+</div>
+<div class='page'>
+  <h2 style='color:var(--primary); border-bottom:3px solid var(--accent); padding-bottom:10px;'>Le Parcours</h2>
+  <div class='qr-box'>
+    <div style='width:70%;'>
+      <h3 style='margin:0; color:var(--accent); font-size:1.3rem;'>Trace GPS Digitale</h3>
+      <p style='font-size:.9rem; margin-top:5px;'>Scanner ce code pour importer l'intégralité du parcours dans Kurviger.</p>
+    </div>
+    <img src='data:image/png;base64,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' alt='QR Code'>
+  </div>
+  <table class='route-table'>
+    <thead><tr><th>Jour</th><th>Date</th><th>Départ</th><th>Arrivée</th><th>Distance</th><th>Durée</th><th>Nuit</th></tr></thead>
+    <tbody><tr><td class='day-num'>J01</td><td>04/05/2026</td><td>Départ 4 mai 2026 J1 - Direct Annecy -Douvres</td><td>Couchage Hôtel The Shurland Hotel 5/05</td><td>1000 km</td><td>11h24</td><td>Hôtel</td></tr>
+<tr><td class='day-num'>J02</td><td>05/05/2026</td><td>Couchage Hôtel The Shurland Hotel 5/05</td><td>Old School B&amp;B - 6/05</td><td>535 km</td><td>6h49</td><td>B&amp;B</td></tr>
+<tr><td class='day-num'>J03</td><td>06/05/2026</td><td>Old School B&amp;B - 6/05</td><td>*Camping Clachtoll Beach Campsite option ? - N1- 7/05</td><td>216 km</td><td>3h05</td><td>Camping</td></tr>
+<tr><td class='day-num'>J04</td><td>07/05/2026</td><td>*Camping Clachtoll Beach Campsite option ? - N1- 7/05</td><td>Départ -8/05</td><td>55 km</td><td>1h34</td><td>À préciser</td></tr>
+<tr><td class='day-num'>J05</td><td>08/05/2026</td><td>Départ -8/05</td><td>*Blair Castle option ? - N2 - 10/05</td><td>260 km</td><td>4h30</td><td>À préciser</td></tr>
+<tr><td class='day-num'>J06</td><td>10/05/2026</td><td>*Blair Castle option ? - N2 - 10/05</td><td>*Bivouac ? - 12/05- Visite et point de vue Dunnottar Castle viewpoint, C&amp;L Catering, Dunnottar Castle, Stonehaven</td><td>193 km</td><td>2h49</td><td>Bivouac</td></tr>
+<tr><td class='day-num'>J07</td><td>11/05/2026</td><td>*Bivouac ? - 12/05- Visite et point de vue Dunnottar Castle viewpoint, C&amp;L Catering, Dunnottar Castle, Stonehaven</td><td>*Fortrose Bay Campsite option ? - 13/05</td><td>241 km</td><td>4h03</td><td>Camping</td></tr>
+<tr><td class='day-num'>J08</td><td>12/05/2026</td><td>*Fortrose Bay Campsite option ? - 13/05</td><td>Camping Sango Sands Oasis - 14/05</td><td>337 km</td><td>5h29</td><td>Camping</td></tr>
+<tr><td class='day-num'>J09</td><td>13/05/2026</td><td>Camping Sango Sands Oasis - 14/05</td><td>Camping Clachtoll Beach Campsite -16/05</td><td>201 km</td><td>2h52</td><td>Camping</td></tr>
+<tr><td class='day-num'>J10</td><td>14/05/2026</td><td>Camping Clachtoll Beach Campsite -16/05</td><td>J11 - Bivouac ? - 17/05</td><td>246 km</td><td>3h52</td><td>Bivouac</td></tr>
+<tr><td class='day-num'>J11</td><td>15/05/2026</td><td>J11 - Bivouac ? - 17/05</td><td>Kinloch Campsite</td><td>258 km</td><td>4h11</td><td>Camping</td></tr>
+<tr><td class='day-num'>J12</td><td>16/05/2026</td><td>Kinloch Campsite</td><td>* train harry potter info ? passe 4 fois par jour sur le viaduc.20 à 30 minutes avant car il est parfois en avance</td><td>160 km</td><td>2h59</td><td>À préciser</td></tr>
+<tr><td class='day-num'>J13</td><td>17/05/2026</td><td>* train harry potter info ? passe 4 fois par jour sur le viaduc.20 à 30 minutes avant car il est parfois en avance</td><td>Camping Glencoe Visitor Centre - National Trust for Scotland</td><td>54 km</td><td>0h55</td><td>Camping</td></tr>
+<tr><td class='day-num'>J14</td><td>18/05/2026</td><td>Camping Glencoe Visitor Centre - National Trust for Scotland</td><td>Hotel Lakeview Guest House sympa</td><td>285 km</td><td>4h22</td><td>Hôtel</td></tr>
+<tr><td class='day-num'>J15</td><td>19/05/2026</td><td>Hotel Lakeview Guest House sympa</td><td>*Bivouac ? Game of Thrones - Stormlands Cliff</td><td>194 km</td><td>5h40</td><td>Bivouac</td></tr>
+<tr><td class='day-num'>J16</td><td>20/05/2026</td><td>*Bivouac ? Game of Thrones - Stormlands Cliff</td><td>*camping option prix ? *- camping A réserver Causeway Coast Wigwams</td><td>33 km</td><td>0h32</td><td>Camping</td></tr>
+<tr><td class='day-num'>J17</td><td>21/05/2026</td><td>*camping option prix ? *- camping A réserver Causeway Coast Wigwams</td><td>*campings option ? - Option Bivouac</td><td>226 km</td><td>4h11</td><td>Camping</td></tr>
+<tr><td class='day-num'>J18</td><td>22/05/2026</td><td>*campings option ? - Option Bivouac</td><td>Donegal Town 54.654700° -8.110800° Château Donegal - Village charmant -</td><td>167 km</td><td>2h55</td><td>À préciser</td></tr>
+<tr><td class='day-num'>J19</td><td>23/05/2026</td><td>Donegal Town 54.654700° -8.110800° Château Donegal - Village charmant -</td><td>*Achill Island info ? 53.966700° -10.066700° 🎥 DRONE MAJEUR - Plus grande île Irlande - Paysages SAUVAGES dramatiques - Keem Bay - Cathedral Rocks</td><td>229 km</td><td>3h49</td><td>À préciser</td></tr>
+<tr><td class='day-num'>J20</td><td>24/05/2026</td><td>*Achill Island info ? 53.966700° -10.066700° 🎥 DRONE MAJEUR - Plus grande île Irlande - Paysages SAUVAGES dramatiques - Keem Bay - Cathedral Rocks</td><td>Camping Renvyle Beach Caravan &amp; Camping Park, Renvyle Peninsula, Tully Ireland</td><td>133 km</td><td>2h11</td><td>Camping</td></tr>
+<tr><td class='day-num'>J21</td><td>25/05/2026</td><td>Camping Renvyle Beach Caravan &amp; Camping Park, Renvyle Peninsula, Tully Ireland</td><td>*bivouac ? - *Galway info ? 53.270700° -9.056800° Ville animée culturelle - Latin Quarter - Pubs musique trad</td><td>89 km</td><td>1h36</td><td>Bivouac</td></tr>
+<tr><td class='day-num'>J22</td><td>26/05/2026</td><td>*bivouac ? - *Galway info ? 53.270700° -9.056800° Ville animée culturelle - Latin Quarter - Pubs musique trad</td><td>Poulnabrone Dolmen 53.048600° -9.140000° 🎥 PHOTO - Tombe mégalithique 5000 ans - Pierre d&#x27;Ourag - Paysage Burren arrière-pla</td><td>69 km</td><td>1h08</td><td>À préciser</td></tr>
+<tr><td class='day-num'>J23</td><td>27/05/2026</td><td>Poulnabrone Dolmen 53.048600° -9.140000° 🎥 PHOTO - Tombe mégalithique 5000 ans - Pierre d&#x27;Ourag - Paysage Burren arrière-pla</td><td>*visite ? Loop Head 52.561900° -9.930600° 🎥 DRONE - Péninsule phare isolée - Falaises moins touristiques - Bridges of Ross arches naturelles</td><td>101 km</td><td>1h21</td><td>À préciser</td></tr>
+<tr><td class='day-num'>J24</td><td>28/05/2026</td><td>*visite ? Loop Head 52.561900° -9.930600° 🎥 DRONE - Péninsule phare isolée - Falaises moins touristiques - Bridges of Ross arches naturelles</td><td>Gap of Dunloe 52.033300° -9.700000° 🎥 DRONE MAJEUR - Défilé montagne 11 km - Kate Kearney&#x27;s Cottage départ - Route étroite TÔT matin moto ou marche/jaunting car</td><td>145 km</td><td>2h42</td><td>À préciser</td></tr>
+<tr><td class='day-num'>J25</td><td>29/05/2026</td><td>Gap of Dunloe 52.033300° -9.700000° 🎥 DRONE MAJEUR - Défilé montagne 11 km - Kate Kearney&#x27;s Cottage départ - Route étroite TÔT matin moto ou marche/jaunting car</td><td>Fishguard</td><td>538 km</td><td>13h26</td><td>À préciser</td></tr>
+<tr><td class='day-num'>J26</td><td>30/05/2026</td><td>Fishguard</td><td>*visite ? Le village carte postale&quot;</td><td>272 km</td><td>3h58</td><td>À préciser</td></tr>
+<tr><td class='day-num'>J27</td><td>31/05/2026</td><td>*visite ? Le village carte postale&quot;</td><td>*visite ? drone photo point_de_vue - Stonehenge</td><td>62 km</td><td>1h08</td><td>À préciser</td></tr>
+<tr><td class='day-num'>J28</td><td>01/06/2026</td><td>*visite ? drone photo point_de_vue - Stonehenge</td><td>*prix_B&amp;B - Prévoir Hotel</td><td>375 km</td><td>5h56</td><td>B&amp;B</td></tr>
+<tr><td class='day-num'>J29</td><td>02/06/2026</td><td>*prix_B&amp;B - Prévoir Hotel</td><td>Fin de road trip</td><td>812 km</td><td>8h46</td><td>Fin</td></tr></tbody>
+  </table>
+  <footer><span>Roadbook Moto - Yves Vella</span><span>Page 3+</span></footer>
+</div>
+</body></html>
