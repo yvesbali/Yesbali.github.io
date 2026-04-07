@@ -1,17 +1,17 @@
 ======================================================================
 AUDIT COMPLET LCDMH - RÉSUMÉ
-Date : 2026-04-07 12:34:38
+Date : 2026-04-07 12:36:44
 ======================================================================
 
 📊 STATISTIQUES
-   Total pages HTML : 81
-   Pages avec menu : 79
-   Liens internes OK : 495
-   Images OK : 56
+   Total pages HTML : 79
+   Pages avec menu : 77
+   Liens internes OK : 485
+   Images OK : 55
 
-⚠️ PROBLÈMES DÉTECTÉS : 12
+⚠️ PROBLÈMES DÉTECTÉS : 10
    - Pages sans menu : 2
-   - Liens cassés : 2
+   - Liens cassés : 0
    - Images manquantes : 8
    - Erreurs diverses : 0
 
@@ -24,7 +24,7 @@ DÉTAILS CI-DESSOUS
 ======================================================================
 [INFO] Pages à la racine : 28
 [INFO] Articles : 17
-[INFO] Pages roadtrips : 4
+[INFO] Pages roadtrips : 2
 [INFO] Autres pages : 32
 
 --- Pages à la racine ---
@@ -79,7 +79,7 @@ DÉTAILS CI-DESSOUS
 ======================================================================
 2. VÉRIFICATION DES MENUS (nav-loader.js)
 ======================================================================
-[INFO] Pages avec nav-loader.js : 79
+[INFO] Pages avec nav-loader.js : 77
 [INFO] Pages SANS menu : 2
 [INFO] Pages avec menu EN DUR : 0
 
@@ -90,23 +90,15 @@ DÉTAILS CI-DESSOUS
 ======================================================================
 3. VÉRIFICATION DES LIENS INTERNES
 ======================================================================
-[INFO] Liens internes OK : 495
-[INFO] Liens externes : 924
-[INFO] Liens CASSÉS : 2
-
---- ❌ LIENS CASSÉS (404 potentiels) ---
-
-  📄 roadtrips\road-trip-cap-nord-2025-journal.html
-      → /roadtrips/.html
-
-  📄 roadtrips\road-trip-moto-test-2026-3.html
-      → /roadbooks-html/road-trip-moto-test-2026-3/index.html
+[INFO] Liens internes OK : 485
+[INFO] Liens externes : 906
+[INFO] Liens CASSÉS : 0
 
 ======================================================================
 4. VÉRIFICATION DES IMAGES
 ======================================================================
-[INFO] Images locales OK : 56
-[INFO] Images externes (CDN) : 177
+[INFO] Images locales OK : 55
+[INFO] Images externes (CDN) : 165
 [INFO] Images MANQUANTES : 8
 
 --- ❌ IMAGES MANQUANTES ---
@@ -130,13 +122,13 @@ DÉTAILS CI-DESSOUS
 ======================================================================
 5. ANALYSE DU MENU (nav.html)
 ======================================================================
-[INFO] Liens dans le menu : 33
+[INFO] Liens dans le menu : 32
 [INFO] ✅ Tous les liens du menu sont valides
 
 ======================================================================
 6. VÉRIFICATION SITEMAP
 ======================================================================
-[INFO] URLs dans sitemap : 74
+[INFO] URLs dans sitemap : 72
 [INFO] ✅ Toutes les URLs du sitemap sont valides
 
 ======================================================================
