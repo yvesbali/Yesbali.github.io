@@ -1,0 +1,28 @@
+{
+  "slug": "road-book-test-final-1",
+  "trip_title": "Road book test final 1",
+  "trip_year": 2026,
+  "project_dir": "C:\\Users\\yvesv\\Desktop\\test v1",
+  "site_root": "C:\\Users\\yvesv\\Desktop\\test v1\\build",
+  "resource_files": {
+    "hero": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\images\\roadtrips\\road-book-test-final-1\\heqder.jpg",
+    "qr": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\images\\roadtrips\\road-book-test-final-1\\téléchargement.png",
+    "kurviger": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\kurviger\\road-book-test-final-1.kurviger",
+    "csv": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\data\\roadtrips\\road-book-test-final-1\\sources\\road-book-test-final-1.csv"
+  },
+  "video_seed_main": [],
+  "journal_entries_json": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\data\\roadtrips\\road-book-test-final-1\\journal_entries.json",
+  "generated": {
+    "roadbook_html_index": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\roadbooks-html\\road-book-test-final-1\\index.html",
+    "roadbook_printable_html": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\roadbooks-html\\road-book-test-final-1\\roadbook_previsionnel.html",
+    "roadbook_pdf": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\roadbooks\\road-book-test-final-1-roadbook.pdf",
+    "roadtrip_page": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\roadtrips\\road-book-test-final-1.html",
+    "journal_page": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\roadtrips\\road-book-test-final-1-journal.html",
+    "build_status": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\data\\roadtrips\\road-book-test-final-1\\build_status.json"
+  },
+  "publication_layout": {
+    "main_page": "road-book-test-final-1.html",
+    "journal_page": "road-book-test-final-1-journal.html",
+    "images_dir": "C:\\Users\\yvesv\\Desktop\\test v1\\build\\images\\roadtrips\\road-book-test-final-1"
+  }
+}
