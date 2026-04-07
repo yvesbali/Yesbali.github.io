@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>J02 · 05/05/2026</title>
+
+<style>
+body {
+    margin:0;
+    background:#e5e7eb;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#0f172a;
+    font-size:17px;
+}
+.wrapper {
+    max-width:1360px;
+    margin:24px auto;
+    background:#ffffff;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+}
+.header {
+    background:#172554;
+    color:white;
+    padding:26px 30px;
+    border-bottom:4px solid #f97316;
+}
+.top-header-actions, .top-actions {
+    display:flex;
+    gap:12px;
+    margin-top:14px;
+    flex-wrap:wrap;
+}
+.top-btn {
+    display:inline-block;
+    background:#24324f;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:999px;
+    font-weight:bold;
+    font-size:14px;
+}
+.top-metrics {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    padding:24px 28px 12px 28px;
+}
+.metric {
+    background:#f8fafc;
+    border:1px solid #cbd5e1;
+    border-radius:14px;
+    padding:16px;
+    text-align:center;
+}
+.metric .big {
+    font-size:20px;
+    font-weight:bold;
+    color:#ea580c;
+}
+.info-box {
+    margin:8px 28px 16px 28px;
+    background:#f8fafc;
+    border:1px solid #cbd5e1;
+    border-left:4px solid #f97316;
+    border-radius:14px;
+    padding:18px;
+}
+.legend {
+    margin:0 0 10px 0;
+    padding:14px 28px;
+    border-top:1px solid #cbd5e1;
+    border-bottom:1px solid #cbd5e1;
+    background:#fff;
+}
+.content {
+    padding:18px 28px 8px 28px;
+}
+.comment-box {
+    margin:0 28px 24px 28px;
+    background:#f8fafc;
+    border:1px solid #cbd5e1;
+    border-radius:16px;
+    padding:18px;
+}
+.comment-box textarea {
+    width:100%;
+    min-height:140px;
+    border:1px solid #cbd5e1;
+    border-radius:12px;
+    padding:12px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:17px;
+    resize:vertical;
+    box-sizing:border-box;
+}
+.comment-actions {
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:12px;
+}
+.comment-btn {
+    border:none;
+    background:#172554;
+    color:#fff;
+    padding:10px 16px;
+    border-radius:999px;
+    cursor:pointer;
+    font-weight:bold;
+}
+.comment-btn.secondary { background:#64748b; }
+.comment-btn.mic { background:#ea580c; }
+.footer-nav {
+    display:flex;
+    justify-content:space-between;
+    padding:0 28px 24px 28px;
+    gap:12px;
+}
+small.meta {
+    color:#64748b;
+    display:block;
+    margin-top:6px;
+}
+.status {
+    margin-top:10px;
+    color:#64748b;
+    font-size:14px;
+}
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(360px,1fr));
+    gap:16px;
+    padding:24px 28px 28px 28px;
+}
+@media (max-width:900px) {
+    .top-metrics { grid-template-columns:repeat(2,1fr); }
+}
+</style>
+
+<link rel="stylesheet" href="../css/roadbook-jour-override.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="header">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;">
+            <h1 style="margin:0;">J02 · 05/05/2026</h1>
+            <div style="background:#f59e0b;color:white;padding:10px 18px;border-radius:999px;font-weight:bold;">
+                413 km
+            </div>
+        </div>
+        <div class="top-header-actions">
+            <a class="top-btn" href="../index.html">🗺️ Index</a>
+            <a class="top-btn" href="../questions.html">❓ Questions</a>
+            <a class="top-btn" href="https://lcdmh.com/LCDMH_Publication_v4_pin-yz.html">📤 Upload photos</a>
+        </div>
+    </div>
+
+    <div class="top-metrics">
+        <div class="metric"><div class="big">413</div>Kilomètres</div>
+        <div class="metric"><div class="big">7h54</div>Temps route</div>
+        <div class="metric"><div class="big">47.57 €</div>Carburant estimé</div>
+        <div class="metric"><div class="big">6.5</div>/100 km</div>
+    </div>
+
+    <div class="info-box">
+        <div><strong>🏁 Départ du matin :</strong> Campeggio Cistella - 15€</div>
+        <div><strong>🏁 Arrivée du soir :</strong> Villa Amaranta Room and Breakfast à Edolo - AR</div>
+        <small class="meta"><strong>Étape départ :</strong> Campeggio Cistella - 15€ - N1</small>
+        <small class="meta"><strong>Étape arrivée :</strong> Villa Amaranta Room and Breakfast à Edolo -AR - 69€ - N1</small>
+        <small class="meta"><strong>Prix carburant appliqué :</strong> 1.772 €/L</small>
+        <small class="meta"><strong>Points utiles retenus :</strong> 5 (instructions de navigation ignorées)</small>
+    </div>
+
+    <div class="legend">
+        <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#22c55e;color:white;">Départ</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#ea580c;color:white;">Étape</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#64748b;color:white;">Passage</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#8b5cf6;color:white;">Spot drone</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#0891b2;color:white;">Ferry</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#2563eb;color:white;">Train</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#0f766e;color:white;">Spot photo</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#dc2626;color:white;">Alerte</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#3b82f6;color:white;">Arrivée</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#7c3aed;color:white;">Base / pause</span>
+    </div>
+
+    
+
+    
+
+    <div class="content">
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #22c55e;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">0 km</div>
+                <div style="font-size:13px;color:#64748b;">0h00</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #4</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Campeggio Cistella - 15€</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#22c55e;color:white;">Départ</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">Campeggio Cistella - 15€ - N1</p>
+                <p style="margin:0 0 6px;color:#334155;"><strong>Découverte :</strong> La route franchit les Alpes lombardes par le Passo della Presolana (1297 m), offrant des panoramas sur les massifs de Bergame. La vallée de la Camonica mène vers Edolo, porte d&#x27;entrée du parc national du Stelvio.</p>
+                <div style="font-size:12px;color:#94a3b8;">
+                    46.228722, 8.299610 · France
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/maps?q=46.228722,8.29961" target="_blank" rel="noopener">Maps</a> · <a href="https://www.google.com/search?q=Campeggio+Cistella+-+15%E2%82%AC" target="_blank" rel="noopener">Recherche</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #64748b;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">63 km</div>
+                <div style="font-size:13px;color:#64748b;">1h09</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #5</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Étape 3</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#64748b;color:white;">Passage</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">Étape 3</p>
+                
+                <div style="font-size:12px;color:#94a3b8;">
+                    Europe
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/search?q=%C3%89tape+3" target="_blank" rel="noopener">Maps</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #64748b;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">200 km</div>
+                <div style="font-size:13px;color:#64748b;">3h36</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #6</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Étape 4</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#64748b;color:white;">Passage</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">Étape 4</p>
+                
+                <div style="font-size:12px;color:#94a3b8;">
+                    Europe
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/search?q=%C3%89tape+4" target="_blank" rel="noopener">Maps</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #64748b;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">352 km</div>
+                <div style="font-size:13px;color:#64748b;">6h36</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #7</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Passo della Presolana / Giogo della Presolana</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#64748b;color:white;">Passage</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">Passo della Presolana / Giogo della Presolana</p>
+                <p style="margin:0 0 6px;color:#334155;"><strong>Histoire :</strong> Le Passo della Presolana (1297 m) traverse les Alpes bergamasques entre Clusone et Castione della Presolana. Route sinueuse offrant une vue panoramique sur les sommets environnants et la vallée de Seriana.</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> Attention aux nombreux cyclistes sur cette route prisée, particulièrement les week-ends.</p>
+                <div style="font-size:12px;color:#94a3b8;">
+                    45.929209, 10.099037 · Italie
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/maps?q=45.929209,10.099037" target="_blank" rel="noopener">Maps</a> · <a href="https://www.google.com/search?q=Passo+della+Presolana+%2F+Giogo+della+Presolana" target="_blank" rel="noopener">Recherche</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #3b82f6;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">413 km</div>
+                <div style="font-size:13px;color:#64748b;">7h54</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #8</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Villa Amaranta Room and Breakfast à Edolo - AR</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#3b82f6;color:white;">Arrivée</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">69€</p>
+                
+                <div style="font-size:12px;color:#94a3b8;">
+                    46.177526, 10.313289 · Italie
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/maps?q=46.177526,10.313289" target="_blank" rel="noopener">Maps</a> · <a href="https://www.google.com/search?q=Villa+Amaranta+Room+and+Breakfast+%C3%A0+Edolo+-+AR+69%E2%82%AC" target="_blank" rel="noopener">Recherche</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="comment-box">
+        <h2 style="margin-top:0;">🗣️ Commentaire du jour J02</h2>
+        <textarea id="commentaire-jour" placeholder="Tu peux écrire ou dicter ton commentaire ici..."></textarea>
+        <div class="comment-actions">
+            <button id="btn-mic-comment" class="comment-btn mic">🎤 Micro</button>
+            <button id="btn-save-comment" class="comment-btn">💾 Enregistrer</button>
+            <button id="btn-clear-comment" class="comment-btn secondary">🗑️ Effacer</button>
+        </div>
+        <div id="commentaire-status" class="status">Prêt.</div>
+    </div>
+
+    <div class="footer-nav">
+        <a href="jour-01.html" style="color:#ea580c;text-decoration:none;">← Jour précédent</a>
+        <a href="../index.html" style="color:#172554;text-decoration:none;">🗺️ Master planning</a>
+        <a href="jour-03.html" style="color:#ea580c;text-decoration:none;">Jour suivant →</a>
+    </div>
+</div>
+
+<script>
+(function() {
+    const storageKey = "roadbook_comment_J02";
+    const textarea = document.getElementById("commentaire-jour");
+    const status = document.getElementById("commentaire-status");
+    const btnSave = document.getElementById("btn-save-comment");
+    const btnClear = document.getElementById("btn-clear-comment");
+    const btnMic = document.getElementById("btn-mic-comment");
+
+    function setStatus(msg) {
+        if (status) status.textContent = msg;
+    }
+
+    function loadComment() {
+        const saved = localStorage.getItem(storageKey);
+        if (saved && textarea) {
+            textarea.value = saved;
+            setStatus("Commentaire rechargé depuis cet appareil.");
+        }
+    }
+
+    function saveComment() {
+        if (!textarea) return;
+        localStorage.setItem(storageKey, textarea.value || "");
+        setStatus("Commentaire enregistré sur cet appareil.");
+    }
+
+    function clearComment() {
+        if (!textarea) return;
+        textarea.value = "";
+        localStorage.removeItem(storageKey);
+        setStatus("Commentaire effacé sur cet appareil.");
+    }
+
+    if (btnSave) btnSave.addEventListener("click", saveComment);
+    if (btnClear) btnClear.addEventListener("click", clearComment);
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+        if (btnMic) {
+            btnMic.disabled = true;
+            btnMic.title = "Reconnaissance vocale non supportée par ce navigateur";
+        }
+        setStatus("Micro non supporté par ce navigateur.");
+    } else {
+        const recognition = new SpeechRecognition();
+        recognition.lang = "fr-FR";
+        recognition.interimResults = false;
+        recognition.continuous = false;
+
+        if (btnMic) {
+            btnMic.addEventListener("click", function() {
+                setStatus("Écoute en cours...");
+                recognition.start();
+            });
+        }
+
+        recognition.onresult = function(event) {
+            const text = event.results[0][0].transcript;
+            if (textarea) {
+                if (textarea.value && !textarea.value.endsWith(" ")) {
+                    textarea.value += " ";
+                }
+                textarea.value += text;
+            }
+            saveComment();
+            setStatus("Texte dicté et enregistré.");
+        };
+
+        recognition.onerror = function() {
+            setStatus("Erreur micro ou dictée interrompue.");
+        };
+
+        recognition.onend = function() {
+            if ((textarea && textarea.value) || localStorage.getItem(storageKey)) {
+                setStatus("Prêt.");
+            }
+        };
+    }
+
+    loadComment();
+})();
+</script>
+
+</body>
+</html>

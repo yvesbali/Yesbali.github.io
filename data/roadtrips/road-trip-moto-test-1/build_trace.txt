@@ -1,0 +1,174 @@
+[BUILD] ═══════════════════════════════════════════════════════
+[BUILD] GÉNÉRATION ROAD TRIP — road-trip-moto-test-1
+[BUILD] ═══════════════════════════════════════════════════════
+[BUILD] Démarrage : 2026-03-29T09:47:46
+[BUILD] project_dir = C:\Users\yvesv\Desktop\test v1
+[BUILD] site_root = C:\Users\yvesv\Desktop\test v1\build
+[BUILD] MODULE_DIR = C:\Users\yvesv\Desktop\Automate_YT
+[BUILD] slug = road-trip-moto-test-1
+[BUILD] trip_year = 2026
+[BUILD] use_online = False
+
+[STEP   5%] Analyse du dossier projet…
+[DETECT] Fichiers détectés :
+[DETECT]   CSV : C:\Users\yvesv\Desktop\test v1\Tour d-Ecosse mai 2026 complet .csv
+[DETECT]   Hero : C:\Users\yvesv\Desktop\test v1\heqder.jpg
+[DETECT]   QR : C:\Users\yvesv\Desktop\test v1\téléchargement.png
+[DETECT]   Kurviger : C:\Users\yvesv\Desktop\test v1\Tour_d-Ecosse_mai_2026_test_poi.kurviger
+[DETECT]   GPX Sygic : C:\Users\yvesv\Desktop\test v1\Tour d-Ecosse mai 2026 complet.gpx
+[STEP  12%] Création des dossiers de publication…
+[DIRS] Dossiers créés :
+[DIRS]   site_root = C:\Users\yvesv\Desktop\test v1\build
+[DIRS]   roadtrips = C:\Users\yvesv\Desktop\test v1\build\roadtrips
+[DIRS]   data_trip = C:\Users\yvesv\Desktop\test v1\build\data\roadtrips\road-trip-moto-test-1
+[DIRS]   sources = C:\Users\yvesv\Desktop\test v1\build\data\roadtrips\road-trip-moto-test-1\sources
+[DIRS]   images_trip = C:\Users\yvesv\Desktop\test v1\build\images\roadtrips\road-trip-moto-test-1
+[DIRS]   kurviger = C:\Users\yvesv\Desktop\test v1\build\kurviger
+[DIRS]   roadbooks = C:\Users\yvesv\Desktop\test v1\build\roadbooks
+[DIRS]   roadbooks_html = C:\Users\yvesv\Desktop\test v1\build\roadbooks-html\road-trip-moto-test-1
+[DIRS]   status = C:\Users\yvesv\Desktop\test v1\build\data\roadtrips\road-trip-moto-test-1
+[STEP  18%] Prélecture du CSV…
+[CSV] Points chargés : 113
+[STEP  22%] Fusion GPS .kurviger → CSV…
+[GPS-V2] ✅ .kurviger : 113 waypoints, 99 matchés, 92 GPS injectés
+[STEP  26%] Calcul des journées…
+[DAYS] Journées calculées : 29
+[DAYS] Avertissements : 0
+[STEP  38%] Enrichissement des journées…
+[ENRICH] Enrichissement terminé (online=False)
+[GPS-V2] Cache geocoding sauvegardé
+[JOURNEY] ✅ Texte 'Esprit du parcours' généré automatiquement
+[JOURNEY]   Basé sur 29 jours de données
+[STEP  52%] Génération du roadbook HTML détaillé…
+[ROADBOOK] HTML généré :
+[ROADBOOK]   index = C:\Users\yvesv\Desktop\test v1\build\roadbooks-html\road-trip-moto-test-1\index.html
+[ROADBOOK]   jours = C:\Users\yvesv\Desktop\test v1\build\roadbooks-html\road-trip-moto-test-1\jours
+[CSS] ✅ roadbook-jour-override.css copié dans C:\Users\yvesv\Desktop\test v1\build\roadbooks-html\road-trip-moto-test-1\css
+[ROADBOOK] ✅ Tous les fichiers roadbook générés
+[STEP  62%] Copie des ressources…
+[COPY] Ressources copiées :
+[COPY]   hero → C:\Users\yvesv\Desktop\test v1\build\images\roadtrips\road-trip-moto-test-1\heqder.jpg
+[COPY]   qr → C:\Users\yvesv\Desktop\test v1\build\images\roadtrips\road-trip-moto-test-1\téléchargement.png
+[COPY]   kurviger → C:\Users\yvesv\Desktop\test v1\build\kurviger\road-trip-moto-test-1.kurviger
+[COPY]   csv → C:\Users\yvesv\Desktop\test v1\build\data\roadtrips\road-trip-moto-test-1\sources\road-trip-moto-test-1.csv
+[STEP  66%] Découpage GPX Sygic par jour…
+[SYGIC] Fichier source : C:\Users\yvesv\Desktop\test v1\Tour d-Ecosse mai 2026 complet.gpx
+[SYGIC] ✅ 28 fichiers GPX Sygic générés dans C:\Users\yvesv\Desktop\test v1\build\kurviger\road-trip-moto-test-1_gpx_sygic
+[STEP  72%] Création du HTML imprimable du PDF…
+[PDF] HTML imprimable créé : C:\Users\yvesv\Desktop\test v1\build\roadbooks-html\road-trip-moto-test-1\roadbook_previsionnel.html
+[STEP  80%] Conversion HTML → PDF…
+[PDF] ✅ PDF généré : C:\Users\yvesv\Desktop\test v1\build\roadbooks\road-trip-moto-test-1-roadbook.pdf
+[STEP  88%] Génération de la page principale du road trip…
+
+[TEMPLATE] ═══ RENDU VIA MOTEUR DE TEMPLATES ═══
+[TEMPLATE] tpl.DEFAULT_TEMPLATES_DIR = C:\Users\yvesv\Desktop\Automate_YT\templates
+[YOUTUBE] Shorts page principale : 0 vidéo(s)
+[YOUTUBE] Entrées journal : 0 vidéo(s)
+[YOUTUBE] Titres récupérés automatiquement : 0/0
+[MAIN PAGE] _render_main_page appelé
+[MAIN PAGE]   project_dir = C:\Users\yvesv\Desktop\test v1
+[MAIN PAGE]   MODULE_DIR = C:\Users\yvesv\Desktop\Automate_YT
+[MAIN PAGE] Données construites : 37 clés
+[MAIN PAGE]   title = road-trip-moto-test-1
+[MAIN PAGE]   total_km_label = 7 486 km
+[MAIN PAGE]   route_hint = Direct Annecy -Douvres → Fin de road trip
+[MAIN PAGE]   has_shorts = False
+[RENDER] render_page('main_roadtrip') appelé
+[RENDER]   extra_dirs = ['C:\\Users\\yvesv\\Desktop\\test v1', 'C:\\Users\\yvesv\\Desktop\\Automate_YT']
+[RENDER]   templates_dir = None
+[TEMPLATE] Recherche de 'main_roadtrip'
+[TEMPLATE] Dossiers de recherche : ['C:\\Users\\yvesv\\Desktop\\test v1', 'C:\\Users\\yvesv\\Desktop\\Automate_YT', 'C:\\Users\\yvesv\\Desktop\\Automate_YT\\templates', 'C:\\Users\\yvesv\\Desktop\\Automate_YT\\templates', 'C:\\Users\\yvesv\\Desktop\\Automate_YT']
+[TEMPLATE] Fichiers cherchés : ['template_roadtrip_principal.html', 'Road Trip Moto Écosse & Irlande 2026 _ 10 000 km Solo _ LCDMH.html', 'ecosse-irlande.html']
+[TEMPLATE]   C:\Users\yvesv\Desktop\test v1\template_roadtrip_principal.html → absent
+[TEMPLATE]   C:\Users\yvesv\Desktop\test v1\Road Trip Moto Écosse & Irlande 2026 _ 10 000 km Solo _ LCDMH.html → absent
+[TEMPLATE]   C:\Users\yvesv\Desktop\test v1\ecosse-irlande.html → absent
+[TEMPLATE]   C:\Users\yvesv\Desktop\Automate_YT\template_roadtrip_principal.html → absent
+[TEMPLATE]   C:\Users\yvesv\Desktop\Automate_YT\Road Trip Moto Écosse & Irlande 2026 _ 10 000 km Solo _ LCDMH.html → absent
+[TEMPLATE]   C:\Users\yvesv\Desktop\Automate_YT\ecosse-irlande.html → absent
+[TEMPLATE]   C:\Users\yvesv\Desktop\Automate_YT\templates\template_roadtrip_principal.html → TROUVÉ ✅
+[TEMPLATE] ✅ Chargé : C:\Users\yvesv\Desktop\Automate_YT\templates\template_roadtrip_principal.html (8113 caractères)
+[TEMPLATE] ✅ Chargé : C:\Users\yvesv\Desktop\Automate_YT\templates\template_roadtrip_principal.html (8113 caractères)
+[TEMPLATE]   Placeholders trouvés : 34
+[TEMPLATE]   Référence CSS : roadbook.css ✅
+[RENDER] Résolution des placeholders...
+[RENDER] ✅ Tous les placeholders résolus
+[RENDER] HTML final : 19454 caractères
+[BUILD] ✅ Page principale écrite : C:\Users\yvesv\Desktop\test v1\build\roadtrips\road-trip-moto-test-1.html
+[BUILD]   Taille HTML : 19454 caractères
+[CSS] Recherche du dossier CSS...
+[CSS]   C:\Users\yvesv\Desktop\Automate_YT\templates\css → TROUVÉ ✅
+[CSS]   C:\Users\yvesv\Desktop\Automate_YT\templates\templates\css → absent
+[CSS]   C:\Users\yvesv\Desktop\Automate_YT\templates\css → TROUVÉ ✅
+[CSS]   C:\Users\yvesv\Desktop\Automate_YT\templates\css → TROUVÉ ✅
+[CSS]   C:\Users\yvesv\Desktop\Automate_YT\css → TROUVÉ ✅
+[CSS] Dossier source : C:\Users\yvesv\Desktop\Automate_YT\templates\css
+[CSS] Dossier cible : C:\Users\yvesv\Desktop\test v1\build\roadtrips\css
+[CSS] ✅ Copié : roadbook-blocs.css → C:\Users\yvesv\Desktop\test v1\build\roadtrips\css\roadbook-blocs.css
+[CSS] ✅ Copié : roadbook-ecosse.css → C:\Users\yvesv\Desktop\test v1\build\roadtrips\css\roadbook-ecosse.css
+[CSS] ✅ Copié : roadbook-fusion.css → C:\Users\yvesv\Desktop\test v1\build\roadtrips\css\roadbook-fusion.css
+[CSS] ✅ Copié : roadbook-jour-override.css → C:\Users\yvesv\Desktop\test v1\build\roadtrips\css\roadbook-jour-override.css
+[CSS] ✅ Copié : roadbook.css → C:\Users\yvesv\Desktop\test v1\build\roadtrips\css\roadbook.css
+[BUILD] CSS copiés : 5 fichier(s)
+[BUILD] ✅ CSS vérifié : C:\Users\yvesv\Desktop\test v1\build\roadtrips\css\roadbook.css EXISTE
+[BUILD] ✅ CSS fusion vérifié : C:\Users\yvesv\Desktop\test v1\build\roadtrips\css\roadbook-fusion.css EXISTE
+[BUILD] ✅ CSS blocs vérifié : C:\Users\yvesv\Desktop\test v1\build\roadtrips\css\roadbook-blocs.css EXISTE
+
+[VERIFY] ═══ VÉRIFICATION DES FICHIERS RÉFÉRENCÉS ═══
+[VERIFY] Page HTML : C:\Users\yvesv\Desktop\test v1\build\roadtrips\road-trip-moto-test-1.html
+[VERIFY] Dossier roadtrips : C:\Users\yvesv\Desktop\test v1\build\roadtrips
+[VERIFY] Site root : C:\Users\yvesv\Desktop\test v1\build
+[VERIFY] URLs trouvées dans le HTML : 22
+[VERIFY]   css/roadbook.css
+[VERIFY]     → C:\Users\yvesv\Desktop\test v1\build\roadtrips\css\roadbook.css : ✅ EXISTE
+[VERIFY]   css/roadbook-fusion.css
+[VERIFY]     → C:\Users\yvesv\Desktop\test v1\build\roadtrips\css\roadbook-fusion.css : ✅ EXISTE
+[VERIFY]   css/roadbook-blocs.css
+[VERIFY]     → C:\Users\yvesv\Desktop\test v1\build\roadtrips\css\roadbook-blocs.css : ✅ EXISTE
+[VERIFY]   css/roadbook-ecosse.css
+[VERIFY]     → C:\Users\yvesv\Desktop\test v1\build\roadtrips\css\roadbook-ecosse.css : ✅ EXISTE
+[VERIFY]   /images/roadtrips/road-trip-moto-test-1/heqder.jpg
+[VERIFY]     → C:\Users\yvesv\Desktop\test v1\build\images\roadtrips\road-trip-moto-test-1\heqder.jpg : ✅ EXISTE
+[VERIFY]   /roadbooks-html/road-trip-moto-test-1/index.html
+[VERIFY]     → C:\Users\yvesv\Desktop\test v1\build\roadbooks-html\road-trip-moto-test-1\index.html : ✅ EXISTE
+[VERIFY]   /roadtrips/road-trip-moto-test-1-journal.html
+[VERIFY]     → C:\Users\yvesv\Desktop\test v1\build\roadtrips\road-trip-moto-test-1-journal.html : ❌ MANQUANT
+[VERIFY]   /kurviger/road-trip-moto-test-1.kurviger
+[VERIFY]     → C:\Users\yvesv\Desktop\test v1\build\kurviger\road-trip-moto-test-1.kurviger : ✅ EXISTE
+[VERIFY]   /kurviger/road-trip-moto-test-1.kurviger
+[VERIFY]     → C:\Users\yvesv\Desktop\test v1\build\kurviger\road-trip-moto-test-1.kurviger : ✅ EXISTE
+[VERIFY]   /roadbooks/road-trip-moto-test-1-roadbook.pdf
+[VERIFY]     → C:\Users\yvesv\Desktop\test v1\build\roadbooks\road-trip-moto-test-1-roadbook.pdf : ✅ EXISTE
+[VERIFY]   /roadbooks-html/road-trip-moto-test-1/index.html
+[VERIFY]     → C:\Users\yvesv\Desktop\test v1\build\roadbooks-html\road-trip-moto-test-1\index.html : ✅ EXISTE
+[VERIFY]   /images/roadtrips/road-trip-moto-test-1/téléchargement.png
+[VERIFY]     → C:\Users\yvesv\Desktop\test v1\build\images\roadtrips\road-trip-moto-test-1\téléchargement.png : ✅ EXISTE
+[VERIFY]   /roadtrips/road-trip-moto-test-1-journal.html
+[VERIFY]     → C:\Users\yvesv\Desktop\test v1\build\roadtrips\road-trip-moto-test-1-journal.html : ❌ MANQUANT
+[VERIFY]   /roadtrips.html
+[VERIFY]     → C:\Users\yvesv\Desktop\test v1\build\roadtrips.html : ❌ MANQUANT
+[VERIFY]   /roadtrips.html
+[VERIFY]     → C:\Users\yvesv\Desktop\test v1\build\roadtrips.html : ❌ MANQUANT
+[VERIFY]   /a-propos.html
+[VERIFY]     → C:\Users\yvesv\Desktop\test v1\build\a-propos.html : ❌ MANQUANT
+
+[HERO] ═══ VÉRIFICATION IMAGE HERO ═══
+[HERO] Chemin dans le HTML : /images/roadtrips/road-trip-moto-test-1/heqder.jpg
+[HERO] Résolu vers : C:\Users\yvesv\Desktop\test v1\build\images\roadtrips\road-trip-moto-test-1\heqder.jpg
+[HERO] Fichier existe : True
+[HERO] ✅ Taille : 188 KB
+
+[HTML] ═══ EXTRAIT DU HTML GÉNÉRÉ (hero) ═══
+[HTML] L18: <header class="hero hero-image" style="background-image:url('/images/roadtrips/road-trip-moto-test-1/heqder.jpg')">
+[HTML] L19: <div class="wrap hero-inner">
+
+[PUBLIC] ═══ URLS PUBLIQUES ATTENDUES ═══
+[PUBLIC]   Page principale: https://lcdmh.com/roadtrips/road-trip-moto-test-1.html
+[PUBLIC]   Journal: https://lcdmh.com/roadtrips/road-trip-moto-test-1-journal.html
+[PUBLIC]   Hero image: https://lcdmh.com/images/roadtrips/road-trip-moto-test-1/heqder.jpg
+[PUBLIC]   QR code: https://lcdmh.com/images/roadtrips/road-trip-moto-test-1/téléchargement.png
+[PUBLIC]   PDF: https://lcdmh.com/roadbooks/road-trip-moto-test-1-roadbook.pdf
+[PUBLIC]   Roadbook HTML: https://lcdmh.com/roadbooks-html/road-trip-moto-test-1/index.html
+[PUBLIC]   Kurviger: https://lcdmh.com/kurviger/road-trip-moto-test-1.kurviger
+[PUBLIC]   CSS roadbook: https://lcdmh.com/roadtrips/css/roadbook.css
+[PUBLIC]   CSS fusion: https://lcdmh.com/roadtrips/css/roadbook-fusion.css
+[PUBLIC]   CSS blocs: https://lcdmh.com/roadtrips/css/roadbook-blocs.css
