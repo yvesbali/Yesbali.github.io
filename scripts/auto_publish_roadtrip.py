@@ -1,9 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-LCDMH — Auto-publish Road Trip CLI v3.0
+LCDMH — Auto-publish Road Trip CLI v3.1
 =======================================
 Script CLI pour GitHub Actions qui surveille une playlist YouTube
 et injecte automatiquement les nouvelles vidéos dans les pages road trip.
+
+v3.1 (07/04/2026):
+- FILTRE STRICT : seules les vidéos PUBLIQUES sont importées
+- Ignore "Deleted video", "Private video" (titre YouTube)
+- Ignore status.privacyStatus != "public" (private, unlisted)
+- Ignore les vidéos sans métadonnées (pas accessible)
 
 v3.0: 
 - Top 3 shorts par NOMBRE DE VUES sur la page principale
@@ -121,12 +127,30 @@ def fetch_playlist_videos_with_stats(playlist_id: str) -> List[Dict[str, Any]]:
         snippet = meta.get("snippet", item.get("snippet", {}))
         content = meta.get("contentDetails", {})
         statistics = meta.get("statistics", {})
+        status = meta.get("status", {})
         position = item.get("snippet", {}).get("position", 0)
         
-        # Vérifier si la vidéo est disponible
+        # ═══ FILTRE DE VISIBILITÉ ═══
+        # Vérifier le statut de confidentialité de la vidéo
+        privacy_status = status.get("privacyStatus", "")
+        
+        # Vérifier si la vidéo est disponible via son titre
         title = snippet.get("title", "")
+        
+        # ═══ RÈGLES DE FILTRAGE ═══
+        # 1. Ignorer les vidéos supprimées ou privées (titre générique YouTube)
         if "Deleted video" in title or "Private video" in title:
-            print(f"   ⚠️ Vidéo ignorée (supprimée/privée): {video_id}")
+            print(f"   ⚠️ Vidéo ignorée (supprimée/privée - titre): {video_id}")
+            continue
+        
+        # 2. Ignorer les vidéos non publiques (private, unlisted)
+        if privacy_status and privacy_status != "public":
+            print(f"   ⚠️ Vidéo ignorée (statut {privacy_status}): {title[:40]}... [{video_id}]")
+            continue
+        
+        # 3. Ignorer les vidéos sans métadonnées (vidéo pas accessible)
+        if not meta:
+            print(f"   ⚠️ Vidéo ignorée (pas de métadonnées): {video_id}")
             continue
         
         # Calculer la durée
@@ -461,8 +485,9 @@ def main():
         config = json.load(f)
     
     print("=" * 60)
-    print("LCDMH — Auto-publish Road Trip CLI v3.0")
+    print("LCDMH — Auto-publish Road Trip CLI v3.1")
     print("🎯 Top 3 par VUES + Journal complet")
+    print("🔒 Filtre: UNIQUEMENT les vidéos PUBLIQUES")
     print(f"Config: {config_path}")
     print("=" * 60)
     
