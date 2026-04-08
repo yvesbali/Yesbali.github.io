@@ -321,9 +321,19 @@ def rebuild_journal(journal_path: Path, videos: List[Dict[str, Any]]) -> Dict[st
     
     content = journal_path.read_text(encoding="utf-8")
     
-    # Trier les vidéos par date de publication (plus récent en premier)
+    # Dedupliquer par video ID (chaque video une seule fois)
+    seen_ids = set()
+    unique_videos = []
+    for v in videos:
+        vid = v.get("id", v.get("video_id", ""))
+        if vid and vid not in seen_ids:
+            seen_ids.add(vid)
+            unique_videos.append(v)
+    print(f"  Videos uniques: {len(unique_videos)}/{len(videos)}")
+    
+    # Trier chronologiquement (ancien en haut, recent en bas)
     videos_sorted = sorted(
-        videos,
+        unique_videos,
         key=lambda v: v.get("published_at", ""),
         reverse=False
     )
