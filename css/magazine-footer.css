@@ -1,0 +1,141 @@
+/* ═══════════════════════════════════════════════════════════
+   LCDMH MAGAZINE — FOOTER
+   Commentaires, videos, lien playlist, footer
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── COMMENTAIRES ── */
+.mag-comments {
+  margin: 2.5rem 0;
+}
+
+.mag-comments h2 {
+  font-family: var(--mag-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-bottom: 3px solid var(--mag-gold);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.mag-comments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.mag-comment-card {
+  background: white;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.mag-comment-author {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--mag-accent);
+  margin-bottom: 6px;
+}
+
+.mag-comment-text {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #444;
+  font-style: italic;
+}
+
+.mag-comment-likes {
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 10px;
+}
+
+/* ── VIDEOS ── */
+.mag-videos {
+  margin: 2.5rem 0;
+}
+
+.mag-videos h2 {
+  font-family: var(--mag-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-bottom: 3px solid var(--mag-gold);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.mag-videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.mag-video-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.mag-video-card iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border: none;
+}
+
+.mag-video-card p {
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--mag-text);
+}
+
+/* ── LIEN PLAYLIST ── */
+.mag-playlist-link {
+  text-align: center;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.mag-playlist-link a {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--mag-accent);
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.mag-playlist-link a:hover {
+  background: var(--mag-accent2);
+  text-decoration: none;
+}
+
+/* ── FOOTER ── */
+.mag-footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--mag-border);
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.mag-footer a {
+  color: var(--mag-accent);
+  text-decoration: none;
+}
+
+.mag-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .mag-comments-grid { grid-template-columns: 1fr; }
+  .mag-videos-grid { grid-template-columns: 1fr; }
+}

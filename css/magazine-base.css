@@ -1,0 +1,90 @@
+/* ═══════════════════════════════════════════════════════════
+   LCDMH MAGAZINE — BASE
+   Variables, reset, typographie
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap');
+
+:root {
+  /* Couleurs */
+  --mag-bg: #fafaf7;
+  --mag-text: #1a1a1a;
+  --mag-text2: #4a4a4a;
+  --mag-text3: #6b6b6b;
+  --mag-accent: #c0392b;
+  --mag-accent2: #e74c3c;
+  --mag-gold: #d4a853;
+  --mag-gold-light: #f5f0e0;
+  --mag-border: #e8e0d0;
+
+  /* Cartes encarts — couleurs par theme */
+  --card-ferry-bg: linear-gradient(135deg, #fef9f0, #fdf3e7);
+  --card-ferry-border: #e8d5b8;
+  --card-ferry-title: #c0392b;
+  --card-ferry-text: #6b5a3e;
+
+  --card-meteo-bg: linear-gradient(135deg, #e6f1fb, #dbeaf8);
+  --card-meteo-border: #b5d4f4;
+  --card-meteo-title: #185fa5;
+  --card-meteo-text: #0c447c;
+
+  --card-budget-bg: linear-gradient(135deg, #eaf3de, #ddedc4);
+  --card-budget-border: #c0dd97;
+  --card-budget-title: #3b6d11;
+  --card-budget-text: #27500a;
+
+  --card-moto-bg: linear-gradient(135deg, #faeeda, #f5e4c4);
+  --card-moto-border: #fac775;
+  --card-moto-title: #854f0b;
+  --card-moto-text: #633806;
+
+  --card-bivouac-bg: linear-gradient(135deg, #eaf3de, #ddedc4);
+  --card-bivouac-border: #c0dd97;
+  --card-bivouac-title: #3b6d11;
+  --card-bivouac-text: #27500a;
+
+  --card-default-bg: linear-gradient(135deg, #fef9f0, #fdf3e7);
+  --card-default-border: #e8d5b8;
+  --card-default-title: #c0392b;
+  --card-default-text: #6b5a3e;
+
+  /* Typo */
+  --mag-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --mag-sans: 'Source Sans 3', 'Segoe UI', -apple-system, sans-serif;
+
+  /* Layout */
+  --mag-max: 920px;
+  --mag-card-width: 270px;
+  --mag-gap: 1.5rem;
+}
+
+/* Reset */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--mag-bg);
+  color: var(--mag-text);
+  font-family: var(--mag-sans);
+  font-size: 17px;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Container principal */
+.mag-body {
+  max-width: var(--mag-max);
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+/* Lien global */
+a { color: var(--mag-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Utilitaires */
+.clearfix::after { content: ""; display: table; clear: both; }
+
+@media (max-width: 768px) {
+  body { font-size: 16px; line-height: 1.75; }
+  .mag-body { padding: 1.5rem 1rem; }
+}

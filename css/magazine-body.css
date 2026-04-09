@@ -1,0 +1,248 @@
+/* ═══════════════════════════════════════════════════════════
+   LCDMH MAGAZINE — BODY
+   Sections, cartes laterales, photos alternees
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── SECTION TEXTE ── */
+.mag-section {
+  margin-bottom: 2.5rem;
+}
+
+.mag-section h2 {
+  font-family: var(--mag-serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--mag-text);
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 3px solid var(--mag-gold);
+}
+
+.mag-section p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--mag-text2);
+  margin-bottom: 1rem;
+}
+
+.mag-section strong {
+  color: var(--mag-text);
+}
+
+/* ── SECTION + CARTE LATERALE ── */
+.mag-row {
+  display: flex;
+  gap: var(--mag-gap);
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+}
+
+.mag-row-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.mag-row-text h2 {
+  font-family: var(--mag-serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--mag-text);
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 3px solid var(--mag-gold);
+}
+
+.mag-row-text p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--mag-text2);
+  margin-bottom: 1rem;
+}
+
+/* ── CARTE ENCART PRATIQUE ── */
+.mag-card {
+  width: var(--mag-card-width);
+  flex-shrink: 0;
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+  /* Pas de max-height — la carte s'adapte au contenu */
+}
+
+.mag-card-icon {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.mag-card-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.mag-card p {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Carte standalone (pas laterale) */
+.mag-card-full {
+  width: 100%;
+  max-width: 100%;
+  margin: 1.5rem 0;
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.mag-card-full .mag-card-icon { font-size: 1.6rem; margin-bottom: 8px; }
+.mag-card-full .mag-card-title { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+.mag-card-full p { font-size: 0.88rem; line-height: 1.65; margin: 0; }
+
+/* ── PHOTOS ── */
+
+/* Pleine largeur */
+.mag-photo {
+  margin: 2rem 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.mag-photo img {
+  width: 100%;
+  display: block;
+  max-height: 480px;
+  object-fit: cover;
+}
+
+.mag-photo figcaption {
+  padding: 0.8rem 1.2rem;
+  font-size: 0.85rem;
+  color: var(--mag-text2);
+  font-style: italic;
+  background: #f5f5f0;
+  border-top: 2px solid var(--mag-gold);
+}
+
+/* Flottante gauche */
+.mag-photo-left {
+  margin: 0.5rem 0 1rem;
+}
+
+.mag-photo-left img {
+  float: left;
+  width: 42%;
+  margin: 0 1.5rem 1rem 0;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-height: 350px;
+  object-fit: cover;
+}
+
+/* Flottante droite */
+.mag-photo-right {
+  margin: 0.5rem 0 1rem;
+}
+
+.mag-photo-right img {
+  float: right;
+  width: 42%;
+  margin: 0 0 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-height: 350px;
+  object-fit: cover;
+}
+
+/* Deux photos cote a cote */
+.mag-photo-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 2rem 0;
+}
+
+.mag-photo-duo figure {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mag-photo-duo img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.mag-photo-duo figcaption {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  color: var(--mag-text2);
+  font-style: italic;
+  background: #f5f5f0;
+  border-top: 2px solid var(--mag-gold);
+}
+
+/* Galerie restante (fin d'article) */
+.mag-gallery {
+  margin: 2.5rem 0;
+}
+
+.mag-gallery h2 {
+  font-family: var(--mag-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-bottom: 3px solid var(--mag-gold);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.mag-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.mag-gallery-grid figure {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mag-gallery-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.mag-gallery-grid figcaption {
+  padding: 6px 10px;
+  font-size: 0.78rem;
+  color: var(--mag-text3);
+  font-style: italic;
+  background: #f5f5f0;
+  border-top: 2px solid var(--mag-gold);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .mag-row { flex-direction: column; }
+  .mag-card { width: 100%; }
+  .mag-photo-left img,
+  .mag-photo-right img {
+    float: none;
+    width: 100%;
+    margin: 1rem 0;
+  }
+  .mag-photo-duo { grid-template-columns: 1fr; }
+  .mag-section h2,
+  .mag-row-text h2 { font-size: 1.4rem; }
+}
