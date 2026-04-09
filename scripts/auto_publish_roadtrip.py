@@ -335,7 +335,7 @@ def rebuild_journal(journal_path: Path, videos: List[Dict[str, Any]]) -> Dict[st
     videos_sorted = sorted(
         unique_videos,
         key=lambda v: v.get("published_at", ""),
-        reverse=False
+        reverse=True
     )
     
     # Générer le HTML pour toutes les vidéos
@@ -371,22 +371,30 @@ def rebuild_journal(journal_path: Path, videos: List[Dict[str, Any]]) -> Dict[st
                     content[insert_pos + end_match.start() + len(end_match.group()):]
                 )
             else:
-                # Insérer avant </main>
+                # Remplacer TOUT entre le kicker et </main> (évite les doublons)
                 new_content = (
-                    content[:insert_pos] + 
+                    content[:insert_pos] +
                     "\n" + "\n".join(entries_html) + "\n" +
-                    remaining
+                    remaining[end_match.start():]
                 )
             
             result["ok"] = True
             result["trace"].append(f"✅ {len(entries_html)} entrées insérées après section-kicker")
         else:
-            # Fallback: insérer juste après le kicker
-            new_content = (
-                content[:insert_pos] + 
-                "\n" + "\n".join(entries_html) + "\n" +
-                content[insert_pos:]
-            )
+            # Fallback: insérer juste après le kicker, avant </main>
+            main_close = content.find('</main>', insert_pos)
+            if main_close != -1:
+                new_content = (
+                    content[:insert_pos] +
+                    "\n" + "\n".join(entries_html) + "\n" +
+                    content[main_close:]
+                )
+            else:
+                new_content = (
+                    content[:insert_pos] +
+                    "\n" + "\n".join(entries_html) + "\n" +
+                    content[insert_pos:]
+                )
             result["ok"] = True
             result["trace"].append(f"✅ {len(entries_html)} entrées (fallback)")
     else:
@@ -586,3 +594,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
