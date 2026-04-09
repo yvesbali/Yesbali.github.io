@@ -335,7 +335,7 @@ def rebuild_journal(journal_path: Path, videos: List[Dict[str, Any]]) -> Dict[st
     videos_sorted = sorted(
         unique_videos,
         key=lambda v: v.get("published_at", ""),
-        reverse=True
+        reverse=False
     )
     
     # Générer le HTML pour toutes les vidéos
