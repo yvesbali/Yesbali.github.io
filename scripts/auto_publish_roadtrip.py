@@ -331,11 +331,11 @@ def rebuild_journal(journal_path: Path, videos: List[Dict[str, Any]]) -> Dict[st
             unique_videos.append(v)
     print(f"  Videos uniques: {len(unique_videos)}/{len(videos)}")
     
-    # Trier chronologiquement (récent en haut, ancien en bas)
+    # Trier chronologiquement (ancien en haut, recent en bas)
     videos_sorted = sorted(
         unique_videos,
         key=lambda v: v.get("published_at", ""),
-        reverse=True
+        reverse=False
     )
     
     # Générer le HTML pour toutes les vidéos
@@ -371,31 +371,22 @@ def rebuild_journal(journal_path: Path, videos: List[Dict[str, Any]]) -> Dict[st
                     content[insert_pos + end_match.start() + len(end_match.group()):]
                 )
             else:
-                # Remplacer TOUT entre le kicker et </main> (évite les doublons)
+                # Insérer avant </main>
                 new_content = (
-                    content[:insert_pos] +
+                    content[:insert_pos] + 
                     "\n" + "\n".join(entries_html) + "\n" +
-                    remaining[end_match.start():]
+                    remaining
                 )
             
             result["ok"] = True
             result["trace"].append(f"✅ {len(entries_html)} entrées insérées après section-kicker")
         else:
-            # Fallback: remplacer tout après le kicker jusqu'à </main>
-            main_close = content.find('</main>', insert_pos)
-            if main_close != -1:
-                new_content = (
-                    content[:insert_pos] +
-                    "\n" + "\n".join(entries_html) + "\n" +
-                    content[main_close:]
-                )
-            else:
-                # Dernier recours: ajouter après le kicker (pas de </main> trouvé)
-                new_content = (
-                    content[:insert_pos] +
-                    "\n" + "\n".join(entries_html) + "\n" +
-                    content[insert_pos:]
-                )
+            # Fallback: insérer juste après le kicker
+            new_content = (
+                content[:insert_pos] + 
+                "\n" + "\n".join(entries_html) + "\n" +
+                content[insert_pos:]
+            )
             result["ok"] = True
             result["trace"].append(f"✅ {len(entries_html)} entrées (fallback)")
     else:
