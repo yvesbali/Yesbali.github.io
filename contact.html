@@ -631,4 +631,11 @@
                 form.reset();
             } catch (error) {
                 console.error("Erreur envoi formulaire :", error);
-                showStatus("L’envoi a échoué. Utilise
+                showStatus("L’envoi a échoué. Réessaie dans quelques instants ou écris directement à yvesbali@gmail.com", "error");
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Envoyer le message";
+            }
+        });
+    </script>
+</body>
+</html>
