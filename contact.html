@@ -37,6 +37,9 @@
             --error-text:#b91c1c;
             --hero1:#1a1a2e;
             --hero2:#16213e;
+            --note-bg:#fff8f2;
+            --note-border:#f1d2b6;
+            --note-text:#8a4b08;
         }
 
         body {
@@ -131,7 +134,18 @@
 
         .intro {
             color: var(--gris);
+            margin-bottom: 16px;
+        }
+
+        .priority-note {
+            margin-top: 12px;
             margin-bottom: 24px;
+            padding: 14px 16px;
+            border-radius: 12px;
+            background: var(--note-bg);
+            border: 1px solid var(--note-border);
+            color: var(--note-text);
+            font-size: .95rem;
         }
 
         .form-row {
@@ -411,6 +425,12 @@
                         <p class="intro">
                             Le formulaire envoie directement ta demande vers mon flux de traitement.
                             Réponse généralement sous 24 à 72 heures selon la période.
+                        </p>
+
+                        <p class="priority-note">
+                            Je reçois beaucoup de messages et ne peux pas répondre à tout le monde.<br><br>
+                            Les abonnés niveau 1 (2€/mois) sont prioritaires et ont une réponse garantie.<br><br>
+                            Pour les autres demandes, je fais au mieux selon le temps disponible.
                         </p>
 
                         <form id="contact-form" novalidate>
