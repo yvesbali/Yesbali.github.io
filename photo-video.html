@@ -102,6 +102,13 @@
             align-items: center;
             justify-content: center;
             font-size: 4rem;
+            overflow: hidden;
+        }
+        .card-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
         .card-body {
             padding: 1.5rem;
@@ -239,7 +246,7 @@
         <div class="camera-grid">
             <!-- DJI Osmo Action 6 -->
             <div class="camera-card">
-                <div class="card-header">🎥</div>
+                <div class="card-header"><img src="/images/action-cam6.jpg" alt="DJI Osmo Action 6 test moto"></div>
                 <div class="card-body">
                     <h3>DJI Osmo Action 6</h3>
                     <p>Ma caméra principale depuis 2025</p>
@@ -256,7 +263,7 @@
             
             <!-- GoPro Hero 13 -->
             <div class="camera-card">
-                <div class="card-header">📹</div>
+                <div class="card-header"><img src="/images/gopro13.jpg" alt="GoPro Hero 13 test moto"></div>
                 <div class="card-body">
                     <h3>GoPro Hero 13</h3>
                     <p>La référence, testée en parallèle</p>
@@ -271,23 +278,28 @@
                 </div>
             </div>
             
-            <!-- Insta360 X4 -->
-            <div class="camera-card">
-                <div class="card-header">🔄</div>
-                <div class="card-body">
-                    <h3>Insta360 X4</h3>
-                    <p>Caméra 360° pour effets originaux</p>
-                    <ul class="features">
-                        <li>8K/30fps en 360°</li>
-                        <li>Stabilisation FlowState</li>
-                        <li>Invisible selfie stick</li>
-                        <li>Idéale pour effets "dolly"</li>
-                    </ul>
-                    <a href="#" class="btn-small">Lire le test →</a>
-                </div>
-            </div>
         </div>
         
+        <!-- Vidéo test caméras -->
+        <div style="background:white;border-radius:16px;overflow:hidden;border:1px solid var(--border);margin:2rem 0">
+            <div style="position:relative;padding-bottom:56.25%">
+                <iframe
+                    src="https://www.youtube.com/embed/Bw3MTPP0ea0"
+                    title="Test caméras moto – DJI Osmo Action 6 vs GoPro Hero 13 | LCDMH"
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;border:none"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div style="padding:1.5rem">
+                <h3 style="font-family:'Montserrat',sans-serif;font-size:1.1rem;margin-bottom:.6rem;color:var(--noir)">DJI Osmo Action 6 vs GoPro Hero 13 — le test terrain à moto</h3>
+                <p style="color:var(--muted);font-size:.93rem;line-height:1.7">
+                    Deux caméras d'action testées dans les mêmes conditions : route de montagne, pluie, contre-jour, vibrations moto.
+                    Stabilisation, autonomie, qualité d'image — je compare les deux en conditions réelles pour t'aider à choisir.
+                </p>
+            </div>
+        </div>
+
         <h2 style="margin: 3rem 0 1.5rem;">🚁 Drones pour road trip</h2>
         
         <div class="camera-grid">
@@ -391,17 +403,4 @@
 
 <footer>
     <div class="footer-logo">LC<em>D</em>MH</div>
-    <p style="margin: 0.5rem 0; color: rgba(255,255,255,0.4);">La Chaîne du Motard Heureux · Annecy, France</p>
-    <ul class="footer-links">
-        <li><a href="roadtrips.html">Road Trips</a></li>
-        <li><a href="tests-motos.html">Tests motos</a></li>
-        <li><a href="photo-video.html">Photo/Vidéo</a></li>
-        <li><a href="gps.html">GPS moto</a></li>
-    </ul>
-</footer>
-
-
-<script src="maillage.js"></script>
-</body>
-</html>
-<!-- FIN DU FICHIER : photo-video.html -->
+    <p style="margin: 0.5rem 0; color: rgba(255,255,255,0.4);">La Chaîne du Motard Heureux · 
