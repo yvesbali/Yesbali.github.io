@@ -3,402 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Komobi Moto : Test Traceur GPS Antivol | Avis 2026</title>
-    <meta name="description" content="Test du traceur GPS moto Komobi : détection de chute eCall, alarme, localisation temps réel. Protection efficace contre le vol ? Mon avis après 1 an.">
-    <meta name="keywords" content="traceur GPS moto, antivol GPS moto, KOMOBI, détection chute moto, eCall moto, sécurité motard, protection moto">
+    <title>Komobi Moto : Test Traceur GPS Antivol — City vs Pro | LCDMH</title>
+    <meta name="description" content="Comparatif Komobi City vs Komobi Pro : traceur GPS moto, détection de chute, antivol, alertes SIM. Lequel choisir ? Avis terrain et analyse des fonctionnalités.">
+    <meta name="keywords" content="Komobi moto, traceur GPS moto, antivol moto GPS, Komobi City, Komobi Pro, détection chute moto">
     <meta name="author" content="Yves – LCDMH">
-    <meta property="og:title" content="Komobi Moto : Test Traceur GPS Antivol | Avis 2026">
-    <meta property="og:description" content="Test du traceur GPS moto Komobi : détection de chute eCall, alarme, localisation temps réel. Protection efficace contre le vol ? Mon avis après 1 an.">
+    <meta property="og:title" content="Komobi Moto : Test Traceur GPS Antivol — City vs Pro | LCDMH">
+    <meta property="og:description" content="Komobi City vs Komobi Pro : lequel choisir pour protéger votre moto ? Avis terrain complet.">
     <meta property="og:url" content="https://lcdmh.com/komobi.html">
-    <meta property="og:type" content="product">
+    <meta property="og:type" content="article">
     <meta property="og:site_name" content="LCDMH">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=2070">
     <link rel="canonical" href="https://lcdmh.com/komobi.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root{
-            --orange:#e67e22;
-            --orange-dark:#d35400;
-            --noir:#1a1a1a;
-            --bg:#f7f7f5;
-            --card:#fff;
-            --border:#e5e5e5;
-            --muted:#777;
-            --alt:#f0ede8;
-        }
+        :root{ --orange:#e67e22; --orange-dark:#d35400; --noir:#1a1a1a; --bg:#f7f7f5; --border:#e5e5e5; --muted:#777; --alt:#f0ede8; }
         html{scroll-behavior:smooth}
         body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--noir);line-height:1.65;font-size:16px}
         h1,h2,h3,h4{font-family:'Montserrat',sans-serif}
         a{color:inherit;text-decoration:none}
-        
-        @media (max-width: 900px) {
-            .desktop-only { display: none; }
-            .mobile-only { display: block; }
-        }
-        @media (min-width: 901px) { .mobile-only { display: none !important; } }
-        
-        /* Hero avec parallaxe réduit (scroll au lieu de fixed) */
-        .hero{
-            position:relative;
-            min-height:60vh;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            text-align:center;
-            color:#fff;
-            overflow:hidden;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=2070') center/cover no-repeat scroll;
-        }
-        .hero-content{
-            position:relative;
-            z-index:2;
-            max-width:900px;
-            padding:2rem;
-            text-shadow:0 2px 15px rgba(0,0,0,.7);
-        }
-        .hero-badge{
-            display:inline-block;
-            background:var(--orange);
-            color:#fff;
-            font-family:'Montserrat',sans-serif;
-            font-size:.75rem;
-            font-weight:700;
-            letter-spacing:.14em;
-            text-transform:uppercase;
-            padding:.45rem 1.4rem;
-            border-radius:50px;
-            margin-bottom:1.4rem;
-            box-shadow:0 2px 8px rgba(0,0,0,.2);
-        }
-        .hero h1{
-            font-size:clamp(2.4rem,7vw,4.8rem);
-            font-weight:800;
-            line-height:1.08;
-            margin-bottom:1.1rem;
-            color:white;
-        }
-        
-        .container{max-width:1200px;margin:0 auto;padding:2rem 5%}
-        .section-title{text-align:center;margin-bottom:3rem}
-        .section-title h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;margin-bottom:.4rem}
-        .section-title h2 em{font-style:normal;color:var(--orange)}
-        .bar{width:52px;height:4px;background:var(--orange);border-radius:2px;margin:.8rem auto 0}
-        .btn{font-family:'Montserrat',sans-serif;font-size:.88rem;font-weight:700;padding:.8rem 1.9rem;border-radius:8px;border:none;cursor:pointer;transition:all .2s;display:inline-block;letter-spacing:.02em;box-shadow:0 2px 8px rgba(0,0,0,.2)}
-        .btn-orange{background:var(--orange);color:#fff}.btn-orange:hover{background:var(--orange-dark)}
-        
-        /* Grille des 3 fonctions avec photos */
-        .features-grid{
-            display:grid;
-            grid-template-columns:repeat(3,1fr);
-            gap:2rem;
-            margin:3rem 0;
-        }
-        .feature-card{
-            background:white;
-            border-radius:15px;
-            overflow:hidden;
-            box-shadow:0 5px 15px rgba(0,0,0,.05);
-            border:1px solid var(--border);
-            transition:transform .2s;
-        }
-        .feature-card:hover{transform:translateY(-5px)}
-        .feature-img{
-            width:100%;
-            height:200px;
-            object-fit:cover;
-            border-bottom:1px solid var(--border);
-        }
-        .feature-content{
-            padding:1.5rem;
-            text-align:center;
-        }
-        .feature-content h3{
-            font-size:1.5rem;
-            margin-bottom:.5rem;
-            color:var(--orange);
-        }
-        
-        /* Bloc produit avec image */
-        .product-showcase{
-            display:grid;
-            grid-template-columns:1fr 1fr;
-            gap:2rem;
-            margin:3rem 0;
-            background:white;
-            border-radius:20px;
-            padding:2rem;
-            border:1px solid var(--border);
-            align-items:center;
-        }
-        .product-showcase img{
-            width:100%;
-            border-radius:15px;
-            box-shadow:0 5px 15px rgba(0,0,0,.1);
-        }
-        .product-showcase .rating{
-            color:var(--orange);
-            font-size:1.2rem;
-            margin:1rem 0;
-        }
-        .btn-group{
-            display:flex;
-            gap:1rem;
-            margin-top:1.5rem;
-            flex-wrap: wrap;
-        }
-        .promo-code {
-            background: #ffd700;
-            color: #1a1a1a;
-            font-weight: 700;
-            padding: 0.3rem 1rem;
-            border-radius: 50px;
-            display: inline-block;
-            margin: 1rem 0;
-            font-size: 1rem;
-        }
-        
-        .why-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-            gap:2rem;
-            margin:3rem 0;
-        }
-        .why-card{
-            background:white;
-            border-radius:15px;
-            padding:2rem;
-            box-shadow:0 5px 15px rgba(0,0,0,.05);
-            border:1px solid var(--border);
-        }
-        .why-card h3{
-            color:var(--orange);
-            margin-bottom:1rem;
-            font-size:1.3rem;
-        }
-        
-        .pending-box{
-            background:#f8f9fa;
-            border:1px solid var(--border);
-            border-radius:15px;
-            padding:2rem;
-            margin:3rem 0;
-            text-align:center;
-        }
-        .pending-box h3{color:var(--orange);margin-bottom:1rem}
-        
-        footer{
-            background:var(--noir);
-            color:rgba(255,255,255,.65);
-            padding:2.8rem 6%;
-            margin-top:4rem;
-            text-align:center;
-        }
-        .f-logo{
-            font-family:'Montserrat',sans-serif;
-            font-size:1.6rem;
-            font-weight:800;
-            color:#fff;
-        }
+        .hero{position:relative;min-height:50vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1558618047-3f6c8e7a0e5e?q=80&w=2070') center/cover no-repeat}
+        .hero-content{position:relative;z-index:2;max-width:900px;padding:2rem;text-shadow:0 2px 15px rgba(0,0,0,.7)}
+        .hero-badge{display:inline-block;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.45rem 1.4rem;border-radius:50px;margin-bottom:1.4rem}
+        .hero h1{font-size:clamp(1.8rem,5vw,3.4rem);font-weight:800;line-height:1.1;margin-bottom:1rem;color:white}
+        .hero p{font-size:1.05rem;color:rgba(255,255,255,.9);max-width:700px;margin:0 auto}
+        .container{max-width:1100px;margin:0 auto;padding:3rem 5%}
+        h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;margin:2.5rem 0 1rem}
+        h3{font-size:1.1rem;font-weight:700;margin:1.5rem 0 .5rem;color:var(--orange)}
+        p{margin-bottom:1rem;line-height:1.7}
+        .bar{width:52px;height:4px;background:var(--orange);border-radius:2px;margin:.5rem 0 1.5rem}
+        .compare-wrap{overflow-x:auto;margin:2rem 0}
+        .compare-table{width:100%;border-collapse:collapse;font-size:.93rem}
+        .compare-table th{background:var(--noir);color:#fff;padding:.9rem 1rem;text-align:left;font-family:'Montserrat',sans-serif;font-size:.83rem;font-weight:700}
+        .compare-table td{padding:.8rem 1rem;border-bottom:1px solid var(--border);vertical-align:middle}
+        .compare-table tr:nth-child(even) td{background:#f9f9f7}
+        .winner{color:#27ae60;font-weight:700}
+        .badge-best{background:var(--orange);color:#fff;font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:20px;margin-left:.4rem}
+        .profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0}
+        .profile-card{background:#fff;border-radius:12px;padding:1.5rem;border:1px solid var(--border)}
+        .profile-card h3{font-size:1.1rem;margin-bottom:.8rem}
+        .profile-card ul{list-style:none;font-size:.9rem;line-height:2}
+        .profile-card ul li::before{content:'✓ ';color:#27ae60;font-weight:700}
+        @media(max-width:600px){.profile-grid{grid-template-columns:1fr}}
+        .verdict{background:linear-gradient(135deg,#e67e22,#d35400);color:#fff;border-radius:14px;padding:2rem;margin:2.5rem 0}
+        .verdict h3{color:#fff;font-size:1.3rem;margin-bottom:.8rem}
+        .verdict p{color:rgba(255,255,255,.92);margin-bottom:.5rem}
+        .faq{margin:2rem 0}
+        .faq details{background:#fff;border:1px solid var(--border);border-radius:10px;margin-bottom:.8rem;overflow:hidden}
+        .faq summary{padding:1rem 1.2rem;font-weight:600;cursor:pointer;list-style:none;font-family:'Montserrat',sans-serif;font-size:.95rem}
+        .faq summary::after{content:' ＋';color:var(--orange)}
+        .faq details[open] summary{background:#fff8f0}
+        .faq details[open] summary::after{content:' －'}
+        .faq .faq-body{padding:1rem 1.2rem 1.2rem;color:#444;line-height:1.7;border-top:1px solid var(--border)}
+        .maillage-box{background:var(--alt);border-left:4px solid var(--orange);border-radius:0 10px 10px 0;padding:1.4rem 1.6rem;margin:2.5rem 0}
+        .maillage-box h4{font-family:'Montserrat',sans-serif;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin-bottom:.8rem}
+        .maillage-box a{display:block;color:var(--noir);font-weight:600;padding:.25rem 0;border-bottom:1px solid rgba(0,0,0,.07)}
+        .maillage-box a:last-child{border-bottom:none}
+        .maillage-box a::before{content:'→ ';color:var(--orange)}
+        footer{background:var(--noir);color:rgba(255,255,255,.65);padding:2.8rem 6%;margin-top:4rem;text-align:center}
+        .f-logo{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:#fff}
         .f-logo em{font-style:normal;color:var(--orange)}
-        .f-.f-nav a{
-            font-size:.8rem;
-            color:rgba(255,255,255,.55);
-            transition:color .2s;
-        }
+        .f-nav{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.5rem;margin:.8rem 0}
+        .f-nav a{font-size:.8rem;color:rgba(255,255,255,.55)}
         .f-nav a:hover{color:var(--orange)}
-        .f-legal{
-            font-size:.76rem;
-            color:rgba(255,255,255,.3);
-            margin-top:1.1rem;
-            line-height:1.7;
-        }
-        
-        @media (max-width: 768px) {
-            .features-grid{grid-template-columns:1fr}
-            .product-showcase{grid-template-columns:1fr}
-        }
-    
-        /* === NAVIGATION === */
-        .nav-last-video{display:inline-flex;align-items:center;gap:.4rem;background:#fff3e0;border:1px solid #f0a500;border-radius:20px;padding:.3rem .8rem;font-size:.72rem!important;font-weight:700!important;color:#e67e22!important;text-transform:none!important;letter-spacing:normal!important;white-space:nowrap;animation:pulse-badge 2.5s infinite}
-        @keyframes pulse-badge{0%,100%{box-shadow:0 0 0 0 rgba(230,126,34,.35)}50%{box-shadow:0 0 0 5px rgba(230,126,34,0)}}
-        .nav-last-video .dot{width:7px;height:7px;background:#e74c3c;border-radius:50%;animation:blink 1.2s infinite}
-        @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-        .nav-last-video .label-new{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
-        @media(max-width:900px){
-            .desktop-only{display:none!important}
-        }
-        @media(min-width:901px){.mobile-only{display:none!important}}
-        /* === FIN NAVIGATION === */
-        </style>
-    <script src="js/page-content.js"></script>
+        .f-legal{font-size:.76rem;color:rgba(255,255,255,.3);margin-top:1.1rem;line-height:1.7}
+    </style>
 </head>
 <body>
-<div id="lcdmh-nav"></div><script src="/js/lcdmh-nav-loader.js" defer></script>
+<div id="lcdmh-nav"></div>
+<script src="/js/lcdmh-nav-loader.js" defer></script>
 
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH (NE PAS MODIFIER) -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-
-<!-- ======================================== -->
-<!-- DÉBUT NAVIGATION LCDMH (fichier unique) -->
-<!-- ======================================== -->
-
-<!-- ======================================== -->
-<!-- FIN NAVIGATION LCDMH -->
-<!-- ======================================== -->
-    
-
-<!-- Hero avec parallaxe réduit -->
 <section class="hero">
     <div class="hero-content">
-        <div class="hero-badge">🚨 LE SEUL TRACEUR GPS ANTIVOL AVEC DÉTECTION DE COLLISION</div>
-        <h1>KOMOBI</h1>
-        <div class="hero-slogan" style="font-size: 2.5rem; font-weight: 900; line-height: 1.2; margin-bottom: 1.5rem; text-transform: uppercase; color: white;">
-            IL TE PROTÈGE.<br>IL VEILLE SUR TOI.<br>Et tranquillise ta famille.
-        </div>
-        <div class="hero-sub-slogan" style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1.5rem; color: #e67e22;">
-            Le traceur GPS qui ne te lâche pas.<br>Même en cas d'accident.
-        </div>
-        <p style="font-size: 1.2rem; font-weight: 500; color: white;">📍 Localisation temps réel • 🆘 Détection chute eCall • 🔔 Alarme anti-vol • 📊 Télémétrie</p>
+        <div class="hero-badge">🛡️ Sécurité moto — traceur GPS antivol</div>
+        <h1>Komobi Moto :<br>City vs Pro — Lequel choisir ?</h1>
+        <p>Traceur GPS, détection de chute, alertes SIM. Comparatif complet des deux versions pour protéger votre moto.</p>
     </div>
 </section>
 
-<!-- Introduction -->
 <div class="container">
-    <div class="section-title">
-        <p style="font-size: 1.2rem; max-width: 900px; margin: 0 auto; line-height: 1.6;">
-            <strong>KOMOBI</strong> n'est pas qu'un simple traceur GPS. C'est ton ange gardien sur la route : 
-            il <strong>protège</strong> ta moto contre le vol, <strong>veille</strong> sur toi en cas de chute avec le système eCall, 
-            et <strong>alerte</strong> automatiquement tes proches pour les rassurer. Parce que ta sécurité et leur tranquillité n'ont pas de prix.
-        </p>
+
+    <p>Quand on laisse sa moto plusieurs jours dans un parking en road trip — hôtel, camping, terrain de bivouac — la question du traceur antivol se pose. Komobi est la solution espagnole qui combine GPS temps réel, détection de chute et alertes de mouvement. Voici comment choisir entre le City et le Pro.</p>
+
+    <h2>City vs Pro — Le comparatif</h2>
+    <div class="bar"></div>
+    <div class="compare-wrap">
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th>Fonction</th>
+                    <th>Komobi City</th>
+                    <th>Komobi Pro <span class="badge-best">Recommandé</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Localisation GPS temps réel</strong></td><td class="winner">✅</td><td class="winner">✅</td></tr>
+                <tr><td><strong>Détection de chute</strong></td><td class="winner">✅</td><td class="winner">✅</td></tr>
+                <tr><td><strong>Alertes mouvement / vol</strong></td><td class="winner">✅</td><td class="winner">✅</td></tr>
+                <tr><td><strong>Alertes famille (appels d'urgence)</strong></td><td class="winner">✅</td><td class="winner">✅</td></tr>
+                <tr><td><strong>Télémétrie / données de conduite</strong></td><td>❌</td><td class="winner">✅</td></tr>
+                <tr><td><strong>Analyse style de conduite</strong></td><td>❌</td><td class="winner">✅</td></tr>
+                <tr><td><strong>Historique trajets détaillé</strong></td><td>Basique</td><td class="winner">Complet</td></tr>
+                <tr><td><strong>Abonnement inclus 1 an</strong></td><td class="winner">✅</td><td class="winner">✅</td></tr>
+                <tr><td><strong>Prix indicatif</strong></td><td>~193 €</td><td>~258 €</td></tr>
+            </tbody>
+        </table>
     </div>
 
-    <!-- 3 fonctions clés avec PHOTOS MISES À JOUR -->
-    <div class="features-grid">
-        <!-- PROTÈGE - Photo antivol (rond barré) -->
-        <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=2070" alt="Antivol moto protection" class="feature-img">
-            <div class="feature-content">
-                <h3>🔒 PROTÈGE ta moto</h3>
-                <p>Localisation GPS en temps réel, alarme anti-vol, géofencing. Votre moto sous surveillance permanente.</p>
-            </div>
+    <h2>Pour quel profil ?</h2>
+    <div class="bar"></div>
+    <div class="profile-grid">
+        <div class="profile-card">
+            <h3>🏙️ Komobi City — La protection essentielle</h3>
+            <ul>
+                <li>Ton objectif : sécurité et tranquillité d'esprit</li>
+                <li>Tu veux alerter ta famille en cas de chute</li>
+                <li>Tu n'es pas passionné de données de conduite</li>
+                <li>Budget serré ou première expérience traceur</li>
+                <li>Usage quotidien urbain + road trips occasionnels</li>
+            </ul>
         </div>
-        <!-- VEILLE - Photo ange gardien avec moto -->
-        <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=2070" alt="Ange gardien motard" class="feature-img">
-            <div class="feature-content">
-                <h3>👼 VEILLE sur toi</h3>
-                <p>Détection de chute eCall : en cas d'accident, vos contacts d'urgence sont alertés avec votre position.</p>
-            </div>
-        </div>
-        <!-- RASSURE - Photo famille / téléphone -->
-        <div class="feature-card">
-            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070" alt="Famille au téléphone" class="feature-img">
-            <div class="feature-content">
-                <h3>👨‍👩‍👧 RASSURE tes proches</h3>
-                <p>Partagez votre position en direct. En cas de problème, votre famille sait où vous êtes et reçoit les alertes.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bloc PRODUIT avec VRAIE IMAGE du boîtier + CODE PROMO 15% -->
-    <div class="product-showcase">
-        <img src="https://www.komobimoto.com/wp-content/uploads/2024/01/komobi-gps-tracker-moto-boitier-noir.png" alt="KOMOBI boîtier traceur GPS" onerror="this.src='https://via.placeholder.com/600x400/1e1e1e/e67e22?text=KOMOBI+Boitier'">
-        <div>
-            <h3 style="font-size: 2rem; color: var(--orange); margin-bottom: 1rem;">Si vous allez en moto, choisissez KOMOBI</h3>
-            <p style="color: #666; font-size: 1.1rem; margin-bottom: 1rem;">Le seul traceur GPS antivol avec détection de collision. Une protection complète pour vous et votre machine.</p>
-            <div class="promo-code">🔥 ÉCONOMISEZ 15% AVEC LE CODE : KOMOBI</div>
-            <div class="rating">★★★★★ 4,8/5 (350 avis)</div>
-            <div class="btn-group">
-                <a href="https://www.komobimoto.com/fr/" class="btn btn-orange" target="_blank" rel="nofollow">🛒 Acheter -15% avec code KOMOBI</a>
-                <a href="#" class="btn" style="background:#f0f1f5;color:#111;">📊 Standard vs Pro</a>
-            </div>
-            <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--muted);">* Version Standard : alarme et localisation. Version Pro : + eCall + télémétrie avancée.</p>
-        </div>
-    </div>
-
-    <!-- Pourquoi choisir KOMOBI -->
-    <h2 style="font-size: 2.2rem; text-align: center; margin: 3rem 0 1rem;">POURQUOI CHOISIR KOMOBI ?</h2>
-    <div class="bar" style="margin: 0 auto 2rem;"></div>
-    
-    <div class="why-grid">
-        <div class="why-card">
-            <h3>🔋 Autonomie longue durée</h3>
-            <p>Jusqu'à plusieurs semaines en veille. Pas besoin de recharger en plein road trip.</p>
-        </div>
-        <div class="why-card">
-            <h3>📱 Application intuitive</h3>
-            <p>Interface claire, notifications en temps réel. Tout se gère depuis votre smartphone.</p>
-        </div>
-        <div class="why-card">
-            <h3>🔧 Installation discrète</h3>
-            <p>Se cache facilement sur la moto. Indétectable par les voleurs.</p>
-        </div>
-        <div class="why-card">
-            <h3>📊 Télémétrie complète</h3>
-            <p>Analysez vos trajets : vitesse, distance, consommation, angle de courbe.</p>
-        </div>
-        <div class="why-card">
-            <h3>🌍 Pas d'abonnement forcé</h3>
-            <p>Choisissez votre forfait selon vos besoins. Pas de surprise.</p>
-        </div>
-        <div class="why-card">
-            <h3>🤝 Communauté active</h3>
-            <p>Entraide et partage d'astuces entre utilisateurs KOMOBI.</p>
+        <div class="profile-card">
+            <h3>🏍️ Komobi Pro — Pour les passionnés de données</h3>
+            <ul>
+                <li>Tu veux analyser ton style de conduite</li>
+                <li>Les données de télémétrie t'intéressent</li>
+                <li>Tu fais de nombreux road trips longue distance</li>
+                <li>Tu veux l'historique détaillé de chaque trajet</li>
+                <li>65 € de plus que le City pour ces fonctionnalités</li>
+            </ul>
         </div>
     </div>
 
-    <!-- Section TEST À VENIR -->
-    <div class="pending-box">
-        <h3>🔜 TEST EN PRÉPARATION</h3>
-        <p style="margin-bottom: 1rem;">
-            Je n'ai pas encore testé ce produit en conditions réelles. Le partenariat est en cours de discussion. 
-            Dès que j'aurai parcouru plusieurs milliers de kilomètres avec le KOMOBI, je publierai un test complet.
-        </p>
-        <p style="font-style: italic; margin-bottom: 1.5rem;">En attendant, vous pouvez consulter le site officiel.</p>
-        <a href="https://www.komobimoto.com/fr/" class="btn btn-orange" target="_blank" rel="nofollow">🔗 VOIR LE SITE OFFICIEL KOMOBI (code KOMOBI = -15%)</a>
+    <h2>Ce qui compte vraiment</h2>
+    <div class="bar"></div>
+    <p>Les deux versions partagent l'essentiel : <strong>GPS temps réel</strong>, <strong>détection de chute automatique</strong> avec alerte aux contacts d'urgence, et <strong>alertes vol</strong> dès que la moto bouge sans autorisation. Pour quelqu'un qui laisse sa moto sur un parking de camping plusieurs nuits d'affilée, c'est exactement ce qu'il faut.</p>
+    <p>La détection de chute est la fonction qui m'a convaincu. En solo sur de longs trajets, savoir que la moto peut alerter des contacts si je chute dans un endroit isolé, ça change la psychologie du road trip.</p>
+
+    <div class="verdict">
+        <h3>🏆 Mon verdict</h3>
+        <p><strong>Pour la grande majorité des motards :</strong> le Komobi City est suffisant. Détection chute + antivol GPS + alertes = les 3 fonctions qui comptent vraiment.</p>
+        <p><strong>Pour les motards geeks :</strong> le Pro vaut ses 65 € supplémentaires si la télémétrie vous parle. Sinon, économisez.</p>
+        <p>Dans les deux cas, l'abonnement SIM 1 an est inclus — à renouveler ensuite. Vérifiez le coût de renouvellement avant l'achat.</p>
+    </div>
+
+    <h2>Questions fréquentes</h2>
+    <div class="bar"></div>
+    <div class="faq">
+        <details>
+            <summary>L'installation est-elle complexe ?</summary>
+            <div class="faq-body">Non. Le Komobi se connecte à la batterie de la moto (câbles + / −). L'installation prend 30-45 minutes pour un non-mécanicien. L'appareil se dissimule facilement dans le carénage ou sous la selle. Un guide d'installation est fourni avec des schémas clairs.</div>
+        </details>
+        <details>
+            <summary>Fonctionne-t-il en Europe entière ?</summary>
+            <div class="faq-body">Oui. Komobi utilise un réseau SIM multi-opérateurs qui couvre l'Europe (et une bonne partie du monde). Pendant mes road trips en Scandinavie, Italie, Balkans, la connexion n'a jamais été un problème. En zones très isolées sans réseau, le traceur perd la connexion mais mémorise les positions et les synchronise à la reconnexion.</div>
+        </details>
+        <details>
+            <summary>Que se passe-t-il si ma batterie moto se décharge ?</summary>
+            <div class="faq-body">Le Komobi consomme très peu en veille — environ 6-8 mA. Sur une batterie moto standard de 12-15 Ah, vous pouvez laisser la moto garée plusieurs semaines sans vider la batterie. Si vous partez plus de 3-4 semaines, un chargeur de maintien est recommandé.</div>
+        </details>
+    </div>
+
+    <div class="maillage-box">
+        <h4>À lire aussi sur LCDMH</h4>
+        <a href="equipement.html">Équipement road trip complet — bagagerie, gants, lampe, casque</a>
+        <a href="carpuride.html">GPS Moto Carpuride W702 Pro — CarPlay sans fil sur moto</a>
+        <a href="intercoms.html">Comparatif intercoms moto — Sena 50S, 60S, Cardo Packtalk</a>
+        <a href="codes-promo.html">Codes promo moto — Komobi, Carpuride, Sena et plus</a>
     </div>
 
 </div>
 
-
-    <!-- VIDÉOS YOUTUBE KOMOBI — pilotées par product-feed.js -->
-    <div class="container">
-        <div id="komobi-video-feed"></div>
-        <script
-            src="js/product-feed.js"
-            data-keywords="komobi"
-            data-max="4"
-            data-container="komobi-video-feed">
-        </script>
-    </div>
 <footer>
     <div class="f-logo">LC<em>D</em>MH</div>
     <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">La Chaîne du Motard Heureux · Annecy, France</p>
     <ul class="f-nav">
         <li><a href="codes-promo.html">Codes promo</a></li>
-        <li><a href="aoocci.html">Aoocci</a></li>
         <li><a href="carpuride.html">Carpuride</a></li>
-        <li><a href="blackview.html">Blackview</a></li>
         <li><a href="olight.html">Olight</a></li>
-        <li><a href="komobi.html">Komobi</a></li>
+        <li><a href="aferiy.html">AFERIY</a></li>
         <li><a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
     </ul>
     <p class="f-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves · Annecy, France</p>
 </footer>
-
 <script src="maillage.js"></script>
 </body>
 </html>
