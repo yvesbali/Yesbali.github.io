@@ -1,77 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ====== HOMEPAGE ====== -->
   <url>
-    <loc>https://lcdmh.com/a-propos.html</loc>
-    <lastmod>2026-04-07</lastmod>
+    <loc>https://lcdmh.com/</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- ====== PILIER SEO (4 pages prioritaires) ====== -->
+  <url>
+    <loc>https://lcdmh.com/intercoms.html</loc>
+    <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lcdmh.com/aferiy.html</loc>
-    <lastmod>2026-04-07</lastmod>
+    <loc>https://lcdmh.com/carpuride.html</loc>
+    <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lcdmh.com/alpes-aventure-festival-moto.html</loc>
-    <lastmod>2026-04-07</lastmod>
+    <loc>https://lcdmh.com/pneus.html</loc>
+    <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lcdmh.com/alpes-cols-mythiques.html</loc>
-    <lastmod>2026-04-07</lastmod>
+    <loc>https://lcdmh.com/equipement.html</loc>
+    <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://lcdmh.com/aoocci.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+
+  <!-- ====== HUB PAGES ====== -->
   <url>
     <loc>https://lcdmh.com/articles.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lcdmh.com/blackview.html</loc>
+    <loc>https://lcdmh.com/roadtrips.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lcdmh.com/gps.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/cap-nord-moto.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ====== PAGES PRODUIT ====== -->
+  <url>
+    <loc>https://lcdmh.com/aoocci.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lcdmh.com/carpuride.html</loc>
-    <lastmod>2026-04-07</lastmod>
+    <loc>https://lcdmh.com/aferiy.html</loc>
+    <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lcdmh.com/blackview.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lcdmh.com/olight.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lcdmh.com/komobi.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/codes-promo.html</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://lcdmh.com/contact.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://lcdmh.com/equipement.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+
+  <!-- ====== ROAD TRIPS ====== -->
   <url>
     <loc>https://lcdmh.com/espagne-2023.html</loc>
     <lastmod>2026-04-07</lastmod>
@@ -85,55 +113,27 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://lcdmh.com/gps.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://lcdmh.com/index.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://lcdmh.com/intercoms.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://lcdmh.com/komobi.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://lcdmh.com/les-alpes-dans-tous-les-sens.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://lcdmh.com/olight.html</loc>
+    <loc>https://lcdmh.com/alpes-aventure-festival-moto.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
+  <!-- ====== AUTRES ====== -->
   <url>
     <loc>https://lcdmh.com/photo-video.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lcdmh.com/pneus.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://lcdmh.com/roadtrips.html</loc>
+    <loc>https://lcdmh.com/tests-motos.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -145,131 +145,167 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://lcdmh.com/sitemap.html</loc>
+    <loc>https://lcdmh.com/a-propos.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://lcdmh.com/tests-motos.html</loc>
+    <loc>https://lcdmh.com/contact.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.4</priority>
   </url>
+
+  <!-- ====== ARTICLES ====== -->
   <url>
-    <loc>https://lcdmh.com/articles/350-km-dans-le-froid-norvegien-le-vent-du-groenland-ma-brise.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://lcdmh.com/articles/comparatif-carpuride-2026-w702-w702-pro-w702s-pro-et-702rs-pro.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lcdmh.com/articles/aferiy-nano-100-autonomie-electrique-en-road-trip.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://lcdmh.com/articles/quel-carpuride-moto-choisir.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lcdmh.com/articles/alpes-en-moto-barcelonnette-cuneo-benelli-trk-502-ep3.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lcdmh.com/articles/bivouac-moto-comment-bien-dormir-en-tente-test-nemo-sonic-0.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lcdmh.com/articles/blackview-xplore-x1-le-telephone-qui-ne-lache-jamais-en-road.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lcdmh.com/articles/cols-mythiques-des-alpes-a-moto-trk-502-ep-1.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://lcdmh.com/articles/t33-vs-road-6.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/articles/dunlop-mutant-vs-bridgestone-t33-le-combat-quel-pneu-choisir.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lcdmh.com/articles/lampe-olight-perun-3-lampe-frontale-parfaite-en-bivouac-test.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lcdmh.com/articles/aferiy-nano-100-autonomie-electrique-en-road-trip.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lcdmh.com/articles/quel-komobi-pro-city-tracker-gps-detecteur-de-chute-antivol.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lcdmh.com/articles/blackview-xplore-x1-le-telephone-qui-ne-lache-jamais-en-road.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lcdmh.com/articles/retour-honda-nt-1100-a-26000-kms.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lcdmh.com/articles/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lcdmh.com/articles/preparation-pour-le-voyage-road-trip-en-trk-702.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lcdmh.com/articles/bivouac-moto-comment-bien-dormir-en-tente-test-nemo-sonic-0.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lcdmh.com/articles/le-cap-nord-ca-va-mal-finir-cercle-arctique-polaire-road-tri.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lcdmh.com/articles/350-km-dans-le-froid-norvegien-le-vent-du-groenland-ma-brise.html</loc>
     <lastmod>2026-04-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/articles/geirangerfjord-a-moto-le-plus-beau-fjord-de-norvege-road-tri.html</loc>
     <lastmod>2026-04-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/articles/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti.html</loc>
     <lastmod>2026-04-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lcdmh.com/articles/guide-nettoyage-bulle-moto.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lcdmh.com/articles/lampe-olight-perun-3-lampe-frontale-parfaite-en-bivouac-test.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lcdmh.com/articles/le-cap-nord-ca-va-mal-finir-cercle-arctique-polaire-road-tri.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lcdmh.com/articles/preparation-pour-le-voyage-road-trip-en-trk-702.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/articles/quel-telephone-pour-road-trip-blackview-x1-renforce-pluie-ch.html</loc>
     <lastmod>2026-04-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/articles/radar-moto-comment-ca-marche.html</loc>
     <lastmod>2026-04-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lcdmh.com/articles/retour-honda-nt-1100-a-26000-kms.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/articles/voyager-en-norvege-ferries-budget-conseils-guide-de-voyage-n.html</loc>
     <lastmod>2026-04-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lcdmh.com/articles/guide-nettoyage-bulle-moto.html</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lcdmh.com/articles/alpes-en-moto-barcelonnette-cuneo-benelli-trk-502-ep3.html</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lcdmh.com/articles/cols-mythiques-des-alpes-a-moto-trk-502-ep-1.html</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ====== ROAD TRIPS DÉDIÉS ====== -->
+  <url>
+    <loc>https://lcdmh.com/roadtrips/road-trip-cap-nord-2025.html</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadtrips/road-trip-cap-nord-2025-journal.html</loc>
     <lastmod>2026-04-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://lcdmh.com/roadtrips/road-trip-cap-nord-2025.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
+  <!-- ====== ROADBOOKS ====== -->
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-cap-nord-2025/</loc>
     <lastmod>2026-04-07</lastmod>
@@ -280,49 +316,49 @@
     <loc>https://lcdmh.com/roadbooks-html/road-trip-cap-nord-2025/jours/jour-01.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-cap-nord-2025/jours/jour-02.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-cap-nord-2025/jours/jour-03.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-cap-nord-2025/jours/jour-04.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-cap-nord-2025/jours/jour-05.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-cap-nord-2025/jours/jour-06.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-cap-nord-2025/jours/jour-07.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-cap-nord-2025/jours/jour-08.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-moto-dolomite-et-slovenie-2026/</loc>
@@ -334,113 +370,103 @@
     <loc>https://lcdmh.com/roadbooks-html/road-trip-moto-dolomite-et-slovenie-2026/jours/jour-01.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-moto-dolomite-et-slovenie-2026/jours/jour-02.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-moto-dolomite-et-slovenie-2026/jours/jour-03.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-moto-dolomite-et-slovenie-2026/jours/jour-04.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-moto-dolomite-et-slovenie-2026/jours/jour-05.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-moto-dolomite-et-slovenie-2026/jours/jour-06.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-moto-dolomite-et-slovenie-2026/jours/jour-07.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-moto-dolomite-et-slovenie-2026/jours/jour-08.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-moto-dolomite-et-slovenie-2026/jours/jour-09.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-moto-dolomite-et-slovenie-2026/jours/jour-10.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-moto-dolomite-et-slovenie-2026/jours/jour-11.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-moto-dolomite-et-slovenie-2026/jours/jour-12.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-moto-dolomite-et-slovenie-2026/jours/jour-13.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-moto-dolomite-et-slovenie-2026/jours/jour-14.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-moto-dolomite-et-slovenie-2026/jours/jour-15.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-moto-dolomite-et-slovenie-2026/jours/jour-16.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lcdmh.com/roadbooks-html/road-trip-moto-dolomite-et-slovenie-2026/jours/jour-17.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://lcdmh.com/articles/comparatif-carpuride-2026-w702-w702-pro-w702s-pro-et-702rs-pro.html</loc>
-    <lastmod>2026-04-08</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lcdmh.com/articles/quel-komobi-pro-city-tracker-gps-detecteur-de-chute-antivol.html</loc>
-    <lastmod>2026-04-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
 </urlset>
