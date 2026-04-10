@@ -481,7 +481,7 @@
                         <div class="info-list">
                             <div class="info-item">
                                 <h3>Email</h3>
-                                <p><a href="mailto:contact@lcdmh.com">contact@lcdmh.com</a></p>
+                                <p><a href="mailto:yvesbali@gmail.com">yvesbali@gmail.com</a></p>
                             </div>
 
                             <div class="info-item">
@@ -553,7 +553,7 @@
             return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
         }
 
-        form.addEventListener("submit", async (event) => {
+        form.addEventListener("submit", async function (event) {
             event.preventDefault();
 
             const name = document.getElementById("name").value.trim();
@@ -578,25 +578,20 @@
                 return;
             }
 
-            if (!CONTACT_WEBHOOK_URL || CONTACT_WEBHOOK_URL.includes("COLLE_ICI_TON_WEBHOOK_MAKE_CONTACT")) {
-                showStatus("Le formulaire n’est pas encore relié au webhook Make.", "error");
-                return;
-            }
-
             submitBtn.disabled = true;
             submitBtn.textContent = "Envoi en cours...";
 
             const payload = {
+                name: name,
+                email: email,
+                subject: subject,
+                channel: channel,
+                message: message,
+                consent: consent,
                 source: "lcdmh-contact-page",
-                page_url: window.location.href,
                 site: "lcdmh.com",
-                submitted_at: new Date().toISOString(),
-                name,
-                email,
-                subject,
-                channel,
-                message,
-                consent
+                page_url: window.location.href,
+                submitted_at: new Date().toISOString()
             };
 
             try {
@@ -609,14 +604,14 @@
                 });
 
                 if (!response.ok) {
-                    throw new Error("Réponse HTTP " + response.status);
+                    throw new Error("HTTP " + response.status);
                 }
 
                 showStatus("Message envoyé. Merci, ta demande a bien été transmise.", "success");
                 form.reset();
             } catch (error) {
-                console.error("Erreur envoi contact :", error);
-                showStatus("L’envoi a échoué. Utilise provisoirement contact@lcdmh.com.", "error");
+                console.error("Erreur envoi formulaire :", error);
+                showStatus("L’envoi a échoué. Utilise provisoirement yvesbali@gmail.com.", "error");
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = "Envoyer le message";
