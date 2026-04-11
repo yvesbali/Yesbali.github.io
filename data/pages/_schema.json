@@ -1,14 +1,11 @@
 {
-  "_doc": "Schéma de référence pour toutes les pages produit LCDMH. Chaque champ marqué REQUIS doit être présent. Les champs OPTIONNEL peuvent être omis — la page les ignore proprement.",
-
   "_meta": {
-    "schema_version": "REQUIS — toujours '1.0'",
-    "page_type": "REQUIS — 'product'",
-    "slug": "REQUIS — nom du fichier sans .html (ex: komobi, olight, pneus)",
-    "last_updated": "REQUIS — date ISO (ex: 2026-03-24)",
-    "updated_by": "OPTIONNEL — prénom ou 'Streamlit'"
+    "schema_version": "1.0",
+    "page_type": "product",
+    "slug": "_schema",
+    "last_updated": "2026-04-11",
+    "updated_by": "Streamlit"
   },
-
   "seo": {
     "title": "REQUIS — titre de l'onglet navigateur",
     "description": "REQUIS — meta description (150-160 caractères)",
@@ -16,7 +13,6 @@
     "og_image": "OPTIONNEL — URL image pour partage réseaux sociaux",
     "canonical": "OPTIONNEL — URL canonique de la page"
   },
-
   "hero": {
     "badge": "OPTIONNEL — texte de la pastille en haut du hero",
     "title": "REQUIS — titre principal (nom du produit)",
@@ -25,11 +21,9 @@
     "features_line": "OPTIONNEL — ligne de caractéristiques avec emojis",
     "background_image": "OPTIONNEL — URL image de fond du hero"
   },
-
   "intro": {
     "text": "OPTIONNEL — paragraphe d'introduction sous le hero"
   },
-
   "key_features": [
     {
       "_doc": "OPTIONNEL — tableau de 1 à 6 cartes. Si absent, la section n'apparaît pas.",
@@ -38,26 +32,37 @@
       "text": "REQUIS si présent",
       "image": "OPTIONNEL — URL photo",
       "image_alt": "OPTIONNEL — texte alternatif image"
+    },
+    {
+      "icon": "",
+      "title": "",
+      "text": "",
+      "image": "",
+      "image_alt": ""
+    },
+    {
+      "icon": "",
+      "title": "",
+      "text": "",
+      "image": "",
+      "image_alt": ""
     }
   ],
-
   "product": {
     "name": "REQUIS — nom du produit",
     "tagline": "OPTIONNEL — accroche produit",
     "description": "OPTIONNEL — description courte",
     "image": "OPTIONNEL — URL photo du produit",
     "image_alt": "OPTIONNEL — alt de l'image",
-    "rating": "OPTIONNEL — note numérique (ex: 4.8)",
-    "rating_count": "OPTIONNEL — nombre d'avis (ex: 350)",
+    "rating": 0.0,
+    "rating_count": 0,
     "promo_code": "OPTIONNEL — code promo à afficher",
     "promo_discount": "OPTIONNEL — remise associée (ex: -15%)",
     "affiliate_url": "REQUIS — lien d'achat affilié",
     "note": "OPTIONNEL — note légale sous les boutons"
   },
-
   "test_status": {
-    "_doc": "OPTIONNEL — bloc statut du test. Si absent, la section n'apparaît pas.",
-    "status": "REQUIS si présent — 'pending' | 'done' | 'ongoing'",
+    "status": "pending",
     "label": "REQUIS si présent — titre du bloc (ex: TEST EN PRÉPARATION)",
     "text": "REQUIS si présent — texte principal",
     "sub_text": "OPTIONNEL — texte secondaire en italique",
@@ -66,29 +71,50 @@
     "cta_label": "OPTIONNEL — label du bouton",
     "cta_url": "OPTIONNEL — lien du bouton"
   },
-
   "why_choose": [
     {
       "_doc": "OPTIONNEL — tableau d'arguments. Si absent, la section n'apparaît pas.",
       "icon": "OPTIONNEL — emoji",
       "title": "REQUIS si présent",
       "text": "REQUIS si présent"
+    },
+    {
+      "icon": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "icon": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "icon": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "icon": "",
+      "title": "",
+      "text": ""
+    },
+    {
+      "icon": "",
+      "title": "",
+      "text": ""
     }
   ],
-
   "videos": {
-    "_doc": "OPTIONNEL — active la section vidéos automatique via product-feed.js",
-    "enabled": "REQUIS si présent — true | false",
+    "enabled": true,
     "keywords": "REQUIS si enabled=true — mot-clé principal filtrant le titre des vidéos",
-    "max": "OPTIONNEL — nombre max de vidéos à afficher (défaut: 4)"
+    "max": 4
   },
-
+  "files": {},
   "partner": {
-    "_doc": "OPTIONNEL — informations partenariat (usage interne, non affiché sur le site)",
-    "name": "OPTIONNEL",
+    "name": "_SCHEMA",
     "contact": "OPTIONNEL",
     "commission": "OPTIONNEL",
-    "awin": "OPTIONNEL — true | false",
-    "platform": "OPTIONNEL — 'direct' | 'awin' | 'autre'"
+    "awin": false,
+    "platform": "direct"
   }
 }
