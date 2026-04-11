@@ -42,7 +42,7 @@
         @media (min-width: 901px) { .mobile-only { display: none !important; } }
         
         /* Hero */
-        .hero{position:relative;min-height:50vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;background:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('images/bandeau-norvege.jpg') center/cover no-repeat fixed;}
+        .hero{position:relative;min-height:65vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;background:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('images/bandeau-norvege.jpg') center/cover no-repeat fixed;}
         .hero-content{position:relative;z-index:2;max-width:900px;padding:2rem;text-shadow:0 2px 10px rgba(0,0,0,0.5);}
         .hero-badge{display:inline-block;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.45rem 1.4rem;border-radius:50px;margin-bottom:1.4rem;box-shadow:0 2px 8px rgba(0,0,0,.2);}
         .hero h1{font-size:clamp(2.4rem,7vw,4.8rem);font-weight:800;line-height:1.08;margin-bottom:1rem;}
@@ -506,23 +506,4 @@
         <li><a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
     </ul>
     <p class="f-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves · Annecy, France</p>
-</footer>
-
-<script>
-    function copyText(text, btn) {
-        navigator.clipboard.writeText(text).then(() => {
-            const original = btn.textContent;
-            btn.textContent = 'Copié ✓';
-            btn.classList.add('copied');
-            setTimeout(() => {
-                btn.textContent = original;
-                btn.classList.remove('copied');
-            }, 2000);
-        });
-    }
-</script>
-
-<script src="maillage.js"></script>
-</body>
-</html>
-<!-- FIN DU FICHIER : codes-promo.html -->
+</fo
