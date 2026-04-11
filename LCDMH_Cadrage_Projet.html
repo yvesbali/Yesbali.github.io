@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LCDMH — Cadrage Projet</title>
+<style>
+  :root {
+    --orange: #e67e22;
+    --dark: #1a1a1a;
+    --text: #333;
+    --muted: #666;
+    --bg: #fafaf7;
+    --card: #fff;
+    --border: #e5e5e5;
+    --accent-light: #fff8f0;
+    --danger: #c0392b;
+    --ok: #27ae60;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    margin: 0;
+    padding: 0;
+  }
+  .wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+  header.doc-header {
+    border-bottom: 4px solid var(--orange);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  header.doc-header h1 {
+    font-size: 2rem;
+    color: var(--dark);
+    margin: 0 0 .4rem;
+    font-weight: 800;
+  }
+  header.doc-header p {
+    color: var(--muted);
+    margin: 0;
+    font-size: .95rem;
+  }
+  h2 {
+    color: var(--dark);
+    font-size: 1.4rem;
+    margin-top: 2.8rem;
+    margin-bottom: 1rem;
+    padding-bottom: .4rem;
+    border-bottom: 2px solid var(--border);
+  }
+  h3 {
+    color: var(--orange);
+    font-size: 1.1rem;
+    margin-top: 1.8rem;
+    margin-bottom: .6rem;
+  }
+  p { margin: .7rem 0; }
+  ul, ol { padding-left: 1.4rem; }
+  li { margin: .35rem 0; }
+  strong { color: var(--dark); }
+  code {
+    background: #f1eee8;
+    padding: .1rem .35rem;
+    border-radius: 4px;
+    font-size: .9em;
+    font-family: "SF Mono", Consolas, monospace;
+  }
+  pre {
+    background: #1e1e1e;
+    color: #e8e8e8;
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: .85rem;
+    line-height: 1.5;
+  }
+  pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+  }
+  .callout {
+    background: var(--accent-light);
+    border-left: 4px solid var(--orange);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .callout.danger {
+    background: #fdf0f0;
+    border-left-color: var(--danger);
+  }
+  .callout.ok {
+    background: #f0f8f0;
+    border-left-color: var(--ok);
+  }
+  .callout strong:first-child {
+    display: block;
+    margin-bottom: .3rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: .92rem;
+  }
+  th, td {
+    padding: .6rem .8rem;
+    border: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: var(--dark);
+    color: #fff;
+    font-weight: 600;
+  }
+  tr:nth-child(even) td { background: #f8f6f0; }
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .toc h2 {
+    margin: 0 0 .6rem;
+    border: none;
+    font-size: 1rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    padding: 0;
+  }
+  .toc ol {
+    margin: 0;
+    padding-left: 1.3rem;
+    font-size: .93rem;
+  }
+  .toc a {
+    color: var(--dark);
+    text-decoration: none;
+  }
+  .toc a:hover { color: var(--orange); }
+  .tag {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    padding: .2rem .55rem;
+    border-radius: 50px;
+    margin-right: .4rem;
+    vertical-align: middle;
+  }
+  .tag.p1 { background: var(--danger); color: #fff; }
+  .tag.p2 { background: var(--orange); color: #fff; }
+  .tag.p3 { background: var(--ok); color: #fff; }
+  footer.doc-footer {
+    margin-top: 4rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: .85rem;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="doc-header">
+  <h1>LCDMH — Cadrage Projet</h1>
+  <p>Document de référence technique et éditorial pour toute nouvelle page, article ou roadbook publié sur <strong>lcdmh.com</strong>.</p>
+  <p>Dernière mise à jour : 11 avril 2026</p>
+</header>
+
+<nav class="toc">
+  <h2>Sommaire</h2>
+  <ol>
+    <li><a href="#objet">Objet du document</a></li>
+    <li><a href="#regles">Règles absolues non négociables</a></li>
+    <li><a href="#seo">Standards SEO obligatoires</a></li>
+    <li><a href="#schema">Données structurées Schema.org</a></li>
+    <li><a href="#templates">Templates par type de page</a></li>
+    <li><a href="#checklist">Checklist de validation avant publication</a></li>
+    <li><a href="#fausses-alertes">Leçons — fausses alertes récurrentes</a></li>
+    <li><a href="#vraies-erreurs">Leçons — vraies erreurs récurrentes</a></li>
+    <li><a href="#recommandations">Recommandations d'amélioration priorisées</a></li>
+    <li><a href="#historique">Historique des corrections appliquées</a></li>
+    <li><a href="#infographie">Règles d'infographie et proportions visuelles</a></li>
+  </ol>
+</nav>
+
+<section id="objet">
+<h2>1. Objet du document</h2>
+
+<p>Ce cadrage sert de source unique de vérité pour la qualité technique et éditoriale du site LCDMH. Il compile les standards SEO, les règles de publication, les enseignements tirés de cinq audits externes successifs, et les correctifs structurels à appliquer à toute nouvelle page.</p>
+
+<p>Il doit être consulté <strong>avant</strong> chaque création d'article, chaque génération automatique par LLM, et chaque commit vers GitHub Pages.</p>
+</section>
+
+<section id="regles">
+<h2>2. Règles absolues non négociables</h2>
+
+<div class="callout danger">
+  <strong>Règle 1 — Encodage UTF-8 sans BOM</strong>
+  Ne jamais utiliser PowerShell pour modifier du HTML : problèmes récurrents d'encodage qui cassent les accents. Utiliser Python, VS Code (avec UTF-8 forcé), ou les outils dédiés du projet.
+</div>
+
+<div class="callout danger">
+  <strong>Règle 2 — Aucune invention</strong>
+  Ne jamais inventer de données : coordonnées GPS, noms de lieux, prix, références produits, dates. En cas de doute, laisser une formulation neutre (« un lac d'altitude », « aux environs de… ») ou demander confirmation.
+</div>
+
+<div class="callout danger">
+  <strong>Règle 3 — Tout article doit être référencé</strong>
+  Un article publié mais non listé dans <code>ARTICLES[]</code> de <code>articles.html</code> est invisible pour Google et les visiteurs. L'ajout dans <code>articles.html</code> fait partie intégrante du pipeline de publication.
+</div>
+
+<div class="callout danger">
+  <strong>Règle 4 — Partenaires centralisés</strong>
+  Jamais de lien d'affiliation en dur dans un article. Toujours passer par <code>partenaires.json</code> pour maintenir la cohérence, faciliter les mises à jour et éviter les liens cassés.
+</div>
+
+<div class="callout danger">
+  <strong>Règle 5 — Nom unique par produit</strong>
+  Un produit ne doit apparaître que sous un seul nom canonique dans tout le site (title, H1, meta description, OG, texte, Schema.org). Exemple : « Blackview Xplore X1 », et jamais « X1 », « XLOR X1 », « BV8800 Pro » dans le même article.
+</div>
+</section>
+
+<section id="seo">
+<h2>3. Standards SEO obligatoires</h2>
+
+<p>Toute nouvelle page doit respecter la totalité de ces standards avant publication. Ils sont vérifiés lors de chaque audit.</p>
+
+<h3>3.1 Balises techniques du &lt;head&gt;</h3>
+
+<p><strong>Déclaration de langue</strong> sur la balise html :</p>
+<pre><code>&lt;html lang="fr"&gt;</code></pre>
+
+<p><strong>Meta description</strong> entre 120 et 170 caractères, unique, contenant le mot-clé principal et une proposition de valeur :</p>
+<pre><code>&lt;meta name="description" content="Test AFERIY Nano 100 : batterie camping moto 99,2 Wh, USB-C 100W, acceptée en cabine avion. Testée sur 5 000 km de road trip en bivouac. Avis terrain honnête."&gt;</code></pre>
+
+<p><strong>Title</strong> inférieur à 65 caractères, avec la marque en suffixe :</p>
+<pre><code>&lt;title&gt;Test AFERIY Nano 100 : batterie moto 99 Wh USB-C | LCDMH&lt;/title&gt;</code></pre>
+
+<p><strong>Canonical URL</strong> absolue :</p>
+<pre><code>&lt;link rel="canonical" href="https://lcdmh.com/articles/nom-article.html"&gt;</code></pre>
+
+<p><strong>Balises OpenGraph</strong> complètes : <code>og:title</code>, <code>og:description</code>, <code>og:image</code>, <code>og:url</code>, <code>og:type</code>.</p>
+
+<h3>3.2 Structure des titres Hn</h3>
+<ul>
+  <li>Un <strong>seul</strong> H1 par page, contenant le mot-clé principal</li>
+  <li>Pas de deuxième H1 même dans un bloc secondaire — convertir en H2</li>
+  <li>Hiérarchie respectée H1 → H2 → H3 sans saut de niveau</li>
+</ul>
+
+<h3>3.3 Images et accessibilité</h3>
+<ul>
+  <li>Toute image doit avoir un attribut <code>alt</code> descriptif non vide</li>
+  <li>Pour les miniatures YouTube : <code>alt="Miniature vidéo [sujet] - LCDMH"</code> acceptable</li>
+  <li>Pour les photos : décrire le contenu réel</li>
+  <li>Ajouter <code>loading="lazy"</code> sur les images sous le premier écran (améliore le LCP)</li>
+</ul>
+
+<h3>3.4 Maillage interne</h3>
+<ul>
+  <li>Minimum <strong>3 liens internes</strong> vers d'autres pages pertinentes par article</li>
+  <li>Les pages hub (articles.html, gps.html, pneus.html…) doivent linker vers leurs articles détaillés</li>
+  <li>Ajouter un bloc « Articles liés » en fin de contenu</li>
+</ul>
+
+<h3>3.5 Contenu minimum</h3>
+<ul>
+  <li>Page hub : minimum <strong>200 mots</strong> d'introduction éditoriale</li>
+  <li>Article : minimum <strong>500 mots</strong></li>
+  <li>Page roadbook journalière : minimum <strong>100 mots</strong> de récit en plus des données techniques</li>
+</ul>
+</section>
+
+<section id="schema">
+<h2>4. Données structurées Schema.org</h2>
+
+<p>Tout article doit inclure un bloc JSON-LD de type <code>Article</code>. Les pages de catégorie utilisent <code>CollectionPage</code>. Les pages principales incluent un <code>BreadcrumbList</code>.</p>
+
+<p><strong>Template Article à copier-coller :</strong></p>
+<pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Titre de l'article",
+  "description": "Description de l'article, 120-170 caractères",
+  "image": "https://lcdmh.com/images/image-article.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Yves",
+    "url": "https://lcdmh.com/a-propos.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LCDMH — Le Coin Des Motards Heureux",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lcdmh.com/images/og-lcdmh.jpg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lcdmh.com/articles/nom-article.html"
+  },
+  "inLanguage": "fr-FR"
+}
+&lt;/script&gt;</code></pre>
+</section>
+
+<section id="templates">
+<h2>5. Templates par type de page</h2>
+
+<h3>5.1 Page roadbook journalière</h3>
+<p>Toute page <code>/roadbooks-html/.../jour-XX.html</code> doit contenir en plus des données techniques (distance, temps, coordonnées GPS, prix) :</p>
+<ul>
+  <li>Un paragraphe narratif d'au moins 100 mots (météo, état d'esprit, difficulté, souvenir marquant)</li>
+  <li>Une photo avec <code>alt</code> descriptif</li>
+  <li>Un lien vers la page principale du road trip</li>
+  <li>Un lien vers le jour précédent et le jour suivant</li>
+  <li>Meta description unique adaptée au jour</li>
+</ul>
+
+<div class="callout">
+  <strong>Note — message "Micro non supporté"</strong>
+  Ce message est un fallback JavaScript légitime qui s'affiche uniquement aux navigateurs sans Web Speech API. Ce n'est pas une erreur technique. Recommandation : l'envelopper dans une balise <code>&lt;noscript&gt;</code> ou le masquer par défaut en CSS pour éviter que Googlebot ne l'indexe comme contenu principal de la page.
+</div>
+
+<h3>5.2 Page hub (articles.html, gps.html, pneus.html, photo-video.html…)</h3>
+<p>Doit contenir une introduction éditoriale de 150 à 300 mots qui explique :</p>
+<ul>
+  <li>le thème de la page</li>
+  <li>le contexte d'expérience (après combien de kilomètres testé)</li>
+  <li>ce que le lecteur va trouver dans la liste qui suit</li>
+</ul>
+<p>Ensuite seulement vient le listing ou la grille d'articles.</p>
+
+<h3>5.3 Article test produit</h3>
+<p>Structure recommandée :</p>
+<ol>
+  <li>Introduction (contexte, qui je suis, pourquoi ce test)</li>
+  <li>Présentation du produit</li>
+  <li>Retour terrain après X km</li>
+  <li>Points positifs</li>
+  <li>Points négatifs (honnêteté = crédibilité)</li>
+  <li>Tableau comparatif si pertinent</li>
+  <li>Verdict</li>
+  <li>FAQ</li>
+  <li>Avis communauté</li>
+  <li>Maillage interne (min. 3 liens)</li>
+</ol>
+</section>
+
+<section id="checklist">
+<h2>6. Checklist de validation avant publication</h2>
+
+<p>Avant tout push vers GitHub Pages, vérifier ces 10 points sur la nouvelle page :</p>
+
+<table>
+  <thead>
+    <tr><th style="width:3em;">#</th><th>Point à vérifier</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Balise <code>&lt;html lang="fr"&gt;</code> présente</td></tr>
+    <tr><td>2</td><td><code>&lt;title&gt;</code> inférieur à 65 caractères</td></tr>
+    <tr><td>3</td><td><code>&lt;meta name="description"&gt;</code> entre 120 et 170 caractères, unique</td></tr>
+    <tr><td>4</td><td><code>&lt;link rel="canonical"&gt;</code> absolu et correct</td></tr>
+    <tr><td>5</td><td>Un seul <code>&lt;h1&gt;</code> contenant le mot-clé principal</td></tr>
+    <tr><td>6</td><td>Toutes les images ont un attribut <code>alt</code> non vide</td></tr>
+    <tr><td>7</td><td>Schema.org Article (ou CollectionPage) en JSON-LD</td></tr>
+    <tr><td>8</td><td>Minimum 3 liens internes vers d'autres pages du site</td></tr>
+    <tr><td>9</td><td>Article ajouté dans <code>ARTICLES[]</code> de <code>articles.html</code></td></tr>
+    <tr><td>10</td><td>Article ajouté dans <code>sitemap.xml</code> avec une date récente</td></tr>
+  </tbody>
+</table>
+</section>
+
+<section id="fausses-alertes">
+<h2>7. Leçons — fausses alertes récurrentes des audits externes</h2>
+
+<p>Cinq audits externes ont été analysés pendant la session de consolidation. Environ 60 % des signalements étaient des <strong>fausses alertes</strong>. Les auditeurs semblent regarder le HTML rendu après JavaScript dans un navigateur, ce qui masque souvent le <code>&lt;head&gt;</code>. <strong>Toujours vérifier dans le code source brut avant de corriger.</strong></p>
+
+<div class="callout danger">
+  <strong>Fausse alerte 1 — « Meta-description ABSENTE »</strong>
+  Revient à chaque audit. Vérification sur 60 fichiers : toutes les vraies pages ont une meta description valide (120-170 caractères). Seuls les fichiers <code>nav.html</code> et <code>widget-roadtrip-snippet.html</code> n'en ont pas, mais ce sont des snippets inclus et ils ne doivent pas en avoir.
+</div>
+
+<div class="callout danger">
+  <strong>Fausse alerte 2 — « Page 404 contact.html »</strong>
+  Vérification directe dans le filesystem : le fichier existe, taille normale, meta description 155 caractères. Cause probable : erreur ponctuelle de cache CDN côté auditeur.
+</div>
+
+<div class="callout danger">
+  <strong>Fausse alerte 3 — « lang="fr" non déclaré »</strong>
+  Vérification sur 60 fichiers : seuls 2 snippets n'ont pas la balise, et ils ne doivent pas l'avoir. Toutes les pages principales déclarent bien <code>lang="fr"</code>.
+</div>
+
+<div class="callout danger">
+  <strong>Fausse alerte 4 — « Micro non supporté = erreur »</strong>
+  C'est une fallback JavaScript légitime pour les navigateurs sans Web Speech API. Ce n'est pas un bug. Voir section 5.1 pour la recommandation d'amélioration.
+</div>
+
+<div class="callout danger">
+  <strong>Fausse alerte 5 — « Vouvoiement incohérent »</strong>
+  Le site tutoie systématiquement. C'est la ligne éditoriale assumée, pas une incohérence.
+</div>
+
+<div class="callout danger">
+  <strong>Fausse alerte 6 — « Aucune balise alt sur les images »</strong>
+  Vérification : 87 % des images avaient déjà un alt. Les 13 % manquants étaient concentrés sur 3 pages et ont été corrigés en une passe.
+</div>
+
+<div class="callout danger">
+  <strong>Fausse alerte 7 — « Erreurs déjà corrigées »</strong>
+  Plusieurs audits rapportent des erreurs déjà corrigées lors d'un audit précédent. Signe que l'auditeur regarde une version cachée ou du cache de son navigateur.
+</div>
+</section>
+
+<section id="vraies-erreurs">
+<h2>8. Leçons — vraies erreurs récurrentes détectées</h2>
+
+<p>Malgré leurs fausses alertes, les audits restent utiles pour détecter ces problèmes réels qui reviennent souvent dans le pipeline de génération automatique :</p>
+
+<h3>8.1 Transcriptions orales non relues</h3>
+<p>Les articles générés à partir des sous-titres YouTube contiennent des erreurs phonétiques sur les noms propres et applications. Exemples corrigés :</p>
+<ul>
+  <li>« Magic Hort » au lieu de <strong>Magic Earth</strong></li>
+  <li>« Golard Gels Vegan » au lieu de <strong>Gamle Strynefjellsvegen</strong></li>
+  <li>« bibouquer » au lieu de <strong>bivouaquer</strong></li>
+  <li>« Biwork » au lieu de <strong>bivouac</strong></li>
+  <li>« n'est ce pas de de sater » — bruit non nettoyé</li>
+</ul>
+<p><strong>Règle :</strong> toute génération par LLM à partir de transcription orale doit passer par une relecture humaine ciblée sur les noms propres (lieux, produits, applications).</p>
+
+<h3>8.2 Noms de produits incohérents dans un même article</h3>
+<p>Un article de test Blackview parlait du produit sous quatre noms différents : X1, XPLORE X1, XLOR X1, BV8800 Pro. Destructeur pour la crédibilité et le SEO. Voir Règle 5.</p>
+
+<h3>8.3 Titres et H1 tronqués / copier-coller incomplets</h3>
+<p>Exemple : <em>« Quel téléphone pour road trip ? Blackview X1 renforcé (pluie, chocs, froid)<strong>Blackview X1 :</strong>»</em> — cut-off visible. À vérifier systématiquement que le H1 et le <code>&lt;title&gt;</code> se terminent proprement.</p>
+
+<h3>8.4 Backticks Markdown résiduels</h3>
+<p>Les articles générés par LLM peuvent conserver des fences <code>```html</code> et <code>```</code> visibles dans le texte final rendu. À supprimer avant publication.</p>
+
+<h3>8.5 Accents manquants dans les titres éditoriaux</h3>
+<p>Exemple corrigé : <em>« Budget Cap Nord a moto seul : 10 000 km, couts »</em> au lieu de <em>« à moto seul, coûts »</em>. Fréquent quand le titre provient d'un slug URL non accentué.</p>
+
+<h3>8.6 Tableaux comparatifs contradictoires avec le texte</h3>
+<p>Exemple corrigé : article Dunlop Mutant vs Bridgestone T33 — le texte disait « Mutant rincé à 4 800 km », mais le tableau affichait 5 étoiles en longévité au Mutant et 3 au T33. Relire systématiquement texte + tableau ensemble.</p>
+
+<h3>8.7 Duplication de contenu</h3>
+<p>Deux pages racontent le même road trip Alpes 2022 : <code>les-alpes-dans-tous-les-sens.html</code> et <code>alpes-aventure-festival-moto.html</code>. À consolider via un <code>canonical</code> ou à différencier éditorialement.</p>
+</section>
+
+<section id="recommandations">
+<h2>9. Recommandations d'amélioration priorisées</h2>
+
+<h3><span class="tag p1">P1</span>Urgente — impact SEO et stabilité</h3>
+<ul>
+  <li><strong>Créer un script <code>validate_seo.py</code></strong> qui parcourt tous les HTML modifiés avant commit et vérifie les 10 points de la checklist. Doit bloquer le push si un point critique manque.</li>
+  <li><strong>Sécuriser <code>publish_to_github()</code></strong> en vérifiant explicitement que les fichiers modifiés sont bien trackés par git avant le push (plusieurs articles sont déjà passés en non-trackés).</li>
+  <li><strong>Corriger <code>fetch_youtube.py</code></strong> si cassé, pour restaurer la mise à jour automatique des données vidéo.</li>
+</ul>
+
+<h3><span class="tag p2">P2</span>Importante — amélioration éditoriale</h3>
+<ul>
+  <li><strong>Générateur automatique de meta description</strong> à partir du contenu de l'article (premier paragraphe tronqué à 155 caractères, ou génération LLM avec prompt contrôlé et longueur forcée).</li>
+  <li><strong>Générateur automatique d'<code>alt</code></strong> pour les images, basé sur le nom du fichier et le contexte du paragraphe.</li>
+  <li><strong>sitemap.xml auto-généré</strong> à chaque push, avec les dates réelles de modification des fichiers.</li>
+  <li><strong>Enrichir les pages roadbook</strong> avec un bloc narratif (min. 100 mots) et envelopper le message « Micro non supporté » dans <code>&lt;noscript&gt;</code>.</li>
+</ul>
+
+<h3><span class="tag p3">P3</span>Optimisation — qualité et découvrabilité</h3>
+<ul>
+  <li>Consolider la duplication Alpes 2022 (canonical ou différenciation éditoriale)</li>
+  <li>Enrichir les pages hubs (articles.html, gps.html, photo-video.html) avec des introductions éditoriales de 200-300 mots</li>
+  <li>Ajouter un flux RSS pour la découverte des nouveaux articles</li>
+  <li>Uniformiser les noms de produits via un dictionnaire central (<code>partenaires.json</code> étendu)</li>
+</ul>
+</section>
+
+<section id="historique">
+<h2>10. Historique des corrections appliquées</h2>
+
+<p>Bilan synthétique de la session de consolidation (cinq audits externes analysés, 50+ pages passées en revue) :</p>
+
+<table>
+  <thead>
+    <tr><th>Catégorie</th><th>Nombre</th><th>Exemples</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Meta descriptions ajoutées / corrigées</td><td>10</td><td>contact, securite, budget-cap-nord, aferiy-nano, radar-moto, retour-honda…</td></tr>
+    <tr><td>Titres raccourcis (de 76-108 c. à 57-73 c.)</td><td>12</td><td>pneus, comparatif-carpuride, geirangerfjord, voyager-en-norvege…</td></tr>
+    <tr><td>Descriptions raccourcies (de 170-223 c. à 144-158 c.)</td><td>6</td><td>aferiy, blackview, cap-nord-moto, index…</td></tr>
+    <tr><td>H1 multiples corrigés (2<sup>e</sup> H1 → H2)</td><td>5</td><td>350-km-froid-norvegien, comparatif-carpuride, t33-vs-road-6…</td></tr>
+    <tr><td>Schema.org Article ajouté</td><td>21</td><td>articles de test produit et road trip</td></tr>
+    <tr><td>CollectionPage ajouté</td><td>1</td><td>articles.html</td></tr>
+    <tr><td>Orthographe / accents</td><td>10+</td><td>sacoche, emporter, à moto, coûts, imprévus, Magic Earth, Gamle Strynefjellsvegen, Xplore X1, Je pars, accents gps.html…</td></tr>
+    <tr><td>Tableaux comparatifs corrigés</td><td>1</td><td>Dunlop Mutant vs Bridgestone T33 (longévité inversée)</td></tr>
+    <tr><td>Backticks parasites supprimés</td><td>2</td><td>dunlop-mutant article</td></tr>
+    <tr><td>alt ajoutés sur images</td><td>28</td><td>alpes-aventure-festival, espagne-2023, gps.html (miniatures YouTube)</td></tr>
+    <tr><td>Hero index.html repensé</td><td>1</td><td>opacité overlay 10 %, hauteur réduite, photo Norvège visible</td></tr>
+  </tbody>
+</table>
+
+<p><strong>Total :</strong> environ 30 corrections réelles sur plus de 40 fichiers HTML. Environ 25 fausses alertes externes rejetées après vérification dans le code.</p>
+
+<div class="callout ok">
+  <strong>Leçon principale de la session</strong>
+  Un audit externe est un <em>filet de détection</em>, pas une instruction directe. Toujours vérifier chaque signalement dans le code source brut avant d'appliquer une correction. Cela a évité environ 25 modifications inutiles ou dangereuses sur les fichiers déjà corrects.
+</div>
+</section>
+
+<section id="infographie">
+<h2>11. Règles d'infographie et proportions visuelles</h2>
+
+<p>Ces règles s'appliquent à toutes les pages qui contiennent des grilles de cartes produit : <code>photo-video.html</code>, <code>gps.html</code>, <code>pneus.html</code>, <code>intercoms.html</code>, <code>equipement.html</code>, hubs partenaires, etc.</p>
+
+<div class="callout warn">
+  <strong>Contexte — pourquoi cette règle existe</strong>
+  Sur <code>photo-video.html</code>, la règle CSS <code>.card-header { min-height: 65vh; }</code> produisait des vignettes de plus de 700 pixels de hauteur avec une photo de 260 px au milieu, et des emojis <code>🚁</code> <code>📸</code> perdus dans d'immenses zones vides. Résultat visuel catastrophique. Ne jamais reproduire ce motif.
+</div>
+
+<h3>11.1. Hauteur fixe obligatoire pour les vignettes produit</h3>
+
+<p>Toutes les vignettes (<code>.card-header</code> ou équivalent) d'une même grille doivent avoir une hauteur <strong>fixe et identique</strong>. Jamais de <code>min-height</code> exprimé en <code>vh</code>, qui produit des conteneurs de 500 à 700 pixels avec d'énormes vides autour d'une photo ou d'un emoji.</p>
+
+<p><strong>Règle :</strong> <code>height: 260px;</code> (valeur recommandée) ou toute valeur en <code>px</code> cohérente dans la grille. Ne pas utiliser <code>min-height</code> sur un conteneur de vignette produit.</p>
+
+<pre><code>.card-header {
+  height: 260px;          /* hauteur fixe, jamais vh */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+.card-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* l'image remplit le cadre sans déformation */
+  display: block;
+}</code></pre>
+
+<h3>11.2. Variante <code>emoji-only</code> pour les cartes sans visuel réel</h3>
+
+<p>Quand une carte produit n'a pas encore de photo réelle et affiche uniquement un emoji (🚁 📸 🏔️ 🔦), utiliser une classe supplémentaire <code>emoji-only</code> pour :</p>
+
+<ol>
+  <li>afficher un fond plus contrasté (gradient orange clair)</li>
+  <li>agrandir l'emoji (<code>font-size: 8rem</code>) pour qu'il remplisse visuellement l'espace disponible</li>
+  <li>ajouter un badge <em>« Visuel à venir »</em> en bas de la carte, pour signaler qu'il s'agit d'un placeholder et non d'un choix design volontaire</li>
+</ol>
+
+<pre><code>.card-header.emoji-only {
+  background: linear-gradient(135deg, #fff4e6 0%, #ffe0b2 100%);
+  font-size: 8rem;
+}
+.card-header.emoji-only::after {
+  content: "Visuel à venir";
+  position: absolute;
+  bottom: 12px; left: 0; right: 0;
+  text-align: center;
+  font-size: .72rem;
+  color: #b37400;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  font-weight: 600;
+}</code></pre>
+
+<p>En HTML, appliquer simplement la classe complémentaire : <code>&lt;div class="card-header emoji-only"&gt;🚁&lt;/div&gt;</code>.</p>
+
+<h3>11.3. Alignement vertical de tous les headers d'une même grille</h3>
+
+<p>Dans une grille CSS, toutes les cartes d'une même ligne s'étirent automatiquement à la hauteur de la carte la plus haute. Cela provoque des décalages visibles si les <code>.card-body</code> ont des longueurs de texte très différentes. Pour garder une grille propre et alignée :</p>
+
+<ul>
+  <li><strong>hauteur du header :</strong> <code>height: 260px;</code> fixe et identique pour toutes les cartes de la grille</li>
+  <li><strong>corps de carte :</strong> utiliser <code>display: flex; flex-direction: column;</code> sur <code>.camera-card</code> (ou équivalent) pour que le bouton en bas reste aligné même si le texte est plus court</li>
+  <li><strong>bouton d'action :</strong> ajouter <code>margin-top: auto;</code> pour le coller au bas de la carte, ce qui garantit l'alignement horizontal des boutons dans chaque ligne de la grille</li>
+</ul>
+
+<h3>11.4. Interdiction des grands vides autour des images</h3>
+
+<p>Tout cadre qui contient une image produit doit obéir à l'une de ces trois règles :</p>
+
+<ol>
+  <li>l'image remplit tout le cadre avec <code>object-fit: cover</code>, aucun vide visible</li>
+  <li>l'image est centrée avec un padding uniforme d'au maximum 20 % de la hauteur totale du cadre</li>
+  <li>le cadre est d'une taille proche de la taille native de l'image (±10 %)</li>
+</ol>
+
+<p>Une vignette qui montre 200 pixels d'image au milieu de 500 pixels de vide est interdite. C'est systématiquement une erreur de CSS (<code>min-height: Nvh</code> en général) qui doit être corrigée avant publication.</p>
+
+<h3>11.5. Checklist infographie avant publication</h3>
+
+<p>Avant tout push d'une page contenant une grille de cartes produit, vérifier ces cinq points :</p>
+
+<ol>
+  <li>ouvrir la page dans le navigateur et passer en mode responsive sur trois largeurs : 375 px (mobile), 768 px (tablette), 1280 px (desktop)</li>
+  <li>vérifier que toutes les cartes d'une même ligne ont la <strong>même hauteur</strong> sur les trois largeurs</li>
+  <li>vérifier qu'aucune image n'est entourée de plus de 40 pixels de vide au-dessus ou en-dessous</li>
+  <li>vérifier que les cartes <code>emoji-only</code> ont bien le fond contrasté orange + badge « Visuel à venir »</li>
+  <li>vérifier que les boutons d'action (Lire le test, Acheter, Voir le test…) sont alignés sur la même ligne horizontale dans chaque ligne de la grille</li>
+</ol>
+
+<div class="callout ok">
+  <strong>Règle mnémonique</strong>
+  Hauteur fixe en pixels, jamais en <code>vh</code>. <code>object-fit: cover</code> pour les photos. Classe <code>emoji-only</code> pour les placeholders. Boutons alignés en bas avec <code>margin-top: auto;</code>.
+</div>
+</section>
+
+<footer class="doc-footer">
+  <p>LCDMH — Le Coin Des Motards Heureux · Document de cadrage projet · Version du 11 avril 2026</p>
+</footer>
+
+</div>
+</body>
+</html>
