@@ -728,6 +728,18 @@
         </div>
     </section>
 
+    <!-- ========== ARTICLE VEDETTE (dernière publication) ========== -->
+    <section style="background:var(--orange);padding:2.4rem 6%;">
+        <div class="home-wrap" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;">
+            <div>
+                <p style="font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.7);font-weight:700;font-family:'Montserrat',sans-serif;margin-bottom:.4rem;">Derniere publication</p>
+                <h3 style="font-family:'Montserrat',sans-serif;font-size:clamp(1.1rem,2.5vw,1.4rem);color:#fff;font-weight:800;line-height:1.3;">Budget Cap Nord a moto seul : 10 000 km, couts et conseils pratiques</h3>
+                <p style="color:rgba(255,255,255,.8);font-size:.92rem;margin-top:.4rem;">Ferries, bivouac, carburant, hotels — le vrai budget d'un road trip en Norvege en solo.</p>
+            </div>
+            <a href="/articles/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat.html" style="display:inline-block;background:#fff;color:var(--orange);font-family:'Montserrat',sans-serif;font-weight:700;font-size:.9rem;padding:.7rem 1.6rem;border-radius:50px;white-space:nowrap;flex-shrink:0;">Lire l'article &#8594;</a>
+        </div>
+    </section>
+
     <!-- ========== YOUTUBE ========== -->
     <section class="home-section home-section--alt" id="videos" aria-labelledby="yt-title">
         <div class="home-wrap">
@@ -783,23 +795,14 @@
     </section>
 
     <!-- ========== PARTENAIRES (compact, en bas) ========== -->
-    <section class="home-section home-section--alt home-partners" id="partenaires" aria-labelledby="partners-title">
+    <section id="partenaires" style="background:var(--alt);padding:2rem 6%;text-align:center;border-top:1px solid var(--border);">
         <div class="home-wrap">
-            <div class="home-section__head">
-                <h2 id="partners-title">Les <em>partenaires</em> LCDMH</h2>
-                <div class="home-section__bar"></div>
-                <p class="home-partners__note">
-                    Quelques marques qui soutiennent LCDMH et proposent des codes promo lecteurs.
-                    Tous les produits ont été utilisés sur la route — liens d'affiliation transparents.
-                </p>
-            </div>
-
+            <p style="font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;font-family:'Montserrat',sans-serif;margin-bottom:1rem;">Partenaires &amp; codes promo lecteurs</p>
             <!-- Liste des partenaires injectée dynamiquement depuis /data/partenaires.json -->
             <div id="home-partners-list" aria-live="polite">
                 <noscript>Voir la page <a href="/codes-promo.html">codes promo</a>.</noscript>
             </div>
-
-            <a class="home-partners__more" href="/codes-promo.html">Voir tous les codes promo →</a>
+            <a class="home-partners__more" href="/codes-promo.html" style="font-size:.82rem;">Voir tous les codes promo →</a>
         </div>
     </section>
 
