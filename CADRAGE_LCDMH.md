@@ -274,3 +274,88 @@ Environ 30 corrections réelles appliquées sur 40+ fichiers HTML : meta descrip
 Environ 25 fausses alertes rejetées après vérification directe dans le code (meta descriptions absentes, contact 404, lang="fr" absent, Micro non supporté, vouvoiement, titres déjà corrigés).
 
 Leçon principale : **toujours vérifier les audits externes dans le code source brut** avant d'appliquer une correction. Un audit externe est utile comme filet de détection mais ne doit jamais être appliqué aveuglément.
+
+---
+
+## 11. Règles d'infographie et proportions visuelles
+
+Ces règles s'appliquent à toutes les pages utilisant des grilles de cartes produit (photo-video.html, gps.html, pneus.html, intercoms.html, équipement, hubs partenaires, etc.).
+
+### 11.1. Hauteur fixe obligatoire pour les vignettes produit
+
+Toutes les vignettes (`.card-header` ou équivalent) d'une même grille doivent avoir une hauteur **fixe et identique**. Jamais de `min-height` exprimé en `vh`, qui produit des vignettes de 500 à 700 pixels avec d'immenses vides autour d'une photo ou d'un emoji.
+
+Règle : `height: 260px;` recommandé, ou toute valeur en `px` cohérente dans la grille. Ne pas utiliser `min-height` sur un conteneur de vignette produit.
+
+```css
+.card-header {
+  height: 260px;          /* hauteur fixe, jamais vh */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+.card-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* l'image remplit le cadre sans déformation */
+  display: block;
+}
+```
+
+### 11.2. Variante emoji-only pour les cartes sans visuel réel
+
+Quand une carte produit n'a pas encore de photo réelle (on affiche uniquement un emoji 🚁 📸 🏔️), utiliser une classe supplémentaire `emoji-only` pour :
+
+1. afficher un fond plus contrasté (gradient orange clair)
+2. agrandir l'emoji (`font-size: 8rem`) pour qu'il remplisse visuellement l'espace
+3. ajouter un badge « Visuel à venir » en bas de la carte, pour signaler qu'il s'agit d'un placeholder et non d'un choix design
+
+```css
+.card-header.emoji-only {
+  background: linear-gradient(135deg, #fff4e6 0%, #ffe0b2 100%);
+  font-size: 8rem;
+}
+.card-header.emoji-only::after {
+  content: "Visuel à venir";
+  position: absolute;
+  bottom: 12px; left: 0; right: 0;
+  text-align: center;
+  font-size: .72rem;
+  color: #b37400;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+```
+
+### 11.3. Alignement vertical de tous les headers d'une même grille
+
+Dans une grille CSS, toutes les cartes d'une même ligne s'étirent automatiquement à la hauteur de la carte la plus haute. Cela provoque des décalages visibles si les `.card-body` ont des longueurs de texte très différentes. Pour garder une grille propre :
+
+- hauteur du header : `height: 260px;` fixe pour toutes
+- corps de carte : `display: flex; flex-direction: column;` sur `.camera-card` pour que le bouton en bas reste aligné même si le texte est plus court
+- bouton : `margin-top: auto;` pour le coller au bas de la carte
+
+### 11.4. Interdiction des grands vides autour des images
+
+Tout cadre qui contient une image doit obéir à une de ces trois règles :
+
+1. l'image remplit tout le cadre avec `object-fit: cover`, pas de vide visible
+2. l'image est centrée avec un padding uniforme (max 20 % de la hauteur totale)
+3. le cadre est d'une taille proche de la taille native de l'image (±10 %)
+
+Une vignette qui montre 200 pixels d'image au milieu de 500 pixels vides est interdite. C'est systématiquement une erreur de CSS (`min-height: Nvh` en général) qui doit être corrigée.
+
+### 11.5. Checklist infographie avant publication
+
+Avant tout push d'une page contenant une grille de cartes produit :
+
+1. ouvrir la page dans le navigateur, passer en mode responsive (375 px, 768 px, 1280 px)
+2. vérifier que toutes les cartes d'une même ligne ont la **même hauteur** sur les trois largeurs
+3. vérifier qu'aucune image n'est entourée de plus de 40 pixels de vide au-dessus ou en-dessous
+4. vérifier que les emoji-only ont bien le fond contrasté + badge « Visuel à venir »
+5. vérifier que les boutons d'action sont alignés sur la même ligne horizontale dans chaque ligne de la grille
+
+Cette règle a été ajoutée suite à un bug photo-video.html où `.card-header { min-height: 65vh; }` produisait 700+ pixels de vide autour de photos de 260 pixels. Ne pas reproduire.
