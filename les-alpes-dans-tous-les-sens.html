@@ -186,6 +186,29 @@
         .ep-body h3{font-size:.95rem;line-height:1.4;margin-bottom:.4rem}
         .ep-body p{font-size:.82rem;color:var(--muted);margin:0}
 
+        /* VIDEO CARD (NEW FORMAT) */
+        .hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem;margin-bottom:3rem}
+        .video-card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--border);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+        .video-card:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.08)}
+        .card-situation{padding:1rem 1.2rem .6rem;border-bottom:1px solid var(--border);background:#fafaf8}
+        .card-situation p{margin:0 0 .25rem;font-size:.82rem;color:var(--muted);line-height:1.45}
+        .card-situation .sitgeo-icon{color:var(--orange);margin-right:.3rem}
+        .card-situation .etape-icon{color:var(--muted);margin-right:.3rem;font-size:.85rem}
+        .thumb{position:relative;aspect-ratio:16/9;overflow:hidden;cursor:pointer;border-radius:8px 8px 0 0}
+        .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+        .thumb .play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;background:rgba(0,0,0,.6);border-radius:50%;display:flex;align-items:center;justify-content:center}
+        .thumb .play-btn::after{content:'';border-left:20px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
+        .thumb .ep-badge{position:absolute;bottom:.6rem;left:.6rem;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;letter-spacing:.05em}
+        .card-body{padding:1rem 1.2rem 1.2rem;flex:1;display:flex;flex-direction:column}
+        .card-body h3{font-size:1rem;font-weight:700;line-height:1.3;color:var(--noir);margin-bottom:.6rem}
+        .card-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.7rem}
+        .tag{display:inline-flex;align-items:center;gap:.3rem;font-size:.75rem;font-weight:600;padding:.2rem .65rem;border-radius:20px}
+        .tag-main{background:#fdecea;color:#c0392b}
+        .tag-ep{background:#f5eef8;color:#8e44ad}
+        .card-desc{font-size:.88rem;color:#555;line-height:1.55;margin-bottom:.8rem;flex:1}
+        .card-link{display:inline-block;color:var(--orange);font-weight:600;font-size:.9rem;margin-top:auto}
+        .card-link:hover{text-decoration:underline}
+
         /* GUIDE PRATIQUE */
         .guide-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.4rem;max-width:1000px;margin:0 auto}
         .guide-card{background:#fff;border-radius:16px;padding:1.6rem;border:1px solid var(--border)}
@@ -515,102 +538,214 @@
         <p>8 épisodes — 1800 km d'aventure dans les Alpes</p>
     </div>
 
-    <div class="ep-grid">
-        <a href="https://www.youtube.com/watch?v=UevfEKcHDjU" target="_blank" rel="noopener" class="ep-card">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/UevfEKcHDjU/hqdefault.jpg" alt="Cols mythiques des Alpes" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num">EP 1</div>
+    <div class="hub-grid">
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Haute-Savoie (Beaufort, Roselend, Iseran)</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 1 · Premier jour du road trip</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=UevfEKcHDjU" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/UevfEKcHDjU/hqdefault.jpg" alt="Cols mythiques des Alpes" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 1</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>Cols mythiques des Alpes</h3>
-                <p>Beaufort, Roselend, Iseran - Premier jour intense.</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🏔️ Alpes</span>
+                    <span class="tag tag-ep">📎 EP 1</span>
+                </div>
+                <p class="card-desc">Beaufort, Cormet de Roselend, Col de l'Iseran. Un départ intense à travers les plus beaux cols de la Haute-Savoie. Les lacets se succèdent, l'altitude grimpe, et les paysages deviennent de plus en plus grandioses.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=UevfEKcHDjU" target="_blank">Voir l'extrait →</a>
             </div>
-        </a>
+        </article>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"VideoObject","name":"Cols mythiques des Alpes","description":"Beaufort, Cormet de Roselend, Col de l'Iseran. Un départ intense à travers les plus beaux cols de la Haute-Savoie.","thumbnailUrl":"https://i.ytimg.com/vi/UevfEKcHDjU/hqdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=UevfEKcHDjU","embedUrl":"https://www.youtube.com/embed/UevfEKcHDjU"}
+        </script>
 
-        <a href="https://www.youtube.com/watch?v=9GvBpAWy__E" target="_blank" rel="noopener" class="ep-card">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/9GvBpAWy__E/hqdefault.jpg" alt="Gorges de Méouge" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num">EP 2</div>
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Drôme & Hautes-Alpes (Gorges, Baronnies)</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 2 · Vers les Baronnies provençales</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=9GvBpAWy__E" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/9GvBpAWy__E/hqdefault.jpg" alt="Gorges de Méouge" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 2</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>Gorges de Méouge & Baronnies</h3>
-                <p>350 km de liberté dans les Baronnies provençales.</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🏔️ Alpes</span>
+                    <span class="tag tag-ep">📎 EP 2</span>
+                </div>
+                <p class="card-desc">350 km de liberté dans les Baronnies provençales. Des gorges spectaculaires, des villages pittoresques, et des routes sinueuses qui serpentent à travers les paysages méditerranéens des Alpes du Sud.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=9GvBpAWy__E" target="_blank">Voir l'extrait →</a>
             </div>
-        </a>
+        </article>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"VideoObject","name":"Gorges de Méouge & Baronnies","description":"350 km de liberté dans les Baronnies provençales avec ses gorges spectaculaires et ses routes sinueuses.","thumbnailUrl":"https://i.ytimg.com/vi/9GvBpAWy__E/hqdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=9GvBpAWy__E","embedUrl":"https://www.youtube.com/embed/9GvBpAWy__E"}
+        </script>
 
-        <a href="https://www.youtube.com/watch?v=F0wjVN88D_E" target="_blank" rel="noopener" class="ep-card">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/F0wjVN88D_E/hqdefault.jpg" alt="Barcelonnette Cuneo" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num">EP 3</div>
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Alpes-de-Haute-Provence (Bonette, Lombarde)</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 3 · Vers la frontière italienne</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=F0wjVN88D_E" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/F0wjVN88D_E/hqdefault.jpg" alt="Barcelonnette Cuneo" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 3</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>Barcelonnette → Cuneo</h3>
-                <p>Col de la Bonette (2802m) et Col de la Lombarde.</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🏔️ Alpes</span>
+                    <span class="tag tag-ep">📎 EP 3</span>
+                </div>
+                <p class="card-desc">Col de la Bonette (2802m), le plus haut col routier des Alpes françaises, et Col de la Lombarde. Ces deux passes mythiques offrent des paysages époustouflants et marquent la transition vers la frontière italienne et les Alpes du Sud.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=F0wjVN88D_E" target="_blank">Voir l'extrait →</a>
             </div>
-        </a>
+        </article>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"VideoObject","name":"Barcelonnette → Cuneo","description":"Col de la Bonette (2802m) et Col de la Lombarde. Passage vers la frontière italienne et les Alpes du Sud.","thumbnailUrl":"https://i.ytimg.com/vi/F0wjVN88D_E/hqdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=F0wjVN88D_E","embedUrl":"https://www.youtube.com/embed/F0wjVN88D_E"}
+        </script>
 
-        <a href="https://www.youtube.com/watch?v=zvOTRRvdQeE" target="_blank" rel="noopener" class="ep-card">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/zvOTRRvdQeE/hqdefault.jpg" alt="Chute au Col de Tende" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num">EP 4</div>
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Alpes-Maritimes (Col de Tende)</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 4 · Adrénaline et apprentissage</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=zvOTRRvdQeE" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/zvOTRRvdQeE/hqdefault.jpg" alt="Chute au Col de Tende" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 4</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>Chute épique au Col de Tende</h3>
-                <p>240 km d'adrénaline et une chute inoubliable.</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🏔️ Alpes</span>
+                    <span class="tag tag-ep">📎 EP 4</span>
+                </div>
+                <p class="card-desc">240 km d'adrénaline et un moment mémorable : une chute au Col de Tende qui devient une leçon précieuse. Cet épisode capture la réalité du road trip : les défis, les erreurs, et la détermination à continuer malgré tout.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=zvOTRRvdQeE" target="_blank">Voir l'extrait →</a>
             </div>
-        </a>
+        </article>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"VideoObject","name":"Chute épique au Col de Tende","description":"240 km d'adrénaline et une chute inoubliable au Col de Tende. Un moment mémorable du road trip moto.","thumbnailUrl":"https://i.ytimg.com/vi/zvOTRRvdQeE/hqdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=zvOTRRvdQeE","embedUrl":"https://www.youtube.com/embed/zvOTRRvdQeE"}
+        </script>
 
-        <a href="https://www.youtube.com/watch?v=8cQ573KasHI" target="_blank" rel="noopener" class="ep-card">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/8cQ573KasHI/hqdefault.jpg" alt="Col de Tende" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num">EP 5</div>
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Alpes-Maritimes (Col de Tende, 1870m)</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 5 · Analyse et compréhension</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=8cQ573KasHI" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/8cQ573KasHI/hqdefault.jpg" alt="Col de Tende" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 5</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>Col de Tende 1870m</h3>
-                <p>14 lacets et une chute analysée.</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🏔️ Alpes</span>
+                    <span class="tag tag-ep">📎 EP 5</span>
+                </div>
+                <p class="card-desc">14 lacets, une chute analysée en détail. Cet épisode disséque ce qui s'est passé et pourquoi. Une opportunité d'apprentissage sur les techniques de conduite, la gestion de la panique, et l'importance de l'expérience en montagne.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=8cQ573KasHI" target="_blank">Voir l'extrait →</a>
             </div>
-        </a>
+        </article>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"VideoObject","name":"Col de Tende 1870m","description":"14 lacets et une analyse détaillée de la chute. Un épisode d'apprentissage sur la conduite en montagne.","thumbnailUrl":"https://i.ytimg.com/vi/8cQ573KasHI/hqdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=8cQ573KasHI","embedUrl":"https://www.youtube.com/embed/8cQ573KasHI"}
+        </script>
 
-        <a href="https://www.youtube.com/watch?v=WATKVuWzRN4" target="_blank" rel="noopener" class="ep-card">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/WATKVuWzRN4/hqdefault.jpg" alt="Alpes du Sud" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num">EP 6</div>
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Alpes-Maritimes (Hautes routes du Sel)</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 6 · Libertés alpines</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=WATKVuWzRN4" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/WATKVuWzRN4/hqdefault.jpg" alt="Alpes du Sud" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 6</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>Alpes du Sud</h3>
-                <p>Cols, villages perchés et liberté.</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🏔️ Alpes</span>
+                    <span class="tag tag-ep">📎 EP 6</span>
+                </div>
+                <p class="card-desc">Cols, villages perchés et liberté. Les Alpes du Sud révèlent leur charme avec des routes panoramiques, des petits villages authentiques, et une sensation de totalité dans l'aventure. Le road trip trouve son rythme de croisière.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=WATKVuWzRN4" target="_blank">Voir l'extrait →</a>
             </div>
-        </a>
+        </article>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"VideoObject","name":"Alpes du Sud","description":"Cols, villages perchés et liberté dans les Alpes du Sud. Une immersion totale dans la beauté alpine.","thumbnailUrl":"https://i.ytimg.com/vi/WATKVuWzRN4/hqdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=WATKVuWzRN4","embedUrl":"https://www.youtube.com/embed/WATKVuWzRN4"}
+        </script>
 
-        <a href="https://www.youtube.com/watch?v=AkLCTHm2xNY" target="_blank" rel="noopener" class="ep-card">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/AkLCTHm2xNY/hqdefault.jpg" alt="Lautaret Galibier" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num">EP 7</div>
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Hautes-Alpes (Lautaret, Galibier)</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 7 · Éléments en furie</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=AkLCTHm2xNY" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/AkLCTHm2xNY/hqdefault.jpg" alt="Lautaret Galibier" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 7</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>Lautaret & Galibier sous l'orage</h3>
-                <p>Pluie, grêle et 2642m d'altitude.</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🏔️ Alpes</span>
+                    <span class="tag tag-ep">📎 EP 7</span>
+                </div>
+                <p class="card-desc">Pluie, grêle et 2642m d'altitude. Le Col du Galibier nous accueille sous l'orage, offrant un spectacle dramatique et inoubliable. Les conditions météorologiques extrêmes testent la détermination et le courage du motard solitaire.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=AkLCTHm2xNY" target="_blank">Voir l'extrait →</a>
             </div>
-        </a>
+        </article>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"VideoObject","name":"Lautaret & Galibier sous l'orage","description":"Pluie, grêle et 2642m d'altitude au Col du Galibier. Un défi météorologique mémorable.","thumbnailUrl":"https://i.ytimg.com/vi/AkLCTHm2xNY/hqdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=AkLCTHm2xNY","embedUrl":"https://www.youtube.com/embed/AkLCTHm2xNY"}
+        </script>
 
-        <a href="https://www.youtube.com/watch?v=aMgL1LC1nMU" target="_blank" rel="noopener" class="ep-card">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/aMgL1LC1nMU/hqdefault.jpg" alt="Retour Annecy" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num">EP 8</div>
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Savoie (Route des Alpes vers Annecy)</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 8 · Épilogue du voyage</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=aMgL1LC1nMU" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/aMgL1LC1nMU/hqdefault.jpg" alt="Retour Annecy" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 8</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>Retour à Annecy</h3>
-                <p>Dernière étape à travers les Alpes.</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🏔️ Alpes</span>
+                    <span class="tag tag-ep">📎 EP 8</span>
+                </div>
+                <p class="card-desc">Dernière étape à travers les Alpes. Le road trip touche à sa fin, mais l'aventure reste gravée dans la mémoire. Cette conclusion ferme la boucle d'une quête inoubliable de 1800 km dans les plus beaux cols de France.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=aMgL1LC1nMU" target="_blank">Voir l'extrait →</a>
             </div>
-        </a>
+        </article>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"VideoObject","name":"Retour à Annecy","description":"Dernière étape du road trip à travers les Alpes. Conclusion d'une aventure inoubliable de 1800 km.","thumbnailUrl":"https://i.ytimg.com/vi/aMgL1LC1nMU/hqdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=aMgL1LC1nMU","embedUrl":"https://www.youtube.com/embed/aMgL1LC1nMU"}
+        </script>
     </div>
 
     <div style="text-align:center;margin-top:2.5rem">
@@ -668,19 +803,4 @@
 
 <!-- FOOTER -->
 <footer>
-    <div class="footer-logo">LC<em>D</em>MH</div>
-    <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.4)">La Chaîne du Motard Heureux · Annecy, France</p>
-    <ul class="footer-links">
-        <li><a href="roadtrips.html">Road Trips</a></li>
-        <li><a href="/tests-motos.html">Tests</a></li>
-        <li><a href="codes-promo.html">Codes promo</a></li>
-        <li><a href="a-propos.html">À propos</a></li>
-        <li><a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
-    </ul>
-    <p class="footer-legal">LCDMH © 2026 – Yves · Annecy, France</p>
-</footer>
-
-
-<script src="maillage.js"></script>
-</body>
-</html>
+    <div cl

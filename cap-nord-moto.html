@@ -187,7 +187,7 @@
         .tl-tag.red{background:#fdf0f0;color:#e74c3c}
         .tl-video-link{display:inline-flex;align-items:center;gap:.4rem;margin-top:.8rem;font-size:.82rem;font-weight:700;color:var(--orange)}
 
-        /* EPISODE GRID */
+        /* EPISODE GRID - LEGACY (keep for compatibility) */
         .ep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem;max-width:1100px;margin:0 auto}
         .ep-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--border);transition:box-shadow .2s,transform .2s}
         .ep-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.1);transform:translateY(-3px)}
@@ -200,6 +200,29 @@
         .ep-body{padding:1rem 1.1rem}
         .ep-body h3{font-size:.95rem;line-height:1.4;margin-bottom:.4rem}
         .ep-body p{font-size:.82rem;color:var(--muted);margin:0}
+
+        /* HUB GRID - NEW VIDEO CARD FORMAT */
+        .hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem;margin-bottom:3rem}
+        .video-card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--border);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+        .video-card:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.08)}
+        .card-situation{padding:1rem 1.2rem .6rem;border-bottom:1px solid var(--border);background:#fafaf8}
+        .card-situation p{margin:0 0 .25rem;font-size:.82rem;color:var(--muted);line-height:1.45}
+        .card-situation .sitgeo-icon{color:var(--orange);margin-right:.3rem}
+        .card-situation .etape-icon{color:var(--muted);margin-right:.3rem;font-size:.85rem}
+        .thumb{position:relative;aspect-ratio:16/9;overflow:hidden;cursor:pointer;border-radius:8px 8px 0 0}
+        .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+        .thumb .play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;background:rgba(0,0,0,.6);border-radius:50%;display:flex;align-items:center;justify-content:center}
+        .thumb .play-btn::after{content:'';border-left:20px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
+        .thumb .ep-badge{position:absolute;bottom:.6rem;left:.6rem;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;letter-spacing:.05em}
+        .card-body{padding:1rem 1.2rem 1.2rem;flex:1;display:flex;flex-direction:column}
+        .card-body h3{font-size:1rem;font-weight:700;line-height:1.3;color:var(--noir);margin-bottom:.6rem}
+        .card-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.7rem}
+        .tag{display:inline-flex;align-items:center;gap:.3rem;font-size:.75rem;font-weight:600;padding:.2rem .65rem;border-radius:20px}
+        .tag-main{background:#fdecea;color:#c0392b}
+        .tag-ep{background:#f5eef8;color:#8e44ad}
+        .card-desc{font-size:.88rem;color:#555;line-height:1.55;margin-bottom:.8rem;flex:1}
+        .card-link{display:inline-block;color:var(--orange);font-weight:600;font-size:.9rem;margin-top:auto}
+        .card-link:hover{text-decoration:underline}
 
         /* GUIDE PRATIQUE */
         .guide-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.4rem;max-width:1000px;margin:0 auto}
@@ -630,161 +653,482 @@
         <p>14 épisodes documentaires — cinématographie solo, conditions réelles</p>
     </div>
 
-        <div class="ep-grid">
-        <a href="https://www.youtube.com/watch?v=aEEJXeNSsdg" target="_blank" rel="noopener" class="ep-card">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/aEEJXeNSsdg/hqdefault.jpg" alt="Cap Nord à Moto : 63 ans, 10 000 km en Solo – LCDMH Cap Nord" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num">EP 1</div>
+        <div class="hub-grid">
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Suède — Danemark</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 1 · Le départ depuis Annecy</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=aEEJXeNSsdg" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/aEEJXeNSsdg/hqdefault.jpg" alt="Cap Nord à Moto : 63 ans, 10 000 km en Solo" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 1</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>Cap Nord à Moto : 63 ans, 10 000 km en Solo</h3>
-                <p>Annecy → Danemark. Le grand départ.</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🇳🇴 Norvège</span>
+                    <span class="tag tag-ep">📎 EP 1</span>
+                </div>
+                <p class="card-desc">Le grand départ depuis Annecy vers le Cap Nord. À 63 ans, seul sur sa Honda NT1100, direction la Scandinavie pour une aventure de 10 000 km à travers fjords, montagnes enneigées et bivouacs en pleine nature. Les premières kilomètres marquent le début d'un voyage transformateur.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=aEEJXeNSsdg" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=YwiwUpp8yBY" target="_blank" rel="noopener" class="ep-card">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/YwiwUpp8yBY/hqdefault.jpg" alt="Meilleures Routes Norvège : Top 7 Incontournables – LCDMH Cap Nord" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num">EP 2</div>
+        </article>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          "name": "Cap Nord à Moto : 63 ans, 10 000 km en Solo",
+          "description": "Le grand départ depuis Annecy vers le Cap Nord. À 63 ans, seul sur sa Honda NT1100, direction la Scandinavie pour une aventure de 10 000 km à travers fjords, montagnes enneigées et bivouacs en pleine nature.",
+          "thumbnailUrl": "https://i.ytimg.com/vi/aEEJXeNSsdg/hqdefault.jpg",
+          "contentUrl": "https://www.youtube.com/watch?v=aEEJXeNSsdg",
+          "embedUrl": "https://www.youtube.com/embed/aEEJXeNSsdg"
+        }
+        </script>
+
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Norvège — Route côtière</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 2 · Les routes incontournables</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=YwiwUpp8yBY" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/YwiwUpp8yBY/hqdefault.jpg" alt="Meilleures Routes Norvège : Top 7 Incontournables" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 2</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>Meilleures Routes Norvège : Top 7 Incontournables</h3>
-                <p>Les premières claques visuelles. Épique.</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🇳🇴 Norvège</span>
+                    <span class="tag tag-ep">📎 EP 2</span>
+                </div>
+                <p class="card-desc">Découvrez les 7 routes les plus spectaculaires de Norvège. Des paysages époustouflants qui marquent les premiers jours du voyage : montagnes escarpées, virages serrés et vues à couper le souffle. Les premières claques visuelles qui donnent le ton à toute l'aventure.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=YwiwUpp8yBY" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=XbA7du0oX-I" target="_blank" rel="noopener" class="ep-card">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/XbA7du0oX-I/hqdefault.jpg" alt="5 FERRYS, 250 KM DE FOLIE | Stavanger-Bergen à Moto – LCDMH Cap Nord" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num">EP 3</div>
+        </article>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          "name": "Meilleures Routes Norvège : Top 7 Incontournables",
+          "description": "Découvrez les 7 routes les plus spectaculaires de Norvège. Des paysages époustouflants qui marquent les premiers jours du voyage : montagnes escarpées, virages serrés et vues à couper le souffle.",
+          "thumbnailUrl": "https://i.ytimg.com/vi/YwiwUpp8yBY/hqdefault.jpg",
+          "contentUrl": "https://www.youtube.com/watch?v=YwiwUpp8yBY",
+          "embedUrl": "https://www.youtube.com/embed/YwiwUpp8yBY"
+        }
+        </script>
+
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Stavanger → Bergen</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 3 · Les 5 ferries épiques</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=XbA7du0oX-I" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/XbA7du0oX-I/hqdefault.jpg" alt="5 FERRYS, 250 KM DE FOLIE | Stavanger-Bergen à Moto" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 3</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>5 FERRYS, 250 KM DE FOLIE | Stavanger-Bergen à Moto</h3>
-                <p>La côte norvégienne dans toute sa magie.</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🇳🇴 Norvège</span>
+                    <span class="tag tag-ep">📎 EP 3</span>
+                </div>
+                <p class="card-desc">250 kilomètres d'une folie pure entre Stavanger et Bergen : 5 ferries traversant des fjords spectaculaires, des routes côtières qui épousent les reliefs vertigineux. Un ballet impressionnant de courbes, de traversées en ferry et de paysages côtiers norvégiens dans toute leur magie.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=XbA7du0oX-I" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=MNKg781CFh0" target="_blank" rel="noopener" class="ep-card">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/MNKg781CFh0/hqdefault.jpg" alt="Fjords à Moto : Bergen, Gaularfjellet & Bivouac Sauvage – LCDMH Cap Nord" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num">EP 4</div>
+        </article>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          "name": "5 FERRYS, 250 KM DE FOLIE | Stavanger-Bergen à Moto",
+          "description": "250 kilomètres d'une folie pure entre Stavanger et Bergen : 5 ferries traversant des fjords spectaculaires, des routes côtières qui épousent les reliefs vertigineux.",
+          "thumbnailUrl": "https://i.ytimg.com/vi/XbA7du0oX-I/hqdefault.jpg",
+          "contentUrl": "https://www.youtube.com/watch?v=XbA7du0oX-I",
+          "embedUrl": "https://www.youtube.com/embed/XbA7du0oX-I"
+        }
+        </script>
+
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Bergen — Gaularfjellet</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 4 · Première nuit en bivouac</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=MNKg781CFh0" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/MNKg781CFh0/hqdefault.jpg" alt="Fjords à Moto : Bergen, Gaularfjellet & Bivouac Sauvage" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 4</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>Fjords à Moto : Bergen, Gaularfjellet & Bivouac Sauvage</h3>
-                <p>Première nuit en tente sous les étoiles norvégiennes.</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🇳🇴 Norvège</span>
+                    <span class="tag tag-ep">📎 EP 4</span>
+                </div>
+                <p class="card-desc">Bergen et ses fjords majestueux, puis la montée spectaculaire vers le Gaularfjellet. La première nuit en tente sous les étoiles norvégiennes marque un tournant émotionnel dans le voyage. Le silence de la nature arctique, la solitude bienfaisante, et la communion avec le paysage sauvage.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=MNKg781CFh0" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=L9ZSCWiqNFU" target="_blank" rel="noopener" class="ep-card">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/L9ZSCWiqNFU/hqdefault.jpg" alt="SOGNEFJORD : Bergen → Balestrand – LCDMH Cap Nord" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num">EP 5</div>
+        </article>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          "name": "Fjords à Moto : Bergen, Gaularfjellet & Bivouac Sauvage",
+          "description": "Bergen et ses fjords majestueux, puis la montée spectaculaire vers le Gaularfjellet. La première nuit en tente sous les étoiles norvégiennes marque un tournant émotionnel dans le voyage.",
+          "thumbnailUrl": "https://i.ytimg.com/vi/MNKg781CFh0/hqdefault.jpg",
+          "contentUrl": "https://www.youtube.com/watch?v=MNKg781CFh0",
+          "embedUrl": "https://www.youtube.com/embed/MNKg781CFh0"
+        }
+        </script>
+
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Sognefjord</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 5 · Le plus long fjord du monde</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=L9ZSCWiqNFU" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/L9ZSCWiqNFU/hqdefault.jpg" alt="SOGNEFJORD : Bergen → Balestrand" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 5</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>SOGNEFJORD : Bergen → Balestrand</h3>
-                <p>Le plus long fjord du monde. Spectaculaire.</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🇳🇴 Norvège</span>
+                    <span class="tag tag-ep">📎 EP 5</span>
+                </div>
+                <p class="card-desc">Le Sognefjord, le plus long fjord du monde, déploie ses eaux cristallines et ses parois rocheuses vertigineuses. La traversée depuis Bergen jusqu'à Balestrand est un hymne à la grandeur de la nature norvégienne : eau turquoise, montagnes enneigées, et une sensation d'infini à chaque courbe.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=L9ZSCWiqNFU" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=Fzj-lGDwedc" target="_blank" rel="noopener" class="ep-card">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/Fzj-lGDwedc/hqdefault.jpg" alt="GEIRANGERFJORD : Le Plus Beau Fjord de Norvège – LCDMH Cap Nord" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num">EP 6</div>
+        </article>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          "name": "SOGNEFJORD : Bergen → Balestrand",
+          "description": "Le Sognefjord, le plus long fjord du monde, déploie ses eaux cristallines et ses parois rocheuses vertigineuses. Une traversée spectaculaire depuis Bergen jusqu'à Balestrand.",
+          "thumbnailUrl": "https://i.ytimg.com/vi/L9ZSCWiqNFU/hqdefault.jpg",
+          "contentUrl": "https://www.youtube.com/watch?v=L9ZSCWiqNFU",
+          "embedUrl": "https://www.youtube.com/embed/L9ZSCWiqNFU"
+        }
+        </script>
+
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Geirangerfjord</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 6 · Le plus beau fjord</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=Fzj-lGDwedc" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/Fzj-lGDwedc/hqdefault.jpg" alt="GEIRANGERFJORD : Le Plus Beau Fjord de Norvège" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 6</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>GEIRANGERFJORD : Le Plus Beau Fjord de Norvège</h3>
-                <p>À regarder en mode cinéma. Tout simplement.</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🇳🇴 Norvège</span>
+                    <span class="tag tag-ep">📎 EP 6</span>
+                </div>
+                <p class="card-desc">Le Geirangerfjord, considéré comme l'un des plus beaux fjords du monde, offre des vues cinématographiques à chaque instant. Les cascades, les falaises abruptes et l'eau d'un bleu profond créent un tableau de beauté naturelle qui dépasse l'imagination. À regarder absolument en mode cinéma.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=Fzj-lGDwedc" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=PaEMRm_5H0U" target="_blank" rel="noopener" class="ep-card">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/PaEMRm_5H0U/hqdefault.jpg" alt="L'Ivresse du Voyage — 66e Parallèle – LCDMH Cap Nord" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num">EP 7</div>
+        </article>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          "name": "GEIRANGERFJORD : Le Plus Beau Fjord de Norvège",
+          "description": "Le Geirangerfjord, considéré comme l'un des plus beaux fjords du monde, offre des vues cinématographiques avec cascades, falaises abruptes et eau cristalline.",
+          "thumbnailUrl": "https://i.ytimg.com/vi/Fzj-lGDwedc/hqdefault.jpg",
+          "contentUrl": "https://www.youtube.com/watch?v=Fzj-lGDwedc",
+          "embedUrl": "https://www.youtube.com/embed/Fzj-lGDwedc"
+        }
+        </script>
+
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : 66e Parallèle</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 7 · L'ivresse du voyage</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=PaEMRm_5H0U" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/PaEMRm_5H0U/hqdefault.jpg" alt="L'Ivresse du Voyage — 66e Parallèle" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 7</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>L'Ivresse du Voyage — 66e Parallèle</h3>
-                <p>Quand le voyage transforme le voyageur.</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🇳🇴 Norvège</span>
+                    <span class="tag tag-ep">📎 EP 7</span>
+                </div>
+                <p class="card-desc">Au passage de la 66e parallèle, c'est bien plus qu'une ligne imaginaire : c'est la frontière vers un monde différent. L'altitude monte, l'air devient plus pur, et l'ivresse du voyage s'empare du motard. Chaque kilomètre rapproche de l'Arctique, transformant profondément le voyageur et sa perception du monde.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=PaEMRm_5H0U" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=cstTBA6HBGc" target="_blank" rel="noopener" class="ep-card">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/cstTBA6HBGc/hqdefault.jpg" alt="350 km dans le Froid — Vent du Groenland – LCDMH Cap Nord" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num">EP 8</div>
+        </article>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          "name": "L'Ivresse du Voyage — 66e Parallèle",
+          "description": "Au passage de la 66e parallèle, l'ivresse du voyage s'empare du motard. Chaque kilomètre rapproche de l'Arctique, transformant profondément le voyageur et sa perception du monde.",
+          "thumbnailUrl": "https://i.ytimg.com/vi/PaEMRm_5H0U/hqdefault.jpg",
+          "contentUrl": "https://www.youtube.com/watch?v=PaEMRm_5H0U",
+          "embedUrl": "https://www.youtube.com/embed/PaEMRm_5H0U"
+        }
+        </script>
+
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Hochelagnes norvégiennes</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 8 · Les 350 km du froid</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=cstTBA6HBGc" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/cstTBA6HBGc/hqdefault.jpg" alt="350 km dans le Froid — Vent du Groenland" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 8</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>350 km dans le Froid — Vent du Groenland</h3>
-                <p>La Norvège qui se mérite. Le visage marqué.</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🇳🇴 Norvège</span>
+                    <span class="tag tag-ep">📎 EP 8</span>
+                </div>
+                <p class="card-desc">350 kilomètres à travers des températures glaciales et des paysages minéraux. Le vent du Groenland souffle sans pitié sur les routes arctiques. C'est une Norvège qui se mérite, révélée par un cadre de souffrance mais aussi de beauté sauvage. Le visage du motard se marque, la moto se fait plus petite face à l'immensité.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=cstTBA6HBGc" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=Q3a39FcIjQo" target="_blank" rel="noopener" class="ep-card">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/Q3a39FcIjQo/hqdefault.jpg" alt="Cette Nuit-là, j'Étais à Bout – LCDMH Cap Nord" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num">EP 9</div>
+        </article>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          "name": "350 km dans le Froid — Vent du Groenland",
+          "description": "350 kilomètres à travers des températures glaciales et des paysages minéraux arctiques. Le vent du Groenland souffle sans pitié, marquant profondément le voyageur.",
+          "thumbnailUrl": "https://i.ytimg.com/vi/cstTBA6HBGc/hqdefault.jpg",
+          "contentUrl": "https://www.youtube.com/watch?v=cstTBA6HBGc",
+          "embedUrl": "https://www.youtube.com/embed/cstTBA6HBGc"
+        }
+        </script>
+
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Route arctique — 2°C</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 9 · À bout de nerfs</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=Q3a39FcIjQo" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/Q3a39FcIjQo/hqdefault.jpg" alt="Cette Nuit-là, j'Étais à Bout" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 9</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>Cette Nuit-là, j'Étais à Bout</h3>
-                <p>2°C, grésil, 3h de sommeil. L'honnêteté totale.</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🇳🇴 Norvège</span>
+                    <span class="tag tag-ep">📎 EP 9</span>
+                </div>
+                <p class="card-desc">2°C, grésil qui fouette le visage, 3 heures de sommeil agité dans une tente qui tangue. Cette nuit-là, c'est l'authenticité brute du voyage qui se révèle : pas de filtre, pas de dramatisation. Juste la réalité d'une aventure qui coûte physiquement et mentalement. Un moment d'honnêteté totale face à la nature.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=Q3a39FcIjQo" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=VrjDNkzVAZk" target="_blank" rel="noopener" class="ep-card">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/VrjDNkzVAZk/hqdefault.jpg" alt="Le Cap Nord ça va Mal Finir — Cercle Arctique – LCDMH Cap Nord" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num">EP 10</div>
+        </article>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          "name": "Cette Nuit-là, j'Étais à Bout",
+          "description": "2°C, grésil, 3 heures de sommeil : l'authenticité brute du voyage. Un moment d'honnêteté totale face aux conditions extrêmes de l'Arctique.",
+          "thumbnailUrl": "https://i.ytimg.com/vi/Q3a39FcIjQo/hqdefault.jpg",
+          "contentUrl": "https://www.youtube.com/watch?v=Q3a39FcIjQo",
+          "embedUrl": "https://www.youtube.com/embed/Q3a39FcIjQo"
+        }
+        </script>
+
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Cercle Arctique — Nord</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 10 · Franchir le cercle</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=VrjDNkzVAZk" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/VrjDNkzVAZk/hqdefault.jpg" alt="Le Cap Nord ça va Mal Finir — Cercle Arctique" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 10</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>Le Cap Nord ça va Mal Finir — Cercle Arctique</h3>
-                <p>Le passage du cercle polaire. Enfin.</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🇳🇴 Norvège</span>
+                    <span class="tag tag-ep">📎 EP 10</span>
+                </div>
+                <p class="card-desc">Le passage du cercle polaire marque un point de non-retour psychologique. Les craintes émergent : va-t-on vraiment y arriver ? Les routes deviennent plus exigeantes, les paysages plus extrêmes. Et pourtant, c'est enfin après des semaines de route que se profile le Cap Nord. L'anticipation monte, le doute aussi.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=VrjDNkzVAZk" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=Kq36_wrfvnw" target="_blank" rel="noopener" class="ep-card">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/Kq36_wrfvnw/hqdefault.jpg" alt="Je Pète un Câble — Ferry Bodø → Lofoten – LCDMH Cap Nord" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num">EP 11</div>
+        </article>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          "name": "Le Cap Nord ça va Mal Finir — Cercle Arctique",
+          "description": "Le passage du cercle polaire marque un point de non-retour. Les craintes émergent face à l'extrême, mais le Cap Nord se profile enfin.",
+          "thumbnailUrl": "https://i.ytimg.com/vi/VrjDNkzVAZk/hqdefault.jpg",
+          "contentUrl": "https://www.youtube.com/watch?v=VrjDNkzVAZk",
+          "embedUrl": "https://www.youtube.com/embed/VrjDNkzVAZk"
+        }
+        </script>
+
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Bodø — Lofoten</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 11 · Ferry vers Lofoten</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=Kq36_wrfvnw" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/Kq36_wrfvnw/hqdefault.jpg" alt="Je Pète un Câble — Ferry Bodø → Lofoten" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 11</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>Je Pète un Câble — Ferry Bodø → Lofoten</h3>
-                <p>La fatigue, et la récompense des Lofoten.</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🇳🇴 Norvège</span>
+                    <span class="tag tag-ep">📎 EP 11</span>
+                </div>
+                <p class="card-desc">La fatigue accumulée fait surface avant le ferry de Bodø vers Lofoten. Les nerfs sont à vif, l'épuisement se manifeste. Mais Lofoten, les îles mythiques, attendent de l'autre côté. Le contraste entre la fragilité du motard et la récompense qui approche crée un moment émotionnel intense, chargé d'espoir et de désespoir mêlés.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=Kq36_wrfvnw" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=aW5Ryq83oO4" target="_blank" rel="noopener" class="ep-card">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/aW5Ryq83oO4/hqdefault.jpg" alt="Lofoten : Quelque Chose n'a Pas Fonctionné – LCDMH Cap Nord" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num">EP 12</div>
+        </article>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          "name": "Je Pète un Câble — Ferry Bodø → Lofoten",
+          "description": "La fatigue du voyage se manifeste avant le ferry de Bodø vers Lofoten. Mais la récompense des îles mythiques approche, créant un moment émotionnel intense.",
+          "thumbnailUrl": "https://i.ytimg.com/vi/Kq36_wrfvnw/hqdefault.jpg",
+          "contentUrl": "https://www.youtube.com/watch?v=Kq36_wrfvnw",
+          "embedUrl": "https://www.youtube.com/embed/Kq36_wrfvnw"
+        }
+        </script>
+
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Lofoten</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 12 · L'île mythique</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=aW5Ryq83oO4" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/aW5Ryq83oO4/hqdefault.jpg" alt="Lofoten : Quelque Chose n'a Pas Fonctionné" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 12</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>Lofoten : Quelque Chose n'a Pas Fonctionné</h3>
-                <p>L'île mythique dans des conditions extrêmes.</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🇳🇴 Norvège</span>
+                    <span class="tag tag-ep">📎 EP 12</span>
+                </div>
+                <p class="card-desc">Les Lofoten, l'île mythique des motards, se révèle dans des conditions extrêmes et inattendues. Les rêves brisent face à la réalité arctique : météo imprévisible, froid intense, beauté écrasante. L'île repousse ses visiteurs autant qu'elle les séduit, créant un contraste brutal entre les attentes et la vérité de la nature.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=aW5Ryq83oO4" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=8ZrBLfM8LT8" target="_blank" rel="noopener" class="ep-card" style="border:2px solid var(--orange);">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/8ZrBLfM8LT8/hqdefault.jpg" alt="700 km jusqu'au Cap Nord — Était-ce une Erreur ? – LCDMH Cap Nord" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num" style="background:#e74c3c;">EP 13</div>
+        </article>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          "name": "Lofoten : Quelque Chose n'a Pas Fonctionné",
+          "description": "Les Lofoten se révèlent dans des conditions extrêmes. L'île mythique repousse ses visiteurs autant qu'elle les séduit, créant un contraste brutal entre rêves et réalité.",
+          "thumbnailUrl": "https://i.ytimg.com/vi/aW5Ryq83oO4/hqdefault.jpg",
+          "contentUrl": "https://www.youtube.com/watch?v=aW5Ryq83oO4",
+          "embedUrl": "https://www.youtube.com/embed/aW5Ryq83oO4"
+        }
+        </script>
+
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Cap Nord — Nordkapp</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 13 · L'arrivée finale</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=8ZrBLfM8LT8" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/8ZrBLfM8LT8/hqdefault.jpg" alt="700 km jusqu'au Cap Nord — Était-ce une Erreur ?" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 13</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>700 km jusqu'au Cap Nord — Était-ce une Erreur ?</h3>
-                <p>L'arrivée. À minuit. Dans le brouillard. 🏆</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🇳🇴 Norvège</span>
+                    <span class="tag tag-ep">📎 EP 13</span>
+                </div>
+                <p class="card-desc">700 kilomètres supplémentaires séparent le motard du Cap Nord, du vrai nord du monde. L'arrivée survient à minuit, enveloppée dans le brouillard et l'ombre. Ce moment de victoire est teinté d'une mélancolie étrange : était-ce bien nécessaire de continuer ? Oui. Et à jamais inoubliable. Le point culminant d'une aventure de 10 000 km.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=8ZrBLfM8LT8" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=jKEeq45vtPU" target="_blank" rel="noopener" class="ep-card">
-            <div class="ep-thumb">
-                <img src="https://img.youtube.com/vi/jKEeq45vtPU/hqdefault.jpg" alt="Guide de Voyage Norvège — Ferries, Budget, Conseils – LCDMH Cap Nord" loading="lazy">
-                <div class="ep-play"></div>
-                <div class="ep-num">EP 14</div>
+        </article>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          "name": "700 km jusqu'au Cap Nord — Était-ce une Erreur ?",
+          "description": "700 kilomètres jusqu'au Cap Nord. L'arrivée à minuit enveloppée dans le brouillard et l'ombre. Le point culminant de 10 000 km d'aventure.",
+          "thumbnailUrl": "https://i.ytimg.com/vi/8ZrBLfM8LT8/hqdefault.jpg",
+          "contentUrl": "https://www.youtube.com/watch?v=8ZrBLfM8LT8",
+          "embedUrl": "https://www.youtube.com/embed/8ZrBLfM8LT8"
+        }
+        </script>
+
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Norvège — Toutes régions</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Épisode 14 · Guide de voyage complet</p>
             </div>
-            <div class="ep-body">
+            <a href="https://www.youtube.com/watch?v=jKEeq45vtPU" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/jKEeq45vtPU/hqdefault.jpg" alt="Guide de Voyage Norvège — Ferries, Budget, Conseils" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">EP 14</div>
+                </div>
+            </a>
+            <div class="card-body">
                 <h3>Guide de Voyage Norvège — Ferries, Budget, Conseils</h3>
-                <p>Tout ce que j'aurais voulu savoir avant.</p>
+                <div class="card-tags">
+                    <span class="tag tag-main">🇳🇴 Norvège</span>
+                    <span class="tag tag-ep">📎 EP 14</span>
+                </div>
+                <p class="card-desc">Après 10 000 km et 14 épisodes, les conseils pratiques qui auraient changé l'aventure. Budget détaillé, ferries, bivouac, choisir sa moto, itinéraire optimal. Un guide complet tiré de l'expérience réelle du voyage. Tout ce que vous auriez voulu savoir avant de partir, condensé en sagesse motarde arctique.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=jKEeq45vtPU" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
-        </a>
+        </article>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          "name": "Guide de Voyage Norvège — Ferries, Budget, Conseils",
+          "description": "Guide complet après 10 000 km : budget détaillé, ferries, bivouac, choix de moto, itinéraire optimal. Conseils pratiques tirés de l'expérience réelle du voyage.",
+          "thumbnailUrl": "https://i.ytimg.com/vi/jKEeq45vtPU/hqdefault.jpg",
+          "contentUrl": "https://www.youtube.com/watch?v=jKEeq45vtPU",
+          "embedUrl": "https://www.youtube.com/embed/jKEeq45vtPU"
+        }
+        </script>
     </div>
 
     <div style="text-align:center;margin-top:2.5rem">
@@ -841,18 +1185,4 @@
         <div class="link-grid">
             <a href="roadtrips.html" class="link-card">🗺️ Tous mes road trips moto</a>
             <a href="pneus.html" class="link-card">🏍️ Comparatif pneus road trip</a>
-            <a href="intercoms.html" class="link-card">🎧 Comparatif intercoms moto 2026</a>
-            <a href="carpuride.html" class="link-card">🧭 GPS Carpuride — avis terrain</a>
-            <a href="equipement.html" class="link-card">🎒 Équipement road trip testé</a>
-            <a href="aoocci.html" class="link-card">🧭 GPS Aoocci — testé en Norvège</a>
-            <a href="aferiy.html" class="link-card">⚡ Batterie Aferiy pour le bivouac</a>
-            <a href="articles/budget-road-trip-moto-norvege-ferries-couchage-conseils.html" class="link-card">💶 Budget road trip Norvège : le guide complet</a>
-            <a href="codes-promo.html" class="link-card" style="color:var(--orange);">💰 Codes promo exclusifs</a>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <div class="footer-logo">LC<em>D</em>MH</div>
-    
+            <a href="inter

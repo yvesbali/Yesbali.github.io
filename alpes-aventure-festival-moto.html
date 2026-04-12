@@ -165,6 +165,29 @@
         .ep-body h3{font-size:.95rem;margin-bottom:.4rem}
         .ep-body p{font-size:.82rem;color:var(--muted)}
 
+        /* VIDEO CARDS (NEW FORMAT) */
+        .hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem;margin-bottom:3rem}
+        .video-card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--border);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+        .video-card:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.08)}
+        .card-situation{padding:1rem 1.2rem .6rem;border-bottom:1px solid var(--border);background:#fafaf8}
+        .card-situation p{margin:0 0 .25rem;font-size:.82rem;color:var(--muted);line-height:1.45}
+        .card-situation .sitgeo-icon{color:var(--orange);margin-right:.3rem}
+        .card-situation .etape-icon{color:var(--muted);margin-right:.3rem;font-size:.85rem}
+        .thumb{position:relative;aspect-ratio:16/9;overflow:hidden;cursor:pointer;border-radius:8px 8px 0 0}
+        .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+        .thumb .play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;background:rgba(0,0,0,.6);border-radius:50%;display:flex;align-items:center;justify-content:center}
+        .thumb .play-btn::after{content:'';border-left:20px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
+        .thumb .ep-badge{position:absolute;bottom:.6rem;left:.6rem;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;letter-spacing:.05em}
+        .card-body{padding:1rem 1.2rem 1.2rem;flex:1;display:flex;flex-direction:column}
+        .card-body h3{font-size:1rem;font-weight:700;line-height:1.3;color:var(--noir);margin-bottom:.6rem}
+        .card-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.7rem}
+        .tag{display:inline-flex;align-items:center;gap:.3rem;font-size:.75rem;font-weight:600;padding:.2rem .65rem;border-radius:20px}
+        .tag-main{background:#fdecea;color:#c0392b}
+        .tag-ep{background:#f5eef8;color:#8e44ad}
+        .card-desc{font-size:.88rem;color:#555;line-height:1.55;margin-bottom:.8rem;flex:1}
+        .card-link{display:inline-block;color:var(--orange);font-weight:600;font-size:.9rem;margin-top:auto}
+        .card-link:hover{text-decoration:underline}
+
         /* GUIDE GRID */
         .guide-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.4rem;max-width:1000px;margin:0 auto}
         .guide-card{background:#fff;border-radius:16px;padding:1.6rem;border:1px solid var(--border)}
@@ -497,9 +520,215 @@
         <p>8 épisodes documentaires — premiers pas en road trip solo</p>
     </div>
 
-    <div class="ep-grid">
-        <a href="https://www.youtube.com/watch?v=UevfEKcHDjU" class="ep-card" target="_blank">
-            <div class="ep-thumb"><img alt="Miniature vidéo Road Trip Alpes à moto - LCDMH" src="https://img.youtube.com/vi/UevfEKcHDjU/hqdefault.jpg"><div class="ep-play"></div><div class="ep-num">J1</div></div>
+    <div class="hub-grid">
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Annecy → Col du Mont-Cenis (430m → 2083m)</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Jour 1 · Premier grand départ</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=UevfEKcHDjU" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/UevfEKcHDjU/hqdefault.jpg" alt="Annecy à Col du Mont-Cenis - Road Trip Alpes" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">J 1</div>
+                </div>
+            </a>
+            <div class="card-body">
+                <h3>Annecy → Col du Mont-Cenis</h3>
+                <div class="card-tags">
+                    <span class="tag tag-main">🏔️ Alpes</span>
+                    <span class="tag tag-ep">📎 J 1</span>
+                </div>
+                <p class="card-desc">Le grand départ sur la Benelli TRK 502. Premiers cols, premières émotions. Les routes s'enchaînent, le paysage change. À bord d'un trail routier 500cc, les Alpes se dévoilent pour la première fois.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=UevfEKcHDjU" target="_blank">Voir l'extrait →</a>
+            </div>
+        </article>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"VideoObject","name":"Annecy → Col du Mont-Cenis","description":"Le grand départ sur la Benelli TRK 502. Premiers cols, premières émotions à travers les Alpes.","thumbnailUrl":"https://i.ytimg.com/vi/UevfEKcHDjU/hqdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=UevfEKcHDjU","embedUrl":"https://www.youtube.com/embed/UevfEKcHDjU"}
+        </script>
+
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Tarentaise & Beaufortain — Vallées alpines</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Jour 2 · Traversée de la Tarentaise</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=Ig7sfnRf80A" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/Ig7sfnRf80A/hqdefault.jpg" alt="Tarentaise & Beaufortain - Road Trip Alpes" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">J 2</div>
+                </div>
+            </a>
+            <div class="card-body">
+                <h3>Tarentaise & Beaufortain</h3>
+                <div class="card-tags">
+                    <span class="tag tag-main">🏔️ Alpes</span>
+                    <span class="tag tag-ep">📎 J 2</span>
+                </div>
+                <p class="card-desc">Au cœur des Alpes, traversée entre le Mont-Blanc et les vallées. Les premiers cols alpins se dévoilent. Paysages magnifiques et routes sinueuses à chaque virage.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=Ig7sfnRf80A" target="_blank">Voir l'extrait →</a>
+            </div>
+        </article>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"VideoObject","name":"Tarentaise & Beaufortain","description":"Traversée des Alpes entre Mont-Blanc et vallées. Premiers cols alpins et paysages magnifiques.","thumbnailUrl":"https://i.ytimg.com/vi/Ig7sfnRf80A/hqdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=Ig7sfnRf80A","embedUrl":"https://www.youtube.com/embed/Ig7sfnRf80A"}
+        </script>
+
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Iseran, Galibier, Serre-Ponçon</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Jour 3 · Trois cols mythiques</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=F0wjVN88D_E" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/F0wjVN88D_E/hqdefault.jpg" alt="Iseran, Galibier, Serre-Ponçon - Road Trip Alpes" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">J 3</div>
+                </div>
+            </a>
+            <div class="card-body">
+                <h3>Iseran, Galibier, Serre-Ponçon</h3>
+                <div class="card-tags">
+                    <span class="tag tag-main">🏔️ Alpes</span>
+                    <span class="tag tag-ep">📎 J 3</span>
+                </div>
+                <p class="card-desc">Une journée intense à travers trois cols mythiques des Alpes : l'Iseran à 2770m, le Galibier à 2645m, et le Lac de Serre-Ponçon. Des panoramas vertigineux à chaque passage.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=F0wjVN88D_E" target="_blank">Voir l'extrait →</a>
+            </div>
+        </article>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"VideoObject","name":"Iseran, Galibier, Serre-Ponçon","description":"Une journée intense à travers trois cols mythiques. Iseran 2770m, Galibier 2645m, panoramas vertigineux.","thumbnailUrl":"https://i.ytimg.com/vi/F0wjVN88D_E/hqdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=F0wjVN88D_E","embedUrl":"https://www.youtube.com/embed/F0wjVN88D_E"}
+        </script>
+
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Ubaye → Isola 2000, descente italienne</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Jour 4 · La Bonnette (2860m)</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=zvOTRRvdQeE" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/zvOTRRvdQeE/hqdefault.jpg" alt="Col de la Bonnette - Road Trip Alpes" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">J 4</div>
+                </div>
+            </a>
+            <div class="card-body">
+                <h3>Col de la Bonnette (2860m)</h3>
+                <div class="card-tags">
+                    <span class="tag tag-main">🏔️ Alpes</span>
+                    <span class="tag tag-ep">📎 J 4</span>
+                </div>
+                <p class="card-desc">La plus haute route d'Europe. Le col de la Bonnette à 2860m, Isola 2000, et descente vers l'Italie. Des paysages à couper le souffle, des virages serrés en haute altitude.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=zvOTRRvdQeE" target="_blank">Voir l'extrait →</a>
+            </div>
+        </article>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"VideoObject","name":"Col de la Bonnette (2860m)","description":"La plus haute route d'Europe. Col de la Bonnette, Isola 2000, descente italienne avec paysages exceptionnels.","thumbnailUrl":"https://i.ytimg.com/vi/zvOTRRvdQeE/hqdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=zvOTRRvdQeE","embedUrl":"https://www.youtube.com/embed/zvOTRRvdQeE"}
+        </script>
+
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Col de Tende — Vallée du Gesso</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Jour 5 · 14 lacets & la chute</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=8cQ573KasHI" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/8cQ573KasHI/hqdefault.jpg" alt="Col de Tende - La chute - Road Trip Alpes" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">J 5</div>
+                </div>
+            </a>
+            <div class="card-body">
+                <h3>Col de Tende – La chute</h3>
+                <div class="card-tags">
+                    <span class="tag tag-main">🏔️ Alpes</span>
+                    <span class="tag tag-ep">📎 J 5</span>
+                </div>
+                <p class="card-desc">La Haute Route du Sel et ses 14 lacets vertigineux. Une chute à l'arrêt, une leçon d'humilité. Analyse complète de l'erreur, conseils pour ne pas la reproduire, et remise en selle mentale.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=8cQ573KasHI" target="_blank">Voir l'extrait →</a>
+            </div>
+        </article>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"VideoObject","name":"Col de Tende – La chute","description":"La Haute Route du Sel, 14 lacets vertigineux et une chute à l'arrêt. Leçons d'apprentissage et analyse critique.","thumbnailUrl":"https://i.ytimg.com/vi/8cQ573KasHI/hqdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=8cQ573KasHI","embedUrl":"https://www.youtube.com/embed/8cQ573KasHI"}
+        </script>
+
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Mercantour — Villages perchés du sud</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Jour 6 · Transition vers le sud</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=WATKVuWzRN4" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/WATKVuWzRN4/hqdefault.jpg" alt="Mercantour & villages perchés - Road Trip Alpes" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">J 6</div>
+                </div>
+            </a>
+            <div class="card-body">
+                <h3>Mercantour & villages perchés</h3>
+                <div class="card-tags">
+                    <span class="tag tag-main">🏔️ Alpes</span>
+                    <span class="tag tag-ep">📎 J 6</span>
+                </div>
+                <p class="card-desc">Traversée du Mercantour, villages perchés, routes étroites en serpentin. La douceur du sud après l'âpreté des hauts cols. Paysages méditerranéens et architecture provençale.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=WATKVuWzRN4" target="_blank">Voir l'extrait →</a>
+            </div>
+        </article>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"VideoObject","name":"Mercantour & villages perchés","description":"Traversée du Mercantour avec villages perchés et routes sinueuses. Transition vers le sud provençal.","thumbnailUrl":"https://i.ytimg.com/vi/WATKVuWzRN4/hqdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=WATKVuWzRN4","embedUrl":"https://www.youtube.com/embed/WATKVuWzRN4"}
+        </script>
+
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Lautaret → Galibier sous l'orage</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Jour 7 · Retour sous les intempéries</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=AkLCTHm2xNY" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/AkLCTHm2xNY/hqdefault.jpg" alt="Lautaret & Galibier sous l'orage - Road Trip Alpes" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">J 7</div>
+                </div>
+            </a>
+            <div class="card-body">
+                <h3>Lautaret & Galibier sous l'orage</h3>
+                <div class="card-tags">
+                    <span class="tag tag-main">🏔️ Alpes</span>
+                    <span class="tag tag-ep">📎 J 7</span>
+                </div>
+                <p class="card-desc">Pluie, grêle et 2642m d'altitude. Conditions météorologiques difficiles au-dessus des nuages. Gérer la peur, adapter la conduite, accepter les éléments comme faisant partie du voyage.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=AkLCTHm2xNY" target="_blank">Voir l'extrait →</a>
+            </div>
+        </article>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"VideoObject","name":"Lautaret & Galibier sous l'orage","description":"Pluie, grêle et 2642m d'altitude. Retour vers Annecy sous conditions météorologiques difficiles.","thumbnailUrl":"https://i.ytimg.com/vi/AkLCTHm2xNY/hqdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=AkLCTHm2xNY","embedUrl":"https://www.youtube.com/embed/AkLCTHm2xNY"}
+        </script>
+
+        <article class="video-card">
+            <div class="card-situation">
+                <p><span class="sitgeo-icon">&#x25C9;</span> Situation géographique : Retour à Annecy — Fin du voyage</p>
+                <p><span class="etape-icon">&#x21C5;</span> Étape : Jour 8 · Boucle bouclée</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=aMgL1LC1nMU" target="_blank" rel="noopener">
+                <div class="thumb">
+                    <img src="https://i.ytimg.com/vi/aMgL1LC1nMU/hqdefault.jpg" alt="Retour à Annecy - Road Trip Alpes" loading="lazy">
+                    <div class="play-btn"></div>
+                    <div class="ep-badge">J 8</div>
+                </div>
+            </a>
+            <div class="card-body">
+                <h3>Retour à Annecy</h3>
+                <div class="card-tags">
+                    <span class="tag tag-main">🏔️ Alpes</span>
+                    <span class="tag tag-ep">📎 J 8</span>
+                </div>
+                <p class="card-desc">Retour à Annecy après 1800 km et 8 jours de route. Bilan d'un voyage transformateur. Ce qu'on apprend de soi-même quand on se retrouve face aux Alpes en solo.</p>
+                <a class="card-link" href="https://www.youtube.com/watch?v=aMgL1LC1nMU" target="_blank">Voir l'extrait →</a>
+            </div>
+        </article>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"VideoObject","name":"Retour à Annecy","description":"Retour à Annecy après 1800 km et 8 jours de voyage. Bilan d'une aventure transformatrice.","thumbnailUrl":"https://i.ytimg.com/vi/aMgL1LC1nMU/hqdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=aMgL1LC1nMU","embedUrl":"https://www.youtube.com/embed/aMgL1LC1nMU"}
+        </script>
+    </div><div class="ep-num">J1</div></div>
             <div class="ep-body"><h3>Annecy → Col du Mont-Cenis</h3><p>Le grand départ. Premiers cols, premières émotions.</p></div>
         </a>
         <a href="https://www.youtube.com/watch?v=Ig7sfnRf80A" class="ep-card" target="_blank">
@@ -600,29 +829,20 @@
 <!-- ======================================== -->
 <!-- FOOTER                                   -->
 <!-- ======================================== -->
-<footer>
     <div class="footer-logo">LC<em>D</em>MH</div>
     <p style="margin:.4rem 0;color:rgba(255,255,255,.4)">La Chaîne du Motard Heureux · Annecy, France</p>
     <ul class="footer-links">
         <li><a href="roadtrips.html">Road Trips</a></li>
         <li><a href="cap-nord-moto.html">Cap Nord 2025</a></li>
-        <li><a href="europe-asie-moto.html">Europe–Asie 2024</a></li>
-        <li><a href="codes-promo.html">Codes promo</a></li>
-        <li><a href="https://www.youtube.com/@LCDMH" target="_blank">YouTube</a></li>
+        <li><a href="europe-asie-moto.html">Europe-Asie 2024</a></li>
+        <li><a href="pneus.html">Pneus</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
     </ul>
-    <p class="footer-legal">LCDMH © 2026 – Yves · Annecy, France</p>
+    <p style="margin:1.2rem 0 0;font-size:.75rem;color:rgba(255,255,255,.3)">© 2022-2026 LCDMH · Tous droits réservés</p>
 </footer>
-
-<script>
-    // FAQ toggle
-    document.querySelectorAll('.faq-q').forEach(q => {
-        q.addEventListener('click', () => {
-            q.parentElement.classList.toggle('open');
-        });
-    });
-</script>
-
-
-<script src="maillage.js"></script>
+<script src="/js/maillage.js" defer></script>
+<script src="/js/lcdmh-roadtrip-module.js" defer></script>
+<script src="/js/faq-toggle.js" defer></script>
 </body>
 </html>
