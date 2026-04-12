@@ -184,6 +184,9 @@
             display:grid;
             grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
             gap:1.6rem;
+            justify-content:center;
+            max-width:1200px;
+            margin:0 auto;
         }
         .home-trip{
             position:relative;
@@ -794,6 +797,21 @@
         </div>
     </section>
 
+    <!-- ========== SOUTIEN TIPEEE ========== -->
+    <section style="background:#fff8f2;padding:2.5rem 6%;text-align:center;border-top:1px solid var(--border);">
+        <div class="home-wrap" style="max-width:700px;">
+            <p style="font-size:2rem;margin-bottom:.8rem;">☕</p>
+            <p style="font-size:.95rem;color:#555;line-height:1.7;margin-bottom:1.5rem;">
+                Tout ce contenu est <strong style="color:var(--noir);">100% gratuit</strong>, et ça le restera.<br>
+                Pour le prix d'un café, vous pouvez m'aider à continuer l'aventure — et je réponds personnellement à toutes vos questions !
+            </p>
+            <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
+                <a href="https://fr.tipeee.com/lcdmh" target="_blank" rel="noopener" style="display:inline-block;background:var(--orange);color:#fff;padding:.8rem 1.8rem;border-radius:50px;font-weight:600;font-size:.95rem;font-family:'Montserrat',sans-serif;transition:.2s;">☕ Soutenir LCDMH — 2€/mois</a>
+                <a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" target="_blank" rel="noopener" style="display:inline-block;background:#ff0000;color:#fff;padding:.8rem 1.8rem;border-radius:50px;font-weight:600;font-size:.95rem;font-family:'Montserrat',sans-serif;transition:.2s;">▶ S'abonner sur YouTube</a>
+            </div>
+        </div>
+    </section>
+
     <!-- ========== PARTENAIRES (compact, en bas) ========== -->
     <section id="partenaires" style="background:var(--alt);padding:2rem 6%;text-align:center;border-top:1px solid var(--border);">
         <div class="home-wrap">
@@ -863,22 +881,4 @@
                 }
                 if(!firstLink) return;
                 var codePart = '';
-                if(p.code_promo){
-                    codePart = ' · Code <strong>' + p.code_promo + '</strong>';
-                    if(p.reduction && p.reduction !== 'expire' && p.reduction !== 'codes Amazon'){
-                        codePart += ' ' + p.reduction;
-                    }
-                }
-                out += '<a class="home-partner-pill" href="' + firstLink + '" target="_blank" rel="sponsored nofollow noopener">' + p.nom + codePart + '</a>';
-            });
-            if(out) host.innerHTML = out;
-        })
-        .catch(function(err){
-            console.warn('[home partners]', err.message);
-        });
-})();
-</script>
-
-</body>
-</html>
-<!-- FIN DU FICHIER : index_new.html -->
+ 
