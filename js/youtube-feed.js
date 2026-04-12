@@ -151,18 +151,29 @@
       const sEl = document.getElementById("lcdmh-shorts");
       const upd = (data.updated_at || "").slice(0, 10);
 
+      // Filtre : exclut les vidéos cachées (hidden:true) ou les playlists projet (titre "Projet …")
+      function isVisible(v) {
+        if (v.hidden) return false;
+        if (/^projet\s/i.test(v.title)) return false;
+        return true;
+      }
+
       if (vEl && data.videos && data.videos.length) {
+        const videos = data.videos.filter(isVisible);
         vEl.innerHTML = `<div class="lc-section">
           <p class="lc-section-title">🎬 Dernières vidéos</p>
           <p class="lc-updated">Mis à jour le ${upd}</p>
-          <div class="lc-grid">${data.videos.map(cardVideo).join("")}</div>
+          <div class="lc-grid">${videos.map(cardVideo).join("")}</div>
         </div>`;
       }
       if (sEl && data.shorts && data.shorts.length) {
-        sEl.innerHTML = `<div class="lc-section" style="margin-top:2rem">
-          <p class="lc-section-title">⚡ Derniers Shorts</p>
-          <div class="lc-grid lc-grid--shorts">${data.shorts.map(cardShort).join("")}</div>
-        </div>`;
+        const shorts = data.shorts.filter(isVisible);
+        if (shorts.length) {
+          sEl.innerHTML = `<div class="lc-section" style="margin-top:2rem">
+            <p class="lc-section-title">⚡ Derniers Shorts</p>
+            <div class="lc-grid lc-grid--shorts">${shorts.map(cardShort).join("")}</div>
+          </div>`;
+        }
       }
     })
     .catch(e => console.warn("[LCDMH feed]", e.message));
