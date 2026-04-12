@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sécurité Routière Moto — Trajectoires, Virages, Équipement | LCDMH</title>
+<meta name="description" content="Sécurité moto : formations trajectoires avec la Gendarmerie, techniques de virage, détection angle mort, équipement froid. Conseils route et pilotage sécurisé.">
+<meta name="author" content="Yves – LCDMH">
+<link rel="canonical" href="https://lcdmh.com/pratique/securite-routiere-moto.html">
+<link rel="alternate" hreflang="fr" href="https://lcdmh.com/pratique/securite-routiere-moto.html">
+<link rel="alternate" hreflang="x-default" href="https://lcdmh.com/pratique/securite-routiere-moto.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--orange:#e67e22;--orange-dark:#d35400;--noir:#1a1a1a;--bg:#f7f7f5;--card:#fff;--border:#e5e5e5;--muted:#777;--alt:#f0ede8}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--noir);line-height:1.65;font-size:16px}
+h1,h2,h3{font-family:'Montserrat',sans-serif}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;min-height:42vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+.hero-content{position:relative;z-index:2;max-width:900px;padding:2rem;text-shadow:0 2px 15px rgba(0,0,0,.7)}
+.hero-badge{display:inline-block;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.45rem 1.4rem;border-radius:50px;margin-bottom:1.4rem}
+.hero h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;line-height:1.15;margin-bottom:1rem}
+.hero p{font-size:1.05rem;color:rgba(255,255,255,.92);max-width:700px;margin:0 auto}
+.container{max-width:1100px;margin:0 auto;padding:2rem 5%}
+h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin:2rem 0 1rem}
+.bar{width:52px;height:4px;background:var(--orange);border-radius:2px;margin:.3rem 0 1.5rem}
+.hub-toc{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0 2.5rem;padding:1rem;background:#fff;border-radius:10px;border:1px solid var(--border)}
+.hub-toc a{padding:.4rem 1rem;border-radius:20px;font-size:.9rem;font-weight:600;background:var(--alt);color:var(--noir);transition:.2s}
+.hub-toc a:hover{background:var(--orange);color:#fff}
+.hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem;margin-bottom:3rem}
+.video-card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--border);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+.video-card:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.08)}
+.card-situation{padding:1rem 1.2rem .6rem;border-bottom:1px solid var(--border);background:#fafaf8}
+.card-situation p{margin:0 0 .25rem;font-size:.82rem;color:var(--muted);line-height:1.45}
+.card-situation .sitgeo-icon{color:var(--orange);margin-right:.3rem}
+.card-situation .etape-icon{color:var(--muted);margin-right:.3rem;font-size:.85rem}
+.thumb{position:relative;aspect-ratio:16/9;overflow:hidden;cursor:pointer}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb .play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;background:rgba(0,0,0,.6);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.thumb .play-btn::after{content:'';border-left:20px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
+.thumb .ep-badge{position:absolute;bottom:.6rem;left:.6rem;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;letter-spacing:.05em}
+.card-body{padding:1rem 1.2rem 1.2rem;flex:1;display:flex;flex-direction:column}
+.card-body h3{font-size:1rem;font-weight:700;line-height:1.3;color:var(--noir);margin-bottom:.6rem}
+.card-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.7rem}
+.tag{display:inline-flex;align-items:center;gap:.3rem;font-size:.75rem;font-weight:600;padding:.2rem .65rem;border-radius:20px}
+.tag-main{background:#fdecea;color:#c0392b}
+.tag-ep{background:var(--alt);color:var(--muted)}
+.tag-technique{background:#e8f4f8;color:#0066cc}
+.tag-securite{background:#f0e8f8;color:#663399}
+.tag-equipement{background:#f8f0e8;color:#996633}
+.card-desc{font-size:.88rem;color:#555;line-height:1.55;margin-bottom:.8rem;flex:1}
+.card-link{display:inline-block;color:var(--orange);font-weight:600;font-size:.9rem;margin-top:auto}
+.card-link:hover{text-decoration:underline}
+.back-top{position:fixed;bottom:2rem;right:2rem;background:var(--orange);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;box-shadow:0 4px 12px rgba(0,0,0,.15);z-index:100;cursor:pointer;border:none}
+.note-enrichment{max-width:1100px;margin:1rem auto;padding:1rem;background:#fff8f0;border:1px solid var(--orange);border-radius:8px;font-size:.85rem;color:#555;text-align:center}
+.hero-intro{max-width:800px;margin:0 auto 2rem;padding:1.5rem;background:#f9f9f7;border-left:4px solid var(--orange);border-radius:6px;font-size:.95rem;line-height:1.7;color:#555}
+.faq-section{max-width:1100px;margin:3rem auto;padding:2rem;background:#fafaf8;border-radius:12px;border:1px solid var(--border)}
+.faq-section h2{font-size:1.3rem;margin-bottom:1rem}
+.faq-section ul{list-style:none;padding:0}
+.faq-section li{padding:.6rem 0;border-bottom:1px solid var(--border)}
+.faq-section li:last-child{border-bottom:none}
+.faq-section strong{color:var(--noir)}
+/* Breadcrumb */
+.breadcrumb{max-width:1100px;margin:1rem auto .5rem;padding:0 5%;font-size:.85rem;color:#777}
+.breadcrumb a{color:#e67e22;text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb span{margin:0 .4rem;color:#e5e5e5}
+@media(max-width:600px){.hub-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+    <section class="hero" style="background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('https://i.ytimg.com/vi/KGfovxM_Q7w/maxresdefault.jpg') center/cover">
+        <div class="hero-content">
+            <div class="hero-badge">🛵 Sécurité Routière Moto</div>
+            <h1>Maîtriser la Route en Sécurité — Trajectoires, Virages, Équipement</h1>
+            <p>13 vidéos · Formations Gendarmerie, techniques de pilotage, sécurité active et équipement</p>
+        </div>
+    </section>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="https://lcdmh.com/">LCDMH</a>
+        <span>›</span>
+        <a href="https://lcdmh.com/roadtrips/">Road Trips</a>
+        <span>›</span>
+        Sécurité routière moto
+    </nav>
+
+    <div class="container">
+        <div class="hero-intro">
+            <p><strong>Roulerez-vous plus sûr après avoir visionné ces vidéos ?</strong> Cette hub regroupe les meilleures ressources sur la sécurité moto : des formations officielles avec la Gendarmerie (trajectoires de sécurité, contre-braquage), en passant par les techniques de virage, jusqu'aux équipements innovants comme la détection d'angle mort et les systèmes d'alerte chute. À découvrir avant votre prochain road trip ou long voyage.</p>
+        </div>
+
+        <nav class="hub-toc">
+            <a href="#formations">Formations &amp; Trajectoires (4)</a>
+            <a href="#virages">Techniques de Virage (4)</a>
+            <a href="#securite-equipement">Sécurité Active &amp; Équipement (5)</a>
+        </nav>
+
+        <section id="formations">
+            <h2>Formations &amp; Trajectoires Gendarmerie</h2>
+            <div class="bar"></div>
+            <div class="hub-grid">
+
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">◉</span> Formation encadrée — sécurité et maniabilité</p>
+        <p><span class="etape-icon">⇅</span> Trajectoires de sécurité · 26 minutes</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=KGfovxM_Q7w" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/KGfovxM_Q7w/hqdefault.jpg" alt="trajectoires de sécurité gendarmerie permis A2 débutant" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">26 min</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>Trajectoires de Sécurité avec la Gendarmerie. Permis A2</h3>
+        <div class="card-tags">
+            <span class="tag tag-securite">🚨 Gendarmerie</span>
+            <span class="tag tag-technique">⇄ Trajectoires</span>
+        </div>
+        <p class="card-desc">2 heures de formation encadrée avec un motard gendarme pour comprendre les trajectoires de sécurité en virage. Cette formation officielle couvre les bases indispensables pour les permis A2 et débutants : anticipation, regard et positionnement.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=KGfovxM_Q7w" target="_blank">Regarder sur YouTube &rarr;</a>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Trajectoires de Sécurité avec la Gendarmerie. Permis A2",
+  "description": "Formation officielle avec motard gendarme sur les trajectoires de sécurité, anticipation et positionnement en virage.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/KGfovxM_Q7w/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=KGfovxM_Q7w",
+  "embedUrl": "https://www.youtube.com/embed/KGfovxM_Q7w",
+  "duration": "PT26M24S"
+}
+</script>
+
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">◉</span> Formation officielle — Journée Trajectoires Sécurité JTS</p>
+        <p><span class="etape-icon">⇅</span> Gendarmes EDSR 42 · 30 minutes</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=12bA5MtW_U0" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/12bA5MtW_U0/hqdefault.jpg" alt="journée trajectoires sécurité JTS gendarmes formation moto" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">30 min</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>Journée Trajectoires Sécurité (JTS) — Gendarmes EDSR 42</h3>
+        <div class="card-tags">
+            <span class="tag tag-securite">🚨 Gendarmerie</span>
+            <span class="tag tag-technique">⇄ Trajectoires</span>
+        </div>
+        <p class="card-desc">Court métrage officiel réalisé avec la BMO de Roanne (Escadron Départemental de Sécurité Routière). Révision complète de la trajectoire de sécurité, des virages simples aux épingles serrées, encadrée par des professionnels.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=12bA5MtW_U0" target="_blank">Regarder sur YouTube &rarr;</a>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Journée Trajectoires Sécurité (JTS) — Gendarmes EDSR 42",
+  "description": "Formation officielle BMO de Roanne sur les trajectoires de sécurité en virage, encadrée par l'Escadron Départemental de Sécurité Routière.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/12bA5MtW_U0/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=12bA5MtW_U0",
+  "embedUrl": "https://www.youtube.com/embed/12bA5MtW_U0",
+  "duration": "PT30M46S"
+}
+</script>
+
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">◉</span> Conseil rapide — secrets de conduite sécurisée</p>
+        <p><span class="etape-icon">⇅</span> Formation courte · 6 minutes</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=fUAJAq-UBCg" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/fUAJAq-UBCg/hqdefault.jpg" alt="secrets conduite sécurisée moto 2024 trajectoire gendarmerie" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">6 min</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>Découvrez les Secrets d'une Conduite Sécurisée à Moto 2024</h3>
+        <div class="card-tags">
+            <span class="tag tag-securite">🚨 Conduite</span>
+            <span class="tag tag-technique">⇄ Trajectoires</span>
+        </div>
+        <p class="card-desc">Formation flash en partenariat avec la Gendarmerie : comment maîtriser la trajectoire de sécurité, mieux anticiper et gagner en assurance dans les virages. Approche moderne et condensée pour progresser rapidement.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=fUAJAq-UBCg" target="_blank">Regarder sur YouTube &rarr;</a>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Découvrez les Secrets d'une Conduite Sécurisée à Moto 2024",
+  "description": "Conseils officiels Gendarmerie : trajectoires de sécurité, anticipation et maîtrise en virage — version rapide et moderne.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/fUAJAq-UBCg/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=fUAJAq-UBCg",
+  "embedUrl": "https://www.youtube.com/embed/fUAJAq-UBCg",
+  "duration": "PT6M41S"
+}
+</script>
+
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">◉</span> Théorie et pratique — permis moto nouveau format</p>
+        <p><span class="etape-icon">⇅</span> Circulation sur route · 26 minutes</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=mCvWYZp7EGY" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/mCvWYZp7EGY/hqdefault.jpg" alt="circulation théorie pratique nouveau permis moto rond-points trajectoire" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">26 min</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>La Circulation : Théorie et Pratique — Nouveau Permis Moto</h3>
+        <div class="card-tags">
+            <span class="tag tag-securite">📚 Théorie</span>
+            <span class="tag tag-technique">⇄ Rond-points</span>
+        </div>
+        <p class="card-desc">Episode 2 du nouveau permis moto : maîtriser la circulation en route, les ronds-points, la trajectoire de sécurité et les changements de voie. Conseils pratiques du formateur pour devenir autonome sur route rapidement.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=mCvWYZp7EGY" target="_blank">Regarder sur YouTube &rarr;</a>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "La Circulation : Théorie et Pratique — Nouveau Permis Moto",
+  "description": "Episode 2 permis moto : circulation en route, ronds-points, trajectoires sécurisées et changements de voie — conseils formateurs.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/mCvWYZp7EGY/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=mCvWYZp7EGY",
+  "embedUrl": "https://www.youtube.com/embed/mCvWYZp7EGY",
+  "duration": "PT26M3S"
+}
+</script>
+
+            </div>
+        </section>
+
+        <section id="virages">
+            <h2>Techniques de Virage &amp; Pilotage</h2>
+            <div class="bar"></div>
+            <div class="hub-grid">
+
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">◉</span> Masterclass — pilotage en Vercors</p>
+        <p><span class="etape-icon">⇅</span> Astuces de pilotage · 75 minutes</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=KMr1niXyNro" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/KMr1niXyNro/hqdefault.jpg" alt="astuces pilotage route Vercors moto conseils instructeurs" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">75 min</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>Nos Astuces de Pilotage sur Route</h3>
+        <div class="card-tags">
+            <span class="tag tag-technique">🎯 Pilotage</span>
+            <span class="tag tag-technique">🏔️ Route</span>
+        </div>
+        <p class="card-desc">3 jours de roulage intensif dans le Vercors avec deux instructeurs confirmés et 3 motards aux profils différents. Un long apprentissage sur comment progresser en sécurité en montagne, adapter sa vitesse et maîtriser les trajectoires.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=KMr1niXyNro" target="_blank">Regarder sur YouTube &rarr;</a>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Nos Astuces de Pilotage sur Route",
+  "description": "3 jours de formation intensive dans le Vercors avec instructeurs confirmés : progresser en montagne, adapter sa vitesse, maîtriser les trajectoires.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/KMr1niXyNro/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=KMr1niXyNro",
+  "embedUrl": "https://www.youtube.com/embed/KMr1niXyNro",
+  "duration": "PT75M36S"
+}
+</script>
+
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">◉</span> Formation débutant A2 — maîtrise virage</p>
+        <p><span class="etape-icon">⇅</span> Permis A2 · 25 minutes</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=mqrxymLts_0" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/mqrxymLts_0/hqdefault.jpg" alt="virages moto débutant A2 secret trajectoire contre-braquage" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">25 min</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>Virages Moto Débutant : Le SECRET pour Maîtriser sa Trajectoire</h3>
+        <div class="card-tags">
+            <span class="tag tag-technique">🎯 Virages</span>
+            <span class="tag tag-technique">📎 A2</span>
+        </div>
+        <p class="card-desc">Basé sur 65 000 km d'expérience personnelle : comment aborder un virage sans peur, maîtriser le contre-braquage et la trajectoire sécurisée. S'adresse aux jeunes permis et débutants galérés dans les épingles ou pentes raides.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=mqrxymLts_0" target="_blank">Regarder sur YouTube &rarr;</a>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Virages Moto Débutant : Le SECRET pour Maîtriser sa Trajectoire (A2)",
+  "description": "Basé sur 65 000 km d'expérience : contre-braquage, trajectoires sécurisées, épingles serrées — pour débutants et jeunes permis.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/mqrxymLts_0/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=mqrxymLts_0",
+  "embedUrl": "https://www.youtube.com/embed/mqrxymLts_0",
+  "duration": "PT25M26S"
+}
+</script>
+
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">◉</span> Col mythique — 14 lacets et une chute</p>
+        <p><span class="etape-icon">⇅</span> Col de Tende · 19 minutes</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=8cQ573KasHI" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/8cQ573KasHI/hqdefault.jpg" alt="col de tende 14 lacets chute moto Benelli TRK 502" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">19 min</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>Col de Tende 1870 m — 14 Lacets &amp; une Chute Inoubliable</h3>
+        <div class="card-tags">
+            <span class="tag tag-technique">🏔️ Lacets</span>
+            <span class="tag tag-technique">⚠️ Expérience</span>
+        </div>
+        <p class="card-desc">L'épingle à moto en conditions réelles : comment j'ai affronté les 14 lacets du Tende et comment j'ai chuté. Retour d'expérience brut sur les limites de la confiance et comment rouler à la limite sans la dépasser.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=8cQ573KasHI" target="_blank">Regarder sur YouTube &rarr;</a>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Col de Tende 1870 m – 14 lacets & une chute inoubliable ! Épisode 5",
+  "description": "Expérience réelle au Col de Tende : 14 lacets mythiques, chute et apprentissage sur les limites du pilotage en montagne.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/8cQ573KasHI/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=8cQ573KasHI",
+  "embedUrl": "https://www.youtube.com/embed/8cQ573KasHI",
+  "duration": "PT19M35S"
+}
+</script>
+
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">◉</span> Route du Sel — adrénaline et montagne</p>
+        <p><span class="etape-icon">⇅</span> 240 km Alpes · 17 minutes</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=zvOTRRvdQeE" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/zvOTRRvdQeE/hqdefault.jpg" alt="ALPES 240 km adrénaline chute Col de Tende route du sel" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">17 min</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>ALPES – 240 km d'Adrénaline : Chute Épique au Col de Tende</h3>
+        <div class="card-tags">
+            <span class="tag tag-technique">🏔️ Alpes</span>
+            <span class="tag tag-technique">⚡ Adrenaline</span>
+        </div>
+        <p class="card-desc">Jour intensif en montagne : piste off-road, route du sel, 240 km entre les hauts cols alpins et les belvédères. Défi moto ultime qui teste la confiance, le pilotage et les limites émotionnelles.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=zvOTRRvdQeE" target="_blank">Regarder sur YouTube &rarr;</a>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "ALPES – 240 km d'adrénaline : chute épique au Col de Tende. EP4",
+  "description": "Jour intensif en montagne : 240 km entre piste off-road et route du sel alpins avec défi technique et expérience limite.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/zvOTRRvdQeE/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=zvOTRRvdQeE",
+  "embedUrl": "https://www.youtube.com/embed/zvOTRRvdQeE",
+  "duration": "PT17M43S"
+}
+</script>
+
+            </div>
+        </section>
+
+        <section id="securite-equipement">
+            <h2>Sécurité Active &amp; Équipement</h2>
+            <div class="bar"></div>
+            <div class="hub-grid">
+
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">◉</span> Technologie de sécurité — détection angle mort</p>
+        <p><span class="etape-icon">⇅</span> Radar BSD 24 GHz · 17 minutes</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=rd-CjJh0lKU" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/rd-CjJh0lKU/hqdefault.jpg" alt="radar BSD moto détection angle mort Honda NT1100" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">17 min</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>Sécurité Moto : Radar BSD — Détection d'Angle Mort</h3>
+        <div class="card-tags">
+            <span class="tag tag-securite">🚨 Angle Mort</span>
+            <span class="tag tag-equipement">⚙️ Tech</span>
+        </div>
+        <p class="card-desc">Système de détection d'angle mort 24 GHz pour moto : comment ça fonctionne, où le placer, et comment ce capteur rétroviseur aide au changement de voie en sécurité. Test complet et retour d'expérience sur route.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=rd-CjJh0lKU" target="_blank">Regarder sur YouTube &rarr;</a>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Sécurité moto. Radar BSD pour moto – Détection d'angle mort et assistance au changement de voie",
+  "description": "Système de détection d'angle mort 24 GHz pour moto : fonctionnement, installation et retour d'expérience sur route.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/rd-CjJh0lKU/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=rd-CjJh0lKU",
+  "embedUrl": "https://www.youtube.com/embed/rd-CjJh0lKU",
+  "duration": "PT17M15S"
+}
+</script>
+
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">◉</span> Équipement complet road trip solo</p>
+        <p><span class="etape-icon">⇅</span> GPS, antivol, alerte chute · 13 minutes</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=qO7YMCBp-28" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/qO7YMCBp-28/hqdefault.jpg" alt="rouler seul moto Komobi GPS alerte chute antivol sécurité" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">13 min</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>Rouler Seul en Moto : GPS, Alerte Chute et Antivol</h3>
+        <div class="card-tags">
+            <span class="tag tag-equipement">📱 GPS</span>
+            <span class="tag tag-securite">🚨 Alerte</span>
+        </div>
+        <p class="card-desc">Test du tracker Komobi : géolocalisation GPS, détecteur de chute automatique et antivol pour road trip solo. Quand vous roulez seul loin de tout, qui prévient en cas de chute ? Cette suite complète répond à cette question.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=qO7YMCBp-28" target="_blank">Regarder sur YouTube &rarr;</a>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Rouler seul en moto : GPS, alerte chute et antivol (Test Komobi)",
+  "description": "Test tracker Komobi : géolocalisation GPS, détecteur de chute automatique et antivol pour voyages motos en solo.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/qO7YMCBp-28/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=qO7YMCBp-28",
+  "embedUrl": "https://www.youtube.com/embed/qO7YMCBp-28",
+  "duration": "PT13M20S"
+}
+</script>
+
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">◉</span> Technologie radar — fonctionnement et installation</p>
+        <p><span class="etape-icon">⇅</span> Radar moto Innovv · 22 minutes</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=iRlT5tt7c8I" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/iRlT5tt7c8I/hqdefault.jpg" alt="radar moto Innovv angle mort détection installation fonctionnement" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">22 min</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>Radar Moto, Comment Ça Marche ?</h3>
+        <div class="card-tags">
+            <span class="tag tag-securite">🚨 Angle Mort</span>
+            <span class="tag tag-equipement">⚙️ Tech</span>
+        </div>
+        <p class="card-desc">Explication technique complète des systèmes de radar et détection d'angle mort pour deux-roues. Comment Innovv détecte les véhicules, quelles portées attendriser et quel impact réel sur la conduite sécurisée.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=iRlT5tt7c8I" target="_blank">Regarder sur YouTube &rarr;</a>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Radar moto, comment ça marche ?",
+  "description": "Explication technique des radars et détection d'angle mort pour motos : portée, fonctionnement et impact sur la sécurité.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/iRlT5tt7c8I/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=iRlT5tt7c8I",
+  "embedUrl": "https://www.youtube.com/embed/iRlT5tt7c8I",
+  "duration": "PT22M17S"
+}
+</script>
+
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">◉</span> Équipement d'hiver — rouler par temps froid</p>
+        <p><span class="etape-icon">⇅</span> Gants et veste chauffants · 19 minutes</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=UWYuXJvxKsM" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/UWYuXJvxKsM/hqdefault.jpg" alt="équipement hiver moto gants chauffants veste froid" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">19 min</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>Mon Équipement Secret pour Affronter le Froid à Moto !</h3>
+        <div class="card-tags">
+            <span class="tag tag-equipement">❄️ Hiver</span>
+            <span class="tag tag-equipement">👕 Équipement</span>
+        </div>
+        <p class="card-desc">Guide complet d'équipement froid : gants chauffants, veste chauffante, blouson étanche, protections thermiques. Testés sur routes hivernales, découvrez comment rouler confortablement même dans les pires conditions.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=UWYuXJvxKsM" target="_blank">Regarder sur YouTube &rarr;</a>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Mon équipement secret pour affronter le froid à moto !",
+  "description": "Guide complet d'équipement hiver moto : gants chauffants, veste chauffante, blouson étanche — testé en conditions réelles.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/UWYuXJvxKsM/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=UWYuXJvxKsM",
+  "embedUrl": "https://www.youtube.com/embed/UWYuXJvxKsM",
+  "duration": "PT19M28S"
+}
+</script>
+
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">◉</span> Amélioration suspension — performance et confort</p>
+        <p><span class="etape-icon">⇅</span> Amortisseur Shock Factory · 10 minutes</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=Ds3qxi2eEJ8" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/Ds3qxi2eEJ8/hqdefault.jpg" alt="amortisseur Honda NT1100 Shock Factory suspension performance" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">10 min</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>Amortisseur Honda NT1100 Shock Factory : Pourquoi Améliorer la Suspension ?</h3>
+        <div class="card-tags">
+            <span class="tag tag-equipement">⚙️ Suspension</span>
+            <span class="tag tag-equipement">🔧 Tuning</span>
+        </div>
+        <p class="card-desc">Comment un amortisseur Shock Factory transforme le comportement de la moto : stabilité en courbe, amortissement au freinage et confort général. Test complet du remplacement sur Honda NT1100 et bilan des améliorations.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=Ds3qxi2eEJ8" target="_blank">Regarder sur YouTube &rarr;</a>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Amortisseur Honda NT1100 Shock Factory : Pourquoi améliorer la suspension de votre moto ?",
+  "description": "Amélioration suspension moto : amortisseur Shock Factory M-Shock sur Honda NT1100 — stabilité, confort et performance.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/Ds3qxi2eEJ8/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=Ds3qxi2eEJ8",
+  "embedUrl": "https://www.youtube.com/embed/Ds3qxi2eEJ8",
+  "duration": "PT10M6S"
+}
+</script>
+
+            </div>
+        </section>
+
+        <div class="faq-section">
+            <h2>Questions Courantes — Suggestions Google</h2>
+            <div class="bar"></div>
+            <ul>
+                <li><strong>Comment prendre un virage en moto ?</strong> Trajectoire en grand rayon (approche extérieure), sommet au milieu du virage, accélération progressive à la sortie serrée. Le secret est l'anticipation et le regard au loin.</li>
+                <li><strong>Qu'est-ce que la trajectoire de sécurité à moto ?</strong> Approche large en extérieur de la courbe, freinage avant le virage, et sortie serrée côté intérieur. Cette trajectoire maximise la visibilité et minimise l'inclinaison nécessaire.</li>
+                <li><strong>Comment faire du contre-braquage ?</strong> Pousser légèrement sur la poignée intérieure du virage pour incliner la moto sans mouvoir le guidon. Technique avancée qui permet de changer de trajectoire rapidement à vitesse plus élevée.</li>
+                <li><strong>Comment ne pas tomber en virage à moto ?</strong> Adapter sa vitesse à la courbe, utiliser la trajectoire sécurisée, maintenir un regard au-delà du sommet et appuyer le buste à l'intérieur. La confiance vient de la pratique.</li>
+                <li><strong>Faut-il pencher la moto ou le corps en virage ?</strong> Les deux : la moto s'incline naturellement, le corps se penche à l'intérieur pour maintenir l'équilibre. Plus la vitesse augmente, plus l'inclinaison totale augmente.</li>
+                <li><strong>Comment maîtriser les épingles à moto ?</strong> Freiner avant l'épingle, rouler en petit rayon au sommet, puis accélérer à la sortie. L'équilibre basse vitesse et le contrôle du frein sont essentiels.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Retour en haut">↑</button>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "LCDMH",
+      "item": "https://lcdmh.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Road Trips",
+      "item": "https://lcdmh.com/roadtrips/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Sécurité routière moto",
+      "item": "https://lcdmh.com/pratique/securite-routiere-moto.html"
+    }
+  ]
+}
+</script>
+</body>
+</html>
