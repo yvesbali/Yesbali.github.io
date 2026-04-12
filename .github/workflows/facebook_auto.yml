@@ -20,6 +20,9 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Synchronisation planning → payload
+        run: python automation/facebook_site/sync_facebook_planning.py
+
       - name: Sélection du post planifié
         run: python automation/facebook_site/dispatch_scheduled_post.py
 
@@ -28,5 +31,4 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add facebook/facebook_payload_live.json automation/facebook_site/dispatch_published.json
-          git diff --cached --quiet || git commit -m "Dispatch automatique du post Facebook/Pinterest"
-          git push
+          git diff --cached --quiet || git commit -m "Dispatch automatique du post Facebook/
