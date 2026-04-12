@@ -23,6 +23,19 @@
     gtag("config", "G-5DP7XR1C7W");
   })();
 
+  // — Favicon (injecté sur toutes les pages via ce loader) —
+  if (!document.querySelector('link[rel="icon"]')) {
+    var fav = document.createElement("link");
+    fav.rel = "icon";
+    fav.type = "image/png";
+    fav.href = "/images/favicon.png";
+    document.head.appendChild(fav);
+    var fav2 = document.createElement("link");
+    fav2.rel = "shortcut icon";
+    fav2.href = "/favicon.ico";
+    document.head.appendChild(fav2);
+  }
+
   // — Configuration —
   var NAV_URL = "/nav.html";
 
