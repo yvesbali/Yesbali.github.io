@@ -18,7 +18,7 @@ html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--noir);line-height:1.65;font-size:16px}
 h1,h2,h3{font-family:'Montserrat',sans-serif}
 a{color:inherit;text-decoration:none}
-.hero{position:relative;min-height:42vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+.hero{position:relative;min-height:30vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
 .hero-content{position:relative;z-index:2;max-width:900px;padding:2rem;text-shadow:0 2px 15px rgba(0,0,0,.7)}
 .hero-badge{display:inline-block;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.45rem 1.4rem;border-radius:50px;margin-bottom:1.4rem}
 .hero h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;line-height:1.15;margin-bottom:1rem}
@@ -59,6 +59,12 @@ h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin:2rem 0 1rem}
 .breadcrumb a:hover{text-decoration:underline}
 .breadcrumb span{margin:0 .4rem;color:var(--border)}
 @media(max-width:600px){.hub-grid{grid-template-columns:1fr}}
+.cta-support{max-width:700px;margin:3rem auto;padding:2.5rem;background:#fff8f2;border:1px solid var(--orange);border-radius:12px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.05)}
+.cta-support-icon{font-size:2rem;margin-bottom:1rem;display:block}
+.cta-support-text{font-size:.95rem;color:#555;line-height:1.7;margin-bottom:1.5rem}
+.cta-support-text strong{color:var(--noir);font-weight:600}
+.cta-support-btn{display:inline-block;background:var(--orange);color:#fff;padding:.8rem 1.8rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:.95rem;transition:.2s;border:2px solid var(--orange)}
+.cta-support-btn:hover{background:#d35400;border-color:#d35400;transform:translateY(-2px);box-shadow:0 6px 16px rgba(230,126,34,.25)}
 </style>
 </head>
 <body>
@@ -1189,6 +1195,14 @@ h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin:2rem 0 1rem}
 
     </div>
 
+    <div class="cta-support">
+        <p class="cta-support-icon">☕</p>
+        <p class="cta-support-text">Tout ce contenu est <strong>100% gratuit</strong>, et ça le restera.<br>
+        Mais si ces vidéos vous ont inspiré, fait rêver ou aidé à préparer votre prochain road trip…<br>
+        <strong>Pour le prix d'un café</strong>, vous pouvez m'aider à continuer l'aventure — et je réponds personnellement à toutes vos questions !</p>
+        <a href="https://fr.tipeee.com/lcdmh" target="_blank" rel="noopener" class="cta-support-btn">☕ Soutenir LCDMH sur Tipeee</a>
+    </div>
+
     <button class="back-top" onclick="scrollTo({top:0,behavior:'smooth'})" title="Haut de page">&uarr;</button>
 
 <script type="application/ld+json">
@@ -1743,58 +1757,4 @@ h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin:2rem 0 1rem}
         }
       },
       {
-        "@type": "ListItem",
-        "position": 46,
-        "item": {
-          "@type": "VideoObject",
-          "name": "Le cancer du sein, Octobre rose, motardes engagées.",
-          "description": "📸 Rejoignez la Communauté : Abonnez-vous pour ne pas manquer nos aventures palpitantes et partagez vos expériences de moto. Suivez-moi aussi sur [Instagram/Facebook/Twitter] pour plus de contenu mo...",
-          "thumbnailUrl": "https://i.ytimg.com/vi/zUmmVjmUIsY/hqdefault.jpg",
-          "contentUrl": "https://www.youtube.com/watch?v=zUmmVjmUIsY",
-          "embedUrl": "https://www.youtube.com/embed/zUmmVjmUIsY"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 47,
-        "item": {
-          "@type": "VideoObject",
-          "name": "Juste pour le plaisir, avec Télégraph Road.",
-          "description": "Petit test Honda NT1100 en mode plaisir, juste pour le fun.",
-          "thumbnailUrl": "https://i.ytimg.com/vi/w3h2dD5oCQ4/hqdefault.jpg",
-          "contentUrl": "https://www.youtube.com/watch?v=w3h2dD5oCQ4",
-          "embedUrl": "https://www.youtube.com/embed/w3h2dD5oCQ4"
-        }
-      }
-    ]
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "LCDMH",
-      "item": "https://lcdmh.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Road Trips",
-      "item": "https://lcdmh.com/roadtrips/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "France — Alpes & Cols Mythiques",
-      "item": "https://lcdmh.com/roadtrips/road-trip-moto-france.html"
-    }
-  ]
-}
-</script>
-</body>
-</html>
+        "@type": 
