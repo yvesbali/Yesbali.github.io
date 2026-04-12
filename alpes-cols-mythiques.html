@@ -36,9 +36,8 @@
     .hero{
       position:relative;overflow:hidden;color:#fff;text-align:center;padding:108px 6% 84px;
       background:
-        linear-gradient(135deg, rgba(25,25,25,.88), rgba(39,76,119,.78)),
-        radial-gradient(circle at top right, rgba(230,126,34,.25), transparent 32%),
-        linear-gradient(160deg, #4a5b71, #7d8ba1 48%, #c6a15d 100%);
+        linear-gradient(135deg, rgba(25,25,25,.72), rgba(39,76,119,.62)),
+        url('/images/alpes-festival-aventure.jpg') center/cover no-repeat;
     }
     .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,.08), rgba(0,0,0,.28));pointer-events:none}
     .hero .container{position:relative;z-index:1}
@@ -1752,45 +1751,4 @@
   <footer>
     <div class="footer-logo">LC<em>D</em>MH</div>
     <ul class="footer-links">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="roadtrips.html">Road Trips</a></li>
-      <li><a href="/roadtrips.html">Road Trip France</a></li>
-      <li><a href="alpes-cols-mythiques.html">Alpes &amp; Cols Mythiques</a></li>
-    </ul>
-    <p class="footer-legal">
-      © LCDMH – Road trips moto dans les Alpes. Tous droits réservés.
-    </p>
-  </footer>
-
-  <script>
-    const filterButtons = document.getElementById('filters');
-    const searchInput = document.getElementById('search');
-    const resultsLine = document.getElementById('results-line');
-    const episodeCards = Array.from(document.querySelectorAll('.episode-card'));
-    const sectorBlocks = Array.from(document.querySelectorAll('.sector-block'));
-    const tableRows = Array.from(document.querySelectorAll('#episodes-table tbody tr'));
-
-    const sectors = ["Tous", ["Tarentaise & Grandes Alpes", "Annecy & Bauges", "Aravis & Cols", "Maurienne & grands cols", "Alpes du Sud & festivals", "Compléments & carnets", "Hors-série & solidarité", "À affiner"]][1];
-    let currentSector = "Tous";
-    let currentSearch = "";
-
-    function buildFilters() {
-      const all = ["Tous", ...sectors];
-      all.forEach(sec => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'filter-btn' + (sec === currentSector ? ' active' : '');
-        btn.textContent = sec;
-        btn.addEventListener('click', () => {
-          currentSector = sec;
-          document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.textContent === sec));
-          applyFilters();
-        });
-        filterButtons.appendChild(btn);
-      });
-    }
-
-    function applyFilters() {
-      let visibleCards = 0;
-
-      episodeCards.
+      <li><a href="index
