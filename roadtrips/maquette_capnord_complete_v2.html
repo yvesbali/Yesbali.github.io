@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Road Trip Moto Norvège – Cap Nord en Solo | 13 Épisodes | LCDMH</title>
+<meta name="description" content="11 000 km à moto jusqu'au Cap Nord en Norvège. 13 épisodes en Honda NT1100 : fjords, Lofoten, cercle arctique, bivouac et routes mythiques.">
+<link rel="canonical" href="https://lcdmh.com/roadtrips/road-trip-norvege-cap-nord.html">
+<link rel="alternate" hreflang="fr" href="https://lcdmh.com/roadtrips/road-trip-norvege-cap-nord.html">
+<link rel="alternate" hreflang="x-default" href="https://lcdmh.com/roadtrips/road-trip-norvege-cap-nord.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--orange:#e67e22;--orange-dark:#d35400;--noir:#1a1a1a;--bg:#f7f7f5;--card:#fff;--border:#e5e5e5;--muted:#777;--alt:#f0ede8}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--noir);line-height:1.65;font-size:16px;padding:2rem 1rem}
+h1,h2,h3{font-family:'Montserrat',sans-serif}
+
+.page-header{text-align:center;margin-bottom:2.5rem}
+.page-header h1{font-size:1.6rem;font-weight:800;margin-bottom:.4rem}
+.page-header p{color:var(--muted);font-size:.95rem}
+
+/* Grille des cartes */
+.hub-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
+    gap:1.5rem;
+    max-width:1200px;
+    margin:0 auto 3rem;
+}
+
+/* Section titles */
+.section-title{
+    max-width:1200px;margin:2rem auto .8rem;
+    font-size:1.15rem;font-weight:800;color:var(--noir);
+    font-family:'Montserrat',sans-serif;
+}
+.section-bar{
+    max-width:1200px;margin:0 auto 1.2rem;
+    width:52px;height:4px;background:var(--orange);border-radius:2px;
+}
+
+/* ====== CARTE FORMAT VALIDÉ ====== */
+.video-card{
+    background:#fff;border-radius:12px;overflow:hidden;
+    border:1px solid var(--border);
+    transition:transform .2s,box-shadow .2s;
+    display:flex;flex-direction:column;
+}
+.video-card:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.08)}
+
+/* ── Bloc situation (EN HAUT) ── */
+.card-situation{
+    padding:1rem 1.2rem .6rem;
+    border-bottom:1px solid var(--border);
+    background:#fafaf8;
+}
+.card-situation p{
+    margin:0 0 .25rem;font-size:.82rem;color:var(--muted);line-height:1.45;
+}
+.card-situation .sitgeo-icon{color:var(--orange);margin-right:.3rem;}
+.card-situation .etape-icon{color:var(--muted);margin-right:.3rem;font-size:.85rem;}
+
+/* ── Thumbnail ── */
+.thumb{position:relative;aspect-ratio:16/9;overflow:hidden;cursor:pointer}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb .play-btn{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:54px;height:54px;background:rgba(0,0,0,.6);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+}
+.thumb .play-btn::after{
+    content:'';border-left:20px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px;
+}
+.thumb .ep-badge{
+    position:absolute;bottom:.6rem;left:.6rem;
+    background:var(--orange);color:#fff;
+    font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;
+    padding:.25rem .7rem;border-radius:20px;letter-spacing:.05em;
+}
+
+/* ── Corps carte (sous la thumbnail) ── */
+.card-body{padding:1rem 1.2rem 1.2rem;flex:1;display:flex;flex-direction:column}
+.card-body h3{
+    font-size:1rem;font-weight:700;line-height:1.3;color:var(--noir);
+    margin-bottom:.6rem;
+}
+
+/* Tags */
+.card-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.7rem}
+.tag{
+    display:inline-flex;align-items:center;gap:.3rem;
+    font-size:.75rem;font-weight:600;padding:.2rem .65rem;border-radius:20px;
+}
+.tag-cap{background:#fdecea;color:#c0392b;}
+.tag-ep{background:var(--alt);color:var(--muted);}
+
+/* Description */
+.card-desc{
+    font-size:.88rem;color:#555;line-height:1.55;margin-bottom:.8rem;flex:1;
+}
+
+/* Lien */
+.card-link{
+    display:inline-block;color:var(--orange);font-weight:600;font-size:.9rem;
+    margin-top:auto;
+}
+.card-link:hover{text-decoration:underline}
+
+/* ====== BILAN SEO (en bas) ====== */
+.bilan-section{
+    max-width:1200px;margin:2rem auto;
+    background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.5rem;
+}
+.bilan-section h2{font-size:1.2rem;margin-bottom:1rem}
+.bilan-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+@media(max-width:700px){.bilan-grid{grid-template-columns:1fr}}
+.bilan-col h4{font-size:.9rem;font-weight:700;margin-bottom:.5rem;color:var(--orange)}
+.bilan-col table{width:100%;border-collapse:collapse;font-size:.82rem}
+.bilan-col td{padding:.3rem .5rem;border-bottom:1px solid var(--border);vertical-align:top}
+.bilan-col td:first-child{font-weight:600;white-space:nowrap;width:50px}
+.tag-ok{background:#e8f5e9;color:#2e7d32;padding:.15rem .5rem;border-radius:10px;font-size:.75rem;font-weight:600;margin:.1rem .2rem;display:inline-block}
+.tag-q{background:#e3f2fd;color:#1565c0;padding:.15rem .5rem;border-radius:10px;font-size:.75rem;font-weight:600;margin:.1rem .2rem;display:inline-block}
+
+/* ====== RÈGLES (en bas) ====== */
+.rules-box{
+    max-width:1200px;margin:2rem auto;padding:1.5rem;
+    background:#fff8f0;border:2px solid var(--orange);border-radius:12px;
+}
+.rules-box h3{font-family:'Montserrat',sans-serif;font-size:1rem;margin-bottom:1rem;color:var(--orange)}
+.rules-box ol{padding-left:1.5rem;font-size:.88rem;line-height:1.7;color:#444}
+.rules-box li{margin-bottom:.3rem}
+.rules-box strong{color:var(--noir)}
+
+/* Breadcrumb */
+.breadcrumb{max-width:1100px;margin:1rem auto .5rem;padding:0 5%;font-size:.85rem;color:#777}
+.breadcrumb a{color:#e67e22;text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb span{margin:0 .4rem;color:#e5e5e5}
+@media(max-width:600px){
+    .hub-grid{grid-template-columns:1fr}
+}
+</style>
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Cap Nord à Moto : 63 ans, 10 000 km Solo | Road Trip Norvège Honda NT1100 EP1&2",
+    "description": "🏍️ ÉPISODE 1 : CAP NORD, LE GRAND DÉPART (2025)  Road trip moto Norvège. À 63 ans, je prends la route vers le Cap Nord. 10 000 km en solo sur Honda NT1100, sans assistance, sans certitude. Juste l’env",
+    "thumbnailUrl": "https://img.youtube.com/vi/aEEJXeNSsdg/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=aEEJXeNSsdg",
+    "embedUrl": "https://www.youtube.com/embed/aEEJXeNSsdg"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Meilleures Routes Moto Norvège : Top 7 Incontournables | Road Trip Cap Nord EP2",
+    "description": "🏍️ ÉPISODE 2 : MEILLEURES ROUTES MOTO EN NORVÈGE (2025)  Road trip moto Norvège. Je découvre les meilleures routes moto du sud de la Norvège, entre océan, fjords et villages isolés. Une entrée en mati",
+    "thumbnailUrl": "https://img.youtube.com/vi/YwiwUpp8yBY/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=YwiwUpp8yBY",
+    "embedUrl": "https://www.youtube.com/embed/YwiwUpp8yBY"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "5 FERRYS, 250 KM DE FOLIE | Stavanger-Bergen à Moto 🚢 EP3. Road  Trip Cap Nord Honda NT 1100",
+    "description": "🏍️ ÉPISODE 3 : STAVANGER → BERGEN, FERRYS & FJORDS (2025)  Road trip moto Norvège sur la côte ouest. Ferrys à répétition, tunnels sous-marins, fjords profonds et routes parfaites. Entre Stavanger et B",
+    "thumbnailUrl": "https://img.youtube.com/vi/XbA7du0oX-I/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=XbA7du0oX-I",
+    "embedUrl": "https://www.youtube.com/embed/XbA7du0oX-I"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Fjords de Norvège à Moto : Bergen, Gaularfjellet & Bivouac Sauvage | Cap Nord EP4",
+    "description": "🏍️ ÉPISODE 4 : FJORDS DE NORVÈGE, BERGEN & BIVOUAC (2025)  Les fjords de Norvège à moto, c'est un voyage qui marque à vie ! Dans cet épisode 4 du road trip vers le Cap Nord, je quitte Bergen pour plon",
+    "thumbnailUrl": "https://img.youtube.com/vi/MNKg781CFh0/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=MNKg781CFh0",
+    "embedUrl": "https://www.youtube.com/embed/MNKg781CFh0"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "SOGNEFJORD. Road trip moto Fjords,  Bergen-Balestrand. Norvège Cap Nord EP5",
+    "description": "🏍️ ÉPISODE 5 : SOGNEFJORD À MOTO – BERGEN → BALESTRAND (2025)  Road trip moto Norvège au cœur du Sognefjord, le plus grand fjord du pays. Entre Bergen et Balestrand, je roule le jour de la fête nation",
+    "thumbnailUrl": "https://img.youtube.com/vi/L9ZSCWiqNFU/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=L9ZSCWiqNFU",
+    "embedUrl": "https://www.youtube.com/embed/L9ZSCWiqNFU"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "GEIRANGERFJORD à Moto : Le Plus Beau Fjord de Norvège | Road Trip Cap Nord EP6",
+    "description": "🔥 Épisode 6 du road trip moto vers le Cap Nord ! Aujourd'hui, je traverse vers le mythique GEIRANGERFJORD (UNESCO), l'une des routes les plus spectaculaires du Vestland : Gaularfjellet, vallées encais",
+    "thumbnailUrl": "https://img.youtube.com/vi/Fzj-lGDwedc/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=Fzj-lGDwedc",
+    "embedUrl": "https://www.youtube.com/embed/Fzj-lGDwedc"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "L'ivresse du voyage en moto, La Norvège, Road trip moto Norvège, Cap Nord 2025 EP7",
+    "description": "Après 10 000 km depuis Annecy, je me rapproche enfin du mythique Cap Nord. Dans cet épisode, découvre des paysages norvégiens à couper le souffle : fjords majestueux, routes sinueuses légendaires, et ",
+    "thumbnailUrl": "https://img.youtube.com/vi/PaEMRm_5H0U/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=PaEMRm_5H0U",
+    "embedUrl": "https://www.youtube.com/embed/PaEMRm_5H0U"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "350 km dans le FROID NORVÉGIEN : Le Vent du Groenland m'a Brisé.EP8. Road trip moto CapNord Nordkapp",
+    "description": "350 KM DANS LE FROID NORVÉGIEN : QUAND LE VENT DU GROENLAND TE GLACE L'ÂME ❄️ (Épisode 8 – Road Trip Cap Nord)  🔥 L'ÉPISODE EN BREF \"Je vais partir comme un avion\" → Réalité : 350 km à 9°C avec un ven",
+    "thumbnailUrl": "https://img.youtube.com/vi/cstTBA6HBGc/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=cstTBA6HBGc",
+    "embedUrl": "https://www.youtube.com/embed/cstTBA6HBGc"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Road trip moto en Norvège – Cette nuit-là, j’étais à bout | EP9",
+    "description": "3°C, GRÉSIL... J’AI FAILLI TOUT LÂCHER ! ❄️ (Road Trip Cap Nord – Épisode 9)  📌 L’ÉPISODE EN 30 SECONDES \"Je vais partir comme un avion, tu vas voir...\" – C’était mon état d’esprit après deux jours de",
+    "thumbnailUrl": "https://img.youtube.com/vi/Q3a39FcIjQo/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=Q3a39FcIjQo",
+    "embedUrl": "https://www.youtube.com/embed/Q3a39FcIjQo"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Le Cap Nord ça va mal finir : Cercle Arctique Polaire | Road Trip Moto Norvège EP10",
+    "description": "LE CAP NORD, ÇA VA MAL FINIR ? 🏍️❄️ Froid, Pluie… et le Sourire qui Résiste !  \"5h du matin, 3°C, et un moral qui grelotte un peu…\"  Dans cet épisode 10, la Norvège me met vraiment à l’épreuve (plus d",
+    "thumbnailUrl": "https://img.youtube.com/vi/VrjDNkzVAZk/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=VrjDNkzVAZk",
+    "embedUrl": "https://www.youtube.com/embed/VrjDNkzVAZk"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Tu vas te marrer,...ou pas ? je pète un câble..🤪 Ferry Bodø  Lofoten | Road Trip Moto Norvège Ép.11",
+    "description": "🔥 DESCRIPTION OPTIMISÉE (SEO + AUTHENTICITÉ) 🏍️ ÉPISODE 11 : ROAD TRIP MOTO AUX ÎLES LOFOTEN : 350 KM SOUS LE VENT POLAIRE (2025) À 68° Nord, sous 7°C et des rafales à 40 km/h, j'ai encore halluciné..",
+    "thumbnailUrl": "https://img.youtube.com/vi/Kq36_wrfvnw/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=Kq36_wrfvnw",
+    "embedUrl": "https://www.youtube.com/embed/Kq36_wrfvnw"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Lofoten : ce jour-là, quelque chose n’a pas fonctionné. EP12",
+    "description": "🔥 **360 KM SOUS L’ENFER ARCTIQUE** – Quand les Lofoten Te Brisent… ou Te Rend Accro ❄️🏍️ *Épisode 12 | Road Trip Moto Solo vers le Cap Nord*  ---  🗺️ **ITINÉRAIRE & DÉCOUVERTES** *(Timestamps cliquabl",
+    "thumbnailUrl": "https://img.youtube.com/vi/aW5Ryq83oO4/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=aW5Ryq83oO4",
+    "embedUrl": "https://www.youtube.com/embed/aW5Ryq83oO4"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Voyage au Cap Nord, Budget, ferries, conseils. Guide de voyage Norvège. EP14",
+    "description": "Voyager en Norvège demande un minimum de préparation. Dans cette vidéo, je te partage un guide pratique basé sur un voyage réel : ferries, budget, itinéraires, bivouac, camping, équipement, période id",
+    "thumbnailUrl": "https://img.youtube.com/vi/jKEeq45vtPU/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=jKEeq45vtPU",
+    "embedUrl": "https://www.youtube.com/embed/jKEeq45vtPU"
+  }
+]
+</script>
+</head>
+<body>
+
+<div class="page-header">
+    <h1>Maquette — Road Trip Cap Nord Moto &middot; 13 &eacute;pisodes</h1>
+    <p>Format valid&eacute; &middot; R&eacute;gion en haut &middot; Questions retourn&eacute;es &middot; Suggestions distribu&eacute;es sans doublon</p>
+</div>
+
+<nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <a href="https://lcdmh.com/">LCDMH</a>
+    <span>›</span>
+    <a href="https://lcdmh.com/roadtrips/">Road Trips</a>
+    <span>›</span>
+    Norvège — Cap Nord en Solo
+</nav>
+
+<!-- ═══════════ SECTION 1 — Départ ═══════════ -->
+<div class="section-title">D&eacute;part &amp; Travers&eacute;e vers la Norv&egrave;ge</div>
+<div class="section-bar"></div>
+<div class="hub-grid">
+
+<!-- ────── EP 1-2 ────── -->
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">&#x25C9;</span> Situation g&eacute;ographique : Road trip moto Cap Nord &mdash; Norv&egrave;ge</p>
+        <p><span class="etape-icon">&#x21C5;</span> &Eacute;tape : &Eacute;pisode 1-2 &middot; D&eacute;part solo 10&nbsp;000 km</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=aEEJXeNSsdg" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/aEEJXeNSsdg/hqdefault.jpg" alt="cap nord moto solo honda nt1100 road trip norvège" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">&Eacute;p. 1-2</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>Cap Nord &agrave; Moto : 63 ans, 10&nbsp;000 km Solo</h3>
+        <div class="card-tags">
+            <span class="tag tag-cap">&#x1F1F3;&#x1F1F4; Cap Nord</span>
+            <span class="tag tag-ep">&#x1F4CE; &Eacute;pisode 1-2</span>
+        </div>
+        <p class="card-desc">À 63 ans, je me lance seul sur 10 000 km vers le Cap Nord à moto. La Honda NT1100 et moi allons découvrir si cette aventure est vraiment à notre portée. Chaque kilomètre répondra à cette question.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=aEEJXeNSsdg" target="_blank">Voir l&rsquo;extrait &rarr;</a>
+    </div>
+</article>
+
+<!-- ────── EP 2 ────── -->
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">&#x25C9;</span> Situation g&eacute;ographique : Norv&egrave;ge &mdash; routes touristiques nationales</p>
+        <p><span class="etape-icon">&#x21C5;</span> &Eacute;tape : &Eacute;pisode 2 &middot; Top 7 routes incontournables</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=YwiwUpp8yBY" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/YwiwUpp8yBY/hqdefault.jpg" alt="meilleures routes moto norvège trollstigen route atlantique" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">&Eacute;p. 2</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>Meilleures Routes Moto Norv&egrave;ge : Top 7 Incontournables</h3>
+        <div class="card-tags">
+            <span class="tag tag-cap">&#x1F1F3;&#x1F1F4; Cap Nord</span>
+            <span class="tag tag-ep">&#x1F4CE; &Eacute;pisode 2</span>
+        </div>
+        <p class="card-desc">Les routes nationales norvégiennes sont des bijoux : Trollstigen, la Route de l'Atlantique, Gaularfjellet. J'ai appris que ces 7 routes touristiques sont incontournables dans tout bon road book Cap Nord moto.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=YwiwUpp8yBY" target="_blank">Voir l&rsquo;extrait &rarr;</a>
+    </div>
+</article>
+
+</div><!-- /hub-grid -->
+
+<!-- ═══════════ SECTION 2 — Côte Ouest & Fjords ═══════════ -->
+<div class="section-title">Road Trip Moto C&ocirc;te Ouest &amp; Fjords de Norv&egrave;ge</div>
+<div class="section-bar"></div>
+<div class="hub-grid">
+
+<!-- ────── EP 3 ────── -->
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">&#x25C9;</span> Situation g&eacute;ographique : Road trip moto Norv&egrave;ge &mdash; C&ocirc;te Ouest</p>
+        <p><span class="etape-icon">&#x21C5;</span> &Eacute;tape : &Eacute;pisode 3 &middot; Stavanger &rarr; Bergen</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=XbA7du0oX-I" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/XbA7du0oX-I/hqdefault.jpg" alt="ferry moto norvège stavanger bergen fjords tunnels" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">&Eacute;p. 3</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>5 Ferrys, 250 km de Folie &mdash; Stavanger-Bergen &agrave; Moto</h3>
+        <div class="card-tags">
+            <span class="tag tag-cap">&#x1F1F3;&#x1F1F4; Cap Nord</span>
+            <span class="tag tag-ep">&#x1F4CE; &Eacute;pisode 3</span>
+        </div>
+        <p class="card-desc">Cinq ferries entre Stavanger et Bergen en une seule journée. Tunnels sous-marins, fjords profonds et routes parfaites. La Norvège montre pourquoi beaucoup n'en reviennent jamais vraiment.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=XbA7du0oX-I" target="_blank">Voir l&rsquo;extrait &rarr;</a>
+    </div>
+</article>
+
+<!-- ────── EP 4 ────── -->
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">&#x25C9;</span> Situation g&eacute;ographique : Norv&egrave;ge &mdash; Gaularfjellet, fjords</p>
+        <p><span class="etape-icon">&#x21C5;</span> &Eacute;tape : &Eacute;pisode 4 &middot; Bergen &rarr; Gaularfjellet &rarr; Balestrand</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=MNKg781CFh0" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/MNKg781CFh0/hqdefault.jpg" alt="bivouac sauvage moto norvège gaularfjellet fjords cascades" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">&Eacute;p. 4</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>Fjords de Norv&egrave;ge &agrave; Moto : Bergen, Gaularfjellet &amp; Bivouac Sauvage</h3>
+        <div class="card-tags">
+            <span class="tag tag-cap">&#x1F1F3;&#x1F1F4; Cap Nord</span>
+            <span class="tag tag-ep">&#x1F4CE; &Eacute;pisode 4</span>
+        </div>
+        <p class="card-desc">Après la route touristique du Gaularfjellet, j'ai découvert comment faire du camping sauvage en Norvège. À 150 m des habitations, le bivouac est autorisé. 114 km de lacets entre fjords et cascades.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=MNKg781CFh0" target="_blank">Voir l&rsquo;extrait &rarr;</a>
+    </div>
+</article>
+
+<!-- ────── EP 5 ────── -->
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">&#x25C9;</span> Situation g&eacute;ographique : Norv&egrave;ge &mdash; Sognefjord</p>
+        <p><span class="etape-icon">&#x21C5;</span> &Eacute;tape : &Eacute;pisode 5 &middot; Bergen &rarr; Balestrand</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=L9ZSCWiqNFU" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/L9ZSCWiqNFU/hqdefault.jpg" alt="sognefjord moto bergen balestrand norvège fjord" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">&Eacute;p. 5</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>SOGNEFJORD &mdash; Road trip moto Fjords, Bergen-Balestrand</h3>
+        <div class="card-tags">
+            <span class="tag tag-cap">&#x1F1F3;&#x1F1F4; Cap Nord</span>
+            <span class="tag tag-ep">&#x1F4CE; &Eacute;pisode 5</span>
+        </div>
+        <p class="card-desc">Le Sognefjord, le plus long fjord de Norvège avec 200 km d'eau profonde bordée de montagnes. Entre Bergen et Balestrand, cette étape longe les rives entre vergers et villages traditionnels.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=L9ZSCWiqNFU" target="_blank">Voir l&rsquo;extrait &rarr;</a>
+    </div>
+</article>
+
+<!-- ────── EP 6 ────── -->
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">&#x25C9;</span> Situation g&eacute;ographique : Norv&egrave;ge &mdash; Geirangerfjord UNESCO</p>
+        <p><span class="etape-icon">&#x21C5;</span> &Eacute;tape : &Eacute;pisode 6 &middot; Route des Aigles &rarr; Geiranger</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=Fzj-lGDwedc" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/Fzj-lGDwedc/hqdefault.jpg" alt="geirangerfjord moto route aigles unesco norvège" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">&Eacute;p. 6</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>GEIRANGERFJORD &agrave; Moto : Le Plus Beau Fjord de Norv&egrave;ge</h3>
+        <div class="card-tags">
+            <span class="tag tag-cap">&#x1F1F3;&#x1F1F4; Cap Nord</span>
+            <span class="tag tag-ep">&#x1F4CE; &Eacute;pisode 6</span>
+        </div>
+        <p class="card-desc">Le Geirangerfjord classé UNESCO mérite chaque lacet. La Route des Aigles serpente au-dessus des cascades des Sept Sœurs. Je voulais vraiment savoir si on pouvait remonter jusqu'à l'océan Arctique.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=Fzj-lGDwedc" target="_blank">Voir l&rsquo;extrait &rarr;</a>
+    </div>
+</article>
+
+</div><!-- /hub-grid -->
+
+<!-- ═══════════ SECTION 3 — Cercle Arctique & Cap Nord ═══════════ -->
+<div class="section-title">Cercle Arctique &amp; Route vers le Cap Nord</div>
+<div class="section-bar"></div>
+<div class="hub-grid">
+
+<!-- ────── EP 7 ────── -->
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">&#x25C9;</span> Situation g&eacute;ographique : Norv&egrave;ge &mdash; en route vers le nord</p>
+        <p><span class="etape-icon">&#x21C5;</span> &Eacute;tape : &Eacute;pisode 7 &middot; L&rsquo;ivresse du voyage</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=PaEMRm_5H0U" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/PaEMRm_5H0U/hqdefault.jpg" alt="voyage moto norvège route nord cap nord saison" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">&Eacute;p. 7</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>L&rsquo;ivresse du voyage en moto &mdash; La Norv&egrave;ge, Cap Nord 2025</h3>
+        <div class="card-tags">
+            <span class="tag tag-cap">&#x1F1F3;&#x1F1F4; Cap Nord</span>
+            <span class="tag tag-ep">&#x1F4CE; &Eacute;pisode 7</span>
+        </div>
+        <p class="card-desc">Après 10 000 km, la vraie ivresse du voyage apparaît. Paysages norvégiens à couper le souffle, fjords majestueux, routes sinueuses. Le Cap Nord se rapproche enfin.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=PaEMRm_5H0U" target="_blank">Voir l&rsquo;extrait &rarr;</a>
+    </div>
+</article>
+
+<!-- ────── EP 8 ────── -->
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">&#x25C9;</span> Situation g&eacute;ographique : Norv&egrave;ge &mdash; moto cercle arctique</p>
+        <p><span class="etape-icon">&#x21C5;</span> &Eacute;tape : &Eacute;pisode 8 &middot; 350 km dans le froid</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=cstTBA6HBGc" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/cstTBA6HBGc/hqdefault.jpg" alt="équipement moto froid norvège cercle arctique cap nord" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">&Eacute;p. 8</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>350 km dans le Froid Norv&eacute;gien : Le Vent du Groenland</h3>
+        <div class="card-tags">
+            <span class="tag tag-cap">&#x1F1F3;&#x1F1F4; Cap Nord</span>
+            <span class="tag tag-ep">&#x1F4CE; &Eacute;pisode 8</span>
+        </div>
+        <p class="card-desc">350 km dans le vent glacial du Groenland. Le froid change tout en Norvège. L'équipement Cap Nord à moto n'est pas une option : en mai, le vent reste mordant même en plein jour polaire.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=cstTBA6HBGc" target="_blank">Voir l&rsquo;extrait &rarr;</a>
+    </div>
+</article>
+
+<!-- ────── EP 9 ────── -->
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">&#x25C9;</span> Situation g&eacute;ographique : Norv&egrave;ge &mdash; nord du cercle arctique</p>
+        <p><span class="etape-icon">&#x21C5;</span> &Eacute;tape : &Eacute;pisode 9 &middot; Cette nuit-l&agrave;, j&rsquo;&eacute;tais &agrave; bout</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=Q3a39FcIjQo" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/Q3a39FcIjQo/hqdefault.jpg" alt="road trip moto solo norvège fatigue nuit arctique" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">&Eacute;p. 9</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>Road trip moto en Norv&egrave;ge &mdash; Cette nuit-l&agrave;, j&rsquo;&eacute;tais &agrave; bout</h3>
+        <div class="card-tags">
+            <span class="tag tag-cap">&#x1F1F3;&#x1F1F4; Cap Nord</span>
+            <span class="tag tag-ep">&#x1F4CE; &Eacute;pisode 9</span>
+        </div>
+        <p class="card-desc">Cette nuit-là, la fatigue du voyage en solitaire, le froid, les kilomètres qui s'accumulent. Une étape brute sur ce que le Cap Nord moto exige vraiment quand on roule seul.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=Q3a39FcIjQo" target="_blank">Voir l&rsquo;extrait &rarr;</a>
+    </div>
+</article>
+
+<!-- ────── EP 10 ────── -->
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">&#x25C9;</span> Situation g&eacute;ographique : Norv&egrave;ge &mdash; cercle polaire arctique</p>
+        <p><span class="etape-icon">&#x21C5;</span> &Eacute;tape : &Eacute;pisode 10 &middot; Cercle arctique &rarr; approche Nordkapp</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=VrjDNkzVAZk" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/VrjDNkzVAZk/hqdefault.jpg" alt="cercle arctique polaire moto norvège polarsirkelen E6" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">&Eacute;p. 10</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>Le Cap Nord &ccedil;a va mal finir : Cercle Arctique Polaire</h3>
+        <div class="card-tags">
+            <span class="tag tag-cap">&#x1F1F3;&#x1F1F4; Cap Nord</span>
+            <span class="tag tag-ep">&#x1F4CE; &Eacute;pisode 10</span>
+        </div>
+        <p class="card-desc">Le Polarsirkelen sur la E6. À partir du cercle arctique, le soleil ne se couche plus. La meilleure saison pour cette montée arrive quand les jours rallongent et que les routes s'ouvrent une à une.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=VrjDNkzVAZk" target="_blank">Voir l&rsquo;extrait &rarr;</a>
+    </div>
+</article>
+
+</div><!-- /hub-grid -->
+
+<!-- ═══════════ SECTION 4 — Lofoten ═══════════ -->
+<div class="section-title">&Icirc;les Lofoten &agrave; Moto</div>
+<div class="section-bar"></div>
+<div class="hub-grid">
+
+<!-- ────── EP 11 ────── -->
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">&#x25C9;</span> Situation g&eacute;ographique : Norv&egrave;ge &mdash; Bod&oslash;, Lofoten</p>
+        <p><span class="etape-icon">&#x21C5;</span> &Eacute;tape : &Eacute;pisode 11 &middot; Bod&oslash; &rarr; Moskenes (Lofoten)</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=Kq36_wrfvnw" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/Kq36_wrfvnw/hqdefault.jpg" alt="ferry bodø lofoten moto norvège vestfjorden" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">&Eacute;p. 11</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>Ferry Bod&oslash; &rarr; Lofoten | Road Trip Moto Norv&egrave;ge</h3>
+        <div class="card-tags">
+            <span class="tag tag-cap">&#x1F1F3;&#x1F1F4; Cap Nord</span>
+            <span class="tag tag-ep">&#x1F4CE; &Eacute;pisode 11</span>
+        </div>
+        <p class="card-desc">Comment garer une moto sur un ferry ? La traversée Bodø-Moskenes à travers le Vestfjorden répond à la question. C'est le passage obligatoire pour atteindre les îles Lofoten.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=Kq36_wrfvnw" target="_blank">Voir l&rsquo;extrait &rarr;</a>
+    </div>
+</article>
+
+<!-- ────── EP 12 ────── -->
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">&#x25C9;</span> Situation g&eacute;ographique : Norv&egrave;ge &mdash; &Icirc;les Lofoten</p>
+        <p><span class="etape-icon">&#x21C5;</span> &Eacute;tape : &Eacute;pisode 12 &middot; Lofoten</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=aW5Ryq83oO4" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/aW5Ryq83oO4/hqdefault.jpg" alt="lofoten moto plages rorbuers norvège îles" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">&Eacute;p. 12</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>Lofoten : ce jour-l&agrave;, quelque chose n&rsquo;a pas fonctionn&eacute;</h3>
+        <div class="card-tags">
+            <span class="tag tag-cap">&#x1F1F3;&#x1F1F4; Cap Nord</span>
+            <span class="tag tag-ep">&#x1F4CE; &Eacute;pisode 12</span>
+        </div>
+        <p class="card-desc">Les Lofoten à moto : plages de sable blanc et rorbuers sur pilotis. Mais ce jour-là, rien ne s'est déroulé comme prévu. AutoPASS, météo, fatigue : quand tout se cumule, le voyage prend une autre dimension.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=aW5Ryq83oO4" target="_blank">Voir l&rsquo;extrait &rarr;</a>
+    </div>
+</article>
+
+</div><!-- /hub-grid -->
+
+<!-- ═══════════ SECTION 5 — Guide Pratique ═══════════ -->
+<div class="section-title">Guide Pratique &mdash; Cap Nord Moto Budget &amp; Roadbook</div>
+<div class="section-bar"></div>
+<div class="hub-grid">
+
+<!-- ────── EP 13 (vidéo EP14) ────── -->
+<article class="video-card">
+    <div class="card-situation">
+        <p><span class="sitgeo-icon">&#x25C9;</span> Situation g&eacute;ographique : Norv&egrave;ge &mdash; guide voyage moto</p>
+        <p><span class="etape-icon">&#x21C5;</span> &Eacute;tape : &Eacute;pisode 13 &middot; Ferries, budget, conseils</p>
+    </div>
+    <a href="https://www.youtube.com/watch?v=jKEeq45vtPU" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/jKEeq45vtPU/hqdefault.jpg" alt="guide voyage moto norvège budget ferries conseils pratique" loading="lazy">
+            <div class="play-btn"></div>
+            <div class="ep-badge">&Eacute;p. 13</div>
+        </div>
+    </a>
+    <div class="card-body">
+        <h3>Voyager en Norv&egrave;ge : ferries, budget, conseils &mdash; Guide pratique</h3>
+        <div class="card-tags">
+            <span class="tag tag-cap">&#x1F1F3;&#x1F1F4; Cap Nord</span>
+            <span class="tag tag-ep">&#x1F4CE; &Eacute;pisode 13</span>
+        </div>
+        <p class="card-desc">Guide complet basé sur 10 000 km réels : ferries, budget Cap Nord moto, itinéraires, bivouac, camping, équipement grand froid. Les réponses aux questions qu'on se pose avant de partir.</p>
+        <a class="card-link" href="https://www.youtube.com/watch?v=jKEeq45vtPU" target="_blank">Voir l&rsquo;extrait &rarr;</a>
+    </div>
+</article>
+
+</div><!-- /hub-grid -->
+
+
+<!-- ═══════════ BILAN SEO GLOBAL ═══════════ -->
+<div class="bilan-section">
+    <h2>Bilan SEO &mdash; Distribution sur la page</h2>
+    <div class="bilan-grid">
+        <div class="bilan-col">
+            <h4>Suggestions Google (25 uniques)</h4>
+            <table>
+                <tr><td>EP1</td><td><span class="tag-ok">Road trip Norv&egrave;ge moto</span></td></tr>
+                <tr><td>EP2</td><td><span class="tag-ok">Road book Cap Nord moto</span> <span class="tag-ok">Road trip moto Cap Nord pdf</span></td></tr>
+                <tr><td>EP3</td><td><span class="tag-ok">Avis Norv&egrave;ge &agrave; moto</span></td></tr>
+                <tr><td>EP4</td><td><span class="tag-ok">Cap Nord en moto et camping</span></td></tr>
+                <tr><td>EP5</td><td><span class="tag-ok">Road trip Cap Nord moto</span></td></tr>
+                <tr><td>EP7</td><td><span class="tag-ok">Cap Nord moto saison</span></td></tr>
+                <tr><td>EP8</td><td><span class="tag-ok">&Eacute;quipement Cap Nord moto</span> <span class="tag-ok">Cap Nord moto budget</span></td></tr>
+                <tr><td>EP9</td><td><span class="tag-ok">Cap Nord moto seul</span></td></tr>
+                <tr><td>EP11</td><td><span class="tag-ok">Ferry Norv&egrave;ge France</span></td></tr>
+                <tr><td>EP12</td><td><span class="tag-ok">AutoPASS ferry Norv&egrave;ge</span></td></tr>
+            </table>
+            <p style="margin-top:.8rem;font-size:.8rem;color:var(--muted)">+ 11 suggestions en JSON-LD uniquement (Paris Cap Nord moto, Ferry Danemark Norv&egrave;ge, etc.)</p>
+        </div>
+        <div class="bilan-col">
+            <h4>Questions Google retourn&eacute;es (7 sur 9)</h4>
+            <table>
+                <tr><td>EP1</td><td><span class="tag-q">Quelle moto pour le Cap Nord ?</span> &rarr; &laquo;&nbsp;Je me suis demand&eacute; si ma Honda NT1100...&nbsp;&raquo;</td></tr>
+                <tr><td>EP3</td><td><span class="tag-q">Comment prendre le ferry en moto ?</span> &rarr; &laquo;&nbsp;Je ne savais pas comment &ccedil;a se passait...&nbsp;&raquo;</td></tr>
+                <tr><td>EP6</td><td><span class="tag-q">Peut-on aller &agrave; l&rsquo;Arctique &agrave; moto ?</span> &rarr; &laquo;&nbsp;Je voulais savoir si on pouvait vraiment...&nbsp;&raquo;</td></tr>
+                <tr><td>EP7</td><td><span class="tag-q">Meilleure saison Cap Nord moto ?</span> &rarr; &laquo;&nbsp;On m&rsquo;a souvent demand&eacute;...&nbsp;&raquo;</td></tr>
+                <tr><td>EP10</td><td><span class="tag-q">C&rsquo;est quoi le cercle arctique ?</span> &rarr; &laquo;&nbsp;Je ne savais pas vraiment ce que c&rsquo;&eacute;tait...&nbsp;&raquo;</td></tr>
+                <tr><td>EP11</td><td><span class="tag-q">Comment garer une moto sur un ferry ?</span> &rarr; &laquo;&nbsp;Je me demandais comment on garait...&nbsp;&raquo;</td></tr>
+                <tr><td>EP13</td><td><span class="tag-q">Peut-on embarquer une moto sur un ferry ?</span> &rarr; &laquo;&nbsp;Je me suis pos&eacute; toutes les questions...&nbsp;&raquo;</td></tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!-- ═══════════ RÈGLES FUSIONNÉES ═══════════ -->
+<div class="rules-box">
+    <h3>12 r&egrave;gles fusionn&eacute;es &mdash; m&eacute;thodologie valid&eacute;e</h3>
+    <ol>
+        <li><strong>R&eacute;gion = mots-cl&eacute;s recherch&eacute;s</strong> (&laquo; moto cercle arctique &raquo; pas &laquo; au-del&agrave; du cercle &raquo;)</li>
+        <li><strong>Itin&eacute;raire = ville &rarr; ville uniquement</strong>, pas de r&eacute;p&eacute;tition du titre</li>
+        <li><strong>Questions Google retourn&eacute;es</strong> depuis l&rsquo;exp&eacute;rience perso, jamais copi&eacute;es</li>
+        <li><strong>Z&eacute;ro invention</strong> : que ce qui est prouvable (titre, description YT, g&eacute;o)</li>
+        <li><strong>Anti keyword-stuffing</strong> : m&ecirc;me mot-cl&eacute; jamais dans 2 tags de la m&ecirc;me carte</li>
+        <li><strong>Distribution page-enti&egrave;re</strong> : chaque suggestion dans UNE seule vignette</li>
+        <li><strong>Seeds courts</strong> (2-3 mots) pour Google Suggest, pas les titres complets</li>
+        <li><strong>h3 = titre YouTube inchang&eacute;</strong> ou &laquo; #N &ndash; [lieu/sujet] &raquo;</li>
+        <li><strong>Badge EP en bas &agrave; gauche</strong> pour ne pas masquer le titre sur la miniature</li>
+        <li><strong>JSON-LD VideoObject</strong> sur chaque carte + suggestions en &laquo; keywords &raquo;</li>
+        <li><strong>hreflang fr + x-default</strong> pour le ciblage francophone international</li>
+        <li><strong>3 sources de donn&eacute;es</strong> : Google Suggest, People Also Ask, descriptions YouTube</li>
+    </ol>
+</div>
+
+<p style="text-align:center;color:var(--muted);font-size:.82rem;margin:2rem 0">Maquette g&eacute;n&eacute;r&eacute;e le 12 avril 2026 &mdash; descriptions &agrave; affiner une fois les descriptions YouTube r&eacute;cup&eacute;r&eacute;es via fetch_youtube_descriptions.py</p>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "LCDMH",
+      "item": "https://lcdmh.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Road Trips",
+      "item": "https://lcdmh.com/roadtrips/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Norvège — Cap Nord en Solo",
+      "item": "https://lcdmh.com/roadtrips/maquette_capnord_complete_v2.html"
+    }
+  ]
+}
+</script>
+</body>
+</html>
