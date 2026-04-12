@@ -811,17 +811,36 @@ img{display:block;width:100%;height:auto}
 CONFIGURATION SIMPLE
 ===========================================================
 
-POUR CHANGER L'ARTICLE À LA UNE :
-- remplace simplement la valeur de FEATURED_SLUG
-- une fois par semaine si tu veux
-- exemple :
-  const FEATURED_SLUG = "gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti";
+ROTATION AUTOMATIQUE ARTICLE À LA UNE :
+- L'article change automatiquement tous les 56 jours
+- La liste ci-dessous détermine l'ordre de rotation
+- Pour changer l'ordre : modifie FEATURED_ROTATION_SLUGS
+- Pour forcer un article spécifique : remplace la ligne
+  const FEATURED_SLUG = ... par le slug voulu
 
 POUR CHANGER LES ARTICLES POPULAIRES :
 - modifie simplement le tableau POPULAR_SLUGS
 */
 
-const FEATURED_SLUG = "le-cap-nord-ca-va-mal-finir-cercle-arctique-polaire-road-tri";
+/* ── ROTATION AUTOMATIQUE TOUS LES 56 JOURS ────────────────
+   Liste des articles à la une en rotation.
+   L'index est calculé depuis la date de référence ci-dessous.
+   ─────────────────────────────────────────────────────────── */
+const FEATURED_ROTATION_SLUGS = [
+  "le-cap-nord-ca-va-mal-finir-cercle-arctique-polaire-road-tri",
+  "gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti",
+  "budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat",
+  "test-honda-nt1100-avis-25000-km-road-trip",
+  "filmer-son-road-trip-moto-setup-camera-dji-gopro",
+  "dunlop-mutant-vs-bridgestone-t33-le-combat-quel-pneu-choisir",
+  "preparation-pour-le-voyage-road-trip-en-trk-702",
+  "geirangerfjord-a-moto-le-plus-beau-fjord-de-norvege-road-tri",
+];
+// Date de référence pour le calcul de rotation (ne pas changer)
+const _ROTATION_REF = new Date("2026-04-12");
+const _daysSinceRef = Math.floor((Date.now() - _ROTATION_REF) / 86400000);
+const _rotIdx = Math.floor(Math.max(0, _daysSinceRef) / 56) % FEATURED_ROTATION_SLUGS.length;
+const FEATURED_SLUG = FEATURED_ROTATION_SLUGS[_rotIdx];
 
 const FEATURED_SECONDARY_SLUGS = [
   "350-km-dans-le-froid-norvegien-le-vent-du-groenland-ma-brise",
