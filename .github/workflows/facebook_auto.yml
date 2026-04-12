@@ -3,10 +3,13 @@ name: Pinterest & Facebook Auto
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 8 * * 0'
+    # Jours de publication : Mar, Mer, Ven, Dim à 6h UTC (= 8h Paris été)
+    # Mar + Ven = rattrapage (jusqu'au 5 mai), Mer + Dim = régulier
+    # Le script dispatch_scheduled_post.py ne publie que s'il y a un post planifié ce jour-là
+    - cron: '0 6 * * 0,2,3,5'
 
 jobs:
-  build:
+  dispatch:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout du code
@@ -17,8 +20,13 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Installation des outils
-        run: pip install requests beautifulsoup4
+      - name: Sélection du post planifié
+        run: python automation/facebook_site/dispatch_scheduled_post.py
 
-      - name: Lancement du script
-        run: python automation/facebook_site/facebook_auto.py
+      - name: Commit et push du payload
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add facebook/facebook_payload_live.json automation/facebook_site/dispatch_published.json
+          git diff --cached --quiet || git commit -m "Dispatch automatique du post Facebook/Pinterest"
+          git push
