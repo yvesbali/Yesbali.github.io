@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>47 Vidéos Moto dans les Alpes : Cols, Routes et Panoramas</title>
   <meta name="description" content="47 vidéos moto dans les Alpes françaises classées par secteur : Savoie, Isère, Hautes-Alpes, Alpes-Maritimes. Les plus belles routes de montagne.">
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="index, follow">
   <meta name="author" content="Yves – LCDMH">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1634,46 +1634,4 @@
     function applyFilters() {
       let visibleCards = 0;
 
-      episodeCards.forEach(card => {
-        const sector = card.dataset.secteur;
-        const title = card.dataset.title || '';
-        const desc = card.dataset.desc || '';
-        const textOk = !currentSearch || title.includes(currentSearch) || desc.includes(currentSearch);
-        const sectorOk = currentSector === 'Tous' || sector === currentSector;
-        const show = textOk && sectorOk;
-        card.style.display = show ? '' : 'none';
-        if (show) visibleCards++;
-      });
-
-      sectorBlocks.forEach(block => {
-        const visibleInside = Array.from(block.querySelectorAll('.episode-card')).some(c => c.style.display !== 'none');
-        const sectorMatch = currentSector === 'Tous' || block.dataset.sectorName === currentSector;
-        block.style.display = (visibleInside && sectorMatch) ? '' : 'none';
-      });
-
-      let visibleRows = 0;
-      tableRows.forEach(row => {
-        const sector = row.dataset.secteur;
-        const hay = row.dataset.search || '';
-        const textOk = !currentSearch || hay.includes(currentSearch);
-        const sectorOk = currentSector === 'Tous' || sector === currentSector;
-        const show = textOk && sectorOk;
-        row.style.display = show ? '' : 'none';
-        if (show) visibleRows++;
-      });
-
-      resultsLine.textContent = `${visibleCards} vidéo(s) visibles sur 47. Tableau : ${visibleRows} ligne(s) visibles.`;
-    }
-
-    searchInput.addEventListener('input', (e) => {
-      currentSearch = (e.target.value || '').toLowerCase().trim();
-      applyFilters();
-    });
-
-    buildFilters();
-    applyFilters();
-  </script>
-
-<script src="maillage.js"></script>
-</body>
-</html>
+      episodeCards.
