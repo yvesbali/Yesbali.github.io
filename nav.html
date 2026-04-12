@@ -56,11 +56,15 @@
       </div>
     </li>
 
+    <li><button id="lcdmh-search-nav-btn" class="lcdmh-search-nav-btn" type="button" title="Rechercher les vidéos">🔍</button></li>
+
     <li class="lcdmh-desktop-cta"><a class="lcdmh-last-video" href="/index.html#videos><span class="lcdmh-badge-new">NOUVEAU</span><span class="lcdmh-badge-title">Dernière vidéo</span></a></li>
     <li class="lcdmh-desktop-cta"><a class="lcdmh-subscribe" href="https://www.youtube.com/@LCDMH?sub_confirmation=1" target="_blank" rel="noopener">▶ S'abonner</a></li>
     <li class="lcdmh-desktop-cta"><a class="lcdmh-youtube" href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">📺 YouTube</a></li>
   </ul>
 </nav>
+
+<script src="/js/lcdmh-search.js" defer></script>
 
 <style>
   #lcdmh-nav{
@@ -203,6 +207,20 @@
   #lcdmh-nav .lcdmh-subscribe:hover{background:var(--lcdmh-orange-dark);color:#fff !important}
   #lcdmh-nav .lcdmh-youtube{background:#ff0000}
   #lcdmh-nav .lcdmh-youtube:hover{background:#d80000;color:#fff !important}
+
+  #lcdmh-nav .lcdmh-search-nav-btn{
+    background:none;
+    border:none;
+    cursor:pointer;
+    font-size:1.1rem;
+    padding:.45rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:color .2s ease,transform .2s ease;
+    color:var(--lcdmh-black);
+  }
+  #lcdmh-nav .lcdmh-search-nav-btn:hover{color:var(--lcdmh-orange);transform:scale(1.15)}
 
   #lcdmh-nav .lcdmh-menu-toggle{
     display:none;
