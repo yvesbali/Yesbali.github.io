@@ -1188,26 +1188,4 @@ function renderPage(){
         .filter(Boolean)
         .slice(0, 4);
 
-    const roadTrips = ARTICLES.filter(article => article.category === "road-trips");
-    const testsMateriel = ARTICLES.filter(article => article.category === "tests-materiel");
-    const guidesPratiques = ARTICLES.filter(article => article.category === "guides-pratiques");
-
-    document.getElementById("featured-main").innerHTML = createFeaturedMain(featured);
-    document.getElementById("featured-side").innerHTML = featuredSecondaries.map(createFeaturedMini).join("");
-
-    document.getElementById("grid-road-trips").innerHTML = roadTrips.map(createArticleCard).join("");
-    document.getElementById("grid-tests-materiel").innerHTML = testsMateriel.map(createArticleCard).join("");
-    document.getElementById("grid-guides-pratiques").innerHTML = guidesPratiques.map(createArticleCard).join("");
-
-    document.getElementById("popular-list").innerHTML = popularArticles.map(createPopularItem).join("");
-
-    document.getElementById("stat-total-articles").textContent = String(ARTICLES.length);
-    document.getElementById("footer-count").textContent = `📖 ${ARTICLES.length} articles publiés — Page articles mise à jour`;
-}
-
-document.addEventListener("DOMContentLoaded", renderPage);
-</script>
-
-<script src="maillage.js"></script>
-</body>
-</html>
+    const roadTrips = ARTICLES.filter(article => article.category 
