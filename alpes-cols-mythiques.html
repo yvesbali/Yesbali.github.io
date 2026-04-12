@@ -91,7 +91,7 @@
     .sector-count{background:#fff7ef;color:var(--orange);padding:.65rem .9rem;border-radius:999px;font-weight:800;white-space:nowrap}
 
     .episodes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.15rem}
-    .episode-card{background:#fff;border:1px solid var(--border);border-radius:22px;padding:1.25rem 1.2rem;box-shadow:var(--shadow);transition:transform .18s, box-shadow .18s}
+    .episode-card{background:#fff;border:1px solid var(--border);border-radius:22px;padding:1.25rem 1.2rem;box-shadow:var(--shadow);transition:transform .18s, box-shadow .18s;overflow:hidden}
     .episode-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.09)}
     .episode-head{display:flex;justify-content:space-between;gap:.8rem;align-items:flex-start;margin-bottom:.8rem}
     .badge{background:#fff7ef;color:var(--orange);border-radius:999px;padding:.34rem .65rem;font-weight:800;font-size:.76rem;white-space:nowrap}
@@ -125,7 +125,7 @@
 
 
     /* ── Vignette YouTube ── */
-    .ep-thumb{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:14px 14px 0 0;background:#111;margin:-1.25rem -1.2rem 1rem;width:calc(100% + 2.4rem)}
+    .ep-thumb{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:22px 22px 0 0;background:#111;margin:-1.25rem -1.2rem 1rem;width:calc(100% + 2.4rem)}
     .ep-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
     .episode-card:hover .ep-thumb img{transform:scale(1.04)}
     .ep-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.28);transition:background .2s}
