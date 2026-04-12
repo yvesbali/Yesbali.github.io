@@ -124,6 +124,20 @@
     .footer-links a:hover{color:var(--orange)}
     .footer-legal{font-size:.76rem;color:rgba(255,255,255,.32);line-height:1.7}
 
+
+    /* ── Vignette YouTube ── */
+    .ep-thumb{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:14px 14px 0 0;background:#111;margin:-1.25rem -1.2rem 1rem;width:calc(100% + 2.4rem)}
+    .ep-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+    .episode-card:hover .ep-thumb img{transform:scale(1.04)}
+    .ep-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.28);transition:background .2s}
+    .ep-play::after{content:'';width:52px;height:52px;background:rgba(255,255,255,.92);border-radius:50%;display:flex;align-items:center;justify-content:center;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e67e22'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;background-size:60%;}
+    .episode-card:hover .ep-play{background:rgba(0,0,0,.18)}
+    .ep-geo{font-size:.79rem;color:#555;margin-bottom:.7rem;line-height:1.4;display:flex;flex-wrap:wrap;gap:.4rem .6rem}
+    .ep-geo span{display:flex;align-items:center;gap:.25rem}
+    .ep-geo .sep{color:#bbb}
+    .voir-extrait{display:inline-flex;align-items:center;gap:.35rem;color:var(--orange);font-weight:800;font-size:.88rem;margin-top:.3rem}
+    .voir-extrait:hover{color:var(--orange-dark)}
+
     @media (max-width:860px){.toolbar{grid-template-columns:1fr} .sector-header{flex-direction:column} .table-wrap{overflow:auto} }
     @media (max-width:720px){ .section{padding:58px 5%} .hero{padding:96px 5% 72px} .actions .btn{width:100%} }
   </style>
@@ -145,15 +159,14 @@
       <span class="eyebrow">Road Trip France • Série</span>
       <h1>Alpes &amp; <em>Cols Mythiques</em> à Moto</h1>
       <p class="hero-sub">
-        Version locale de travail construite à partir du CSV maître exporté depuis YouTube :
-        <strong>47 vidéos réelles</strong>, <strong>liens actifs</strong>, et une structure plus lisible
-        pour valider la série avant publication sur LCDMH.com.
+        47 vidéos moto dans les Alpes françaises, classées par secteur.
+        <strong>Routes mythiques</strong>, <strong>cols d'altitude</strong> et panoramas à couper le souffle —
+        du massif des Bauges aux sommets des Hautes-Alpes.
       </p>
       <div class="hero-meta">
         <span>🏍️ Série France uniquement</span>
         <span>🔗 Liens YouTube branchés</span>
         <span>📋 Sommaire visuel</span>
-        <span>🧪 Version locale test</span>
       </div>
       <div class="hero-kpis">
         <div><strong>47</strong><span>vidéos</span></div>
@@ -186,16 +199,16 @@
 
       <div class="info-grid">
         <div class="info-card">
-          <h3>Ce que cette page valide</h3>
-          <p>Structure de série, lisibilité mobile, navigation interne, sommaire visuel et maillage de base.</p>
+          <h3>Classées par secteur</h3>
+          <p>Bauges, Tarentaise, Aravis, Maurienne, Alpes du Sud… chaque région a son espace.</p>
         </div>
         <div class="info-card">
-          <h3>Ce que tu peux tester en local</h3>
-          <p>Recherche, filtres, clic vers YouTube, cohérence graphique et facilité de lecture quand la série devient longue.</p>
+          <h3>Recherche & filtres</h3>
+          <p>Recherche par mot-clé, filtre par secteur, tableau récapitulatif avec accès direct YouTube.</p>
         </div>
         <div class="info-card">
-          <h3>Étape suivante</h3>
-          <p>Quand cette page te convient, on aligne <strong>Les Alpes dans tous les sens</strong>, puis on passe à une page épisode test.</p>
+          <h3>Liens épisodes</h3>
+          <p>Chaque vidéo renvoie vers sa page dédiée sur LCDMH, plus complète que YouTube.</p>
         </div>
       </div>
     </div>
@@ -678,7 +691,7 @@
       <span class="eyebrow">Détail complet</span>
       <h2 class="section-title">Les vidéos par <em>secteur</em></h2>
       <p class="lead">
-        Chaque bloc ci-dessous reprend les vidéos du secteur correspondant, avec un résumé court et un accès direct à YouTube.
+        Chaque bloc reprend les vidéos du secteur correspondant, avec vignette, résumé et accès direct à YouTube.
       </p>
 
       
@@ -694,7 +707,11 @@
         <div class="episodes-grid">
           
           <article class="episode-card" data-secteur="Tarentaise &amp; Grandes Alpes" data-title="tarentaise à moto : cols alpins et routes d’altitude | road trip alpes partie 1" data-desc="dans ce road trip moto, je t’emmène au cœur des alpes, à travers la tarentaise, une région spectaculaire faite de cols alpins, de routes d’altitude et de paysages ouverts. le voyage commence en haute-savoie, au départ d’annecy, avant de prendre progressivement de l’altitude pour rejoindre bourg-saint-maurice. au fil des kilomètres, la route se resserre, les panoramas s’élargis…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=ili6Tkm6kJw" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/ili6Tkm6kJw/hqdefault.jpg" alt="Tarentaise à moto : cols alpins et routes d’altitude | Road trip Alpes Partie 1" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 1</span>
               <span class="date">08/10/2024</span>
             </div>
@@ -702,15 +719,18 @@
             <p>Dans ce road trip moto, je t’emmène au cœur des Alpes, à travers la Tarentaise, une région spectaculaire faite de cols alpins, de routes d’altitude et de paysages ouverts. Le voyage commence en Haute-Savoie, au départ d’Annecy, avant de prendre progressivement de l’altitude pour rejoindre Bourg-Saint-Maurice. Au fil des kilomètres, la route se resserre, les panoramas s’élargis…</p>
             <div class="chips">
               <span class="chip">Tarentaise &amp; Grandes Alpes</span>
-              <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-01.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=ili6Tkm6kJw" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="/alpes-cols-mythiques-episode-01.html">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Tarentaise &amp; Grandes Alpes" data-title="road trip moto en tarentaise ▸ beaufortain &amp; mont-blanc (partie 2)" data-desc="petit road trip moto au cœur des alpes, en tarentaise, entre le beaufortain et le massif du mont-blanc. dans cette partie 2, je poursuis mon itinéraire au départ de bourg-saint-maurice, avec l’idée de rejoindre le col du petit-saint-bernard. mais à cette période de l’année, les grands cols alpins ne sont pas encore ouverts. je décide alors de changer de plan et de prendre la d…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=Ig7sfnRf80A" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/Ig7sfnRf80A/hqdefault.jpg" alt="Road trip moto en Tarentaise ▸ Beaufortain &amp; Mont-Blanc (Partie 2)" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 2</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -721,12 +741,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-02.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=Ig7sfnRf80A" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=Ig7sfnRf80A" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Tarentaise &amp; Grandes Alpes" data-title="rga, en moto et en bivouac. 1800 kilomètres à traver les alpes." data-desc="entrez dans l&#x27;univers majestueux des alpes, où les routes sinueuses et les paysages grandioses offrent une expérience inoubliable pour les amateurs de moto. j&#x27;ai parcouru les hautes alpes, les alpes martinie et bien d&#x27;autres régions avec ma fidèle benelli trk 502. que ce soit en bivouac, en camping ou dans des petits hôtels, j&#x27;ai savouré chaque instant passé à explorer les col…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=5cI2rCVRiGw" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/5cI2rCVRiGw/hqdefault.jpg" alt="RGA, en moto et en bivouac. 1800 kilomètres à traver les Alpes." loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 5</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -737,12 +761,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-05.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=5cI2rCVRiGw" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=5cI2rCVRiGw" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Tarentaise &amp; Grandes Alpes" data-title="ep3. 🏔️ road trip moto – 5 cols de légende &amp; paysages à couper le souffle" data-desc="de saint paul sur ubaye à moutier. avec encore de magnifiques paysages ou je ne peux que m’émerveiller devant tant grandeur et de majesté. nous traversons les alpes du sud, le parc naturel régional du queyras, briançon dans hautes-alpes, droit devant nous apercevons les écrins, nous passerons la vallée étroite vers névache, le piémont, la vanoise la tarentaise que des lieux qu…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=YU51KbYRZJw" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/YU51KbYRZJw/hqdefault.jpg" alt="Ep3. 🏔️ Road Trip Moto – 5 Cols de Légende &amp; Paysages à Couper le Souffle" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 32</span>
               <span class="date">13/10/2024</span>
             </div>
@@ -753,12 +781,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-32.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=YU51KbYRZJw" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=YU51KbYRZJw" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Tarentaise &amp; Grandes Alpes" data-title="ep3. 🏔️ road trip moto – 5 cols de légende &amp; paysages à couper le souffle" data-desc="de saint paul sur ubaye à moutier. avec encore de magnifiques paysages ou je ne peux que m’émerveiller devant tant grandeur et de majesté. nous traversons les alpes du sud, le parc naturel régional du queyras, briançon dans hautes-alpes, droit devant nous apercevons les écrins, nous passerons la vallée étroite vers névache, le piémont, la vanoise la tarentaise que des lieux qu…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=YU51KbYRZJw" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/YU51KbYRZJw/hqdefault.jpg" alt="Ep3. 🏔️ Road Trip Moto – 5 Cols de Légende &amp; Paysages à Couper le Souffle" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 33</span>
               <span class="date">24/06/2025</span>
             </div>
@@ -769,7 +801,7 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-33.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=YU51KbYRZJw" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=YU51KbYRZJw" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
@@ -788,7 +820,11 @@
         <div class="episodes-grid">
           
           <article class="episode-card" data-secteur="Annecy &amp; Bauges" data-title="ballade en benelli trk  502 et leoncino, moto a2." data-desc="petit tour dans les bauges, près d&#x27;annecy avec nos benelli trk 502 et leoncino. j&#x27;an ai profiter pour faire un petit essai de quelques kilomètres avec la leoncino. @lcdmh">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=QPH5CJRbI0E" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/QPH5CJRbI0E/hqdefault.jpg" alt="Ballade en Benelli TRK  502 et Leoncino, moto A2." loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 3</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -799,12 +835,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-03.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=QPH5CJRbI0E" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=QPH5CJRbI0E" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Annecy &amp; Bauges" data-title="sortie moto en haute-savoie ▸ benelli trk 502 avec un chapter harley" data-desc="sortie moto en haute-savoie avec un chapter harley-davidson, au guidon de ma benelli trk 502. même si le groupe était majoritairement composé de harley, il n’y avait pas que des harley, et l’ambiance est restée très conviviale tout au long de la journée. rouler en groupe avec un club harley est une expérience moto intéressante, notamment par la dynamique du convoi, le rythme e…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=amxFV0iPxR0" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/amxFV0iPxR0/hqdefault.jpg" alt="Sortie moto en Haute-Savoie ▸ Benelli TRK 502 avec un Chapter Harley" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 4</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -815,12 +855,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-04.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=amxFV0iPxR0" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=amxFV0iPxR0" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Annecy &amp; Bauges" data-title="road trip moto: découverte des bauges en savoie." data-desc="vidéo d&#x27;introduction à une petite série de vidéo sur les bauges, entre savoie et haute savoie. les couleurs d&#x27;automne sont comme un écrin pour cette petite série sur les bauges. j&#x27;ai pris un grand plaisir à tourner ces images. je vous partage ici quelques vues, non exhaustive du massif des bauges. le chateau de duingt, le pont de l&#x27;abîme, les tour saint jacques, le roc des bœu…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=3MrTGcwA_-4" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/3MrTGcwA_-4/hqdefault.jpg" alt="Road Trip Moto: Découverte des Bauges en savoie." loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 6</span>
               <span class="date">08/10/2024</span>
             </div>
@@ -831,12 +875,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-06.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=3MrTGcwA_-4" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=3MrTGcwA_-4" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Annecy &amp; Bauges" data-title="week-end découverte annecy, la venise des alpes: pont de l&#x27;abîme et tours saint jacques" data-desc="episode 1, découverte des bauges, entre savoie et haute savoie. les couleurs d&#x27;automne sont comme un écrin pour cette petite série sur les bauges. j&#x27;ai pris un grand plaisir à tourner ces images. je vous partage ici quelques vues, non exhaustive du massif des bauges. le chateau de duingt, le pont de l&#x27;abîme, les tour saint jacques, le roc des bœufs, le château de miolans bref…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=i1YwQsEgCSQ" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/i1YwQsEgCSQ/hqdefault.jpg" alt="Week-end découverte Annecy, la Venise des Alpes: Pont de l&#x27;abîme et tours saint Jacques" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 7</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -847,12 +895,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-07.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=i1YwQsEgCSQ" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=i1YwQsEgCSQ" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Annecy &amp; Bauges" data-title="week-end découverte annecy, la venise des alpes: les bauges 2022" data-desc="dans cette épisode nous découvrirons les alentours de bellecombe-en-bauges situé en savoie.">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=hqDzIM7M2qs" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/hqDzIM7M2qs/hqdefault.jpg" alt="Week-end découverte Annecy, la Venise des Alpes: Les Bauges 2022" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 8</span>
               <span class="date">08/10/2024</span>
             </div>
@@ -863,12 +915,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-08.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=hqDzIM7M2qs" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=hqDzIM7M2qs" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Annecy &amp; Bauges" data-title="week-end découverte annecy, la venise des alpes:ne passez pas à côté de precherel bauges 2022" data-desc="belle découverte du trélod, qui culmine a 2181 mètres. toujours en balade dans les bauges, je vous partage ces beaux endroits avec grand plaisir. pour bien profiter de cette vidéo regardez la sur un grand écran, si possible bien sûr et avec un de son c&#x27;est encore mieux. n&#x27;hésitez pas a partager.">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=VqwvMUWyCO4" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/VqwvMUWyCO4/hqdefault.jpg" alt="Week-end découverte Annecy, la Venise des Alpes:Ne passez pas à côté de Precherel Bauges 2022" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 9</span>
               <span class="date">08/10/2024</span>
             </div>
@@ -879,12 +935,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-09.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=VqwvMUWyCO4" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=VqwvMUWyCO4" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Annecy &amp; Bauges" data-title="week-end découverte annecy, la venise des alpes: l&#x27;abbaye de tamié, bauges 2022." data-desc="dans cette balade dans les bauges et autour d&#x27;annecy, je vous propose la découverte de l&#x27;abbaye de tamié, en savoie. belle balla en moto et jolis paysages à la clé. ce petit road trip me permet de vous faire découvrir ces belles régions de savoie et haute-savoie dans les alpes française.">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=89PnfLu9pGA" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/89PnfLu9pGA/hqdefault.jpg" alt="Week-end découverte Annecy, la Venise des Alpes: L&#x27;Abbaye de Tamié, Bauges 2022." loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 10</span>
               <span class="date">08/10/2024</span>
             </div>
@@ -895,12 +955,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-10.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=89PnfLu9pGA" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=89PnfLu9pGA" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Annecy &amp; Bauges" data-title=": le château de miolans : un secret de savoie" data-desc="dans cette vidéo, je vous emmène à la découverte du château de miolans, une forteresse médiévale impressionnante perchée au-dessus de la vallée de l’isère, en savoie. situé aux portes du massif des bauges, le château de miolans est un lieu chargé d’histoire, longtemps utilisé comme forteresse militaire puis comme prison. aujourd’hui, il offre des panoramas exceptionnels sur la…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=XFgsUOnTWgk" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/XFgsUOnTWgk/hqdefault.jpg" alt=": Le château de Miolans : Un secret de Savoie" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 11</span>
               <span class="date">08/10/2024</span>
             </div>
@@ -911,12 +975,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-11.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=XFgsUOnTWgk" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=XFgsUOnTWgk" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Annecy &amp; Bauges" data-title="week-end découverte annecy, la venise des alpes: château de duingt vu 4k en drone." data-desc="petite balade en moto autour du lac d&#x27;annecy pour une petite visite du château de duingt. annecy , le lac et ses merveilles. road trip moto haute-savoie.">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=Wxt4pVsC-ZI" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/Wxt4pVsC-ZI/hqdefault.jpg" alt="Week-end découverte Annecy, la Venise des Alpes: château de Duingt vu 4K en drone." loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 12</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -927,12 +995,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-12.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=Wxt4pVsC-ZI" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=Wxt4pVsC-ZI" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Annecy &amp; Bauges" data-title="week-end découverte annecy, la venise des alpes : col de aravis" data-desc="dans ce mini road trip moto je vous emène faire une découverte, de villaz au col des aravis en passant par dingy-saint-clair. avec ma benelli trk 502 je parcours les routes sinueuses de haute-savoie.">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=mvEydQ3lpZ4" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/mvEydQ3lpZ4/hqdefault.jpg" alt="Week-end découverte Annecy, la Venise des Alpes : Col de Aravis" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 13</span>
               <span class="date">24/06/2025</span>
             </div>
@@ -943,12 +1015,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-13.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=mvEydQ3lpZ4" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=mvEydQ3lpZ4" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Annecy &amp; Bauges" data-title="week-end découverte annecy, la venise des alpes: le col de l&#x27;arpettaz" data-desc="dans ce petit road trip moto je vous emène découvrir le col de l&#x27;appertaz, en haute-savoie. la suite de ma petite balade dans les aravis. le col de l&#x27;arpettaz est le balcon sur le mont blanc, une vue sur la vanoise, le vercors au loin...bref quelques beaux plans.">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=zFJGnSVl4og" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/zFJGnSVl4og/hqdefault.jpg" alt="Week-end découverte Annecy, la Venise des Alpes: Le col de l&#x27;Arpettaz" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 14</span>
               <span class="date">24/06/2025</span>
             </div>
@@ -959,12 +1035,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-14.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=zFJGnSVl4og" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=zFJGnSVl4og" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Annecy &amp; Bauges" data-title="week-end découverte annecy, la venise des alpes.  les plus beaux sites de annecy: les aravis 3" data-desc="annecy en rhône-alpes. petite visites sur la rive gauche du lac d&#x27;annecy avec le chateau de menthon. mini road trip bien sympa pour visiter la haute-savoie en moto.">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=jq02gt4YWlo" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/jq02gt4YWlo/hqdefault.jpg" alt="Week-end découverte Annecy, la Venise des Alpes.  les plus beaux sites de Annecy: Les Aravis 3" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 15</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -975,12 +1055,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-15.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=jq02gt4YWlo" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=jq02gt4YWlo" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Annecy &amp; Bauges" data-title="ep1. alpes aventure moto festival, barcelonnette en honda nt 1100 et tracer 9 gt." data-desc="au guidon d’une honda nt1100 et d’une yamaha tracer 9 gt, nous quittons annecy pour rejoindre barcelonnette et l’alpes aventure moto festival 🚵‍♂️🏍️. en une seule journée, nous enchaînons des cols mythiques et des routes spectaculaires : le plateau des bauges, le col du grand cucheron, la vallée de la maurienne, les lacets de montvernier, valloire, puis l’ascension du galibier…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=eNVD7c6g3wM" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/eNVD7c6g3wM/hqdefault.jpg" alt="EP1. Alpes Aventure Moto Festival, Barcelonnette en Honda NT 1100 et tracer 9 GT." loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 41</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -991,12 +1075,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-41.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=eNVD7c6g3wM" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=eNVD7c6g3wM" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Annecy &amp; Bauges" data-title="balade entre savoie et haute savoie" data-desc="petite balade en moto. col et paysages hivernal. annecy haute savoie">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=moyo4_X1338" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/moyo4_X1338/hqdefault.jpg" alt="Balade entre Savoie et Haute Savoie" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 44</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -1007,12 +1095,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-44.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=moyo4_X1338" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=moyo4_X1338" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Annecy &amp; Bauges" data-title="vidéo annecy" data-desc="-~-~~-~~~-~~-~- please watch: &quot;de la gopro au drone : découvrez mon équipement vidéo pour des prises de vue époustouflantes&quot; https://www.youtube.com/watch?v=bw3mtpp0ea0 -~-~~-~~~-~~-~-">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=bw3mtpp0ea0" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/bw3mtpp0ea0/hqdefault.jpg" alt="Vidéo Annecy" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 47</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -1023,7 +1115,7 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-47.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=1JKi34BG_rU" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=1JKi34BG_rU" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
@@ -1042,7 +1134,11 @@
         <div class="episodes-grid">
           
           <article class="episode-card" data-secteur="Aravis &amp; Cols" data-title="road trip moto, bonne année des aravis" data-desc="- aventures à moto : explorez avec moi des paysages magnifiques et des routes uniques. - tests et avis : des évaluations honnêtes pour aider chaque motard. - conseils pratiques : astuces et guides pour préparer vos propres aventures. 📸 rejoignez la communauté : abonnez-vous pour ne pas manquer nos aventures palpitantes et partagez vos expériences de moto. suivez-moi aussi sur…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=25QDcsN3K18" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/25QDcsN3K18/hqdefault.jpg" alt="Road Trip Moto, Bonne année des Aravis" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 17</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -1053,12 +1149,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-17.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=25QDcsN3K18" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=25QDcsN3K18" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Aravis &amp; Cols" data-title="benelli trk 702. moto hiver, les aravis-la clusaz" data-desc="🌍 au programme : - aventures à moto : explorez avec moi des paysages magnifiques et des routes uniques. - tests et avis : des évaluations honnêtes pour aider chaque motard. - conseils pratiques : astuces et guides pour préparer vos propres aventures. 📸 rejoignez la communauté : abonnez-vous pour ne pas manquer nos aventures palpitantes et partagez vos expériences de moto. suiv…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=zdkuNEHqCjE" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/zdkuNEHqCjE/hqdefault.jpg" alt="Benelli TRK 702. Moto hiver, les Aravis-La clusaz" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 18</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -1069,12 +1169,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-18.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=zdkuNEHqCjE" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=zdkuNEHqCjE" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Aravis &amp; Cols" data-title="col de la chambotte &amp; grand colombier en moto | france" data-desc="entre lac du bourget, belvédères et routes de montagne, cette balade moto relie le col de la chambotte au grand colombier. une étape paisible, panoramique, faite de détours, de curiosité et de plaisir de rouler. dans cette vidéo, je t’emmène pour une balade moto entre le col de la chambotte et le grand colombier, au cœur de l’est de la france. la chambotte, perchée au-dessus d…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=v5Ngfsj8X8o" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/v5Ngfsj8X8o/hqdefault.jpg" alt="Col de la Chambotte &amp; Grand Colombier en moto | France" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 20</span>
               <span class="date">24/06/2025</span>
             </div>
@@ -1085,7 +1189,7 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-20.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=v5Ngfsj8X8o" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=v5Ngfsj8X8o" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
@@ -1104,7 +1208,11 @@
         <div class="episodes-grid">
           
           <article class="episode-card" data-secteur="Maurienne &amp; grands cols" data-title="balade moto dans la maurienne pour aller voir lacets de montvernier." data-desc="et bien voilà déjà la dernière sortie du mois d&#x27;avril. après cette sortie la trk 502 va partir en révision a seulement 4500 kilomètres, oui je sais ce n’est pas beaucoup. mais voilà après le débridage de la moto, le changement des pneus, un train de pneus en 4500 kms je suis dégouté il va falloir changer la façon de rouler...bref je fais un mettre les poignées chauffantes et j…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=fpZ6pD8lwtc" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/fpZ6pD8lwtc/hqdefault.jpg" alt="Balade moto dans la Maurienne pour aller voir Lacets de Montvernier." loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 22</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -1115,12 +1223,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-22.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=fpZ6pD8lwtc" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=fpZ6pD8lwtc" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Maurienne &amp; grands cols" data-title="juste pour le plaisir, avec télégraph road." data-desc="petit test honda nt1100 en mode plaisir, juste pour le fun.">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=w3h2dD5oCQ4" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/w3h2dD5oCQ4/hqdefault.jpg" alt="Juste pour le plaisir, avec Télégraph Road." loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 35</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -1131,12 +1243,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-35.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=w3h2dD5oCQ4" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=w3h2dD5oCQ4" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Maurienne &amp; grands cols" data-title="tu n’as jamais vu ces montagnes comme ça !" data-desc="des paysages incroyables, les alpes en grand ! honda nt1100 et yamaha tracer 9 gt+ – road trip moto ep2 road trip moto à travers les alpes françaises : col de la madeleine, col du galibier, col d’ornon, col de l’iseran, maurienne, bourg-d’oisans, valloire, villard-notre-dame, massif des écrins et vallée de la romanche. paysages grandioses, routes panoramiques et virages sinueu…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=ZQgqg4Qxc2Q" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/ZQgqg4Qxc2Q/hqdefault.jpg" alt="Tu n’as jamais vu ces montagnes comme ça !" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 37</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -1147,12 +1263,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-37.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=ZQgqg4Qxc2Q" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=ZQgqg4Qxc2Q" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Maurienne &amp; grands cols" data-title="road trip moto. galibier express honda nt 1100" data-desc="montée express du col du galibier à moto, en profitant simplement du bruit pur du moteur. pas de musique, pas de blabla — juste la route, la machine, et l’instant présent. un moment brut, authentique, comme on les aime ✨ 🏍️ moto : honda nt1100 📍 col du galibier – alpes françaises 🎧 son moteur brut, version express #moto #galibier #hondant1100 #ridepuresound #roadtripmoto #alpe…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=a9Kcqx5J7VU" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/a9Kcqx5J7VU/hqdefault.jpg" alt="Road trip moto. Galibier Express Honda NT 1100" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 40</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -1163,7 +1283,7 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-40.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=a9Kcqx5J7VU" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=a9Kcqx5J7VU" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
@@ -1182,7 +1302,11 @@
         <div class="episodes-grid">
           
           <article class="episode-card" data-secteur="Alpes du Sud &amp; festivals" data-title="2 motards en balade ep1. 🏍️ duel moto : trk 702 vs bmw r 1200 rt – qui domine la route ?" data-desc="a l’aventure, la grande ou la petite commence souvent par un arrêt, pourquoi s’arrêter ? pour faire le plein, pour aller loin, voyager et vivre de belles aventures. nous sommes le mardi 3 septembre et là je me dirige à salon de provence, point de départ du road trip, ou jacques qui a prévu un joli parcours et nous roulerons ensemble sur environ 18000 kilomètres nous sillonnero…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=Wdn-4saXn6Q" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/Wdn-4saXn6Q/hqdefault.jpg" alt="2 motards en balade Ep1. 🏍️ Duel Moto : TRK 702 vs BMW R 1200 RT – Qui Domine la Route ?" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 27</span>
               <span class="date">08/10/2024</span>
             </div>
@@ -1193,12 +1317,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-27.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=Wdn-4saXn6Q" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=Wdn-4saXn6Q" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Alpes du Sud &amp; festivals" data-title="découverte d&#x27;un paysage caché après la tempête !" data-desc="🌄 après une nuit de tempête, je prends la route vers un paysage caché incroyable ! découvre avec moi les routes secrètes des alpes-maritimes, de l’estérel et de la haute-provence à moto 🏍️. rencontre inattendue, panoramas sublimes, villages perchés… tout y est pour une balade inoubliable. 00:00 introduction &amp; contexte après la tempête 01:10 séchage du matériel et bivouac 03:00…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=4xaqaEltO-0" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/4xaqaEltO-0/hqdefault.jpg" alt="Découverte d&#x27;un paysage caché après la tempête !" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 28</span>
               <span class="date">08/10/2024</span>
             </div>
@@ -1209,12 +1337,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-28.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=4xaqaEltO-0" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=4xaqaEltO-0" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Alpes du Sud &amp; festivals" data-title="ep3. alpes festival aventure. dernière claque, le road trip est fini! ." data-desc="road trip moto dans le dévoluy – faraut, vallées et cols à couper le souffle aujourd’hui, je t’emmène pour le 3ᵉ jour de notre road trip moto dans le massif du dévoluy. avec bruno, on démarre la journée à corp, face au majestueux faraut et ses 2200 m. on enchaîne les routes sinueuses, les cols, les vallées et les gorges, avec des paysages à couper le souffle. c’est toute la ma…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=o4NSUSvf1eg" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/o4NSUSvf1eg/hqdefault.jpg" alt="EP3. Alpes Festival aventure. Dernière claque, le road trip est fini! ." loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 38</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -1225,12 +1357,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-38.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=o4NSUSvf1eg" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=o4NSUSvf1eg" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Alpes du Sud &amp; festivals" data-title="découvre le luberon à moto avec yann et sandra 🚵‍♂️ | road trip drôme provençale" data-desc="&quot;road trip moto dans le luberon (provence) avec yann et sandra 🚵‍♂️🌿 ! découvrez en drone lourmarin, gordes, bonnieux, sénanque et bien plus…&quot; rejoignez yann et sandra pour une balade à moto inoubliable à travers le luberon, capturée avec un drone pour des vues aériennes exceptionnelles. découvrez les paysages pittoresques et l&#x27;atmosphère charmante de lourmarin, un des plus be…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=KvxVwXFjKn4" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/KvxVwXFjKn4/hqdefault.jpg" alt="Découvre le Luberon à moto avec Yann et Sandra 🚵‍♂️ | Road trip Drôme Provençale" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 39</span>
               <span class="date">21/08/2025</span>
             </div>
@@ -1241,12 +1377,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-39.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=KvxVwXFjKn4" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=KvxVwXFjKn4" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Alpes du Sud &amp; festivals" data-title="ep2. alpes aventure moto festival : j&#x27;ai tout raté (essais, chute, moto cassée...)" data-desc="🏍️ **alpes aventure moto festival : l&#x27;aventure tourne au fiasco ?** 😱 accrochez-vous pour un épisode riche en rebondissements ! à bord de ma **honda nt1100**, je vous embarque au cœur du plus grand rassemblement de motards aventuriers : le **alpes aventure moto festival à barcelonnette** ! entre les **essais ratés** de la nouvelle **africa twin**, la galère pour retrouver brun…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=dOjvRtEitX4" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/dOjvRtEitX4/hqdefault.jpg" alt="EP2. Alpes Aventure Moto Festival : J&#x27;ai TOUT Raté (Essais, Chute, Moto cassée...)" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 42</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -1257,12 +1397,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-42.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=dOjvRtEitX4" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=dOjvRtEitX4" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Alpes du Sud &amp; festivals" data-title="un géant pour toi et facile à faire ! valcavera le col que tu vas aimer !" data-desc="c’est trop beau ! dans cet épisode 3, je t’emmène au cœur des alpes du sud, là où les routes semblent dessinées pour les motards. on survole les paysages en drone, on prend de la hauteur, et on partage ensemble la magie de la route dans les alpes. trace : https://kurv.gr/gyrnn moto : trk 502 2022 28000 kms trk 702 2023 18 kms honda nt 1100 de puis septembre 2024 au 29/09/2025…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=xQSpEY5EsEc" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/xQSpEY5EsEc/hqdefault.jpg" alt="Un géant pour toi et facile à faire ! Valcavera le col que tu vas aimer !" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 43</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -1273,12 +1417,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-43.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=xQSpEY5EsEc" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=xQSpEY5EsEc" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Alpes du Sud &amp; festivals" data-title="road trip moto. bmw 1250rt honda nt 1100 la bonette" data-desc="dans cette montée de la bonette je rencontre olivier que je ne connais encore pas à ce moment là. nous faisons la montée, mais une petite seulement, un vrai bonheur! abonne-toi si tu aimes les balades moto, la provence et les bons moments. ➡️ abonnez-vous pour suivre chaque étape de cette aventure : https://www.youtube.com/channel/ucsmjag8fmtaqdawlg35t3bg?sub_confirmation=1 🏍️…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=30Pw8c_OW-0" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/30Pw8c_OW-0/hqdefault.jpg" alt="Road trip moto. BMW 1250RT Honda NT 1100 La bonette" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 45</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -1289,12 +1437,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-45.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=30Pw8c_OW-0" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=30Pw8c_OW-0" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Alpes du Sud &amp; festivals" data-title="géant, tu vas adorer, c&#x27;est trop beau !! ep3" data-desc="irrésistible ! cet épisode 3 de mon road trip au alpes aventure moto festival à barcelonnette va te donner envie de prendre la route tout de suite. j’y ai vécu des moments inoubliables entre paysages de folie, rencontres, et cette ambiance unique du monde motard. ➜ si tu n’as pas encore vu l’épisode 1 et 2, fonce ici : https://www.youtube.com/playlist list=plyeqidd8fqw7q0fdzk3…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=eVi9fzp4MZ0" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/eVi9fzp4MZ0/hqdefault.jpg" alt="Géant, tu vas Adorer, c&#x27;est trop beau !! EP3" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 46</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -1305,7 +1457,7 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-46.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=eVi9fzp4MZ0" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=eVi9fzp4MZ0" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
@@ -1324,7 +1476,11 @@
         <div class="episodes-grid">
           
           <article class="episode-card" data-secteur="Compléments &amp; carnets" data-title="trk 702-airflow a8717-camping lone rider. vêtements hiver-préparation road trip moto-voyage moto." data-desc="un grand merci pour votre soutien, vos messages et votre humour tout au long de l&#x27;année. vous faites de cette communauté plus qu&#x27;un simple mot, mais une vraie famille. n&#x27;oubliez pas, un motard n&#x27;est jamais seul sur la route ! 🛣️ bonne fêtes de fin d&#x27;année à tous, et on se retrouve l&#x27;année prochaine pour de nouvelles aventures ! 🎉 🔗 suivez-moi sur ma chaîne pour plus d&#x27;aventure…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=NsM2DEysUI0" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/NsM2DEysUI0/hqdefault.jpg" alt="TRK 702-AirFlow A8717-Camping Lone Rider. Vêtements Hiver-Préparation road trip moto-Voyage moto." loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 16</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -1335,12 +1491,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-16.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=NsM2DEysUI0" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=NsM2DEysUI0" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Compléments &amp; carnets" data-title="ascension du  col de l&#x27;arpetaz à moto: trk 702 &amp; tiger 900 en action" data-desc="petite balade moto entre savoie et haute-savoie. de belles routes et paysages au programme. unre trk 702, unetriumph tiger 900, une ducati dansd la neige et un scooter. -~-~~-~~~-~~-~- please watch: &quot;de la gopro au drone : découvrez mon équipement vidéo pour des prises de vue époustouflantes&quot; https://www.youtube.com/watch?v=bw3mtpp0ea0 -~-~~-~~~-~~-~-">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=bw3mtpp0ea0" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/bw3mtpp0ea0/hqdefault.jpg" alt="Ascension du  Col de l&#x27;Arpetaz à Moto: TRK 702 &amp; Tiger 900 en Action" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 21</span>
               <span class="date">24/06/2025</span>
             </div>
@@ -1351,12 +1511,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-21.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=s38cppyYdvo" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=s38cppyYdvo" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Compléments &amp; carnets" data-title="mini road trip moto r 1200 rt et trk 702.  entre haute-savoie, ain et bugey" data-desc="bienvenue sur lcdmh, la chaîne dédiée aux passionnés de moto comme moi, yves le motard heureux. ici, je partage des road trips épiques, des tests de motos et équipements, et des conseils de voyage pour inspirer et informer. 🏍️ 🌍 au programme : - aventures à moto : explorez avec moi des paysages magnifiques et des routes uniques. - tests et avis : des évaluations honnêtes pour…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=EwPtBFMxypY" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/EwPtBFMxypY/hqdefault.jpg" alt="MINI Road Trip Moto R 1200 RT et TRK 702.  Entre Haute-Savoie, Ain et Bugey" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 23</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -1367,12 +1531,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-23.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=EwPtBFMxypY" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=EwPtBFMxypY" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Compléments &amp; carnets" data-title="le déluge s&#x27;abat sur nous. road trip moto benelli trk 702," data-desc="road trip moto et nuit sous la pluie.">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=tBttggEGOQc" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/tBttggEGOQc/hqdefault.jpg" alt="Le déluge s&#x27;abat sur nous. Road trip moto Benelli TRK 702," loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 24</span>
               <span class="date">08/10/2024</span>
             </div>
@@ -1383,12 +1551,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-24.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=tBttggEGOQc" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=tBttggEGOQc" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Compléments &amp; carnets" data-title="road trip jour 4 benelli trk 702" data-desc="road trip jour 4 benelli trk 702 dans les alpes">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=Rgrm3xO3mSI" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/Rgrm3xO3mSI/hqdefault.jpg" alt="Road trip jour 4 Benelli TRK 702" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 25</span>
               <span class="date">08/10/2024</span>
             </div>
@@ -1399,12 +1571,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-25.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=Rgrm3xO3mSI" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=Rgrm3xO3mSI" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Compléments &amp; carnets" data-title="réveil matinal et dans la rosée du matin. road trip benelli trk 702" data-desc="au programme ce matin saint sur ubaye a moutier en passant par l&#x27;italie. 360 kms et certainement 9h00 de route">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=3GWcB9oyP8s" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/3GWcB9oyP8s/hqdefault.jpg" alt="réveil matinal et dans la rosée du matin. Road trip Benelli TRK 702" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 26</span>
               <span class="date">08/10/2024</span>
             </div>
@@ -1415,12 +1591,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-26.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=3GWcB9oyP8s" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=3GWcB9oyP8s" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Compléments &amp; carnets" data-title="découvre les routes secrètes des alpes en moto ! road trip moto  tracer 9 gt+ vs honda nt1100" data-desc="🏍️ épisode choc du road trip moto dans les alpes ! bruno pensait faire une petite balade tranquille… mais ce qu’il découvre, c’est un paysage grandiose et brutal. 🔥 780 km de cols mythiques : iseran, galibier, madeleine… des virages à n’en plus finir et 33 000 mètres de dénivelé. 💥 résultat ? une claque visuelle monumentale et un duel inattendu entre la tracer 9 gt+ et ma hond…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=ubb_I0QnQ-M" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/ubb_I0QnQ-M/hqdefault.jpg" alt="Découvre les routes secrètes des Alpes en moto ! Road trip moto  Tracer 9 GT+ vs Honda NT1100" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 36</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -1431,7 +1611,7 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-36.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=ubb_I0QnQ-M" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=ubb_I0QnQ-M" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
@@ -1450,7 +1630,11 @@
         <div class="episodes-grid">
           
           <article class="episode-card" data-secteur="Hors-série &amp; solidarité" data-title="octobre rose 2024. organisé par louli louli et francois bernard." data-desc="octobre rose. la journée de soutien du despistage du cancer. avec près de 60 000 nouveaux cas et 12 000 décès par an, le cancer du sein est le cancer le plus fréquent chez la femme en france et la 1re cause de décès par cancer. 2 2 620 500 femmes réalisent un dépistage en 2023 soit une participation de 48,2%, malheureusement cela reste encor trop faible. le nombre de cancers d…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=-n2dfOgClTM" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/-n2dfOgClTM/hqdefault.jpg" alt="Octobre rose 2024. Organisé par Louli louli et Francois Bernard." loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 29</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -1461,12 +1645,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-29.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=-n2dfOgClTM" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=-n2dfOgClTM" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Hors-série &amp; solidarité" data-title="octobre rose 2024. organisé par louli louli et francois bernard." data-desc="octobre rose. la journée de soutien du despistage du cancer. avec près de 60 000 nouveaux cas et 12 000 décès par an, le cancer du sein est le cancer le plus fréquent chez la femme en france et la 1re cause de décès par cancer. 2 2 620 500 femmes réalisent un dépistage en 2023 soit une participation de 48,2%, malheureusement cela reste encor trop faible. le nombre de cancers d…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=PZpZGOlJ2xQ" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/PZpZGOlJ2xQ/hqdefault.jpg" alt="Octobre rose 2024. Organisé par Louli louli et Francois Bernard." loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 30</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -1477,12 +1665,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-30.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=PZpZGOlJ2xQ" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=PZpZGOlJ2xQ" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="Hors-série &amp; solidarité" data-title="le cancer du sein, octobre rose, motardes engagées." data-desc="📸 rejoignez la communauté : abonnez-vous pour ne pas manquer nos aventures palpitantes et partagez vos expériences de moto. suivez-moi aussi sur [instagram/facebook/twitter] pour plus de contenu moto ! ensemble, explorons le monde sur deux roues. 🌟 abonnez-vous ici : https://www.youtube.com/channel/ucsmjag8fmtaqdawlg35t3bg?sub_confirmation=1&quot; 🔔 abonnez-vous pour plus de vidéos…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=zUmmVjmUIsY" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/zUmmVjmUIsY/hqdefault.jpg" alt="Le cancer du sein, Octobre rose, motardes engagées." loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 31</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -1493,7 +1685,7 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-31.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=zUmmVjmUIsY" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=zUmmVjmUIsY" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
@@ -1512,7 +1704,11 @@
         <div class="episodes-grid">
           
           <article class="episode-card" data-secteur="À affiner" data-title="sur les routes de l’histoire.  nature et découverte en moto des trésors de haute-savoie." data-desc="rejoignez-moi pour un road trip moto épique à travers la haute-savoie, où l’histoire rencontre la beauté naturelle. du château de thorens aux alpages du plateau des glières, ou je te fais un résumé des évènements qui se déroulèrent entre la résistance et les allemands. nous finirons notre route à avoriaz station de sky écologique pour une vue a couper le souffle. -~-~~-~~~-~~-…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=1H38LNxAD60" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/1H38LNxAD60/hqdefault.jpg" alt="Sur les Routes de l’Histoire.  Nature et découverte en Moto des Trésors de Haute-Savoie." loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 19</span>
               <span class="date">23/01/2026</span>
             </div>
@@ -1523,12 +1719,16 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-19.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=1H38LNxAD60" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=1H38LNxAD60" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
           <article class="episode-card" data-secteur="À affiner" data-title="explosion de couleurs dans les alpes : l’automne comme jamais vu !" data-desc="🏍️ couleurs d’automne dans les alpes – un film lcdmh bienvenue dans cette balade moto unique en son genre, à travers les routes secrètes et les paysages flamboyants des écrins. ce road trip en honda nt1100 t’emmène à villard-notre-dame, la vallée de l’oisans, le col du glandon (1920m) et même la cascade de la pisse, le tout baigné dans les couleurs chaudes de l’automne. 🎯 dans…">
-            <div class="episode-head">
+            <a href="https://www.youtube.com/watch?v=UNOVNYDJhTo" target="_blank" rel="noopener" class="ep-thumb">
+              <img src="https://img.youtube.com/vi/UNOVNYDJhTo/hqdefault.jpg" alt="Explosion de couleurs dans les Alpes : l’Automne comme jamais vu !" loading="lazy">
+              <div class="ep-play"></div>
+            </a>
+                        <div class="episode-head">
               <span class="badge">Vidéo 34</span>
               <span class="date">19/10/2024</span>
             </div>
@@ -1539,53 +1739,13 @@
               <span class="chip chip-soft">Épisode cible : alpes-cols-mythiques-episode-34.html</span>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=UNOVNYDJhTo" target="_blank" rel="noopener">Voir sur YouTube</a>
+              <a class="btn btn-primary voir-extrait" href="https://www.youtube.com/watch?v=UNOVNYDJhTo" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
           </article>
         
         </div>
       </section>
     
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <span class="eyebrow">Suite du chantier</span>
-      <h2 class="section-title">Ce qu’on fera <em>après validation locale</em></h2>
-
-      <div class="next-steps">
-        <div class="next-card">
-          <h3>1. Brancher le hub France</h3>
-          <ul>
-            <li>Activer le lien Alpes &amp; Cols Mythiques dans <code>road-trip-france.html</code></li>
-            <li>Tester l’ensemble via <code>nav.html</code> et <code>nav-loader.js</code></li>
-            <li>Vérifier que le menu reste propre et lisible</li>
-          </ul>
-        </div>
-        <div class="next-card">
-          <h3>2. Aligner “Les Alpes dans tous les sens”</h3>
-          <ul>
-            <li>Reprendre la même logique visuelle et de navigation</li>
-            <li>Créer la même base à partir de son propre export CSV</li>
-            <li>Préparer une cohérence complète pour la branche France</li>
-          </ul>
-        </div>
-        <div class="next-card">
-          <h3>3. Créer une page épisode test</h3>
-          <ul>
-            <li>Choisir une vidéo France prioritaire</li>
-            <li>Créer une sous-page enrichie, plus riche que YouTube</li>
-            <li>Lier série → épisode → YouTube</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="actions" style="margin-top:1.5rem">
-        <a class="btn btn-primary" href="/roadtrips.html">Retour au hub France</a>
-        <a class="btn btn-ghost" href="roadtrips.html">Road Trips global</a>
-        <a class="btn btn-ghost" href="https://www.youtube.com/@LCDMH?sub_confirmation=1" target="_blank" rel="noopener">Chaîne YouTube LCDMH</a>
-      </div>
     </div>
   </section>
 
@@ -1598,8 +1758,7 @@
       <li><a href="alpes-cols-mythiques.html">Alpes &amp; Cols Mythiques</a></li>
     </ul>
     <p class="footer-legal">
-      Version locale de travail — basée sur le CSV maître exporté depuis YouTube.
-      Aucun lien vidéo n’a été inventé dans cette version.
+      © LCDMH – Road trips moto dans les Alpes. Tous droits réservés.
     </p>
   </footer>
 
