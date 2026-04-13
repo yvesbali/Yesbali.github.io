@@ -32,11 +32,6 @@
             color: #1e1e1e;
         }
         /* Menu responsive */
-        @media (max-width: 900px) {
-            .desktop-only { display: none; }
-            .mobile-only { display: block; }
-        }
-        @media (min-width: 901px) { .mobile-only { display: none !important; } }
         
         .hero {
             min-height: 45vh;
@@ -280,48 +275,15 @@
         
         @media(max-width: 768px) { 
             }
-    
-        /* === NAVIGATION === */
-        .nav-last-video{display:inline-flex;align-items:center;gap:.4rem;background:#fff3e0;border:1px solid #f0a500;border-radius:20px;padding:.3rem .8rem;font-size:.72rem!important;font-weight:700!important;color:#e67e22!important;text-transform:none!important;letter-spacing:normal!important;white-space:nowrap;animation:pulse-badge 2.5s infinite}
-        @keyframes pulse-badge{0%,100%{box-shadow:0 0 0 0 rgba(230,126,34,.35)}50%{box-shadow:0 0 0 5px rgba(230,126,34,0)}}
-        .nav-last-video .dot{width:7px;height:7px;background:#e74c3c;border-radius:50%;animation:blink 1.2s infinite}
-        @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-        .nav-last-video .label-new{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
-        @media(max-width:900px){
-            .desktop-only{display:none!important}
-        }
-        @media(min-width:901px){.mobile-only{display:none!important}}
-        /* === FIN NAVIGATION === */
+        /* Navigation chargée via /js/lcdmh-nav-loader.js */
         </style>
 </head>
 <body>
-<div id="lcdmh-nav"></div><script src="/js/lcdmh-nav-loader.js" defer></script>
-
 <!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH (NE PAS MODIFIER) -->
+<!-- NAVIGATION UNIQUE LCDMH                 -->
 <!-- ======================================== -->
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-
-<!-- Navigation -->
-<!-- ======================================== -->
-<!-- DÉBUT NAVIGATION LCDMH (fichier unique) -->
-<!-- ======================================== -->
-
-<!-- ======================================== -->
-<!-- FIN NAVIGATION LCDMH -->
-<!-- ======================================== -->
+<div id="lcdmh-nav"></div>
+<script src="/js/lcdmh-nav-loader.js" defer></script>
     
 
 <!-- Hero -->
@@ -692,4 +654,43 @@
     <div class="footer-content">
         <div class="footer-col">
             <h4>LCDMH</h4>
-            <p>La Chaîne
+            <p>La Chaîne du Motard Heureux — road trips moto, tests et comparatifs depuis Annecy.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+                <li><a href="/roadtrips.html">Road Trips</a></li>
+                <li><a href="/tests-motos.html">Tests Motos</a></li>
+                <li><a href="/pneus.html">Pneus</a></li>
+                <li><a href="/gps.html">GPS Moto</a></li>
+                <li><a href="/intercoms.html">Intercoms</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Équipements</h4>
+            <ul>
+                <li><a href="/equipement.html">Équipement</a></li>
+                <li><a href="/photo-video.html">Photo & Vidéo</a></li>
+                <li><a href="/aoocci.html">Aoocci</a></li>
+                <li><a href="/carpuride.html">Carpuride</a></li>
+                <li><a href="/codes-promo.html">Codes promo</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>À propos</h4>
+            <ul>
+                <li><a href="/a-propos.html">À propos</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
+                <li><a href="/sitemap.html">Plan du site</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>© 2026 LCDMH — La Chaîne du Motard Heureux. Tous droits réservés.<br>
+        Les liens affiliés présents sur ce site peuvent générer une commission sans surcoût pour vous.</p>
+    </div>
+</footer>
+
+</body>
+</html>

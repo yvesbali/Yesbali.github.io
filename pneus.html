@@ -102,8 +102,6 @@
         body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--noir);line-height:1.65;font-size:16px}
         h1,h2,h3,h4{font-family:'Montserrat',sans-serif}
         a{color:inherit;text-decoration:none}
-        @media (max-width: 900px) { .desktop-only { display: none; } .mobile-only { display: block; } }
-        @media (min-width: 901px) { .mobile-only { display: none !important; } }
 
         .hero{
             position:relative; min-height:45vh; display:flex; align-items:center;
@@ -205,6 +203,62 @@
         .f-nav a{font-size:.8rem;color:rgba(255,255,255,.55)}
         .f-nav a:hover{color:var(--orange)}
         .f-legal{font-size:.76rem;color:rgba(255,255,255,.3);margin-top:1.1rem;line-height:1.7}
+
+        /* Bloc affiliation transparent */
+        .affil-box{
+            background:var(--orange);
+            color:#fff;
+            border-radius:14px;
+            padding:1.4rem 1.8rem;
+            margin:2rem 0;
+            display:flex;
+            gap:1.1rem;
+            align-items:flex-start;
+        }
+        .affil-box .affil-icon{
+            font-size:1.8rem;
+            flex-shrink:0;
+            margin-top:.1rem;
+        }
+        .affil-box .affil-content{}
+        .affil-box .affil-title{
+            font-family:'Montserrat',sans-serif;
+            font-weight:800;
+            font-size:.85rem;
+            text-transform:uppercase;
+            letter-spacing:.1em;
+            margin-bottom:.55rem;
+            opacity:.9;
+        }
+        .affil-box p{
+            font-size:.93rem;
+            line-height:1.7;
+            color:rgba(255,255,255,.92);
+            margin:0;
+        }
+        .affil-box strong{color:#fff;font-weight:700}
+        .shop-links{
+            display:flex;
+            flex-wrap:wrap;
+            gap:.8rem;
+            margin-top:1.1rem;
+        }
+        .shop-btn{
+            display:inline-flex;
+            align-items:center;
+            gap:.45rem;
+            background:rgba(255,255,255,.18);
+            border:1px solid rgba(255,255,255,.45);
+            color:#fff;
+            font-weight:700;
+            font-size:.88rem;
+            padding:.55rem 1.1rem;
+            border-radius:50px;
+            text-decoration:none;
+            transition:background .2s;
+        }
+        .shop-btn:hover{background:rgba(255,255,255,.30);color:#fff}
+        .shop-btn-label{opacity:.75;font-size:.75rem;font-weight:400;white-space:nowrap}
     </style>
 </head>
 <body>
@@ -264,7 +318,29 @@
     <p>Le choix final dépend de votre style de conduite, du poids de votre moto et de vos priorités entre confort immédiat et comportement constant dans le temps. Pour les motos lourdes (+300 kg), le T33 est conçu d’origine pour ce segment, contrairement au Road 6 qui nécessite une version GT séparée.</p>
 
     <h3>Où acheter ses pneus moto</h3>
-    <p>Un train de pneus sport-touring coûte entre 200 et 300 €. J’achète mes pneus en ligne chez <a href="https://tidd.ly/4b6C1sx" target="_blank" rel="noopener sponsored">123pneus</a> — c’est souvent moins cher qu’en concession, et je les fais monter dans un garage indépendant. C’est plus économique et tout aussi fiable.</p>
+    <p>Un train de pneus sport-touring coûte entre 200 et 300 €. J’achète mes pneus en ligne — c’est souvent moins cher qu’en concession — et je les fais monter dans un garage indépendant. C’est plus économique et tout aussi fiable.</p>
+
+    <!-- ===== CARRÉ ORANGE AFFILIATION ===== -->
+    <div class="affil-box">
+        <div class="affil-icon">🤝</div>
+        <div class="affil-content">
+            <div class="affil-title">Liens partenaires — transparence totale</div>
+            <p>
+                Si tu commandes tes pneus via un de ces liens, <strong>tu paies exactement le même prix</strong> qu’ailleurs. La seule différence : moi je touche une petite commission — quelques centimes à quelques euros selon la commande. C’est ce qui m’aide à financer les road trips, les tests terrain et le contenu de la chaîne.
+                <br><br>
+                Si tu veux me soutenir, c’est le meilleur moyen de le faire sans débourser un centime de plus. Merci sincèrement si tu le fais. Et si tu ne le fais pas, aucun problème — tu es quand même là, et c’est déjà beaucoup.
+            </p>
+            <div class="shop-links">
+                <a href="https://tidd.ly/4b6C1sx" target="_blank" rel="noopener sponsored" class="shop-btn">
+                    🛒 123pneus <span class="shop-btn-label">— large choix, livraison rapide</span>
+                </a>
+                <a href="https://www.awin1.com/cread.php?awinmid=7403&awinaffid=2753560&ued=https%3A%2F%2Fwww.pneus-moto.fr%2F" target="_blank" rel="noopener sponsored" class="shop-btn">
+                    🛒 pneus-moto.fr <span class="shop-btn-label">— 100% moto, T33 dispo</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- ===== FIN CARRÉ ORANGE AFFILIATION ===== -->
 
     <h3>Mes tests détaillés</h3>
     <p>Retrouvez le détail de chaque comparatif dans ces articles :</p>
