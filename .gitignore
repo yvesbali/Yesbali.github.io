@@ -1,0 +1,9 @@
+
+# Backups et fichiers temporaires
+*.bak
+*.backup
+.~lock.*
+rapport-*.xlsx
+plan-sync-*.xlsx
+*_mockup.png
+_sauvegarde_*/
