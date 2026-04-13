@@ -105,10 +105,7 @@
         .btn-outline{background:transparent;color:var(--orange);border:2px solid var(--orange)}.btn-outline:hover{background:var(--orange);color:#fff}
 
         /* NAV */
-        @media(max-width:900px){
-            }
-
-        /* HERO */
+/* HERO */
         .hero-espagne{
             background:
                 linear-gradient(to bottom, rgba(10,25,40,.45) 0%, rgba(10,25,40,.25) 50%, rgba(10,25,40,.55) 100%),
@@ -201,12 +198,7 @@
 
         /* FOOTER */
         footer{background:var(--noir);color:rgba(255,255,255,.6);padding:2.8rem 6%;text-align:center}
-        .footer-logo{font-size:1.6rem;font-weight:800;color:#fff}
-        .footer-logo em{font-style:normal;color:var(--orange)}
-        .footer-links{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin:1.2rem 0;list-style:none}
-        .footer-links a{font-size:.8rem;color:rgba(255,255,255,.5);transition:color .2s}
-        .footer-links a:hover{color:var(--orange)}
-        footer{background:var(--noir);color:rgba(255,255,255,.65);padding:2.8rem 6%;margin-top:4rem;text-align:center}
+footer{background:var(--noir);color:rgba(255,255,255,.65);padding:2.8rem 6%;margin-top:4rem;text-align:center}
 .f-logo{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:#fff}
 .f-logo em{font-style:normal;color:var(--orange)}
 .f-nav{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.5rem;margin:.8rem 0}
@@ -219,25 +211,7 @@
 <body>
 <div id="lcdmh-nav"></div><script src="/js/lcdmh-nav-loader.js" defer></script>
 
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH (NE PAS MODIFIER) -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-
-<!-- ======================================== -->
 <!-- NAVIGATION (chargée depuis nav.html)    -->
-<!-- ======================================== -->
-
-
-<!-- ======================================== -->
 <!-- MODULE ROAD TRIP (ressources + QR)      -->
 <!-- ======================================== -->
 <div id="lcdmh-roadtrip-module"></div>
@@ -245,6 +219,9 @@
 <!-- ======================================== -->
 <!-- HERO                                     -->
 <!-- ======================================== -->
+
+<main>
+
 <div class="hero-espagne">
     <div class="breadcrumb">
         <a href="index.html">Accueil</a><span> › </span>
@@ -738,6 +715,9 @@
 </section>
 
 <!-- ======================================== -->
+
+</main>
+
 <!-- FOOTER                                   -->
 <!-- ======================================== -->
 <footer>
@@ -748,23 +728,12 @@
         <li><a href="carpuride.html">Carpuride</a></li>
         <li><a href="aferiy.html">AFERIY</a></li>
         <li><a href="komobi.html">Komobi</a></li>
-        <li><a href="https://www.youtube.com/@LCDMH">YouTube</a></li>
+        <li><a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
         <li><a href="mentions-legales.html">Mentions légales</a></li>
         <li><a href="a-propos.html">À propos</a></li>
     </ul>
     <p class="f-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves · Annecy, France</p>
 </footer>
 
-<script>
-    // FAQ toggle
-    document.querySelectorAll('.faq-q').forEach(q => {
-        q.addEventListener('click', () => {
-            q.parentElement.classList.toggle('open');
-        });
-    });
-</script>
-
-
-<script src="maillage.js"></script>
 </body>
 </html>
