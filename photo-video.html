@@ -8,13 +8,14 @@
     <meta name="keywords" content="matériel photo moto, GoPro moto, DJI Osmo Action, drone moto, filmer road trip, accessoires vidéo moto, LCDMH">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://lcdmh.com/photo-video.html">
-    
+
     <meta property="og:type" content="website">
     <meta property="og:title" content="Matériel Vidéo pour Motard : GoPro, DJI, Drone | LCDMH">
     <meta property="og:description" content="Quel matériel vidéo pour filmer à moto ? GoPro Hero, DJI Osmo Action, drone Mini 4 Pro. Tests terrain et conseils pour motovlogueurs.">
     <meta property="og:url" content="https://lcdmh.com/photo-video.html">
     <meta property="og:image" content="https://lcdmh.com/images/photo-video.png">
-    
+    <meta property="og:site_name" content="LCDMH">
+
     <!-- Schema.org BreadcrumbList -->
     <script type="application/ld+json">
     {
@@ -27,7 +28,7 @@
       ]
     }
     </script>
-    
+
     <!-- Schema.org CollectionPage -->
     <script type="application/ld+json">
     {
@@ -38,10 +39,10 @@
       "url": "https://lcdmh.com/photo-video.html"
     }
     </script>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root{
@@ -58,10 +59,12 @@
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
         .section { padding: 60px 6%; }
-        
+
+        /* ===== HERO ===== */
         .hero-small {
             min-height: 45vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             background: linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.40)),
@@ -72,21 +75,31 @@
         }
         .hero-small h1 {
             font-size: clamp(2rem, 5vw, 3rem);
+            margin: 0.75rem 0 0.5rem;
         }
         .hero-small h1 em {
             color: var(--orange);
             font-style: normal;
         }
-        .breadcrumb {
-            color: rgba(255,255,255,0.5);
-            margin-bottom: 1rem;
+        .hero-small p {
+            max-width: 700px;
+            margin: 0.75rem auto 0;
+            font-size: 1.05rem;
+            opacity: 0.9;
         }
-        
+        .breadcrumb {
+            color: rgba(255,255,255,0.55);
+            font-size: 0.88rem;
+        }
+        .breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; }
+        .breadcrumb a:hover { color: #fff; }
+
+        /* ===== GRILLES ===== */
         .camera-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin: 3rem 0;
+            margin: 2rem 0;
         }
         .camera-card {
             background: white;
@@ -99,9 +112,7 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        /* RÈGLE LCDMH : toutes les vignettes produit ont une hauteur fixe
-           identique pour éviter les grands vides au-dessus/au-dessous
-           des images. Voir LCDMH_Cadrage_Projet.html section 11. */
+        /* RÈGLE LCDMH : vignettes produit à hauteur fixe */
         .card-header {
             height: 260px;
             background: linear-gradient(135deg, #f6f9fc 0%, #e9f2f7 100%);
@@ -118,8 +129,6 @@
             object-fit: cover;
             display: block;
         }
-        /* Variante pour header avec emoji seul (pas d'image réelle) :
-           fond plus contrasté, emoji agrandi pour remplir l'espace */
         .card-header.emoji-only {
             background: linear-gradient(135deg, #fff4e6 0%, #ffe0b2 100%);
             font-size: 8rem;
@@ -173,13 +182,119 @@
             font-weight: 600;
             font-size: 0.9rem;
         }
-        
+
+        /* ===== VIDÉO EMBED ===== */
+        .video-block {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            margin: 1.5rem 0;
+        }
+        .video-ratio {
+            position: relative;
+            padding-bottom: 56.25%;
+        }
+        .video-ratio iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+        .video-caption {
+            padding: 1.2rem 1.5rem;
+        }
+        .video-caption h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            color: var(--noir);
+        }
+        .video-caption p {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .video-label {
+            display: inline-block;
+            background: var(--alt);
+            color: var(--orange);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
+            margin-bottom: 0.4rem;
+        }
+
+        /* ===== GRID VIDÉOS ===== */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+        .video-thumb-card {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: white;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
+        .video-thumb-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+        .thumb-img {
+            position: relative;
+        }
+        .thumb-img img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+        .thumb-play {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%,-50%);
+            width: 46px; height: 46px;
+            background: rgba(0,0,0,0.75);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .thumb-play::after {
+            content: '';
+            width: 0; height: 0;
+            border-style: solid;
+            border-width: 8px 0 8px 16px;
+            border-color: transparent transparent transparent #fff;
+            margin-left: 4px;
+        }
+        .thumb-info {
+            padding: 0.8rem 1rem;
+            flex: 1;
+        }
+        .thumb-info strong {
+            display: block;
+            font-size: 0.9rem;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 0.3rem;
+        }
+        .thumb-info span {
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        /* ===== ACCESSOIRES ===== */
         .accessories-list {
             background: white;
             border-radius: 16px;
             padding: 2rem;
             border: 1px solid var(--border);
-            margin: 3rem 0;
+            margin: 1.5rem 0;
         }
         .accessory-item {
             display: flex;
@@ -188,21 +303,121 @@
             padding: 1rem 0;
             border-bottom: 1px solid var(--border);
         }
-        .accessory-item:last-child {
-            border-bottom: none;
-        }
+        .accessory-item:last-child { border-bottom: none; }
         .accessory-icon {
             font-size: 2rem;
             width: 50px;
             text-align: center;
+            flex-shrink: 0;
         }
-        .accessory-info {
-            flex: 1;
+        .accessory-info { flex: 1; }
+        .accessory-info h4 { margin-bottom: 0.2rem; }
+        .accessory-info p { color: var(--muted); font-size: 0.9rem; margin: 0; }
+
+        /* ===== AFERIY ===== */
+        .aferiy-block {
+            background: white;
+            border-radius: 16px;
+            border: 2px solid var(--orange);
+            overflow: hidden;
+            margin-bottom: 2rem;
         }
-        .accessory-info h4 {
-            margin-bottom: 0.2rem;
+        .aferiy-header {
+            background: var(--orange);
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
-        
+        .aferiy-specs {
+            padding: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .spec-box {
+            text-align: center;
+            padding: 0.8rem;
+            background: #fff8f0;
+            border-radius: 10px;
+        }
+        .spec-box .val {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--orange);
+            font-family: 'Montserrat', sans-serif;
+        }
+        .spec-box .lbl {
+            font-size: 0.8rem;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+        }
+        .aferiy-body { padding: 0 1.5rem 1.5rem; }
+
+        /* ===== CONSEIL ===== */
+        .conseil-block {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--orange);
+        }
+        .conseil-block h3 { color: var(--orange); margin-bottom: 1rem; }
+
+        /* ===== GUIDES ===== */
+        .guides-block {
+            background: #fff8f0;
+            border-left: 4px solid var(--orange);
+            border-radius: 0 10px 10px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+        }
+        .guides-block strong {
+            font-size: .85rem;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            color: var(--orange);
+            display: block;
+            margin-bottom: .7rem;
+        }
+        .guides-block a {
+            display: block;
+            color: var(--noir);
+            font-weight: 600;
+            padding: .25rem 0;
+            font-size: .93rem;
+            border-bottom: 1px solid rgba(0,0,0,.07);
+            text-decoration: none;
+        }
+        .guides-block a:last-child { border-bottom: none; }
+        .guides-block a:hover { color: var(--orange); }
+
+        /* ===== SECTION INTRO ===== */
+        .intro-strip {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--border);
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .intro-strip p { color: #555; font-size: .95rem; line-height: 1.75; flex: 1; min-width: 220px; margin: 0; }
+
+        /* ===== TRANSITION SECTION ===== */
+        .section-transition {
+            background: linear-gradient(135deg, #fff8f0 0%, #fff3e5 100%);
+            border-radius: 12px;
+            padding: 1.2rem 1.8rem;
+            margin: 2.5rem 0 1.5rem;
+            border-left: 4px solid var(--orange);
+        }
+        .section-transition p { color: #555; font-size: .93rem; line-height: 1.7; margin: 0; }
+
+        /* ===== FOOTER ===== */
         footer {
             background: var(--noir);
             color: rgba(255,255,255,.65);
@@ -229,47 +444,41 @@
             list-style: none;
         }
     </style>
-<meta property="og:site_name" content="LCDMH">
 </head>
 <body>
-<div id="lcdmh-nav"></div><script src="/js/lcdmh-nav-loader.js" defer></script>
 
 <!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH (NE PAS MODIFIER) -->
+<!-- NAVIGATION UNIQUE LCDMH                 -->
 <!-- ======================================== -->
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-<!-- ======================================== -->
-<!-- ======================================== -->
+<div id="lcdmh-nav"></div>
+<script src="/js/lcdmh-nav-loader.js" defer></script>
 
-<!-- ======================================== -->
-<!-- DÉBUT NAVIGATION LCDMH (fichier unique) -->
-<!-- ======================================== -->
-
-<!-- ======================================== -->
-<!-- FIN NAVIGATION LCDMH -->
-<!-- ======================================== -->
-
+<!-- ===== HERO ===== -->
 <div class="hero-small">
     <div class="breadcrumb">
-        <a href="index.html">Accueil</a> › 
-        <a href="tests-motos.html">Tests</a> › 
+        <a href="/index.html">Accueil</a> ›
+        <a href="/tests-motos.html">Tests</a> ›
         <span>Photo & Vidéo</span>
     </div>
     <h1>Matériel <em>Photo & Vidéo</em> Moto</h1>
-    <p style="max-width: 700px; margin: 1rem auto 0;">GoPro, DJI Osmo Action, drones, accessoires. Tout pour filmer ses road trips.</p>
+    <p>GoPro, DJI Osmo Action, drones, accessoires. Tout pour filmer ses road trips.</p>
 </div>
 
+<!-- ===== CONTENU PRINCIPAL ===== -->
 <section class="section">
     <div class="container">
-        
-        <h2 style="margin-bottom: 2rem;">📷 Caméras d'action</h2>
-        
+
+        <!-- Intro rapide -->
+        <div class="intro-strip">
+            <p>
+                Filmer à moto, c'est jongler avec les vibrations, la météo, les batteries et le cadrage — le tout en roulant.
+                Depuis des milliers de kilomètres de road trips, voici le matériel que j'utilise vraiment, testé en conditions réelles.
+            </p>
+        </div>
+
+        <!-- ===== 1. CAMÉRAS D'ACTION ===== -->
+        <h2 style="margin-bottom: 1.5rem;">📷 Caméras d'action</h2>
+
         <div class="camera-grid">
             <!-- DJI Osmo Action 6 -->
             <div class="camera-card">
@@ -287,7 +496,7 @@
                     <a href="#" class="btn-small">Lire le test →</a>
                 </div>
             </div>
-            
+
             <!-- GoPro Hero 13 -->
             <div class="camera-card">
                 <div class="card-header"><img src="/images/gopro13.jpg" alt="GoPro Hero 13 test moto"></div>
@@ -304,58 +513,31 @@
                     <a href="#" class="btn-small">Lire le test →</a>
                 </div>
             </div>
-            
-        </div>
-        
-        <!-- Vidéo test caméras Ub5iVg5dQ9c -->
-        <div style="background:white;border-radius:16px;overflow:hidden;border:1px solid var(--border);margin:2rem 0">
-            <div style="position:relative;padding-bottom:56.25%">
-                <iframe
-                    src="https://www.youtube.com/embed/Ub5iVg5dQ9c"
-                    title="Filmer son road trip moto — setup caméra LCDMH"
-                    style="position:absolute;top:0;left:0;width:100%;height:100%;border:none"
-                    loading="lazy"
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <div style="padding:1.5rem 1.8rem">
-                <h3 style="font-family:'Montserrat',sans-serif;font-size:1.15rem;margin-bottom:.8rem;color:var(--noir)">Mon setup caméra pour filmer à moto</h3>
-                <p style="color:#444;font-size:.95rem;line-height:1.75;margin-bottom:.8rem">
-                    Filmer un road trip à moto, c'est plus compliqué qu'il n'y paraît. Il y a le branchement du micro, les batteries, la synchro des caméras, le cadrage.
-                    Sans parler du moment où tu réalises que la caméra est restée en mode timelapse depuis 30 km…
-                </p>
-                <p style="color:#444;font-size:.95rem;line-height:1.75;margin-bottom:.8rem">
-                    Dans cette vidéo, je détaille mon setup complet : DJI Osmo Action 6 en position casque, une deuxième caméra sur le guidon,
-                    et l'Osmo Pocket 3 pour les plans rapides à main levée. Le tout géré depuis l'intercom Sena pour déclencher sans enlever les gants.
-                </p>
-                <p style="font-style:italic;color:var(--orange);font-size:.9rem;font-weight:600">
-                    « Le pire c'est quand tu as fait de belles images et que la caméra est toute pourrie — l'objectif plein d'insectes depuis 200 km. »
-                </p>
-            </div>
         </div>
 
-        <!-- Vidéo Bw3MTPP0ea0 -->
-        <div style="background:white;border-radius:16px;overflow:hidden;border:1px solid var(--border);margin:2rem 0">
-            <div style="position:relative;padding-bottom:56.25%">
+        <!-- Vidéo comparatif caméras -->
+        <div class="video-block">
+            <div class="video-ratio">
                 <iframe
                     src="https://www.youtube.com/embed/Bw3MTPP0ea0"
                     title="Test DJI Osmo Action 6 vs GoPro Hero 13 – LCDMH"
-                    style="position:absolute;top:0;left:0;width:100%;height:100%;border:none"
                     loading="lazy"
                     allowfullscreen>
                 </iframe>
             </div>
-            <div style="padding:1.5rem 1.8rem">
-                <h3 style="font-family:'Montserrat',sans-serif;font-size:1.15rem;margin-bottom:.8rem;color:var(--noir)">DJI Osmo Action 6 vs GoPro Hero 13 — comparatif terrain</h3>
-                <p style="color:#444;font-size:.95rem;line-height:1.75">
+            <div class="video-caption">
+                <span class="video-label">Comparatif</span>
+                <h3>DJI Osmo Action 6 vs GoPro Hero 13 — comparatif terrain</h3>
+                <p>
                     Deux caméras testées dans les mêmes conditions : route de montagne, pluie, contre-jour, vibrations.
                     Stabilisation, autonomie, qualité d'image en basse lumière — je compare les deux pour t'aider à choisir.
                 </p>
             </div>
         </div>
 
+        <!-- ===== 2. DRONES ===== -->
         <h2 style="margin: 3rem 0 1.5rem;">🚁 Drones pour road trip</h2>
-        
+
         <div class="camera-grid">
             <!-- DJI Mini 4 Pro -->
             <div class="camera-card">
@@ -373,7 +555,7 @@
                     <a href="#" class="btn-small">Lire le test →</a>
                 </div>
             </div>
-            
+
             <!-- DJI Air 3 -->
             <div class="camera-card">
                 <div class="card-header"><img src="/images/djair3.jpg" alt="DJI Air 3 drone double capteur road trip moto test LCDMH" loading="lazy"></div>
@@ -390,92 +572,162 @@
                 </div>
             </div>
         </div>
-        
+
+        <!-- ===== 3. MON SETUP COMPLET ===== -->
+        <h2 style="margin: 3rem 0 1rem;">🎬 Mon setup complet pour filmer à moto</h2>
+        <p style="color:#555;margin-bottom:1.5rem;font-size:.95rem;line-height:1.75">
+            Du choix du matériel au montage final : voici comment je prépare et filme chaque road trip moto.
+            Setup complet DJI Osmo Action 6 + drone + Osmo Pocket, gestion de l'énergie, conseils pratiques tirés de milliers de kilomètres.
+        </p>
+
+        <!-- Vidéo setup principal -->
+        <div class="video-block">
+            <div class="video-ratio">
+                <iframe
+                    src="https://www.youtube.com/embed/Ub5iVg5dQ9c"
+                    title="Filmer son road trip moto — setup caméra LCDMH"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="video-caption">
+                <span class="video-label">Setup</span>
+                <h3>Mon setup caméra pour filmer à moto</h3>
+                <p>
+                    Filmer un road trip à moto, c'est plus compliqué qu'il n'y paraît. Il y a le branchement du micro, les batteries, la synchro des caméras, le cadrage.
+                    Sans parler du moment où tu réalises que la caméra est restée en mode timelapse depuis 30 km…
+                </p>
+                <p style="margin-top:.6rem;font-style:italic;color:var(--orange);font-size:.9rem;font-weight:600">
+                    « Le pire c'est quand tu as fait de belles images et que la caméra est toute pourrie — l'objectif plein d'insectes depuis 200 km. »
+                </p>
+            </div>
+        </div>
+
+        <!-- Vidéos setup supplémentaires -->
+        <div class="video-grid">
+            <a href="https://youtu.be/Bw3MTPP0ea0" target="_blank" rel="noopener" class="video-thumb-card">
+                <div class="thumb-img">
+                    <img src="https://img.youtube.com/vi/Bw3MTPP0ea0/hqdefault.jpg" alt="Setup vidéo complet pour filmer à moto">
+                    <div class="thumb-play"></div>
+                </div>
+                <div class="thumb-info">
+                    <strong>Mon Setup Vidéo COMPLET pour Filmer à Moto</strong>
+                    <span>Matériel, réglages, fixations — tout ce que j'utilise sur la NT1100.</span>
+                </div>
+            </a>
+            <a href="https://youtu.be/68B2o33rF2o" target="_blank" rel="noopener" class="video-thumb-card">
+                <div class="thumb-img">
+                    <img src="https://img.youtube.com/vi/68B2o33rF2o/hqdefault.jpg" alt="Setup complet road trip moto équipement préparation">
+                    <div class="thumb-play"></div>
+                </div>
+                <div class="thumb-info">
+                    <strong>SETUP COMPLET — Road Trip Moto : Équipement & Préparation</strong>
+                    <span>Tout ce que j'emporte pour un grand road trip : caméras, sacs, GPS, énergie.</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- ===== 4. ACCESSOIRES ===== -->
         <h2 style="margin: 3rem 0 1.5rem;">🔧 Accessoires indispensables</h2>
-        
+
         <div class="accessories-list">
             <div class="accessory-item">
                 <div class="accessory-icon">🪫</div>
                 <div class="accessory-info">
                     <h4>Batteries supplémentaires</h4>
-                    <p style="color: var(--muted);">Toujours avoir 2-3 batteries chargées pour une journée de tournage</p>
+                    <p>Toujours avoir 2-3 batteries chargées pour une journée de tournage</p>
                 </div>
             </div>
             <div class="accessory-item">
                 <div class="accessory-icon">🎤</div>
                 <div class="accessory-info">
                     <h4>Microphone extérieur</h4>
-                    <p style="color: var(--muted);">DJI Mic 2 ou Rode Wireless Go pour voix-off en roulant</p>
+                    <p>DJI Mic 2 ou Rode Wireless Go pour voix-off en roulant</p>
                 </div>
             </div>
             <div class="accessory-item">
                 <div class="accessory-icon">🔌</div>
                 <div class="accessory-info">
                     <h4>Multiprise USB</h4>
-                    <p style="color: var(--muted);">Pour recharger tout le matériel le soir au camping</p>
+                    <p>Pour recharger tout le matériel le soir au camping</p>
                 </div>
             </div>
             <div class="accessory-item">
                 <div class="accessory-icon">🧽</div>
                 <div class="accessory-info">
                     <h4>Chiffons microfibres</h4>
-                    <p style="color: var(--muted);">Pour nettoyer les objectifs (pluie, poussière, insectes)</p>
+                    <p>Pour nettoyer les objectifs (pluie, poussière, insectes)</p>
                 </div>
             </div>
             <div class="accessory-item">
                 <div class="accessory-icon">📦</div>
                 <div class="accessory-info">
                     <h4>Étui de transport</h4>
-                    <p style="color: var(--muted);">Protéger le matériel des chocs et vibrations</p>
+                    <p>Protéger le matériel des chocs et vibrations</p>
                 </div>
             </div>
         </div>
-        
-        <div style="background: white; border-radius: 12px; padding: 2rem; margin: 3rem 0; border-left: 4px solid var(--orange);">
-            <h3 style="color: var(--orange); margin-bottom: 1rem;">🎬 Mon conseil</h3>
-            <p style="font-size: 1.1rem;">
-                "Pour filmer à moto, la <strong>DJI Osmo Action 6</strong> est un excellent choix :
-                stabilisation parfaite, bonne autonomie, double écran pratique. Pour les plans aériens,
-                le <strong>Mini 4 Pro</strong> est imbattable par sa légèreté et sa qualité. Et n'oubliez pas :
-                le meilleur matériel ne sert à rien si vous ne l'emmenez pas !"
+
+        <!-- Conseil terrain -->
+        <div class="conseil-block">
+            <h3>🎬 Mon conseil terrain</h3>
+            <p style="font-size: 1.05rem; margin-bottom: 1rem;">
+                Le choix entre la <strong>GoPro Hero 13</strong> et la <strong>DJI Osmo Action 6</strong> est toujours difficile.
+            </p>
+            <p style="font-size: 0.97rem; margin-bottom: 0.8rem; color: #444;">
+                La <strong>GoPro Hero 13</strong> a une qualité d'image exceptionnelle — c'est difficile de faire mieux.
+                La <strong>DJI Osmo Action 6</strong> offre une très bonne qualité d'image, peut-être un cran en dessous de la GoPro,
+                mais son fonctionnement est <em>beaucoup plus stable</em>. Moins de bugs, moins de galères en route.
+            </p>
+            <p style="font-size: 0.97rem; margin-bottom: 1rem; color: #444;">
+                Le gros avantage de l'Osmo Action 6 : son <strong>ouverture variable de F/2 à F/4</strong>.
+                En pratique, ça change tout pour gérer les transitions lumineuses (tunnel → soleil, ombre → montagne enneigée) sans surexposition.
+                Pour les plans aériens, le <strong>DJI Mini 4 Pro</strong> reste imbattable par sa légèreté et sa qualité.
+            </p>
+            <p style="font-size: 0.97rem; font-style: italic; color: var(--orange);">
+                Et n'oubliez pas : le meilleur matériel ne sert à rien si vous ne l'emmenez pas !
             </p>
             <p style="margin-top: 1rem; font-weight: 700;">— Yves, LCDMH</p>
         </div>
 
-        <!-- ===== AFERIY NANO 100 ===== -->
-        <h2 style="margin:3rem 0 1.5rem">🔋 Autonomie énergétique en tournage</h2>
-        <p style="color:#555;margin-bottom:1.5rem;font-size:.95rem;line-height:1.75">
-            Caméras, intercom, smartphone, GPS… En journée de tournage moto et bivouac, la gestion de l'énergie est aussi importante que le matériel vidéo.
-            Depuis quelques sorties, j'utilise la <strong>AFERIY Nano 100</strong> — voici pourquoi elle m'a convaincu.
-        </p>
+        <!-- ===== 5. AUTONOMIE / ÉNERGIE ===== -->
+        <!-- Transition logique : on a le matériel, maintenant il faut l'alimenter -->
+        <div class="section-transition">
+            <p>
+                📍 <strong>Caméras, intercom, smartphone, GPS…</strong> En journée de tournage moto et bivouac,
+                la gestion de l'énergie est aussi importante que le matériel vidéo. Voici ma solution.
+            </p>
+        </div>
 
-        <div style="background:white;border-radius:16px;border:2px solid var(--orange);overflow:hidden;margin-bottom:2rem">
-            <div style="background:var(--orange);padding:1rem 1.5rem;display:flex;align-items:center;gap:1rem">
+        <h2 style="margin-bottom: 1.5rem;">🔋 Autonomie électrique en tournage</h2>
+
+        <div class="aferiy-block">
+            <div class="aferiy-header">
                 <span style="font-size:2rem">🔋</span>
                 <div>
                     <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.2rem;color:white">AFERIY Nano 100</div>
                     <div style="color:rgba(255,255,255,.85);font-size:.85rem">Station électrique bivouac · 99,2 Wh · 100W · Cabine avion ✅</div>
                 </div>
             </div>
-            <div style="padding:1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem">
-                <div style="text-align:center;padding:.8rem;background:#fff8f0;border-radius:10px">
-                    <div style="font-size:1.6rem;font-weight:800;color:var(--orange);font-family:'Montserrat',sans-serif">99,2 Wh</div>
-                    <div style="font-size:.8rem;color:#777;text-transform:uppercase;letter-spacing:.05em">Capacité · cabine avion ✅</div>
+            <div class="aferiy-specs">
+                <div class="spec-box">
+                    <div class="val">99,2 Wh</div>
+                    <div class="lbl">Capacité · cabine avion ✅</div>
                 </div>
-                <div style="text-align:center;padding:.8rem;background:#fff8f0;border-radius:10px">
-                    <div style="font-size:1.6rem;font-weight:800;color:var(--orange);font-family:'Montserrat',sans-serif">100W</div>
-                    <div style="font-size:.8rem;color:#777;text-transform:uppercase;letter-spacing:.05em">Charge rapide entrée/sortie</div>
+                <div class="spec-box">
+                    <div class="val">100W</div>
+                    <div class="lbl">Charge rapide entrée/sortie</div>
                 </div>
-                <div style="text-align:center;padding:.8rem;background:#fff8f0;border-radius:10px">
-                    <div style="font-size:1.6rem;font-weight:800;color:var(--orange);font-family:'Montserrat',sans-serif">22 min</div>
-                    <div style="font-size:.8rem;color:#777;text-transform:uppercase;letter-spacing:.05em">Pour 40% avec chargeur 100W</div>
+                <div class="spec-box">
+                    <div class="val">22 min</div>
+                    <div class="lbl">Pour 40% avec chargeur 100W</div>
                 </div>
-                <div style="text-align:center;padding:.8rem;background:#fff8f0;border-radius:10px">
-                    <div style="font-size:1.6rem;font-weight:800;color:var(--orange);font-family:'Montserrat',sans-serif">3 ports</div>
-                    <div style="font-size:.8rem;color:#777;text-transform:uppercase;letter-spacing:.05em">2×USB-C + 1×USB-A</div>
+                <div class="spec-box">
+                    <div class="val">3 ports</div>
+                    <div class="lbl">2×USB-C + 1×USB-A</div>
                 </div>
             </div>
-            <div style="padding:0 1.5rem 1.5rem">
+            <div class="aferiy-body">
                 <p style="color:#444;font-size:.93rem;line-height:1.75;margin-bottom:.8rem">
                     En bivouac, elle charge simultanément l'intercom, le téléphone et la caméra d'action. Le câble USB-C est intégré — un fil de moins à chercher dans le sac à 6h du matin.
                     Sous les 100 Wh, elle passe en cabine d'avion, ce qui est décisif pour les trips combinés (avion + location de moto).
@@ -484,108 +736,55 @@
             </div>
         </div>
 
-        <!-- Vidéo AFERIY 1 -->
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.5rem;margin-bottom:1.5rem">
-            <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--border)">
-                <div style="position:relative;padding-bottom:56.25%">
-                    <iframe src="https://www.youtube.com/embed/TMEUulIwbCQ"
-                        title="AFERIY Nano 100 test bivouac moto – LCDMH"
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;border:none"
-                        loading="lazy" allowfullscreen></iframe>
+        <!-- Vidéos Aferiy -->
+        <div class="video-grid">
+            <div class="video-thumb-card" style="pointer-events:none">
+                <div class="thumb-img">
+                    <div style="position:relative;padding-bottom:56.25%">
+                        <iframe src="https://www.youtube.com/embed/TMEUulIwbCQ"
+                            title="AFERIY Nano 100 test bivouac moto – LCDMH"
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;border:none"
+                            loading="lazy" allowfullscreen></iframe>
+                    </div>
                 </div>
-                <div style="padding:1rem 1.2rem">
-                    <p style="font-weight:700;font-size:.95rem;font-family:'Montserrat',sans-serif;margin-bottom:.4rem;color:var(--noir)">AFERIY Nano 100 — test terrain bivouac</p>
-                    <p style="color:var(--muted);font-size:.85rem;line-height:1.6">Autonomie réelle, charge rapide, comparatif avec d'autres stations portables.</p>
+                <div class="thumb-info" style="pointer-events:auto">
+                    <strong>AFERIY Nano 100 — test terrain bivouac</strong>
+                    <span>Autonomie réelle, charge rapide, comparatif avec d'autres stations portables.</span>
                 </div>
             </div>
-            <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--border)">
-                <div style="position:relative;padding-bottom:56.25%">
-                    <iframe src="https://www.youtube.com/embed/f8tI6Lm0TKs"
-                        title="Batterie camping moto — AFERIY Nano 100 en conditions réelles | LCDMH"
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;border:none"
-                        loading="lazy" allowfullscreen></iframe>
+            <div class="video-thumb-card" style="pointer-events:none">
+                <div class="thumb-img">
+                    <div style="position:relative;padding-bottom:56.25%">
+                        <iframe src="https://www.youtube.com/embed/f8tI6Lm0TKs"
+                            title="Batterie camping moto — AFERIY Nano 100 en conditions réelles | LCDMH"
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;border:none"
+                            loading="lazy" allowfullscreen></iframe>
+                    </div>
                 </div>
-                <div style="padding:1rem 1.2rem">
-                    <p style="font-weight:700;font-size:.95rem;font-family:'Montserrat',sans-serif;margin-bottom:.4rem;color:var(--noir)">Batterie camping moto — test en conditions réelles</p>
-                    <p style="color:var(--muted);font-size:.85rem;line-height:1.6">Utilisation sur plusieurs nuits de bivouac : recharge caméras, intercom, GPS.</p>
+                <div class="thumb-info" style="pointer-events:auto">
+                    <strong>Batterie camping moto — test en conditions réelles</strong>
+                    <span>Utilisation sur plusieurs nuits de bivouac : recharge caméras, intercom, GPS.</span>
                 </div>
             </div>
         </div>
-        <!-- ===== FIN AFERIY NANO 100 ===== -->
-
-        <!-- ===== SETUP VIDÉO — MES TECHNIQUES ===== -->
-        <h2 style="margin:3rem 0 1rem">🎬 Comment je filme mes road trips — Setup & techniques</h2>
-        <p style="color:#555;margin-bottom:1.5rem;font-size:.95rem;line-height:1.75">
-            Du choix du matériel au montage final : voici comment je prépare et filme chaque road trip moto. Setup complet GoPro + drone + Osmo Pocket, gestion de l'énergie, conseils pratiques tirés de milliers de kilomètres.
-        </p>
-
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem;margin-bottom:2rem">
-
-            <!-- Vidéo 1 : Setup complet filmer à moto -->
-            <a href="https://youtu.be/Bw3MTPP0ea0" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
-                <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);display:flex;flex-direction:column;height:100%;background:white;">
-                    <div style="position:relative;">
-                        <img src="https://img.youtube.com/vi/Bw3MTPP0ea0/hqdefault.jpg" alt="Setup vidéo complet pour filmer à moto" style="width:100%;height:180px;object-fit:cover;display:block;">
-                        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;background:rgba(0,0,0,0.75);border-radius:50%;display:flex;align-items:center;justify-content:center;">
-                            <div style="width:0;height:0;border-style:solid;border-width:8px 0 8px 16px;border-color:transparent transparent transparent #fff;margin-left:4px;"></div>
-                        </div>
-                    </div>
-                    <div style="padding:.8rem 1rem;flex:1">
-                        <p style="font-weight:700;font-size:.9rem;font-family:'Montserrat',sans-serif;color:#1a1a1a;margin:0 0 .3rem">Mon Setup Vidéo COMPLET pour Filmer à Moto</p>
-                        <p style="color:var(--muted);font-size:.82rem;margin:0;line-height:1.5">Matériel, réglages, fixations — tout ce que j'utilise sur la NT1100.</p>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Vidéo 2 : Setup complet road trip La Mecque -->
-            <a href="https://youtu.be/68B2o33rF2o" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
-                <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);display:flex;flex-direction:column;height:100%;background:white;">
-                    <div style="position:relative;">
-                        <img src="https://img.youtube.com/vi/68B2o33rF2o/hqdefault.jpg" alt="Setup complet road trip moto équipement préparation" style="width:100%;height:180px;object-fit:cover;display:block;">
-                        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;background:rgba(0,0,0,0.75);border-radius:50%;display:flex;align-items:center;justify-content:center;">
-                            <div style="width:0;height:0;border-style:solid;border-width:8px 0 8px 16px;border-color:transparent transparent transparent #fff;margin-left:4px;"></div>
-                        </div>
-                    </div>
-                    <div style="padding:.8rem 1rem;flex:1">
-                        <p style="font-weight:700;font-size:.9rem;font-family:'Montserrat',sans-serif;color:#1a1a1a;margin:0 0 .3rem">SETUP COMPLET — Road Trip Moto : Équipement & Préparation</p>
-                        <p style="color:var(--muted);font-size:.82rem;margin:0;line-height:1.5">Tout ce que j'emporte pour un grand road trip : caméras, sacs, GPS, énergie.</p>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Vidéo 3 : AFERIY autonomie électrique -->
-            <a href="https://youtu.be/D1eLA6LRkLU" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
-                <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);display:flex;flex-direction:column;height:100%;background:white;">
-                    <div style="position:relative;">
-                        <img src="https://img.youtube.com/vi/D1eLA6LRkLU/hqdefault.jpg" alt="AFERIY Nano 100 autonomie électrique road trip moto" style="width:100%;height:180px;object-fit:cover;display:block;">
-                        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;background:rgba(0,0,0,0.75);border-radius:50%;display:flex;align-items:center;justify-content:center;">
-                            <div style="width:0;height:0;border-style:solid;border-width:8px 0 8px 16px;border-color:transparent transparent transparent #fff;margin-left:4px;"></div>
-                        </div>
-                    </div>
-                    <div style="padding:.8rem 1rem;flex:1">
-                        <p style="font-weight:700;font-size:.9rem;font-family:'Montserrat',sans-serif;color:#1a1a1a;margin:0 0 .3rem">AFERIY Nano 100 : autonomie électrique en road trip ?</p>
-                        <p style="color:var(--muted);font-size:.82rem;margin:0;line-height:1.5">Smartphone, caméra, GPS… gérer l'énergie en bivouac moto.</p>
-                    </div>
-                </div>
-            </a>
-
-        </div>
-        <!-- ===== FIN SETUP VIDÉO ===== -->
 
     </div>
 </section>
 
-<section class="section" style="padding-top:0;padding-bottom:0;"><div class="container">
-<div style="background:#fff8f0;border-left:4px solid #e67e22;border-radius:0 10px 10px 0;padding:1.2rem 1.5rem;margin:0 0 2rem 0">
-    <strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:#e67e22;display:block;margin-bottom:.7rem">Guides & comparatifs LCDMH</strong>
-    <a href="articles/filmer-son-road-trip-moto-setup-camera-dji-gopro.html" style="display:block;color:#1a1a1a;font-weight:600;padding:.25rem 0;font-size:.93rem;border-bottom:1px solid rgba(0,0,0,.07);text-decoration:none">→ Filmer son road trip moto — setup complet GoPro, Osmo Pocket, drone</a>
-    <a href="intercoms.html" style="display:block;color:#1a1a1a;font-weight:600;padding:.25rem 0;font-size:.93rem;border-bottom:1px solid rgba(0,0,0,.07);text-decoration:none">→ Comparatif intercoms moto 2026 — Sena 50S, 60S vs Cardo Packtalk</a>
-    <a href="carpuride.html" style="display:block;color:#1a1a1a;font-weight:600;padding:.25rem 0;font-size:.93rem;border-bottom:1px solid rgba(0,0,0,.07);text-decoration:none">→ GPS Moto Carpuride W702 Pro — avis après 5 000 km</a>
-    <a href="pneus.html" style="display:block;color:#1a1a1a;font-weight:600;padding:.25rem 0;font-size:.93rem;border-bottom:1px solid rrgba(0,0,0,.07);text-decoration:none">→ Comparatif pneus moto road trip — Michelin, Dunlop, Metzeler, Bridgestone</a>
-    <a href="gps.html" style="display:block;color:#1a1a1a;font-weight:600;padding:.25rem 0;font-size:.93rem;border-bottom:1px solid rgba(0,0,0,.07);text-decoration:none">→ Comparatif GPS moto 2026 — Aoocci, Carpuride, Blackview, Komobi</a>
-    <a href="equipement.html" style="display:block;color:#1a1a1a;font-weight:600;padding:.25rem 0;font-size:.93rem;border-bottom:none;text-decoration:none">→ Équipement road trip complet — bagagerie, gants, casque testés</a>
-</div>
-</div></section>
+<!-- ===== GUIDES & ARTICLES ===== -->
+<section class="section" style="padding-top:0;padding-bottom:2rem;">
+    <div class="container">
+        <div class="guides-block">
+            <strong>Guides & comparatifs LCDMH</strong>
+            <a href="articles/filmer-son-road-trip-moto-setup-camera-dji-gopro.html">→ Filmer son road trip moto — setup complet GoPro, Osmo Pocket, drone</a>
+            <a href="intercoms.html">→ Comparatif intercoms moto 2026 — Sena 50S, 60S vs Cardo Packtalk</a>
+            <a href="carpuride.html">→ GPS Moto Carpuride W702 Pro — avis après 5 000 km</a>
+            <a href="pneus.html">→ Comparatif pneus moto road trip — Michelin, Dunlop, Metzeler, Bridgestone</a>
+            <a href="gps.html">→ Comparatif GPS moto 2026 — Aoocci, Carpuride, Blackview, Komobi</a>
+            <a href="equipement.html">→ Équipement road trip complet — bagagerie, gants, casque testés</a>
+        </div>
+    </div>
+</section>
 
 <footer>
     <div class="footer-logo">LC<em>D</em>MH</div>
