@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Budget Cap Nord à Moto Seul : 10 000 km, Coûts Réels | LCDMH</title>
+<meta name="description" content="Budget réel d'un road trip Cap Nord à moto en solo : 2 300 € pour 30 jours, 10 000 km. Ferries, bivouac, hôtels, carburant, nourriture — tous les coûts détaillés.">
+<link rel="stylesheet" href="/css/magazine.css">
+<style>
+/* ═══════════════════════════════════════════════════════════
+   LCDMH MAGAZINE — CSS COMPLET v2
+   Base + Header + Body + Footer — Zero doublon
+   ═══════════════════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap');
+
+:root {
+  --mag-bg:#fafaf7;--mag-text:#1a1a1a;--mag-text2:#4a4a4a;--mag-text3:#6b6b6b;
+  --mag-accent:#c0392b;--mag-accent2:#e74c3c;--mag-gold:#d4a853;--mag-border:#e8e0d0;
+  --card-ferry-bg:linear-gradient(135deg,#fef9f0,#fdf3e7);--card-ferry-border:#e8d5b8;--card-ferry-title:#c0392b;--card-ferry-text:#6b5a3e;
+  --card-meteo-bg:linear-gradient(135deg,#e6f1fb,#dbeaf8);--card-meteo-border:#b5d4f4;--card-meteo-title:#185fa5;--card-meteo-text:#0c447c;
+  --card-budget-bg:linear-gradient(135deg,#eaf3de,#ddedc4);--card-budget-border:#c0dd97;--card-budget-title:#3b6d11;--card-budget-text:#27500a;
+  --card-moto-bg:linear-gradient(135deg,#faeeda,#f5e4c4);--card-moto-border:#fac775;--card-moto-title:#854f0b;--card-moto-text:#633806;
+  --card-bivouac-bg:linear-gradient(135deg,#eaf3de,#ddedc4);--card-bivouac-border:#c0dd97;--card-bivouac-title:#3b6d11;--card-bivouac-text:#27500a;
+  --card-default-bg:linear-gradient(135deg,#fef9f0,#fdf3e7);--card-default-border:#e8d5b8;--card-default-title:#c0392b;--card-default-text:#6b5a3e;
+  --mag-serif:'Playfair Display',Georgia,serif;--mag-sans:'Source Sans 3','Segoe UI',sans-serif;
+  --mag-max:920px;--mag-card-width:350px;--mag-gap:1.5rem;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--mag-bg);color:var(--mag-text);font-family:var(--mag-sans);font-size:20px;line-height:1.85;-webkit-font-smoothing:antialiased}
+a{color:var(--mag-accent);text-decoration:none}a:hover{text-decoration:underline}
+.clearfix::after{content:"";display:table;clear:both}
+.mag-body{max-width:var(--mag-max);margin:0 auto;padding:2.5rem 1.5rem}
+
+/* HERO */
+.mag-hero{position:relative;width:100%;height:60vh;min-height:400px;overflow:hidden;display:flex;align-items:flex-end}
+.mag-hero img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.55)}
+.mag-hero-overlay{position:relative;z-index:2;width:100%;padding:3rem 2rem;background:linear-gradient(transparent,rgba(0,0,0,0.82))}
+.mag-hero-tag{display:inline-block;background:var(--mag-accent);color:#fff;font-weight:700;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;padding:6px 18px;border-radius:3px;margin-bottom:1rem}
+.mag-hero h1{font-family:var(--mag-serif);font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:#fff;line-height:1.12;max-width:800px;text-shadow:0 2px 20px rgba(0,0,0,.3)}
+.mag-hero-caption{color:rgba(255,255,255,.7);font-size:1.1rem;margin-top:.8rem;font-style:italic}
+.mag-hero-nophoto{background:linear-gradient(135deg,#1a1a2e,#16213e);display:flex;align-items:center;justify-content:center;min-height:400px;text-align:center;padding:3rem}
+.mag-hero-nophoto h1{font-family:var(--mag-serif);font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#fff}
+
+/* SECTION */
+.mag-section{margin-bottom:2.5rem}
+.mag-section h2{font-family:var(--mag-serif);font-size:2rem;font-weight:700;color:var(--mag-text);line-height:1.2;margin-bottom:1.2rem;padding-bottom:.6rem;border-bottom:3px solid var(--mag-gold)}
+.mag-section p{font-size:1.25rem;line-height:1.9;color:var(--mag-text2);margin-bottom:1rem}
+.mag-section strong{color:var(--mag-text)}
+
+/* SECTION + CARTE LATERALE */
+.mag-row{display:flex;gap:var(--mag-gap);align-items:flex-start;margin-bottom:2.5rem}
+.mag-row-text{flex:1;min-width:0}
+.mag-row-text h2{font-family:var(--mag-serif);font-size:2rem;font-weight:700;color:var(--mag-text);line-height:1.2;margin-bottom:1.2rem;padding-bottom:.6rem;border-bottom:3px solid var(--mag-gold)}
+.mag-row-text p{font-size:1.25rem;line-height:1.9;color:var(--mag-text2);margin-bottom:1rem}
+
+/* CARTE ENCART — overflow-y:auto + max-height via JS */
+.mag-card{width:var(--mag-card-width);flex-shrink:0;border-radius:12px;padding:1.2rem 1.4rem;box-shadow:0 3px 12px rgba(0,0,0,.06);overflow-y:auto;scrollbar-width:thin;scrollbar-color:#ccc transparent}
+.mag-card-icon{font-size:1.6rem;margin-bottom:8px}
+.mag-card-title{font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.mag-card p{font-size:1.1rem;line-height:1.7;margin:0}
+
+/* CARTE STANDALONE */
+.mag-card-full{width:100%;max-width:100%;margin:1.5rem 0;border-radius:12px;padding:1.2rem 1.4rem;box-shadow:0 3px 12px rgba(0,0,0,.06)}
+.mag-card-full .mag-card-icon{font-size:1.6rem;margin-bottom:8px}
+.mag-card-full .mag-card-title{font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.mag-card-full p{font-size:1.1rem;line-height:1.7;margin:0}
+
+/* PHOTOS */
+.mag-photo{margin:2rem 0;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.12)}
+.mag-photo img{width:100%;display:block;max-height:550px;object-fit:cover}
+.mag-photo figcaption{padding:.8rem 1.2rem;font-size:1rem;color:var(--mag-text2);font-style:italic;background:#f5f5f0;border-top:2px solid var(--mag-gold)}
+.mag-photo-left{margin:.5rem 0 1rem}
+.mag-photo-left img{float:left;width:48%;margin:0 1.5rem 1rem 0;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.1);max-height:350px;object-fit:cover}
+.mag-photo-right{margin:.5rem 0 1rem}
+.mag-photo-right img{float:right;width:48%;margin:0 0 1rem 1.5rem;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.1);max-height:350px;object-fit:cover}
+.mag-photo-duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:2rem 0}
+.mag-photo-duo figure{border-radius:10px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+.mag-photo-duo img{width:100%;height:280px;object-fit:cover;display:block}
+.mag-photo-duo figcaption{padding:6px 12px;font-size:.8rem;color:var(--mag-text2);font-style:italic;background:#f5f5f0;border-top:2px solid var(--mag-gold)}
+.mag-gallery{margin:2.5rem 0}
+.mag-gallery h2{font-family:var(--mag-serif);font-size:1.5rem;font-weight:700;border-bottom:3px solid var(--mag-gold);padding-bottom:.5rem;margin-bottom:1rem}
+.mag-gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.mag-gallery-grid figure{border-radius:10px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+.mag-gallery-grid img{width:100%;height:240px;object-fit:cover;display:block}
+.mag-gallery-grid figcaption{padding:6px 10px;font-size:.78rem;color:var(--mag-text3);font-style:italic;background:#f5f5f0;border-top:2px solid var(--mag-gold)}
+
+/* COMMENTAIRES */
+.mag-comments{margin:2.5rem 0}
+.mag-comments h2{font-family:var(--mag-serif);font-size:1.5rem;font-weight:700;border-bottom:3px solid var(--mag-gold);padding-bottom:.5rem;margin-bottom:1rem}
+.mag-comments-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.mag-comment-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:1rem 1.2rem;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.mag-comment-author{font-weight:700;font-size:1.1rem;color:var(--mag-accent);margin-bottom:6px}
+.mag-comment-text{font-size:1.1rem;line-height:1.65;color:#444;font-style:italic}
+.mag-comment-likes{font-size:.75rem;color:#999;margin-top:10px}
+
+/* VIDEOS */
+.mag-videos{margin:2.5rem 0}
+.mag-videos h2{font-family:var(--mag-serif);font-size:1.5rem;font-weight:700;border-bottom:3px solid var(--mag-gold);padding-bottom:.5rem;margin-bottom:1rem}
+.mag-videos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.mag-video-card{border-radius:12px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.1);background:#fff}
+.mag-video-card iframe{width:100%;aspect-ratio:16/9;display:block;border:none}
+.mag-video-card p{padding:12px 16px;font-size:1rem;font-weight:600;color:var(--mag-text)}
+
+/* PLAYLIST */
+.mag-playlist-link{text-align:center;margin:1.5rem 0 2.5rem}
+.mag-playlist-link a{display:inline-block;padding:12px 28px;background:var(--mag-accent);color:#fff;font-weight:700;font-size:1.1rem;border-radius:8px;text-decoration:none;transition:background .2s}
+.mag-playlist-link a:hover{background:var(--mag-accent2);text-decoration:none}
+
+/* FOOTER */
+.mag-footer{text-align:center;padding:2rem;margin-top:2rem;border-top:1px solid var(--mag-border);font-size:1rem;color:#888}
+.mag-footer a{color:var(--mag-accent);text-decoration:none}
+.mag-footer a:hover{text-decoration:underline}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  body{font-size:16px;line-height:1.75}
+  .mag-body{padding:1.5rem 1rem}
+  .mag-hero{height:60vh;min-height:350px}
+  .mag-hero-overlay{padding:2rem 1.2rem}
+  .mag-row{flex-direction:column}
+  .mag-card{width:100%;max-height:none!important}
+  .mag-photo-left img,.mag-photo-right img{float:none;width:100%;margin:1rem 0}
+  .mag-photo-duo{grid-template-columns:1fr}
+  .mag-section h2,.mag-row-text h2{font-size:1.4rem}
+  .mag-comments-grid{grid-template-columns:1fr}
+  .mag-videos-grid{grid-template-columns:1fr}
+}
+
+
+<style>
+.maillage-piliers{background:#fff8f0;border-left:4px solid #e67e22;border-radius:0 10px 10px 0;padding:1.2rem 1.5rem;margin:2rem 0}
+.maillage-piliers strong{font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:#e67e22;display:block;margin-bottom:.6rem;font-family:'Montserrat',sans-serif}
+.maillage-piliers a{display:block;color:#1a1a1a;font-weight:600;padding:.2rem 0;font-size:.93rem;border-bottom:1px solid rgba(0,0,0,.07)}
+.maillage-piliers a:last-child{border-bottom:none}
+.maillage-piliers a:hover{color:#e67e22}
+</style>
+</style>
+<script src="/js/lcdmh-nav-loader.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Budget Cap Nord à Moto Seul : 10 000 km, Coûts Réels",
+  "description": "Budget réel d'un road trip Cap Nord à moto en solo : 2 300 € pour 30 jours, 10 000 km. Ferries, bivouac, hôtels, carburant, nourriture — tous les coûts détaillés.",
+  "image": "https://lcdmh.com/images/og-lcdmh.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Yves",
+    "url": "https://lcdmh.com/a-propos.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LCDMH — Le Coin Des Motards Heureux",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lcdmh.com/images/og-lcdmh.jpg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lcdmh.com/articles/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat.html"
+  },
+  "inLanguage": "fr-FR"
+}
+</script>
+
+    <!-- hreflang : ciblage francophone international -->
+    <link rel="alternate" hreflang="fr" href="https://lcdmh.com/articles/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat.html">
+    <link rel="alternate" hreflang="x-default" href="https://lcdmh.com/articles/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat.html">
+</head>
+<body>
+<div class="mag-hero"><img src="/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-01.jpg" alt="Budget Cap Nord à Moto Seul : 10 000 km, Coûts et Conseils Pratiques"><div class="mag-hero-overlay"><span class="mag-hero-tag">Récit de voyage</span><h1>Budget Cap Nord à Moto Seul : 10 000 km, Coûts et Conseils Pratiques</h1></div></div>
+<div class="mag-body">
+<div class="mag-section"><h2>Cap Nord à moto seul : 63 ans, 10 000 km et une révélation</h2>
+<p>De l'Allemagne aux fjords : quand le voyage commence vraiment</p>
+<p>63 ans, une Honda NT1100, et cette envie qui me ronge depuis trop longtemps : le Cap Nord. Seul. 10 000 kilomètres m'attendent. Le voyage, ce n'est pas la destination qui compte, mais le chemin pour y arriver. Ce ruban d'asphalte qui devient le lien entre les rencontres, les découvertes et les paysages.</p>
+<p>Premier choc dès l'Allemagne : 2,50€ le litre d'essence. J'hallucine. Mais bon, c'est un détail. Sur l'autoroute allemande, la NT1100 se balade bien, même si à 190 km/h, ça commence à louvoyer sur le train avant. Faut se méfier.</p>
+<div class="clearfix"></div></div>
+<div class="mag-row">
+<div class="mag-row-text"><h2>ChristianSand : le sourire de béatitude arrive</h2>
+<div class="mag-photo-right"><img src="/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-02.jpg" alt=""></div>
+<p>En sortant du ferry à Christiansand, quelques kilomètres après la ville, c'est un sourire de béatitude qui m'accompagnait sur la moto. Cette côte norvégienne est littéralement incroyable. Des virages par centaines, par milliers. Des courbes. Et même sur les plateaux, le paysage reste à couper le souffle.</p>
+<p>Voyager seul en Norvège, ce n'est pas un problème. Pays sûr, tranquille. Une population fière d'être norvégienne où le drapeau norvégien flotte derrière chaque porte d'entrée, sur chaque chaumière. Cette identité, cette fierté s'affiche sans complexe. J'aimais vraiment voir ça.</p>
+<p>Ce qui m'a surpris par contre : des burgers à chaque station d'essence. Décalage avec ce pays relativement proche de la nature, où d'ailleurs dans la Constitution est inscrit le droit à pouvoir bivouaquer un peu partout, tant qu'on respecte les règles.</p>
+<div class="clearfix"></div></div>
+<div class="mag-card" style="background:var(--card-ferry-bg);border:1px solid var(--card-ferry-border)"><div class="mag-card-icon">⛴</div><div class="mag-card-title" style="color:var(--card-ferry-title)">FERRY : MODE D'EMPLOI</div><p style="color:var(--card-ferry-text)">Le ferry principal Danemark–Norvège représente environ 4h de traversée. À bord, tu iras jusqu'au fond du pont véhicules — généralement sur la droite. Les sangles sont fournies sur place, mais leur état est variable : inspecte-les avant de t'en servir. Gare la moto en marche arrière : c'est plus pratique pour repartir et ça évite les manœuvres dans un espace réduit. Quand tu dessangles la moto à l'arrivée, commence toujours par la sangle du côté opposé à la béquille. Le sanglage est serré fort pour immobiliser la moto pendant toute la traversée : en relâchant cette sangle en premier, tu détends la suspension et la sangle côté béquille devient beaucoup plus facile à défaire. L'annonce d'arrivée est faite bien à l'avance — pas de panique, tu auras largement le temps de descendre, de t'équiper et de te mettre en route. Les petits ferries (5 à 30 minutes) sont généralement gratuits ou presque. Un conseil au moment de l'accostage : laisse ta béquille déployée si tu es encore sur la moto, car le choc peut faire perdre l'équilibre sur un sol glissant.</p></div>
+</div>
+<figure class="mag-photo"><img src="/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-03.jpg" alt=""></figure>
+<div class="mag-row">
+<div class="mag-row-text"><h2>Les églises de bois et la magie des ferries</h2>
+<div class="mag-photo-left"><img src="/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-04.jpg" alt=""></div>
+<p>Ces églises de bois m'ont marqué. Ces cimetières simples. Ici, rien d'ostentatoire, juste la simplicité. Quelle que soit ta place dans la société, quand ta vie s'achève, c'est juste une pierre. La trace de ton passage sera simple.</p>
+<p>Mon voyage s'est déroulé un peu comme dans un rêve. Cette ambiance tranquille, apaisante. Souvent en traversant les villages, on a l'impression d'être seul au monde. La densité de population au kilomètre carré peut aller de quelques habitants.</p>
+<p>Les ferries, pour moi, étaient une découverte. Un peu d'appréhension malgré tout. Au final, ça s'est super bien passé. Et puis il y a ce côté absolument magique du voyage dans le voyage. Traverser la Norvège avec les ferries, ça ajoute cette dimension incroyable. Certaines traversées ne prennent que quelques minutes, d'autres plusieurs heures, mais à chaque fois, c'est un moment de répit, de bonheur, de tranquillité.</p>
+<p>Dans les ferries, tu peux facilement prendre le café, des snacks, des saucisses - une institution en Norvège. Et si personne au snack, tu te sers, tu scannes tes produits et tu paies sans contact. Cette confiance qui t'est donnée fait vraiment du bien, même si au départ c'est déroutant.</p>
+<div class="clearfix"></div></div>
+<div class="mag-card" style="background:var(--card-ferry-bg);border:1px solid var(--card-ferry-border)"><div class="mag-card-icon">⛽</div><div class="mag-card-title" style="color:var(--card-ferry-title)">CARBURANT ET STATIONS</div><p style="color:var(--card-ferry-text)">En ce qui concerne le carburant, c'est relativement cher, plus on monte au Nord, plus il est cher en fin mai 2026, j'étais à 2€ le litre Ensuite au niveau des stations-service, aucun souci, aucune, aucune angoisse. Il y a des stations vraiment de partout, c'est super bien achalandé et même dans le nord de la Norvège, il y a aucun problème pour faire le plein de la moto.</p></div>
+</div>
+<div class="mag-photo-duo"><figure><img src="/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-05.jpg" alt=""></figure><figure><img src="/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-06.jpg" alt=""></figure></div>
+<div class="mag-row">
+<div class="mag-row-text"><h2>Le Grand Nord se fait sentir : quand la météo dicte sa loi</h2>
+<p>Si la météo dans le sud était très clémente début mai, plus je montais vers le Nord, plus le Nord se faisait sentir. Après être entré dans le Grand Nord norvégien, les jours suivants ont été très difficiles. Je me rappelle de cette nuit mémorable où j'ai eu vraiment très froid.</p>
+<p>En moto, la météo est un élément déterminant. Si les nuits peuvent être à 0 degré au 15-20 mai, ce ne sont pas des nuits où tu vas récupérer de la fatigue de la journée.</p>
+<p>Les stations-service sont devenues ma deuxième maison. Pour un brin de toilette, un peu de repos, retrouver de la chaleur, manger une saucisse, un burger. Dans toutes les stations où je suis passé, aucune déception. Combien de fois ai-je laissé la moto à l'entrée avec les clés sur le contact ? Aucune inquiétude. C'est un pays où tu ressens cette tranquillité et cette sécurité.</p>
+<div class="clearfix"></div></div>
+<div class="mag-card" style="background:var(--card-bivouac-bg);border:1px solid var(--card-bivouac-border)"><div class="mag-card-icon">⛺</div><div class="mag-card-title" style="color:var(--card-bivouac-title)">BIVOUAC ET CAMPING</div><p style="color:var(--card-bivouac-text)">Le bivouac est un droit en Norvège — l'Allemansretten, le droit à la nature. Tu peux poser ta tente n'importe où, à condition d'être à au moins 150 mètres des habitations, de ne laisser aucune trace et de respecter les lieux. Aucune autorisation nécessaire, aucun droit à payer. Avec la faible densité de population norvégienne, les spots magnifiques ne manquent pas : bord de lac, flanc de montagne, plateau au-dessus d'un fjord… Le bivouac en Norvège, c'est une liberté rare et précieuse.</p></div>
+</div>
+<figure class="mag-photo"><img src="/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-07.jpg" alt=""></figure>
+<div class="mag-row">
+<div class="mag-row-text"><h2>Les Lofoten : la carte postale devient réalité</h2>
+<div class="mag-photo-left"><img src="/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-08.jpg" alt=""></div>
+<p>Plus je remontais vers le Nord, plus les paysages changeaient. Mais une chose ne changeait pas : cette côte norvégienne incroyable. Selon les calculs, cette côte peut représenter plusieurs dizaines de milliers de kilomètres en comptant les fjords et les îles.</p>
+<p>Quelle incroyable chance de pouvoir visiter les Lofoten ! Cet endroit fait rêver. Par beau temps, tu voyages dans la carte postale. Cet archipel est juste magique. Les maisons colorées de peintures rouges, ces montagnes verticales qui plongent dans la mer, ces colosses d'une dureté incroyable. Tout ici est différent de ce que tu connais.</p>
+<p>Tu ne sais plus où regarder. Des images plein les yeux. Le soir quand je m'endormais, les images de la journée dansaient encore, m'emmenant vers des rêves magnifiques. Au guidon de la moto, tu ne t'ennuies jamais. La découverte est tellement perpétuelle que chaque instant est transformé en moment de bonheur.</p>
+<div class="clearfix"></div></div>
+<div class="mag-card" style="background:var(--card-default-bg);border:1px solid var(--card-default-border)"><div class="mag-card-icon">☁</div><div class="mag-card-title" style="color:var(--card-default-title)">MÉTÉO</div><p style="color:var(--card-default-text)">La météo est l'élément déterminant du voyage en Norvège. Elle peut transformer le même road trip en expérience magnifique ou en épreuve physique. En début mai, les températures descendent fréquemment à 0°C, voire en dessous, et de légères chutes de neige sont possibles en altitude — sachant qu'en Norvège, 400 mètres suffisent pour être considéré en altitude. Le vent est l'autre facteur à anticiper : quotidien, parfois violent, il est éprouvant à moto sur la durée. Il souffle davantage dans le Nord, mais tu en rencontreras tout au long du voyage. Prévoir des vêtements adaptés au froid et au vent n'est pas une option, c'est une nécessité.</p></div>
+</div>
+<div class="mag-photo-duo"><figure><img src="/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-09.jpg" alt=""></figure><figure><img src="/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-10.jpg" alt=""></figure></div>
+<div class="mag-row">
+<div class="mag-row-text"><h2>Cap Nord : l'arrivée folklorique au bout de l'Europe</h2>
+<p>C'est vers Alta que j'ai pris la décision de finir les 700 km restants d'une seule traite. Une bonne dizaine d'heures de route. Plus j'arrivais proche du cap, plus les conditions météorologiques se dégradaient. Bourrasques de vent entre 50 et 60 km/h. Cet air froid qui s'insinue partout, passe dans le casque, dans la visière, vient te refroidir à l'intérieur du casque.</p>
+<p>Je pense avoir fini les derniers kilomètres les épaules complètement remontées pour essayer de bloquer ces filets d'air qui passaient malgré tout. Je suis arrivé complètement fourbu vers 00h30-01h00 du matin, dans un noir relatif, en plein dans les nuages. Une vraie tempête. Visibilité très restreinte.</p>
+<p>L'idée de monter la tente m'a vite abandonné. Les conditions étaient tellement difficiles qu'elle se serait envolée. C'est en pleine tempête que je me suis installé sur la terrasse d'une maison proche du parking. Les occupants sont venus voir et m'ont très gentiment laissé une chaise.</p>
+<p>Mais j'ai fini dans les toilettes. Heureusement ! Première fois de ma vie où j'étais aussi content de trouver des toilettes chauffées. Quelle surprise : j'y retrouve un Suisse allongé par terre ! Soirée mémorable. Après avoir fait la causette jusqu'à 3h30, j'ai fini par sombrer dans un petit sommeil. Ça faisait 24h que j'étais debout.</p>
+<p>Au réveil, j'avais une sale tête, mais les nuages avaient disparu. Grand bonheur ! J'ai pu voir ce fameux Cap Nord, le bout de l'Europe. Le vent était toujours là, mordant. Impossible de se stabiliser, obligé de mettre un genou à terre pour faire un cadrage propre.</p>
+<div class="clearfix"></div></div>
+<div class="mag-card" style="background:var(--card-budget-bg);border:1px solid var(--card-budget-border)"><div class="mag-card-icon">💶</div><div class="mag-card-title" style="color:var(--card-budget-title)">BUDGET DÉTAILLÉ</div><p style="color:var(--card-budget-text)">En combinant bivouac, camping et quelques nuits d'hôtel, mon budget total pour une trentaine de jours a été d'environ 2 300 €. Les prix norvégiens font rapidement monter la note : au restaurant, compte entre 50 et 80 € par repas. Les hôtels démarrent autour de 80 € et montent facilement à 150 € la nuit. Lors de mes deux nuits en auberge de jeunesse, j'ai payé 100 € la nuit pour un dortoir 4 lits — c'est dire le niveau des prix. Pour comparaison, j'ai discuté avec d'autres motards qui ont fait le même trajet en dormant à l'hôtel et en mangeant au restaurant chaque soir : leur budget oscillait entre 3 500 et 5 000 € selon les choix. Le bivouac reste clairement la clé pour rester dans une fourchette raisonnable.</p></div>
+</div>
+<figure class="mag-photo"><img src="/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-11.jpg" alt=""></figure>
+<div class="mag-row">
+<div class="mag-row-text"><h2>Le retour par la Finlande : nostalgie et lignes droites</h2>
+<div class="mag-photo-left"><img src="/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-12.jpg" alt=""></div>
+<p>C'est sous un grand soleil que je suis reparti. Le vent s'était calmé. De nouveau cette côte qui s'étirait devant moi. Je dois avouer qu'au moment du départ, une certaine nostalgie s'installait déjà.</p>
+<p>Le voyage de retour a été long et pénible. Après cette belle découverte du Cap Nord, difficile de trouver de l'intérêt sur les grandes lignes droites de la Finlande. Des lignes droites interminables, des sapins, une terre plate. J'ai trouvé quelques spots, notamment un magnifique spot pour bivouaquer, mais difficile de comparer avec la côte norvégienne.</p>
+<div class="clearfix"></div></div>
+<div class="mag-card" style="background:var(--card-moto-bg);border:1px solid var(--card-moto-border)"><div class="mag-card-icon">🏍</div><div class="mag-card-title" style="color:var(--card-moto-title)">MOTO ET ÉQUIPEMENT</div><p style="color:var(--card-moto-text)">Fais ta révision avant de partir, même si tu es en avance de 2 000 à 3 000 km sur l'échéance. Sur un périple de 10 000 km, évite absolument de planifier une révision en Norvège : c'est cher et les garages ne connaissent pas forcément ta machine. J'en ai fait la mauvaise expérience à Narvik : un garagiste non spécialiste Honda a prétendu détecter des défauts qui n'existaient pas, facturé plus de 300 € pour une intervention incomplète — mauvaise huile, mauvais joints. En rentrant, le concessionnaire Honda m'a conseillé de refaire la révision complète. Partir révisé te met à l'abri de ce type de mésaventure coûteuse. Pour l'équipement : sois prêt à tout. Vêtements de pluie imperméables, couches chaudes, tour de cou, plusieurs paires de gants de températures différentes. Emporte des produits anti-pluie pour ta visière et ta bulle. Pour l'entretien de la chaîne, les stations-service norvégiennes sont bien équipées : tu trouveras généralement une aire dédiée avec produits de nettoyage et de graissage.</p></div>
+</div>
+<div class="mag-photo-duo"><figure><img src="/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-13.jpg" alt=""></figure><figure><img src="/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-14.jpg" alt=""></figure></div>
+<div class="mag-row">
+<div class="mag-row-text"><h2>Carnet pratique : budget Cap Nord moto seul et conseils</h2>
+<p>Ce voyage peut être relativement difficile selon les conditions météo. La météo est l'élément déterminant. C'est elle qui va faire que ce voyage sera plus ou moins magnifique, plus ou moins dur. Si tu comptes aller au Cap Nord, un seul conseil : sois prêt à tout.</p>
+<p>Si ce voyage est parfois difficile, il reste bouleversant. Comme un voyage initiatique. Une révélation. Moi qui ne connaissais pas cette région, j'ai été conquis à chaque tour de roue. On n'en revient jamais vraiment du Cap Nord.</p>
+<div class="clearfix"></div></div>
+<div class="mag-card" style="background:var(--card-default-bg);border:1px solid var(--card-default-border)"><div class="mag-card-icon">ℹ</div><div class="mag-card-title" style="color:var(--card-default-title)">INFOS PRATIQUES</div><p style="color:var(--card-default-text)">J'ai utilisé différentes applications pour naviguer, voyager J'ai vraiment eu aucun problème au niveau des horaires de ferry en général, y en a toutes les demi-heures, toutes les heures donc bon. C'est assez facile à gérer, c'est vraiment très agréable de voyager en Norvège avec les ferries d'ailleurs.</p></div>
+</div>
+<div class="mag-card-full" style="background:var(--card-ferry-bg);border:1px solid var(--card-ferry-border)"><div class="mag-card-icon">🍽</div><div class="mag-card-title" style="color:var(--card-ferry-title)">NOURRITURE</div><p style="color:var(--card-ferry-text)">Pendant mes 30 jours de voyage, j'ai mangé quasi exclusivement en station-service — et c'est très bien passé. La saucisse et le burger sont une institution norvégienne : copieux, disponibles partout, et bien meilleurs qu'un fast-food classique. Compte 20 à 25 € pour un burger ou une saucisse avec un grand café. Au restaurant, les prix montent vite : un menu entrée/plat démarre facilement à 50 € et peut atteindre 80 à 100 € sans effort. Manger en Norvège coûte cher — la station-service reste la solution la plus économique et la plus pratique pour un motard en route.</p></div>
+<div class="mag-gallery"><h2>En images</h2><div class="mag-gallery-grid">
+<figure><img src="/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-15.jpg" alt=""></figure>
+<figure><img src="/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-16.jpg" alt=""></figure>
+<figure><img src="/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-17.jpg" alt=""></figure>
+<figure><img src="/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-18.jpg" alt=""></figure>
+<figure><img src="/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-19.jpg" alt=""></figure>
+<figure><img src="/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-20.jpg" alt=""></figure>
+</div></div>
+<div class="mag-section">
+<h2 style="border-bottom-color:#c0392b">⚠️ Ce qu'il faut savoir avant de partir</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:1rem">
+<div style="background:linear-gradient(135deg,#fef9f0,#fdf3e7);border:1px solid #e8d5b8;border-radius:12px;padding:1.5rem 1.8rem">
+<h3 style="font-family:var(--mag-serif);font-size:1.3rem;color:#c0392b;margin:0 0 0.8rem">Ferries, péages et organisation</h3>
+<p style="font-size:1.05rem;line-height:1.7">⛴️ Les ferries : comment ça marche</p>
+<p style="font-size:1.05rem;line-height:1.7">En Norvège, les ferries font partie intégrante du voyage. Avec les fjords qui découpent le pays, impossible de les éviter. Sur un road trip, tu en prendras une dizaine, parfois plus, mais c'est très simple et bien organisé.</p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>✔️ Depuis 2022, les passagers sont gratuits. Tu payes uniquement le véhicule.</strong></p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>✔️ Beaucoup de ferries sont gratuits ou très peu chers.</strong></p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 Exemple réel : sur 10 à 15 ferries, seulement 2 ou 3 sont payants.</strong></p>
+<p style="font-size:1.05rem;line-height:1.7">💳 Comment payer les ferries</p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 Option 1 — FerryPay (le plus simple) : tu crées un compte, tu enregistres ta plaque et ta CB. Paiement automatique à chaque traversée. Ultra simple, mais tarif plein.</strong></p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 Option 2 — Paiement sur place : directement à bord, souvent en sans contact. Très simple aussi.</strong></p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 Option 3 — AutoPASS (réductions) : tu verses ~181 € d'acompte et tu lies ta plaque. Jusqu'à -50 % sur les ferries publics. Exemple : Bodø → Lofoten passe de 21 € à 10,50 €. Attention : pas valable sur les ferries privés (ex : Geirangerfjord).</strong></p>
+<p style="font-size:1.05rem;line-height:1.7">⚠️ Retour terrain : dans mon cas, le gain AutoPASS n'a été que de 12 €. Pas toujours rentable selon ton trajet.</p>
+<p style="font-size:1.05rem;line-height:1.7">💰 Prix réels des ferries</p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 Petits trajets : 3 à 6 €</strong></p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 Moyens (Lofoten) : ~21 €</strong></p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 Touristiques (Geirangerfjord) : ~52 €</strong></p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 Budget total ferries : moins de 200 € sur tout le road trip</strong></p>
+</div>
+<div style="background:linear-gradient(135deg,#fef9f0,#fdf3e7);border:1px solid #e8d5b8;border-radius:12px;padding:1.5rem 1.8rem">
+<h3 style="font-family:var(--mag-serif);font-size:1.3rem;color:#c0392b;margin:0 0 0.8rem">📱 Application indispensable : Entur</h3>
+<p style="font-size:1.05rem;line-height:1.7"><strong>✔️ Regroupe TOUS les transports de Norvège : ferries, bus, train.</strong></p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>✔️ Horaires en temps réel, fonctionne avec ta position.</strong></p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>➡️ C'est le Google Maps norvégien… en mieux. L'outil le plus fiable pour organiser tes déplacements.</strong></p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 Comment faire : tu ouvres Entur, tu tapes Bodø → Moskenes, tu vérifies la durée (3h = bon ferry).</strong></p>
+<p style="font-size:1.05rem;line-height:1.7">🛣️ Péages en Norvège</p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 Même logique que les ferries : tout est automatisé par lecture de plaque.</strong></p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 Tu peux ne rien faire et recevoir la facture après, ou utiliser AutoPASS pour optimiser.</strong></p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 Budget péages : faible comparé au reste du voyage.</strong></p>
+<p style="font-size:1.05rem;line-height:1.7">⏱️ Fréquence et organisation</p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 Petits ferries : toutes les 15 à 30 minutes, en continu toute la journée.</strong></p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 Gros ferries (Lofoten, etc.) : 2 à 4 départs par jour seulement.</strong></p>
+<p style="font-size:1.05rem;line-height:1.7">⚠️ En haute saison, les ferries peuvent être complets. Vérifier les horaires à l'avance et réserver si possible.</p>
+<p style="font-size:1.05rem;line-height:1.7">🚢 Le ferry Bodø → Lofoten (Moskenes)</p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 C'est LA liaison principale pour rejoindre les Lofoten. Traversée : 3 à 4h. Opéré par Torghatten Nord.</strong></p>
+<p style="font-size:1.05rem;line-height:1.7">⚠️ Attention : il existe 2 versions. Le direct (Bodø → Moskenes, ~3h) et celui avec escales (Bodø → Røst → Værøy → Moskenes, ~7h). Vérifie bien dans Entur !</p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 En été : jusqu'à 6 à 8 départs/jour. En basse saison : parfois seulement 2.</strong></p>
+<p style="font-size:1.05rem;line-height:1.7">⚠️ En été, ferries souvent pleins. Seulement 50 % des places réservables en ligne. Soit tu réserves, soit tu arrives tôt au quai.</p>
+<p style="font-size:1.05rem;line-height:1.7">⚠️ Avant de partir : vérifie les gros ferries (Lofoten surtout), télécharge Entur, et prends une CB qui passe partout (Revolut fonctionne très bien).</p>
+</div>
+<div style="background:linear-gradient(135deg,#fef9f0,#fdf3e7);border:1px solid #e8d5b8;border-radius:12px;padding:1.5rem 1.8rem">
+<h3 style="font-family:var(--mag-serif);font-size:1.3rem;color:#c0392b;margin:0 0 0.8rem">⛽ Budget carburant - 🍔 Budget nourriture</h3>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 40 à 60 €/jour. Burger : 22 à 30 €. Snack : 15 à 22 €.</strong></p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 L'astuce qui change tout : le supermarché (Kiwi, Rema 1000) divise la note par 2.</strong></p>
+<p style="font-size:1.05rem;line-height:1.7">🛌 Hébergement</p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 Camping : 18 à 30 €. Cabane : 65 à 110 €. Hôtel : 80 à 150 €.</strong></p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>✔️ Le bonus énorme : le bivouac est autorisé en Norvège (règle des 150 m des habitations).</strong></p>
+</div>
+<div style="background:linear-gradient(135deg,#fef9f0,#fdf3e7);border:1px solid #e8d5b8;border-radius:12px;padding:1.5rem 1.8rem">
+<h3 style="font-family:var(--mag-serif);font-size:1.3rem;color:#c0392b;margin:0 0 0.8rem">🧠 Le vrai conseil terrain</h3>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 Les ferries : nombreux, faciles, souvent gratuits. Paiement automatique ou CB sans contact.</strong></p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 AutoPASS : utile mais pas indispensable.</strong></p>
+<p style="font-size:1.05rem;line-height:1.7"><strong>👉 Ce qui coûte vraiment : essence, nourriture, hébergement. Pas les ferries.</strong></p>
+</div>
+</div>
+</div>
+<div class="mag-comments"><h2>Ce que vous en dites</h2><div class="mag-comments-grid">
+<div class="mag-comment-card"><div class="mag-comment-author">@laurentbesson8456</div><p class="mag-comment-text">oh le boulot de dingue pour le montage video..et choix des musiques...... que c est beau .. yves.....merci pour ce partage    MAGNIFIQUE</p><div class="mag-comment-likes">👍 13</div></div>
+<div class="mag-comment-card"><div class="mag-comment-author">@Oracle_X</div><p class="mag-comment-text">Encore merci pour ce voyage sublime des images merveilleuses, on en prend plein la vue. Toujours trop court mais on attend avec impatience la prochaine qui on le sait, va nous régaler.
+Merci Yves de nous embarquer avec toi dans ton périple... ✌</p><div class="mag-comment-likes">👍 5</div></div>
+<div class="mag-comment-card"><div class="mag-comment-author">@JeanLassourie-x7n</div><p class="mag-comment-text">Magnifique j'ai pas les mots, et bravo pour les commentaires tu nous fais rêver merci, jean</p><div class="mag-comment-likes">👍 5</div></div>
+<div class="mag-comment-card"><div class="mag-comment-author">@jean-lucd165</div><p class="mag-comment-text">Toujours excellente vidéo. Entre le rêve et la réalité, comme on dit " il ne faut pas partir sans biscuits"😊.
+Pays fantastique avec ses mers, routes,ponts et montagnes..mais aussi ses intempéries ! Merci Yves pour ce reportage à un sacré bout de la terre .✌️👏</p><div class="mag-comment-likes">👍 4</div></div>
+<div class="mag-comment-card"><div class="mag-comment-author">@damienu.2668</div><p class="mag-comment-text">Yves, c’est absolument MA-GNI-FI-QUE 😍 Tu as du vraiment t’éclater au milieu de toutes ces belles courbes et ces paysages magnifiques 👍
+Tout cela agrémenté d’un choix de musiques très bien choisies, c’est génial comme tu dis souvent. « Oh la vache 🙂 »
+
+Merci pour ce joli spectacle, et quel belle sur</p><div class="mag-comment-likes">👍 3</div></div>
+<div class="mag-comment-card"><div class="mag-comment-author">@michelmaire8278</div><p class="mag-comment-text">Là tu t'ai surpassé !  la mâchoire m'en tombe ! j'ai eu la banane tout du long, le sourire béa . Incroyable comme c'est beau, Magique. Bravo mon petit Yves, continue de nous faire voyager comme ça. Et encore bravo pour le choix des musiques juste exceptionnelles, moi non plus je n'ai pas assez de mo</p><div class="mag-comment-likes">👍 3</div></div>
+</div></div>
+<div class="mag-videos"><h2>Les vidéos du voyage</h2><div class="mag-videos-grid">
+<div class="mag-video-card"><iframe src="https://www.youtube.com/embed/YwiwUpp8yBY" frameborder="0" allowfullscreen loading="lazy"></iframe><p>Meilleures Routes Moto Norvège : Top 7 Incontournables | Roa</p></div>
+<div class="mag-video-card"><iframe src="https://www.youtube.com/embed/Fzj-lGDwedc" frameborder="0" allowfullscreen loading="lazy"></iframe><p>GEIRANGERFJORD à Moto : Le Plus Beau Fjord de Norvège | Road</p></div>
+<div class="mag-video-card"><iframe src="https://www.youtube.com/embed/aW5Ryq83oO4" frameborder="0" allowfullscreen loading="lazy"></iframe><p>Lofoten : ce jour-là, quelque chose n’a pas fonctionné. EP12</p></div>
+<div class="mag-video-card"><iframe src="https://www.youtube.com/embed/jKEeq45vtPU" frameborder="0" allowfullscreen loading="lazy"></iframe><p>Voyage au Cap Nord, Budget, ferries, conseils. Guide de voya</p></div>
+</div></div>
+
+<div class="maillage-piliers">
+  <strong>📚 À lire aussi sur LCDMH</strong>
+  <a href="../intercoms.html">🎧 Comparatif intercoms moto — Sena 50S, 60S, Cardo Packtalk</a>
+  <a href="../carpuride.html">📱 GPS Moto Carpuride W702 Pro — CarPlay sans fil sur moto</a>
+  <a href="../pneus.html">🛞 Comparatif pneus moto 2026 — Dunlop, Michelin, Metzeler sur 15 000 km</a>
+  <a href="../equipement.html">🧥 Équipement road trip complet — tout ce qu'il faut emporter</a>
+</div>
+
+<div class="mag-footer"><p>LCDMH — La Chaîne du Motard Heureux</p><p><a href="https://lcdmh.com">lcdmh.com</a> · <a href="https://youtube.com/@LCDMH">YouTube</a></p></div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".mag-row")
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"Lofoten : ce jour-là, quelque chose n’a pas fonctionné. EP12","description":"Lofoten : ce jour-là, quelque","thumbnailUrl":"https://i.ytimg.com/vi/aW5Ryq83oO4/hqdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=aW5Ryq83oO4","embedUrl":"https://www.youtube.com/embed/aW5Ryq83oO4"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"Meilleures Routes Moto Norvège : Top 7 Incontournables | Road Trip Cap Nord EP2","description":"Meilleures Routes Moto Norvège :","thumbnailUrl":"https://i.ytimg.com/vi/YwiwUpp8yBY/hqdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=YwiwUpp8yBY","embedUrl":"https://www.youtube.com/embed/YwiwUpp8yBY"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"GEIRANGERFJORD à Moto : Le Plus Beau Fjord de Norvège | Road Trip Cap Nord EP6","description":"GEIRANGERFJORD à Moto : Le","thumbnailUrl":"https://i.ytimg.com/vi/Fzj-lGDwedc/hqdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=Fzj-lGDwedc","embedUrl":"https://www.youtube.com/embed/Fzj-lGDwedc"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"Voyager en Norvège : ferries, budget, conseils. Guide de voyage Norway. EP14","description":"Voyager en Norvège : ferries,","thumbnailUrl":"https://i.ytimg.com/vi/jKEeq45vtPU/hqdefault.jpg","contentUrl":"https://www.youtube.com/watch?v=jKEeq45vtPU","embedUrl":"https://www.youtube.com/embed/jKEeq45vtPU"}</script>

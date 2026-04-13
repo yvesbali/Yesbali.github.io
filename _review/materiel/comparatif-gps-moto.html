@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparatif GPS Moto — Carpuride vs Aoocci | LCDMH</title>
+    <meta name="description" content="8 vidéos comparatif GPS moto : Carpuride W702, Aoocci U6, navigation embarquée CarPlay et Android Auto.">
+    <meta name="author" content="Yves – LCDMH">
+    <link rel="canonical" href="https://lcdmh.com/materiel/comparatif-gps-moto.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root{--orange:#e67e22;--orange-dark:#d35400;--noir:#1a1a1a;--bg:#f7f7f5;--card:#fff;--border:#e5e5e5;--muted:#777;--alt:#f0ede8;}
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--noir);line-height:1.65;font-size:16px}
+        h1,h2,h3{font-family:'Montserrat',sans-serif}
+        a{color:inherit;text-decoration:none}
+        .hero{position:relative;min-height:35vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+        .hero-content{position:relative;z-index:2;max-width:900px;padding:2rem;text-shadow:0 2px 15px rgba(0,0,0,.7)}
+        .hero-badge{display:inline-block;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.45rem 1.4rem;border-radius:50px;margin-bottom:1.4rem}
+        .hero h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;line-height:1.1;margin-bottom:1rem}
+        .hero p{font-size:1.05rem;color:rgba(255,255,255,.9);max-width:700px;margin:0 auto}
+        .container{max-width:1100px;margin:0 auto;padding:2rem 5%}
+        h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin:2rem 0 1rem}
+        .bar{width:52px;height:4px;background:var(--orange);border-radius:2px;margin:.3rem 0 1.5rem}
+        .hub-toc{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0 2.5rem;padding:1rem;background:#fff;border-radius:10px;border:1px solid var(--border)}
+        .hub-toc a{padding:.4rem 1rem;border-radius:20px;font-size:.9rem;font-weight:600;background:var(--alt);color:var(--noir);transition:.2s}
+        .hub-toc a:hover{background:var(--orange);color:#fff}
+        .hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-bottom:3rem}
+        .video-card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--border);transition:transform .2s,box-shadow .2s}
+        .video-card:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.08)}
+        .video-card .thumb{position:relative;aspect-ratio:16/9;overflow:hidden}
+        .video-card .thumb img{width:100%;height:100%;object-fit:cover}
+        .video-card .thumb .play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;background:rgba(0,0,0,.7);border-radius:50%;display:flex;align-items:center;justify-content:center}
+        .video-card .thumb .play-btn::after{content:'';border-left:18px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+        .video-card .card-body{padding:1rem 1.2rem}
+        .video-card .seo-meta{margin-bottom:.6rem}
+        .video-card .seo-meta p{margin:0;font-size:.8rem;color:var(--muted);line-height:1.4}
+        .video-card h3{font-size:1rem;font-weight:700;margin-bottom:.4rem;line-height:1.3}
+        .video-card .card-desc{font-size:.9rem;color:#555;line-height:1.5;margin-bottom:.6rem}
+        .video-card .card-link{display:inline-block;color:var(--orange);font-weight:600;font-size:.9rem}
+        .back-top{position:fixed;bottom:2rem;right:2rem;background:var(--orange);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;box-shadow:0 4px 12px rgba(0,0,0,.15);z-index:100;cursor:pointer}
+        @media(max-width:600px){.hub-grid{grid-template-columns:1fr}}
+    </style>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('/nav.html').then(r => r.text()).then(h => {
+            const d = document.getElementById('nav-placeholder');
+            if (d) d.innerHTML = h;
+        }).catch(() => {});
+        document.querySelector('.back-top')?.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    });
+    </script>
+
+    <!-- hreflang : ciblage francophone international -->
+    <link rel="alternate" hreflang="fr" href="https://lcdmh.com/materiel/comparatif-gps-moto.html">
+    <link rel="alternate" hreflang="x-default" href="https://lcdmh.com/materiel/comparatif-gps-moto.html">
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <section class="hero" style="background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('https://i.ytimg.com/vi/xj5-sH7pH2w/maxresdefault.jpg') center/cover">
+        <div class="hero-content">
+            <div class="hero-badge">🧭 COMPARATIF</div>
+            <h1>Comparatif GPS Moto — Carpuride vs Aoocci</h1>
+            <p>8 vidéos comparatif GPS moto : Carpuride W702, Aoocci U6, navigation embarquée CarPlay et Android Auto.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <nav class="hub-toc">
+            <a href="#carpuride-comp">Carpuride (7)</a>
+        </nav>
+
+        <section id="carpuride-comp">
+            <h2>Carpuride</h2>
+            <div class="bar"></div>
+            <div class="hub-grid">
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=xj5-sH7pH2w" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/xj5-sH7pH2w/hqdefault.jpg"
+                 alt="GPS MOTO. J’ai testé le GPS — aoocci avis motorisation"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Aoocci — GPS MOTO. J’ai testé le GPS moto ultime ! Dashcam,</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>GPS MOTO. J’ai testé le GPS moto ultime ! Dashcam, TPMS, Android Auto, GPS Offli</h3>
+        <p class="card-desc">Test terrain et avis. GPS MOTO. J’ai testé le GPS moto ultime ! Dashcam, TPMS, And.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "GPS MOTO. J’ai testé le GPS moto ultime ! Dashcam, TPMS, And"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. GPS MOTO. J’ai testé le GPS moto ultime ! Dashcam, TPMS, And.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "GPS MOTO. J’ai testé le GPS moto ultime ! Dashcam, TPMS, Android Auto, GPS Offline AOOCCI U6",
+    "description": "Test terrain et avis. GPS MOTO. J’ai testé le GPS moto ultime ! Dashcam, TPMS, And.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/xj5-sH7pH2w/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=xj5-sH7pH2w",
+    "embedUrl": "https://www.youtube.com/embed/xj5-sH7pH2w",
+    "keywords": "aoocci avis motorisation, aoocci avis motor"
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=mJaFPehWQ-Q" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/mJaFPehWQ-Q/hqdefault.jpg"
+                 alt="GPS MOTO. Ce gadget rend ta — gps moto. ce gadget rend ta mo"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : GPS MOTO. Ce gadget rend ta moto super intelligent</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>GPS MOTO. Ce gadget rend ta moto super intelligente !</h3>
+        <p class="card-desc">Test terrain et avis. GPS MOTO. Ce gadget rend ta moto super intelligente !.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "GPS MOTO. Ce gadget rend ta moto super intelligente !"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. GPS MOTO. Ce gadget rend ta moto super intelligente !.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "GPS MOTO. Ce gadget rend ta moto super intelligente !",
+    "description": "Test terrain et avis. GPS MOTO. Ce gadget rend ta moto super intelligente !.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/mJaFPehWQ-Q/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=mJaFPehWQ-Q",
+    "embedUrl": "https://www.youtube.com/embed/mJaFPehWQ-Q",
+    "keywords": "gps moto. ce gadget rend ta moto super intelligente que faire"
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=MVHMeX2rrok" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/MVHMeX2rrok/hqdefault.jpg"
+                 alt="Test GPS Moto Aoocci BX (2025) — aoocci avis motorisation"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Aoocci — Test GPS Moto Aoocci BX (2025) : CarPlay, Android </p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Test GPS Moto Aoocci BX (2025) : CarPlay, Android Auto &amp; -25% !</h3>
+        <p class="card-desc">Test terrain et avis. Test GPS Moto Aoocci BX (2025) : CarPlay, Android Auto &amp; -25.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Test GPS Moto Aoocci BX (2025) : CarPlay, Android Auto & -25"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Test GPS Moto Aoocci BX (2025) : CarPlay, Android Auto & -25.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Test GPS Moto Aoocci BX (2025) : CarPlay, Android Auto & -25% !",
+    "description": "Test terrain et avis. Test GPS Moto Aoocci BX (2025) : CarPlay, Android Auto & -25.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/MVHMeX2rrok/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=MVHMeX2rrok",
+    "embedUrl": "https://www.youtube.com/embed/MVHMeX2rrok",
+    "keywords": "aoocci avis motorisation, aoocci avis motor"
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=pinxDxAs9jw" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/pinxDxAs9jw/hqdefault.jpg"
+                 alt="Aoocci U6 BX C6 PRO GPS — aoocci u6 bx c6 pro gps offlin"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Aoocci — Aoocci U6 BX C6 PRO GPS OFFLINE et autonome.</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Aoocci U6 BX C6 PRO GPS OFFLINE et autonome.</h3>
+        <p class="card-desc">Test terrain et avis. Aoocci U6 BX C6 PRO GPS OFFLINE et autonome..</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Aoocci U6 BX C6 PRO GPS OFFLINE et autonome."
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Aoocci U6 BX C6 PRO GPS OFFLINE et autonome..",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Aoocci U6 BX C6 PRO GPS OFFLINE et autonome.",
+    "description": "Test terrain et avis. Aoocci U6 BX C6 PRO GPS OFFLINE et autonome..",
+    "thumbnailUrl": "https://i.ytimg.com/vi/pinxDxAs9jw/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=pinxDxAs9jw",
+    "embedUrl": "https://www.youtube.com/embed/pinxDxAs9jw",
+    "keywords": "aoocci u6 bx c6 pro gps offline et autonome, aoocci avis motorisation, aoocci avis motor"
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=JiXr-34c1Ps" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/JiXr-34c1Ps/hqdefault.jpg"
+                 alt="Black Friday GPS Moto PARFAIT pour"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Black Friday GPS Moto PARFAIT pour 2025 (CarPlay +</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Black Friday GPS Moto PARFAIT pour 2025 (CarPlay + Promo -28%)</h3>
+        <p class="card-desc">Test terrain et avis. Black Friday GPS Moto PARFAIT pour 2025 (CarPlay + Promo -28.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Black Friday GPS Moto PARFAIT pour 2025 (CarPlay + Promo -28"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Black Friday GPS Moto PARFAIT pour 2025 (CarPlay + Promo -28.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Black Friday GPS Moto PARFAIT pour 2025 (CarPlay + Promo -28%) 🏍️",
+    "description": "Test terrain et avis. Black Friday GPS Moto PARFAIT pour 2025 (CarPlay + Promo -28.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/JiXr-34c1Ps/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=JiXr-34c1Ps",
+    "embedUrl": "https://www.youtube.com/embed/JiXr-34c1Ps",
+    "keywords": ""
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=AYjFZ1QfCWY" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/AYjFZ1QfCWY/hqdefault.jpg"
+                 alt="Quel téléphone pour road trip ? — blackview avis motorola"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Blackview — Quel téléphone pour road trip ? Blackview X1 renfo</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Quel téléphone pour road trip ? Blackview X1 renforcé (pluie, chocs, froid)Black</h3>
+        <p class="card-desc">Test terrain et avis. Quel téléphone pour road trip ? Blackview X1 renforcé (pluie.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Quel téléphone pour road trip ? Blackview X1 renforcé (pluie"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Quel téléphone pour road trip ? Blackview X1 renforcé (pluie.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Quel téléphone pour road trip ? Blackview X1 renforcé (pluie, chocs, froid)Blackview X1 :",
+    "description": "Test terrain et avis. Quel téléphone pour road trip ? Blackview X1 renforcé (pluie.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/AYjFZ1QfCWY/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=AYjFZ1QfCWY",
+    "embedUrl": "https://www.youtube.com/embed/AYjFZ1QfCWY",
+    "keywords": "blackview avis motorola"
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=9U7WHJyX0go" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/9U7WHJyX0go/hqdefault.jpg"
+                 alt="Téléphone moto GPS off road pour"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Téléphone moto GPS off road pour voyager : meilleu</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Téléphone moto GPS off road pour voyager : meilleure solution ?</h3>
+        <p class="card-desc">Test terrain et avis. Téléphone moto GPS off road pour voyager : meilleure solutio.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Téléphone moto GPS off road pour voyager : meilleure solutio"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Téléphone moto GPS off road pour voyager : meilleure solutio.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Téléphone moto GPS off road pour voyager : meilleure solution ?",
+    "description": "Test terrain et avis. Téléphone moto GPS off road pour voyager : meilleure solutio.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/9U7WHJyX0go/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=9U7WHJyX0go",
+    "embedUrl": "https://www.youtube.com/embed/9U7WHJyX0go",
+    "keywords": ""
+  }
+}
+</script>
+            </div>
+        </section>
+
+    </div>
+
+    <a href="#" class="back-top" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})">↑</a>
+</body>
+</html>

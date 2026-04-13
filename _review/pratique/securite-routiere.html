@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sécurité Routière Moto — Trajectoires &amp; Conduite | LCDMH</title>
+    <meta name="description" content="21 vidéos sécurité routière moto : trajectoires, gendarmerie, radars, conduite défensive. Conseils terrain.">
+    <meta name="author" content="Yves – LCDMH">
+    <link rel="canonical" href="https://lcdmh.com/pratique/securite-routiere.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root{--orange:#e67e22;--orange-dark:#d35400;--noir:#1a1a1a;--bg:#f7f7f5;--card:#fff;--border:#e5e5e5;--muted:#777;--alt:#f0ede8;}
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--noir);line-height:1.65;font-size:16px}
+        h1,h2,h3{font-family:'Montserrat',sans-serif}
+        a{color:inherit;text-decoration:none}
+        .hero{position:relative;min-height:35vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+        .hero-content{position:relative;z-index:2;max-width:900px;padding:2rem;text-shadow:0 2px 15px rgba(0,0,0,.7)}
+        .hero-badge{display:inline-block;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.45rem 1.4rem;border-radius:50px;margin-bottom:1.4rem}
+        .hero h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;line-height:1.1;margin-bottom:1rem}
+        .hero p{font-size:1.05rem;color:rgba(255,255,255,.9);max-width:700px;margin:0 auto}
+        .container{max-width:1100px;margin:0 auto;padding:2rem 5%}
+        h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin:2rem 0 1rem}
+        .bar{width:52px;height:4px;background:var(--orange);border-radius:2px;margin:.3rem 0 1.5rem}
+        .hub-toc{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0 2.5rem;padding:1rem;background:#fff;border-radius:10px;border:1px solid var(--border)}
+        .hub-toc a{padding:.4rem 1rem;border-radius:20px;font-size:.9rem;font-weight:600;background:var(--alt);color:var(--noir);transition:.2s}
+        .hub-toc a:hover{background:var(--orange);color:#fff}
+        .hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-bottom:3rem}
+        .video-card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--border);transition:transform .2s,box-shadow .2s}
+        .video-card:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.08)}
+        .video-card .thumb{position:relative;aspect-ratio:16/9;overflow:hidden}
+        .video-card .thumb img{width:100%;height:100%;object-fit:cover}
+        .video-card .thumb .play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;background:rgba(0,0,0,.7);border-radius:50%;display:flex;align-items:center;justify-content:center}
+        .video-card .thumb .play-btn::after{content:'';border-left:18px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+        .video-card .card-body{padding:1rem 1.2rem}
+        .video-card .seo-meta{margin-bottom:.6rem}
+        .video-card .seo-meta p{margin:0;font-size:.8rem;color:var(--muted);line-height:1.4}
+        .video-card h3{font-size:1rem;font-weight:700;margin-bottom:.4rem;line-height:1.3}
+        .video-card .card-desc{font-size:.9rem;color:#555;line-height:1.5;margin-bottom:.6rem}
+        .video-card .card-link{display:inline-block;color:var(--orange);font-weight:600;font-size:.9rem}
+        .back-top{position:fixed;bottom:2rem;right:2rem;background:var(--orange);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;box-shadow:0 4px 12px rgba(0,0,0,.15);z-index:100;cursor:pointer}
+        @media(max-width:600px){.hub-grid{grid-template-columns:1fr}}
+    </style>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('/nav.html').then(r => r.text()).then(h => {
+            const d = document.getElementById('nav-placeholder');
+            if (d) d.innerHTML = h;
+        }).catch(() => {});
+        document.querySelector('.back-top')?.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    });
+    </script>
+
+    <!-- hreflang : ciblage francophone international -->
+    <link rel="alternate" hreflang="fr" href="https://lcdmh.com/pratique/securite-routiere.html">
+    <link rel="alternate" hreflang="x-default" href="https://lcdmh.com/pratique/securite-routiere.html">
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <section class="hero" style="background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('https://i.ytimg.com/vi/KGfovxM_Q7w/maxresdefault.jpg') center/cover">
+        <div class="hero-content">
+            <div class="hero-badge">🛡️ SÉCURITÉ</div>
+            <h1>Sécurité Routière Moto — Trajectoires &amp; Conduite</h1>
+            <p>21 vidéos sécurité routière moto : trajectoires, gendarmerie, radars, conduite défensive. Conseils terrain.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <nav class="hub-toc">
+            <a href="#trajectoires">Trajectoires de sécurité (14)</a>
+        </nav>
+
+        <section id="trajectoires">
+            <h2>Trajectoires de sécurité</h2>
+            <div class="bar"></div>
+            <div class="hub-grid">
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=KGfovxM_Q7w" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/KGfovxM_Q7w/hqdefault.jpg"
+                 alt="Trajectoires de sécurité avec la Gendarmerie. — sécurité routière moto"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛡️ Sujet : Trajectoires de sécurité avec la Gendarmerie. Perm</p>
+            <p>🎯 Pour qui : motards road trip</p>
+        </div>
+        <h3>Trajectoires de sécurité avec la Gendarmerie. Permis A2, débutant</h3>
+        <p class="card-desc">Trajectoires de sécurité avec la Gendarmerie. Permis A2, débutant.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Trajectoires de sécurité avec la Gendarmerie. Permis A2, débutant",
+  "description": "Trajectoires de sécurité avec la Gendarmerie. Permis A2, débutant.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/KGfovxM_Q7w/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=KGfovxM_Q7w",
+  "embedUrl": "https://www.youtube.com/embed/KGfovxM_Q7w",
+  "keywords": "sécurité routière moto, sécurité routière moto équipement, sécurité routière moto 2025, prevention routiere moto, journee securite routiere moto"
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=fUAJAq-UBCg" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/fUAJAq-UBCg/hqdefault.jpg"
+                 alt="Découvrez les secrets d&#x27;une conduite sécurisée — entretien moto"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛡️ Sujet : Découvrez les secrets d&#x27;une conduite sécurisée à m</p>
+            <p>🎯 Pour qui : motards road trip</p>
+        </div>
+        <h3>Découvrez les secrets d&#x27;une conduite sécurisée à moto 2024. Nouvelle stratégie</h3>
+        <p class="card-desc">Découvrez les secrets d&#x27;une conduite sécurisée à moto 2024. Nouvelle stratégie.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Découvrez les secrets d'une conduite sécurisée à moto 2024. Nouvelle stratégie",
+  "description": "Découvrez les secrets d'une conduite sécurisée à moto 2024. Nouvelle stratégie.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/fUAJAq-UBCg/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=fUAJAq-UBCg",
+  "embedUrl": "https://www.youtube.com/embed/fUAJAq-UBCg",
+  "keywords": "entretien moto, entretien moto honda, entretien moto a domicile, entretien moto lyon, entretien moto bmw"
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=mqrxymLts_0" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/mqrxymLts_0/hqdefault.jpg"
+                 alt="Virages Moto Débutant : Le SECRET — entretien moto"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛡️ Sujet : Virages Moto Débutant : Le SECRET pour Maîtriser s</p>
+            <p>🎯 Pour qui : motards road trip</p>
+        </div>
+        <h3>Virages Moto Débutant : Le SECRET pour Maîtriser sa Trajectoire (A2)</h3>
+        <p class="card-desc">Virages Moto Débutant : Le SECRET pour Maîtriser sa Trajectoire (A2).</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Virages Moto Débutant : Le SECRET pour Maîtriser sa Trajectoire (A2)",
+  "description": "Virages Moto Débutant : Le SECRET pour Maîtriser sa Trajectoire (A2).",
+  "thumbnailUrl": "https://i.ytimg.com/vi/mqrxymLts_0/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=mqrxymLts_0",
+  "embedUrl": "https://www.youtube.com/embed/mqrxymLts_0",
+  "keywords": "entretien moto, entretien moto honda, entretien moto a domicile, entretien moto lyon, entretien moto bmw"
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=W5IAaH9nrmw" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/W5IAaH9nrmw/hqdefault.jpg"
+                 alt="Maîtrisez les Virages Serrés et Épingles"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛡️ Sujet : Maîtrisez les Virages Serrés et Épingles avec nos </p>
+            <p>🎯 Pour qui : motards road trip</p>
+        </div>
+        <h3>Maîtrisez les Virages Serrés et Épingles avec nos Meilleures Méthodes !</h3>
+        <p class="card-desc">Maîtrisez les Virages Serrés et Épingles avec nos Meilleures Méthodes !.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Maîtrisez les Virages Serrés et Épingles avec nos Meilleures Méthodes !",
+  "description": "Maîtrisez les Virages Serrés et Épingles avec nos Meilleures Méthodes !.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/W5IAaH9nrmw/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=W5IAaH9nrmw",
+  "embedUrl": "https://www.youtube.com/embed/W5IAaH9nrmw",
+  "keywords": ""
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=f2Le-gDPWh4" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/f2Le-gDPWh4/hqdefault.jpg"
+                 alt="Équilibre Moto Basse Vitesse : Maîtrisez — équilibre moto basse vitesse m"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛡️ Sujet : Équilibre Moto Basse Vitesse : Maîtrisez le Lent e</p>
+            <p>🎯 Pour qui : motards road trip</p>
+        </div>
+        <h3>Équilibre Moto Basse Vitesse : Maîtrisez le Lent et Dites Adieu aux Petites Chut</h3>
+        <p class="card-desc">Équilibre Moto Basse Vitesse : Maîtrisez le Lent et Dites Adieu aux Petites Chut.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Équilibre Moto Basse Vitesse : Maîtrisez le Lent et Dites Adieu aux Petites Chutes !",
+  "description": "Équilibre Moto Basse Vitesse : Maîtrisez le Lent et Dites Adieu aux Petites Chut.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/f2Le-gDPWh4/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=f2Le-gDPWh4",
+  "embedUrl": "https://www.youtube.com/embed/f2Le-gDPWh4",
+  "keywords": "équilibre moto basse vitesse motor, filmer en moto, filmer en moto avec son téléphone, tourner en moto, comment filmer en moto"
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=sx5bO9q0uXg" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/sx5bO9q0uXg/hqdefault.jpg"
+                 alt="Moto Virage : Maîtrisez le Contre-Braquage — entretien moto"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛡️ Sujet : Moto Virage : Maîtrisez le Contre-Braquage pour de</p>
+            <p>🎯 Pour qui : motards road trip</p>
+        </div>
+        <h3>Moto Virage : Maîtrisez le Contre-Braquage pour des Courbes Précises et Sécurisé</h3>
+        <p class="card-desc">Moto Virage : Maîtrisez le Contre-Braquage pour des Courbes Précises et Sécurisé.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Moto Virage : Maîtrisez le Contre-Braquage pour des Courbes Précises et Sécurisées !",
+  "description": "Moto Virage : Maîtrisez le Contre-Braquage pour des Courbes Précises et Sécurisé.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/sx5bO9q0uXg/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=sx5bO9q0uXg",
+  "embedUrl": "https://www.youtube.com/embed/sx5bO9q0uXg",
+  "keywords": "entretien moto, entretien moto honda, entretien moto a domicile, entretien moto lyon, entretien moto bmw"
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=voweQPx-2FU" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/voweQPx-2FU/hqdefault.jpg"
+                 alt="Moto Virage Trop Vite : La — moto virage trop vite la strat"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛡️ Sujet : Moto Virage Trop Vite : La Stratégie Anti-Panique </p>
+            <p>🎯 Pour qui : motards road trip</p>
+        </div>
+        <h3>Moto Virage Trop Vite : La Stratégie Anti-Panique pour Gérer l&#x27;Imprévu !</h3>
+        <p class="card-desc">Moto Virage Trop Vite : La Stratégie Anti-Panique pour Gérer l&#x27;Imprévu !.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Moto Virage Trop Vite : La Stratégie Anti-Panique pour Gérer l'Imprévu !",
+  "description": "Moto Virage Trop Vite : La Stratégie Anti-Panique pour Gérer l'Imprévu !.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/voweQPx-2FU/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=voweQPx-2FU",
+  "embedUrl": "https://www.youtube.com/embed/voweQPx-2FU",
+  "keywords": "moto virage trop vite la stratégie anti-panique pour gérer l'imprévu annecy, moto virage trop vite moto que faire, entretien moto, entretien moto honda, entretien moto a domicile"
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=4I1R2cyZUH8" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/4I1R2cyZUH8/hqdefault.jpg"
+                 alt="Regard Virage Moto Lâcher Prise : — entretien moto"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛡️ Sujet : Regard Virage Moto Lâcher Prise : Maîtriser l&#x27;Art </p>
+            <p>🎯 Pour qui : motards road trip</p>
+        </div>
+        <h3>Regard Virage Moto Lâcher Prise : Maîtriser l&#x27;Art de la Courbe et de la Confianc</h3>
+        <p class="card-desc">Regard Virage Moto Lâcher Prise : Maîtriser l&#x27;Art de la Courbe et de la Confianc.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Regard Virage Moto Lâcher Prise : Maîtriser l'Art de la Courbe et de la Confiance",
+  "description": "Regard Virage Moto Lâcher Prise : Maîtriser l'Art de la Courbe et de la Confianc.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/4I1R2cyZUH8/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=4I1R2cyZUH8",
+  "embedUrl": "https://www.youtube.com/embed/4I1R2cyZUH8",
+  "keywords": "entretien moto, entretien moto honda, entretien moto a domicile, entretien moto lyon, entretien moto bmw"
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=MGITmq_HW_U" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/MGITmq_HW_U/hqdefault.jpg"
+                 alt="Virage Moto : Pencher ou Rester — virage moto motoblouz"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛡️ Sujet : Virage Moto : Pencher ou Rester Droit ? La Vérité </p>
+            <p>🎯 Pour qui : motards road trip</p>
+        </div>
+        <h3>Virage Moto : Pencher ou Rester Droit ? La Vérité sur l&#x27;Inclinaison en Courbe !</h3>
+        <p class="card-desc">Virage Moto : Pencher ou Rester Droit ? La Vérité sur l&#x27;Inclinaison en Courbe !.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Virage Moto : Pencher ou Rester Droit ? La Vérité sur l'Inclinaison en Courbe !",
+  "description": "Virage Moto : Pencher ou Rester Droit ? La Vérité sur l'Inclinaison en Courbe !.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/MGITmq_HW_U/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=MGITmq_HW_U",
+  "embedUrl": "https://www.youtube.com/embed/MGITmq_HW_U",
+  "keywords": "virage moto motoblouz, filmer en moto, filmer en moto avec son téléphone, tourner en moto, comment filmer en moto"
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=99e2C9w6Dlo" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/99e2C9w6Dlo/hqdefault.jpg"
+                 alt="Formation Trajectoires de Sécurité avec la — sécurité routière moto"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛡️ Sujet : Formation Trajectoires de Sécurité avec la Gendarm</p>
+            <p>🎯 Pour qui : motards road trip</p>
+        </div>
+        <h3>Formation Trajectoires de Sécurité avec la Gendarmerie - Permis A2 &amp; Débutants M</h3>
+        <p class="card-desc">Formation Trajectoires de Sécurité avec la Gendarmerie - Permis A2 &amp; Débutants M.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Formation Trajectoires de Sécurité avec la Gendarmerie - Permis A2 & Débutants Moto",
+  "description": "Formation Trajectoires de Sécurité avec la Gendarmerie - Permis A2 & Débutants M.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/99e2C9w6Dlo/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=99e2C9w6Dlo",
+  "embedUrl": "https://www.youtube.com/embed/99e2C9w6Dlo",
+  "keywords": "sécurité routière moto, sécurité routière moto équipement, sécurité routière moto 2025, prevention routiere moto, journee securite routiere moto"
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=dOZekuTmAQo" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/dOZekuTmAQo/hqdefault.jpg"
+                 alt="TRAJECTOIRE de SÉCURITÉ en VIRAGE - — trajectoire de sécurité en vir"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛡️ Sujet : TRAJECTOIRE de SÉCURITÉ en VIRAGE - Techniques ROA</p>
+            <p>🎯 Pour qui : motards road trip</p>
+        </div>
+        <h3>TRAJECTOIRE de SÉCURITÉ en VIRAGE - Techniques ROAD TRIP MOTO</h3>
+        <p class="card-desc">TRAJECTOIRE de SÉCURITÉ en VIRAGE - Techniques ROAD TRIP MOTO.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "TRAJECTOIRE de SÉCURITÉ en VIRAGE - Techniques ROAD TRIP MOTO",
+  "description": "TRAJECTOIRE de SÉCURITÉ en VIRAGE - Techniques ROAD TRIP MOTO.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/dOZekuTmAQo/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=dOZekuTmAQo",
+  "embedUrl": "https://www.youtube.com/embed/dOZekuTmAQo",
+  "keywords": "trajectoire de sécurité en virage - techniques road trip moto annecy, trajectoire de sécurité en virage - techniques road trip moto rumilly, trajectoire de sécurité en virage - techniques road trip moto haute-savoie, trajectoire de sécurité en virage - techniques road trip moto aix les bains, trajectoire de sécurité en virage - techniques road trip moto saint felix"
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=gbHb4ERt2Hs" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/gbHb4ERt2Hs/hqdefault.jpg"
+                 alt="Formation Trajectoires de Sécurité avec la — sécurité routière moto"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛡️ Sujet : Formation Trajectoires de Sécurité avec la Gendarm</p>
+            <p>🎯 Pour qui : motards road trip</p>
+        </div>
+        <h3>Formation Trajectoires de Sécurité avec la Gendarmerie - Permis A2 Débutant Moto</h3>
+        <p class="card-desc">Formation Trajectoires de Sécurité avec la Gendarmerie - Permis A2 Débutant Moto.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Formation Trajectoires de Sécurité avec la Gendarmerie - Permis A2 Débutant Moto",
+  "description": "Formation Trajectoires de Sécurité avec la Gendarmerie - Permis A2 Débutant Moto.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/gbHb4ERt2Hs/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=gbHb4ERt2Hs",
+  "embedUrl": "https://www.youtube.com/embed/gbHb4ERt2Hs",
+  "keywords": "sécurité routière moto, sécurité routière moto équipement, sécurité routière moto 2025, prevention routiere moto, journee securite routiere moto"
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=j9kawf2K6WE" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/j9kawf2K6WE/hqdefault.jpg"
+                 alt="Savoir rouler de partout en moto — filmer en moto"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛡️ Sujet : Savoir rouler de partout en moto - Techniques esse</p>
+            <p>🎯 Pour qui : motards road trip</p>
+        </div>
+        <h3>Savoir rouler de partout en moto - Techniques essentielles road trip #hondant110</h3>
+        <p class="card-desc">Savoir rouler de partout en moto - Techniques essentielles road trip #hondant110.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Savoir rouler de partout en moto - Techniques essentielles road trip #hondant1100 #capnord",
+  "description": "Savoir rouler de partout en moto - Techniques essentielles road trip #hondant110.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/j9kawf2K6WE/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=j9kawf2K6WE",
+  "embedUrl": "https://www.youtube.com/embed/j9kawf2K6WE",
+  "keywords": "filmer en moto, filmer en moto avec son téléphone, tourner en moto, comment filmer en moto, film moto en feu"
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=sqCw1HcqR70" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/sqCw1HcqR70/hqdefault.jpg"
+                 alt="TRAJECTOIRES DE SÉCURITÉ MOTO : Les — trajectoires de sécurité moto "
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛡️ Sujet : TRAJECTOIRES DE SÉCURITÉ MOTO : Les Clés pour des </p>
+            <p>🎯 Pour qui : motards road trip</p>
+        </div>
+        <h3>TRAJECTOIRES DE SÉCURITÉ MOTO : Les Clés pour des Road Trips PARFAITS ! #roadtri</h3>
+        <p class="card-desc">TRAJECTOIRES DE SÉCURITÉ MOTO : Les Clés pour des Road Trips PARFAITS ! #roadtri.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "TRAJECTOIRES DE SÉCURITÉ MOTO : Les Clés pour des Road Trips PARFAITS ! #roadtripmoto #hondant1100",
+  "description": "TRAJECTOIRES DE SÉCURITÉ MOTO : Les Clés pour des Road Trips PARFAITS ! #roadtri.",
+  "thumbnailUrl": "https://i.ytimg.com/vi/sqCw1HcqR70/hqdefault.jpg",
+  "contentUrl": "https://www.youtube.com/watch?v=sqCw1HcqR70",
+  "embedUrl": "https://www.youtube.com/embed/sqCw1HcqR70",
+  "keywords": "trajectoires de sécurité moto motobineuse, trajectoires de sécurité moto motoblouz, sécurité routière moto, sécurité routière moto équipement, sécurité routière moto 2025"
+}
+</script>
+            </div>
+        </section>
+
+    </div>
+
+    <a href="#" class="back-top" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})">↑</a>
+</body>
+</html>
