@@ -124,8 +124,14 @@ tr:hover td{background:var(--bg3)}
 .cta p{opacity:0.9;margin-bottom:20px}
 .cta-btn{display:inline-block;background:#fff;color:var(--orange);padding:12px 30px;border-radius:30px;text-decoration:none;font-weight:700}
 
-footer{text-align:center;padding:30px;color:var(--text2);font-size:14px}
-footer a{color:var(--orange);text-decoration:none}
+footer{background:#111;color:#fff;text-align:center;padding:2.5rem 1rem}
+.f-logo{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;margin-bottom:.5rem}
+.f-logo em{font-style:normal;color:var(--orange)}
+footer p{font-size:.82rem;color:rgba(255,255,255,.45);margin:.3rem 0}
+.f-nav{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.5rem;margin:.8rem 0 0;padding:0}
+.f-nav a{font-size:.82rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s}
+.f-nav a:hover{color:var(--orange)}
+.f-legal{font-size:.75rem;color:rgba(255,255,255,.3);margin-top:1rem;max-width:600px;margin-left:auto;margin-right:auto}
 
 @media(max-width:600px){
     .stats{flex-wrap:wrap;gap:15px}
@@ -605,9 +611,23 @@ footer a{color:var(--orange);text-decoration:none}
 
 <div class="maillage-piliers">
   <strong>📚 À lire aussi sur LCDMH</strong>
-  <a href="../pneus.html">🛞 Comparatif pneus moto 2026 — Dunlop Mutant, Michelin   <a href="../equipement.html">🧥 Équipement road trip — bagagerie, gants, vêtements testés terrain</a>
+  <a href="../pneus.html">🛞 Comparatif pneus moto 2026 — Dunlop Mutant, Michelin, Bridgestone</a>
+  <a href="../equipement.html">🧥 Équipement road trip — bagagerie, gants, vêtements testés terrain</a>
   <a href="../intercoms.html">🎧 Comparatif intercoms moto — Sena 50S, 60S, Cardo Packtalk</a>
+  <a href="../dunlop-mutant.html">🛞 Dunlop Mutant — fiche produit complète</a>
 </div>
 
 <footer>
-    <p>🏍️ <a href="https://lcdmh.c
+    <div class="f-logo">LC<em>D</em>MH</div>
+    <p>La Chaîne du Motard Heureux · Annecy, France</p>
+    <ul class="f-nav">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="../articles.html">Articles</a></li>
+        <li><a href="../pneus.html">Pneus</a></li>
+        <li><a href="../codes-promo.html">Codes promo</a></li>
+        <li><a href="../a-propos.html">À propos</a></li>
+    </ul>
+    <p class="f-legal">© 2026 LCDMH. Liens affiliés présents sur cette page — commissions perçues sans surcoût pour vous.</p>
+</footer>
+</body>
+</html>
