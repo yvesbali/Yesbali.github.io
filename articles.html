@@ -1149,72 +1149,119 @@ function getArticleBySlug(slug){
     return ARTICLES.find(article => article.slug === slug) || null;
 }
 
-function isValidEmail(email) {
-    return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email);
+function escapeHtml(str){
+    return String(str)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
 }
 
-form.addEventListener("submit", async function(e) {
-    e.preventDefault();
+function createArticleCard(article){
+    return `
+        <a href="${article.href}" class="article-card">
+            <div class="article-thumb">
+                <img src="${article.img}" alt="${escapeHtml(article.alt)}" loading="lazy">
+            </div>
+            <div class="article-body">
+                <span class="article-tag">${escapeHtml(article.tag)}</span>
+                <h3>${escapeHtml(article.title)}</h3>
+                <p>${escapeHtml(article.excerpt)}</p>
+                <span class="article-btn">Lire l'article →</span>
+            </div>
+        </a>
+    `;
+}
 
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const subject = document.getElementById("subject").value.trim();
-    const channel = document.getElementById("channel").value.trim();
-    const message = document.getElementById("message").value.trim();
+function createFeaturedMain(article){
+    if(!article){ return ""; }
+    return `
+        <div class="featured-image">
+            <img src="${article.img}" alt="${escapeHtml(article.alt)}" loading="eager">
+        </div>
+        <div class="featured-body">
+            <div class="meta-line">${escapeHtml(article.tag)} • Article à la une</div>
+            <h3>${escapeHtml(article.title)}</h3>
+            <p>${escapeHtml(article.excerpt)}</p>
+            <div class="featured-actions">
+                <a class="featured-btn featured-btn-primary" href="${article.href}">Lire l'article</a>
+                <a class="featured-btn featured-btn-secondary" href="#road-trips">Voir les catégories</a>
+            </div>
+        </div>
+    `;
+}
 
-    if (!name || !email || !message) {
-        showStatus("Merci de remplir les champs obligatoires.", "error");
-        return;
-    }
+function createFeaturedMini(article){
+    if(!article){ return ""; }
+    return `
+        <a href="${article.href}" class="featured-mini">
+            <div class="featured-mini-image">
+                <img src="${article.img}" alt="${escapeHtml(article.alt)}" loading="lazy">
+            </div>
+            <div class="featured-mini-body">
+                <div class="meta-line">${escapeHtml(article.tag)}</div>
+                <h3>${escapeHtml(article.title)}</h3>
+                <p>${escapeHtml(article.excerpt)}</p>
+            </div>
+        </a>
+    `;
+}
 
-    if (!isValidEmail(email)) {
-        showStatus("L’adresse email semble invalide.", "error");
-        return;
-    }
+function createPopularItem(article, index){
+    if(!article){ return ""; }
+    return `
+        <a href="${article.href}" class="popular-item">
+            <div class="popular-rank">${index + 1}</div>
+            <div>
+                <strong>${escapeHtml(article.title)}</strong>
+                <span>${escapeHtml(article.tag)}</span>
+            </div>
+        </a>
+    `;
+}
 
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Envoi en cours...";
+function renderPage(){
+    const featured = getArticleBySlug(FEATURED_SLUG) || ARTICLES[0];
+    const featuredSecondaries = FEATURED_SECONDARY_SLUGS
+        .map(getArticleBySlug)
+        .filter(Boolean)
+        .filter(article => article.slug !== featured.slug)
+        .slice(0, 2);
 
-    const payload = {
-        name: name,
-        email: email,
-        subject: subject,
-        channel: channel,
-        message: message,
-        source: "lcdmh-contact-page",
-        page_url: window.location.href,
-        site: "lcdmh.com",
-        submitted_at: new Date().toISOString()
-    };
+    const popularArticles = POPULAR_SLUGS
+        .map(getArticleBySlug)
+        .filter(Boolean)
+        .slice(0, 4);
 
     const roadTrips = ARTICLES.filter(article => article.category === "road-trips");
     const testsMateriel = ARTICLES.filter(article => article.category === "tests-materiel");
     const guidesPratiques = ARTICLES.filter(article => article.category === "guides-pratiques");
-    const testsMotos = ARTICLES.filter(article => article.category === "tests-motos");
-    const photoVideo = ARTICLES.filter(article => article.category === "photo-video");
-    try {
-        const response = await fetch(CONTACT_WEBHOOK_URL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(payload)
-        });
 
-        if (!response.ok) {
-            throw new Error("HTTP " + response.status);
-        }
-        showStatus("Message envoyé. Merci !", "success");
-    } catch (error) {
-        console.error('Erreur:', error);
-        showStatus("L'envoi a échoué. Réessaie dans quelques instants.", "error");
-    } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Envoyer";
-    }
-});
+    const elFeatMain = document.getElementById("featured-main");
+    if(elFeatMain) elFeatMain.innerHTML = createFeaturedMain(featured);
+    const elFeatSide = document.getElementById("featured-side");
+    if(elFeatSide) elFeatSide.innerHTML = featuredSecondaries.map(createFeaturedMini).join("");
+
+    const elRT = document.getElementById("grid-road-trips");
+    if(elRT) elRT.innerHTML = roadTrips.map(createArticleCard).join("");
+    const elTM = document.getElementById("grid-tests-materiel");
+    if(elTM) elTM.innerHTML = testsMateriel.map(createArticleCard).join("");
+    const elGP = document.getElementById("grid-guides-pratiques");
+    if(elGP) elGP.innerHTML = guidesPratiques.map(createArticleCard).join("");
+
+    const elPop = document.getElementById("popular-list");
+    if(elPop) elPop.innerHTML = popularArticles.map(createPopularItem).join("");
+
+    const elStat = document.getElementById("stat-total-articles");
+    if(elStat) elStat.textContent = String(ARTICLES.length);
+    const elFoot = document.getElementById("footer-count");
+    if(elFoot) elFoot.textContent = `📖 ${ARTICLES.length} articles publiés — Page articles mise à jour`;
+}
+
+document.addEventListener("DOMContentLoaded", renderPage);
 </script>
-<script src="../footer-loader.js" defer></script>
-<script src="../maillage.js" defer></script>
+<script src="footer-loader.js" defer></script>
+<script src="maillage.js" defer></script>
 </body>
 </html>
