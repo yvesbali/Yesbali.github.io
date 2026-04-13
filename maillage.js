@@ -1,4 +1,4 @@
-/**
+﻿/**
  * LCDMH — Maillage Interne Automatique
  * =====================================
  * 1. Bloc "À lire aussi" (articles liés par thème) — injecté avant le footer
@@ -133,7 +133,7 @@
     // Construire le HTML
     const linksHtml = related.map(page => {
       const info = PAGES[page];
-      return `<a href="${page}" class="maillage-link">${info.icon} ${info.title}</a>`;
+      return `<a href="/${page}" class="maillage-link">${info.icon} ${info.title}</a>`;
     }).join('\n');
 
     const blockHtml = `
@@ -190,7 +190,7 @@
           // Regex insensible à la casse, mot entier
           const regex = new RegExp(`\\b(${keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})\\b`, 'i');
           if (regex.test(html)) {
-            html = html.replace(regex, `<a href="${kl.url}" class="maillage-contextual" title="${kl.label}">$1</a>`);
+            html = html.replace(regex, `<a href="/${kl.url}" class="maillage-contextual" title="${kl.label}">$1</a>`);
             alreadyLinked.add(kl.url);
             modified = true;
             break; // Un seul match par keyword group
@@ -298,3 +298,4 @@
   }
 
 })();
+
