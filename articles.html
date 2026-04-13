@@ -1310,7 +1310,18 @@ form.addEventListener("submit", async function(e) {
         });
 
         if (!response.ok) {
-            throw
+            throw new Error("HTTP " + response.status);
+        }
+        showStatus("Message envoyé. Merci !", "success");
+    } catch (error) {
+        console.error('Erreur:', error);
+        showStatus("L'envoi a échoué. Réessaie dans quelques instants.", "error");
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Envoyer";
+    }
+});
+</script>
 <script src="../footer-loader.js" defer></script>
 <script src="../maillage.js" defer></script>
 </body>
