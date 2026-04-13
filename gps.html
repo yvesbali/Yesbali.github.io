@@ -57,11 +57,17 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
         .section { padding: 60px 6%; }
         
-        .hero-small {min-height:65vh;
-            background: linear-gradient(135deg, #1a3a5c 0%, #0d2b3f 100%);
-            color: white;
-            padding: 60px 6%;
+        .hero-small {
+            min-height: 45vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            color: #fff;
+            overflow: hidden;
+            background: linear-gradient(rgba(0,0,0,0.20), rgba(0,0,0,0.20)),
+                url('images/gps.png') center/cover no-repeat scroll;
+            padding: 60px 6%;
         }
         .hero-small h1 {
             font-size: clamp(2rem, 5vw, 3rem);
@@ -98,6 +104,32 @@
             padding: 1.5rem;
             font-size: 1.8rem;
             font-weight: 700;
+        }
+        .brand-subtitle {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            background: rgba(255,255,255,0.92);
+            border-radius: 5px;
+            padding: 3px 10px;
+            margin-top: 0.55rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .brand-verdict {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--muted);
+            margin: 0.8rem 0 0;
+            padding-top: 0.7rem;
+            border-top: 1px solid #f0f0f0;
+        }
+        .brand-verdict span {
+            color: var(--noir);
         }
         .brand-body {
             padding: 1.5rem;
@@ -200,65 +232,169 @@
         <a href="index.html">Accueil</a> › <span>GPS Moto</span>
     </div>
     <h1>GPS Moto : Tests & <em>Comparatifs</em></h1>
-    <p style="max-width: 700px; margin: 1rem auto 0;">Aoocci, Carpuride, Blackview, traceurs Komobi. Testés en conditions réelles sur 20 000 km.</p>
+    <p style="max-width: 700px; margin: 1rem auto 0;">Aoocci, Carpuride, Blackview, traceurs Komobi. Testés en conditions réelles sur plusieurs milliers de kilomètres.</p>
 </div>
 
 <section class="section">
     <div class="container">
         
-        <div class="brand-grid">
+        <p style="font-size:0.9rem;color:var(--muted);text-align:center;margin-bottom:2rem;font-style:italic;">✔ Tous les produits présentés ici ont été utilisés en conditions réelles : route, pluie, froid, longues distances.</p>
+
+        <!-- CATÉGORIE 1 : ÉCRANS DÉPORTÉS -->
+        <h3 style="font-family:'Montserrat',sans-serif;font-size:1rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin:0 0 1.5rem;border-bottom:2px solid #e5e5e5;padding-bottom:0.5rem;">📺 Écrans déportés</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-bottom:2.5rem;">
+
+            <!-- AOOCCI -->
             <div class="brand-card">
-                <div class="brand-header">AOOCCI</div>
+                <div class="brand-header" style="display:flex;justify-content:space-between;align-items:stretch;gap:1rem;">
+                    <div style="flex-shrink:0;">🧭 AOOCCI<br><span class="brand-subtitle">GPS moto offline</span></div>
+                    <div style="background:rgba(255,255,255,0.95);border-radius:8px;padding:0.8rem 1rem;flex:1;display:flex;flex-direction:column;justify-content:center;">
+                        <strong style="display:block;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.07em;color:#e67e22;margin-bottom:0.35rem;">À quoi ça sert ?</strong>
+                        <span style="font-size:0.88rem;font-weight:600;color:#1a1a1a;line-height:1.5;">Affiche GPS, dashcam & CarPlay sur un grand écran fixé au guidon — navigation complète même sans réseau 4G</span>
+                    </div>
+                </div>
                 <div class="brand-body">
-                    <p>GPS offline, Android, dashcam intégrée, TPMS</p>
                     <ul>
                         <li>Navigation hors réseau</li>
                         <li>CarPlay/Android Auto</li>
                         <li>Dashcam avant/arrière</li>
                         <li>Surveillance pression pneus</li>
                     </ul>
-                    <a href="aoocci.html" class="btn">VOIR LES TESTS →</a>
+                    <p class="brand-verdict">🎯 Idéal pour : <span>road trip sans réseau</span></p>
+                    <div style="margin:1rem 0;padding-top:0.9rem;border-top:1px solid #f0f0f0;">
+                        <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted);margin-bottom:0.6rem;">🎥 Tests terrain</p>
+                        <div style="display:flex;gap:0.5rem;">
+                            <a href="https://youtu.be/xj5-sH7pH2w" target="_blank" style="text-decoration:none;color:inherit;flex:1;">
+                                <div style="border-radius:8px;overflow:hidden;border:1px solid var(--border);">
+                                    <img src="https://img.youtube.com/vi/xj5-sH7pH2w/mqdefault.jpg" alt="Test Aoocci U6 GPS offline" style="width:100%;display:block;">
+                                    <p style="font-size:0.78rem;padding:0.4rem 0.6rem;margin:0;font-weight:600;line-height:1.3;color:#1a1a1a;">Test Aoocci U6 — GPS offline + dashcam</p>
+                                </div>
+                            </a>
+                            <a href="https://youtu.be/MVHMeX2rrok" target="_blank" style="text-decoration:none;color:inherit;flex:1;">
+                                <div style="border-radius:8px;overflow:hidden;border:1px solid var(--border);">
+                                    <img src="https://img.youtube.com/vi/MVHMeX2rrok/mqdefault.jpg" alt="Test Aoocci BX GPS moto" style="width:100%;display:block;">
+                                    <p style="font-size:0.78rem;padding:0.4rem 0.6rem;margin:0;font-weight:600;line-height:1.3;color:#1a1a1a;">Test Aoocci BX — miracle ou galère ?</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="aoocci.html" class="btn">Voir les tests terrain →</a>
                 </div>
             </div>
+
+            <!-- CARPURIDE -->
             <div class="brand-card">
-                <div class="brand-header" style="background: #d35400;">CARPURIDE</div>
+                <div class="brand-header" style="background:#d35400;display:flex;justify-content:space-between;align-items:stretch;gap:1rem;">
+                    <div style="flex-shrink:0;">📱 CARPURIDE<br><span class="brand-subtitle">Écran déporté CarPlay</span></div>
+                    <div style="background:rgba(255,255,255,0.95);border-radius:8px;padding:0.8rem 1rem;flex:1;display:flex;flex-direction:column;justify-content:center;">
+                        <strong style="display:block;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.07em;color:#d35400;margin-bottom:0.35rem;">À quoi ça sert ?</strong>
+                        <span style="font-size:0.88rem;font-weight:600;color:#1a1a1a;line-height:1.5;">Relie ton iPhone au guidon via CarPlay — écran 1000 nits lisible en plein soleil, décrochage rapide d'une main</span>
+                    </div>
+                </div>
                 <div class="brand-body">
-                    <p>Écrans CarPlay/Android Auto, radar BSD</p>
                     <ul>
                         <li>Écran 1000 nits</li>
                         <li>Radar angle mort (RS)</li>
                         <li>Commande au guidon</li>
                         <li>Compatibilité BMW</li>
                     </ul>
-                    <a href="carpuride.html" class="btn">VOIR LES TESTS →</a>
+                    <p class="brand-verdict">🎯 Idéal pour : <span>usage quotidien</span></p>
+                    <div style="margin:1rem 0;padding-top:0.9rem;border-top:1px solid #f0f0f0;">
+                        <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted);margin-bottom:0.6rem;">🎥 Tests terrain</p>
+                        <div style="display:flex;gap:0.5rem;">
+                            <a href="https://youtu.be/Q2OlIRiTFgc" target="_blank" style="text-decoration:none;color:inherit;flex:1;">
+                                <div style="border-radius:8px;overflow:hidden;border:1px solid var(--border);">
+                                    <img src="https://img.youtube.com/vi/Q2OlIRiTFgc/mqdefault.jpg" alt="Test Carpuride W702" style="width:100%;display:block;">
+                                    <p style="font-size:0.78rem;padding:0.4rem 0.6rem;margin:0;font-weight:600;line-height:1.3;color:#1a1a1a;">Test Carpuride W702 — CarPlay moto</p>
+                                </div>
+                            </a>
+                            <a href="https://youtu.be/Z658n_oLejg" target="_blank" style="text-decoration:none;color:inherit;flex:1;">
+                                <div style="border-radius:8px;overflow:hidden;border:1px solid var(--border);">
+                                    <img src="https://img.youtube.com/vi/Z658n_oLejg/mqdefault.jpg" alt="Test Carpuride W702 Pro radar BSD" style="width:100%;display:block;">
+                                    <p style="font-size:0.78rem;padding:0.4rem 0.6rem;margin:0;font-weight:600;line-height:1.3;color:#1a1a1a;">W702 Pro — écran 1000 nits + radar BSD</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="carpuride.html" class="btn">Voir les tests terrain →</a>
                 </div>
             </div>
-            <div class="brand-card">
-                <div class="brand-header" style="background: #27ae60;">BLACKVIEW</div>
-                <div class="brand-body">
-                    <p>Smartphone renforcé pour GPS offline</p>
-                    <ul>
-                        <li>Batterie 20 000 mAh</li>
-                        <li>IP68/IP69K étanche</li>
-                        <li>Vision nocturne</li>
-                        <li>Cartes hors ligne</li>
-                    </ul>
-                    <a href="blackview.html" class="btn">VOIR LES TESTS →</a>
+
+        </div>
+
+        <!-- CATÉGORIE 2+3 : BLACKVIEW + KOMOBI côte à côte -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-bottom:2rem;">
+
+            <!-- BLACKVIEW -->
+            <div>
+                <h3 style="font-family:'Montserrat',sans-serif;font-size:1rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin:0 0 1.2rem;border-bottom:2px solid #e5e5e5;padding-bottom:0.5rem;">📲 Téléphone renforcé</h3>
+                <div class="brand-card">
+                    <div class="brand-header" style="background:#27ae60;display:flex;justify-content:space-between;align-items:stretch;gap:1.2rem;">
+                        <div style="flex-shrink:0;">📲 BLACKVIEW<br><span class="brand-subtitle">Téléphone renforcé GPS</span></div>
+                        <div style="background:rgba(255,255,255,0.95);border-radius:8px;padding:0.9rem 1rem;flex:1;display:flex;flex-direction:column;justify-content:center;">
+                            <strong style="display:block;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.07em;color:#27ae60;margin-bottom:0.35rem;">À quoi ça sert ?</strong>
+                            <span style="font-size:0.85rem;font-weight:600;color:#1a1a1a;line-height:1.5;">Smartphone étanche & incassable : remplace ton GPS, tient plusieurs jours. IP68/IP69K, batterie 20 000 mAh — il encaisse ce que les autres ne supportent pas.</span>
+                        </div>
+                    </div>
+                    <div class="brand-body">
+                        <div style="display:flex;gap:1rem;align-items:stretch;">
+                            <ul style="flex:1;margin:0;align-self:center;">
+                                <li>Batterie 20 000 mAh</li>
+                                <li>IP68/IP69K étanche</li>
+                                <li>Vision nocturne</li>
+                                <li>Cartes hors ligne</li>
+                            </ul>
+                            <a href="https://youtu.be/_lV1S1_JXd0" target="_blank" style="text-decoration:none;color:inherit;flex:0 0 46%;display:flex;flex-direction:column;">
+                                <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border);position:relative;flex:1;display:flex;flex-direction:column;">
+                                    <img src="https://img.youtube.com/vi/_lV1S1_JXd0/hqdefault.jpg" alt="Test Blackview Xplore X1 road trip moto" style="width:100%;object-fit:cover;display:block;height:148px;">
+                                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);width:44px;height:44px;background:rgba(0,0,0,0.7);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+                                        <div style="width:0;height:0;border-style:solid;border-width:8px 0 8px 16px;border-color:transparent transparent transparent #fff;margin-left:4px;"></div>
+                                    </div>
+                                    <p style="font-size:0.75rem;padding:0.45rem 0.6rem;margin:0;font-weight:600;line-height:1.3;color:#1a1a1a;background:#fff;">Blackview X1 — testé en conditions extrêmes</p>
+                                </div>
+                            </a>
+                        </div>
+                        <p class="brand-verdict" style="margin-top:1rem;">🎯 Idéal pour : <span>conditions extrêmes</span></p>
+                        <a href="blackview.html" class="btn">Voir les tests terrain →</a>
+                    </div>
                 </div>
             </div>
-            <div class="brand-card">
-                <div class="brand-header" style="background: #3498db;">KOMOBI</div>
-                <div class="brand-body">
-                    <p>Traceur GPS antivol avec détection chute</p>
-                    <ul>
-                        <li>Localisation temps réel</li>
-                        <li>Alarme anti-vol</li>
-                        <li>Détection chute (eCall)</li>
-                        <li>Télémetrie</li>
-                    </ul>
-                    <a href="komobi.html" class="btn">VOIR LES TESTS →</a>
+
+            <!-- KOMOBI -->
+            <div>
+                <h3 style="font-family:'Montserrat',sans-serif;font-size:1rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin:0 0 1.2rem;border-bottom:2px solid #e5e5e5;padding-bottom:0.5rem;">🛰️ Tracker GPS</h3>
+                <div class="brand-card">
+                    <div class="brand-header" style="background:#3498db;display:flex;justify-content:space-between;align-items:stretch;gap:1.2rem;">
+                        <div style="flex-shrink:0;">🛰️ KOMOBI<br><span class="brand-subtitle">Tracker GPS / antivol</span></div>
+                        <div style="background:rgba(255,255,255,0.95);border-radius:8px;padding:0.9rem 1rem;flex:1;display:flex;flex-direction:column;justify-content:center;">
+                            <strong style="display:block;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.07em;color:#3498db;margin-bottom:0.35rem;">À quoi ça sert ?</strong>
+                            <span style="font-size:0.85rem;font-weight:600;color:#1a1a1a;line-height:1.5;">Discret sous la carrosserie : alerte si ta moto bouge, détecte la chute et prévient tes proches & les secours automatiquement — même inconscient.</span>
+                        </div>
+                    </div>
+                    <div class="brand-body">
+                        <div style="display:flex;gap:1rem;align-items:stretch;">
+                            <ul style="flex:1;margin:0;align-self:center;">
+                                <li>Localisation temps réel</li>
+                                <li>Alarme anti-vol</li>
+                                <li>Détection chute (eCall)</li>
+                                <li>Télémétrie</li>
+                            </ul>
+                            <a href="https://youtu.be/qO7YMCBp-28" target="_blank" style="text-decoration:none;color:inherit;flex:0 0 46%;display:flex;flex-direction:column;">
+                                <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border);position:relative;flex:1;display:flex;flex-direction:column;">
+                                    <img src="https://img.youtube.com/vi/qO7YMCBp-28/hqdefault.jpg" alt="Test Komobi GPS antivol détection chute moto" style="width:100%;object-fit:cover;display:block;height:148px;">
+                                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);width:44px;height:44px;background:rgba(0,0,0,0.7);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+                                        <div style="width:0;height:0;border-style:solid;border-width:8px 0 8px 16px;border-color:transparent transparent transparent #fff;margin-left:4px;"></div>
+                                    </div>
+                                    <p style="font-size:0.75rem;padding:0.45rem 0.6rem;margin:0;font-weight:600;line-height:1.3;color:#1a1a1a;background:#fff;">Komobi — GPS, alerte chute &amp; antivol en conditions réelles</p>
+                                </div>
+                            </a>
+                        </div>
+                        <p class="brand-verdict" style="margin-top:1rem;">🎯 Idéal pour : <span>sécurité moto</span></p>
+                        <a href="komobi.html" class="btn">Voir les tests terrain →</a>
+                    </div>
                 </div>
             </div>
+
         </div>
         
         <h2 style="margin: 3rem 0 1.5rem;">📊 Comparatif rapide</h2>
@@ -291,24 +427,67 @@
             </div>
         </div>
         
-        <h2 style="margin: 3rem 0 1.5rem;">🎥 Tests vidéo récents</h2>
+        <h2 style="margin: 3rem 0 0.5rem;">🎥 Tests terrain récents</h2>
+        <p style="font-size:0.88rem;color:var(--muted);margin-bottom:1.5rem;">Tous les produits de cette page ont été testés en conditions réelles : route, pluie, froid, longues distances.</p>
         
-        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
-            <a href="https://youtu.be/xj5-sH7pH2w" target="_blank" style="text-decoration: none; color: inherit; width: 280px;">
-                <div style="border-radius: 12px; overflow: hidden; background: white; border: 1px solid var(--border);">
-                    <img alt="Miniature vidéo test GPS moto - LCDMH" src="https://img.youtube.com/vi/xj5-sH7pH2w/hqdefault.jpg" style="width: 100%;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem;">
+            <a href="https://youtu.be/xj5-sH7pH2w" target="_blank" style="text-decoration: none; color: inherit;">
+                <div style="border-radius: 12px; overflow: hidden; background: white; border: 1px solid var(--border); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                    <img alt="Test Aoocci U6 GPS moto offline" src="https://img.youtube.com/vi/xj5-sH7pH2w/hqdefault.jpg" style="width: 100%; display: block;">
                     <div style="padding: 1rem;">
-                        <h3 style="font-size: 1rem;">Test Aoocci U6</h3>
-                        <p style="color: var(--muted);">GPS offline + dashcam</p>
+                        <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--orange);">AOOCCI</span>
+                        <h3 style="font-size: 0.95rem; margin-top: 0.3rem;">Test Aoocci U6</h3>
+                        <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.2rem;">GPS offline + dashcam</p>
                     </div>
                 </div>
             </a>
-            <a href="https://youtu.be/Q2OlIRiTFgc" target="_blank" style="text-decoration: none; color: inherit; width: 280px;">
-                <div style="border-radius: 12px; overflow: hidden; background: white; border: 1px solid var(--border);">
-                    <img alt="Miniature vidéo test GPS moto - LCDMH" src="https://img.youtube.com/vi/Q2OlIRiTFgc/hqdefault.jpg" style="width: 100%;">
+            <a href="https://youtu.be/YQkKJ7BOvBY" target="_blank" style="text-decoration: none; color: inherit;">
+                <div style="border-radius: 12px; overflow: hidden; background: white; border: 1px solid var(--border); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                    <img alt="Test GPS Offline Aoocci - LCDMH" src="https://img.youtube.com/vi/YQkKJ7BOvBY/hqdefault.jpg" style="width: 100%; display: block;">
                     <div style="padding: 1rem;">
-                        <h3 style="font-size: 1rem;">Test Carpuride W702</h3>
-                        <p style="color: var(--muted);">CarPlay/Android Auto</p>
+                        <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--orange);">AOOCCI</span>
+                        <h3 style="font-size: 0.95rem; margin-top: 0.3rem;">GPS Offline U6 en balade</h3>
+                        <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.2rem;">Navigation hors réseau</p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://youtu.be/Q2OlIRiTFgc" target="_blank" style="text-decoration: none; color: inherit;">
+                <div style="border-radius: 12px; overflow: hidden; background: white; border: 1px solid var(--border); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                    <img alt="Test Carpuride W702 Pro GPS moto" src="https://img.youtube.com/vi/Q2OlIRiTFgc/hqdefault.jpg" style="width: 100%; display: block;">
+                    <div style="padding: 1rem;">
+                        <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#d35400;">CARPURIDE</span>
+                        <h3 style="font-size: 0.95rem; margin-top: 0.3rem;">Test Carpuride W702</h3>
+                        <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.2rem;">CarPlay/Android Auto</p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://youtu.be/Z658n_oLejg" target="_blank" style="text-decoration: none; color: inherit;">
+                <div style="border-radius: 12px; overflow: hidden; background: white; border: 1px solid var(--border); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                    <img alt="Test Carpuride W702 Pro - LCDMH" src="https://img.youtube.com/vi/Z658n_oLejg/hqdefault.jpg" style="width: 100%; display: block;">
+                    <div style="padding: 1rem;">
+                        <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#d35400;">CARPURIDE</span>
+                        <h3 style="font-size: 0.95rem; margin-top: 0.3rem;">Test W702 Pro en détail</h3>
+                        <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.2rem;">Écran 1000 nits, radar BSD</p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://youtu.be/_lV1S1_JXd0" target="_blank" style="text-decoration: none; color: inherit;">
+                <div style="border-radius: 12px; overflow: hidden; background: white; border: 1px solid var(--border); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                    <img alt="Test Blackview Xplore X1 moto road trip" src="https://img.youtube.com/vi/_lV1S1_JXd0/hqdefault.jpg" style="width: 100%; display: block;">
+                    <div style="padding: 1rem;">
+                        <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#27ae60;">BLACKVIEW</span>
+                        <h3 style="font-size: 0.95rem; margin-top: 0.3rem;">Blackview Xplore X1</h3>
+                        <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.2rem;">Téléphone renforcé road trip</p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://youtu.be/qO7YMCBp-28" target="_blank" style="text-decoration: none; color: inherit;">
+                <div style="border-radius: 12px; overflow: hidden; background: white; border: 1px solid var(--border); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                    <img alt="Test Komobi GPS antivol tracker moto" src="https://img.youtube.com/vi/qO7YMCBp-28/hqdefault.jpg" style="width: 100%; display: block;">
+                    <div style="padding: 1rem;">
+                        <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#3498db;">KOMOBI</span>
+                        <h3 style="font-size: 0.95rem; margin-top: 0.3rem;">Test Komobi : GPS, antivol, chute</h3>
+                        <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.2rem;">Tracker GPS &amp; eCall moto</p>
                     </div>
                 </div>
             </a>
@@ -352,6 +531,19 @@
                 <h3 style="font-family:'Montserrat',sans-serif;font-size:1rem;color:#3498db;margin-bottom:.6rem;">Sécurité antivol</h3>
                 <p style="font-size:.95rem;color:#444;line-height:1.7;">Tu laisses ta moto dehors ? Le traceur Komobi envoie une alerte en temps réel et détecte la chute (eCall). À coupler avec un GPS nav.</p>
             </div>
+        </div>
+
+        <!-- TRACKER GPS -->
+        <h2 style="font-family:'Montserrat',sans-serif;font-size:1.5rem;margin:2.5rem 0 1rem;">📍 Tracker GPS moto : utile ou gadget ?</h2>
+        <div style="width:52px;height:4px;background:#e67e22;border-radius:2px;margin:.5rem 0 1.5rem"></div>
+        <p>En plus de la navigation, certains motards utilisent un tracker GPS pour la sécurité : antivol, détection de chute, suivi à distance.</p>
+        <p>J'ai testé des solutions comme le Komobi, et il faut bien comprendre leurs limites.</p>
+        <p><strong>Un tracker GPS ne remplace pas un système de sécurité complet.</strong></p>
+        <p>Beaucoup de fonctions reposent sur le téléphone : connexion Bluetooth, réseau mobile, autonomie… En cas de chute ou d'éloignement, certaines limites apparaissent.</p>
+        <p>Par exemple, un airbag connecté ou un tracker seul ne suffisent pas toujours. La fiabilité dépend du contexte réel : distance, réseau, état du téléphone.</p>
+        <div style="background:#f0f4fb;border-left:4px solid #3498db;border-radius:0 10px 10px 0;padding:1.2rem 1.5rem;margin:1.5rem 0 2rem;">
+            <p style="margin:0;font-size:.95rem;">👉 Pour comprendre les limites en conditions réelles, voir mon retour complet sur les systèmes de sécurité moto :<br>
+            <a href="/securite.html" style="color:#1a1a1a;font-weight:700;text-decoration:none;">→ Airbag moto, tracker GPS : ce qui fonctionne vraiment</a></p>
         </div>
 
         <!-- LIENS ARTICLES -->
@@ -409,10 +601,4 @@
         <li><a href="aoocci.html" style="color:rgba(255,255,255,.6);text-decoration:none;font-size:.9rem;">Aoocci</a></li>
         <li><a href="carpuride.html" style="color:rgba(255,255,255,.6);text-decoration:none;font-size:.9rem;">Carpuride</a></li>
         <li><a href="komobi.html" style="color:rgba(255,255,255,.6);text-decoration:none;font-size:.9rem;">Komobi</a></li>
-        <li><a href="contact.html" style="color:rgba(255,255,255,.6);text-decoration:none;font-size:.9rem;">Contact</a></li>
-        <li><a href="https://www.youtube.com/@LCDMH" target="_blank" style="color:rgba(255,255,255,.6);text-decoration:none;font-size:.9rem;">YouTube</a></li>
-    </ul>
-    <p style="margin-top:1rem;font-size:.8rem;color:rgba(255,255,255,.3);">&copy; 2026 LCDMH &mdash; La Chaine du Motard Heureux</p>
-</footer>
-</body>
-</html>
+        <li><a href="contact.html" style=
