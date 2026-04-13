@@ -140,8 +140,36 @@ footer a{color:var(--orange);text-decoration:none}
 .maillage-piliers a{display:block;color:#1a1a1a;font-weight:600;padding:.2rem 0;font-size:.93rem;border-bottom:1px solid rgba(0,0,0,.07)}
 .maillage-piliers a:last-child{border-bottom:none}
 .maillage-piliers a:hover{color:#e67e22}
-</style>
-</style>
+
+    .buy-box{background:#e67e22;border-radius:14px;padding:1.4rem 1.8rem;margin:2rem 0;display:flex;gap:1.1rem;align-items:flex-start}
+    .buy-icon{font-size:1.8rem;flex-shrink:0}
+    .buy-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.55rem;color:rgba(255,255,255,.9)}
+    .buy-text{font-size:.93rem;line-height:1.7;color:rgba(255,255,255,.92);margin:0 0 1rem}
+    .buy-text strong{color:#fff}
+    .buy-btns{display:flex;flex-wrap:wrap;gap:.8rem}
+    .buy-btn{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.45);color:#fff;font-weight:700;font-size:.88rem;padding:.55rem 1.1rem;border-radius:50px;text-decoration:none}
+    .buy-btn span{opacity:.75;font-size:.75rem;font-weight:400}
+    .buy-btn:hover{background:rgba(255,255,255,.3)}
+    /* Commentaires dépliables */
+    .comments-hidden{display:none}
+    .comments-toggle{display:inline-flex;align-items:center;gap:.5rem;background:none;border:2px solid var(--orange);color:var(--orange);font-family:'Montserrat',sans-serif;font-weight:700;font-size:.9rem;padding:.6rem 1.4rem;border-radius:50px;cursor:pointer;margin:1rem 0;transition:all .2s}
+    .comments-toggle:hover{background:var(--orange);color:#fff}
+    </style>
+
+    .buy-box{background:#e67e22;border-radius:14px;padding:1.4rem 1.8rem;margin:2rem 0;display:flex;gap:1.1rem;align-items:flex-start}
+    .buy-icon{font-size:1.8rem;flex-shrink:0}
+    .buy-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.55rem;color:rgba(255,255,255,.9)}
+    .buy-text{font-size:.93rem;line-height:1.7;color:rgba(255,255,255,.92);margin:0 0 1rem}
+    .buy-text strong{color:#fff}
+    .buy-btns{display:flex;flex-wrap:wrap;gap:.8rem}
+    .buy-btn{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.45);color:#fff;font-weight:700;font-size:.88rem;padding:.55rem 1.1rem;border-radius:50px;text-decoration:none}
+    .buy-btn span{opacity:.75;font-size:.75rem;font-weight:400}
+    .buy-btn:hover{background:rgba(255,255,255,.3)}
+    /* Commentaires dépliables */
+    .comments-hidden{display:none}
+    .comments-toggle{display:inline-flex;align-items:center;gap:.5rem;background:none;border:2px solid var(--orange);color:var(--orange);font-family:'Montserrat',sans-serif;font-weight:700;font-size:.9rem;padding:.6rem 1.4rem;border-radius:50px;cursor:pointer;margin:1rem 0;transition:all .2s}
+    .comments-toggle:hover{background:var(--orange);color:#fff}
+    </style>
 
 <meta property="og:url" content="https://lcdmh.com/articles/dunlop-mutant-vs-bridgestone-t33-le-combat-quel-pneu-choisir.html">
 <meta property="og:type" content="website">
@@ -243,9 +271,18 @@ footer a{color:var(--orange);text-decoration:none}
 <h2>Verdict : Mon choix, et pourquoi</h2>
 
 <p>Les deux pneus sont bons, mais ils ne s'adressent pas au même public. Personnellement, je pense que je vais rester sur le T33 pour mes prochains road trips. La longévité est un critère important pour moi, et j'ai besoin d'un pneu qui me mette en confiance sur toutes les surfaces. Le mutant est fun, mais trop gourmand en kilomètres !</p>
-    </article>
     
-    
+<div class="buy-box">
+    <div class="buy-icon">🛒</div>
+    <div class="buy-content">
+        <div class="buy-title">Commander le Mutant ou le T33 — même prix, tu me soutiens</div>
+        <p class="buy-text">Commande via ces liens : <strong>tu paies exactement le même prix</strong>, et je touche une petite commission qui finance les prochains tests. Merci si tu le fais.</p>
+        <div class="buy-btns">
+            <a href="https://www.awin1.com/cread.php?awinmid=14485&awinaffid=2753560" target="_blank" rel="nofollow sponsored" class="buy-btn">🛞 123pneus.fr <span>— large choix</span></a>
+            <a href="https://www.awin1.com/cread.php?awinmid=7403&awinaffid=2753560&ued=https%3A%2F%2Fwww.pneus-moto.fr%2F" target="_blank" rel="nofollow sponsored" class="buy-btn">🛞 pneus-moto.fr <span>— 100% moto</span></a>
+        </div>
+    </div>
+</div>
     
     <h2>🔍 Produits mentionnés</h2>
 <div class="product-grid">
@@ -338,7 +375,10 @@ footer a{color:var(--orange);text-decoration:none}
             </div>
         </div>
 
-        <div class="comment-card">
+        
+
+<div class="comments-hidden" id="extra-comments">
+<div class="comment-card">
             <div class="comment-header">
                 <div class="comment-avatar">@</div>
                 <div class="comment-meta">
@@ -416,6 +456,9 @@ footer a{color:var(--orange);text-decoration:none}
                     <div class="comment-date">2026-03-29</div>
                 </div>
             </div>
+</div>
+<button class="comments-toggle" onclick="toggleComments(this)">▼ Voir les 6 autres avis</button>
+
             <div class="comment-text">Super merci pour le retour. J'ai déjà des T33 sur ma T9, montés l'année dernière, vu le kilométrage que je réalise, je pense qu'ils vont faire 2-3 ans. Il restera plus qu'à  tester le dunlop Roasdsmart IV, pour toi normalement version GT, pour moi version SP, "qui disent" qu'il a une meilleure longévité sur la bande de roulement, et qu'il tient mieux que le mouillé que le RSIII</div>
             <div class="comment-footer">
                 <span class="comment-likes"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> 1</span>
@@ -471,5 +514,17 @@ footer a{color:var(--orange);text-decoration:none}
     <p>Mis à jour le 02/04/2026</p>
 </footer>
 <script src="../maillage.js"></script>
+<script>
+function toggleComments(btn){
+    var el = document.getElementById('extra-comments');
+    if(el.style.display==='grid'||el.classList.contains('open')){
+        el.style.display='none';
+        btn.textContent='▼ Voir les 6 autres avis';
+    } else {
+        el.style.display='grid';
+        btn.textContent='▲ Masquer les avis';
+    }
+}
+</script>
 </body>
 </html>
