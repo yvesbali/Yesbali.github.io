@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /LCDMH_Cadrage_Projet.html
+Disallow: /nav.html
+Disallow: /widget-roadtrip-snippet.html
+Disallow: /roadtrips/maquette_capnord_complete_v2.html
 
 Sitemap: https://lcdmh.com/sitemap.xml
