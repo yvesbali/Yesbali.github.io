@@ -89,3 +89,18 @@
     padding: 25px 15px 40px;
   }
 }
+
+/* --- Encart note personnelle (pneus, etc.) --- */
+.note-perso {
+  background: #f5f0ea;
+  padding: 22px 28px;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  margin: 2rem 0;
+}
+.note-perso p {
+  margin: 0 0 .6rem 0;
+}
+.note-perso p:last-child {
+  margin: 0;
+}
