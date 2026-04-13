@@ -51,3 +51,40 @@ Claude prépare les fichiers, tu lances le push.
 ## 9. Pas de réponses inventées
 Préférence utilisateur permanente : Claude ne doit jamais inventer de réponse
 ni mentir pour couvrir une incertitude. Si Claude ne sait pas, il le dit.
+
+## 10. Scripting défensif OBLIGATOIRE pour toute opération multi-pages
+Aucun script ne doit appliquer un remplacement « aveugle » à plusieurs pages
+en supposant qu'elles sont toutes identiques. C'est ce qui a produit aujourd'hui
+les doubles footers, les vignettes cassées et les structures orphelines — des
+bugs qui sont passés inaperçus pendant plusieurs cycles de modifications.
+
+Protocole obligatoire pour tout script qui touche > 1 page HTML :
+
+### Étape 1 — Scan préalable (lecture seule)
+Le script lit CHAQUE page et enregistre en mémoire :
+- Présence / absence du motif à modifier
+- Nombre d'occurrences du motif (doit être exactement 1, sauf cas prévu)
+- Présence de marqueurs de structure attendus (`</head>`, `</body>`, `<footer>`, etc.)
+- Particularités détectées (balises déjà présentes, variantes d'écriture, encodage)
+
+### Étape 2 — Classification des pages
+À partir du scan, le script classe chaque page dans 3 listes :
+- ✅ Pages conformes au motif → modification appliquée
+- ⏭️ Pages déjà à jour (motif cible déjà présent) → ignorées
+- ⚠️ Pages à structure particulière → **non modifiées**, listées pour inspection manuelle
+
+### Étape 3 — Rapport avant écriture
+Avant d'écrire quoi que ce soit, le script affiche le rapport des 3 listes.
+L'utilisateur valide avant que les écritures ne s'exécutent.
+
+### Étape 4 — Écriture seulement sur les pages conformes
+Seules les pages de la liste ✅ sont modifiées. Les pages ⚠️ sont traitées
+au cas par cas ensuite, pas par le script global.
+
+### Règle d'or
+Si tu ne peux pas garantir que le motif sera trouvé **une seule fois et au bon endroit**
+sur chaque page cible, tu n'écris PAS le script. Tu traites page par page.
+
+Rappel du contexte : sans ce protocole, on a fait passer 10 fois les mêmes pages
+dans des scripts qui introduisaient des bugs silencieux. Seule la détection
+humaine visuelle a permis de les repérer. Ce n'est pas acceptable.
