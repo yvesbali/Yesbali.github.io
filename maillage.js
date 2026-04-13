@@ -1,4 +1,4 @@
-﻿/**
+/**
  * LCDMH — Maillage Interne Automatique
  * =====================================
  * 1. Bloc "À lire aussi" (articles liés par thème) — injecté avant le footer
@@ -298,4 +298,5 @@
   }
 
 })();
+
 
