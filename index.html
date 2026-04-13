@@ -442,7 +442,14 @@
             .home-section{padding:60px 0}
             .home-hero{min-height:38vh} /* mobile réduit — demande Yves */
         }
-    </style>
+        footer{background:var(--noir);color:rgba(255,255,255,.65);padding:2.8rem 6%;margin-top:4rem;text-align:center}
+.f-logo{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:#fff}
+.f-logo em{font-style:normal;color:var(--orange)}
+.f-nav{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.5rem;margin:.8rem 0}
+.f-nav a{font-size:.8rem;color:rgba(255,255,255,.55)}
+.f-nav a:hover{color:var(--orange)}
+.f-legal{font-size:.76rem;color:rgba(255,255,255,.3);margin-top:1.1rem;line-height:1.7}
+        </style>
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="shortcut icon" href="/favicon.ico">
 </head>
@@ -865,26 +872,19 @@
 <!-- ======================================== -->
 <!-- === FOOTER ============================= -->
 <!-- ======================================== -->
-<footer class="home-footer">
-    <div class="home-footer__logo">LC<em>D</em>MH</div>
-    <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">Le Coin Des Motards Heureux · Annecy, France</p>
-    <ul class="home-footer__links">
-        <li><a href="/roadtrips.html">Road trips</a></li>
-        <li><a href="/articles.html">Articles</a></li>
-        <li><a href="/gps.html">GPS</a></li>
-        <li><a href="/pneus.html">Pneus</a></li>
-        <li><a href="/intercoms.html">Intercoms</a></li>
-        <li><a href="/equipement.html">Équipement</a></li>
-        <li><a href="/codes-promo.html">Codes promo</a></li>
-        <li><a href="/a-propos.html">À propos</a></li>
-        <li><a href="/contact.html">Contact</a></li>
-        <li><a href="/sitemap.html">Plan du site</a></li>
-        <li><a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
+<footer>
+    <div class="f-logo">LC<em>D</em>MH</div>
+    <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">La Chaîne du Motard Heureux · Annecy, France</p>
+    <ul class="f-nav">
+        <li><a href="codes-promo.html">Codes promo</a></li>
+        <li><a href="carpuride.html">Carpuride</a></li>
+        <li><a href="aferiy.html">AFERIY</a></li>
+        <li><a href="komobi.html">Komobi</a></li>
+        <li><a href="https://www.youtube.com/@LCDMH">YouTube</a></li>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
     </ul>
-    <p class="home-footer__legal">
-        Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>
-        LCDMH © 2026 — Yves · Annecy, France
-    </p>
+    <p class="f-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves · Annecy, France</p>
 </footer>
 
 <!-- ======================================== -->
@@ -917,4 +917,5 @@
                 }
                 if(!firstLink) return;
                 var codePart = '';
- 
+</body>
+</html>

@@ -157,15 +157,50 @@ Ce bloc se place immédiatement après `<body>`, avant tout contenu.
 
 ## 11. Footer
 
+Le footer de référence est celui de `olight.html`. Il est **sobre, lisible, identitaire** — à appliquer sur toutes les pages du site.
+
+### CSS (à inclure dans le `<style>` de chaque page)
+```css
+footer{background:var(--noir);color:rgba(255,255,255,.65);padding:2.8rem 6%;margin-top:4rem;text-align:center}
+.f-logo{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:#fff}
+.f-logo em{font-style:normal;color:var(--orange)}
+.f-nav{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.5rem;margin:.8rem 0}
+.f-nav a{font-size:.8rem;color:rgba(255,255,255,.55)}
+.f-nav a:hover{color:var(--orange)}
+.f-legal{font-size:.76rem;color:rgba(255,255,255,.3);margin-top:1.1rem;line-height:1.7}
+```
+
+### HTML (identique sur toutes les pages racine)
 ```html
 <footer>
-  <div class="f-logo">LC<em>D</em>MH</div>
-  <p>La Chaîne du Motard Heureux · Annecy, France</p>
-  <p class="f-legal">Liens d'affiliation — commissions sans surcoût pour vous.</p>
+    <div class="f-logo">LC<em>D</em>MH</div>
+    <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">La Chaîne du Motard Heureux · Annecy, France</p>
+    <ul class="f-nav">
+        <li><a href="codes-promo.html">Codes promo</a></li>
+        <li><a href="carpuride.html">Carpuride</a></li>
+        <li><a href="aferiy.html">AFERIY</a></li>
+        <li><a href="komobi.html">Komobi</a></li>
+        <li><a href="https://www.youtube.com/@LCDMH">YouTube</a></li>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+    </ul>
+    <p class="f-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves · Annecy, France</p>
 </footer>
 ```
 
-Fond : `var(--noir)` | Texte : `rgba(255,255,255,.6)` | Logo `em` : `var(--orange)`
+### Pour les pages dans `/articles/`
+Mêmes règles, mais les liens utilisent des chemins absolus :
+```html
+<li><a href="/codes-promo.html">Codes promo</a></li>
+```
+
+### Règles
+- Fond : `var(--noir)` (#1a1a1a)
+- Logo `<em>D</em>` : `var(--orange)`
+- Texte baseline : `rgba(255,255,255,.45)`
+- Liens nav : `rgba(255,255,255,.55)` — hover `var(--orange)`
+- Mention légale : `rgba(255,255,255,.3)`
+- **Ne jamais copier un footer d'une autre page sans vérifier qu'il est complet et non tronqué**
 
 ---
 
@@ -180,8 +215,4 @@ git -C "F:\LCDMH_GitHub_Audit" add NOUVELLE-PAGE.html
 ```
 Puis lancer `push-lcdmh.bat` normalement.
 
-**Si le `index.lock` bloque :** fermer VS Code ou tout programme qui a le dossier ouvert, puis relancer.
-
----
-
-*Ce document est la référence LCDMH. Toute modification structurelle d'une page doit être vérifiée contre ce cahier des charges avant publication.*
+**Si le `index.lock` bloque :** fermer VS Code ou tout programme qui a le dossier 
