@@ -143,24 +143,9 @@ footer a{color:var(--orange);text-decoration:none}
 
     .buy-box{background:#e67e22;border-radius:14px;padding:1.4rem 1.8rem;margin:2rem 0;display:flex;gap:1.1rem;align-items:flex-start}
     .buy-icon{font-size:1.8rem;flex-shrink:0}
-    .buy-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.55rem;color:rgba(255,255,255,.9)}
-    .buy-text{font-size:.93rem;line-height:1.7;color:rgba(255,255,255,.92);margin:0 0 1rem}
-    .buy-text strong{color:#fff}
-    .buy-btns{display:flex;flex-wrap:wrap;gap:.8rem}
-    .buy-btn{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.45);color:#fff;font-weight:700;font-size:.88rem;padding:.55rem 1.1rem;border-radius:50px;text-decoration:none}
-    .buy-btn span{opacity:.75;font-size:.75rem;font-weight:400}
-    .buy-btn:hover{background:rgba(255,255,255,.3)}
-    /* Commentaires dépliables */
-    .comments-hidden{display:none}
-    .comments-toggle{display:inline-flex;align-items:center;gap:.5rem;background:none;border:2px solid var(--orange);color:var(--orange);font-family:'Montserrat',sans-serif;font-weight:700;font-size:.9rem;padding:.6rem 1.4rem;border-radius:50px;cursor:pointer;margin:1rem 0;transition:all .2s}
-    .comments-toggle:hover{background:var(--orange);color:#fff}
-    </style>
-
-    .buy-box{background:#e67e22;border-radius:14px;padding:1.4rem 1.8rem;margin:2rem 0;display:flex;gap:1.1rem;align-items:flex-start}
-    .buy-icon{font-size:1.8rem;flex-shrink:0}
-    .buy-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.55rem;color:rgba(255,255,255,.9)}
-    .buy-text{font-size:.93rem;line-height:1.7;color:rgba(255,255,255,.92);margin:0 0 1rem}
-    .buy-text strong{color:#fff}
+    .buy-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.55rem;color:#222}
+    .buy-text{font-size:.93rem;line-height:1.7;color:#222;margin:0 0 1rem}
+    .buy-text strong{color:#222}
     .buy-btns{display:flex;flex-wrap:wrap;gap:.8rem}
     .buy-btn{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.45);color:#fff;font-weight:700;font-size:.88rem;padding:.55rem 1.1rem;border-radius:50px;text-decoration:none}
     .buy-btn span{opacity:.75;font-size:.75rem;font-weight:400}
@@ -276,10 +261,11 @@ footer a{color:var(--orange);text-decoration:none}
     <div class="buy-icon">🛒</div>
     <div class="buy-content">
         <div class="buy-title">Commander le Mutant ou le T33 — même prix, tu me soutiens</div>
-        <p class="buy-text">Commande via ces liens : <strong>tu paies exactement le même prix</strong>, et je touche une petite commission qui finance les prochains tests. Merci si tu le fais.</p>
+        <p class="buy-text">En cliquant sur les liens ci-dessous, tu paies exactement <strong>le même prix qu'ailleurs</strong>. Mais tu m'aides. Si tu aimes ce que je fais ici — les tests terrain, les road trips, les comparatifs — ce simple clic me reverse quelques centimes. Rien pour toi, un peu pour moi. Merci sincèrement si tu le fais.</p>
         <div class="buy-btns">
             <a href="https://www.awin1.com/cread.php?awinmid=14485&awinaffid=2753560" target="_blank" rel="nofollow sponsored" class="buy-btn">🛞 123pneus.fr <span>— large choix</span></a>
             <a href="https://www.awin1.com/cread.php?awinmid=7403&awinaffid=2753560&ued=https%3A%2F%2Fwww.pneus-moto.fr%2F" target="_blank" rel="nofollow sponsored" class="buy-btn">🛞 pneus-moto.fr <span>— 100% moto</span></a>
+            <a href="https://www.pneu.fr" target="_blank" rel="noopener sponsored" class="buy-btn">🛞 pneu.fr <span>— comparer les prix</span></a>
         </div>
     </div>
 </div>
@@ -510,21 +496,4 @@ footer a{color:var(--orange);text-decoration:none}
 </div>
 
 <footer>
-    <p>🏍️ <a href="https://lcdmh.com">LCDMH</a> — La Chaîne Du Motard Heureux</p>
-    <p>Mis à jour le 02/04/2026</p>
-</footer>
-<script src="../maillage.js"></script>
-<script>
-function toggleComments(btn){
-    var el = document.getElementById('extra-comments');
-    if(el.style.display==='grid'||el.classList.contains('open')){
-        el.style.display='none';
-        btn.textContent='▼ Voir les 6 autres avis';
-    } else {
-        el.style.display='grid';
-        btn.textContent='▲ Masquer les avis';
-    }
-}
-</script>
-</body>
-</html>
+    <p>🏍️ <a href="https://lcdmh.c
