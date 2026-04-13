@@ -13,7 +13,7 @@
     <meta property="og:url" content="https://lcdmh.com/dunlop-mutant.html">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="LCDMH">
-    <meta property="og:image" content="https://lcdmh.com/images/dunlop-mutant.jpg">
+    <meta property="og:image" content="https://lcdmh.com/images/header-mutant.jpg">
 
     <script type="application/ld+json">
     {
@@ -59,15 +59,15 @@
         body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--noir);line-height:1.7}
         h1,h2,h3,h4{font-family:'Montserrat',sans-serif}
         a{text-decoration:none;color:inherit}
-        .container{max-width:860px;margin:0 auto;padding:0 5%}
+        .container{max-width:1060px;margin:0 auto;padding:0 5%}
         .section{padding:3rem 0}
 
         /* HERO */
         .hero{
-            min-height:42vh;
+            min-height:45vh;
             display:flex;flex-direction:column;align-items:center;justify-content:center;
             background:linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)),
-                url('/images/dunlop-mutant.jpg') center/cover no-repeat;
+                url('/images/header-mutant.jpg') center/cover no-repeat;
             color:#fff;text-align:center;padding:3rem 5%;
         }
         .hero-badge{display:inline-block;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.35rem 1.1rem;border-radius:50px;margin-bottom:1rem}
@@ -93,7 +93,7 @@
         .buy-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.55rem;color:#fff}
         .buy-text{font-size:.93rem;line-height:1.7;color:rgba(255,255,255,.9);margin:0 0 1rem}
         .buy-text strong{color:#fff}
-        .buy-btns{display:flex;flex-wrap:wrap;gap:.8rem}
+        .buy-btns{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
         .buy-btn{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.45);color:#fff;font-weight:700;font-size:.88rem;padding:.55rem 1.1rem;border-radius:50px;text-decoration:none;transition:background .2s}
         .buy-btn:hover{background:rgba(255,255,255,.32)}
         .buy-btn span{opacity:.75;font-size:.75rem;font-weight:400}
@@ -133,7 +133,8 @@
         .reviews-section{margin:2.5rem 0}
         .reviews-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;flex-wrap:wrap}
         .reviews-count{background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.8rem;padding:.25rem .7rem;border-radius:20px}
-        .review-card{background:#fff;border-radius:12px;border:1px solid var(--border);padding:1.1rem 1.3rem;margin-bottom:.8rem}
+        .reviews-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:1rem}
+        .review-card{background:#fff;border-radius:12px;border:1px solid var(--border);padding:1.1rem 1.3rem}
         .review-meta{display:flex;align-items:center;gap:.7rem;margin-bottom:.6rem}
         .review-avatar{width:34px;height:34px;border-radius:50%;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0}
         .review-author{font-weight:700;font-size:.9rem}
@@ -149,6 +150,11 @@
         .maillage a{display:block;color:var(--noir);font-weight:600;padding:.22rem 0;font-size:.92rem;border-bottom:1px solid rgba(0,0,0,.07)}
         .maillage a:last-child{border-bottom:none}
         .maillage a:hover{color:var(--orange)}
+
+        @media(max-width:720px){
+            .buy-btns{grid-template-columns:1fr}
+            .reviews-grid{grid-template-columns:1fr}
+        }
 
         /* FOOTER */
         footer{background:var(--noir);color:rgba(255,255,255,.6);text-align:center;padding:2.5rem 5%;margin-top:3rem;font-size:.85rem}
@@ -202,7 +208,7 @@
         </div>
         <p style="margin:0;font-size:.93rem;color:#444">
             <strong>En résumé :</strong> Le Mutant est probablement le pneu le plus accrocheur de sa catégorie, avec une montée en température quasi-immédiate. Mais sa gomme tendre s'use vite en usage montagne intense.
-            <strong>Idéal si tu privilégies le fun et le grip. Moins adapté si tu veux faire des gros kilométrages.</strong>
+            <strong>Idéal si tu privilégies le fun et le grip. Moins adapté si tu veux faire des gros kilométrages — et franchement pas du tout adapté à ma conduite : un peu trop sportive pour ce pneu.</strong>
         </p>
     </div>
 
@@ -355,42 +361,40 @@
         </div>
         <p style="color:var(--muted);font-size:.9rem;margin-bottom:1.2rem">Retours et expériences partagés par les motards de la communauté LCDMH.</p>
 
-        <!-- Avis 1 -->
-        <div class="review-card">
-            <div class="review-meta">
-                <div class="review-avatar">M</div>
-                <div><div class="review-author">@Mototherapy_online</div><div class="review-date">Mars 2026</div></div>
+        <!-- Avis 1-4 visibles — grid 2 colonnes -->
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-meta">
+                    <div class="review-avatar">M</div>
+                    <div><div class="review-author">@Mototherapy_online</div><div class="review-date">Mars 2026</div></div>
+                </div>
+                <div class="review-text">Salut ! Merci pour ce retour 👍 Tu dois avoir des routes bien abrasives. J'ai fait monter des Mutant sur ma GSA fin septembre pour l'hiver. Ils ont plus de 4 000 km et sont comme neufs ! C'est de la route d'hiver (froid et humide, très humide cette année) et en plaine — l'opposé de ton usage, ce qui explique la différence d'usure ✌️</div>
             </div>
-            <div class="review-text">Salut ! Merci pour ce retour 👍 Tu dois avoir des routes bien abrasives. J'ai fait monter des Mutant sur ma GSA fin septembre pour l'hiver. Ils ont plus de 4 000 km et sont comme neufs ! C'est de la route d'hiver (froid et humide, très humide cette année) et en plaine — l'opposé de ton usage, ce qui explique la différence d'usure ✌️</div>
+            <div class="review-card">
+                <div class="review-meta">
+                    <div class="review-avatar">C</div>
+                    <div><div class="review-author">@Chris-gl4js</div><div class="review-date">Mars 2026</div></div>
+                </div>
+                <div class="review-text">Le T33 est vraiment très rassurant tout comme son prédécesseur le T32. Pour en avoir passé de toutes les marques, je trouve que le Bridgestone donne un très bon feeling. Mais le Mutant reste incomparable pour le grip à froid — je les alternes selon la saison.</div>
+            </div>
+            <div class="review-card">
+                <div class="review-meta">
+                    <div class="review-avatar">F</div>
+                    <div><div class="review-author">@fantinfrancois4080</div><div class="review-date">Avril 2026</div></div>
+                </div>
+                <div class="review-text">Les T33 ont une carcasse hyper dure, sur route abîmée ça tape très fort, si on envoie du lourd ça dribble. Le Mutant est beaucoup plus souple à ce niveau-là.</div>
+            </div>
+            <div class="review-card">
+                <div class="review-meta">
+                    <div class="review-avatar">C</div>
+                    <div><div class="review-author">@colibri6818</div><div class="review-date">Mars 2026</div></div>
+                </div>
+                <div class="review-text">Merci pour ton retour sur ces pneus. Le fait de rouler en montagne accélère peut-être aussi l'usure des gommes. À plus pour le suivi du prochain road trip et bon courage pour sa préparation 😊</div>
+            </div>
         </div>
 
-        <!-- Avis 2 -->
-        <div class="review-card">
-            <div class="review-meta">
-                <div class="review-avatar">C</div>
-                <div><div class="review-author">@Chris-gl4js</div><div class="review-date">Mars 2026</div></div>
-            </div>
-            <div class="review-text">Le T33 est vraiment très rassurant tout comme son prédécesseur le T32. Pour en avoir passé de toutes les marques, je trouve que le Bridgestone donne un très bon feeling. Mais le Mutant reste incomparable pour le grip à froid — je les alternes selon la saison.</div>
-        </div>
-
-        <!-- Avis 3 et 4 visibles -->
-        <div class="review-card">
-            <div class="review-meta">
-                <div class="review-avatar">F</div>
-                <div><div class="review-author">@fantinfrancois4080</div><div class="review-date">Avril 2026</div></div>
-            </div>
-            <div class="review-text">Les T33 ont une carcasse hyper dure, sur route abîmée ça tape très fort, si on envoie du lourd ça dribble. Le Mutant est beaucoup plus souple à ce niveau-là.</div>
-        </div>
-        <div class="review-card">
-            <div class="review-meta">
-                <div class="review-avatar">C</div>
-                <div><div class="review-author">@colibri6818</div><div class="review-date">Mars 2026</div></div>
-            </div>
-            <div class="review-text">Merci pour ton retour sur ces pneus. Le fait de rouler en montagne accélère peut-être aussi l'usure des gommes. À plus pour le suivi du prochain road trip et bon courage pour sa préparation 😊</div>
-        </div>
-
-        <!-- Avis 5-8 cachés -->
-        <div class="reviews-hidden" id="more-reviews">
+        <!-- Avis 5-8 cachés — aussi en grid 2 colonnes -->
+        <div class="reviews-hidden reviews-grid" id="more-reviews">
             <div class="review-card">
                 <div class="review-meta">
                     <div class="review-avatar">M</div>
@@ -444,11 +448,11 @@
 <script>
 function toggleReviews(btn) {
     var el = document.getElementById('more-reviews');
-    if (el.style.display === 'block') {
+    if (el.style.display === 'grid') {
         el.style.display = 'none';
         btn.textContent = '▼ Voir les 4 autres avis';
     } else {
-        el.style.display = 'block';
+        el.style.display = 'grid';
         btn.textContent = '▲ Masquer les avis';
     }
 }
