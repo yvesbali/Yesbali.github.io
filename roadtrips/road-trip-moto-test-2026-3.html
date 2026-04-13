@@ -116,12 +116,20 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 .journal-body{padding:16px}
 .journal-body h3{font-size:1.05rem;color:var(--h1);margin-bottom:6px}
 .journal-body p{font-size:.92rem;color:#536579;line-height:1.6}
-footer{background:var(--noir);color:rgba(255,255,255,.6);padding:3rem 6% 2.5rem;text-align:center;border-top:4px solid var(--orange);margin-top:3rem}
+footer{background:#1a1a1a;color:rgba(255,255,255,.65);padding:2.8rem 6%;margin-top:4rem;text-align:center}
 .fl{font-size:1.6rem;font-weight:800;color:#fff}.fl em{font-style:normal;color:var(--orange)}
 .fn{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin:1rem 0;list-style:none}
 .fn a{font-size:.82rem;color:rgba(255,255,255,.55)}.fn a:hover{color:var(--orange)}
 @media(max-width:900px){.rg,.jp{grid-template-columns:1fr}.hero{min-height:auto}.hero-inner{padding:28px 24px 56px}.fb{flex-direction:column;text-align:center}}
 @media(max-width:600px){.tl-item{gap:1rem}.tl-dot{width:44px;height:44px;font-size:.65rem}.tl::before{left:20px}.gg{grid-template-columns:1fr}}
+
+footer{background:#1a1a1a;color:rgba(255,255,255,.65);padding:2.8rem 6%;margin-top:4rem;text-align:center}
+.f-logo{font-family:"Montserrat",sans-serif;font-size:1.6rem;font-weight:800;color:#fff}
+.f-logo em{font-style:normal;color:var(--orange,#e67e22)}
+.f-nav{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.5rem;margin:.8rem 0}
+.f-nav a{font-size:.8rem;color:rgba(255,255,255,.55);text-decoration:none}
+.f-nav a:hover{color:var(--orange,#e67e22)}
+.f-legal{font-size:.76rem;color:rgba(255,255,255,.3);margin-top:1.1rem;line-height:1.7}
 </style>
 </head>
 <body>
@@ -497,5 +505,7 @@ Une aventure à moto où chaque étape promet son lot de découvertes et de renc
     </ul>
     <p class="f-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves · Annecy, France</p>
 </footer>
+<script src="../footer-loader.js" defer></script>
+<script src="../maillage.js" defer></script>
 </body>
 </html>
