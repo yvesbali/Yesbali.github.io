@@ -111,11 +111,14 @@ a{color:inherit;text-decoration:none}
 .avis-card .label{font-size:.8rem;opacity:.7;margin-bottom:.8rem;display:block}
 .avis-card p{font-size:.9rem;opacity:.85;line-height:1.6}
 
-/* ── FAQ ── */
+/* ── FAQ accordion ── */
 .faq-section{padding:3rem 0}
-.faq-item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.4rem 1.6rem;margin-bottom:1rem}
-.faq-item h4{font-size:1rem;font-weight:600;margin-bottom:.6rem;color:var(--noir)}
-.faq-item p{font-size:.9rem;color:var(--muted);line-height:1.6}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:1rem;overflow:hidden}
+.faq-item h4{font-size:1rem;font-weight:600;color:var(--noir);padding:1.4rem 1.6rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;margin:0}
+.faq-item h4::after{content:'＋';font-size:1.2rem;color:var(--orange);flex-shrink:0;margin-left:.8rem;transition:transform .25s}
+.faq-item.open h4::after{content:'－'}
+.faq-item p{font-size:.9rem;color:var(--muted);line-height:1.6;padding:0 1.6rem 1.4rem;display:none}
+.faq-item.open p{display:block}
 
 /* ── CTA FINAL ── */
 .cta-section{background:var(--orange);color:#fff;text-align:center;padding:3.5rem 2rem}
@@ -375,5 +378,12 @@ footer p{font-size:.82rem;color:rgba(255,255,255,.45);margin:.3rem 0}
 
 <script src="footer-loader.js" defer></script>
 <script src="maillage.js" defer></script>
+<script>
+document.querySelectorAll('.faq-item h4').forEach(function(h4){
+  h4.addEventListener('click',function(){
+    this.closest('.faq-item').classList.toggle('open');
+  });
+});
+</script>
 </body>
 </html>
