@@ -16,6 +16,7 @@
     <link rel="canonical" href="https://lcdmh.com/carpuride.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/home.css">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -25,7 +26,7 @@
       "author": {"@type": "Person", "name": "Yves", "url": "https://lcdmh.com/a-propos.html"},
       "publisher": {"@type": "Organization", "name": "LCDMH", "url": "https://lcdmh.com"},
       "datePublished": "2026-04-10",
-      "dateModified": "2026-04-10",
+      "dateModified": "2026-04-13",
       "url": "https://lcdmh.com/carpuride.html"
     }
     </script>
@@ -97,6 +98,17 @@
         .faq details[open] summary{background:#fff8f0}
         .faq .faq-body{padding:1rem 1.2rem 1.2rem;color:#444;line-height:1.7;border-top:1px solid var(--border)}
 
+        .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:1.5rem 0}
+        .video-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;background:#000}
+        .video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+        .video-caption{font-size:.9rem;color:var(--muted);margin-top:.5rem;font-style:italic}
+
+        .pour-qui-list{list-style:none;margin:.5rem 0 1rem 0}
+        .pour-qui-list li{padding:.4rem 0;padding-left:1.8rem;position:relative;line-height:1.6}
+        .pour-qui-list li::before{content:'✔';position:absolute;left:0;color:var(--orange);font-weight:700}
+
+        .confiance-box{background:#f0ede8;border-left:4px solid var(--orange);border-radius:0 10px 10px 0;padding:1.2rem 1.6rem;margin:2rem 0}
+
         .maillage-box{background:var(--alt);border-left:4px solid var(--orange);border-radius:0 10px 10px 0;padding:1.4rem 1.6rem;margin:2.5rem 0}
         .maillage-box h4{font-family:'Montserrat',sans-serif;font-size:.9rem;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin-bottom:.8rem}
         .maillage-box a{display:block;color:var(--noir);font-weight:600;padding:.25rem 0;border-bottom:1px solid rgba(0,0,0,.07)}
@@ -136,10 +148,54 @@
         <p>−30% sur le W702 Pro et le W702RS Pro sur le site officiel Carpuride. Valable en permanence.</p>
     </div>
 
-    <!-- Intro -->
-    <p>J'ai commencé avec un support téléphone classique. Pratique à court terme, catastrophique à long terme : vibrations destructrices pour le processeur, écran illisible en plein soleil, connexion Bluetooth qui lâche après 30 min. Quand j'ai découvert le Carpuride W702 Pro, j'étais sceptique — encore un gadget chinois ? Trois ans et 5 000 km plus tard, voilà mon avis sans filtre.</p>
+    <!-- Intro terrain -->
+    <p><strong>J'utilise le Carpuride W702 Pro en conditions réelles depuis plusieurs milliers de kilomètres : road trip, montagne, pluie et utilisation quotidienne.</strong></p>
 
-    <!-- W702 Pro vs W702RS Pro -->
+    <p>Je suis passé d'un support téléphone classique à un écran déporté, et la différence est énorme. Mais tout n'est pas parfait, et c'est justement ce que je vais vous montrer ici.</p>
+
+    <!-- Vidéos terrain -->
+    <h2>Vidéo terrain : Carpuride en moto</h2>
+    <div class="bar"></div>
+    <p>Voici mon retour en conditions réelles sur route et en voyage.</p>
+    <div class="video-grid">
+        <div>
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/Q2OlIRiTFgc" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <p class="video-caption">J'ai testé le Carpuride sur la route — tu vas être surpris !</p>
+        </div>
+        <div>
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/Z658n_oLejg" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <p class="video-caption">À quoi sert vraiment ce nouvel écran ? Test Carpuride W702 Pro</p>
+        </div>
+    </div>
+
+    <!-- Ce qui m'a convaincu -->
+    <h2>Ce qui m'a convaincu !</h2>
+    <div class="bar"></div>
+    <ul class="check-list">
+        <li>C'est super pratique !</li>
+        <li>CarPlay sans fil connecté en 8 secondes au démarrage — aucune manipulation</li>
+        <li>Écran lisible en plein soleil estival alpin (1 000 nits suffisant en W702 Pro)</li>
+        <li>Fixation RAM-Mount compatible — solide, zéro vibration sur 5 000 km</li>
+        <li>GPS natif fonctionnel même sans téléphone (cartes hors-ligne)</li>
+        <li>Waterproof : traversée d'une tempête dans les Alpes, aucun souci</li>
+        <li>Mises à jour OTA régulières depuis l'achat</li>
+    </ul>
+
+    <!-- Les limites -->
+    <h2>Les limites à connaître</h2>
+    <div class="bar"></div>
+    <ul class="warn-list">
+        <li>Interface Android native un peu lente hors CarPlay</li>
+        <li>Le câble d'alimentation fourni est court — prévoir un prolongateur selon la moto</li>
+        <li>CarPlay se déconnecte rarement mais ça arrive (1 fois sur 10 trajets environ)</li>
+        <li>Pas de guidage audio Waze en natif — passer obligatoirement par CarPlay</li>
+    </ul>
+
+    <!-- Comparatif W702 vs W702RS -->
     <h2>W702 Pro vs W702RS Pro — Quelle différence ?</h2>
     <div class="bar"></div>
     <div class="compare-wrap">
@@ -186,30 +242,26 @@
         </table>
     </div>
 
-    <h2>Ce qui m'a convaincu !</h2>
+    <!-- Pour qui -->
+    <h2>Pour qui le Carpuride est vraiment utile</h2>
     <div class="bar"></div>
-    <ul class="check-list">
-      <li>C'est super pratique !</li>        
-       <li>CarPlay sans fil connecté en 8 secondes au démarrage — aucune manipulation</li>
-        <li>Écran lisible en plein soleil estival alpin (1 000 nits suffisant en W702 Pro)</li>
-        <li>Fixation RAM-Mount compatible — solide, zéro vibration sur 5 000 km</li>
-        <li>GPS natif fonctionnel même sans téléphone (cartes hors-ligne)</li>
-        <li>Waterproof : traversée d'une tempête dans les Alpes, aucun souci</li>
-        <li>Mises à jour OTA régulières depuis l'achat</li>
+    <ul class="pour-qui-list">
+        <li>Motards en road trip longue distance</li>
+        <li>Navigation GPS quotidienne sans vibrations téléphone</li>
+        <li>Utilisation Android Auto / CarPlay sur moto</li>
     </ul>
+    <p>Si vous faites uniquement de petits trajets, l'intérêt est plus limité.</p>
 
-    <h2>Les limites à connaître</h2>
+    <!-- Carpuride ou téléphone -->
+    <h2>Carpuride ou téléphone sur moto ?</h2>
     <div class="bar"></div>
-    <ul class="warn-list">
-        <li>Interface Android native un peu lente hors CarPlay</li>
-        <li>Le câble d'alimentation fourni est court — prévoir un prolongateur selon la moto</li>
-        <li>CarPlay se déconnecte rarement mais ça arrive (1 fois sur 10 trajets environ)</li>
-        <li>Pas de guidage audio Waze en natif — passer obligatoirement par CarPlay</li>
-    </ul>
+    <p>J'ai longtemps utilisé un téléphone sur support. Le problème principal reste les vibrations, la lisibilité et la manipulation avec des gants.</p>
+    <p>Avec un écran déporté comme le Carpuride, la navigation est plus lisible, plus sécurisée et plus confortable sur long trajet.</p>
 
+    <!-- Verdict -->
     <div class="verdict">
         <h3>🏆 Depuis j'utilise le Aoocci U6.</h3>
-        <p>Le W702 Pro, est très bien mais je préférais un écran déporté avec la possibilité d'avoir une navigation offline, ce que fera le prochain Carpuride. Ect-ce indispensable ? non mais sacrément pratique . Pour ceux qui roulent surtout en France/Europe avec CarPlay, le W702 Pro standard suffit amplement.</p>
+        <p>Le W702 Pro, est très bien mais je préférais un écran déporté avec la possibilité d'avoir une navigation offline, ce que fera le prochain Carpuride. Est-ce indispensable ? Non, mais sacrément pratique. Pour ceux qui roulent surtout en France/Europe avec CarPlay, le W702 Pro standard suffit amplement.</p>
         <p>Si vous faites de longs road trips internationaux ou roulez souvent sous la pluie : prenez le W702RS Pro. La luminosité 1 500 nits et l'IP67 valent les 35 € de différence.</p>
         <p>Dans les deux cas, utilisez le code <strong>LCDMH</strong> pour bénéficier de −30% sur le site officiel.</p>
     </div>
@@ -234,6 +286,15 @@
             <summary>Le code promo LCDMH est-il toujours valable ?</summary>
             <div class="faq-body">Le code <strong>LCDMH</strong> donne −30% sur le site officiel Carpuride. Il est négocié directement avec la marque et valable en permanence tant qu'il est affiché sur cette page. Si vous rencontrez un problème, contactez-moi via la chaîne YouTube ou la page Contact.</div>
         </details>
+        <details>
+            <summary>Carpuride ou GPS moto classique : que choisir ?</summary>
+            <div class="faq-body">Un GPS moto classique (Garmin, TomTom) offre une navigation hors-ligne robuste et une interface dédiée à la moto. Le Carpuride, lui, mise sur CarPlay/Android Auto, l'affichage des apps du téléphone et un prix bien inférieur. Si vous utilisez déjà Google Maps ou Waze sur téléphone, le Carpuride est le choix naturel. Si vous voulez du hors-ligne poussé avec cartographie moto, un GPS dédié reste plus adapté.</div>
+        </details>
+    </div>
+
+    <!-- Bloc confiance -->
+    <div class="confiance-box">
+        <p><strong>Tout ce que vous voyez ici est basé sur une utilisation réelle en moto. Je ne présente que ce que j'utilise ou ai réellement testé.</strong></p>
     </div>
 
     <!-- Maillage interne -->
@@ -242,6 +303,7 @@
         <a href="intercoms.html">Comparatif intercoms moto — Sena 50S, 60S, Cardo Packtalk</a>
         <a href="equipement.html">Équipement road trip — bagagerie, gants, vêtements testés terrain</a>
         <a href="pneus.html">Comparatif pneus moto — Dunlop, Michelin, Metzeler sur 15 000 km</a>
+        <a href="gps.html">Guide GPS moto — tous les modèles testés en 2026</a>
         <a href="codes-promo.html">Tous les codes promo moto — Carpuride, Sena, Olight et plus</a>
     </div>
 
@@ -254,4 +316,13 @@
         <li><a href="codes-promo.html">Codes promo</a></li>
         <li><a href="aoocci.html">Aoocci</a></li>
         <li><a href="carpuride.html">Carpuride</a></li>
-        <li><a href="blackview.html">Blackview<
+        <li><a href="blackview.html">Blackview</a></li>
+        <li><a href="gps.html">GPS moto</a></li>
+        <li><a href="intercoms.html">Intercoms</a></li>
+        <li><a href="pneus.html">Pneus</a></li>
+    </ul>
+    <p class="f-legal">© 2026 LCDMH — La Chaîne du Motard Heureux. Contenu basé sur des tests terrain personnels. Les liens partenaires peuvent générer une commission sans surcoût pour vous.</p>
+</footer>
+
+</body>
+</html>
