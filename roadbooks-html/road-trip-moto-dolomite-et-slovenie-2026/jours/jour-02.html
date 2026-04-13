@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>J02 · 05/05/2026 | LCDMH</title>
 <meta name="description" content="J02 · 05/05/2026 413 km 🗺️ Index ❓ Questions 📤 Upload photos 413 Kilomètres 7h54 Temps route 47. 57 € Carburant estimé 6">
@@ -328,125 +329,20 @@ body {
             <div>
                 <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
                     <h3 style="margin:0;color:#0f172a;">Villa Amaranta Room and Breakfast à Edolo - AR</h3>
-                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#3b82f6;color:white;">Arrivée</span>
-                </div>
-                <p style="margin:8px 0 8px;color:#334155;">69€</p>
-                <p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> Calcaire &amp; Volcanique — Dolomites, Apennins calcaires, volcans en Campanie et Sicile.</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> Fais un point carburant, météo et lumière avant de repartir.</p>
-                <div style="font-size:12px;color:#94a3b8;">
-                    46.177526, 10.313289 · Italie
-                </div>
-                <div style="font-size:13px;color:#334155;margin-top:8px;">
-                    <a href="https://www.google.com/maps?q=46.177526,10.313289" target="_blank" rel="noopener">Maps</a> · <a href="https://www.google.com/search?q=Villa+Amaranta+Room+and+Breakfast+%C3%A0+Edolo+-+AR+69%E2%82%AC" target="_blank" rel="noopener">Recherche</a>
-                </div>
-            </div>
-        </div>
-        
-    </div>
-
-    <div class="comment-box">
-        <h2 style="margin-top:0;">🗣️ Commentaire du jour J02</h2>
-        <textarea id="commentaire-jour" placeholder="Tu peux écrire ou dicter ton commentaire ici..."></textarea>
-        <div class="comment-actions">
-            <button id="btn-mic-comment" class="comment-btn mic">🎤 Micro</button>
-            <button id="btn-save-comment" class="comment-btn">💾 Enregistrer</button>
-            <button id="btn-clear-comment" class="comment-btn secondary">🗑️ Effacer</button>
-        </div>
-        <div id="commentaire-status" class="status">Prêt.</div>
-    </div>
-
-    <div class="footer-nav">
-        <a href="jour-01.html" style="color:#ea580c;text-decoration:none;">← Jour précédent</a>
-        <a href="../index.html" style="color:#172554;text-decoration:none;">🗺️ Master planning</a>
-        <a href="jour-03.html" style="color:#ea580c;text-decoration:none;">Jour suivant →</a>
-    </div>
-</div>
-
-<script>
-(function() {
-    const storageKey = "roadbook_comment_J02";
-    const textarea = document.getElementById("commentaire-jour");
-    const status = document.getElementById("commentaire-status");
-    const btnSave = document.getElementById("btn-save-comment");
-    const btnClear = document.getElementById("btn-clear-comment");
-    const btnMic = document.getElementById("btn-mic-comment");
-
-    function setStatus(msg) {
-        if (status) status.textContent = msg;
-    }
-
-    function loadComment() {
-        const saved = localStorage.getItem(storageKey);
-        if (saved && textarea) {
-            textarea.value = saved;
-            setStatus("Commentaire rechargé depuis cet appareil.");
-        }
-    }
-
-    function saveComment() {
-        if (!textarea) return;
-        localStorage.setItem(storageKey, textarea.value || "");
-        setStatus("Commentaire enregistré sur cet appareil.");
-    }
-
-    function clearComment() {
-        if (!textarea) return;
-        textarea.value = "";
-        localStorage.removeItem(storageKey);
-        setStatus("Commentaire effacé sur cet appareil.");
-    }
-
-    if (btnSave) btnSave.addEventListener("click", saveComment);
-    if (btnClear) btnClear.addEventListener("click", clearComment);
-
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (!SpeechRecognition) {
-        if (btnMic) {
-            btnMic.disabled = true;
-            btnMic.title = "Reconnaissance vocale non supportée par ce navigateur";
-        }
-        setStatus("Micro non supporté par ce navigateur.");
-    } else {
-        const recognition = new SpeechRecognition();
-        recognition.lang = "fr-FR";
-        recognition.interimResults = false;
-        recognition.continuous = false;
-
-        if (btnMic) {
-            btnMic.addEventListener("click", function() {
-                setStatus("Écoute en cours...");
-                recognition.start();
-            });
-        }
-
-        recognition.onresult = function(event) {
-            const text = event.results[0][0].transcript;
-            if (textarea) {
-                if (textarea.value && !textarea.value.endsWith(" ")) {
-                    textarea.value += " ";
-                }
-                textarea.value += text;
-            }
-            saveComment();
-            setStatus("Texte dicté et enregistré.");
-        };
-
-        recognition.onerror = function() {
-            setStatus("Erreur micro ou dictée interrompue.");
-        };
-
-        recognition.onend = function() {
-            if ((textarea && textarea.value) || localStorage.getItem(storageKey)) {
-                setStatus("Prêt.");
-            }
-        };
-    }
-
-    loadComment();
-})();
-</script>
-
-<script src="/js/lcdmh-nav-loader.js"></script>
-
-<script src="/js/lcdmh-nav-loader.js"></script>
+                    <span style=
+<footer>
+    <div class="f-logo">LC<em>D</em>MH</div>
+    <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">La Chaîne du Motard Heureux · Annecy, France</p>
+    <ul class="f-nav">
+        <li><a href="/codes-promo.html">Codes promo</a></li>
+        <li><a href="/carpuride.html">Carpuride</a></li>
+        <li><a href="/aferiy.html">AFERIY</a></li>
+        <li><a href="/komobi.html">Komobi</a></li>
+        <li><a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="/mentions-legales.html">Mentions légales</a></li>
+        <li><a href="/a-propos.html">À propos</a></li>
+    </ul>
+    <p class="f-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves · Annecy, France</p>
+</footer>
 </body>
 </html>

@@ -14,6 +14,7 @@
     <meta property="og:url" content="https://lcdmh.com/contact.html">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://lcdmh.com/images/lcdmh-og-default.jpg">
+    <meta property="og:site_name" content="LCDMH – La Chaîne du Motard Heureux">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -490,152 +491,20 @@
                                 <button id="submit-btn" class="btn btn-primary" type="submit">Envoyer le message</button>
                             </div>
 
-                            <div id="form-status" class="status" aria-live="polite"></div>
-                        </form>
-                    </section>
-
-                    <aside class="card side-card">
-                        <h2>Contact direct</h2>
-
-                        <div class="info-list">
-                            <div class="info-item">
-                                <h3>Email</h3>
-                                <p><a href="/cdn-cgi/l/email-protection#b9c0cfdccadbd8d5d0f9ded4d8d0d597dad6d4"><span class="__cf_email__" data-cfemail="fd848b988e9f9c9194bd9a909c9491d39e9290">[email&#160;protected]</span></a></p>
-                            </div>
-
-                            <div class="info-item">
-                                <h3>Sujets les plus fréquents</h3>
-                                <div class="chips">
-                                    <span class="chip">Road trips moto</span>
-                                    <span class="chip">Tests terrain</span>
-                                    <span class="chip">GPS / CarPlay</span>
-                                    <span class="chip">Pneus</span>
-                                    <span class="chip">Intercoms</span>
-                                    <span class="chip">Partenariats</span>
-                                </div>
-                            </div>
-
-                            <div class="info-item">
-                                <h3>Réseaux</h3>
-                                <div class="socials">
-                                    <a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener noreferrer noopener">YouTube</a>
-                                    <a href="https://www.facebook.com/profile.php?id=61582712395640" target="_blank" rel="noopener noreferrer noopener">Facebook</a>
-                                    <a href="https://www.tiktok.com/@lcdmh74" target="_blank" rel="noopener noreferrer noopener">TikTok</a>
-                                </div>
-                            </div>
-
-                            <div class="info-item">
-                                <h3>À savoir</h3>
-                                <p>
-                                    Les messages incomplets, sans email valide ou purement publicitaires
-                                    ont peu de chances d’obtenir une réponse.
-                                </p>
-                            </div>
-                        </div>
-
-                        <p class="small-note">
-                            LCDMH — La Chaîne du Motard Heureux · Annecy, France
-                        </p>
-                    </aside>
-                </div>
-            </div>
-        </main>
-
-        <footer>
+                            <div id="form-status" class="status" aria-live="polite"></di
+<footer>
     <div class="f-logo">LC<em>D</em>MH</div>
     <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">La Chaîne du Motard Heureux · Annecy, France</p>
     <ul class="f-nav">
-        <li><a href="codes-promo.html">Codes promo</a></li>
-        <li><a href="carpuride.html">Carpuride</a></li>
-        <li><a href="aferiy.html">AFERIY</a></li>
-        <li><a href="komobi.html">Komobi</a></li>
-        <li><a href="https://www.youtube.com/@LCDMH">YouTube</a></li>
-        <li><a href="mentions-legales.html">Mentions légales</a></li>
-        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="/codes-promo.html">Codes promo</a></li>
+        <li><a href="/carpuride.html">Carpuride</a></li>
+        <li><a href="/aferiy.html">AFERIY</a></li>
+        <li><a href="/komobi.html">Komobi</a></li>
+        <li><a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="/mentions-legales.html">Mentions légales</a></li>
+        <li><a href="/a-propos.html">À propos</a></li>
     </ul>
     <p class="f-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves · Annecy, France</p>
 </footer>
-    </div>
-
-    <script>
-        const CONTACT_WEBHOOK_URL = "https://hook.eu1.make.com/hn9yjkbv5m03a4uqanh9w8hbe5bc3gla";
-
-        const form = document.getElementById("contact-form");
-        const statusBox = document.getElementById("form-status");
-        const submitBtn = document.getElementById("submit-btn");
-
-        function showStatus(message, type) {
-            statusBox.textContent = message;
-            statusBox.className = "status show " + type;
-        }
-
-        function isValidEmail(email) {
-            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-        }
-
-        form.addEventListener("submit", async function (event) {
-            event.preventDefault();
-
-            const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const subject = document.getElementById("subject").value.trim();
-            const channel = document.getElementById("channel").value.trim();
-            const message = document.getElementById("message").value.trim();
-            const consent = document.getElementById("consent").checked;
-
-            if (!name || !email || !subject || !message) {
-                showStatus("Merci de remplir tous les champs obligatoires.", "error");
-                return;
-            }
-
-            if (!isValidEmail(email)) {
-                showStatus("L’adresse email semble invalide.", "error");
-                return;
-            }
-
-            if (!consent) {
-                showStatus("Merci de confirmer l’autorisation de traitement du message.", "error");
-                return;
-            }
-
-            submitBtn.disabled = true;
-            submitBtn.textContent = "Envoi en cours...";
-
-            const payload = {
-                name: name,
-                email: email,
-                subject: subject,
-                channel: channel,
-                message: message,
-                consent: consent,
-                source: "lcdmh-contact-page",
-                site: "lcdmh.com",
-                page_url: window.location.href,
-                submitted_at: new Date().toISOString()
-            };
-
-            try {
-                const response = await fetch(CONTACT_WEBHOOK_URL, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(payload)
-                });
-
-                if (!response.ok) {
-                    throw new Error("HTTP " + response.status);
-                }
-
-                showStatus("Message envoyé. Merci, ta demande a bien été transmise.", "success");
-                form.reset();
-            } catch (error) {
-                console.error("Erreur envoi formulaire :", error);
-                showStatus("L’envoi a échoué. Réessaie dans quelques instants ou écris directement à yvesbali@gmail.com", "error");
-                submitBtn.disabled = false;
-                submitBtn.textContent = "Envoyer le message";
-            }
-        });
-    </script>
 </body>
 </html>
