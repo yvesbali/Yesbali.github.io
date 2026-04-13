@@ -10,14 +10,14 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact LCDMH — Questions, partenariats</title>
-<meta name="description" content="Contactez Yves de LCDMH : partenariats marques moto, codes promo, questions et suggestions.">
+<title>Articles LCDMH — Road trips, tests et guides | LCDMH</title>
+<meta name="description" content="Tous les articles LCDMH : road trips moto en Europe, tests matériel, GPS, pneus, bivouac et guides pratiques.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://lcdmh.com/contact.html">
+<link rel="canonical" href="https://lcdmh.com/articles.html">
 
-<meta property="og:title" content="Contact LCDMH — Questions, partenariats">
-<meta property="og:description" content="Contactez Yves de LCDMH : partenariats marques moto, codes promo, questions et suggestions.">
-<meta property="og:url" content="https://lcdmh.com/contact.html">
+<meta property="og:title" content="Articles LCDMH — Road trips, tests et guides">
+<meta property="og:description" content="Tous les articles LCDMH : road trips moto en Europe, tests matériel, GPS, pneus, bivouac et guides pratiques.">
+<meta property="og:url" content="https://lcdmh.com/articles.html">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://lcdmh.com/images/lcdmh-og-default.jpg">
     <meta property="og:site_name" content="LCDMH – La Chaîne du Motard Heureux">
@@ -28,7 +28,6 @@
 <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
-<<<<<<< Updated upstream
 .wrap{
     max-width:var(--max);
     margin:0 auto;
@@ -459,7 +458,6 @@
         --success-bg:#edf9f0;
         --error:#b91c1c;
         --error-bg:#fff1f2;
->>>>>>> Stashed changes
     }
 
     body {
@@ -607,8 +605,6 @@
     }
 
     footer{background:#1a1a1a;color:rgba(255,255,255,.65);padding:2.8rem 6%;margin-top:4rem;text-align:center}
-
-footer{background:#1a1a1a;color:rgba(255,255,255,.65);padding:2.8rem 6%;margin-top:4rem;text-align:center}
 .f-logo{font-family:"Montserrat",sans-serif;font-size:1.6rem;font-weight:800;color:#fff}
 .f-logo em{font-style:normal;color:var(--orange,#e67e22)}
 .f-nav{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.5rem;margin:.8rem 0}
@@ -641,7 +637,6 @@ footer{background:#1a1a1a;color:rgba(255,255,255,.65);padding:2.8rem 6%;margin-t
 <body>
 <script src="/js/lcdmh-nav-loader.js" defer></script>
 
-<<<<<<< Updated upstream
 <header class="hero-articles">
     <div class="hero-grid">
         <section class="hero-main">
@@ -950,8 +945,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,.65);padding:2.8rem 6%;margin-t
 <script>
 const CONTACT_WEBHOOK_URL = "https://hook.eu1.make.com/hn9yjkbv5m03a4uqanh9w8hbe5bc3gla";
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+/*
 ROTATION AUTOMATIQUE ARTICLE À LA UNE :
 - L'article change automatiquement tous les 56 jours
 - La liste ci-dessous détermine l'ordre de rotation
@@ -1261,15 +1255,6 @@ const ARTICLES = [
 
 function getArticleBySlug(slug){
     return ARTICLES.find(article => article.slug === slug) || null;
-=======
-const form = document.getElementById("contact-form");
-const submitBtn = document.getElementById("submit-btn");
-const statusMessage = document.getElementById("status-message");
-
-function showStatus(message, type) {
-    statusMessage.textContent = message;
-    statusMessage.className = "status-message " + type;
->>>>>>> Stashed changes
 }
 
 function isValidEmail(email) {
@@ -1310,7 +1295,6 @@ form.addEventListener("submit", async function(e) {
         submitted_at: new Date().toISOString()
     };
 
-<<<<<<< Updated upstream
     const roadTrips = ARTICLES.filter(article => article.category === "road-trips");
     const testsMateriel = ARTICLES.filter(article => article.category === "tests-materiel");
     const guidesPratiques = ARTICLES.filter(article => article.category === "guides-pratiques");
@@ -1324,7 +1308,6 @@ form.addEventListener("submit", async function(e) {
             },
             body: JSON.stringify(payload)
         });
->>>>>>> Stashed changes
 
         if (!response.ok) {
             throw
