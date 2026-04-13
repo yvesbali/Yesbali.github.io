@@ -117,7 +117,7 @@ Ce bloc se place immédiatement après `<body>`, avant tout contenu.
 |---|---|
 | 123pneus.fr | `https://tidd.ly/4b6C1sx` |
 | pneus-moto.fr | `https://www.awin1.com/cread.php?awinmid=7403&awinaffid=2753560&ued=https%3A%2F%2Fwww.pneus-moto.fr%2F` |
-| pneu.fr | `https://www.pneu.fr` |
+| pneus.fr | `https://www.pneus.fr/pneus/moto?utm_source=awin&utm_medium=affiliate&ID=aff_tn_fr_awin&sv1=affiliate&sv_campaign_id=2753560&awc=7928_1776085200_56c3768944e51482019b3bbd2b685985` |
 
 ---
 
