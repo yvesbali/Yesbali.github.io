@@ -792,9 +792,8 @@
     </ul>
     <p class="f-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves · Annecy, France</p>
 </footer>
-<script src="/js/maillage.js" defer></script>
-<script src="/js/lcdmh-roadtrip-module.js" defer></script>
-<script src="/js/faq-toggle.js" defer></script>
+<script src="maillage.js" defer></script>
+<script>document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){this.parentElement.classList.toggle('open')})});</script>
 <script src="footer-loader.js" defer></script>
 </body>
 </html>
