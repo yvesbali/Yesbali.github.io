@@ -5,9 +5,6 @@
 <!-- ======================================== -->
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO : recentré road trips moto solo + tests terrain + guides -->
@@ -452,8 +449,8 @@
 .f-nav a:hover{color:var(--orange)}
 .f-legal{font-size:.76rem;color:rgba(255,255,255,.3);margin-top:1.1rem;line-height:1.7}
         </style>
-    
-    
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
 </head>
 <!-- ======================================== -->
 <!-- === /HEAD ============================== -->
@@ -801,20 +798,123 @@
             </div>
 
             <div class="home-youtube__meta">
-                <
+                <div><strong>~10 000</strong><span>Abonnés</span></div>
+                <div><strong>760+</strong><span>Vidéos</span></div>
+                <div><strong>Solo</strong><span>Depuis Annecy</span></div>
+            </div>
+
+            <!-- Flux vidéos injecté par youtube-feed.js (conteneurs #lcdmh-videos et #lcdmh-shorts) -->
+            <div id="lcdmh-videos"></div>
+
+            <div style="display:flex;align-items:center;gap:1rem;margin:2.5rem 0 1.5rem">
+                <div style="flex:1;height:2px;background:var(--border)"></div>
+                <div style="background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1.2rem;border-radius:50px;white-space:nowrap">⚡ Derniers shorts</div>
+                <div style="flex:1;height:2px;background:var(--border)"></div>
+            </div>
+
+            <div id="lcdmh-shorts"></div>
+
+            <div style="text-align:center;margin-top:2.5rem">
+                <a class="btn btn-orange" href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">🎬 Voir la chaîne YouTube →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== À PROPOS ========== -->
+    <section class="home-section" id="a-propos" aria-labelledby="about-title">
+        <div class="home-wrap">
+            <div class="home-about">
+                <h2 id="about-title">À propos de <em>LCDMH</em></h2>
+                <p>
+                    LCDMH — <em>Le Coin Des Motards Heureux</em> — c'est Yves, motard voyageur basé à Annecy.
+                    Des road trips moto solo à travers l'Europe, du matériel testé sur la route,
+                    et des guides pratiques pour t'aider à préparer ton propre voyage.
+                </p>
+                <p>
+                    Tout ce qui est publié ici est <strong>testé personnellement en voyage</strong> — pas de fiche produit copiée-collée,
+                    pas de test en chambre. Si ce n'est pas passé sur la route, ça n'est pas sur le site.
+                </p>
+                <a class="home-about__cta" href="/a-propos.html">En savoir plus sur Yves &amp; LCDMH →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SOUTIEN TIPEEE ========== -->
+    <section style="background:#fff8f2;padding:2.5rem 6%;text-align:center;border-top:1px solid var(--border);">
+        <div class="home-wrap" style="max-width:700px;">
+            <p style="font-size:2rem;margin-bottom:.8rem;">☕</p>
+            <p style="font-size:.95rem;color:#555;line-height:1.7;margin-bottom:1.5rem;">
+                Tout ce contenu est <strong style="color:var(--noir);">100% gratuit</strong>, et ça le restera.<br>
+                Pour le prix d'un café, vous pouvez m'aider à continuer l'aventure — et je réponds personnellement à toutes vos questions !
+            </p>
+            <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
+                <a href="https://fr.tipeee.com/lcdmh" target="_blank" rel="noopener" style="display:inline-block;background:var(--orange);color:#fff;padding:.8rem 1.8rem;border-radius:50px;font-weight:600;font-size:.95rem;font-family:'Montserrat',sans-serif;transition:.2s;">☕ Soutenir LCDMH — 2€/mois</a>
+                <a href="https://www.youtube.com/@LCDMH?sub_confirmation=1" target="_blank" rel="noopener" style="display:inline-block;background:#ff0000;color:#fff;padding:.8rem 1.8rem;border-radius:50px;font-weight:600;font-size:.95rem;font-family:'Montserrat',sans-serif;transition:.2s;">▶ S'abonner sur YouTube</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PARTENAIRES (compact, en bas) ========== -->
+    <section id="partenaires" style="background:var(--alt);padding:2rem 6%;text-align:center;border-top:1px solid var(--border);">
+        <div class="home-wrap">
+            <p style="font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;font-family:'Montserrat',sans-serif;margin-bottom:1rem;">Partenaires &amp; codes promo lecteurs</p>
+            <!-- Liste des partenaires injectée dynamiquement depuis /data/partenaires.json -->
+            <div id="home-partners-list" aria-live="polite">
+                <noscript>Voir la page <a href="/codes-promo.html">codes promo</a>.</noscript>
+            </div>
+            <a class="home-partners__more" href="/codes-promo.html" style="font-size:.82rem;">Voir tous les codes promo →</a>
+        </div>
+    </section>
+
+</main>
+
+<!-- ======================================== -->
+<!-- === FOOTER ============================= -->
+<!-- ======================================== -->
 <footer>
     <div class="f-logo">LC<em>D</em>MH</div>
     <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">La Chaîne du Motard Heureux · Annecy, France</p>
     <ul class="f-nav">
-        <li><a href="/codes-promo.html">Codes promo</a></li>
-        <li><a href="/carpuride.html">Carpuride</a></li>
-        <li><a href="/aferiy.html">AFERIY</a></li>
-        <li><a href="/komobi.html">Komobi</a></li>
-        <li><a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
-        <li><a href="/mentions-legales.html">Mentions légales</a></li>
-        <li><a href="/a-propos.html">À propos</a></li>
+        <li><a href="codes-promo.html">Codes promo</a></li>
+        <li><a href="carpuride.html">Carpuride</a></li>
+        <li><a href="aferiy.html">AFERIY</a></li>
+        <li><a href="komobi.html">Komobi</a></li>
+        <li><a href="https://www.youtube.com/@LCDMH">YouTube</a></li>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
     </ul>
     <p class="f-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves · Annecy, France</p>
 </footer>
+
+<!-- ======================================== -->
+<!-- === SCRIPTS ============================ -->
+<!-- ======================================== -->
+
+<!-- Flux YouTube (remplit #lcdmh-videos et #lcdmh-shorts) -->
+<script src="/js/youtube-feed.js" defer></script>
+
+<!-- Maillage interne existant -->
+<script src="/maillage.js" defer></script>
+
+<!-- Loader partenaires dynamique — lit /data/partenaires.json (aucun lien en dur) -->
+<script>
+(function(){
+    var host = document.getElementById('home-partners-list');
+    if(!host) return;
+    fetch('/data/partenaires.json?t=' + Date.now(), {cache:'no-cache'})
+        .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function(data){
+            if(!data || !data.partenaires) return;
+            var out = '';
+            Object.keys(data.partenaires).forEach(function(key){
+                var p = data.partenaires[key];
+                if(!p || p.statut !== 'actif') return;
+                var firstLink = null;
+                if(p.liens){
+                    var keys = Object.keys(p.liens);
+                    if(keys.length) firstLink = p.liens[keys[0]];
+                }
+                if(!firstLink) return;
+                var codePart = '';
 </body>
 </html>
