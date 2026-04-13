@@ -25,6 +25,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 .wrap{
     max-width:var(--max);
     margin:0 auto;
@@ -458,6 +459,8 @@
     .featured-main{
         grid-template-columns:1fr;
 =======
+=======
+>>>>>>> Stashed changes
     :root{
         --orange:#e67e22;
         --orange-dark:#d35400;
@@ -467,6 +470,9 @@
         --success-bg:#edf9f0;
         --error:#b91c1c;
         --error-bg:#fff1f2;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 
@@ -678,6 +684,7 @@
 <body>
 <script src="/js/lcdmh-nav-loader.js" defer></script>
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <header class="hero-articles">
     <div class="hero-grid">
@@ -980,6 +987,13 @@
     <p style="max-width: 600px; margin: 1rem auto 0; opacity: 0.9;">Une question ? Une suggestion ? Parlons-en !</p>
 </div>
 
+=======
+<div class="hero-small">
+    <h1>Contact</h1>
+    <p style="max-width: 600px; margin: 1rem auto 0; opacity: 0.9;">Une question ? Une suggestion ? Parlons-en !</p>
+</div>
+
+>>>>>>> Stashed changes
 <section class="section">
     <div class="container">
 
@@ -1068,12 +1082,16 @@
         <li><a href="a-propos.html">À propos</a></li>
         <li><a href="contact.html">Contact</a></li>
     </ul>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 </footer>
 
 <script>
 const CONTACT_WEBHOOK_URL = "https://hook.eu1.make.com/hn9yjkbv5m03a4uqanh9w8hbe5bc3gla";
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 ROTATION AUTOMATIQUE ARTICLE À LA UNE :
 - L'article change automatiquement tous les 56 jours
@@ -1393,6 +1411,15 @@ function showStatus(message, type) {
     statusMessage.textContent = message;
     statusMessage.className = "status-message " + type;
 >>>>>>> Stashed changes
+=======
+const form = document.getElementById("contact-form");
+const submitBtn = document.getElementById("submit-btn");
+const statusMessage = document.getElementById("status-message");
+
+function showStatus(message, type) {
+    statusMessage.textContent = message;
+    statusMessage.className = "status-message " + type;
+>>>>>>> Stashed changes
 }
 
 function isValidEmail(email) {
@@ -1434,12 +1461,15 @@ form.addEventListener("submit", async function(e) {
     };
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     const roadTrips = ARTICLES.filter(article => article.category === "road-trips");
     const testsMateriel = ARTICLES.filter(article => article.category === "tests-materiel");
     const guidesPratiques = ARTICLES.filter(article => article.category === "guides-pratiques");
     const testsMotos = ARTICLES.filter(article => article.category === "tests-motos");
     const photoVideo = ARTICLES.filter(article => article.category === "photo-video");
 =======
+=======
+>>>>>>> Stashed changes
     try {
         const response = await fetch(CONTACT_WEBHOOK_URL, {
             method: "POST",
@@ -1448,12 +1478,16 @@ form.addEventListener("submit", async function(e) {
             },
             body: JSON.stringify(payload)
         });
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
         if (!response.ok) {
             throw new Error("HTTP " + response.status);
         }
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     document.getElementById("grid-road-trips").innerHTML = roadTrips.map(createArticleCard).join("");
     document.getElementById("grid-tests-materiel").innerHTML = testsMateriel.map(createArticleCard).join("");
@@ -1469,6 +1503,8 @@ form.addEventListener("submit", async function(e) {
 
 document.addEventListener("DOMContentLoaded", renderPage);
 =======
+=======
+>>>>>>> Stashed changes
         showStatus("Message envoyé 👍", "success");
         form.reset();
     } catch (error) {
@@ -1478,6 +1514,9 @@ document.addEventListener("DOMContentLoaded", renderPage);
         submitBtn.textContent = "Envoyer le message →";
     }
 });
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 </script>
 
