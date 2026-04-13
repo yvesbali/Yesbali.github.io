@@ -31,6 +31,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/home.css">
 
     <!-- Schema.org : WebSite + Person (E-E-A-T) -->
     <script type="application/ld+json">
@@ -90,7 +91,7 @@
         /* ========== HERO ÉDITORIAL ========== */
         .home-hero{
             position:relative;
-            min-height:62vh;
+            min-height:45vh; /* réduit à 45vh — demande Yves */
             display:flex;
             align-items:center;
             justify-content:center;
@@ -125,12 +126,12 @@
             margin-bottom:1.4rem;
             box-shadow:0 2px 8px rgba(0,0,0,.25);
         }
-        .home-hero h1{
+        .home-hero .home-hero__title{
             font-size:clamp(2rem,5.4vw,3.6rem);
             font-weight:800;
             margin-bottom:1.1rem;
         }
-        .home-hero h1 em{font-style:normal;color:var(--orange)}
+        .home-hero .home-hero__title em{font-style:normal;color:var(--orange)}
         .home-hero__lede{
             font-size:1.12rem;
             opacity:.95;
@@ -439,9 +440,11 @@
         /* ========== RESPONSIVE ========== */
         @media (max-width:800px){
             .home-section{padding:60px 0}
-            .home-hero{min-height:54vh}
+            .home-hero{min-height:38vh} /* mobile réduit — demande Yves */
         }
     </style>
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
 </head>
 <!-- ======================================== -->
 <!-- === /HEAD ============================== -->
@@ -461,7 +464,7 @@
     <header class="home-hero" role="banner">
         <div class="home-hero__inner">
             <div class="home-hero__kicker">🏍️ Le Coin Des Motards Heureux · Annecy</div>
-            <h1>Road trips <em>moto</em> solo, tests terrain, guides pratiques</h1>
+            <p class="home-hero__title">Road trips <em>moto</em> solo, tests terrain, guides pratiques</p>
             <p class="home-hero__lede">
                 Depuis Annecy vers le Cap Nord, les Alpes, les Dolomites et la Slovénie —
                 récits de voyage, matériel testé sur la route et guides pour préparer ton propre road trip.
@@ -472,6 +475,39 @@
             </div>
         </div>
     </header>
+
+    <!-- ========== PAVÉ 1 : ÉMOTION / ADN ========== -->
+    <section class="intro-emotion-box">
+      <div class="container-small">
+        <p><strong>Une passion : voyager à moto, découvrir de nouveaux horizons et partager ces expériences avec ceux qui ne peuvent pas toujours partir.</strong></p>
+      </div>
+    </section>
+
+    <!-- ========== PAVÉ 2 : CONTENU / SEO ========== -->
+    <section class="intro-content-box">
+      <div class="container">
+
+        <p class="intro-tagline">Voyager à moto, tester sur le terrain, partager l’expérience</p>
+
+        <h1>Road trip moto, tests d’équipement et conseils pour motards</h1>
+
+        <p>Bonjour à toutes et à tous, bienvenue sur LCDMH.</p>
+
+        <p>Sur ce site, je partage mes road trips moto, mes tests d’équipement en conditions réelles (intercoms, GPS, pneus, accessoires) ainsi que mes conseils pour rouler et voyager à moto.</p>
+
+        <p>Tous les contenus sont basés sur une expérience terrain : voyages longue distance, bivouac, utilisation quotidienne et tests comparatifs. L’objectif est simple : vous aider à choisir le bon équipement moto et préparer vos futurs itinéraires.</p>
+
+        <h2>Road trips moto et itinéraires détaillés</h2>
+        <p>Découvrez des itinéraires moto comme le Cap Nord, les Alpes ou encore des traversées Europe-Asie. Chaque road trip inclut des informations pratiques : distances, préparation, équipement recommandé et retours d’expérience.</p>
+
+        <h2>Tests d’équipement moto en conditions réelles</h2>
+        <p>Intercoms moto, GPS, pneus, éclairage et accessoires : tous les tests sont réalisés sur route et en voyage. Vous trouverez des comparatifs, des avis honnêtes et des retours d’expérience concrets.</p>
+
+        <h2>Conseils sécurité et conduite moto</h2>
+        <p>Rouler en moto, c’est aussi maîtriser sa conduite : gestion des virages, conduite en montagne, roulage de nuit et anticipation des dangers. Retrouvez des conseils pratiques pour rouler en sécurité et gagner en confiance.</p>
+
+      </div>
+    </section>
 
     <!-- ========== ROAD TRIPS ========== -->
     <section class="home-section" id="road-trips" aria-labelledby="rt-title">
