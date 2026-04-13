@@ -1,46 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Articles LCDMH — Road Trips, Tests Matériel, Guides Moto</title>
-<meta name="description" content="Tous les articles LCDMH : road trips moto en Europe, tests matériel, guides pratiques, bivouac, GPS, pneus et retours d'expérience terrain.">
-<meta property="og:title" content="Articles LCDMH — Road Trips, Tests Matériel, Guides Moto">
-<meta property="og:description" content="Road trips, tests matériel, guides pratiques — tous mes retours d'expérience terrain.">
-<meta property="og:url" content="https://lcdmh.com/articles.html">
-<meta property="og:image" content="https://i.ytimg.com/vi/VpqbQruf1CE/hqdefault.jpg">
+<link rel="icon" href="/images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/images/favicon.png">
+<link rel="shortcut icon" href="/images/favicon.png">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact LCDMH — Questions, partenariats</title>
+<meta name="description" content="Contactez Yves de LCDMH : partenariats marques moto, codes promo, questions et suggestions.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://lcdmh.com/contact.html">
+
+<meta property="og:title" content="Contact LCDMH — Questions, partenariats">
+<meta property="og:description" content="Contactez Yves de LCDMH : partenariats marques moto, codes promo, questions et suggestions.">
+<meta property="og:url" content="https://lcdmh.com/contact.html">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="LCDMH">
-<link rel="canonical" href="https://lcdmh.com/articles.html">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta property="og:image" content="https://lcdmh.com/images/lcdmh-og-default.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-:root{
-    --orange:#e67e22;
-    --orange-dark:#d35400;
-    --noir:#1a1a1a;
-    --bg:#f7f7f5;
-    --alt:#f0ede8;
-    --card:#fff;
-    --border:#e5e5e5;
-    --muted:#777;
-    --hero1:#1a2b4a;
-    --hero2:#2c3e50;
-    --shadow:0 10px 30px rgba(0,0,0,.08);
-    --radius:18px;
-    --max:1140px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-    font-family:'Inter',sans-serif;
-    background:var(--bg);
-    color:var(--noir);
-    line-height:1.7;
-}
-a{color:inherit;text-decoration:none}
-img{display:block;width:100%;height:auto}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
+<<<<<<< Updated upstream
 .wrap{
     max-width:var(--max);
     margin:0 auto;
@@ -473,98 +457,201 @@ img{display:block;width:100%;height:auto}
     .main-layout,
     .featured-main{
         grid-template-columns:1fr;
+=======
+    :root{
+        --orange:#e67e22;
+        --orange-dark:#d35400;
+        --noir:#1a1a1a;
+        --bg:#f7f7f5;
+        --success:#166534;
+        --success-bg:#edf9f0;
+        --error:#b91c1c;
+        --error-bg:#fff1f2;
+>>>>>>> Stashed changes
     }
-    .toolbar-grid{
-        grid-template-columns:1fr 1fr;
-    }
-    .sidebar-card{
-        position:static;
-    }
-}
-@media (max-width:760px){
-    .wrap{padding:0 1rem}
-    .hero-articles{padding:2.4rem 1rem 1.8rem}
-    .hero-stats,
-    .toolbar-grid{
-        grid-template-columns:1fr;
-    }
-    .featured-mini{
-        grid-template-columns:1fr;
-    }
-    .section-head{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-    .articles-grid{
-        grid-template-columns:1fr;
-    }
-}
 
-/* ENCARTS PARTENAIRES SIDEBAR */
-.sidebar-partners{
-    margin-top:1.5rem;
-}
-.sidebar-partners > h3{
-    font-family:'Montserrat',sans-serif;
-    font-size:1.05rem;
-    margin-bottom:1rem;
-}
-.partner-card{
-    display:block;
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:14px;
-    overflow:hidden;
-    margin-bottom:1rem;
-    transition:all .2s ease;
-    text-decoration:none;
-    color:inherit;
-}
-.partner-card:hover{
-    border-color:var(--orange);
-    box-shadow:0 6px 20px rgba(230,126,34,.15);
-    transform:translateY(-2px);
-}
-.partner-card-img{
-    height:120px;
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-position:center;
-    background-color:#f5f5f5;
-}
-.partner-card-body{
-    padding:.85rem 1rem;
-}
-.partner-card-cat{
-    font-size:.7rem;
-    text-transform:uppercase;
-    letter-spacing:.06em;
-    color:var(--orange);
-    font-weight:700;
-    margin-bottom:.2rem;
-}
-.partner-card-title{
-    font-family:'Montserrat',sans-serif;
-    font-size:.92rem;
-    font-weight:700;
-    margin-bottom:.25rem;
-    color:var(--noir);
-}
-.partner-card-desc{
-    font-size:.8rem;
-    color:var(--muted);
-    margin-bottom:.5rem;
-    line-height:1.3;
-}
-.partner-card-code{
-    display:inline-block;
-    background:var(--orange);
-    color:#fff;
-    font-size:.7rem;
-    font-weight:700;
-    padding:.3rem .6rem;
-    border-radius:5px;
-}
+    body {
+        font-family: 'Inter', sans-serif;
+        background: var(--bg);
+        color: var(--noir);
+        line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 5%;
+    }
+
+    .hero-small {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        color: white;
+        padding: 60px 6%;
+        text-align: center;
+    }
+
+    .hero-small h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .contact-form {
+        background: white;
+        border-radius: 16px;
+        padding: 2.5rem;
+        margin: 3rem 0;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #333;
+    }
+
+    input, textarea, select {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        border: 2px solid #e5e5e5;
+        border-radius: 8px;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        background: #fff;
+    }
+
+    input:focus, textarea:focus, select:focus {
+        border-color: var(--orange);
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(230,126,34,0.12);
+    }
+
+    button {
+        background: var(--orange);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 700;
+        border-radius: 50px;
+        cursor: pointer;
+        width: 100%;
+        transition: background 0.2s, opacity 0.2s;
+    }
+
+    button:hover {
+        background: var(--orange-dark);
+    }
+
+    button:disabled {
+        opacity: 0.7;
+        cursor: wait;
+    }
+
+    .priority-note {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #666;
+        font-size: 0.95rem;
+        background: #fff8f2;
+        border: 1px solid #f1d2b6;
+        border-radius: 12px;
+        padding: 14px 16px;
+    }
+
+    .status-message {
+        display: none;
+        margin-top: 1rem;
+        padding: 12px 14px;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .status-message.success {
+        display: block;
+        background: var(--success-bg);
+        color: var(--success);
+    }
+
+    .status-message.error {
+        display: block;
+        background: var(--error-bg);
+        color: var(--error);
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 3rem 0;
+    }
+
+    .social-link {
+        background: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+        text-decoration: none;
+    }
+
+    .social-link:hover {
+        transform: translateY(-5px);
+    }
+
+    footer {
+        background: var(--noir);
+        color: rgba(255,255,255,.65);
+        padding: 3rem 6%;
+        text-align: center;
+    }
+
+    .footer-logo {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: white;
+        margin-bottom: .6rem;
+    }
+
+    .footer-logo em {
+        font-style: normal;
+        color: var(--orange);
+    }
+
+    .footer-links {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+        padding: 0;
+    }
+
+    .footer-links a {
+        color: rgba(255,255,255,.8);
+        text-decoration: none;
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
 </style>
 <script type="application/ld+json">
 {
@@ -587,11 +674,11 @@ img{display:block;width:100%;height:auto}
 }
 </script>
 </head>
-<body>
 
-<div id="lcdmh-nav"></div>
+<body>
 <script src="/js/lcdmh-nav-loader.js" defer></script>
 
+<<<<<<< Updated upstream
 <header class="hero-articles">
     <div class="hero-grid">
         <section class="hero-main">
@@ -887,14 +974,107 @@ img{display:block;width:100%;height:auto}
     <p style="margin-top:.5rem;">
         <a href="https://www.youtube.com/@LCDMH?sub_confirmation=1">▶ S'abonner sur YouTube pour ne rien rater</a>
     </p>
+=======
+<div class="hero-small">
+    <h1>Contact</h1>
+    <p style="max-width: 600px; margin: 1rem auto 0; opacity: 0.9;">Une question ? Une suggestion ? Parlons-en !</p>
+</div>
+
+<section class="section">
+    <div class="container">
+
+        <div class="contact-form">
+
+            <p class="priority-note">
+                Ce formulaire de contact est dédié en priorité aux abonnés avec souscription à 2€ par mois.<br><br>
+                Si vous souhaitez soutenir mon travail, dont le contenu reste accessible gratuitement, merci de vous abonner aussi.
+            </p>
+
+            <form id="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="name">Nom / Prénom</label>
+                    <input id="name" name="name" type="text" required placeholder="Yves">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" required placeholder="yves@lcdmh.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Sujet</label>
+                    <select id="subject" name="subject">
+                        <option>Question sur un road trip</option>
+                        <option>Partenariat / Collaboration</option>
+                        <option>Code promo</option>
+                        <option>Suggestion de vidéo</option>
+                        <option>Autre</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="channel">Comment m’avez-vous connu ?</label>
+                    <select id="channel" name="channel">
+                        <option value="">Optionnel</option>
+                        <option>YouTube</option>
+                        <option>Google</option>
+                        <option>Facebook</option>
+                        <option>Instagram</option>
+                        <option>Bouche à oreille</option>
+                        <option>Autre</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required placeholder="Bonjour Yves..."></textarea>
+                </div>
+
+                <button id="submit-btn" type="submit">Envoyer le message →</button>
+            </form>
+
+            <div id="status-message" class="status-message"></div>
+
+            <p style="text-align: center; margin-top: 1.5rem; color: #777; font-size: 0.9rem;">
+                Réponse selon disponibilité.
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <h2 style="margin-bottom: 2rem;">Retrouve-moi aussi sur</h2>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@LCDMH" target="_blank" class="social-link" style="color: #FF0000;">▶️</a>
+                <a href="https://www.instagram.com/lcdmh" target="_blank" class="social-link" style="color: #E4405F;">📷</a>
+                <a href="https://www.facebook.com/profile.php?id=61582712395640" target="_blank" class="social-link" style="color: #1877F2;">👤</a>
+            </div>
+        </div>
+
+        <div style="background: white; border-radius: 12px; padding: 2rem; text-align: center; margin: 3rem 0;">
+            <h3 style="margin-bottom: 1rem;">📧 Email direct</h3>
+            <p style="font-size: 1.3rem; color: var(--orange);">yvesbali@gmail.com</p>
+            <p style="color: #777; margin-top: 0.5rem;">Pour les demandes simples et rapides</p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <div class="footer-logo">LC<em>D</em>MH</div>
+    <p style="margin: 0.5rem 0; color: rgba(255,255,255,0.4);">La Chaîne du Motard Heureux · Annecy, France</p>
+    <ul class="footer-links">
+        <li><a href="roadtrips.html">Road Trips</a></li>
+        <li><a href="gps.html">GPS moto</a></li>
+        <li><a href="codes-promo.html">Codes promo</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+>>>>>>> Stashed changes
 </footer>
 
 <script>
-/*
-===========================================================
-CONFIGURATION SIMPLE
-===========================================================
+const CONTACT_WEBHOOK_URL = "https://hook.eu1.make.com/hn9yjkbv5m03a4uqanh9w8hbe5bc3gla";
 
+<<<<<<< Updated upstream
 ROTATION AUTOMATIQUE ARTICLE À LA UNE :
 - L'article change automatiquement tous les 56 jours
 - La liste ci-dessous détermine l'ordre de rotation
@@ -1204,102 +1384,77 @@ const ARTICLES = [
 
 function getArticleBySlug(slug){
     return ARTICLES.find(article => article.slug === slug) || null;
+=======
+const form = document.getElementById("contact-form");
+const submitBtn = document.getElementById("submit-btn");
+const statusMessage = document.getElementById("status-message");
+
+function showStatus(message, type) {
+    statusMessage.textContent = message;
+    statusMessage.className = "status-message " + type;
+>>>>>>> Stashed changes
 }
 
-function createArticleCard(article){
-    return `
-        <a href="${article.href}" class="article-card">
-            <div class="article-thumb">
-                <img src="${article.img}" alt="${escapeHtml(article.alt)}" loading="lazy">
-            </div>
-            <div class="article-body">
-                <span class="article-tag">${escapeHtml(article.tag)}</span>
-                <h3>${escapeHtml(article.title)}</h3>
-                <p>${escapeHtml(article.excerpt)}</p>
-                <span class="article-btn">Lire l'article →</span>
-            </div>
-        </a>
-    `;
+function isValidEmail(email) {
+    return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email);
 }
 
-function createFeaturedMain(article){
-    if(!article){ return ""; }
-    return `
-        <div class="featured-image">
-            <img src="${article.img}" alt="${escapeHtml(article.alt)}" loading="eager">
-        </div>
-        <div class="featured-body">
-            <div class="meta-line">${escapeHtml(article.tag)} • Article à la une</div>
-            <h3>${escapeHtml(article.title)}</h3>
-            <p>${escapeHtml(article.excerpt)}</p>
-            <div class="featured-actions">
-                <a class="featured-btn featured-btn-primary" href="${article.href}">Lire l'article</a>
-                <a class="featured-btn featured-btn-secondary" href="#road-trips">Voir les catégories</a>
-            </div>
-        </div>
-    `;
-}
+form.addEventListener("submit", async function(e) {
+    e.preventDefault();
 
-function createFeaturedMini(article){
-    if(!article){ return ""; }
-    return `
-        <a href="${article.href}" class="featured-mini">
-            <div class="featured-mini-image">
-                <img src="${article.img}" alt="${escapeHtml(article.alt)}" loading="lazy">
-            </div>
-            <div class="featured-mini-body">
-                <div class="meta-line">${escapeHtml(article.tag)}</div>
-                <h3>${escapeHtml(article.title)}</h3>
-                <p>${escapeHtml(article.excerpt)}</p>
-            </div>
-        </a>
-    `;
-}
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const channel = document.getElementById("channel").value.trim();
+    const message = document.getElementById("message").value.trim();
 
-function createPopularItem(article, index){
-    if(!article){ return ""; }
-    return `
-        <a href="${article.href}" class="popular-item">
-            <div class="popular-rank">${index + 1}</div>
-            <div>
-                <strong>${escapeHtml(article.title)}</strong>
-                <span>${escapeHtml(article.tag)}</span>
-            </div>
-        </a>
-    `;
-}
+    if (!name || !email || !message) {
+        showStatus("Merci de remplir les champs obligatoires.", "error");
+        return;
+    }
 
-function escapeHtml(str){
-    return String(str)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-}
+    if (!isValidEmail(email)) {
+        showStatus("L’adresse email semble invalide.", "error");
+        return;
+    }
 
-function renderPage(){
-    const featured = getArticleBySlug(FEATURED_SLUG) || ARTICLES[0];
-    const featuredSecondaries = FEATURED_SECONDARY_SLUGS
-        .map(getArticleBySlug)
-        .filter(Boolean)
-        .filter(article => article.slug !== featured.slug)
-        .slice(0, 2);
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Envoi en cours...";
 
-    const popularArticles = POPULAR_SLUGS
-        .map(getArticleBySlug)
-        .filter(Boolean)
-        .slice(0, 4);
+    const payload = {
+        name: name,
+        email: email,
+        subject: subject,
+        channel: channel,
+        message: message,
+        source: "lcdmh-contact-page",
+        page_url: window.location.href,
+        site: "lcdmh.com",
+        submitted_at: new Date().toISOString()
+    };
 
+<<<<<<< Updated upstream
     const roadTrips = ARTICLES.filter(article => article.category === "road-trips");
     const testsMateriel = ARTICLES.filter(article => article.category === "tests-materiel");
     const guidesPratiques = ARTICLES.filter(article => article.category === "guides-pratiques");
     const testsMotos = ARTICLES.filter(article => article.category === "tests-motos");
     const photoVideo = ARTICLES.filter(article => article.category === "photo-video");
+=======
+    try {
+        const response = await fetch(CONTACT_WEBHOOK_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        });
+>>>>>>> Stashed changes
 
-    document.getElementById("featured-main").innerHTML = createFeaturedMain(featured);
-    document.getElementById("featured-side").innerHTML = featuredSecondaries.map(createFeaturedMini).join("");
+        if (!response.ok) {
+            throw new Error("HTTP " + response.status);
+        }
 
+<<<<<<< Updated upstream
     document.getElementById("grid-road-trips").innerHTML = roadTrips.map(createArticleCard).join("");
     document.getElementById("grid-tests-materiel").innerHTML = testsMateriel.map(createArticleCard).join("");
     document.getElementById("grid-guides-pratiques").innerHTML = guidesPratiques.map(createArticleCard).join("");
@@ -1313,8 +1468,18 @@ function renderPage(){
 }
 
 document.addEventListener("DOMContentLoaded", renderPage);
+=======
+        showStatus("Message envoyé 👍", "success");
+        form.reset();
+    } catch (error) {
+        showStatus("Erreur d’envoi. Utilisez provisoirement yvesbali@gmail.com.", "error");
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Envoyer le message →";
+    }
+});
+>>>>>>> Stashed changes
 </script>
 
-<script src="maillage.js"></script>
 </body>
 </html>
