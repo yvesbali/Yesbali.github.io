@@ -7,7 +7,6 @@
     <!-- ══ TITLE : spécifique Alpes ══ -->
     <title>Road Trip Moto Haute-Savoie → Méditerranée : Iseran, Bonette, Galibier | LCDMH</title>
     <meta name="description" content="Road trip moto de la Haute-Savoie jusqu'à la Méditerranée : 1 800 km, cols mythiques Iseran, Bonette, Galibier. Solo en Benelli TRK 502 avec bivouac. 8 épisodes vidéo depuis Annecy.">
-    <meta name="keywords" content="road trip moto haute savoie, road trip moto alpes, voyage moto haute savoie annecy, alpes moto annecy nice, cols alpins moto, iseran moto, col de la bonette moto, galibier moto, bivouac alpes moto, route des grandes alpes moto, moto haute savoie, road trip haute savoie">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Yves – LCDMH">
     <link rel="canonical" href="https://lcdmh.com/les-alpes-dans-tous-les-sens.html">
@@ -32,14 +31,14 @@
       "@type": "Article",
       "headline": "Les Alpes dans tous les sens : Road Trip Moto d'Annecy à Nice – Série Complète",
       "description": "Récit complet d'un road trip moto à travers les Alpes françaises, d'Annecy à Nice. 1800 km en solo sur Benelli TRK 502, cols mythiques, bivouac.",
-      "image": "https://lcdmh.com/images/les_alpes.jpg",
+      "image": "https://lcdmh.com/images/lesalpes.pg.jpg",
       "datePublished": "2022-09-01",
       "dateModified": "2026-03-06",
       "author": {
         "@type": "Person",
         "name": "Yves",
         "url": "https://lcdmh.com/a-propos.html",
-        "description": "Motard, 65 ans, 72 000 km à travers l'Europe depuis 2022"
+        "description": "Motard, 63 ans, 72 000 km à travers l'Europe depuis 2022"
       },
       "publisher": {
         "@type": "Organization",
@@ -119,10 +118,6 @@
         .btn{font-family:'Montserrat',sans-serif;font-size:.88rem;font-weight:700;padding:.8rem 1.9rem;border-radius:8px;border:none;cursor:pointer;transition:all .2s;display:inline-block;letter-spacing:.02em}
         .btn-orange{background:var(--orange);color:#fff}.btn-orange:hover{background:var(--orange-dark)}
         .btn-outline{background:transparent;color:var(--orange);border:2px solid var(--orange)}.btn-outline:hover{background:var(--orange);color:#fff}
-
-        /* NAV (gardée identique) */
-        @media(max-width:900px){
-            }
 
         /* HERO - ALPES (même structure que hero-nord) */
         .hero-alpes{min-height:45vh;
@@ -238,15 +233,6 @@
         .stat-item strong{display:block;font-family:'Montserrat',sans-serif;font-size:2.2rem;font-weight:900;color:var(--orange)}
         .stat-item span{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.5)}
 
-        /* FOOTER */
-        footer{background:var(--noir);color:rgba(255,255,255,.6);padding:2.8rem 6%;text-align:center}
-        .footer-logo{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:#fff}
-        .footer-logo em{font-style:normal;color:var(--orange)}
-        .footer-links{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin:1.2rem 0;list-style:none}
-        .footer-links a{font-size:.8rem;color:rgba(255,255,255,.5);transition:color .2s}
-        .footer-links a:hover{color:var(--orange)}
-        .footer-legal{font-size:.76rem;color:rgba(255,255,255,.3);margin-top:1rem;line-height:1.7}
-
         /* INTERNAL LINKS */
         .link-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.9rem;max-width:900px;margin:0 auto}
         .link-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;font-size:.9rem;font-weight:600;transition:box-shadow .2s,color .2s;display:block}
@@ -265,12 +251,9 @@
 <body>
 <div id="lcdmh-nav"></div><script src="/js/lcdmh-nav-loader.js" defer></script>
 
-<!-- ======================================== -->
-<!-- NAVIGATION UNIQUE LCDMH -->
-<!-- ======================================== -->
-
+<main>
 <!-- ══ HERO ALPES ════════════════════════════════ -->
-<div class="hero-alpes">
+<header class="hero-alpes">
     <div class="breadcrumb">
         <a href="index.html">Accueil</a><span>›</span>
         <a href="roadtrips.html">Road Trips</a><span>›</span>
@@ -293,11 +276,11 @@
         <div class="kpi"><strong>🏕️</strong><span>bivouac & camping</span></div>
         <div class="kpi"><strong>Annecy → Nice</strong><span>itinéraire complet</span></div>
     </div>
-</div>
+</header>
 
 <!-- ══ INTRO ════════════════════════════════════ -->
 <div id="lcdmh-ressources"></div>
-<script src="roadbooks-widget.js"></script>
+<script src="roadbooks-widget.js" defer></script>
 
 <section class="section">
     <div class="intro-block">
@@ -341,7 +324,7 @@
                 <span class="tl-tag">Cormet de Roselend</span>
                 <span class="tl-tag orange">Col de l'Iseran</span>
                 <span class="tl-tag">Bivouac</span>
-                <a href="https://www.youtube.com/watch?v=UevfEKcHDjU" target="_blank" class="tl-video-link">▶ Voir l'épisode</a>
+                <a href="https://www.youtube.com/watch?v=UevfEKcHDjU" target="_blank" rel="noopener" class="tl-video-link">▶ Voir l'épisode</a>
             </div>
         </div>
 
@@ -355,7 +338,7 @@
                 <span class="tl-tag orange">Gorges de Méouge</span>
                 <span class="tl-tag">Baronnies</span>
                 <span class="tl-tag">350 km</span>
-                <a href="https://www.youtube.com/watch?v=9GvBpAWy__E" target="_blank" class="tl-video-link">▶ Voir l'épisode</a>
+                <a href="https://www.youtube.com/watch?v=9GvBpAWy__E" target="_blank" rel="noopener" class="tl-video-link">▶ Voir l'épisode</a>
             </div>
         </div>
 
@@ -369,7 +352,7 @@
                 <span class="tl-tag orange">Col de la Bonette</span>
                 <span class="tl-tag">Col de la Lombarde</span>
                 <span class="tl-tag">Italie</span>
-                <a href="https://www.youtube.com/watch?v=F0wjVN88D_E" target="_blank" class="tl-video-link">▶ Voir l'épisode</a>
+                <a href="https://www.youtube.com/watch?v=F0wjVN88D_E" target="_blank" rel="noopener" class="tl-video-link">▶ Voir l'épisode</a>
             </div>
         </div>
 
@@ -383,7 +366,7 @@
                 <span class="tl-tag orange">Col de Tende</span>
                 <span class="tl-tag red">Chute</span>
                 <span class="tl-tag">Haute Route du Sel</span>
-                <a href="https://www.youtube.com/watch?v=zvOTRRvdQeE" target="_blank" class="tl-video-link">▶ Voir l'épisode</a>
+                <a href="https://www.youtube.com/watch?v=zvOTRRvdQeE" target="_blank" rel="noopener" class="tl-video-link">▶ Voir l'épisode</a>
             </div>
         </div>
 
@@ -396,7 +379,7 @@
                 <p>Retour sur le Col de Tende, ses 14 lacets mythiques et l'analyse de la chute. Que s'est-il passé ? Comment l'éviter ? Une remise en question nécessaire pour progresser et repartir plus fort.</p>
                 <span class="tl-tag orange">14 lacets</span>
                 <span class="tl-tag">Analyse chute</span>
-                <a href="https://www.youtube.com/watch?v=8cQ573KasHI" target="_blank" class="tl-video-link">▶ Voir l'épisode</a>
+                <a href="https://www.youtube.com/watch?v=8cQ573KasHI" target="_blank" rel="noopener" class="tl-video-link">▶ Voir l'épisode</a>
             </div>
         </div>
 
@@ -409,7 +392,7 @@
                 <p>Jour 7 de ce road trip moto dans les Alpes du Sud. Cols mythiques, villages perchés, routes en lacets et détours improvisés. La fatigue est là, mais le plaisir de rouler l'emporte encore.</p>
                 <span class="tl-tag">Alpes du Sud</span>
                 <span class="tl-tag">Villages perchés</span>
-                <a href="https://www.youtube.com/watch?v=WATKVuWzRN4" target="_blank" class="tl-video-link">▶ Voir l'épisode</a>
+                <a href="https://www.youtube.com/watch?v=WATKVuWzRN4" target="_blank" rel="noopener" class="tl-video-link">▶ Voir l'épisode</a>
             </div>
         </div>
 
@@ -423,7 +406,7 @@
                 <span class="tl-tag orange">Col du Galibier</span>
                 <span class="tl-tag red">Orage</span>
                 <span class="tl-tag">2642m</span>
-                <a href="https://www.youtube.com/watch?v=AkLCTHm2xNY" target="_blank" class="tl-video-link">▶ Voir l'épisode</a>
+                <a href="https://www.youtube.com/watch?v=AkLCTHm2xNY" target="_blank" rel="noopener" class="tl-video-link">▶ Voir l'épisode</a>
             </div>
         </div>
 
@@ -436,7 +419,7 @@
                 <p>Dernière étape de mon road trip moto à travers les Alpes. D'Oraison à Annecy, en repassant par les gorges de Méouge. Fin d'une aventure de 1800 km, le cœur plein de souvenirs et la tête déjà tournée vers la prochaine.</p>
                 <span class="tl-tag">Retour</span>
                 <span class="tl-tag">Gorges de Méouge</span>
-                <a href="https://www.youtube.com/watch?v=aMgL1LC1nMU" target="_blank" class="tl-video-link">▶ Voir l'épisode</a>
+                <a href="https://www.youtube.com/watch?v=aMgL1LC1nMU" target="_blank" rel="noopener" class="tl-video-link">▶ Voir l'épisode</a>
             </div>
         </div>
 
@@ -553,7 +536,7 @@
             </div>
             <a href="https://www.youtube.com/watch?v=UevfEKcHDjU" target="_blank" rel="noopener">
                 <div class="thumb">
-                    <img src="https://i.ytimg.com/vi/UevfEKcHDjU/hqdefault.jpg" alt="Cols mythiques des Alpes" loading="lazy">
+                    <img src="https://i.ytimg.com/vi/UevfEKcHDjU/hqdefault.jpg" width="480" height="360" alt="Cols mythiques des Alpes" loading="lazy">
                     <div class="play-btn"></div>
                     <div class="ep-badge">EP 1</div>
                 </div>
@@ -565,7 +548,7 @@
                     <span class="tag tag-ep">📎 EP 1</span>
                 </div>
                 <p class="card-desc">Beaufort, Cormet de Roselend, Col de l'Iseran. Un départ intense à travers les plus beaux cols de la Haute-Savoie. Les lacets se succèdent, l'altitude grimpe, et les paysages deviennent de plus en plus grandioses.</p>
-                <a class="card-link" href="https://www.youtube.com/watch?v=UevfEKcHDjU" target="_blank">Voir l'extrait →</a>
+                <a class="card-link" href="https://www.youtube.com/watch?v=UevfEKcHDjU" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
         </article>
         <script type="application/ld+json">
@@ -579,7 +562,7 @@
             </div>
             <a href="https://www.youtube.com/watch?v=9GvBpAWy__E" target="_blank" rel="noopener">
                 <div class="thumb">
-                    <img src="https://i.ytimg.com/vi/9GvBpAWy__E/hqdefault.jpg" alt="Gorges de Méouge" loading="lazy">
+                    <img src="https://i.ytimg.com/vi/9GvBpAWy__E/hqdefault.jpg" width="480" height="360" alt="Gorges de Méouge" loading="lazy">
                     <div class="play-btn"></div>
                     <div class="ep-badge">EP 2</div>
                 </div>
@@ -591,7 +574,7 @@
                     <span class="tag tag-ep">📎 EP 2</span>
                 </div>
                 <p class="card-desc">350 km de liberté dans les Baronnies provençales. Des gorges spectaculaires, des villages pittoresques, et des routes sinueuses qui serpentent à travers les paysages méditerranéens des Alpes du Sud.</p>
-                <a class="card-link" href="https://www.youtube.com/watch?v=9GvBpAWy__E" target="_blank">Voir l'extrait →</a>
+                <a class="card-link" href="https://www.youtube.com/watch?v=9GvBpAWy__E" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
         </article>
         <script type="application/ld+json">
@@ -605,7 +588,7 @@
             </div>
             <a href="https://www.youtube.com/watch?v=F0wjVN88D_E" target="_blank" rel="noopener">
                 <div class="thumb">
-                    <img src="https://i.ytimg.com/vi/F0wjVN88D_E/hqdefault.jpg" alt="Barcelonnette Cuneo" loading="lazy">
+                    <img src="https://i.ytimg.com/vi/F0wjVN88D_E/hqdefault.jpg" width="480" height="360" alt="Barcelonnette Cuneo" loading="lazy">
                     <div class="play-btn"></div>
                     <div class="ep-badge">EP 3</div>
                 </div>
@@ -617,7 +600,7 @@
                     <span class="tag tag-ep">📎 EP 3</span>
                 </div>
                 <p class="card-desc">Col de la Bonette (2802m), le plus haut col routier des Alpes françaises, et Col de la Lombarde. Ces deux passes mythiques offrent des paysages époustouflants et marquent la transition vers la frontière italienne et les Alpes du Sud.</p>
-                <a class="card-link" href="https://www.youtube.com/watch?v=F0wjVN88D_E" target="_blank">Voir l'extrait →</a>
+                <a class="card-link" href="https://www.youtube.com/watch?v=F0wjVN88D_E" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
         </article>
         <script type="application/ld+json">
@@ -631,7 +614,7 @@
             </div>
             <a href="https://www.youtube.com/watch?v=zvOTRRvdQeE" target="_blank" rel="noopener">
                 <div class="thumb">
-                    <img src="https://i.ytimg.com/vi/zvOTRRvdQeE/hqdefault.jpg" alt="Chute au Col de Tende" loading="lazy">
+                    <img src="https://i.ytimg.com/vi/zvOTRRvdQeE/hqdefault.jpg" width="480" height="360" alt="Chute au Col de Tende" loading="lazy">
                     <div class="play-btn"></div>
                     <div class="ep-badge">EP 4</div>
                 </div>
@@ -643,7 +626,7 @@
                     <span class="tag tag-ep">📎 EP 4</span>
                 </div>
                 <p class="card-desc">240 km d'adrénaline et un moment mémorable : une chute au Col de Tende qui devient une leçon précieuse. Cet épisode capture la réalité du road trip : les défis, les erreurs, et la détermination à continuer malgré tout.</p>
-                <a class="card-link" href="https://www.youtube.com/watch?v=zvOTRRvdQeE" target="_blank">Voir l'extrait →</a>
+                <a class="card-link" href="https://www.youtube.com/watch?v=zvOTRRvdQeE" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
         </article>
         <script type="application/ld+json">
@@ -657,7 +640,7 @@
             </div>
             <a href="https://www.youtube.com/watch?v=8cQ573KasHI" target="_blank" rel="noopener">
                 <div class="thumb">
-                    <img src="https://i.ytimg.com/vi/8cQ573KasHI/hqdefault.jpg" alt="Col de Tende" loading="lazy">
+                    <img src="https://i.ytimg.com/vi/8cQ573KasHI/hqdefault.jpg" width="480" height="360" alt="Col de Tende" loading="lazy">
                     <div class="play-btn"></div>
                     <div class="ep-badge">EP 5</div>
                 </div>
@@ -669,7 +652,7 @@
                     <span class="tag tag-ep">📎 EP 5</span>
                 </div>
                 <p class="card-desc">14 lacets, une chute analysée en détail. Cet épisode disséque ce qui s'est passé et pourquoi. Une opportunité d'apprentissage sur les techniques de conduite, la gestion de la panique, et l'importance de l'expérience en montagne.</p>
-                <a class="card-link" href="https://www.youtube.com/watch?v=8cQ573KasHI" target="_blank">Voir l'extrait →</a>
+                <a class="card-link" href="https://www.youtube.com/watch?v=8cQ573KasHI" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
         </article>
         <script type="application/ld+json">
@@ -683,7 +666,7 @@
             </div>
             <a href="https://www.youtube.com/watch?v=WATKVuWzRN4" target="_blank" rel="noopener">
                 <div class="thumb">
-                    <img src="https://i.ytimg.com/vi/WATKVuWzRN4/hqdefault.jpg" alt="Alpes du Sud" loading="lazy">
+                    <img src="https://i.ytimg.com/vi/WATKVuWzRN4/hqdefault.jpg" width="480" height="360" alt="Alpes du Sud" loading="lazy">
                     <div class="play-btn"></div>
                     <div class="ep-badge">EP 6</div>
                 </div>
@@ -695,7 +678,7 @@
                     <span class="tag tag-ep">📎 EP 6</span>
                 </div>
                 <p class="card-desc">Cols, villages perchés et liberté. Les Alpes du Sud révèlent leur charme avec des routes panoramiques, des petits villages authentiques, et une sensation de totalité dans l'aventure. Le road trip trouve son rythme de croisière.</p>
-                <a class="card-link" href="https://www.youtube.com/watch?v=WATKVuWzRN4" target="_blank">Voir l'extrait →</a>
+                <a class="card-link" href="https://www.youtube.com/watch?v=WATKVuWzRN4" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
         </article>
         <script type="application/ld+json">
@@ -709,7 +692,7 @@
             </div>
             <a href="https://www.youtube.com/watch?v=AkLCTHm2xNY" target="_blank" rel="noopener">
                 <div class="thumb">
-                    <img src="https://i.ytimg.com/vi/AkLCTHm2xNY/hqdefault.jpg" alt="Lautaret Galibier" loading="lazy">
+                    <img src="https://i.ytimg.com/vi/AkLCTHm2xNY/hqdefault.jpg" width="480" height="360" alt="Lautaret Galibier" loading="lazy">
                     <div class="play-btn"></div>
                     <div class="ep-badge">EP 7</div>
                 </div>
@@ -721,7 +704,7 @@
                     <span class="tag tag-ep">📎 EP 7</span>
                 </div>
                 <p class="card-desc">Pluie, grêle et 2642m d'altitude. Le Col du Galibier nous accueille sous l'orage, offrant un spectacle dramatique et inoubliable. Les conditions météorologiques extrêmes testent la détermination et le courage du motard solitaire.</p>
-                <a class="card-link" href="https://www.youtube.com/watch?v=AkLCTHm2xNY" target="_blank">Voir l'extrait →</a>
+                <a class="card-link" href="https://www.youtube.com/watch?v=AkLCTHm2xNY" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
         </article>
         <script type="application/ld+json">
@@ -735,7 +718,7 @@
             </div>
             <a href="https://www.youtube.com/watch?v=aMgL1LC1nMU" target="_blank" rel="noopener">
                 <div class="thumb">
-                    <img src="https://i.ytimg.com/vi/aMgL1LC1nMU/hqdefault.jpg" alt="Retour Annecy" loading="lazy">
+                    <img src="https://i.ytimg.com/vi/aMgL1LC1nMU/hqdefault.jpg" width="480" height="360" alt="Retour Annecy" loading="lazy">
                     <div class="play-btn"></div>
                     <div class="ep-badge">EP 8</div>
                 </div>
@@ -747,7 +730,7 @@
                     <span class="tag tag-ep">📎 EP 8</span>
                 </div>
                 <p class="card-desc">Dernière étape à travers les Alpes. Le road trip touche à sa fin, mais l'aventure reste gravée dans la mémoire. Cette conclusion ferme la boucle d'une quête inoubliable de 1800 km dans les plus beaux cols de France.</p>
-                <a class="card-link" href="https://www.youtube.com/watch?v=aMgL1LC1nMU" target="_blank">Voir l'extrait →</a>
+                <a class="card-link" href="https://www.youtube.com/watch?v=aMgL1LC1nMU" target="_blank" rel="noopener">Voir l'extrait →</a>
             </div>
         </article>
         <script type="application/ld+json">
@@ -801,12 +784,18 @@
             <a href="roadtrips.html" class="link-card">🗺️ Tous mes road trips</a>
             <a href="tests-motos.html" class="link-card">🏍️ Tests motos</a>
             <a href="equipement.html" class="link-card">🎒 Équipement voyage</a>
-            <a href="/equipement.html" class="link-card">🏕️ Guide du bivouac</a>
+            <a href="cap-nord-moto.html" class="link-card">🏍️ Cap Nord 2025</a>
             <a href="pneus.html" class="link-card">🛞 Test pneus</a>
             <a href="codes-promo.html" class="link-card" style="color:var(--orange);">💰 Codes promo</a>
         </div>
     </div>
 </section>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){this.parentElement.classList.toggle('open')})});
+</script>
+
+</main>
 
 <!-- FOOTER -->
 
