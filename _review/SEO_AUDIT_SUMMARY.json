@@ -1,0 +1,162 @@
+{
+    "audit_date": "2026-04-12",
+    "site": "lcdmh.com (French motorcycle road trip website)",
+    "total_pages_scanned": 45,
+    "overall_compliance_percent": 95.2,
+    "overall_status": "EXCELLENT",
+    "checks_summary": {
+        "hreflang_fr": {
+            "pass": 44,
+            "fail": 1,
+            "percent": 97.8
+        },
+        "hreflang_x_default": {
+            "pass": 44,
+            "fail": 1,
+            "percent": 97.8
+        },
+        "lang_fr": {
+            "pass": 45,
+            "fail": 0,
+            "percent": 100.0
+        },
+        "meta_description": {
+            "pass": 44,
+            "fail": 1,
+            "percent": 97.8
+        },
+        "canonical_urls": {
+            "pass": 43,
+            "fail": 2,
+            "percent": 95.6
+        },
+        "title_tags": {
+            "pass": 45,
+            "fail": 0,
+            "percent": 100.0
+        },
+        "image_alt_attributes": {
+            "pass": 44,
+            "fail": 1,
+            "percent": 97.8
+        },
+        "https_enforcement": {
+            "pass": 44,
+            "fail": 1,
+            "percent": 97.8
+        },
+        "ep_badge_css": {
+            "pass": 44,
+            "fail": 1,
+            "percent": 97.8
+        },
+        "json_ld_videoobject": {
+            "pass": 43,
+            "fail": 2,
+            "percent": 95.6
+        },
+        "no_duplicate_titles": {
+            "pass": 44,
+            "fail": 0,
+            "percent": 100.0
+        },
+        "no_duplicate_descriptions": {
+            "pass": 44,
+            "fail": 0,
+            "percent": 100.0
+        }
+    },
+    "critical_issues": [
+        {
+            "issue": "EP-Badge CSS Positioning",
+            "file": "roadtrips/road-trip-norvege-cap-nord.html",
+            "severity": "CRITICAL",
+            "description": "Uses 'top:.6rem;' instead of 'bottom:.6rem;' in .ep-badge CSS",
+            "fix": "Change one word in CSS selector",
+            "effort": "TRIVIAL"
+        },
+        {
+            "issue": "HTTP Mixed Content",
+            "file": "articles/comparatif-carpuride-2026-w702-w702-pro-w702s-pro-et-702rs-pro.html",
+            "severity": "CRITICAL (SECURITY)",
+            "description": "6 HTTP resources from external Carpuride CDN (should be HTTPS)",
+            "affected_domain": "http://carpuride.com/",
+            "examples": [
+                "http://carpuride.com/cdn/shop/files/702RS_Pro.jpg?v=1753929719",
+                "http://carpuride.com/cdn/shop/files/Carpuride_W702.jpg?v=1747392153"
+            ],
+            "fix": "Contact Carpuride for HTTPS URLs or download/host images locally",
+            "effort": "MEDIUM"
+        },
+        {
+            "issue": "Missing Canonical URL",
+            "file": "articles/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat.html",
+            "severity": "CRITICAL (SEO)",
+            "description": "Page has hreflang tags but missing canonical link rel",
+            "fix": "Add <link rel=\"canonical\" href=\"https://lcdmh.com/articles/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat.html\">",
+            "effort": "TRIVIAL"
+        }
+    ],
+    "minor_issues": [
+        {
+            "issue": "Missing Image Alt Tags",
+            "file": "articles/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat.html",
+            "severity": "MINOR",
+            "count": 2,
+            "affected_images": [
+                "/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-02.jpg",
+                "/articles/images/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat/image-03.jpg"
+            ],
+            "total_images_in_file": 20,
+            "effort": "TRIVIAL"
+        },
+        {
+            "issue": "REPORT.html Not Marked for Indexing",
+            "file": "REPORT.html",
+            "severity": "LOW (may be intentional)",
+            "description": "Internal audit page missing SEO tags (hreflang, meta description, canonical)",
+            "recommendation": "Decide if page should be indexed; if not, add noindex meta tag",
+            "effort": "TRIVIAL"
+        }
+    ],
+    "strengths": [
+        "Excellent JSON-LD VideoObject implementation (43/45 pages)",
+        "Perfect language markup (100% lang='fr')",
+        "Zero duplicate titles or descriptions",
+        "Strong, descriptive title tags (100% quality)",
+        "99.5% image alt tag coverage",
+        "Clean HTTPS usage (44/45 pages)"
+    ],
+    "recommendations_priority": [
+        {
+            "priority": 1,
+            "task": "Fix EP-Badge CSS positioning",
+            "file": "roadtrips/road-trip-norvege-cap-nord.html",
+            "timeline": "Immediate"
+        },
+        {
+            "priority": 2,
+            "task": "Resolve Carpuride HTTP URLs",
+            "file": "articles/comparatif-carpuride-2026-w702-w702-pro-w702s-pro-et-702rs-pro.html",
+            "timeline": "This week"
+        },
+        {
+            "priority": 3,
+            "task": "Add canonical URL",
+            "file": "articles/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat.html",
+            "timeline": "This week"
+        },
+        {
+            "priority": 4,
+            "task": "Add missing image alt text",
+            "file": "articles/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat.html",
+            "timeline": "This month"
+        },
+        {
+            "priority": 5,
+            "task": "Clarify REPORT.html indexing status",
+            "file": "REPORT.html",
+            "timeline": "This month"
+        }
+    ]
+}

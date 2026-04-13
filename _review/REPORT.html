@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport SEO — Enrichissement LCDMH</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Segoe UI',system-ui,sans-serif; background:#f5f5f5; color:#1a1a1a; line-height:1.7; padding:2rem; }
+        .container { max-width:900px; margin:0 auto; }
+        h1 { font-size:2rem; margin-bottom:0.5rem; color:#e67e22; }
+        h2 { font-size:1.5rem; margin:2rem 0 0.8rem; color:#333; border-bottom:3px solid #e67e22; padding-bottom:0.3rem; }
+        h3 { font-size:1.1rem; margin:1.2rem 0 0.5rem; color:#e67e22; }
+        p { margin-bottom:0.8rem; }
+        .meta { color:#777; font-size:0.9rem; margin-bottom:2rem; }
+        .stat-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:1rem; margin:1.5rem 0; }
+        .stat-card { background:#fff; border-radius:12px; padding:1.2rem; text-align:center; border:1px solid #e5e5e5; box-shadow:0 2px 8px rgba(0,0,0,.04); }
+        .stat-val { font-size:2.2rem; font-weight:800; color:#e67e22; }
+        .stat-label { font-size:0.85rem; color:#777; margin-top:0.3rem; }
+        table { width:100%; border-collapse:collapse; margin:1rem 0; font-size:0.9rem; }
+        th { background:#1a1a1a; color:#fff; padding:0.7rem 1rem; text-align:left; }
+        td { padding:0.6rem 1rem; border-bottom:1px solid #e5e5e5; }
+        tr:nth-child(even) td { background:#fafafa; }
+        .badge { display:inline-block; padding:0.2rem 0.6rem; border-radius:20px; font-size:0.75rem; font-weight:700; }
+        .badge-green { background:#e8f5e9; color:#2e7d32; }
+        .badge-orange { background:#fff3e0; color:#e65100; }
+        .badge-blue { background:#e3f2fd; color:#1565c0; }
+        .warn { background:#fff3e0; border-left:4px solid #e67e22; padding:1rem; border-radius:0 8px 8px 0; margin:1rem 0; }
+        .file-list { background:#fff; border:1px solid #e5e5e5; border-radius:8px; padding:1rem; margin:1rem 0; max-height:300px; overflow-y:auto; }
+        .file-list li { padding:0.3rem 0; font-family:monospace; font-size:0.85rem; }
+        a { color:#e67e22; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>📊 Rapport SEO — Enrichissement LCDMH</h1>
+<p class="meta">Généré le 2026-04-12 13:48 — Mission complète (Phases A→D)</p>
+
+<h2>1. Bilan global</h2>
+<div class="stat-grid">
+    <div class="stat-card">
+        <div class="stat-val">44</div>
+        <div class="stat-label">Fichiers HTML dans _review/</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-val">42</div>
+        <div class="stat-label">Cartes vidéo enrichies (labels SEO)</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-val">224</div>
+        <div class="stat-label">Blocs JSON-LD VideoObject</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-val">12</div>
+        <div class="stat-label">Pages hub créées</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-val">127</div>
+        <div class="stat-label">Vidéos dans les hubs</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-val">1 476</div>
+        <div class="stat-label">Suggestions Google collectées</div>
+    </div>
+</div>
+
+<h2>2. Pages hub créées (Phase D)</h2>
+<table>
+    <tr><th>Page</th><th>Vidéos</th><th>Catégorie</th></tr>
+    <tr><td>roadtrips/road-trip-moto-france.html</td><td>21</td><td><span class="badge badge-green">Road Trip</span></td></tr>
+    <tr><td>roadtrips/road-trip-norvege-cap-nord.html</td><td>18</td><td><span class="badge badge-green">Road Trip</span></td></tr>
+    <tr><td>roadtrips/road-trip-espagne-solo.html</td><td>6</td><td><span class="badge badge-green">Road Trip</span></td></tr>
+    <tr><td>roadtrips/road-trip-turquie-cappadoce.html</td><td>8</td><td><span class="badge badge-green">Road Trip</span></td></tr>
+    <tr><td>materiel/tests-gps-moto-2026.html</td><td>13</td><td><span class="badge badge-orange">Matériel</span></td></tr>
+    <tr><td>materiel/tests-moto-essais-terrain.html</td><td>21</td><td><span class="badge badge-orange">Matériel</span></td></tr>
+    <tr><td>materiel/test-materiel-conditions-reelles.html</td><td>10</td><td><span class="badge badge-orange">Matériel</span></td></tr>
+    <tr><td>materiel/comparatif-gps-moto.html</td><td>7</td><td><span class="badge badge-orange">Matériel</span></td></tr>
+    <tr><td>materiel/tests-pneus-moto.html</td><td>4</td><td><span class="badge badge-orange">Matériel</span></td></tr>
+    <tr><td>pratique/securite-routiere.html</td><td>14</td><td><span class="badge badge-blue">Pratique</span></td></tr>
+    <tr><td>pratique/filmer-en-moto-setup.html</td><td>2</td><td><span class="badge badge-blue">Pratique</span></td></tr>
+    <tr><td>pratique/entretien-equipements-moto.html</td><td>3</td><td><span class="badge badge-blue">Pratique</span></td></tr>
+</table>
+
+<h2>3. Pages existantes enrichies (Phase C)</h2>
+<h3>Labels SEO visibles (📍 🛣️ 🛞 🛡️)</h3>
+<table>
+    <tr><th>Page</th><th>Cartes</th><th>Type</th></tr>
+    <tr><td>cap-nord-moto.html</td><td>13</td><td>road_trip</td></tr>
+    <tr><td>les-alpes-dans-tous-les-sens.html</td><td>7</td><td>serie</td></tr>
+    <tr><td>espagne-2023.html</td><td>6</td><td>road_trip</td></tr>
+    <tr><td>europe-asie-moto.html</td><td>7</td><td>road_trip</td></tr>
+    <tr><td>alpes-aventure-festival-moto.html</td><td>6</td><td>road_trip</td></tr>
+    <tr><td>securite.html</td><td>3</td><td>pratique</td></tr>
+</table>
+
+<h3>JSON-LD ajoutés aux articles</h3>
+<p>26 articles + 6 pages principales enrichis avec des blocs JSON-LD VideoObject et Review.</p>
+
+<h2>4. Fichiers à valider dans _review/</h2>
+<div class="file-list">
+<ul>
+    <li>alpes-cols-mythiques.html <span style='color:#777'>(150 KB)</span></li>
+    <li>articles/350-km-dans-le-froid-norvegien-le-vent-du-groenland-ma-brise.html <span style='color:#777'>(31 KB)</span></li>
+    <li>articles/aferiy-nano-100-autonomie-electrique-en-road-trip.html <span style='color:#777'>(29 KB)</span></li>
+    <li>articles/alpes-en-moto-barcelonnette-cuneo-benelli-trk-502-ep3.html <span style='color:#777'>(25 KB)</span></li>
+    <li>articles/bivouac-moto-comment-bien-dormir-en-tente-test-nemo-sonic-0.html <span style='color:#777'>(23 KB)</span></li>
+    <li>articles/blackview-xplore-x1-le-telephone-qui-ne-lache-jamais-en-road.html <span style='color:#777'>(28 KB)</span></li>
+    <li>articles/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat.html <span style='color:#777'>(43 KB)</span></li>
+    <li>articles/budget-road-trip-moto-norvege-ferries-couchage-conseils.html <span style='color:#777'>(26 KB)</span></li>
+    <li>articles/cols-mythiques-des-alpes-a-moto-trk-502-ep-1.html <span style='color:#777'>(23 KB)</span></li>
+    <li>articles/comparatif-carpuride-2026-w702-w702-pro-w702s-pro-et-702rs-pro.html <span style='color:#777'>(29 KB)</span></li>
+    <li>articles/dunlop-mutant-vs-bridgestone-t33-le-combat-quel-pneu-choisir.html <span style='color:#777'>(28 KB)</span></li>
+    <li>articles/filmer-son-road-trip-moto-setup-camera-dji-gopro.html <span style='color:#777'>(24 KB)</span></li>
+    <li>articles/geirangerfjord-a-moto-le-plus-beau-fjord-de-norvege-road-tri.html <span style='color:#777'>(26 KB)</span></li>
+    <li>articles/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti.html <span style='color:#777'>(33 KB)</span></li>
+    <li>articles/guide-nettoyage-bulle-moto.html <span style='color:#777'>(28 KB)</span></li>
+    <li>articles/lampe-olight-perun-3-lampe-frontale-parfaite-en-bivouac-test.html <span style='color:#777'>(25 KB)</span></li>
+    <li>articles/le-cap-nord-ca-va-mal-finir-cercle-arctique-polaire-road-tri.html <span style='color:#777'>(16 KB)</span></li>
+    <li>articles/preparation-pour-le-voyage-road-trip-en-trk-702.html <span style='color:#777'>(26 KB)</span></li>
+    <li>articles/quel-carpuride-moto-choisir.html <span style='color:#777'>(20 KB)</span></li>
+    <li>articles/quel-komobi-pro-city-tracker-gps-detecteur-de-chute-antivol.html <span style='color:#777'>(25 KB)</span></li>
+    <li>articles/quel-telephone-pour-road-trip-blackview-x1-renforce-pluie-ch.html <span style='color:#777'>(29 KB)</span></li>
+    <li>articles/radar-moto-comment-ca-marche.html <span style='color:#777'>(31 KB)</span></li>
+    <li>articles/retour-honda-nt-1100-a-26000-kms.html <span style='color:#777'>(17 KB)</span></li>
+    <li>articles/t33-vs-road-6.html <span style='color:#777'>(19 KB)</span></li>
+    <li>articles/test-benelli-trk-702-avis-15000-km-road-trip.html <span style='color:#777'>(22 KB)</span></li>
+    <li>articles/test-honda-nt1100-avis-25000-km-road-trip.html <span style='color:#777'>(23 KB)</span></li>
+    <li>articles/voyager-en-norvege-ferries-budget-conseils-guide-de-voyage-n.html <span style='color:#777'>(29 KB)</span></li>
+    <li>gps.html <span style='color:#777'>(25 KB)</span></li>
+    <li>intercoms.html <span style='color:#777'>(20 KB)</span></li>
+    <li>materiel/comparatif-gps-moto.html <span style='color:#777'>(18 KB)</span></li>
+    <li>materiel/test-materiel-conditions-reelles.html <span style='color:#777'>(24 KB)</span></li>
+    <li>materiel/tests-gps-moto-2026.html <span style='color:#777'>(29 KB)</span></li>
+    <li>materiel/tests-moto-essais-terrain.html <span style='color:#777'>(46 KB)</span></li>
+    <li>materiel/tests-pneus-moto.html <span style='color:#777'>(14 KB)</span></li>
+    <li>photo-video.html <span style='color:#777'>(27 KB)</span></li>
+    <li>pneus.html <span style='color:#777'>(18 KB)</span></li>
+    <li>pratique/entretien-equipements-moto.html <span style='color:#777'>(10 KB)</span></li>
+    <li>pratique/filmer-en-moto-setup.html <span style='color:#777'>(9 KB)</span></li>
+    <li>pratique/securite-routiere.html <span style='color:#777'>(27 KB)</span></li>
+    <li>roadtrips/road-trip-espagne-solo.html <span style='color:#777'>(15 KB)</span></li>
+    <li>roadtrips/road-trip-moto-france.html <span style='color:#777'>(38 KB)</span></li>
+    <li>roadtrips/road-trip-norvege-cap-nord.html <span style='color:#777'>(34 KB)</span></li>
+    <li>roadtrips/road-trip-turquie-cappadoce.html <span style='color:#777'>(18 KB)</span></li>
+    <li>tests-motos.html <span style='color:#777'>(38 KB)</span></li>
+</ul>
+</div>
+
+<h2>5. Points d'attention</h2>
+
+<div class="warn">
+    <strong>⚠️ Suggestions à nettoyer manuellement</strong><br>
+    Quelques suggestions Google parasites ont passé le filtre automatique (ex: "motorisation", "moto gp dans les keywords JSON-LD). 
+    Rechercher <code>"motorisation"</code> et <code>"moto gp"</code> dans les fichiers HTML pour les retirer.
+</div>
+
+<div class="warn">
+    <strong>⚠️ Pages dynamiques non traitées</strong><br>
+    Les pages <code>index.html</code>, <code>articles.html</code> et <code>roadtrips.html</code> chargent leurs cartes via JavaScript.
+    L'enrichissement de ces cartes nécessiterait de modifier les fichiers JSON/JS source, pas les pages HTML.
+</div>
+
+<div class="warn">
+    <strong>⚠️ Descriptions volontairement courtes</strong><br>
+    Conformément à la règle zéro-invention, les paragraphes descriptifs sont basés <strong>uniquement</strong> sur les titres vidéo.
+    Yves peut enrichir avec des informations vérifiées (descriptions YouTube, faits géographiques).
+</div>
+
+<h2>6. Prochaines étapes</h2>
+<p>1. <strong>Revue manuelle</strong> : Comparer quelques pages avant/après</p>
+<p>2. <strong>Nettoyage suggestions</strong> : Retirer les mots parasites dans les keywords JSON-LD</p>
+<p>3. <strong>Intégration</strong> : Déplacer les fichiers de <code>_review/</code> vers leur emplacement définitif</p>
+<p>4. <strong>Navigation</strong> : Ajouter les liens vers les nouveaux hubs dans <code>nav.html</code></p>
+<p>5. <strong>Sitemap</strong> : Ajouter les 12 nouvelles URLs dans <code>sitemap.xml</code></p>
+<p>6. <strong>Git</strong> : <code>git add . && git commit -m "Enrichissement SEO vignettes et hubs vidéo" && git push</code></p>
+
+</div>
+</body>
+</html>

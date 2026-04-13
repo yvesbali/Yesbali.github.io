@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Matériel Moto en Conditions Réelles | LCDMH</title>
+    <meta name="description" content="13 vidéos tests matériel moto : GPS, éclairage, bivouac, setup moto. Conditions réelles de road trip.">
+    <meta name="author" content="Yves – LCDMH">
+    <link rel="canonical" href="https://lcdmh.com/materiel/test-materiel-conditions-reelles.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root{--orange:#e67e22;--orange-dark:#d35400;--noir:#1a1a1a;--bg:#f7f7f5;--card:#fff;--border:#e5e5e5;--muted:#777;--alt:#f0ede8;}
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--noir);line-height:1.65;font-size:16px}
+        h1,h2,h3{font-family:'Montserrat',sans-serif}
+        a{color:inherit;text-decoration:none}
+        .hero{position:relative;min-height:35vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+        .hero-content{position:relative;z-index:2;max-width:900px;padding:2rem;text-shadow:0 2px 15px rgba(0,0,0,.7)}
+        .hero-badge{display:inline-block;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.45rem 1.4rem;border-radius:50px;margin-bottom:1.4rem}
+        .hero h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;line-height:1.1;margin-bottom:1rem}
+        .hero p{font-size:1.05rem;color:rgba(255,255,255,.9);max-width:700px;margin:0 auto}
+        .container{max-width:1100px;margin:0 auto;padding:2rem 5%}
+        h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin:2rem 0 1rem}
+        .bar{width:52px;height:4px;background:var(--orange);border-radius:2px;margin:.3rem 0 1.5rem}
+        .hub-toc{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0 2.5rem;padding:1rem;background:#fff;border-radius:10px;border:1px solid var(--border)}
+        .hub-toc a{padding:.4rem 1rem;border-radius:20px;font-size:.9rem;font-weight:600;background:var(--alt);color:var(--noir);transition:.2s}
+        .hub-toc a:hover{background:var(--orange);color:#fff}
+        .hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-bottom:3rem}
+        .video-card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--border);transition:transform .2s,box-shadow .2s}
+        .video-card:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.08)}
+        .video-card .thumb{position:relative;aspect-ratio:16/9;overflow:hidden}
+        .video-card .thumb img{width:100%;height:100%;object-fit:cover}
+        .video-card .thumb .play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;background:rgba(0,0,0,.7);border-radius:50%;display:flex;align-items:center;justify-content:center}
+        .video-card .thumb .play-btn::after{content:'';border-left:18px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+        .video-card .card-body{padding:1rem 1.2rem}
+        .video-card .seo-meta{margin-bottom:.6rem}
+        .video-card .seo-meta p{margin:0;font-size:.8rem;color:var(--muted);line-height:1.4}
+        .video-card h3{font-size:1rem;font-weight:700;margin-bottom:.4rem;line-height:1.3}
+        .video-card .card-desc{font-size:.9rem;color:#555;line-height:1.5;margin-bottom:.6rem}
+        .video-card .card-link{display:inline-block;color:var(--orange);font-weight:600;font-size:.9rem}
+        .back-top{position:fixed;bottom:2rem;right:2rem;background:var(--orange);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;box-shadow:0 4px 12px rgba(0,0,0,.15);z-index:100;cursor:pointer}
+        @media(max-width:600px){.hub-grid{grid-template-columns:1fr}}
+    </style>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('/nav.html').then(r => r.text()).then(h => {
+            const d = document.getElementById('nav-placeholder');
+            if (d) d.innerHTML = h;
+        }).catch(() => {});
+        document.querySelector('.back-top')?.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    });
+    </script>
+
+    <!-- hreflang : ciblage francophone international -->
+    <link rel="alternate" hreflang="fr" href="https://lcdmh.com/materiel/test-materiel-conditions-reelles.html">
+    <link rel="alternate" hreflang="x-default" href="https://lcdmh.com/materiel/test-materiel-conditions-reelles.html">
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <section class="hero" style="background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('https://i.ytimg.com/vi/uAW5dx2XxrI/maxresdefault.jpg') center/cover">
+        <div class="hero-content">
+            <div class="hero-badge">🔧 MATÉRIEL</div>
+            <h1>Test Matériel Moto en Conditions Réelles</h1>
+            <p>13 vidéos tests matériel moto : GPS, éclairage, bivouac, setup moto. Conditions réelles de road trip.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <nav class="hub-toc">
+            <a href="#setup">Setup moto & Installation (8)</a>
+            <a href="#bivouac">Camping & Bivouac (2)</a>
+        </nav>
+
+        <section id="setup">
+            <h2>Setup moto &amp; Installation</h2>
+            <div class="bar"></div>
+            <div class="hub-grid">
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=uAW5dx2XxrI" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/uAW5dx2XxrI/hqdefault.jpg"
+                 alt="Préparation road trip moto : setup — installation setup et test trk"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : TRK — Préparation road trip moto : setup complet TRK 702</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Préparation road trip moto : setup complet TRK 702 pour le voyage</h3>
+        <p class="card-desc">Test terrain et avis. Préparation road trip moto : setup complet TRK 702 pour le v.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Préparation road trip moto : setup complet TRK 702 pour le v"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Préparation road trip moto : setup complet TRK 702 pour le v.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Préparation road trip moto : setup complet TRK 702 pour le voyage",
+    "description": "Test terrain et avis. Préparation road trip moto : setup complet TRK 702 pour le v.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/uAW5dx2XxrI/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=uAW5dx2XxrI",
+    "embedUrl": "https://www.youtube.com/embed/uAW5dx2XxrI",
+    "keywords": "installation setup et test trk 702 motoring"
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=6CzUoVpP7yY" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/6CzUoVpP7yY/hqdefault.jpg"
+                 alt="Préparation pour le voyage ? Road — préparation pour le voyage roa"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : TRK — Préparation pour le voyage ? Road trip en TRK 702.</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Préparation pour le voyage ? Road trip en TRK 702.</h3>
+        <p class="card-desc">Test terrain et avis. Préparation pour le voyage ? Road trip en TRK 702..</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Préparation pour le voyage ? Road trip en TRK 702."
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Préparation pour le voyage ? Road trip en TRK 702..",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Préparation pour le voyage ?  Road trip en TRK 702.",
+    "description": "Test terrain et avis. Préparation pour le voyage ? Road trip en TRK 702..",
+    "thumbnailUrl": "https://i.ytimg.com/vi/6CzUoVpP7yY/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=6CzUoVpP7yY",
+    "embedUrl": "https://www.youtube.com/embed/6CzUoVpP7yY",
+    "keywords": "préparation pour le voyage road trip en trk 702, préparation pour le voyage road trip en trk 702.0, installation setup et test trk 702 motoring"
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=NFzif50GHqY" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/NFzif50GHqY/hqdefault.jpg"
+                 alt="Application MyBenelli, Tracker GT101 pour TRK"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Benelli — Application MyBenelli, Tracker GT101 pour TRK 502 </p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Application MyBenelli, Tracker GT101 pour TRK 502 et TRK 702</h3>
+        <p class="card-desc">Test terrain et avis. Application MyBenelli, Tracker GT101 pour TRK 502 et TRK 702.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Application MyBenelli, Tracker GT101 pour TRK 502 et TRK 702"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Application MyBenelli, Tracker GT101 pour TRK 502 et TRK 702.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Application MyBenelli, Tracker GT101 pour TRK 502 et TRK 702",
+    "description": "Test terrain et avis. Application MyBenelli, Tracker GT101 pour TRK 502 et TRK 702.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/NFzif50GHqY/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=NFzif50GHqY",
+    "embedUrl": "https://www.youtube.com/embed/NFzif50GHqY",
+    "keywords": ""
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=cQ0HBaueB1k" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/cQ0HBaueB1k/hqdefault.jpg"
+                 alt="Honda NT1100 Android Auto 2025 :"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Honda — Honda NT1100 Android Auto 2025 : config en 5 min +</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Honda NT1100 Android Auto 2025 : config en 5 min + astuces &amp; solution bug écran </h3>
+        <p class="card-desc">Test terrain et avis. Honda NT1100 Android Auto 2025 : config en 5 min + astuces &amp;.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Honda NT1100 Android Auto 2025 : config en 5 min + astuces &"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Honda NT1100 Android Auto 2025 : config en 5 min + astuces &.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Honda NT1100 Android Auto 2025 : config en 5 min + astuces & solution bug écran noir",
+    "description": "Test terrain et avis. Honda NT1100 Android Auto 2025 : config en 5 min + astuces &.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/cQ0HBaueB1k/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=cQ0HBaueB1k",
+    "embedUrl": "https://www.youtube.com/embed/cQ0HBaueB1k",
+    "keywords": ""
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=UWYuXJvxKsM" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/UWYuXJvxKsM/hqdefault.jpg"
+                 alt="Mon équipement secret pour affronter le — mon équipement secret pour aff"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Mon équipement secret pour affronter le froid à mo</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Mon équipement secret pour affronter le froid à moto !</h3>
+        <p class="card-desc">Test terrain et avis. Mon équipement secret pour affronter le froid à moto !.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Mon équipement secret pour affronter le froid à moto !"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Mon équipement secret pour affronter le froid à moto !.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Mon équipement secret pour affronter le froid à moto !",
+    "description": "Test terrain et avis. Mon équipement secret pour affronter le froid à moto !.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/UWYuXJvxKsM/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=UWYuXJvxKsM",
+    "embedUrl": "https://www.youtube.com/embed/UWYuXJvxKsM",
+    "keywords": "mon équipement secret pour affronter le froid à motos, mon équipement secret pour affronter le froid à motor"
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=G6SKO3BTan8" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/G6SKO3BTan8/hqdefault.jpg"
+                 alt="Après la route que se passe-t-il"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Après la route que se passe-t-il ? Vidéo, tente???</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Après la route que se passe-t-il ? Vidéo, tente???</h3>
+        <p class="card-desc">Test terrain et avis. Après la route que se passe-t-il ? Vidéo, tente???.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Après la route que se passe-t-il ? Vidéo, tente???"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Après la route que se passe-t-il ? Vidéo, tente???.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Après la route que se passe-t-il ? Vidéo, tente???",
+    "description": "Test terrain et avis. Après la route que se passe-t-il ? Vidéo, tente???.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/G6SKO3BTan8/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=G6SKO3BTan8",
+    "embedUrl": "https://www.youtube.com/embed/G6SKO3BTan8",
+    "keywords": ""
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=Ov0oFGs4f5I" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/Ov0oFGs4f5I/hqdefault.jpg"
+                 alt="TRK 702 : Découverte et Personnalisation — trk 702 motoplanete"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : TRK — TRK 702 : Découverte et Personnalisation de Ma Nou</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>TRK 702 : Découverte et Personnalisation de Ma Nouvelle Compagne de Route</h3>
+        <p class="card-desc">Test terrain et avis. TRK 702 : Découverte et Personnalisation de Ma Nouvelle Comp.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "TRK 702 : Découverte et Personnalisation de Ma Nouvelle Comp"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. TRK 702 : Découverte et Personnalisation de Ma Nouvelle Comp.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "TRK 702 : Découverte et Personnalisation de Ma Nouvelle Compagne de Route",
+    "description": "Test terrain et avis. TRK 702 : Découverte et Personnalisation de Ma Nouvelle Comp.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/Ov0oFGs4f5I/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=Ov0oFGs4f5I",
+    "embedUrl": "https://www.youtube.com/embed/Ov0oFGs4f5I",
+    "keywords": "trk 702 motoplanete, trk 702 moto, trk 702 motor, trk 702 motofichas, trk 702 vs cf moto 700"
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=FYw1a7SGA2s" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/FYw1a7SGA2s/hqdefault.jpg"
+                 alt="Olight Perun 3. Bat. 5000 mAh. — olight avis motoblouz"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Olight — Olight Perun 3. Bat. 5000 mAh. Garantie a vie</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Olight Perun 3. Bat. 5000 mAh. Garantie a vie</h3>
+        <p class="card-desc">Test terrain et avis. Olight Perun 3. Bat. 5000 mAh. Garantie a vie.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Olight Perun 3. Bat. 5000 mAh. Garantie a vie"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Olight Perun 3. Bat. 5000 mAh. Garantie a vie.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Olight Perun 3. Bat. 5000 mAh. Garantie a vie 👍",
+    "description": "Test terrain et avis. Olight Perun 3. Bat. 5000 mAh. Garantie a vie.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/FYw1a7SGA2s/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=FYw1a7SGA2s",
+    "embedUrl": "https://www.youtube.com/embed/FYw1a7SGA2s",
+    "keywords": "olight avis motoblouz, olight avis motor"
+  }
+}
+</script>
+            </div>
+        </section>
+
+        <section id="bivouac">
+            <h2>Camping &amp; Bivouac</h2>
+            <div class="bar"></div>
+            <div class="hub-grid">
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=mI-sQJ0ZhCQ" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/mI-sQJ0ZhCQ/hqdefault.jpg"
+                 alt="Bivouac moto : comment j’ai préparé — bivouac moto motorrad"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Bivouac moto : comment j’ai préparé ma NT1100 pour</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Bivouac moto : comment j’ai préparé ma NT1100 pour l’aventure »</h3>
+        <p class="card-desc">Test terrain et avis. Bivouac moto : comment j’ai préparé ma NT1100 pour l’aventur.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Bivouac moto : comment j’ai préparé ma NT1100 pour l’aventur"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Bivouac moto : comment j’ai préparé ma NT1100 pour l’aventur.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Bivouac moto : comment j’ai préparé ma NT1100 pour l’aventure »",
+    "description": "Test terrain et avis. Bivouac moto : comment j’ai préparé ma NT1100 pour l’aventur.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/mI-sQJ0ZhCQ/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=mI-sQJ0ZhCQ",
+    "embedUrl": "https://www.youtube.com/embed/mI-sQJ0ZhCQ",
+    "keywords": "bivouac moto motorrad"
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=eJtSU-JAdB0" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/eJtSU-JAdB0/hqdefault.jpg"
+                 alt="Lampe Olight Perun 3 : Lampe — lampe olight perun 3 motoblouz"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Olight — Lampe Olight Perun 3 : Lampe frontale parfaite en </p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Lampe Olight Perun 3 : Lampe frontale parfaite en bivouac : test réel en bivouac</h3>
+        <p class="card-desc">Test terrain et avis. Lampe Olight Perun 3 : Lampe frontale parfaite en bivouac : .</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Lampe Olight Perun 3 : Lampe frontale parfaite en bivouac : "
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Lampe Olight Perun 3 : Lampe frontale parfaite en bivouac : .",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Lampe Olight Perun 3 : Lampe frontale parfaite en bivouac  : test réel en bivouac moto",
+    "description": "Test terrain et avis. Lampe Olight Perun 3 : Lampe frontale parfaite en bivouac : .",
+    "thumbnailUrl": "https://i.ytimg.com/vi/eJtSU-JAdB0/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=eJtSU-JAdB0",
+    "embedUrl": "https://www.youtube.com/embed/eJtSU-JAdB0",
+    "keywords": "lampe olight perun 3 motoblouz, lampe olight perun 3 motor, olight avis motoblouz, olight avis motor"
+  }
+}
+</script>
+            </div>
+        </section>
+
+    </div>
+
+    <a href="#" class="back-top" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})">↑</a>
+</body>
+</html>

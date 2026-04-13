@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests GPS Moto 2026 &amp; Téléphone Renforcé | LCDMH</title>
+    <meta name="description" content="32 vidéos tests GPS moto : Carpuride, Aoocci, téléphones renforcés Blackview. Avis terrain après milliers de km.">
+    <meta name="author" content="Yves – LCDMH">
+    <link rel="canonical" href="https://lcdmh.com/materiel/tests-gps-moto-2026.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root{--orange:#e67e22;--orange-dark:#d35400;--noir:#1a1a1a;--bg:#f7f7f5;--card:#fff;--border:#e5e5e5;--muted:#777;--alt:#f0ede8;}
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--noir);line-height:1.65;font-size:16px}
+        h1,h2,h3{font-family:'Montserrat',sans-serif}
+        a{color:inherit;text-decoration:none}
+        .hero{position:relative;min-height:35vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+        .hero-content{position:relative;z-index:2;max-width:900px;padding:2rem;text-shadow:0 2px 15px rgba(0,0,0,.7)}
+        .hero-badge{display:inline-block;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.45rem 1.4rem;border-radius:50px;margin-bottom:1.4rem}
+        .hero h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;line-height:1.1;margin-bottom:1rem}
+        .hero p{font-size:1.05rem;color:rgba(255,255,255,.9);max-width:700px;margin:0 auto}
+        .container{max-width:1100px;margin:0 auto;padding:2rem 5%}
+        h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin:2rem 0 1rem}
+        .bar{width:52px;height:4px;background:var(--orange);border-radius:2px;margin:.3rem 0 1.5rem}
+        .hub-toc{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0 2.5rem;padding:1rem;background:#fff;border-radius:10px;border:1px solid var(--border)}
+        .hub-toc a{padding:.4rem 1rem;border-radius:20px;font-size:.9rem;font-weight:600;background:var(--alt);color:var(--noir);transition:.2s}
+        .hub-toc a:hover{background:var(--orange);color:#fff}
+        .hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-bottom:3rem}
+        .video-card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--border);transition:transform .2s,box-shadow .2s}
+        .video-card:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.08)}
+        .video-card .thumb{position:relative;aspect-ratio:16/9;overflow:hidden}
+        .video-card .thumb img{width:100%;height:100%;object-fit:cover}
+        .video-card .thumb .play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;background:rgba(0,0,0,.7);border-radius:50%;display:flex;align-items:center;justify-content:center}
+        .video-card .thumb .play-btn::after{content:'';border-left:18px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+        .video-card .card-body{padding:1rem 1.2rem}
+        .video-card .seo-meta{margin-bottom:.6rem}
+        .video-card .seo-meta p{margin:0;font-size:.8rem;color:var(--muted);line-height:1.4}
+        .video-card h3{font-size:1rem;font-weight:700;margin-bottom:.4rem;line-height:1.3}
+        .video-card .card-desc{font-size:.9rem;color:#555;line-height:1.5;margin-bottom:.6rem}
+        .video-card .card-link{display:inline-block;color:var(--orange);font-weight:600;font-size:.9rem}
+        .back-top{position:fixed;bottom:2rem;right:2rem;background:var(--orange);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;box-shadow:0 4px 12px rgba(0,0,0,.15);z-index:100;cursor:pointer}
+        @media(max-width:600px){.hub-grid{grid-template-columns:1fr}}
+    </style>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('/nav.html').then(r => r.text()).then(h => {
+            const d = document.getElementById('nav-placeholder');
+            if (d) d.innerHTML = h;
+        }).catch(() => {});
+        document.querySelector('.back-top')?.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    });
+    </script>
+
+    <!-- hreflang : ciblage francophone international -->
+    <link rel="alternate" hreflang="fr" href="https://lcdmh.com/materiel/tests-gps-moto-2026.html">
+    <link rel="alternate" hreflang="x-default" href="https://lcdmh.com/materiel/tests-gps-moto-2026.html">
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <section class="hero" style="background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('https://i.ytimg.com/vi/6vp73RL1frA/maxresdefault.jpg') center/cover">
+        <div class="hero-content">
+            <div class="hero-badge">🧭 GPS</div>
+            <h1>Tests GPS Moto 2026 &amp; Téléphone Renforcé</h1>
+            <p>32 vidéos tests GPS moto : Carpuride, Aoocci, téléphones renforcés Blackview. Avis terrain après milliers de km.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <nav class="hub-toc">
+            <a href="#autres-gps">Autres GPS & Navigation (13)</a>
+        </nav>
+
+        <section id="autres-gps">
+            <h2>Autres GPS &amp; Navigation</h2>
+            <div class="bar"></div>
+            <div class="hub-grid">
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=6vp73RL1frA" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/6vp73RL1frA/hqdefault.jpg"
+                 alt="2 Flux Audio dans l&#x27;Intercom ? — aoocci avis motorisation"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Aoocci — 2 Flux Audio dans l&#x27;Intercom ? (U6 + NT1100)Interc</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>2 Flux Audio dans l&#x27;Intercom ? (U6 + NT1100)Intercom Sena, Aoocci U6, GPS, Andro</h3>
+        <p class="card-desc">Test terrain et avis. 2 Flux Audio dans l&#x27;Intercom ? (U6 + NT1100)Intercom Sena, A.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "2 Flux Audio dans l'Intercom ? (U6 + NT1100)Intercom Sena, A"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. 2 Flux Audio dans l'Intercom ? (U6 + NT1100)Intercom Sena, A.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "2 Flux Audio dans l'Intercom ?  (U6 + NT1100)Intercom Sena, Aoocci U6, GPS, Android Auto",
+    "description": "Test terrain et avis. 2 Flux Audio dans l'Intercom ? (U6 + NT1100)Intercom Sena, A.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/6vp73RL1frA/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=6vp73RL1frA",
+    "embedUrl": "https://www.youtube.com/embed/6vp73RL1frA",
+    "keywords": "aoocci avis motorisation, aoocci avis motor"
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=sZDUr0ewee0" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/sZDUr0ewee0/hqdefault.jpg"
+                 alt="Pourquoi acheter l&#x27;intercom moto Sena 50S — sena motorradhelm test"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Sena — Pourquoi acheter l&#x27;intercom moto Sena 50S ? 2 ans </p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Pourquoi acheter l&#x27;intercom moto Sena 50S ? 2 ans toujours content ?</h3>
+        <p class="card-desc">Test terrain et avis. Pourquoi acheter l&#x27;intercom moto Sena 50S ? 2 ans toujours c.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Pourquoi acheter l'intercom moto Sena 50S ? 2 ans toujours c"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Pourquoi acheter l'intercom moto Sena 50S ? 2 ans toujours c.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Pourquoi acheter l'intercom moto Sena 50S ?  2 ans toujours content ?",
+    "description": "Test terrain et avis. Pourquoi acheter l'intercom moto Sena 50S ? 2 ans toujours c.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/sZDUr0ewee0/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=sZDUr0ewee0",
+    "embedUrl": "https://www.youtube.com/embed/sZDUr0ewee0",
+    "keywords": "sena motorradhelm test, sena motorrad test, sena avis motors, sena avis motorisation, sena avis motos"
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=qO7YMCBp-28" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/qO7YMCBp-28/hqdefault.jpg"
+                 alt="Rouler seul en moto : GPS, — rouler seul en moto motobineus"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Komobi — Rouler seul en moto : GPS, alerte chute et antivol</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Rouler seul en moto : GPS, alerte chute et antivol (Test Komobi)</h3>
+        <p class="card-desc">Test terrain et avis. Rouler seul en moto : GPS, alerte chute et antivol (Test Kom.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Rouler seul en moto : GPS, alerte chute et antivol (Test Kom"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Rouler seul en moto : GPS, alerte chute et antivol (Test Kom.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Rouler seul en moto : GPS, alerte chute et antivol (Test Komobi)",
+    "description": "Test terrain et avis. Rouler seul en moto : GPS, alerte chute et antivol (Test Kom.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/qO7YMCBp-28/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=qO7YMCBp-28",
+    "embedUrl": "https://www.youtube.com/embed/qO7YMCBp-28",
+    "keywords": "rouler seul en moto motobineuse, komobi avis motorisation, komobi avis motos"
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=rd-CjJh0lKU" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/rd-CjJh0lKU/hqdefault.jpg"
+                 alt="Sécurité moto. Radar BSD pour moto — sécurité moto. radar bsd pour "
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Sécurité moto. Radar BSD pour moto Détection d&#x27;ang</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Sécurité moto. Radar BSD pour moto Détection d&#x27;angle mort et assistance au chang</h3>
+        <p class="card-desc">Test terrain et avis. Sécurité moto. Radar BSD pour moto Détection d&#x27;angle mort et.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Sécurité moto. Radar BSD pour moto Détection d'angle mort et"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Sécurité moto. Radar BSD pour moto Détection d'angle mort et.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Sécurité moto. Radar BSD pour moto – Détection d'angle mort et assistance au changement de voie.",
+    "description": "Test terrain et avis. Sécurité moto. Radar BSD pour moto Détection d'angle mort et.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/rd-CjJh0lKU/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=rd-CjJh0lKU",
+    "embedUrl": "https://www.youtube.com/embed/rd-CjJh0lKU",
+    "keywords": "sécurité moto. radar bsd pour moto motoblouz, sécurité moto. radar bsd pour moto motoculteur, sécurité moto. radar bsd pour moto motorisation"
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=PNlKbmWrKjY" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/PNlKbmWrKjY/hqdefault.jpg"
+                 alt="Sena 60S : Le Meilleur Son — sena 60s motoblouz"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Sena — Sena 60S : Le Meilleur Son en Moto ? Test &amp; Présen</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Sena 60S : Le Meilleur Son en Moto ? Test &amp; Présentation</h3>
+        <p class="card-desc">Test terrain et avis. Sena 60S : Le Meilleur Son en Moto ? Test &amp; Présentation.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Sena 60S : Le Meilleur Son en Moto ? Test & Présentation"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Sena 60S : Le Meilleur Son en Moto ? Test & Présentation.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "🎧 Sena 60S : Le Meilleur Son en Moto ? Test & Présentation",
+    "description": "Test terrain et avis. Sena 60S : Le Meilleur Son en Moto ? Test & Présentation.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/PNlKbmWrKjY/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=PNlKbmWrKjY",
+    "embedUrl": "https://www.youtube.com/embed/PNlKbmWrKjY",
+    "keywords": "sena 60s motoblouz, sena 60s moto axxe, sena 60s moto, sena 60s motorrad, sena 60s motocard"
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=31Fot_zX2WE" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/31Fot_zX2WE/hqdefault.jpg"
+                 alt="TRK 702. Montage sélecteur de vitesse"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : TRK — TRK 702. Montage sélecteur de vitesse , personnali</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>TRK 702. Montage sélecteur de vitesse , personnalisation et Test</h3>
+        <p class="card-desc">Test terrain et avis. TRK 702. Montage sélecteur de vitesse , personnalisation et .</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "TRK 702. Montage sélecteur de vitesse , personnalisation et "
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. TRK 702. Montage sélecteur de vitesse , personnalisation et .",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "TRK 702. Montage sélecteur de vitesse , personnalisation et Test",
+    "description": "Test terrain et avis. TRK 702. Montage sélecteur de vitesse , personnalisation et .",
+    "thumbnailUrl": "https://i.ytimg.com/vi/31Fot_zX2WE/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=31Fot_zX2WE",
+    "embedUrl": "https://www.youtube.com/embed/31Fot_zX2WE",
+    "keywords": ""
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=lOsyIXoZkJU" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/lOsyIXoZkJU/hqdefault.jpg"
+                 alt="SAV Tente Lone Rider: Test Lone — sav tente lone rider motobags"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : SAV Tente Lone Rider: Test Lone Rider ADV tente. C</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>SAV Tente Lone Rider: Test Lone Rider ADV tente. Camping et bivouac Moto.</h3>
+        <p class="card-desc">Test terrain et avis. SAV Tente Lone Rider: Test Lone Rider ADV tente. Camping et .</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "SAV Tente Lone Rider: Test Lone Rider ADV tente. Camping et "
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. SAV Tente Lone Rider: Test Lone Rider ADV tente. Camping et .",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "SAV Tente Lone Rider: Test Lone Rider ADV tente. Camping et bivouac Moto.",
+    "description": "Test terrain et avis. SAV Tente Lone Rider: Test Lone Rider ADV tente. Camping et .",
+    "thumbnailUrl": "https://i.ytimg.com/vi/lOsyIXoZkJU/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=lOsyIXoZkJU",
+    "embedUrl": "https://www.youtube.com/embed/lOsyIXoZkJU",
+    "keywords": "sav tente lone rider motobags"
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=TMEUulIwbCQ" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/TMEUulIwbCQ/hqdefault.jpg"
+                 alt="Fujifilm X-S10 cinematic. Test et Avis"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Fujifilm X-S10 cinematic. Test et Avis sur le boit</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Fujifilm X-S10 cinematic. Test et Avis sur le boitier</h3>
+        <p class="card-desc">Test terrain et avis. Fujifilm X-S10 cinematic. Test et Avis sur le boitier.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Fujifilm X-S10 cinematic. Test et Avis sur le boitier"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Fujifilm X-S10 cinematic. Test et Avis sur le boitier.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Fujifilm X-S10 cinematic. Test et Avis sur le boitier",
+    "description": "Test terrain et avis. Fujifilm X-S10 cinematic. Test et Avis sur le boitier.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/TMEUulIwbCQ/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=TMEUulIwbCQ",
+    "embedUrl": "https://www.youtube.com/embed/TMEUulIwbCQ",
+    "keywords": ""
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=f8tI6Lm0TKs" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/f8tI6Lm0TKs/hqdefault.jpg"
+                 alt="Fujifilm X-S10 : test complet en — fujifilm x-s10 motor"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Fujifilm X-S10 : test complet en photo et vidéo (m</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Fujifilm X-S10 : test complet en photo et vidéo (mon avis)</h3>
+        <p class="card-desc">Test terrain et avis. Fujifilm X-S10 : test complet en photo et vidéo (mon avis).</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Fujifilm X-S10 : test complet en photo et vidéo (mon avis)"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Fujifilm X-S10 : test complet en photo et vidéo (mon avis).",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Fujifilm X-S10 : test complet en photo et vidéo (mon avis)",
+    "description": "Test terrain et avis. Fujifilm X-S10 : test complet en photo et vidéo (mon avis).",
+    "thumbnailUrl": "https://i.ytimg.com/vi/f8tI6Lm0TKs/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=f8tI6Lm0TKs",
+    "embedUrl": "https://www.youtube.com/embed/f8tI6Lm0TKs",
+    "keywords": "fujifilm x-s10 motor, fujifilm x-s10 motorisation, fujifilm x-s10 motoblouz"
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=gn7FkjtpOEM" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/gn7FkjtpOEM/hqdefault.jpg"
+                 alt="Intercom moto Sena S50 ? test — sena motorradhelm test"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Sena — Intercom moto Sena S50 ? test intercom sena S50</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Intercom moto Sena S50 ? test intercom sena S50</h3>
+        <p class="card-desc">Test terrain et avis. Intercom moto Sena S50 ? test intercom sena S50.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Intercom moto Sena S50 ? test intercom sena S50"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Intercom moto Sena S50 ? test intercom sena S50.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Intercom moto Sena S50 ? test intercom sena S50",
+    "description": "Test terrain et avis. Intercom moto Sena S50 ? test intercom sena S50.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/gn7FkjtpOEM/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=gn7FkjtpOEM",
+    "embedUrl": "https://www.youtube.com/embed/gn7FkjtpOEM",
+    "keywords": "sena motorradhelm test, sena motorrad test, sena avis motors, sena avis motorisation, sena avis motos"
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=Ub5iVg5dQ9c" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/Ub5iVg5dQ9c/hqdefault.jpg"
+                 alt="DJI Mini 3 Pro: Test et — dji mini 3 pro test et avis. f"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : DJI — DJI Mini 3 Pro: Test et avis.</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>DJI Mini 3 Pro: Test et avis.</h3>
+        <p class="card-desc">Test terrain et avis. DJI Mini 3 Pro: Test et avis..</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "DJI Mini 3 Pro: Test et avis."
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. DJI Mini 3 Pro: Test et avis..",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "DJI Mini 3 Pro: Test et avis.",
+    "description": "Test terrain et avis. DJI Mini 3 Pro: Test et avis..",
+    "thumbnailUrl": "https://i.ytimg.com/vi/Ub5iVg5dQ9c/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=Ub5iVg5dQ9c",
+    "embedUrl": "https://www.youtube.com/embed/Ub5iVg5dQ9c",
+    "keywords": "dji mini 3 pro test et avis. francais, dji mini 3 pro test et avis, dji mini 3 pro test et avis.pdf, dji mini 3 pro test et avis.fr, dji mini 3 pro motor"
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=YWlJrT0hsWE" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/YWlJrT0hsWE/hqdefault.jpg"
+                 alt="Road trip moto — road trip moto"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Road trip moto</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Road trip moto</h3>
+        <p class="card-desc">Test terrain et avis. Road trip moto.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Road trip moto"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Road trip moto.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Road trip moto",
+    "description": "Test terrain et avis. Road trip moto.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/YWlJrT0hsWE/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=YWlJrT0hsWE",
+    "embedUrl": "https://www.youtube.com/embed/YWlJrT0hsWE",
+    "keywords": "road trip moto, road trip moto corse, road trip moto maroc, road trip moto france, road trip moto dolomites"
+  }
+}
+</script>
+                <article class="video-card">
+    <a href="https://www.youtube.com/watch?v=v_DMBIuUJAo" target="_blank" rel="noopener">
+        <div class="thumb">
+            <img src="https://i.ytimg.com/vi/v_DMBIuUJAo/hqdefault.jpg"
+                 alt="Test vidéo : Tester avec o — video test moto"
+                 loading="lazy">
+            <div class="play-btn"></div>
+        </div>
+    </a>
+    <div class="card-body">
+        <div class="seo-meta">
+            <p>🛞 Modèle testé : Test vidéo : Tester avec o Filtres ND + Shuter aut</p>
+            <p>🏁 Conditions de test : usage réel road trip</p>
+        </div>
+        <h3>Test vidéo : Tester avec o Filtres ND + Shuter auto + iso auto o test 3 avril</h3>
+        <p class="card-desc">Test terrain et avis. Test vidéo : Tester avec o Filtres ND + Shuter auto + iso au.</p>
+        <span class="card-link">▶ Voir la vidéo</span>
+    </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Test vidéo : Tester avec o Filtres ND + Shuter auto + iso au"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Yves — LCDMH"
+  },
+  "reviewBody": "Test terrain et avis. Test vidéo : Tester avec o Filtres ND + Shuter auto + iso au.",
+  "video": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "• Test vidéo :\n• Tester avec \no Filtres ND + Shuter auto + iso auto\no test 3 avril",
+    "description": "Test terrain et avis. Test vidéo : Tester avec o Filtres ND + Shuter auto + iso au.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/v_DMBIuUJAo/hqdefault.jpg",
+    "contentUrl": "https://www.youtube.com/watch?v=v_DMBIuUJAo",
+    "embedUrl": "https://www.youtube.com/embed/v_DMBIuUJAo",
+    "keywords": "video test moto, essai video moto guzzi v100 mandello, essai vidéo moto guzzi 1200 sport, essai video moto 2025, essai video moto"
+  }
+}
+</script>
+            </div>
+        </section>
+
+    </div>
+
+    <a href="#" class="back-top" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})">↑</a>
+</body>
+</html>
