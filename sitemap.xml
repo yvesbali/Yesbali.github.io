@@ -158,7 +158,18 @@
   </url>
 
   <!-- ====== ARTICLES ====== -->
-  <!-- (je laisse ton bloc intact, il est déjà bon) -->
+  <url>
+    <loc>https://lcdmh.com/articles/dunlop-mutant-vs-bridgestone-t33-le-combat-quel-pneu-choisir.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lcdmh.com/dunlop-mutant.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- ====== ROAD TRIPS DÉDIÉS ====== -->
   <!-- (idem, OK) -->
