@@ -1,27 +1,30 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
 <!-- Google tag (gtag.js) - GA4 LCDMH -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-7GC33KPRMS"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7GC33KPRMS"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-7GC33KPRMS');</script>
-<link href="/images/favicon.png" rel="icon" type="image/png"/>
-<link href="/images/favicon.png" rel="apple-touch-icon"/>
-<link href="/images/favicon.png" rel="shortcut icon"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="icon" href="/images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/images/favicon.png">
+<link rel="shortcut icon" href="/images/favicon.png">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Articles moto LCDMH : road trips, tests et guides | LCDMH</title>
-<meta content="Tous les articles LCDMH : road trips moto en Europe, tests GPS, pneus, intercoms, bivouac, photo/vidéo et guides pratiques basés sur du terrain réel." name="description"/>
-<meta content="index, follow" name="robots"/>
-<link href="https://lcdmh.com/articles.html" rel="canonical"/>
-<meta content="Articles LCDMH — Road trips, tests et guides" property="og:title"/>
-<meta content="Tous les articles LCDMH : road trips moto en Europe, tests matériel, GPS, pneus, bivouac et guides pratiques." property="og:description"/>
-<meta content="https://lcdmh.com/articles.html" property="og:url"/>
-<meta content="website" property="og:type"/>
-<meta content="https://lcdmh.com/images/lcdmh-og-default.jpg" property="og:image"/>
-<meta content="LCDMH – La Chaîne du Motard Heureux" property="og:site_name"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<meta name="description" content="Tous les articles LCDMH : road trips moto en Europe, tests GPS, pneus, intercoms, bivouac, photo/vidéo et guides pratiques basés sur du terrain réel.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://lcdmh.com/articles.html">
+
+<meta property="og:title" content="Articles LCDMH — Road trips, tests et guides">
+<meta property="og:description" content="Tous les articles LCDMH : road trips moto en Europe, tests matériel, GPS, pneus, bivouac et guides pratiques.">
+<meta property="og:url" content="https://lcdmh.com/articles.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://lcdmh.com/images/lcdmh-og-default.jpg">
+    <meta property="og:site_name" content="LCDMH – La Chaîne du Motard Heureux">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -455,6 +458,74 @@ a{color:inherit;text-decoration:none}
     padding:0 1rem;
 }
 
+
+.main-layout > aside{
+    display:grid;
+    gap:1rem;
+    align-self:start;
+}
+.sidebar-partners{
+    position:static;
+}
+.partner-card{
+    display:grid;
+    grid-template-columns:96px 1fr;
+    gap:.9rem;
+    align-items:stretch;
+    border:1px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
+    background:#fff;
+    transition:transform .2s ease, box-shadow .2s ease;
+}
+.partner-card + .partner-card{
+    margin-top:.85rem;
+}
+.partner-card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px rgba(0,0,0,.08);
+}
+.partner-card-img{
+    min-height:96px;
+    background:#f3f0eb center/cover no-repeat;
+}
+.partner-card-body{
+    padding:.9rem .95rem .95rem 0;
+}
+.partner-card-cat{
+    font-size:.72rem;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:var(--orange);
+    margin-bottom:.28rem;
+}
+.partner-card-title{
+    font-family:'Montserrat',sans-serif;
+    font-size:.98rem;
+    line-height:1.25;
+    font-weight:700;
+    color:var(--noir);
+    margin-bottom:.25rem;
+}
+.partner-card-desc{
+    font-size:.88rem;
+    color:var(--muted);
+    line-height:1.45;
+}
+.partner-card-code{
+    display:inline-flex;
+    margin-top:.65rem;
+    min-height:30px;
+    align-items:center;
+    padding:0 .7rem;
+    border-radius:999px;
+    background:#fff4e8;
+    color:var(--orange-dark);
+    font-size:.78rem;
+    font-weight:800;
+}
+
 .noscript-fallback{
     max-width:var(--max);
     margin:1rem auto 0;
@@ -496,6 +567,15 @@ a{color:inherit;text-decoration:none}
     .featured-mini-image{
         height:140px;
     }
+    .partner-card{
+        grid-template-columns:1fr;
+    }
+    .partner-card-body{
+        padding:0 .95rem .95rem;
+    }
+    .partner-card-img{
+        min-height:160px;
+    }
 }
 
 footer{background:#1a1a1a;color:rgba(255,255,255,.65);padding:2.8rem 6%;margin-top:4rem;text-align:center}
@@ -511,7 +591,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,.65);padding:2.8rem 6%;margin-t
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Articles LCDMH — Road trips, tests et guides",
-  "description": "Tous les articles LCDMH : road trips moto en Europe, tests matériel, guides pratiques, bivouac, GPS, pneus et retours d'expérience.",
+  "description": "Tous les articles LCDMH : road trips moto en Europe, tests GPS, pneus, intercoms, bivouac, photo/vidéo et guides pratiques basés sur du terrain réel.",
   "url": "https://lcdmh.com/articles.html",
   "inLanguage": "fr-FR",
   "isPartOf": {
@@ -527,246 +607,268 @@ footer{background:#1a1a1a;color:rgba(255,255,255,.65);padding:2.8rem 6%;margin-t
 }
 </script>
 </head>
+
 <body>
-<script defer="" src="/js/lcdmh-nav-loader.js"></script>
+<script src="/js/lcdmh-nav-loader.js" defer></script>
+
 <header class="hero-articles">
-<div class="hero-grid">
-<section class="hero-main">
-<span class="hero-kicker">LCDMH • Hub articles</span>
-<h1>Articles road trip moto, tests matériel et guides pratiques</h1>
-<p>
+    <div class="hero-grid">
+        <section class="hero-main">
+            <span class="hero-kicker">LCDMH • Hub articles</span>
+            <h1>Articles road trip moto, tests matériel et guides pratiques</h1>
+            <p>
                 Retours d’expérience terrain, voyages moto, bivouac, GPS, pneus, équipement et conseils pratiques :
                 retrouve ici les articles LCDMH classés par univers pour naviguer plus facilement.
             </p>
-<div class="hero-actions">
-<a class="hero-btn hero-btn-primary" href="#a-la-une">Voir l’article à la une</a>
-<a class="hero-btn hero-btn-secondary" href="#road-trips">Voir les catégories</a>
-</div>
-</section>
-<aside class="hero-side">
-<div class="hero-side-card">
-<h2>Vue d’ensemble</h2>
-<div class="hero-stats">
-<div class="stat">
-<strong id="stat-total-articles">26</strong>
-<span>articles</span>
-</div>
-<div class="stat">
-<strong>5</strong>
-<span>catégories</span>
-</div>
-<div class="stat">
-<strong>1</strong>
-<span>article à la une</span>
-</div>
-</div>
-</div>
-<div class="hero-side-card">
-<h2>Entrées rapides</h2>
-<div class="quick-links">
-<a class="quick-link" href="#road-trips">🏍️ Road Trips</a>
-<a class="quick-link" href="#tests-materiel">🔧 Tests matériel</a>
-<a class="quick-link" href="#guides-pratiques">🧭 Guides pratiques</a>
-<a class="quick-link" href="#tests-motos">🏆 Tests motos</a>
-<a class="quick-link" href="#photo-video">📷 Photo-Vidéo</a>
-<a class="quick-link" href="#sidebar-populaires">🔥 Populaires</a>
-</div>
-</div>
-</aside>
-</div>
+            <div class="hero-actions">
+                <a class="hero-btn hero-btn-primary" href="#a-la-une">Voir l’article à la une</a>
+                <a class="hero-btn hero-btn-secondary" href="#road-trips">Voir les catégories</a>
+            </div>
+        </section>
+
+        <aside class="hero-side">
+            <div class="hero-side-card">
+                <h2>Vue d’ensemble</h2>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <strong id="stat-total-articles">26</strong>
+                        <span>articles</span>
+                    </div>
+                    <div class="stat">
+                        <strong>5</strong>
+                        <span>catégories</span>
+                    </div>
+                    <div class="stat">
+                        <strong>1</strong>
+                        <span>article à la une</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-side-card">
+                <h2>Entrées rapides</h2>
+                <div class="quick-links">
+                    <a class="quick-link" href="#road-trips">🏍️ Road Trips</a>
+                    <a class="quick-link" href="#tests-materiel">🔧 Tests matériel</a>
+                    <a class="quick-link" href="#guides-pratiques">🧭 Guides pratiques</a>
+                    <a class="quick-link" href="#tests-motos">🏆 Tests motos</a>
+                    <a class="quick-link" href="#photo-video">📷 Photo-Vidéo</a>
+                    <a class="quick-link" href="#sidebar-populaires">🔥 Populaires</a>
+                </div>
+            </div>
+        </aside>
+    </div>
 </header>
+
 <noscript>
-<div class="noscript-fallback">
+    <div class="noscript-fallback">
         Cette page fonctionne mieux avec JavaScript activé, car l’article à la une et les sections sont générés automatiquement.
     </div>
 </noscript>
+
 <div class="wrap">
-<section aria-label="Outils de lecture" class="toolbar">
-<div class="toolbar-grid">
-<div class="tool">🔎 Une page pensée pour mieux mettre en avant les meilleurs articles</div>
-<div class="tool">📂 Classement par catégories</div>
-<div class="tool">↕️ Article à la une modifiable facilement</div>
-</div>
-</section>
-<section class="featured-block" id="a-la-une">
-<div class="section-head">
-<div>
-<h2>À la une</h2>
-<p>Un article principal mis en avant, modifiable chaque semaine sans toucher à toute la page.</p>
-</div>
-<a class="section-link" href="#road-trips">Voir toutes les catégories →</a>
-</div>
-<div class="featured-grid">
-<article class="featured-main" id="featured-main">
-<div class="featured-image"><img alt="Le Cap Nord, ça va mal finir ! Cercle arctique polaire" height="360" loading="eager" src="https://i.ytimg.com/vi/VpqbQruf1CE/hqdefault.jpg" width="480"/></div><div class="featured-body"><div class="meta-line">Road Trip • Cap Nord • Article à la une</div><h3>Le Cap Nord, ça va mal finir ! Cercle arctique polaire</h3><p>Quand la route vers le Cap Nord devient un défi mental et physique.</p><div class="featured-actions"><a class="featured-btn featured-btn-primary" href="articles/le-cap-nord-ca-va-mal-finir-cercle-arctique-polaire-road-tri.html">Lire l'article</a><a class="featured-btn featured-btn-secondary" href="#road-trips">Voir les catégories</a></div></div>
+    <section class="toolbar" aria-label="Outils de lecture">
+        <div class="toolbar-grid">
+            <div class="tool">🔎 Une page pensée pour mieux mettre en avant les meilleurs articles</div>
+            <div class="tool">📂 Classement par catégories</div>
+            <div class="tool">↕️ Article à la une modifiable facilement</div>
+        </div>
+    </section>
+
+    <section class="featured-block" id="a-la-une">
+        <div class="section-head">
+            <div>
+                <h2>À la une</h2>
+                <p>Un article principal mis en avant, modifiable chaque semaine sans toucher à toute la page.</p>
+            </div>
+            <a class="section-link" href="#road-trips">Voir toutes les catégories →</a>
+        </div>
+
+        <div class="featured-grid">
+            <article class="featured-main" id="featured-main">
+<div class="featured-image"><img width="480" height="360" src="https://i.ytimg.com/vi/VpqbQruf1CE/hqdefault.jpg" alt="Le Cap Nord, ça va mal finir ! Cercle arctique polaire" loading="eager"></div><div class="featured-body"><div class="meta-line">Road Trip • Cap Nord • Article à la une</div><h3>Le Cap Nord, ça va mal finir ! Cercle arctique polaire</h3><p>Quand la route vers le Cap Nord devient un défi mental et physique.</p><div class="featured-actions"><a class="featured-btn featured-btn-primary" href="articles/le-cap-nord-ca-va-mal-finir-cercle-arctique-polaire-road-tri.html">Lire l'article</a><a class="featured-btn featured-btn-secondary" href="#road-trips">Voir les catégories</a></div></div>
 </article>
-<div class="featured-side" id="featured-side">
-<a class="featured-mini" href="articles/350-km-dans-le-froid-norvegien-le-vent-du-groenland-ma-brise.html"><div class="featured-mini-image"><img alt="350 km dans le froid norvégien" height="360" loading="lazy" src="https://i.ytimg.com/vi/cstTBA6HBGc/hqdefault.jpg" width="480"/></div><div class="featured-mini-body"><div class="meta-line">Road Trip • Norvège</div><h3>350 km dans le froid norvégien : le vent du Groenland m'a brisé</h3><p>Le récit d'une étape éprouvante au Cap Nord, entre vent glacial et routes désertes.</p></div></a><a class="featured-mini" href="articles/voyager-en-norvege-ferries-budget-conseils-guide-de-voyage-n.html"><div class="featured-mini-image"><img alt="Guide Norvège ferries budget conseils" height="360" loading="lazy" src="https://i.ytimg.com/vi/jKEeq45vtPU/hqdefault.jpg" width="480"/></div><div class="featured-mini-body"><div class="meta-line">Guide • Norvège</div><h3>Voyager en Norvège : ferries, budget, conseils</h3><p>Guide pratique pour préparer un road trip moto en Norvège.</p></div></a>
-</div>
-<div class="featured-mini-body"><div class="meta-line">Road Trip • Norvège</div><h3>350 km dans le froid norvégien : le vent du Groenland m'a brisé</h3><p>Le récit d'une étape éprouvante au Cap Nord.</p></div>
+            <div class="featured-side" id="featured-side">
+                <a href="articles/350-km-dans-le-froid-norvegien-le-vent-du-groenland-ma-brise.html" class="featured-mini">
+                    <div class="featured-mini-image"><img width="480" height="360" src="https://i.ytimg.com/vi/cstTBA6HBGc/hqdefault.jpg" alt="350 km dans le froid norvégien" loading="lazy"></div>
+                    <div class="featured-mini-body"><div class="meta-line">Road Trip • Norvège</div><h3>350 km dans le froid norvégien : le vent du Groenland m&#039;a brisé</h3><p>Le récit d&#039;une étape éprouvante au Cap Nord, entre vent glacial et routes désertes.</p></div>
+                </a>
+                <a href="articles/voyager-en-norvege-ferries-budget-conseils-guide-de-voyage-n.html" class="featured-mini">
+                    <div class="featured-mini-image"><img width="480" height="360" src="https://i.ytimg.com/vi/jKEeq45vtPU/hqdefault.jpg" alt="Guide Norvège ferries budget conseils" loading="lazy"></div>
+                    <div class="featured-mini-body"><div class="meta-line">Guide • Norvège</div><h3>Voyager en Norvège : ferries, budget, conseils</h3><p>Guide pratique pour préparer un road trip moto en Norvège.</p></div>
+                </a>
+            </div>
+        </div>
+    </section>
 
-<a class="featured-mini" href="articles/voyager-en-norvege-ferries-budget-conseils-guide-de-voyage-n.html">
-<div class="featured-mini-image"><img alt="Guide Norvège ferries" height="360" loading="lazy" src="https://i.ytimg.com/vi/jKEeq45vtPU/hqdefault.jpg" width="480"/></div>
-<div class="featured-mini-body"><div class="meta-line">Guide • Norvège</div><h3>Voyager en Norvège : ferries, budget, conseils</h3><p>Guide pratique pour préparer un road trip moto en Norvège.</p></div>
-</a>
-</div>
-</section></div>
+    <section class="main-layout">
+        <main>
+            <section class="category-section" id="road-trips">
+                <div class="section-head">
+                    <div>
+                        <h2>🏍️ Road Trips</h2>
+                        <p>Voyages, étapes, paysages, préparation et récits de route.</p>
+                    </div>
+                </div>
+                <div class="category-bar"></div>
+                <div class="articles-grid" id="grid-road-trips"></div>
+            </section>
 
-<section class="main-layout">
-<main>
-<section class="category-section" id="road-trips">
-<div class="section-head">
-<div>
-<h2>🏍️ Road Trips</h2>
-<p>Voyages, étapes, paysages, préparation et récits de route.</p>
+            <section class="category-section" id="tests-materiel">
+                <div class="section-head">
+                    <div>
+                        <h2>🔧 Tests Matériel</h2>
+                        <p>GPS, pneus, éclairage, smartphone, batterie, bivouac et retours terrain.</p>
+                    </div>
+                </div>
+                <div class="category-bar"></div>
+                <div class="articles-grid" id="grid-tests-materiel"></div>
+            </section>
+
+            <section class="category-section" id="guides-pratiques">
+                <div class="section-head">
+                    <div>
+                        <h2>🧭 Guides pratiques</h2>
+                        <p>Conseils utiles, préparation voyage, entretien et sujets evergreen.</p>
+                    </div>
+                </div>
+                <div class="category-bar"></div>
+                <div class="articles-grid" id="grid-guides-pratiques"></div>
+            </section>
+
+            <section class="category-section" id="tests-motos">
+                <div class="section-head">
+                    <div>
+                        <h2>🏆 Tests Motos</h2>
+                        <p>Bilans terrain sur la Honda NT1100 et la Benelli TRK 702 après des milliers de kilomètres.</p>
+                    </div>
+                </div>
+                <div class="category-bar"></div>
+                <div class="articles-grid" id="grid-tests-motos"></div>
+            </section>
+
+            <section class="category-section" id="photo-video">
+                <div class="section-head">
+                    <div>
+                        <h2>📷 Photo-Vidéo</h2>
+                        <p>Setup caméra, matériel de tournage et méthodes pour filmer ses road trips.</p>
+                    </div>
+                </div>
+                <div class="category-bar"></div>
+                <div class="articles-grid" id="grid-photo-video"></div>
+            </section>
+        </main>
+
+        <aside>
+            <div class="sidebar-card" id="sidebar-populaires">
+                <h3>Articles populaires</h3>
+                <div class="popular-list" id="popular-list">
+<a href="articles/le-cap-nord-ca-va-mal-finir-cercle-arctique-polaire-road-tri.html" class="popular-item"><div class="popular-rank">1</div><div><strong>Le Cap Nord, ça va mal finir ! Cercle arctique polaire</strong><span>Road Trip • Cap Nord</span></div></a><a href="articles/dunlop-mutant-vs-bridgestone-t33-le-combat-quel-pneu-choisir.html" class="popular-item"><div class="popular-rank">2</div><div><strong>Dunlop Mutant vs Bridgestone T33 : le combat, quel pneu choisir ?</strong><span>Test • Pneus</span></div></a><a href="articles/voyager-en-norvege-ferries-budget-conseils-guide-de-voyage-n.html" class="popular-item"><div class="popular-rank">3</div><div><strong>Voyager en Norvège : ferries, budget, conseils</strong><span>Guide • Norvège</span></div></a><a href="articles/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti.html" class="popular-item"><div class="popular-rank">4</div><div><strong>GPS MOTO : GPS Offline U6 va-t-il sauver mes balades moto ?</strong><span>Test • GPS</span></div></a>
 </div>
-</div>
-<div class="category-bar"></div>
-<div class="articles-grid" id="grid-road-trips"></div>
-</section>
-<section class="category-section" id="tests-materiel">
-<div class="section-head">
-<div>
-<h2>🔧 Tests Matériel</h2>
-<p>GPS, pneus, éclairage, smartphone, batterie, bivouac et retours terrain.</p>
-</div>
-</div>
-<div class="category-bar"></div>
-<div class="articles-grid" id="grid-tests-materiel"></div>
-</section>
-<section class="category-section" id="guides-pratiques">
-<div class="section-head">
-<div>
-<h2>🧭 Guides pratiques</h2>
-<p>Conseils utiles, préparation voyage, entretien et sujets evergreen.</p>
-</div>
-</div>
-<div class="category-bar"></div>
-<div class="articles-grid" id="grid-guides-pratiques"></div>
-</section>
-<section class="category-section" id="tests-motos">
-<div class="section-head">
-<div>
-<h2>🏆 Tests Motos</h2>
-<p>Bilans terrain sur la Honda NT1100 et la Benelli TRK 702 après des milliers de kilomètres.</p>
-</div>
-</div>
-<div class="category-bar"></div>
-<div class="articles-grid" id="grid-tests-motos"></div>
-</section>
-<section class="category-section" id="photo-video">
-<div class="section-head">
-<div>
-<h2>📷 Photo-Vidéo</h2>
-<p>Setup caméra, matériel de tournage et méthodes pour filmer ses road trips.</p>
-</div>
-</div>
-<div class="category-bar"></div>
-<div class="articles-grid" id="grid-photo-video"></div>
-</section>
-</main>
-<aside>
-<div class="sidebar-card" id="sidebar-populaires">
-<h3>Articles populaires</h3>
-<div class="popular-list" id="popular-list">
-<a class="popular-item" href="articles/le-cap-nord-ca-va-mal-finir-cercle-arctique-polaire-road-tri.html"><div class="popular-rank">1</div><div><strong>Le Cap Nord, ça va mal finir ! Cercle arctique polaire</strong><span>Road Trip • Cap Nord</span></div></a><a class="popular-item" href="articles/dunlop-mutant-vs-bridgestone-t33-le-combat-quel-pneu-choisir.html"><div class="popular-rank">2</div><div><strong>Dunlop Mutant vs Bridgestone T33 : le combat, quel pneu choisir ?</strong><span>Test • Pneus</span></div></a><a class="popular-item" href="articles/voyager-en-norvege-ferries-budget-conseils-guide-de-voyage-n.html"><div class="popular-rank">3</div><div><strong>Voyager en Norvège : ferries, budget, conseils</strong><span>Guide • Norvège</span></div></a><a class="popular-item" href="articles/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti.html"><div class="popular-rank">4</div><div><strong>GPS MOTO : GPS Offline U6 va-t-il sauver mes balades moto ?</strong><span>Test • GPS</span></div></a>
-</div><div><strong>Le Cap Nord, ça va mal finir !</strong><span>Road Trip • Cap Nord</span></div>
-<a class="popular-item" href="articles/dunlop-mutant-vs-bridgestone-t33-le-combat-quel-pneu-choisir.html"><div class="popular-rank">2</div><div><strong>Dunlop Mutant vs Bridgestone T33</strong><span>Test • Pneus</span></div></a>
-<a class="popular-item" href="articles/voyager-en-norvege-ferries-budget-conseils-guide-de-voyage-n.html"><div class="popular-rank">3</div><div><strong>Voyager en Norvège : ferries, budget, conseils</strong><span>Guide • Norvège</span></div></a>
-<a class="popular-item" href="articles/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti.html"><div class="popular-rank">4</div><div><strong>GPS Offline U6 va-t-il sauver mes balades moto ?</strong><span>Test • GPS</span></div></a>
-</div>
-<div class="sidebar-box">
-<h3 style="margin-top:0;">Chaîne YouTube</h3>
-<p>
+
+                <div class="sidebar-box">
+                    <h3 style="margin-top:0;">Chaîne YouTube</h3>
+                    <p>
                         Les articles prolongent les vidéos : tests, road trips, matériel et retours d’expérience terrain.
                     </p>
-<a class="full-btn" href="https://www.youtube.com/@LCDMH?sub_confirmation=1">▶ S’abonner sur YouTube</a>
-</div>
+                    <a class="full-btn" href="https://www.youtube.com/@LCDMH?sub_confirmation=1">▶ S’abonner sur YouTube</a>
+                </div>
+            </div>
 
-<!-- ENCARTS PARTENAIRES -->
-<div class="sidebar-card sidebar-partners">
-<h3>🤝 Mes partenaires</h3>
-<a class="partner-card" href="https://carpuride.com/fr/?ref=uxcepkkq" rel="sponsored nofollow noopener noopener" target="_blank">
-<div class="partner-card-img" style="background-image:url('articles/images/partenaires/carpuride.jpg');"></div>
-<div class="partner-card-body">
-<div class="partner-card-cat">GPS CarPlay moto</div>
-<div class="partner-card-title">Carpuride W702</div>
-<div class="partner-card-desc">L'écran CarPlay qui a changé mes road trips</div>
-<span class="partner-card-code">Code LCDMH -30%</span>
+            <!-- ENCARTS PARTENAIRES -->
+            <div class="sidebar-card sidebar-partners">
+                <h3>🤝 Mes partenaires</h3>
+                
+                <a href="https://carpuride.com/fr/?ref=uxcepkkq" target="_blank" rel="sponsored nofollow noopener" class="partner-card">
+                    <div class="partner-card-img" style="background-image:url('articles/images/partenaires/carpuride.jpg');"></div>
+                    <div class="partner-card-body">
+                        <div class="partner-card-cat">GPS CarPlay moto</div>
+                        <div class="partner-card-title">Carpuride W702</div>
+                        <div class="partner-card-desc">L'écran CarPlay qui a changé mes road trips</div>
+                        <span class="partner-card-code">Code LCDMH -30%</span>
+                    </div>
+                </a>
+
+                <a href="https://aoocci.fr/?ref=gvxyhqgv" target="_blank" rel="sponsored nofollow noopener" class="partner-card">
+                    <div class="partner-card-img" style="background-image:url('articles/images/partenaires/aoocci-u6.jpg');"></div>
+                    <div class="partner-card-body">
+                        <div class="partner-card-cat">GPS + Dashcam</div>
+                        <div class="partner-card-title">AOOCCI U6</div>
+                        <div class="partner-card-desc">Tout-en-un : GPS offline, TPMS, dashcam</div>
+                        <span class="partner-card-code">Code LCDMH</span>
+                    </div>
+                </a>
+
+                <a href="https://www.awin1.com/cread.php?awinmid=63859&awinaffid=2753560" target="_blank" rel="sponsored nofollow noopener" class="partner-card">
+                    <div class="partner-card-img" style="background-image:url('articles/images/partenaires/olight-perun3.jpg');"></div>
+                    <div class="partner-card-body">
+                        <div class="partner-card-cat">Éclairage bivouac</div>
+                        <div class="partner-card-title">Olight Perun 3</div>
+                        <div class="partner-card-desc">La frontale parfaite pour le bivouac</div>
+                        <span class="partner-card-code">Code LCDMH -30%</span>
+                    </div>
+                </a>
+
+                <a href="https://komobi.com" target="_blank" rel="sponsored nofollow noopener" class="partner-card">
+                    <div class="partner-card-img" style="background-image:url('articles/images/partenaires/komobi.png');"></div>
+                    <div class="partner-card-body">
+                        <div class="partner-card-cat">Sécurité moto</div>
+                        <div class="partner-card-title">KOMOBI Tracker</div>
+                        <div class="partner-card-desc">Il veille sur toi et ta moto</div>
+                        <span class="partner-card-code">-15% LCDMH</span>
+                    </div>
+                </a>
+
+                <a href="https://innovv.com?sca_ref=9864079.mA62YtPAg9" target="_blank" rel="sponsored nofollow noopener" class="partner-card">
+                    <div class="partner-card-img" style="background-image:url('articles/images/partenaires/innovv.png');"></div>
+                    <div class="partner-card-body">
+                        <div class="partner-card-cat">Dashcam moto</div>
+                        <div class="partner-card-title">INNOVV K5</div>
+                        <div class="partner-card-desc">Dashcam discrète, preuves solides</div>
+                        <span class="partner-card-code">Code LCDMH -8%</span>
+                    </div>
+                </a>
+
+                <a href="https://www.awin1.com/cread.php?awinmid=7235&awinaffid=2753560&ued=https%3A%2F%2Fwww.123pneus.fr%2F" target="_blank" rel="sponsored nofollow noopener" class="partner-card">
+                    <div class="partner-card-img" style="background:linear-gradient(135deg,#e67e22 0%,#d35400 100%);display:flex;align-items:center;justify-content:center;"><span style="font-size:2.2rem;color:#fff;">🛞</span></div>
+                    <div class="partner-card-body">
+                        <div class="partner-card-cat">Pneus moto</div>
+                        <div class="partner-card-title">123pneus.fr</div>
+                        <div class="partner-card-desc">Livrés chez ton garagiste</div>
+                        <span class="partner-card-code">Affiliation</span>
+                    </div>
+                </a>
+
+            </div>
+        </aside>
+    </section>
 </div>
-</a>
-<a class="partner-card" href="https://aoocci.fr/?ref=gvxyhqgv" rel="sponsored nofollow noopener noopener" target="_blank">
-<div class="partner-card-img" style="background-image:url('articles/images/partenaires/aoocci-u6.jpg');"></div>
-<div class="partner-card-body">
-<div class="partner-card-cat">GPS + Dashcam</div>
-<div class="partner-card-title">AOOCCI U6</div>
-<div class="partner-card-desc">Tout-en-un : GPS offline, TPMS, dashcam</div>
-<span class="partner-card-code">Code LCDMH</span>
-</div>
-</a>
-<a class="partner-card" href="https://www.awin1.com/cread.php?awinmid=63859&amp;awinaffid=2753560" rel="sponsored nofollow noopener noopener" target="_blank">
-<div class="partner-card-img" style="background-image:url('articles/images/partenaires/olight-perun3.jpg');"></div>
-<div class="partner-card-body">
-<div class="partner-card-cat">Éclairage bivouac</div>
-<div class="partner-card-title">Olight Perun 3</div>
-<div class="partner-card-desc">La frontale parfaite pour le bivouac</div>
-<span class="partner-card-code">Code LCDMH -30%</span>
-</div>
-</a>
-<a class="partner-card" href="https://komobi.com" rel="sponsored nofollow noopener noopener" target="_blank">
-<div class="partner-card-img" style="background-image:url('articles/images/partenaires/komobi.png');"></div>
-<div class="partner-card-body">
-<div class="partner-card-cat">Sécurité moto</div>
-<div class="partner-card-title">KOMOBI Tracker</div>
-<div class="partner-card-desc">Il veille sur toi et ta moto</div>
-<span class="partner-card-code">-15% LCDMH</span>
-</div>
-</a>
-<a class="partner-card" href="https://innovv.com?sca_ref=9864079.mA62YtPAg9" rel="sponsored nofollow noopener noopener" target="_blank">
-<div class="partner-card-img" style="background-image:url('articles/images/partenaires/innovv.png');"></div>
-<div class="partner-card-body">
-<div class="partner-card-cat">Dashcam moto</div>
-<div class="partner-card-title">INNOVV K5</div>
-<div class="partner-card-desc">Dashcam discrète, preuves solides</div>
-<span class="partner-card-code">Code LCDMH -8%</span>
-</div>
-</a>
-<a class="partner-card" href="https://www.awin1.com/cread.php?awinmid=7235&amp;awinaffid=2753560&amp;ued=https%3A%2F%2Fwww.123pneus.fr%2F" rel="sponsored nofollow noopener noopener" target="_blank">
-<div class="partner-card-img" style="background:linear-gradient(135deg,#e67e22 0%,#d35400 100%);display:flex;align-items:center;justify-content:center;"><span style="font-size:2.2rem;color:#fff;">🛞</span></div>
-<div class="partner-card-body">
-<div class="partner-card-cat">Pneus moto</div>
-<div class="partner-card-title">123pneus.fr</div>
-<div class="partner-card-desc">Livrés chez ton garagiste</div>
-<span class="partner-card-code">Affiliation</span>
-</div>
-</a>
-</div>
-</aside>
-</section>
 
 <div style="max-width:1140px;margin:2rem auto 0;padding:0 1.5rem">
 <div style="background:#fff8f0;border-left:4px solid #e67e22;border-radius:0 10px 10px 0;padding:1.2rem 1.5rem;margin:0 0 2rem 0">
-<strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:#e67e22;display:block;margin-bottom:.7rem">Guides &amp; comparatifs LCDMH</strong>
-<a href="intercoms.html" style="display:block;color:#1a1a1a;font-weight:600;padding:.25rem 0;font-size:.93rem;border-bottom:1px solid rgba(0,0,0,.07);text-decoration:none">→ Comparatif intercoms moto 2026 — Sena 50S, 60S vs Cardo Packtalk</a>
-<a href="carpuride.html" style="display:block;color:#1a1a1a;font-weight:600;padding:.25rem 0;font-size:.93rem;border-bottom:1px solid rgba(0,0,0,.07);text-decoration:none">→ GPS Moto Carpuride W702 Pro — avis après 5 000 km</a>
-<a href="pneus.html" style="display:block;color:#1a1a1a;font-weight:600;padding:.25rem 0;font-size:.93rem;border-bottom:1px solid rgba(0,0,0,.07);text-decoration:none">→ Comparatif pneus moto road trip — Michelin, Dunlop, Metzeler, Bridgestone</a>
-<a href="equipement.html" style="display:block;color:#1a1a1a;font-weight:600;padding:.25rem 0;font-size:.93rem;border-bottom:none;text-decoration:none">→ Équipement road trip complet — bagagerie, gants, casque testés</a>
+    <strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:#e67e22;display:block;margin-bottom:.7rem">Guides & comparatifs LCDMH</strong>
+    <a href="intercoms.html" style="display:block;color:#1a1a1a;font-weight:600;padding:.25rem 0;font-size:.93rem;border-bottom:1px solid rgba(0,0,0,.07);text-decoration:none">→ Comparatif intercoms moto 2026 — Sena 50S, 60S vs Cardo Packtalk</a>
+    <a href="carpuride.html" style="display:block;color:#1a1a1a;font-weight:600;padding:.25rem 0;font-size:.93rem;border-bottom:1px solid rgba(0,0,0,.07);text-decoration:none">→ GPS Moto Carpuride W702 Pro — avis après 5 000 km</a>
+    <a href="pneus.html" style="display:block;color:#1a1a1a;font-weight:600;padding:.25rem 0;font-size:.93rem;border-bottom:1px solid rgba(0,0,0,.07);text-decoration:none">→ Comparatif pneus moto road trip — Michelin, Dunlop, Metzeler, Bridgestone</a>
+    <a href="equipement.html" style="display:block;color:#1a1a1a;font-weight:600;padding:.25rem 0;font-size:.93rem;border-bottom:none;text-decoration:none">→ Équipement road trip complet — bagagerie, gants, casque testés</a>
 </div>
 </div>
+
 <footer>
-<div class="f-logo">LC<em>D</em>MH</div>
-<p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">La Chaîne du Motard Heureux · Annecy, France</p>
-<ul class="f-nav">
-<li><a href="/codes-promo.html">Codes promo</a></li>
-<li><a href="/carpuride.html">Carpuride</a></li>
-<li><a href="/aferiy.html">AFERIY</a></li>
-<li><a href="/komobi.html">Komobi</a></li>
-<li><a href="https://www.youtube.com/@LCDMH" rel="noopener" target="_blank">YouTube</a></li>
-<li><a href="/mentions-legales.html">Mentions légales</a></li>
-<li><a href="/a-propos.html">À propos</a></li>
-</ul>
-<p class="f-legal">Ce site contient des liens d affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br/>LCDMH © 2026 – Yves · Annecy, France</p>
+    <div class="f-logo">LC<em>D</em>MH</div>
+    <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">La Chaîne du Motard Heureux · Annecy, France</p>
+    <ul class="f-nav">
+        <li><a href="/codes-promo.html">Codes promo</a></li>
+        <li><a href="/carpuride.html">Carpuride</a></li>
+        <li><a href="/aferiy.html">AFERIY</a></li>
+        <li><a href="/komobi.html">Komobi</a></li>
+        <li><a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="/mentions-legales.html">Mentions légales</a></li>
+        <li><a href="/a-propos.html">À propos</a></li>
+    </ul>
+    <p class="f-legal">Ce site contient des liens d affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves · Annecy, France</p>
 </footer>
+
 <script>
 const CONTACT_WEBHOOK_URL = "https://hook.eu1.make.com/hn9yjkbv5m03a4uqanh9w8hbe5bc3gla";
 
@@ -1170,6 +1272,8 @@ function renderPage(){
     const roadTrips = ARTICLES.filter(article => article.category === "road-trips");
     const testsMateriel = ARTICLES.filter(article => article.category === "tests-materiel");
     const guidesPratiques = ARTICLES.filter(article => article.category === "guides-pratiques");
+    const testsMotos = ARTICLES.filter(article => article.category === "tests-motos");
+    const photoVideo = ARTICLES.filter(article => article.category === "photo-video");
 
     const elFeatMain = document.getElementById("featured-main");
     if(elFeatMain) elFeatMain.innerHTML = createFeaturedMain(featured);
@@ -1182,6 +1286,10 @@ function renderPage(){
     if(elTM) elTM.innerHTML = testsMateriel.map(createArticleCard).join("");
     const elGP = document.getElementById("grid-guides-pratiques");
     if(elGP) elGP.innerHTML = guidesPratiques.map(createArticleCard).join("");
+    const elMoto = document.getElementById("grid-tests-motos");
+    if(elMoto) elMoto.innerHTML = testsMotos.map(createArticleCard).join("");
+    const elPhoto = document.getElementById("grid-photo-video");
+    if(elPhoto) elPhoto.innerHTML = photoVideo.map(createArticleCard).join("");
 
     const elPop = document.getElementById("popular-list");
     if(elPop) elPop.innerHTML = popularArticles.map(createPopularItem).join("");
@@ -1194,7 +1302,7 @@ function renderPage(){
 
 document.addEventListener("DOMContentLoaded", renderPage);
 </script>
-<script defer="" src="footer-loader.js"></script>
-<script defer="" src="maillage.js"></script>
+<script src="footer-loader.js" defer></script>
+<script src="maillage.js" defer></script>
 </body>
 </html>
