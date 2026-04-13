@@ -238,8 +238,8 @@
       <span class="eyebrow">Navigation visuelle</span>
       <h2 class="section-title">Sommaire clair pour <em>ne pas se perdre</em></h2>
       <p class="lead">
-        Tu m’as demandé un tableau visuel correct : j’ai donc ajouté à la fois un <strong>sommaire par secteurs</strong>
-        et un <strong>tableau récapitulatif</strong> avec liens YouTube directs.
+        Cette page propose à la fois un <strong>sommaire par secteurs</strong>
+        et un <strong>tableau récapitulatif</strong> avec accès direct à chaque vidéo YouTube.
       </p>
 
       <div class="toolbar">
@@ -1672,5 +1672,90 @@
     </ul>
     <p class="f-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves · Annecy, France</p>
 </footer>
+
+<script>
+(function () {
+  /* ── Éléments ── */
+  const searchInput   = document.getElementById('search');
+  const filtersBox    = document.getElementById('filters');
+  const tableRows     = Array.from(document.querySelectorAll('tr[data-secteur]'));
+  const episodeCards  = Array.from(document.querySelectorAll('article.episode-card'));
+  const sectorBlocks  = Array.from(document.querySelectorAll('section.sector-block'));
+
+  /* ── Construire les boutons de filtre ── */
+  const sectors = [...new Set(
+    [...tableRows, ...episodeCards].map(el => el.dataset.secteur)
+  )].sort();
+
+  const btnAll = document.createElement('button');
+  btnAll.textContent = 'Tous';
+  btnAll.className = 'filter-btn active';
+  btnAll.dataset.sector = '';
+  filtersBox.appendChild(btnAll);
+
+  sectors.forEach(s => {
+    const btn = document.createElement('button');
+    btn.textContent = s.replace(/&amp;/g, '&');
+    btn.className = 'filter-btn';
+    btn.dataset.sector = s;
+    filtersBox.appendChild(btn);
+  });
+
+  let activeSector = '';
+
+  /* ── Appliquer les filtres ── */
+  function applyFilters() {
+    const term = (searchInput.value || '').toLowerCase().trim();
+
+    /* Table */
+    tableRows.forEach(row => {
+      const text = (row.dataset.search || '') + ' ' + row.textContent;
+      const matchSearch  = !term || text.toLowerCase().includes(term);
+      const matchSector  = !activeSector || row.dataset.secteur === activeSector;
+      row.style.display  = (matchSearch && matchSector) ? '' : 'none';
+    });
+
+    /* Cartes épisodes + sections secteur */
+    sectorBlocks.forEach(block => {
+      const cards = block.querySelectorAll('article.episode-card');
+      let anyVisible = false;
+      cards.forEach(card => {
+        const text = (card.dataset.title || '') + ' ' + (card.dataset.desc || '');
+        const matchSearch = !term || text.toLowerCase().includes(term);
+        const matchSector = !activeSector || card.dataset.secteur === activeSector;
+        const show = matchSearch && matchSector;
+        card.style.display = show ? '' : 'none';
+        if (show) anyVisible = true;
+      });
+      block.style.display = anyVisible ? '' : 'none';
+    });
+
+    /* Compteur résultats */
+    const visibleCards = episodeCards.filter(c => c.style.display !== 'none').length;
+    const lineEl = document.getElementById('results-line');
+    if (lineEl) {
+      lineEl.textContent = term || activeSector
+        ? visibleCards + ' résultat' + (visibleCards > 1 ? 's' : '')
+        : '';
+    }
+  }
+
+  /* ── Événements ── */
+  searchInput.addEventListener('input', applyFilters);
+
+  filtersBox.addEventListener('click', function (e) {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    filtersBox.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeSector = btn.dataset.sector;
+    applyFilters();
+  });
+
+  /* Initialisation */
+  applyFilters();
+})();
+</script>
+
 </body>
 </html>
