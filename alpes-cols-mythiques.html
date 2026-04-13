@@ -128,8 +128,9 @@
     .ep-geo{font-size:.79rem;color:#555;margin-bottom:.7rem;line-height:1.4;display:flex;flex-wrap:wrap;gap:.4rem .6rem}
     .ep-geo span{display:flex;align-items:center;gap:.25rem}
     .ep-geo .sep{color:#bbb}
-    .voir-extrait{display:inline-flex;align-items:center;gap:.35rem;color:var(--orange);font-weight:800;font-size:.88rem;margin-top:.3rem}
-    .voir-extrait:hover{color:var(--orange-dark)}
+    .voir-extrait{display:inline-flex;align-items:center;gap:.35rem;font-weight:800;font-size:.88rem;margin-top:.3rem}
+    .voir-extrait:not(.btn-primary){color:var(--orange)}
+    .voir-extrait:not(.btn-primary):hover{color:var(--orange-dark)}
 
     @media (max-width:860px){.toolbar{grid-template-columns:1fr} .sector-header{flex-direction:column} .table-wrap{overflow:auto} }
     @media (max-width:720px){ .section{padding:58px 5%} .hero{padding:96px 5% 72px} .actions .btn{width:100%} }
