@@ -8,9 +8,13 @@ on:
     # Le script dispatch_scheduled_post.py ne publie que s'il y a un post planifié ce jour-là
     - cron: '0 6 * * 0,2,3,5'
 
+permissions:
+  contents: write
+
 jobs:
   dispatch:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout du code
         uses: actions/checkout@v4
@@ -27,8 +31,17 @@ jobs:
         run: python automation/facebook_site/dispatch_scheduled_post.py
 
       - name: Commit et push du payload
+        shell: bash
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add facebook/facebook_payload_live.json automation/facebook_site/dispatch_published.json
-          git diff --cached --quiet || git commit -m "Dispatch automatique du post Facebook/
+
+          if git diff --cached --quiet; then
+            echo 'Aucun changement à committer'
+            exit 0
+          fi
+
+          git commit -m 'Dispatch automatique du post Facebook/Pinterest'
+          git pull --rebase origin main || true
+          git push
