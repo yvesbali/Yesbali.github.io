@@ -40,50 +40,55 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Bivouac moto : quel équipement emporter ? Guide complet 2026",
-  "description": "Tente, couchage, cuisine, navigation, textile : le guide complet du bivouac moto par Yves, testé du Cap Nord à la Cappadoce sur Honda NT1100.",
-  "image": "https://lcdmh.com/images/articles.jpg",
+  "description": "Tente, couchage, cuisine, navigation, textile : le guide complet du bivouac moto par Yves.",
+  "image": "https://lcdmh.com/articles/images/bivouac-moto-quel-equipement/hero-bivouac-moto-col-alpin.webp",
   "datePublished": "2026-04-17",
   "dateModified": "2026-04-17",
-  "author": {
-    "@type": "Person",
-    "name": "Yves",
-    "url": "https://lcdmh.com/a-propos.html"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "LCDMH — La Chaîne du Motard Heureux",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://lcdmh.com/images/favicon.png"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://lcdmh.com/articles/bivouac-moto-quel-equipement.html"
-  },
-  "articleSection": "Guide pratique",
-  "keywords": "bivouac moto, quel équipement, matériel camping moto, astuces camping moto, tente pour motard Décathlon, bivouac moto trail, équipement voyage moto, tente moto, bivouac moto Alpes, bivouac moto Jura, road trip moto, km par jour moto, équipement raid moto"
+  "author": {"@type": "Person", "name": "Yves", "url": "https://lcdmh.com/a-propos.html"},
+  "publisher": {"@type": "Organization", "name": "LCDMH — La Chaîne du Motard Heureux", "logo": {"@type": "ImageObject", "url": "https://lcdmh.com/images/favicon.png"}},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://lcdmh.com/articles/bivouac-moto-quel-equipement.html"},
+  "articleSection": "Guide pratique"
 }
 </script>
 
-<!-- STYLESHEETS -->
+<!-- FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter+Tight:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- STYLESHEETS -->
 <link rel="stylesheet" href="/css/magazine.css">
 <link rel="stylesheet" href="/css/guide-pratique.css">
 
 <!-- NAVIGATION DYNAMIQUE (RÈGLE N°7) -->
 <script src="/js/lcdmh-nav-loader.js" defer></script>
-</head>
 
+<style>
+  .mag-hero { position: relative; height: 70vh; min-height: 520px; margin: 0; overflow: hidden; }
+  .mag-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .mag-hero-overlay {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 3rem 2rem;
+    background: linear-gradient(180deg, transparent 0%, rgba(26, 22, 18, 0.3) 40%, rgba(26, 22, 18, 0.85) 100%);
+    color: #faf6ec; text-align: center;
+  }
+  .mag-hero-overlay h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 900; font-style: italic;
+    line-height: 1.05; letter-spacing: -0.02em; margin: 0.5rem auto 1rem;
+    max-width: 900px; color: #faf6ec;
+  }
+  .mag-hero-caption {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(0.95rem, 1.4vw, 1.1rem); font-style: italic; font-weight: 400;
+    color: rgba(250, 246, 236, 0.9); max-width: 620px; margin: 0 auto; line-height: 1.5;
+  }
+  .article-wrapper { max-width: 820px; margin: 0 auto; padding: 0 2rem; }
+</style>
+</head>
 <body>
 
-<!-- ═══════════════════════════════════════════════════════
-     HERO
-     ═══════════════════════════════════════════════════════ -->
 <div class="mag-hero">
-  <img src="/articles/images/bivouac-moto-quel-equipement/hero-bivouac-moto-col-alpin.webp" alt="Bivouac moto sur un col alpin au coucher du soleil avec tente orange et Honda NT1100">
+  <img src="/articles/images/bivouac-moto-quel-equipement/hero-bivouac-moto-col-alpin.webp" alt="Bivouac moto sur un col alpin au coucher du soleil">
   <div class="mag-hero-overlay">
     <span class="guide-badge">Guide complet 2026</span>
     <h1>Bivouac moto : quel équipement emporter ?</h1>
@@ -91,660 +96,808 @@
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════
-     CONTENU
-     ═══════════════════════════════════════════════════════ -->
+<div class="article-wrapper">
 <div class="mag-body">
 
-  <!-- MÉTA GUIDE -->
-  <div class="guide-meta">
-    <div class="guide-meta-item">⏱️ <strong>15 min</strong> de lecture</div>
-    <div class="guide-meta-item">📚 <strong>20 chapitres</strong></div>
-    <div class="guide-meta-item">🏍️ <strong>Par Yves</strong>, Annecy</div>
-    <div class="guide-meta-item">📅 Publié le <strong>17 avril 2026</strong></div>
+<div class="guide-meta">
+  <div class="guide-meta-item">⏱ <strong>15 min</strong> de lecture</div>
+  <div class="guide-meta-item">📖 <strong>20 chapitres</strong></div>
+  <div class="guide-meta-item">🏍 <strong>Par Yves</strong></div>
+  <div class="guide-meta-item">🗓 <strong>17 avril 2026</strong></div>
+</div>
+
+<p><span class="guide-dropcap">B</span>onjour à toutes et bonjour à tous ! Si tu cherches à faire du <strong>bivouac moto</strong> et que tu te poses les bonnes questions, tu es au bon endroit :</p>
+
+<ul style="margin:1rem 0 1.5rem 2rem; font-family: var(--gp-body); font-size: 1.1rem; line-height: 1.8; color: var(--gp-ink-soft);">
+  <li>Quel <strong>équipement</strong> choisir pour partir ?</li>
+  <li>Quel <strong>matériel camping moto</strong> emporter dans les valises ?</li>
+  <li>Quelles <strong>astuces camping moto</strong> pour t'installer dans les meilleures conditions ?</li>
+  <li>Quelle <strong>tente moto</strong> privilégier — et pourquoi pas une <strong>tente pour motard Décathlon</strong> pour débuter ?</li>
+  <li>Où <strong>bivouaquer avec ta moto</strong> en toute tranquillité ?</li>
+  <li>Comment organiser son <strong>bivouac moto trail</strong> dans les <strong>Alpes</strong> ou dans le <strong>Jura</strong> ?</li>
+  <li>Quel <strong>équipement voyage moto</strong> pour les grandes traversées ?</li>
+</ul>
+
+<p>Eh bien, je vais tenter, au travers de cet article, de répondre à toutes ces questions. Avec du vécu, du matériel testé sur des milliers de kilomètres — du Cap Nord jusqu'à la Cappadoce — et sans te raconter d'histoires.</p>
+<p><strong>C'est parti !</strong></p>
+
+<nav class="guide-toc" id="sommaire">
+  <div class="guide-toc-title">Le sommaire</div>
+  <div class="guide-toc-subtitle">Ce que ce guide contient</div>
+  <ol class="guide-toc-list">
+    <li><a href="#ch1">Le choix de la monture</a></li>
+    <li><a href="#ch2">L'aventure commence dans le garage</a></li>
+    <li><a href="#ch3">Où ranger tout ce matériel ?</a></li>
+    <li><a href="#ch4">Organisation du chargement</a></li>
+    <li><a href="#ch5">La tente : le choix crucial</a></li>
+    <li><a href="#ch6">Bien dormir : sac, matelas, drap</a></li>
+    <li><a href="#ch7">Cuisiner en bivouac</a></li>
+    <li><a href="#ch8">L'électricité en bivouac</a></li>
+    <li><a href="#ch9">Textile technique : 3 couches</a></li>
+    <li><a href="#ch10">Météo changeante : être prêt à tout</a></li>
+    <li><a href="#ch11">Quelle navigation choisir ?</a></li>
+    <li><a href="#ch12">Où poser la tente ?</a></li>
+    <li><a href="#ch13">L'installation du campement</a></li>
+    <li><a href="#ch14">Toilette, lessive, sommeil</a></li>
+    <li><a href="#ch15">Astuces camping moto</a></li>
+    <li><a href="#ch16">Combien de km par jour ?</a></li>
+    <li><a href="#ch17">La fatigue : le sujet sous-estimé</a></li>
+    <li><a href="#ch18">Voyager à moto vs en voiture</a></li>
+    <li><a href="#ch19">Bivouac Alpes et Jura</a></li>
+    <li><a href="#ch20">Maîtriser sa moto avant de partir</a></li>
+  </ol>
+</nav>
+
+<div class="guide-part-header">
+  <span class="guide-part-header-label">Partie 1</span>
+  <h2 class="guide-part-header-title">Avant de partir</h2>
+</div>
+
+<header class="guide-chapter-header" id="ch1">
+  <div class="guide-chapter-number">01</div>
+  <h2>Le choix de la monture : faut-il une grosse moto ?</h2>
+</header>
+<p><span class="guide-dropcap">E</span>st-ce qu'avoir une grosse moto, c'est mieux pour faire un road trip ? La question mérite d'être posée, et la réponse, à mon avis, il n'y en a peut-être pas vraiment une seule.</p>
+<p>Comme vous le savez certainement — pour ceux qui me suivent en tout cas — au moment où j'écris cet article, en avril 2026, je n'ai que <strong>4 ans de permis</strong>, mais j'ai déjà fait énormément de kilomètres. Forcément, sur ces parcours, j'ai rencontré du monde. Beaucoup de monde.</p>
+
+<div class="guide-stat">
+  <div class="guide-stat-number">70 000</div>
+  <div class="guide-stat-label">
+    <strong>Kilomètres parcourus</strong>
+    en 4 ans de permis — dont un tour d'Espagne, le Cap Nord, la Cappadoce, et bien d'autres
   </div>
+</div>
 
-  <!-- INTRODUCTION -->
-  <div class="mag-section">
-    <p><strong>Bonjour à toutes et bonjour à tous !</strong></p>
-    <p>Si tu cherches à faire du <strong>bivouac moto</strong> et que tu te poses les bonnes questions, tu es au bon endroit :</p>
-    <ul style="margin:1rem 0 1.5rem 2rem;font-size:1.15rem;line-height:1.8;color:var(--mag-text2,#4a4a4a);">
-      <li>Quel <strong>équipement</strong> choisir pour partir ?</li>
-      <li>Quel <strong>matériel camping moto</strong> emporter dans les valises ?</li>
-      <li>Quelles <strong>astuces camping moto</strong> pour t'installer dans les meilleures conditions ?</li>
-      <li>Quelle <strong>tente moto</strong> privilégier — et pourquoi pas une <strong>tente pour motard Décathlon</strong> pour débuter ?</li>
-      <li>Où <strong>bivouaquer avec ta moto</strong> en toute tranquillité ?</li>
-      <li>Comment organiser son <strong>bivouac moto trail</strong> dans les <strong>Alpes</strong> ou dans le <strong>Jura</strong> ?</li>
-      <li>Quel <strong>équipement voyage moto</strong> pour les grandes traversées ?</li>
-    </ul>
-    <p>Eh bien, je vais tenter, au travers de cet article, de répondre à toutes ces questions. Avec du vécu, du matériel testé sur des milliers de kilomètres — du Cap Nord jusqu'à la Cappadoce — et sans te raconter d'histoires.</p>
-    <p><strong>C'est parti !</strong></p>
+<p>Et quand la question se pose de savoir si une grosse moto, c'est mieux qu'une petite pour faire des road trips, eh bien franchement, j'ai rencontré des gens qui traversaient des pays en Vespa, et un Japonais qui faisait le tour du monde avec une 125 cm³.</p>
+<p>Alors non, je ne pense pas que la cylindrée de la moto t'empêche d'aller loin.</p>
+
+<h3 class="guide-subhead">Une grosse moto : du confort, pas une obligation</h3>
+<p>Il est indéniable qu'une moto confortable va te faciliter le voyage. Des facilités de dépassement notamment, une meilleure capacité à avaler les kilomètres d'autoroute, peut-être plus de facilité face aux intempéries et au vent violent de face.</p>
+<p>Mais je pense sincèrement que <strong>n'importe quel road trip peut se faire avec n'importe quelle moto</strong>.</p>
+
+<div class="guide-tip-card">
+  <div class="guide-tip-label">Le conseil d'Yves</div>
+  <p class="guide-tip-content">Mon premier road trip — le tour des parcs naturels de France — je l'ai fait avec une <strong>Benelli TRK 502</strong>. Et à aucun moment je n'ai eu de regrets. Si tu débutes, <strong>ne laisse pas ta cylindrée décider pour toi</strong> : pars avec ce que tu as sous la main.</p>
+</div>
+
+<h3 class="guide-subhead">Ma monture actuelle : la Honda NT1100</h3>
+<p>Aujourd'hui, je voyage avec une <strong>Honda NT1100</strong>. Évidemment, cette puissance et ce confort apportent un agrément très appréciable lors des road trips longs. Mais en contrepartie, on va forcément exploser le budget.</p>
+
+<div class="guide-photo-stat">
+  <figure class="guide-photo-stat-image">
+    <img src="/articles/images/bivouac-moto-quel-equipement/honda-nt1100-chargee-road-trip.webp" alt="Honda NT1100 chargée pour road trip" loading="lazy">
+    <figcaption>Ma NT1100 chargée pour un road trip : valises SW-Motech TRAX Adv 45 L, top case Shad X59, MiniBags Lone Rider.</figcaption>
+  </figure>
+  <div class="guide-photo-stat-text">
+    <div class="guide-photo-stat-tag">Poids total chargé</div>
+    <div class="guide-photo-stat-bignumber">380<span style="font-size: 3rem; color: var(--gp-gold);">kg</span></div>
+    <p class="guide-photo-stat-descr">Moto + 160 L de bagages + bonhomme. La répartition des poids devient alors <em>cruciale</em>.</p>
   </div>
+</div>
 
-  <!-- SOMMAIRE -->
-  <nav class="guide-toc" id="sommaire">
-    <div class="guide-toc-title">Sommaire du guide</div>
-    <div class="guide-toc-subtitle">Clique sur un chapitre pour y accéder directement</div>
-    <ol class="guide-toc-list">
-      <li><a href="#ch1">Le choix de la monture</a></li>
-      <li><a href="#ch2">L'aventure commence dans le garage</a></li>
-      <li><a href="#ch3">Où ranger tout ce matériel ?</a></li>
-      <li><a href="#ch4">Organisation du chargement</a></li>
-      <li><a href="#ch5">La tente : le choix crucial</a></li>
-      <li><a href="#ch6">Bien dormir : sac, matelas, drap</a></li>
-      <li><a href="#ch7">Cuisiner en bivouac</a></li>
-      <li><a href="#ch8">L'électricité en bivouac</a></li>
-      <li><a href="#ch9">Textile technique : 3 couches</a></li>
-      <li><a href="#ch10">Météo changeante : être prêt à tout</a></li>
-      <li><a href="#ch11">Quelle navigation choisir ?</a></li>
-      <li><a href="#ch12">Où poser la tente ?</a></li>
-      <li><a href="#ch13">L'installation du campement</a></li>
-      <li><a href="#ch14">Toilette, lessive, sommeil</a></li>
-      <li><a href="#ch15">Astuces camping moto</a></li>
-      <li><a href="#ch16">Combien de km par jour ?</a></li>
-      <li><a href="#ch17">La fatigue : le sujet sous-estimé</a></li>
-      <li><a href="#ch18">Voyager à moto vs en voiture</a></li>
-      <li><a href="#ch19">Bivouac Alpes et Jura</a></li>
-      <li><a href="#ch20">Maîtriser sa moto avant de partir</a></li>
-    </ol>
-  </nav>
+<p>Rouler beaucoup avec une moto qui coûte cher — les pneus plus gros et plus chers, la consommation d'essence à l'avenant, l'entretien et les révisions qui vident le portefeuille plus vite — eh bien tu l'auras compris : <strong>ça finit par coûter très très cher</strong>.</p>
 
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <!-- CHAPITRE 1 — CHOIX DE LA MONTURE -->
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <div class="guide-chapter-header" id="ch1">
-    <div class="guide-chapter-number">Chapitre 01</div>
-    <h2>Le choix de la monture : faut-il une grosse moto ?</h2>
+<blockquote class="guide-pullquote">
+  Ne te pose pas trop la question de la cylindrée.<br>
+  <em>Pars avec ce que tu as. L'essentiel, c'est de partir.</em>
+</blockquote>
+
+<div class="guide-related">
+  <div class="guide-related-label">Pour aller plus loin</div>
+  <a href="/articles/retour-honda-nt-1100-a-26000-kms.html">Mon avis complet sur la Honda NT1100 après 26 000 km</a>
+</div>
+<a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div class="guide-divider">❦</div>
+
+<header class="guide-chapter-header" id="ch2">
+  <div class="guide-chapter-number">02</div>
+  <h2>L'aventure commence dans le garage</h2>
+</header>
+<p><span class="guide-dropcap">E</span>t oui, avec la Honda NT, l'aventure commence souvent dans le garage. C'est là que les préparatifs se mettent en place : comment remplir les valises, comment organiser la moto, comment bien l'organiser surtout. Parce que le plus important, quand on part en road trip, c'est de <strong>savoir où sont les choses</strong>.</p>
+<p>Comme tu l'imagines, si tout n'est pas rangé correctement à sa place, ça devient en peu de temps un vrai fouillis et impossible de s'y retrouver. Et puis le pire, c'est que quand t'as besoin de quelque chose et que tu ne sais pas où c'est, c'est la crise assurée !</p>
+
+<div class="guide-info-card">
+  <div class="guide-info-label">Le vrai temps de préparation</div>
+  <p class="guide-info-content">Ce ne sont pas <strong>quelques heures</strong> qu'il faut prévoir, mais plutôt <strong>des jours, voire des semaines</strong>. Avec quelques sorties de test : est-ce que la moto est bien équilibrée ? Tout est bien calé ? Et quelques bivouacs de test avant le grand départ.</p>
+</div>
+
+<p>Si toi aussi tu as des rêves plein la tête, des envies de dormir à la belle étoile, sache que <strong>ton meilleur ami sera ta préparation</strong>.</p>
+
+<h3 class="guide-subhead">Filmer son road trip : une complication supplémentaire</h3>
+<p>Moi par exemple, avec en plus l'utilisation des caméras, la préparation demande un vrai point d'attention particulier. Comment positionner les caméras pour qu'elles soient faciles à monter et à démonter ? Parce que forcément, il y a ce moment où tu quittes la moto pour aller faire une visite, et laisser la moto avec la caméra en place, ce n'est pas envisageable.</p>
+<p>Trouver la bonne façon d'installer les caméras, les ranger au bon endroit, dans quoi, comment... Tous ces petits détails, une fois mis au point, facilitent grandement la vie du voyageur.</p>
+
+<div class="guide-tip-card">
+  <div class="guide-tip-label">Le conseil d'Yves</div>
+  <p class="guide-tip-content">Si tu comptes filmer ton road trip, sache que ce n'est <strong>pas facile</strong>. Ça demande beaucoup de travail, beaucoup de matériel, et surtout, revenu à la maison, <strong>le montage sera certainement quelque chose de super chronophage</strong>.</p>
+</div>
+
+<div class="guide-related">
+  <div class="guide-related-label">Pour aller plus loin</div>
+  <a href="/articles/filmer-son-road-trip-moto-setup-camera-dji-gopro.html">Mon setup caméra complet pour filmer un road trip moto</a>
+</div>
+<a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div class="guide-divider">❦</div>
+
+<div class="guide-part-header">
+  <span class="guide-part-header-label">Partie 2</span>
+  <h2 class="guide-part-header-title">Préparer la moto</h2>
+</div>
+
+<header class="guide-chapter-header" id="ch3">
+  <div class="guide-chapter-number">03</div>
+  <h2>Où ranger tout ce matériel ?</h2>
+</header>
+<p><span class="guide-dropcap">E</span>h bien, on va ranger tout simplement tout ce matériel dans des <strong>valises pour le road trip</strong>. Et souvent, la question se pose quand on s'équipe : <strong>valises souples ou valises rigides pour le road trip moto ?</strong></p>
+
+<h3 class="guide-subhead">Valises souples ou rigides ?</h3>
+<p>La réponse est relativement simple. Tu privilégieras principalement des <strong>valises souples quand tu vas faire du tout-terrain ou de l'off-road</strong>, parce qu'elles peuvent se déformer facilement et mieux encaisser les chocs. En cas de chute ou de frottement contre un rocher, elles absorbent sans casser.</p>
+<p>Par contre, si tu comptes faire que de la route, la <strong>valise rigide</strong> est quand même généralement plus pratique. Moins lourde à manipuler, plus facile à transporter et surtout plus facile à sécuriser. Pour un road trip routier longue distance, elle sera certainement ta meilleure amie.</p>
+
+<h3 class="guide-subhead">Ma configuration actuelle</h3>
+<p>Il y aura bien sûr pour commencer les valises latérales. Moi j'ai opté pour les valises <strong>TRAX Adv 45 L de chez SW-Motech</strong>. Et c'est vrai que 2×45 L, franchement, il n'y a rien de trop.</p>
+<p>Ensuite pour le top case, j'ai opté pour celui de chez <strong>Shad, le X59</strong>. Ce top case modulable (46, 52 ou 59 L) a, il faut bien l'avouer, quelques atouts dans son jeu.</p>
+
+<figure class="guide-product-photo">
+  <img src="/articles/images/bivouac-moto-quel-equipement/sacoche-lone-rider-minibag-crashbar.webp" alt="Sacoche Lone Rider MiniBag V2 étanche" loading="lazy">
+  <figcaption>La Lone Rider MiniBag V2 — 6 L, 100% étanche, conçue à l'origine pour les crashbars. Parfaite pour les petits objets d'accès rapide.</figcaption>
+</figure>
+
+<p>Sur mon ancienne configuration, j'avais installé les <strong>MiniBags de 6 L de chez Lone Rider</strong> sur les crash bars, mais vu ma nouvelle configuration, ce n'était pas possible. Je les ai donc tout simplement installés sur le devant des valises SW-Motech.</p>
+
+<div class="guide-stat">
+  <div class="guide-stat-number">160<span style="font-size: 3rem; color: var(--gp-gold);">L</span></div>
+  <div class="guide-stat-label">
+    <strong>Capacité totale</strong>
+    2 valises 45 L + top case 59 L + 2 MiniBags 6 L. Franchement, il n'y a rien de trop !
   </div>
-  <div class="mag-section">
-    <p>Est-ce qu'avoir une grosse moto, c'est mieux pour faire un road trip ? La question mérite d'être posée, et la réponse, à mon avis, il n'y en a peut-être pas vraiment une seule.</p>
-    <p>Comme vous le savez certainement — pour ceux qui me suivent en tout cas — au moment où j'écris cet article, en avril 2026, je n'ai que <strong>4 ans de permis, mais j'ai déjà fait 70 000 km</strong>. Forcément, sur ces 70 000 km, j'ai rencontré du monde. Beaucoup de monde.</p>
-    <p>Et quand la question se pose de savoir si une grosse moto, c'est mieux qu'une petite pour faire des road trips, eh bien franchement, j'ai rencontré des gens qui traversaient des pays en Vespa, et un Japonais qui faisait le tour du monde avec une 125 cm³.</p>
-    <p>Alors non, je ne pense pas que la cylindrée de la moto t'empêche d'aller loin.</p>
+</div>
 
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Une grosse moto : du confort, pas une obligation</h3>
-    <p>Il est indéniable qu'une moto confortable va te faciliter le voyage. Des facilités de dépassement notamment, une meilleure capacité à avaler les kilomètres d'autoroute, peut-être plus de facilité face aux intempéries et au vent violent de face.</p>
-    <p>Mais je pense sincèrement que <strong>n'importe quel road trip peut se faire avec n'importe quelle moto</strong>.</p>
-    <p>Mon premier road trip, le tour des parcs naturels de France, je l'avais fait avec une 500 cm³, une <strong>Benelli TRK 502</strong>. Et très franchement, à aucun moment je n'ai eu de regrets. D'ailleurs, lors de mon tour d'Espagne en 2023, ce n'était que du bonheur avec cette moto.</p>
+<a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div class="guide-divider">❦</div>
 
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Ma monture actuelle : la Honda NT1100</h3>
-    <p>Aujourd'hui, je voyage avec une <strong>Honda NT1100</strong>. Évidemment, cette puissance et ce confort apportent un agrément très appréciable lors des road trips longs. Mais en contrepartie, on va forcément exploser le budget :</p>
-    <ul style="margin:.5rem 0 1.5rem 2rem;font-size:1.1rem;line-height:1.7;color:var(--mag-text2,#4a4a4a);">
-      <li><strong>Les pneus</strong> (plus gros, plus chers, s'usent plus vite)</li>
-      <li><strong>L'essence</strong> (consommation à l'avenant)</li>
-      <li><strong>L'entretien et les révisions</strong> (vide ton portefeuille plus vite)</li>
-    </ul>
-    <p>Rouler beaucoup avec une moto qui coûte cher, eh bien tu l'auras compris : <strong>ça finit par coûter très très cher</strong>.</p>
+<header class="guide-chapter-header" id="ch4">
+  <div class="guide-chapter-number">04</div>
+  <h2>Organisation du chargement</h2>
+</header>
+<p><span class="guide-dropcap">L</span>a toile de tente prendra place sur le dessus d'une des deux valises. Le matelas qui va faire la couche entre le matelas principal et le sol prendra place sur la seconde valise.</p>
+<p>À l'intérieur des valises, on retrouvera :</p>
+<ul style="margin:.5rem 0 1.5rem 2rem; font-family: var(--gp-body); font-size: 1.1rem; line-height: 1.7; color: var(--gp-ink-soft);">
+  <li>L'outillage, la clé dynamométrique pour la tension de la chaîne</li>
+  <li>Le combi booster de batterie et gonfleur de pneus</li>
+  <li>Une sacoche avec le linge de rechange</li>
+  <li>Toute la partie camping : matelas isolant, sac de couchage, drap de sac, popote</li>
+</ul>
 
-    <div class="guide-pullquote">Si tu débutes en road trip moto, ne te pose pas trop la question de la cylindrée. Pars avec ce que tu as. L'essentiel, c'est de partir.</div>
+<div class="guide-info-card">
+  <div class="guide-info-label">Règle d'or du chargement</div>
+  <p class="guide-info-content"><strong>Pas de poids en hauteur.</strong> Dans le top case, je mets uniquement la nourriture, les lyophilisés et ce dont je pourrais avoir besoin rapidement. Tout ce qui est lourd doit rester <strong>bas</strong>, sinon ça génère du <strong>ballant</strong> en roulant.</p>
+</div>
 
-    <div class="guide-related">
-      <div class="guide-related-label">Pour aller plus loin</div>
-      <a href="/articles/retour-honda-nt-1100-a-26000-kms.html">Mon avis complet sur la Honda NT1100 après 26 000 km</a>
-    </div>
+<h3 class="guide-subhead">Pesée et équilibrage : un point crucial</h3>
+<p>Une fois que tout est calé, je vais généralement peser chaque valise pour avoir une idée du poids total de la moto, mais aussi pour faire une <strong>répartition équitable entre les deux côtés</strong>, afin d'éviter un trop gros déséquilibre. Ce qui risquerait de générer un <strong>guidonnage important sur le train avant</strong>.</p>
 
-    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div class="guide-tip-card">
+  <div class="guide-tip-label">Le conseil d'Yves</div>
+  <p class="guide-tip-content">Investis dans un <strong>pèse-valise électronique</strong>. 15 € et tu règles tes problèmes d'équilibre en 5 minutes. Objectif : ne pas dépasser <strong>2 kg de différence</strong> entre la valise gauche et la valise droite.</p>
+</div>
+
+<h3 class="guide-subhead">Adapter selon la saison</h3>
+<p>Évidemment, selon l'époque où tu pars, tu n'auras peut-être pas forcément le même duvet, qui lui-même ne prendra pas la même place dans les valises. Un duvet 4 saisons prend presque deux fois plus de place qu'un duvet été.</p>
+<p>Idem pour la tente. Tu peux très bien opter pour la tente une place, la tente minimaliste, qui s'intègrera mieux dans la bagagerie grâce à son volume. Par contre, <strong>ce que tu gagnes en volume, tu le perds en confort</strong>.</p>
+
+<a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div class="guide-divider">❦</div>
+
+<div class="guide-part-header">
+  <span class="guide-part-header-label">Partie 3</span>
+  <h2 class="guide-part-header-title">Le matériel bivouac</h2>
+</div>
+
+<header class="guide-chapter-header" id="ch5">
+  <div class="guide-chapter-number">05</div>
+  <h2>La tente : le choix crucial</h2>
+</header>
+<p><span class="guide-dropcap">L</span>a <strong>tente moto</strong>, c'est LE poste où il ne faut pas se louper. Une tente qui prend l'eau, qui se casse la figure au premier coup de vent ou qui met 25 minutes à monter après 500 km de selle, c'est une nuit gâchée.</p>
+
+<div class="guide-info-card">
+  <div class="guide-info-label">Deux critères à privilégier</div>
+  <p class="guide-info-content"><strong>1.</strong> Le poids et l'encombrement plié — tu dois pouvoir la caser quelque part entre deux valises. <strong>2.</strong> La rapidité de montage — après 8, 10 ou 12 h de route, tu as envie d'une toile qui se plante en 5 minutes, pas en 25.</p>
+</div>
+
+<p>Personnellement, mon choix se porte sur une tente rapide à monter. Il faut dire que je suis un gros rouleur et souvent je vais avoir des journées de route de 8, 10 voire 12 h de route. Et quand j'arrive, c'est vrai que j'ai envie de me poser rapidement.</p>
+
+<h3 class="guide-subhead">Les deux tentes que j'utilise</h3>
+
+<div class="guide-photo-duo">
+  <figure>
+    <img src="/articles/images/bivouac-moto-quel-equipement/tente-lone-rider-adv-bivouac-moto.webp" alt="Tente Lone Rider ADV" loading="lazy">
+    <figcaption><strong>Lone Rider ADV</strong>Grande ouverture frontale, pensée pour les motards</figcaption>
+  </figure>
+  <figure>
+    <img src="/articles/images/bivouac-moto-quel-equipement/tente-decathlon-fresh-black-motard.webp" alt="Tente Décathlon Fresh Black" loading="lazy">
+    <figcaption><strong>Décathlon Fresh & Black</strong>Montage éclair, obscurité totale à l'intérieur</figcaption>
+  </figure>
+</div>
+
+<p>La <strong>Lone Rider ADV</strong> a cette <strong>grande ouverture de face</strong> qui fait toute la différence. Une petite ouverture va être forcément beaucoup plus compliquée lorsqu'on va devoir rentrer tout le matériel dans la toile, et ça peut devenir très vite fastidieux.</p>
+<p>La <strong>Décathlon Fresh & Black</strong>, je l'ai utilisée pour mon dernier road trip en Norvège car je voulais une toile de tente qui bloque la lumière. Ce qui se traduit par <strong>l'obscurité d'une salle de cinéma</strong>. Contrepartie : tu es toujours obligé d'avoir de la lumière dans la toile de tente.</p>
+
+<div class="guide-tip-card">
+  <div class="guide-tip-label">Le conseil d'Yves</div>
+  <p class="guide-tip-content">Si tu hésites : la <strong>Lone Rider ADV</strong> pour la route et les destinations standards, la <strong>Décathlon Fresh & Black</strong> pour les destinations nordiques où tu veux récupérer même à 3 h du matin avec le soleil de minuit.</p>
+</div>
+
+<a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div class="guide-divider">❦</div>
+
+<header class="guide-chapter-header" id="ch6">
+  <div class="guide-chapter-number">06</div>
+  <h2>Bien dormir : le trio sac, matelas, drap</h2>
+</header>
+<p><span class="guide-dropcap">O</span>n sous-estime toujours ce point, et c'est une erreur. Une mauvaise nuit, c'est 300 km de route le lendemain avec la tête dans le guidon et la vigilance en berne.</p>
+<p>Trois éléments travaillent ensemble : <strong>le sac de couchage</strong> pour la chaleur, <strong>le matelas</strong> pour l'isolation du sol, et <strong>le drap de sac</strong> pour l'hygiène et un peu de confort supplémentaire.</p>
+
+<h3 class="guide-subhead">Le sac de couchage : adapter la température à la destination</h3>
+<p>Règle d'or : toujours regarder la <strong>température de confort</strong> (pas la température extrême, qui correspond à un scénario de survie). Pour la France en été, un sac 5-10 °C suffit. Pour le Cap Nord, la Scandinavie ou la montagne, il faut descendre à 0 °C ou moins. J'ai deux sacs selon la destination.</p>
+
+<figure class="guide-product-photo">
+  <img src="/articles/images/bivouac-moto-quel-equipement/sac-couchage-nemo-sonic-0.webp" alt="Sac de couchage Nemo Sonic 0 degrés" loading="lazy">
+  <figcaption>Le Nemo Sonic 0° — taillé momie, duvet d'oie, et ces fameux "gills" jaunes sur le torse pour ventiler sans ouvrir le sac.</figcaption>
+</figure>
+
+<p><strong>Nemo Sonic 0°</strong> — mon choix grand froid. Duvet d'oie, taillé momie, confort jusqu'à 0 °C. Poids raisonnable pour ses performances thermiques, et système "gills" (évents torses) qui permet de réguler la chaleur sans sortir du sac. Investissement conséquent mais une pièce qui dure des années.</p>
+<p><strong>Nemo Riff Men's 15</strong> — polyvalent 3 saisons. Confort autour de 5-10 °C. C'est mon sac "France et Europe" d'avril à octobre.</p>
+
+<h3 class="guide-subhead">Le matelas : l'élément le plus sous-estimé</h3>
+<p>Un bon matelas change tout. Sans lui, même le meilleur sac de couchage te laissera frigorifié au petit matin. Le critère qui compte, c'est le <strong>R-value</strong> (pouvoir isolant). Pour la belle saison, R=2 suffit. Pour le froid, vise R=4 minimum.</p>
+
+<figure class="guide-product-photo">
+  <img src="/articles/images/bivouac-moto-quel-equipement/matelas-sea-to-summit-comfort-plus-si.webp" alt="Matelas Sea to Summit Comfort Plus SI" loading="lazy">
+  <figcaption>Le Sea to Summit Comfort Plus SI : auto-gonflant, isolation renforcée, et cette belle couleur crimson qui le rend facile à retrouver dans la tente.</figcaption>
+</figure>
+
+<p><strong>Sea to Summit Comfort Plus SI</strong> — auto-gonflant, épais, confortable. Il se gonfle tout seul en 10 minutes, tu donnes juste 2-3 coups de souffle pour finir. R-value élevé, idéal pour les nuits fraîches.</p>
+
+<div class="guide-tip-card">
+  <div class="guide-tip-label">Le conseil d'Yves</div>
+  <p class="guide-tip-content">Achète une <strong>petite pompe rechargeable en USB</strong> pour gonfler ton matelas. Tu économises du temps, de la fatigue, et surtout <strong>tu évites l'humidité de tes poumons</strong> qui développe germes et moisissures dans la mousse interne — impossible à nettoyer ensuite.</p>
+</div>
+
+<p><strong>Trinordic Ultralight</strong> — 550 grammes tout mouillé, oreiller intégré en prime. Le choix quand j'optimise le volume dans les sacoches. <strong>Attention aux crevaisons</strong>, car ce matelas est relativement fragile et si tu viens le crever, comme ça m'est arrivé, tes nuits de sommeil vont être beaucoup plus difficiles.</p>
+
+<h3 class="guide-subhead">Le drap de sac : petit mais indispensable</h3>
+
+<figure class="guide-product-photo">
+  <img src="/articles/images/bivouac-moto-quel-equipement/drap-sac-fit-flip-microfibre.webp" alt="Drap de sac Fit-Flip microfibre" loading="lazy">
+  <figcaption>Le drap de sac Fit-Flip : tient littéralement dans la paume de la main, se lave en 2 minutes, et c'est lui qui préserve l'intérieur de ton sac de couchage.</figcaption>
+</figure>
+
+<p>Tient dans la paume de la main, se lave en deux minutes dans n'importe quel lavabo, et préserve l'intérieur du sac de couchage (qui, lui, ne se lave pas souvent). En été, tu peux même dormir dedans seul si la nuit est douce. Mon choix : <strong>Fit-Flip Microfiber Sleeping Bag Liner</strong>.</p>
+
+<div class="guide-related">
+  <div class="guide-related-label">Pour aller plus loin</div>
+  <a href="/articles/bivouac-moto-comment-bien-dormir-en-tente-test-nemo-sonic-0.html">Mon test complet du sac de couchage Nemo Sonic 0°</a>
+</div>
+<a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div class="guide-divider">❦</div>
+
+<header class="guide-chapter-header" id="ch7">
+  <div class="guide-chapter-number">07</div>
+  <h2>Cuisiner en bivouac : réchaud, popote, nourriture</h2>
+</header>
+<p><span class="guide-dropcap">M</span>anger chaud le soir après une grosse étape, ça n'a rien d'un luxe. C'est un moment de décompression, et c'est aussi du carburant pour la suite.</p>
+<p>Dans le matériel camping moto, trois éléments composent un kit cuisine digne de ce nom : <strong>un réchaud compact</strong>, <strong>une popote empilable</strong>, et <strong>un pare-vent</strong> (souvent oublié et pourtant crucial en montagne).</p>
+
+<h3 class="guide-subhead">Le kit cuisine que j'embarque</h3>
+
+<div class="guide-photo-duo">
+  <figure>
+    <img src="/articles/images/bivouac-moto-quel-equipement/popote-odoland-camping-moto.webp" alt="Popote Odoland camping moto" loading="lazy">
+    <figcaption><strong>Popote Odoland</strong>Casserole + poêle + couvercle empilables</figcaption>
+  </figure>
+  <figure>
+    <img src="/articles/images/bivouac-moto-quel-equipement/rechaud-pare-vent-h-s-bivouac.webp" alt="Réchaud gaz pare-vent H&S" loading="lazy">
+    <figcaption><strong>Réchaud + pare-vent H&S</strong>Le couple qui divise la consommation par 2</figcaption>
+  </figure>
+</div>
+
+<p><strong>Popote Odoland</strong> — kit empilable. Casserole + poêle + couvercle, le tout s'emboîte pour former un bloc compact. Aluminium anodisé, léger. Tu peux ranger ton réchaud et une cartouche de gaz à l'intérieur pour gagner encore de la place.</p>
+<p><strong>Réchaud Odoland Mini Stove</strong> — réchaud à gaz compact, se visse directement sur une cartouche à valve. Allumage piezo, réglage fin de la flamme. 1 litre d'eau bouilli en 3 minutes.</p>
+
+<div class="guide-tip-card">
+  <div class="guide-tip-label">Le conseil d'Yves</div>
+  <p class="guide-tip-content">Le <strong>pare-vent H&S</strong>, c'est l'accessoire sous-estimé qui change tout. En montagne ou au bord d'un lac, le moindre souffle d'air divise par deux le rendement du réchaud. Avec un pare-vent en aluminium, <strong>l'eau bout deux fois plus vite et tu consommes deux fois moins de gaz</strong>. Se plie à plat, quasi rien en volume.</p>
+</div>
+
+<h3 class="guide-subhead">Les repas : le minimum</h3>
+<p>En ce qui concerne les repas, je fais généralement extrêmement simple.</p>
+<ul style="margin:.5rem 0 1.5rem 2rem; font-family: var(--gp-body); font-size: 1.1rem; line-height: 1.7; color: var(--gp-ink-soft);">
+  <li>Soit j'aurai dîné dans l'après-midi aux alentours de 16-17h, et je prendrai vers 19-20h un petit encas, des barres céréales.</li>
+  <li>Soit je mange un lyophilisé : je fais chauffer l'eau dans la popote, que je verse directement dans le sachet pour éviter la vaisselle.</li>
+</ul>
+<p>Quand je te dis que je fais au minimum, je fais vraiment le minimum. D'ailleurs le matin, <strong>je ne bois pas de café</strong>. Juste une ou deux gorgées d'eau. Et une fois en route, je trouve un bar ou un café pour m'installer, et là je prends le temps de déguster un bon café.</p>
+
+<a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div class="guide-divider">❦</div>
+
+<header class="guide-chapter-header" id="ch8">
+  <div class="guide-chapter-number">08</div>
+  <h2>L'électricité en bivouac : rester autonome</h2>
+</header>
+<p><span class="guide-dropcap">G</span>oPro, téléphone, GPS Carpuride, drone, intercom… entre tous les équipements à recharger, on peut vite se retrouver à sec au bout de deux jours. Une petite <strong>centrale électrique portable</strong> change la donne, surtout quand on bivouaque plusieurs nuits d'affilée loin de toute prise.</p>
+
+<h3 class="guide-subhead">EgreTech Plume 300W — ma solution longue autonomie</h3>
+
+<figure class="guide-product-photo">
+  <img src="/articles/images/bivouac-moto-quel-equipement/batterie-egretech-plume-300w-road-trip.webp" alt="Batterie EgreTech Plume 300W" loading="lazy">
+  <figcaption>L'EgreTech Plume 300W : format valise à bandoulière cuir, 260 Wh, prise secteur 220 V + USB-C PD. Parfaite dans le top case.</figcaption>
+</figure>
+
+<p>Format valise à bandoulière, 300 W en sortie continue, prise secteur, USB, USB-C PD et prise 220 volts.</p>
+
+<div class="guide-stat">
+  <div class="guide-stat-number">260<span style="font-size: 3rem; color: var(--gp-gold);">Wh</span></div>
+  <div class="guide-stat-label">
+    <strong>Autonomie EgreTech Plume</strong>
+    De quoi faire tourner deux nuits de tournage complet (caméras + batteries) + PC portable
   </div>
+</div>
 
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <!-- CHAPITRE 2 — GARAGE -->
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <div class="guide-chapter-header" id="ch2">
-    <div class="guide-chapter-number">Chapitre 02</div>
-    <h2>L'aventure commence dans le garage</h2>
+<p>J'ai fait arriver une <strong>prise USB dans mon top case</strong> qui elle-même se charge sur une prise allume-cigare reliée à la batterie, ce qui me permet de rouler toute la journée, de charger cette batterie en permanence et d'arriver le soir au bivouac avec une batterie chargée à 100%.</p>
+
+<h3 class="guide-subhead">Alternative légère : Aferiy Nano 100</h3>
+<p>Si tu n'as qu'un intercom et ton téléphone portable à recharger, tu pourras te diriger vers un appareil comme le <strong>Nano 100 de chez Aferiy</strong>. Tu trouveras des codes promo et des liens sur le site.</p>
+
+<div class="guide-info-card">
+  <div class="guide-info-label">La 2e journée de travail</div>
+  <p class="guide-info-content">Une fois le bivouac installé, la toilette faite, tout rangé, <strong>la deuxième journée de travail commence</strong> : la copie des données des caméras vers les disques de stockage externes. Avec 2 caméras sur la moto, une caméra portable, un drone et un appareil photo, ça représente quelques gigas et <strong>environ 2 heures de travail</strong>.</p>
+</div>
+
+<div class="guide-related">
+  <div class="guide-related-label">Pour aller plus loin</div>
+  <a href="/articles/aferiy-nano-100-autonomie-electrique-en-road-trip.html">Mon test complet de la batterie Aferiy Nano 100</a>
+</div>
+<a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div class="guide-divider">❦</div>
+
+<div class="guide-part-header">
+  <span class="guide-part-header-label">Partie 4</span>
+  <h2 class="guide-part-header-title">L'équipement pilote</h2>
+</div>
+
+<header class="guide-chapter-header" id="ch9">
+  <div class="guide-chapter-number">09</div>
+  <h2>Textile technique : rester au chaud et au sec</h2>
+</header>
+<p><span class="guide-dropcap">L</span>e textile, c'est la partie qu'on ne voit pas sur la moto mais qui compte en bivouac. Le principe fondamental, c'est le <strong>système 3 couches</strong> : une couche près du corps qui évacue la transpiration, une couche chaude au milieu, et une couche externe qui protège de la pluie et du vent.</p>
+
+<h3 class="guide-subhead">Couche 1 : les sous-vêtements techniques en mérinos</h3>
+<p>La <strong>laine mérinos</strong> fait ce que le synthétique ne saura jamais faire : elle reste chaude même mouillée, tu ne sentiras pas le phoque après 3 jours, régule la température corporelle. Un peu plus chère que du synthétique mais <strong>incomparable en confort</strong>.</p>
+
+<figure class="guide-product-photo">
+  <img src="/articles/images/bivouac-moto-quel-equipement/sous-vetement-thermowave-merinos-moto.webp" alt="Sous-vêtement Thermowave mérinos" loading="lazy">
+  <figcaption>Le sous-vêtement Thermowave en laine mérinos — chaud même mouillé, ne sent pas mauvais après 3 jours, sèche vite.</figcaption>
+</figure>
+
+<p>Mes choix : <strong>Thermowave</strong> (manches longues + T-shirt) et <strong>Chuan</strong> (T-shirts du quotidien). Et les T-shirts manches courtes de chez Décathlon en mérinos bien sûr.</p>
+
+<div class="guide-tip-card">
+  <div class="guide-tip-label">Le conseil d'Yves</div>
+  <p class="guide-tip-content">Je pars généralement avec <strong>2 caleçons, 2 paires de chaussettes, 2 t-shirts</strong>. Tous en laine mérinos. Tous les 3 jours, je fais la lessive. Mais encore faut-il pouvoir faire sécher le linge à l'extérieur sans qu'il pleuve — il faut bien prévoir.</p>
+</div>
+
+<h3 class="guide-subhead">Couche 2 : la veste chauffante Keis</h3>
+
+<figure class="guide-product-photo">
+  <img src="/articles/images/bivouac-moto-quel-equipement/veste-chauffante-keis-j501.webp" alt="Veste chauffante Keis J501" loading="lazy">
+  <figcaption>La Keis J501 : veste chauffante 3 niveaux, se porte sous la veste moto. Le grand luxe en hiver, indispensable en dessous de 0 °C.</figcaption>
+</figure>
+
+<p>Je n'avais pas que les gants chauffants. J'avais aussi la <strong>veste chauffante Keis</strong>, celle qui se met sous la veste de moto. Ça, c'est un grand luxe, un grand confort, quelque chose d'incroyablement efficace.</p>
+<p>Je me souviens que par moments j'étais surpris : malgré le fait que le chauffage était mis à fond sur la veste, je me retrouvais juste à l'équilibre. Ni trop chaud, ni trop froid. Ce qui sous-entend que dehors, <strong>il faisait vraiment très froid</strong>.</p>
+
+<h3 class="guide-subhead">Couche 3 : la protection moto extérieure</h3>
+
+<figure class="guide-product-photo">
+  <img src="/articles/images/bivouac-moto-quel-equipement/veste-bering-alaska-gore-tex.webp" alt="Veste Bering Alaska" loading="lazy">
+  <figcaption>La Bering Alaska avec Poly Kar System : veste road trip longue distance, étanche, zips d'aération pour l'été.</figcaption>
+</figure>
+
+<p><strong>Veste Bering Alaska</strong> (Poly Kar System) : veste de road trip longue distance, étanche, aérée en été via zips d'aération, homologuée CE sur les protections. <strong>Pantalon Bering Alaska Air Dynamic System Gore-Tex</strong> : pendant du pantalon de la veste, membrane Gore-Tex, zips d'aération.</p>
+
+<div class="guide-info-card">
+  <div class="guide-info-label">La veste de pluie — même si ta veste est étanche</div>
+  <p class="guide-info-content">Même si ta veste moto est étanche, <strong>il est impératif de partir avec une veste de pluie en plus</strong>. Pourquoi ? Parce que même si tu n'es pas mouillé à l'intérieur, la veste moto reste humide à l'extérieur, et ça procure une sensation d'inconfort tenace. Sans compter qu'une veste trempée met des heures à sécher au bivouac.</p>
+</div>
+
+<a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div class="guide-divider">❦</div>
+
+<header class="guide-chapter-header" id="ch10">
+  <div class="guide-chapter-number">10</div>
+  <h2>Météo changeante : il faut être prêt à tout</h2>
+</header>
+<p><span class="guide-dropcap">B</span>ien sûr, au fil des jours, la météo sera changeante. Et il faut être prêt. Il y a des pays, comme la Norvège, où tu dois t'en souvenir : il faut être prêt à tout, <strong>du soleil le matin à la grêle l'après-midi</strong>.</p>
+
+<blockquote class="guide-pullquote">
+  Le froid peut te mordre,<br>
+  <em>mais on se protège toujours plus facilement du froid que du chaud.</em>
+</blockquote>
+
+<h3 class="guide-subhead">Quand la chaleur devient dangereuse</h3>
+<p>Je me rappelle par exemple de mon voyage en traversant l'Europe jusqu'à l'Asie, parti d'Annecy pour arriver en Cappadoce. La chaleur était telle par moments qu'au bout de quelques jours, <strong>mes forces ont littéralement fondu comme neige au soleil</strong>.</p>
+
+<div class="guide-photo-stat">
+  <figure class="guide-photo-stat-image">
+    <img src="/articles/images/bivouac-moto-quel-equipement/bivouac-moto-finlande-lac-foret.webp" alt="Bivouac moto Finlande" loading="lazy">
+    <figcaption>Le froid du Cap Nord a été plus facile à gérer que la chaleur de la Cappadoce.</figcaption>
+  </figure>
+  <div class="guide-photo-stat-text">
+    <div class="guide-photo-stat-tag">Températures extrêmes</div>
+    <div class="guide-photo-stat-bignumber">34<span style="font-size: 3rem; color: var(--gp-gold);">°C</span></div>
+    <p class="guide-photo-stat-descr">à l'ombre en Cappadoce. La carrosserie des voitures renvoyait une chaleur absolument incroyable, <em>impossible de respirer</em>.</p>
   </div>
-  <div class="mag-section">
-    <p>Et oui, avec la Honda NT, l'aventure commence souvent dans le garage. C'est là que les préparatifs se mettent en place : comment remplir les valises, comment organiser la moto, comment bien l'organiser surtout. Parce que le plus important, quand on part en road trip, c'est de <strong>savoir où sont les choses</strong>.</p>
-    <p>Comme tu l'imagines, si tout n'est pas rangé correctement à sa place, ça devient en peu de temps un vrai fouillis et impossible de s'y retrouver. Et puis le pire, c'est que quand t'as besoin de quelque chose et que tu ne sais pas où c'est, c'est la crise assurée !</p>
-    <p>Généralement, ça ne se compte pas en quelques heures, mais plutôt en jours, voire en semaines. Avec forcément quelques sorties de test. Est-ce que la moto est bien équilibrée ? Est-ce que tout est bien calé ? Est-ce que tout est bien organisé ? Voilà les vraies questions. Ce qui nécessitera aussi quelques bivouacs et quelques soirées de camping avant le grand départ.</p>
-    <p>Si toi aussi tu as des rêves plein la tête, des envies de dormir à la belle étoile, sache que <strong>ton meilleur ami sera ta préparation</strong>. Bien que la tâche ne soit pas si compliquée, elle demande quand même un certain temps de réflexion.</p>
-    <p>Moi par exemple, avec en plus l'utilisation des caméras, la préparation demande un vrai point d'attention particulier. Comment positionner les caméras pour qu'elles soient faciles à monter et à démonter ? Parce que forcément, il y a ce moment où tu quittes la moto pour aller faire une visite, et laisser la moto avec la caméra en place, ce n'est pas envisageable. Trouver la bonne façon d'installer les caméras, les ranger au bon endroit, dans quoi, comment... Tous ces petits détails, une fois mis au point, facilitent grandement la vie du voyageur.</p>
-    <p>Et si tu comptes filmer ton road trip, sache que ce n'est pas facile. Ça demande beaucoup de travail, beaucoup de matériel, et surtout, revenu à la maison, le montage sera certainement quelque chose de super chronophage.</p>
+</div>
 
-    <div class="guide-related">
-      <div class="guide-related-label">Pour aller plus loin</div>
-      <a href="/articles/filmer-son-road-trip-moto-setup-camera-dji-gopro.html">Mon setup caméra complet pour filmer un road trip moto</a>
-    </div>
+<p>Impossible aussi de rouler trop déshabillé à moto. Notre équipement et notre sécurité, c'est lui qui nous préserve, c'est lui qui veille sur nous. J'ai presque <strong>moins souffert du froid en montant au Cap Nord que de la chaleur</strong> dans les pays traversés en route vers la Cappadoce, en plein été.</p>
 
-    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div class="guide-info-card">
+  <div class="guide-info-label">Pour un grand trip</div>
+  <p class="guide-info-content"><strong>3 paires de gants</strong> dans les sacoches : gants d'été, gants mi-saison, gants d'hiver chauffants Keis. Lors des grandes traversées de plateaux sur plusieurs centaines de kilomètres avec un vent violent, tu es content d'avoir un équipement au top.</p>
+</div>
+
+<a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div class="guide-divider">❦</div>
+
+<header class="guide-chapter-header" id="ch11">
+  <div class="guide-chapter-number">11</div>
+  <h2>Quel appareil de navigation pour le road trip moto ?</h2>
+</header>
+<p><span class="guide-dropcap">E</span>n ce qui concerne les appareils de navigation, il existe aujourd'hui une multitude de solutions.</p>
+
+<h3 class="guide-subhead">Option 1 : ton téléphone portable</h3>
+<p>Tu peux tout simplement utiliser ton téléphone portable pour faire la navigation en t'appuyant sur le GPS intégré, à condition que l'application que tu utilises soit <strong>compatible GPS hors-ligne</strong>, comme par exemple <strong>Sygic</strong> ou <strong>OsmAnd</strong>.</p>
+
+<div class="guide-tip-card">
+  <div class="guide-tip-label">Le conseil d'Yves</div>
+  <p class="guide-tip-content">Avant de partir, <strong>fais des tests</strong> : mets-toi hors réseau chez toi et vérifie que ton logiciel fonctionne bien en navigation GPS offline. Rien de pire que de découvrir au milieu d'un col norvégien que ton appli a besoin d'internet pour calculer l'itinéraire.</p>
+</div>
+
+<h3 class="guide-subhead">Option 2 : le téléphone renforcé</h3>
+<p>Tu peux aussi partir avec un <strong>téléphone renforcé</strong>, complètement adapté à ce genre de voyage. Un téléphone renforcé va résister à l'humidité, à la forte chaleur, aux pluies et à la poussière. Bref, tu n'abîmeras pas ton téléphone principal.</p>
+<p>Tu pourras d'ailleurs retrouver sur le site des liens et des codes promos pour les téléphones <strong>Blackview Xplore X1</strong>.</p>
+
+<h3 class="guide-subhead">Option 3 : les GPS moto à écran déporté</h3>
+<p>Tu pourras aussi utiliser des appareils comme ceux de la marque <strong>Aoocci</strong>, avec des GPS offline comme le <strong>U6</strong>. Ou des appareils de la marque <strong>Carpuride</strong>, qui propose aussi une navigation offline avec un GPS intégré à un écran déporté, compatible <strong>Android Auto et CarPlay</strong>.</p>
+
+<h3 class="guide-subhead">Option 4 : le GPS moto dédié haut de gamme</h3>
+<p>Tu pourras bien sûr, selon ton budget, t'équiper d'un GPS dédié comme le <strong>Garmin Zūmo</strong>. Un appareil conçu spécifiquement pour la moto, mais avec des prix beaucoup plus conséquents.</p>
+
+<div class="guide-info-card">
+  <div class="guide-info-label">Le bonus des écrans déportés modernes</div>
+  <p class="guide-info-content"><strong>Dashcam intégrée</strong> (enregistrement du trajet, utile en cas de chute causée par un tiers) — <strong>Surveillance de la pression des pneus</strong> via capteurs TPMS — <strong>Détecteur d'angle mort</strong> sur certains modèles plus évolués.</p>
+</div>
+
+<div class="guide-related">
+  <div class="guide-related-label">Pour aller plus loin</div>
+  <a href="/articles/comparatif-carpuride-2026-w702-w702-pro-w702s-pro-et-702rs-pro.html">Mon comparatif complet des GPS Carpuride 2026</a>
+</div>
+<a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div class="guide-divider">❦</div>
+
+<div class="guide-part-header">
+  <span class="guide-part-header-label">Partie 5</span>
+  <h2 class="guide-part-header-title">Sur le terrain</h2>
+</div>
+
+<header class="guide-chapter-header" id="ch12">
+  <div class="guide-chapter-number">12</div>
+  <h2>Où poser la tente ?</h2>
+</header>
+<p><span class="guide-dropcap">Q</span>uestion cruciale quand on se lance en bivouac. Et là, attention : beaucoup de pays européens aujourd'hui ne tolèrent pas le bivouac. <strong>Seuls les pays nordiques font vraiment exception</strong> — la Suède, la Norvège et la Finlande.</p>
+
+<div class="guide-info-card">
+  <div class="guide-info-label">Le droit nordique</div>
+  <p class="guide-info-content">En <strong>Suède</strong>, c'est gravé dans la Constitution depuis 1994 : l'<strong>Allemansrätten</strong>, le « droit de tout un chacun ». En <strong>Norvège</strong> (<em>allemannsretten</em>) et en <strong>Finlande</strong> (<em>jokamiehenoikeus</em>), ce droit existe sous forme coutumière et reste tout aussi solide dans les faits.</p>
+</div>
+
+<p>Concrètement, tu peux planter ta tente à peu près partout, à condition de respecter les règles de base :</p>
+<ul style="margin:.5rem 0 1.5rem 2rem; font-family: var(--gp-body); font-size: 1.1rem; line-height: 1.7; color: var(--gp-ink-soft);">
+  <li>Rester à distance des habitations (au moins 150 m en général)</li>
+  <li>Ne pas s'installer sur des terres cultivées ou dans des jardins privés</li>
+  <li>Ne rien laisser derrière soi</li>
+  <li>Ne pas allumer de feu par temps sec</li>
+</ul>
+<p>Simple et logique.</p>
+
+<h3 class="guide-subhead">Dans le reste de l'Europe : beaucoup plus restrictif</h3>
+<p>Dans le reste de l'Europe en revanche, c'est bien plus compliqué. Le bivouac y est généralement interdit ou toléré seulement de façon très restrictive — souvent dans les <strong>parcs naturels régionaux</strong>, en dehors des parcs nationaux, et uniquement pour une nuit.</p>
+
+<div class="guide-tip-card">
+  <div class="guide-tip-label">Le conseil d'Yves</div>
+  <p class="guide-tip-content">Dans le pire des cas, ce qui pourra être toléré, c'est que tu poses ta tente tard le soir et que tu repartes tôt le matin. La règle d'or reste la même : <strong>discrétion absolue, aucun feu, aucun déchet, et on quitte les lieux avant que le propriétaire ne se réveille</strong>.</p>
+</div>
+
+<a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div class="guide-divider">❦</div>
+
+<header class="guide-chapter-header" id="ch13">
+  <div class="guide-chapter-number">13</div>
+  <h2>L'installation du campement : un rituel</h2>
+</header>
+<p><span class="guide-dropcap">A</span>u fil des jours, l'installation du campement devient un rituel. Mais là encore, il faudra être vigilant à l'installation correcte de la toile de tente.</p>
+<p>Bien sûr, on essaiera de trouver un terrain plat. En camping, ça ne pose pas vraiment de problème ; en bivouac, ça risque d'être un peu plus compliqué.</p>
+
+<h3 class="guide-subhead">Le sens du vent : un point crucial</h3>
+<p>L'autre chose à laquelle il faut vraiment faire attention, c'est le <strong>sens du vent</strong>. Dans quel sens souffle-t-il quand tu poses la tente ? Est-ce qu'il va souffler sur les portes et s'engouffrer dès que tu vas ouvrir ? <strong>C'est un point important.</strong></p>
+
+<h3 class="guide-subhead">Rigoureux et méthodique</h3>
+<p>Il faut aussi, à mon sens, être rigoureux et méthodique. Ne pas décharger ce qui n'est pas nécessaire, mais décharger ce qui l'est vraiment et le mettre à l'abri dans la tente. Pense à <strong>protéger les connexions électriques de la moto</strong> s'il y a des câbles USB, pour éviter qu'elles ne prennent l'eau.</p>
+
+<div class="guide-tip-card">
+  <div class="guide-tip-label">Le conseil d'Yves</div>
+  <p class="guide-tip-content">Aie un endroit où tu poses les clés de la moto, <strong>toujours au même endroit</strong>. Ça évite de les perdre, ça évite de les chercher. Monter ou démonter une tente sous une pluie battante, c'est déjà désagréable — inutile d'en rajouter en cherchant tes clés.</p>
+</div>
+
+<a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div class="guide-divider">❦</div>
+
+<header class="guide-chapter-header" id="ch14">
+  <div class="guide-chapter-number">14</div>
+  <h2>Toilette, lessive, sommeil</h2>
+</header>
+<p><span class="guide-dropcap">U</span>ne fois arrivé au bivouac, il faudra penser à faire la toilette, mais aussi peut-être à faire la lessive. Et là, ça risque d'être <strong>plus complexe selon la région et la météo</strong>.</p>
+<p>Les détails sur la lessive et les sous-vêtements mérinos sont dans le chapitre 9 (textile technique).</p>
+
+<h3 class="guide-subhead">Le point crucial : la qualité du sommeil</h3>
+<p>Et ensuite viendra un moment crucial : <strong>la qualité du sommeil</strong>. Il faut que celui-ci soit réparateur, parce que si sur 4 ou 5 jours on s'en sort sans problème, sur 3 ou 4 semaines ça va vraiment influencer ton road trip au complet.</p>
+
+<a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div class="guide-divider">❦</div>
+
+<header class="guide-chapter-header" id="ch15">
+  <div class="guide-chapter-number">15</div>
+  <h2>Astuces camping moto</h2>
+</header>
+<p><span class="guide-dropcap">À</span> force de bivouaquer, on apprend une foule de petits trucs qui changent tout. Voici mes <strong>astuces camping moto</strong> issues de milliers de kilomètres.</p>
+
+<ol class="guide-tips">
+  <li><strong>Choisir son spot avant la nuit.</strong> Anticipe dans l'après-midi ton point de chute.</li>
+  <li><strong>Évaluer le terrain</strong> : pente, humidité, proximité d'un cours d'eau qui peut monter.</li>
+  <li><strong>Pas trop près de la moto, et à l'opposé de la béquille.</strong> Si elle tombe, vaut mieux que tu ne sois pas dessous.</li>
+  <li><strong>L'entrée de la tente à l'opposé du vent dominant.</strong> Banal, mais on y pense rarement quand on est fatigué.</li>
+  <li><strong>Des petits sacs poubelle toujours à portée de main</strong>, c'est super pratique. Pas des sacs de 100 L qui ne rentrent nulle part.</li>
+  <li><strong>Une petite bouteille en plastique</strong> à portée de main, pour les envies pressantes de la nuit où il fera 2 °C avec un temps exécrable.</li>
+  <li><strong>Pense à mettre ton pantalon dans ton duvet</strong> un petit moment. Si tu as une nuit très froide, l'enfilage sera moins pénible.</li>
+  <li><strong>Toujours avoir ta bouteille d'eau à portée de main.</strong></li>
+  <li><strong>Toujours mettre les lunettes et la lampe au même endroit.</strong></li>
+  <li><strong>Idem pour les clés de la moto une fois que tu es dans la tente.</strong></li>
+  <li><strong>Les bottes dans la tente (si possible).</strong> Sinon ouvertures vers le bas pour éviter l'humidité.</li>
+</ol>
+
+<a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div class="guide-divider">❦</div>
+
+<div class="guide-part-header">
+  <span class="guide-part-header-label">Partie 6</span>
+  <h2 class="guide-part-header-title">Le voyage en lui-même</h2>
+</div>
+
+<header class="guide-chapter-header" id="ch16">
+  <div class="guide-chapter-number">16</div>
+  <h2>Combien peut-on faire de kilomètres par jour ?</h2>
+</header>
+<p><span class="guide-dropcap">U</span>ne réponse évidente : ça dépend.</p>
+
+<div class="guide-stat">
+  <div class="guide-stat-number">250-350</div>
+  <div class="guide-stat-label">
+    <strong>Kilomètres par jour</strong>
+    en rythme road trip normal. Le bon équilibre entre route, visites et arrêts.
   </div>
+</div>
 
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <!-- CHAPITRE 3 — RANGEMENT -->
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <div class="guide-chapter-header" id="ch3">
-    <div class="guide-chapter-number">Chapitre 03</div>
-    <h2>Où ranger tout ce matériel ?</h2>
+<p>Si on parle de <strong>journées de route normales en road trip</strong>, je pense que la bonne moyenne se situe certainement entre 250 et 350 km.</p>
+<p>Maintenant, si c'est une <strong>route de transition</strong>, ça peut aller jusqu'à <strong>1000 km dans la journée</strong>.</p>
+
+<h3 class="guide-subhead">Mon record personnel</h3>
+<p>Personnellement, il m'est arrivé de faire <strong>1500, 1600 km dans la journée</strong>. Ce sont des grandes journées de route par contre.</p>
+
+<div class="guide-info-card">
+  <div class="guide-info-label">Une petite folie</div>
+  <p class="guide-info-content">En rentrant de Roumanie, j'ai roulé quasiment <strong>26 h avec une pause d'une heure 30 pour faire une bonne sieste</strong>. Je me suis retrouvé au <strong>col du Grand Saint-Bernard à 3h du matin en pleine nuit</strong>. C'était assez impressionnant.</p>
+</div>
+
+<a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div class="guide-divider">❦</div>
+
+<header class="guide-chapter-header" id="ch17">
+  <div class="guide-chapter-number">17</div>
+  <h2>La fatigue : le sujet qu'on sous-estime</h2>
+</header>
+<p><span class="guide-dropcap">O</span>n sous-estime toujours ce point, et c'est une erreur.</p>
+<p>En road trip, on enchaîne les journées de route, les mauvaises nuits de sommeil, et l'attention permanente exigée par la conduite de la moto. Forcément, tout ça va créer une <strong>fatigue générale</strong> qui s'accumule jour après jour. Et si les mauvaises nuits s'enchaînent, en 10 ou 15 jours, une grosse fatigue peut facilement s'installer.</p>
+
+<h3 class="guide-subhead">La fatigue te rend dangereux</h3>
+<p>Tu l'auras compris, la fatigue te rend dangereux. <strong>Pour toi, et pour les autres.</strong></p>
+<p>Un peu trop de fatigue, une seconde de réaction en trop dans un virage, et ça peut être le tout droit. L'accident. Donc forcément, <strong>la récupération doit être au centre du road trip</strong>.</p>
+<p>Bien sûr, c'est plus facile à dire en écrivant ces lignes qu'à faire quand on est sur le terrain. Et je peux te dire que <strong>je sais de quoi je parle</strong>.</p>
+
+<h3 class="guide-subhead">Les signes qui ne trompent pas</h3>
+<p>Malgré tout, il faut être conscient des signes — ou tout au moins des prémices.</p>
+
+<div class="guide-tip-card">
+  <div class="guide-tip-label">Le conseil d'Yves</div>
+  <p class="guide-tip-content">Si le matin, quand tu te lèves, <strong>tu as du mal à négocier tes premiers virages</strong>, c'est que la fatigue est là. Ce jour-là, tu feras une journée de route plus tranquille. Tu te surveilleras. Tu te ménageras. Et tu finiras peut-être ta journée de route plus tôt que prévu.</p>
+</div>
+
+<blockquote class="guide-pullquote">
+  Voyager longtemps sans se mettre en danger :<br>
+  <em>savoir lever le pied avant que le corps ne le fasse pour toi.</em>
+</blockquote>
+
+<a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div class="guide-divider">❦</div>
+
+<header class="guide-chapter-header" id="ch18">
+  <div class="guide-chapter-number">18</div>
+  <h2>Le voyage à moto : une expérience à part</h2>
+</header>
+<p><span class="guide-dropcap">L</span>e voyage à moto a ce petit quelque chose qu'on ne retrouve qu'en moto : le fait d'être en <strong>contact direct avec l'extérieur</strong>.</p>
+<p>Si je fais le comparatif avec la voiture — évidemment, où on va être complètement cloisonné, installé comme dans un sofa, surtout dans les voitures d'aujourd'hui — eh bien à mon sens, ça casse un petit peu l'expérience du voyage. C'est une autre expérience.</p>
+<p>Par contre, l'expérience du voyage à moto, ressentir l'air, ressentir les vibrations du moteur, le décor qui défile, cette <strong>prise directe avec le paysage</strong>... franchement, je pense que ça n'a pas son égal.</p>
+
+<h3 class="guide-subhead">S'arrêter à moto : pas si simple qu'on le croit</h3>
+<p>On pense souvent qu'en moto, on peut s'arrêter plus facilement n'importe où. Ce n'est pas forcément vrai, et par moments, ça peut même être une vraie complication.</p>
+<p>La complication peut venir du sol : est-ce qu'on va pouvoir béquiller la moto ou pas ? Une béquille latérale qui s'enfonce dans un bas-côté mou, un sol en pente, du gravier... ça peut vite devenir plus ou moins complexe.</p>
+
+<h3 class="guide-subhead">Le motard, ce voyageur qui rapproche les gens</h3>
+<p>J'ai souvent constaté que quand je traverse les villes, les villages, il y a un <strong>bon accueil en général pour le motard</strong>. Peut-être est-ce cette notion du voyageur qui ressort, et qui finalement, quelque part, rapproche un peu les gens.</p>
+
+<blockquote class="guide-pullquote">
+  La moto nous rapproche.<br>
+  <em>On est avec les gens, pas à côté.</em>
+</blockquote>
+
+<p>Encore une fois, dans nos voitures, nous sommes isolés, confinés, séparés des autres. À moto, c'est l'inverse : on nous voit, on nous entend, on peut discuter à un feu rouge, saluer d'un pouce levé, échanger un mot à la terrasse d'un café.</p>
+
+<a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div class="guide-divider">❦</div>
+
+<header class="guide-chapter-header" id="ch19">
+  <div class="guide-chapter-number">19</div>
+  <h2>Bivouac moto dans les Alpes et le Jura</h2>
+</header>
+<p><span class="guide-dropcap">B</span>asé à Annecy, j'ai la chance d'avoir les <strong>Alpes</strong> en bas de chez moi et le <strong>Jura</strong> à une heure de route. Résultat, j'ai pu tester mon matériel dans des conditions variées sans avoir à partir au bout du monde.</p>
+
+<h3 class="guide-subhead">Bivouac moto Alpes : ce qu'il faut savoir</h3>
+<p>Les Alpes, c'est le terrain de jeu rêvé pour le <strong>bivouac moto trail</strong>, mais attention aux zones protégées : le bivouac est <strong>interdit dans les parcs nationaux</strong> (Vanoise, Écrins, Mercantour). En revanche, il est toléré dans les <strong>parcs naturels régionaux</strong> (Bauges, Chartreuse, Vercors, Queyras) à condition de respecter les règles : une seule nuit, de 19h à 9h, feu proscrit, aucune trace au réveil.</p>
+
+<div class="guide-info-card">
+  <div class="guide-info-label">En altitude, même en été</div>
+  <p class="guide-info-content">Les cols d'altitude (Iseran, Galibier, Agnel, Lombarde) offrent des spots spectaculaires, mais anticipe la température : <strong>même en août, on descend sous les 5 °C la nuit au-dessus de 2 000 m</strong>. D'où l'intérêt d'un sac Nemo Sonic 0° plutôt que du 15 °C, même en plein été.</p>
+</div>
+
+<h3 class="guide-subhead">Bivouac moto Jura : la discrétion avant tout</h3>
+<p>Le Jura est plus méconnu mais tout aussi intéressant pour le <strong>camping moto</strong>. Moins fréquenté que les Alpes, avec des routes sinueuses magnifiques (combes, cluses, route des Sapins), il offre des coins tranquilles pour poser la tente en forêt ou au bord d'un lac.</p>
+
+<div class="guide-tip-card">
+  <div class="guide-tip-label">Le conseil d'Yves</div>
+  <p class="guide-tip-content">La règle pour un <strong>bivouac moto Jura</strong> réussi : la <strong>discrétion absolue</strong>. Je privilégie toujours les zones forestières éloignées des habitations, ou je demande directement l'autorisation à un agriculteur — très souvent acceptée avec le sourire.</p>
+</div>
+
+<a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div class="guide-divider">❦</div>
+
+<div class="guide-part-header">
+  <span class="guide-part-header-label">Partie 7</span>
+  <h2 class="guide-part-header-title">La vraie base : savoir rouler</h2>
+</div>
+
+<header class="guide-chapter-header" id="ch20">
+  <div class="guide-chapter-number">20</div>
+  <h2>Pour conclure : maîtriser sa moto avant de partir</h2>
+</header>
+<p><span class="guide-dropcap">À</span> mon sens, <strong>avant de partir en road trip</strong>, tu dois savoir faire quelques petits gestes tout simples avec ta moto. Pas de la haute voltige, juste <strong>les bases qui te sauveront</strong> quand le contexte se complique.</p>
+
+<h3 class="guide-subhead">Les gestes de base à maîtriser</h3>
+<p><strong>Première chose : être capable de faire un demi-tour sur une route en pente.</strong> Ça paraît bête, mais combien de motards se retrouvent coincés devant une barrière fermée, sur une route étroite qui monte, incapables de faire demi-tour sans tomber ? En road trip, cette situation, tu la rencontreras. Souvent.</p>
+<p><strong>Deuxième chose : être à l'aise avec les trajectoires de sécurité et les virages.</strong> Savoir négocier un virage serré en descente, comprendre où placer sa moto sur la chaussée, anticiper la sortie du virage — ce sont des compétences qui te protègent au quotidien, et qui deviennent <strong>vitales</strong> quand la fatigue s'installe ou que la route devient technique.</p>
+
+<div class="guide-tip-card">
+  <div class="guide-tip-label">Le conseil d'Yves</div>
+  <p class="guide-tip-content">Si tu n'es pas à l'aise sur ces deux points, alors prends <strong>quelques semaines pour t'entraîner sur des petites routes près de chez toi</strong>. Ça vaut largement le coup.</p>
+</div>
+
+<h3 class="guide-subhead">Un virage doit se prendre sans aucune tension</h3>
+<p>Rappelle-toi d'une chose fondamentale : quand tu abordes un virage, <strong>tu dois t'observer</strong>. Si tu ressens une tension quelque part — dans les bras, dans les épaules, dans le cou, dans les jambes — c'est que ça ne va pas.</p>
+
+<blockquote class="guide-pullquote">
+  Un virage doit se prendre sans aucune tension.<br>
+  <em>S'il y en a, c'est qu'il y a un problème.</em>
+</blockquote>
+
+<p>Cette tension, c'est le signal que ton corps te donne : tu es trop rapide pour ton niveau, ta trajectoire est mauvaise, ou tu n'es pas à l'aise avec cette route. Dans tous les cas, c'est à prendre au sérieux. Ralentis, reprends ta respiration, et reprends de la confiance virage après virage.</p>
+<p><strong>Un motard détendu, c'est un motard qui contrôle. Un motard crispé, c'est un motard en danger.</strong></p>
+
+<a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener" class="guide-video-card">
+  <div class="guide-video-card-icon">▶</div>
+  <div class="guide-video-card-content">
+    <div class="guide-video-card-label">Ma vidéo dédiée</div>
+    <div class="guide-video-card-title">Virages Moto Débutant : Le SECRET pour Maîtriser sa Trajectoire (A2)</div>
   </div>
-  <div class="mag-section">
-    <p>Eh bien, on va ranger tout simplement tout ce matériel dans des <strong>valises pour le road trip</strong>. Et souvent, la question se pose quand on s'équipe : <strong>valises souples ou valises rigides pour le road trip moto ?</strong></p>
+  <div class="guide-video-card-arrow">→</div>
+</a>
 
-    <figure class="guide-product-photo">
-      <img src="/articles/images/bivouac-moto-quel-equipement/honda-nt1100-chargee-road-trip.webp" alt="Honda NT1100 chargée pour road trip avec valises SW-Motech et top case Shad" loading="lazy">
-      <figcaption>Ma Honda NT1100 chargée pour un road trip : valises SW-Motech TRAX Adv 45L, top case Shad X59, MiniBags Lone Rider sur les côtés — environ 160 L de bagages au total.</figcaption>
-    </figure>
+<h3 class="guide-subhead">Le road trip commence maintenant</h3>
+<p>Et finalement, <strong>le road trip commence à ce moment-là</strong>. Pas le jour du départ. Pas quand tu boucles ta dernière valise. Il commence le jour où tu te dis : « cette semaine, je sors m'entraîner à maîtriser ma moto. »</p>
+<p>Quand tu commences à t'entraîner, à être à l'aise, à anticiper les situations, à ressentir ta machine comme un prolongement de toi-même — là, <strong>tu es prêt</strong>.</p>
 
-    <p>La réponse est relativement simple. Tu privilégieras principalement des <strong>valises souples quand tu vas faire du tout-terrain ou de l'off-road</strong>, parce qu'elles peuvent se déformer facilement et mieux encaisser les chocs. En cas de chute ou de frottement contre un rocher, elles absorbent sans casser.</p>
-    <p>Par contre, si tu comptes faire que de la route, la <strong>valise rigide</strong> est quand même généralement plus pratique. Moins lourde à manipuler, plus facile à transporter et surtout plus facile à sécuriser (cadenas, verrous intégrés). Pour un road trip routier longue distance, elle sera certainement ta meilleure amie.</p>
+<a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
 
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Ma configuration actuelle</h3>
-    <p>Il y aura bien sûr pour commencer les valises latérales. Moi j'ai opté pour les valises <strong>TRAX Adv 45 L de chez SW-Motech</strong>. Et c'est vrai que 2×45 L, franchement, il n'y a rien de trop.</p>
-    <p>Ensuite pour le top case, j'ai opté pour celui de chez <strong>Shad, le X59</strong>. Ce top case modulable (46, 52 ou 59 L) a, il faut bien l'avouer, quelques atouts dans son jeu.</p>
-    <p>Sur mon ancienne configuration, j'avais installé les <strong>MiniBags de 6 L de chez Lone Rider</strong> sur les crash bars, mais vu ma nouvelle configuration, ce n'était pas possible. Je les ai donc tout simplement installés sur le devant des valises SW-Motech.</p>
+<div class="guide-conclusion">
+  <h2>Alors, prêt pour l'aventure ?</h2>
+  <p>Prépare ton matos, prépare ta moto, mais surtout : <strong>prépare-toi, toi</strong>.</p>
+  <p>Le bivouac moto, ce n'est pas compliqué. C'est juste différent. Une fois que tu as fait ton premier trip, tu ne pourras plus t'en passer.</p>
+  <span class="guide-conclusion-signature">Bonne route !<br>Yves — LCDMH</span>
+</div>
 
-    <figure class="guide-product-photo">
-      <img src="/articles/images/bivouac-moto-quel-equipement/sacoche-lone-rider-minibag-crashbar.webp" alt="Sacoche Lone Rider MiniBag V2 pour crashbar étanche" loading="lazy">
-      <figcaption>La Lone Rider MiniBag V2 — 6 L, 100% étanche, conçue à l'origine pour les crashbars. Parfaite pour les petits objets d'accès rapide.</figcaption>
-    </figure>
-
-    <p>Au final, on se retrouve avec 2 MiniBags de 6 L, les 2 valises de 45 L et le top case de 59 L ouvert au maximum, pour un <strong>total d'environ 160 litres</strong>. Et franchement, il n'y a rien de trop !</p>
-
-    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+<div style="margin-top: 4rem; padding-top: 3rem; border-top: 2px solid var(--gp-gold);">
+  <h2 style="font-family: var(--gp-display); font-size: 2rem; font-style: italic; color: var(--gp-accent); text-align: center; margin-bottom: 2rem;">À lire également</h2>
+  <div style="display: grid; gap: 1rem;">
+    <a href="/articles/lampe-olight-perun-3-lampe-frontale-parfaite-en-bivouac-test.html" style="display: block; padding: 1.25rem 1.5rem; background: var(--gp-cream); border-left: 4px solid var(--gp-gold); color: var(--gp-ink); text-decoration: none; font-family: var(--gp-display); font-style: italic; font-weight: 700; font-size: 1.1rem;">→ Olight Perun 3 : la lampe frontale parfaite pour le bivouac moto</a>
+    <a href="/articles/bivouac-moto-comment-bien-dormir-en-tente-test-nemo-sonic-0.html" style="display: block; padding: 1.25rem 1.5rem; background: var(--gp-cream); border-left: 4px solid var(--gp-gold); color: var(--gp-ink); text-decoration: none; font-family: var(--gp-display); font-style: italic; font-weight: 700; font-size: 1.1rem;">→ Bivouac moto : comment bien dormir en tente ? Test Nemo Sonic 0°</a>
+    <a href="/articles/aferiy-nano-100-autonomie-electrique-en-road-trip.html" style="display: block; padding: 1.25rem 1.5rem; background: var(--gp-cream); border-left: 4px solid var(--gp-gold); color: var(--gp-ink); text-decoration: none; font-family: var(--gp-display); font-style: italic; font-weight: 700; font-size: 1.1rem;">→ AFERIY Nano 100 : autonomie électrique en road trip</a>
+    <a href="/articles/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat.html" style="display: block; padding: 1.25rem 1.5rem; background: var(--gp-cream); border-left: 4px solid var(--gp-gold); color: var(--gp-ink); text-decoration: none; font-family: var(--gp-display); font-style: italic; font-weight: 700; font-size: 1.1rem;">→ Budget Cap Nord à Moto : 30 Jours, 10 000 km</a>
   </div>
-
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <!-- CHAPITRE 4 — ORGANISATION CHARGEMENT -->
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <div class="guide-chapter-header" id="ch4">
-    <div class="guide-chapter-number">Chapitre 04</div>
-    <h2>Organisation du chargement</h2>
-  </div>
-  <div class="mag-section">
-    <p>La toile de tente prendra place sur le dessus d'une des deux valises. Le matelas qui va faire la couche entre le matelas principal et le sol prendra place sur la seconde valise.</p>
-    <p>À l'intérieur des valises, on retrouvera :</p>
-    <ul style="margin:.5rem 0 1.5rem 2rem;font-size:1.1rem;line-height:1.7;color:var(--mag-text2,#4a4a4a);">
-      <li>L'outillage, la clé dynamométrique pour la tension de la chaîne</li>
-      <li>Le combi booster de batterie et gonfleur de pneus</li>
-      <li>Une sacoche avec le linge de rechange</li>
-      <li>Toute la partie camping : matelas isolant, sac de couchage, drap de sac, popote</li>
-    </ul>
-    <p>Dans le top case, généralement, je vais y mettre toute la partie nourriture, les lyophilisés, et tout ce dont je pourrais avoir besoin rapidement sans être obligé d'ouvrir les valises. Il faut aussi et surtout <strong>éviter de faire trop de poids en hauteur</strong>, afin d'éviter, tu l'auras compris, trop de ballant.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Pesée et équilibrage : un point crucial</h3>
-    <p>Une fois que tout est calé, je vais généralement peser chaque valise pour avoir une idée du poids total de la moto, mais aussi pour faire une <strong>répartition équitable entre les deux côtés</strong>, afin d'éviter un trop gros déséquilibre. Ce qui risquerait de générer un <strong>guidonnage important sur le train avant</strong>.</p>
-    <p>Après plusieurs expériences, on a en général une cinquantaine de kilos de matériel, plus le poids de la moto. Ce qui fait qu'on approche assez vite les <strong>300 kilos matériel + moto, et jusqu'à 380 kilos avec le bonhomme</strong>.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Adapter selon la saison</h3>
-    <p>Évidemment, selon l'époque où tu pars, tu n'auras peut-être pas forcément le même duvet, qui lui-même ne prendra pas la même place dans les valises. Un duvet 4 saisons prend généralement presque deux fois plus de place qu'un duvet été.</p>
-    <p>Idem pour la tente. Tu peux très bien opter pour la tente une place, la tente minimaliste, qui effectivement s'intègrera mieux dans la bagagerie grâce à son volume. Par contre, ce que tu gagnes en volume, tu le perds en confort. Ça, il faut vraiment en être conscient, parce que le soir quand on s'arrête au bivouac, il y a quand même pas mal de choses à sortir de la moto : les vêtements pour le soir, les habits de moto que tu vas mettre dans la tente, peut-être aussi ton casque... Tu te retrouves rapidement avec beaucoup d'équipement à mettre dans la toile de tente, et si c'est une tente une place, forcément ça va limiter les mouvements à l'intérieur.</p>
-
-    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
-  </div>
-
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <!-- CHAPITRE 5 — LA TENTE -->
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <div class="guide-chapter-header" id="ch5">
-    <div class="guide-chapter-number">Chapitre 05</div>
-    <h2>La tente : le choix crucial</h2>
-  </div>
-  <div class="mag-section">
-    <p>La <strong>tente moto</strong>, c'est LE poste où il ne faut pas se louper. Une tente qui prend l'eau, qui se casse la figure au premier coup de vent ou qui met 25 minutes à monter après 500 km de selle, c'est une nuit gâchée. Deux critères priment pour le motard : <strong>le poids et l'encombrement plié</strong>, et <strong>la rapidité de montage</strong>.</p>
-    <p>Personnellement, mon choix se porte sur une tente rapide à monter. Il faut dire que je suis un gros rouleur et souvent je vais avoir des journées de route de 8, 10 voire 12 h de route. Et quand j'arrive, c'est vrai que j'ai envie de me poser rapidement et donc forcément d'avoir une tente rapide à monter.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Décathlon Fresh & Black : la tente pour motard Décathlon</h3>
-    <p>Dernièrement, j'ai utilisé la <strong>Fresh & Black de chez Décathlon</strong>, très bonne tente. Mais en contrepartie, un encombrement assez important, impossible de rentrer la toile de tente dans les valises, et un poids aussi conséquent.</p>
-
-    <figure class="guide-product-photo">
-      <img src="/articles/images/bivouac-moto-quel-equipement/tente-decathlon-fresh-black-motard.webp" alt="Tente Décathlon 2 Seconds Fresh Black pour motard" loading="lazy">
-      <figcaption>La Fresh &amp; Black de Décathlon : montage et démontage ultra-rapides, obscurité totale à l'intérieur — parfaite pour récupérer après une grosse journée.</figcaption>
-    </figure>
-
-    <p>Alors en ce qui concerne le poids, soyons clairs, c'est pas vraiment dérangeant, mais l'encombrement lui un peu plus. Par contre, la <strong>simplicité de montage et de démontage, c'est un vrai régal</strong>, et notamment quand il s'agit de plier la tente sous la pluie dans des conditions extrêmement difficiles, voire 0 degré sous de la grêle et de la pluie. Eh bien là, ça fait toute la différence.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Lone Rider ADV : la référence motard</h3>
-    <p>J'ai utilisé au départ la <strong>Lone Rider ADV</strong> qui est une très bonne tente. Ce que j'ai aimé sur la Lone Rider, c'est sa <strong>grande ouverture de face</strong>. Je pense que c'est à privilégier aussi, car une petite ouverture va être forcément beaucoup plus compliquée lorsqu'on va devoir rentrer tout le matériel dans la toile de tente, et ça peut devenir très vite fastidieux.</p>
-
-    <figure class="guide-product-photo">
-      <img src="/articles/images/bivouac-moto-quel-equipement/tente-lone-rider-adv-bivouac-moto.webp" alt="Tente Lone Rider ADV pour bivouac moto avec grande ouverture" loading="lazy">
-      <figcaption>La Lone Rider ADV et sa grande ouverture frontale : idéale pour ranger tout le matériel à l'intérieur sans se contorsionner.</figcaption>
-    </figure>
-
-    <p>J'avais changé la Lone Rider ADV pour la Fresh & Black de chez Décathlon pour mon dernier road trip en Norvège car je voulais une toile de tente qui bloque la lumière. Ce qui, dans les faits, se traduit par <strong>l'obscurité d'une salle de cinéma</strong>. Contrepartie : tu es toujours obligé d'avoir de la lumière dans la toile de tente et ça finalement, ce n'est pas top non plus. Envers de la médaille. Difficile de tout avoir, je pense.</p>
-
-    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
-  </div>
-
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <!-- CHAPITRE 6 — COUCHAGE -->
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <div class="guide-chapter-header" id="ch6">
-    <div class="guide-chapter-number">Chapitre 06</div>
-    <h2>Bien dormir : le trio sac, matelas, drap</h2>
-  </div>
-  <div class="mag-section">
-    <p>On sous-estime toujours ce point, et c'est une erreur. Une mauvaise nuit, c'est 300 km de route le lendemain avec la tête dans le guidon et la vigilance en berne. Trois éléments travaillent ensemble : <strong>le sac de couchage</strong> pour la chaleur, <strong>le matelas</strong> pour l'isolation du sol (qui pompe la chaleur du corps beaucoup plus vite que l'air), et <strong>le drap de sac</strong> pour l'hygiène et un peu de confort supplémentaire.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Le sac de couchage : adapter la température à la destination</h3>
-    <p>Règle d'or : toujours regarder la <strong>température de confort</strong> (pas la température extrême, qui correspond à un scénario de survie). Pour la France en été, un sac 5-10 °C suffit. Pour le Cap Nord, la Scandinavie ou la montagne, il faut descendre à 0 °C ou moins. J'ai deux sacs selon la destination.</p>
-    <p><strong>Nemo Sonic 0°</strong> — mon choix grand froid. Duvet d'oie, taillé momie, confort jusqu'à 0 °C. C'est celui que j'embarque pour les destinations froides. Poids raisonnable pour ses performances thermiques, et système "gills" (évents torses) qui permet de réguler la chaleur sans sortir du sac. Investissement conséquent mais une pièce qui dure des années.</p>
-
-    <figure class="guide-product-photo">
-      <img src="/articles/images/bivouac-moto-quel-equipement/sac-couchage-nemo-sonic-0.webp" alt="Sac de couchage Nemo Sonic 0 degres duvet oie momie grand froid" loading="lazy">
-      <figcaption>Le Nemo Sonic 0° — taillé momie, duvet d'oie, et ces fameux "gills" jaunes sur le torse pour ventiler sans ouvrir le sac.</figcaption>
-    </figure>
-
-    <p><strong>Nemo Riff Men's 15</strong> — polyvalent 3 saisons. Confort autour de 5-10 °C. C'est mon sac "France et Europe" d'avril à octobre.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Le matelas : l'élément le plus sous-estimé</h3>
-    <p>Un bon matelas change tout. Sans lui, même le meilleur sac de couchage te laissera frigorifié au petit matin. Le critère qui compte, c'est le <strong>R-value</strong> (pouvoir isolant) : plus il est élevé, mieux le matelas isole du sol. Pour la belle saison, R=2 suffit. Pour le froid, vise R=4 minimum.</p>
-    <p><strong>Sea to Summit Comfort Plus SI</strong> — auto-gonflant, épais, confortable. Il se gonfle tout seul en 10 minutes, tu donnes juste 2-3 coups de souffle pour finir. R-value élevé, idéal pour les nuits fraîches. Le poste "confort" du bivouac pour moi.</p>
-
-    <figure class="guide-product-photo">
-      <img src="/articles/images/bivouac-moto-quel-equipement/matelas-sea-to-summit-comfort-plus-si.webp" alt="Matelas Sea to Summit Comfort Plus SI auto-gonflant rouge" loading="lazy">
-      <figcaption>Le Sea to Summit Comfort Plus SI : auto-gonflant, isolation renforcée (R-value élevé), et cette belle couleur "crimson" qui le rend facile à retrouver dans la tente.</figcaption>
-    </figure>
-
-    <p>Je te conseille aussi d'acheter une <strong>petite pompe rechargeable en USB</strong> pour gonfler ton matelas. Plusieurs raisons à ça. Tu vas économiser un petit peu de temps, un petit peu de fatigue, et puis surtout, tu éviteras ainsi de rentrer l'humidité de tes poumons à l'intérieur du matelas. Cette humidité, au fil du temps, risque de développer des germes et des moisissures qui s'installent dans la mousse interne — impossible à nettoyer ensuite.</p>
-    <p><strong>Trinordic Ultralight</strong> — 550 grammes tout mouillé, oreiller intégré en prime. Le choix quand j'optimise le volume dans les sacoches. Moins confortable que l'auto-gonflant, mais le gain de place est considérable. Attention aux crevaisons, car ce matelas est relativement fragile et si tu viens le crever, comme ça m'est arrivé, tes nuits de sommeil vont être beaucoup plus difficiles.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Le drap de sac : petit mais indispensable</h3>
-    <p>Tient dans la paume de la main, se lave en deux minutes dans n'importe quel lavabo, et préserve l'intérieur du sac de couchage (qui, lui, ne se lave pas souvent). En été, tu peux même dormir dedans seul si la nuit est douce. Mon choix : <strong>Fit-Flip Microfiber Sleeping Bag Liner</strong>.</p>
-
-    <figure class="guide-product-photo">
-      <img src="/articles/images/bivouac-moto-quel-equipement/drap-sac-fit-flip-microfibre.webp" alt="Drap de sac Fit-Flip microfibre compact tient dans la main" loading="lazy">
-      <figcaption>Le drap de sac Fit-Flip : tient littéralement dans la paume de la main, se lave en 2 minutes, et c'est LUI qui préserve l'intérieur de ton sac de couchage.</figcaption>
-    </figure>
-
-
-    <div class="guide-related">
-      <div class="guide-related-label">Pour aller plus loin</div>
-      <a href="/articles/bivouac-moto-comment-bien-dormir-en-tente-test-nemo-sonic-0.html">Mon test complet du sac de couchage Nemo Sonic 0°</a>
-    </div>
-
-    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
-  </div>
-
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <!-- CHAPITRE 7 — CUISINE -->
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <div class="guide-chapter-header" id="ch7">
-    <div class="guide-chapter-number">Chapitre 07</div>
-    <h2>Cuisiner en bivouac : réchaud, popote, nourriture</h2>
-  </div>
-  <div class="mag-section">
-    <p>Manger chaud le soir après une grosse étape, ça n'a rien d'un luxe. C'est un moment de décompression, et c'est aussi du carburant pour la suite. Dans le matériel camping moto, trois éléments composent un kit cuisine digne de ce nom : <strong>un réchaud compact, une popote empilable, et un pare-vent</strong> (souvent oublié et pourtant crucial en montagne).</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Le kit cuisine que j'embarque</h3>
-    <p><strong>Popote Odoland</strong> — kit empilable. Casserole + poêle + couvercle, le tout s'emboîte pour former un bloc compact. Aluminium anodisé, léger. Tu peux ranger ton réchaud et une cartouche de gaz à l'intérieur pour gagner encore de la place.</p>
-
-    <figure class="guide-product-photo">
-      <img src="/articles/images/bivouac-moto-quel-equipement/popote-odoland-camping-moto.webp" alt="Popote Odoland camping moto casserole poele empilable" loading="lazy">
-      <figcaption>La popote Odoland : casserole + poêle + couvercle qui s'emboîtent parfaitement. Le réchaud et la cartouche de gaz rentrent à l'intérieur.</figcaption>
-    </figure>
-
-    <p><strong>Réchaud Odoland Mini Stove</strong> — réchaud à gaz compact, se visse directement sur une cartouche à valve. Allumage piezo, réglage fin de la flamme. 1 litre d'eau bouilli en 3 minutes. Pour la moto, c'est le format idéal : il rentre dans la paume de la main.</p>
-    <p><strong>Pare-vent H&S</strong> — le petit plus qui change tout. Accessoire sous-estimé. En montagne ou au bord d'un lac, le moindre souffle d'air divise par deux le rendement du réchaud. Avec un pare-vent en aluminium, l'eau bout deux fois plus vite et tu consommes deux fois moins de gaz. Se plie à plat, quasi rien en volume.</p>
-
-    <figure class="guide-product-photo">
-      <img src="/articles/images/bivouac-moto-quel-equipement/rechaud-pare-vent-h-s-bivouac.webp" alt="Rechaud gaz avec pare-vent H&S en bivouac moto" loading="lazy">
-      <figcaption>Le réchaud à gaz avec le pare-vent H&amp;S : l'accessoire le plus rentable de ton kit cuisine. Moitié moins de gaz consommé, eau qui bout deux fois plus vite.</figcaption>
-    </figure>
-
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Les repas : le minimum</h3>
-    <p>En ce qui concerne les repas, je fais généralement extrêmement simple.</p>
-    <ul style="margin:.5rem 0 1.5rem 2rem;font-size:1.1rem;line-height:1.7;color:var(--mag-text2,#4a4a4a);">
-      <li>Soit j'aurai dîné dans l'après-midi aux alentours de 16-17h, et je prendrai vers 19-20h un petit encas, des barres céréales.</li>
-      <li>Soit je mange un lyophilisé : je fais chauffer l'eau dans la popote, que je verse directement dans le sachet pour éviter la vaisselle.</li>
-    </ul>
-    <p>Quand je te dis que je fais au minimum, je fais vraiment le minimum. D'ailleurs le matin, je ne bois pas de café. Juste une ou deux gorgées d'eau. Et une fois en route, je trouve un bar ou un café pour m'installer, et là je prends le temps de déguster un bon café.</p>
-
-    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
-  </div>
-
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <!-- CHAPITRE 8 — ELECTRICITE -->
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <div class="guide-chapter-header" id="ch8">
-    <div class="guide-chapter-number">Chapitre 08</div>
-    <h2>L'électricité en bivouac : rester autonome</h2>
-  </div>
-  <div class="mag-section">
-    <p>GoPro, téléphone, GPS Carpuride, drone, intercom… entre tous les équipements à recharger, on peut vite se retrouver à sec au bout de deux jours. Une petite <strong>centrale électrique portable</strong> change la donne, surtout quand on bivouaque plusieurs nuits d'affilée loin de toute prise.</p>
-    <p>Après plusieurs essais, j'ai choisi cette batterie qui me convient parfaitement, notamment au niveau de son <strong>facteur de forme</strong> pour ranger dans le top case. C'est vraiment très appréciable et puis surtout, toutes les sorties USB et la prise 220 volts sur la batterie. Ça c'est vraiment un gros plus.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">EgreTech Plume 300W — ma solution longue autonomie</h3>
-    <p>Format valise à bandoulière, 300 W en sortie continue, prise secteur, USB, USB-C PD et prise 220 volts. De quoi faire tourner <strong>deux nuits de tournage complet</strong> (caméras + batteries) + PC portable.</p>
-
-    <figure class="guide-product-photo">
-      <img src="/articles/images/bivouac-moto-quel-equipement/batterie-egretech-plume-300w-road-trip.webp" alt="Batterie portable EgreTech Plume 300W pour road trip moto avec sangle cuir" loading="lazy">
-      <figcaption>L'EgreTech Plume 300W : format valise à bandoulière cuir, 260 Wh, prise secteur 220 V + USB-C PD. Parfaite dans le top case.</figcaption>
-    </figure>
-
-    <p>J'ai fait arriver une <strong>prise USB dans mon top case</strong> qui elle-même se charge sur une prise allume-cigare reliée à la batterie, ce qui me permet de rouler toute la journée, de charger cette batterie en permanence et d'arriver le soir au bivouac et d'avoir une batterie chargée à 100%.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Alternative légère : Aferiy Nano 100</h3>
-    <p>Si tu n'as qu'un intercom et ton téléphone portable à recharger, tu pourras te diriger vers un appareil comme le <strong>Nano 100 de chez Aferiy</strong>. Tu trouveras des codes promo et des liens sur le site.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">La 2e journée de travail : copie des données</h3>
-    <p>Pour ma part, une fois le bivouac installé, la toilette faite, tout organisé et rangé, la <strong>deuxième journée de travail commence</strong>. Ce sera la copie des données des caméras vers les disques de stockage externes. Et je peux te dire qu'avec 2 caméras sur la moto, une caméra portable à la main, un drone et un appareil photo, les fichiers vidéo à copier tous les soirs, ça représente quelques gigas et environ 2 heures de travail.</p>
-
-    <div class="guide-related">
-      <div class="guide-related-label">Pour aller plus loin</div>
-      <a href="/articles/aferiy-nano-100-autonomie-electrique-en-road-trip.html">Mon test complet de la batterie Aferiy Nano 100</a>
-    </div>
-
-    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
-  </div>
-
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <!-- CHAPITRE 9 — TEXTILE -->
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <div class="guide-chapter-header" id="ch9">
-    <div class="guide-chapter-number">Chapitre 09</div>
-    <h2>Textile technique : rester au chaud et au sec</h2>
-  </div>
-  <div class="mag-section">
-    <p>Le textile, c'est la partie qu'on ne voit pas sur la moto mais qui compte en bivouac. Le principe fondamental, c'est le <strong>système 3 couches</strong> : une couche près du corps qui évacue la transpiration, une couche chaude au milieu, et une couche externe qui protège de la pluie et du vent.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Couche 1 : les sous-vêtements techniques en mérinos</h3>
-    <p>La <strong>laine mérinos</strong> fait ce que le synthétique ne saura jamais faire : elle reste chaude même mouillée, tu ne sentiras pas le phoque après 3 jours, régule la température corporelle. Un peu plus chère que du synthétique mais <strong>incomparable en confort</strong>.</p>
-    <p>Mes choix : <strong>Thermowave</strong> (manches longues + T-shirt) et <strong>Chuan</strong> (T-shirts du quotidien). Et les T-shirts manches courtes de chez Décathlon en mérinos bien sûr.</p>
-
-    <figure class="guide-product-photo">
-      <img src="/articles/images/bivouac-moto-quel-equipement/sous-vetement-thermowave-merinos-moto.webp" alt="Sous-vêtement Thermowave en laine mérinos kaki pour motard road trip" loading="lazy">
-      <figcaption>Le sous-vêtement Thermowave en laine mérinos — chaud même mouillé, ne sent pas mauvais après 3 jours, sèche vite. La base des couches pour le road trip longue distance.</figcaption>
-    </figure>
-
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">La lessive en voyage</h3>
-    <p>En ce qui me concerne, je pars généralement avec <strong>2 caleçons, 2 paires de chaussettes, 2 t-shirts</strong>. J'évite de me retrouver avec du linge sale pendant 3 ou 4 jours. Tous mes sous-vêtements sont en laine de mérinos : ça permet d'évacuer facilement la transpiration et de limiter les mauvaises odeurs. Autre avantage, la laine de mérinos <strong>sèche plus vite que le coton</strong>.</p>
-    <p>Tous les 3 jours en général, je fais la lessive. Mais encore faut-il pouvoir faire sécher le linge à l'extérieur sans qu'il pleuve. Il faut bien prévoir, bien s'organiser, parce qu'on ne peut pas rester une semaine avec des sous-vêtements sales : c'est vraiment inconfortable.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Couche 2 : la veste chauffante Keis — un luxe qui devient indispensable</h3>
-    <p>Je n'avais pas que les gants chauffants. J'avais aussi la <strong>veste chauffante Keis</strong>, celle qui se met sous la veste de moto. Ça, c'est un grand luxe, un grand confort, quelque chose d'incroyablement efficace.</p>
-    <p>Je me souviens que par moments j'étais surpris : malgré le fait que le chauffage était mis à fond sur la veste, je me retrouvais juste à l'équilibre. Ni trop chaud, ni trop froid. Ce qui sous-entend que dehors, il faisait vraiment très froid. Parce que même en hiver en Haute-Savoie, quand je roule avec ma veste chauffante, j'ai rarement le sentiment d'être à l'équilibre : généralement je suis au niveau 2 sur 3, ou au maximum au niveau 3. Et quand je suis au niveau 3 en Haute-Savoie, c'est qu'il fait au moins -10 °C ou -15 °C.</p>
-
-    <figure class="guide-product-photo">
-      <img src="/articles/images/bivouac-moto-quel-equipement/veste-chauffante-keis-j501.webp" alt="Veste chauffante Keis J501 noire pour motard grand froid" loading="lazy">
-      <figcaption>La Keis J501 : veste chauffante 3 niveaux, se porte sous la veste moto. Le grand luxe en hiver, indispensable en dessous de 0 °C.</figcaption>
-    </figure>
-
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Couche 3 : la protection moto extérieure</h3>
-    <p><strong>Veste Bering Alaska</strong> (Poly Kar System) : veste de road trip longue distance, étanche, aérée en été via zips d'aération, homologuée CE sur les protections. Poches nombreuses et utiles. C'est ma veste « tous climats » d'avril à octobre.</p>
-
-    <figure class="guide-product-photo">
-      <img src="/articles/images/bivouac-moto-quel-equipement/veste-bering-alaska-gore-tex.webp" alt="Veste moto Bering Alaska Poly Kar System Gore-Tex pour road trip" loading="lazy">
-      <figcaption>La Bering Alaska avec Poly Kar System : veste road trip longue distance, étanche, zips d'aération pour l'été. Ma veste "tous climats" d'avril à octobre.</figcaption>
-    </figure>
-
-    <p><strong>Pantalon Bering Alaska Air Dynamic System Gore-Tex</strong> : pendant du pantalon de la veste, membrane Gore-Tex, zips d'aération, bonne ergonomie sur moto route et trail. Le combo veste + pantalon Alaska, c'est ma tenue de base pour les trips longs.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">La veste de pluie : indispensable, même avec une veste étanche</h3>
-    <p>Au niveau de l'équipement, même si tu manques un peu de place, organise-toi pour emmener le maximum de choses utiles. Et surtout : <strong>des vêtements de pluie</strong>. Rouler mouillé en moto, il n'y a rien de pire.</p>
-    <p>La veste de moto doit être étanche. Si elle ne l'est pas, il faudra impérativement une sur-veste de pluie. Mais même si ta veste moto est étanche — et c'est mon cas —, à mon sens, il est impératif de partir avec une veste de pluie en plus.</p>
-    <p>Pourquoi ? Parce que même si tu n'es pas mouillé à l'intérieur, la veste moto reste humide à l'extérieur, et ça procure une sensation d'inconfort tenace. Sans compter qu'une fois arrivé au bivouac, une veste trempée met des heures à sécher.</p>
-
-    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
-  </div>
-
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <!-- CHAPITRE 10 — METEO -->
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <div class="guide-chapter-header" id="ch10">
-    <div class="guide-chapter-number">Chapitre 10</div>
-    <h2>Météo changeante : il faut être prêt à tout</h2>
-  </div>
-  <div class="mag-section">
-    <p>Bien sûr, au fil des jours, la météo sera changeante. Et il faut être prêt. Il y a des pays, comme la Norvège, où tu dois t'en souvenir : il faut être prêt à tout, <strong>du soleil le matin à la grêle l'après-midi</strong>.</p>
-
-    <div class="guide-pullquote">Le froid peut te mordre, mais on se protégera toujours plus facilement du froid que du chaud.</div>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Quand la chaleur devient dangereuse</h3>
-    <p>Je me rappelle par exemple de mon voyage en traversant l'Europe jusqu'à l'Asie, parti d'Annecy pour arriver en Cappadoce. La chaleur était telle par moments qu'au bout de quelques jours, <strong>mes forces ont littéralement fondu comme neige au soleil</strong>.</p>
-    <p>Après 10 jours de chaleur intense, tous les jours, avec des températures qui pouvaient osciller entre 32 et 34 °C à l'ombre, la traversée des villes devenait torride. La carrosserie des voitures renvoyait une chaleur absolument incroyable. Impossible de respirer, impossible de se mettre à l'ombre. Le casque ne protège pas, on chauffe de partout. La tête finit par faire comme une cocotte-minute à l'intérieur du casque — par moments, je pense qu'on pouvait même y voir de la fumée qui sort.</p>
-    <p>Impossible aussi de rouler trop déshabillé à moto. Notre équipement et notre sécurité, c'est lui qui nous préserve, c'est lui qui veille sur nous. J'ai presque <strong>moins souffert du froid en montant au Cap Nord que de la chaleur</strong> dans les pays traversés en route vers la Cappadoce, en plein été.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">3 paires de gants indispensables pour un grand trip</h3>
-    <p>D'où l'intérêt, sur plusieurs semaines, d'avoir un bon équipement pour la moto mais aussi un équipement pilote adapté. Par exemple, d'Annecy au Cap Nord, je suis parti avec <strong>3 paires de gants</strong> :</p>
-    <ul style="margin:.5rem 0 1.5rem 2rem;font-size:1.1rem;line-height:1.7;color:var(--mag-text2,#4a4a4a);">
-      <li><strong>Gants d'été</strong> — j'ai bien fait de les prendre, parce que j'ai eu de grosses chaleurs sur une partie du trajet.</li>
-      <li><strong>Gants mi-saison</strong> — nécessaires, parce que par moments il faisait relativement froid, notamment en Scandinavie.</li>
-      <li><strong>Gants d'hiver chauffants Keis</strong> — lors des grandes traversées de plateaux sur plusieurs centaines de kilomètres avec un vent violent, je peux te dire que tu es content d'avoir un équipement au top.</li>
-    </ul>
-    <p>Pour cette petite expédition au Cap Nord, j'avais aussi des chaussettes chauffantes, mais je n'ai pas affronté de température suffisamment basse pour les mettre à l'épreuve. Et je te conseille bien sûr une <strong>bonne paire de bottes de moto étanches</strong>, et éventuellement chaudes si possible, selon la destination où tu vas.</p>
-
-    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
-  </div>
-
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <!-- CHAPITRE 11 — NAVIGATION -->
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <div class="guide-chapter-header" id="ch11">
-    <div class="guide-chapter-number">Chapitre 11</div>
-    <h2>Quel appareil de navigation pour le road trip moto ?</h2>
-  </div>
-  <div class="mag-section">
-    <p>En ce qui concerne les appareils de navigation, il existe aujourd'hui une multitude de solutions.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Option 1 : ton téléphone portable</h3>
-    <p>Tu peux tout simplement utiliser ton téléphone portable pour faire la navigation en t'appuyant sur le GPS intégré, à condition que l'application que tu utilises soit <strong>compatible GPS hors-ligne</strong>, comme par exemple <strong>Sygic</strong> ou <strong>OsmAnd</strong>.</p>
-    <p><strong>⚠️ Avant de partir, fais des tests</strong> : mets-toi hors réseau chez toi et vérifie que ton logiciel fonctionne bien en navigation GPS offline. Rien de pire que de découvrir au milieu d'un col norvégien que ton appli a besoin d'internet pour calculer l'itinéraire.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Option 2 : le téléphone renforcé</h3>
-    <p>Tu peux aussi partir avec un <strong>téléphone renforcé</strong>, complètement adapté à ce genre de voyage. Un téléphone renforcé va résister à l'humidité, à la forte chaleur, aux pluies et à la poussière. Bref, tu n'abîmeras pas ton téléphone principal.</p>
-    <p>Tu pourras d'ailleurs retrouver sur le site des liens et des codes promos pour les téléphones <strong>Blackview Xplore X1</strong> : des téléphones renforcés avec des batteries très conséquentes, qui tiennent largement une grosse journée de route.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Option 3 : les GPS moto à écran déporté</h3>
-    <p>Tu pourras aussi utiliser des appareils comme ceux de la marque <strong>Aoocci</strong>, avec des GPS offline comme le <strong>U6</strong>. Ou des appareils de la marque <strong>Carpuride</strong>, qui propose aussi une navigation offline avec un GPS intégré à un écran déporté, compatible <strong>Android Auto et CarPlay</strong>.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Option 4 : le GPS moto dédié haut de gamme</h3>
-    <p>Tu pourras bien sûr, selon ton budget, t'équiper d'un GPS dédié comme le <strong>Garmin Zūmo</strong>. Un appareil conçu spécifiquement pour la moto, mais avec des prix beaucoup plus conséquents.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Les avantages des écrans déportés modernes</h3>
-    <p>Les écrans déportés peuvent apporter quelques services en plus par rapport à un GPS dédié classique :</p>
-    <ul style="margin:.5rem 0 1.5rem 2rem;font-size:1.1rem;line-height:1.7;color:var(--mag-text2,#4a4a4a);">
-      <li><strong>Dashcam intégrée</strong> : enregistrement de ton trajet, qui peut t'aider en cas de problème, d'accident ou de chute causée par un tiers</li>
-      <li><strong>Surveillance de la pression des pneus</strong> via des capteurs intégrés (TPMS)</li>
-      <li><strong>Détecteur d'angle mort</strong> sur certains modèles plus évolués</li>
-    </ul>
-    <p>En recherchant dans les articles et sur le site, tu trouveras tous ces produits.</p>
-
-    <div class="guide-related">
-      <div class="guide-related-label">Pour aller plus loin</div>
-      <a href="/articles/comparatif-carpuride-2026-w702-w702-pro-w702s-pro-et-702rs-pro.html">Mon comparatif complet des GPS Carpuride 2026</a>
-    </div>
-
-    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
-  </div>
-
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <!-- CHAPITRE 12 — OU POSER LA TENTE -->
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <div class="guide-chapter-header" id="ch12">
-    <div class="guide-chapter-number">Chapitre 12</div>
-    <h2>Où poser la tente ?</h2>
-  </div>
-  <div class="mag-section">
-    <p>Question cruciale quand on se lance en bivouac. Et là, attention : beaucoup de pays européens aujourd'hui ne tolèrent pas le bivouac. <strong>Seuls les pays nordiques font vraiment exception</strong> — la Suède, la Norvège et la Finlande — où le droit de bivouaquer en pleine nature est profondément ancré dans la culture et la loi.</p>
-    <p>En Suède, c'est même gravé dans la Constitution depuis 1994 : c'est <strong>l'Allemansrätten</strong>, le « droit de tout un chacun ». En Norvège (<em>allemannsretten</em>) et en Finlande (<em>jokamiehenoikeus</em>), ce droit existe sous forme coutumière et reste tout aussi solide dans les faits.</p>
-    <p>Concrètement, tu peux planter ta tente à peu près partout, à condition de respecter les règles de base :</p>
-    <ul style="margin:.5rem 0 1.5rem 2rem;font-size:1.1rem;line-height:1.7;color:var(--mag-text2,#4a4a4a);">
-      <li>Rester à distance des habitations (au moins 150 m en général)</li>
-      <li>Ne pas s'installer sur des terres cultivées ou dans des jardins privés</li>
-      <li>Ne rien laisser derrière soi</li>
-      <li>Ne pas allumer de feu par temps sec</li>
-    </ul>
-    <p>Simple et logique.</p>
-
-    <figure class="guide-product-photo">
-      <img src="/articles/images/bivouac-moto-quel-equipement/bivouac-moto-finlande-lac-foret.webp" alt="Bivouac moto en Finlande au bord d'un lac dans la foret boreale" loading="lazy">
-      <figcaption>Bivouac en Finlande, au bord d'un lac, dans la forêt boréale. L'image qui résume le <em>jokamiehenoikeus</em> : nature, silence, et le droit de poser sa tente où l'on veut — tant qu'on respecte les règles.</figcaption>
-    </figure>
-
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Dans le reste de l'Europe : beaucoup plus restrictif</h3>
-    <p>Dans le reste de l'Europe en revanche, c'est bien plus compliqué. Le bivouac y est généralement interdit ou toléré seulement de façon très restrictive — souvent dans les <strong>parcs naturels régionaux</strong>, en dehors des parcs nationaux, et uniquement pour une nuit. Le Danemark, contrairement à ses voisins nordiques, n'a d'ailleurs pas ce droit d'accès libre à la nature : il existe juste quelques règles spécifiques sur les plages et terres incultes.</p>
-    <p>Dans le pire des cas, ce qui pourra être toléré, c'est que tu poses ta tente tard le soir et que tu repartes tôt le matin. Ça peut éventuellement passer, mais c'est pas garanti partout. La règle d'or reste la même : <strong>discrétion absolue, aucun feu, aucun déchet, et on quitte les lieux avant que le propriétaire ne se réveille</strong>.</p>
-
-    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
-  </div>
-
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <!-- CHAPITRE 13 — INSTALLATION -->
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <div class="guide-chapter-header" id="ch13">
-    <div class="guide-chapter-number">Chapitre 13</div>
-    <h2>L'installation du campement : un rituel</h2>
-  </div>
-  <div class="mag-section">
-    <p>Au fil des jours, l'installation du campement devient un rituel. Mais là encore, il faudra être vigilant à l'installation correcte de la toile de tente.</p>
-    <p>Bien sûr, on essaiera de trouver un terrain plat. En camping, ça ne pose pas vraiment de problème ; en bivouac, ça risque d'être un peu plus compliqué.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Le sens du vent : un point crucial</h3>
-    <p>L'autre chose à laquelle il faut vraiment faire attention, c'est le <strong>sens du vent</strong>. Dans quel sens souffle-t-il quand tu poses la tente ? Est-ce qu'il va souffler sur les portes et s'engouffrer dès que tu vas ouvrir ? Ou est-ce que tu peux placer la tente à l'opposé du vent, pour qu'il vienne glisser dessus plutôt que s'y engouffrer ? C'est un point important.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Rigoureux et méthodique</h3>
-    <p>Il faut aussi, à mon sens, être rigoureux et méthodique. Ne pas décharger ce qui n'est pas nécessaire, mais décharger ce qui l'est vraiment et le mettre à l'abri dans la tente. Pense à <strong>protéger les connexions électriques de la moto</strong> s'il y a des câbles USB, pour éviter qu'elles ne prennent l'eau et l'humidité. Pense aussi à prendre le nécessaire de toilette.</p>
-    <p>Ce sont des petites choses, mais en cas de mauvais temps, de pluie violente, ça évitera de te retrouver en caleçon à 3h du matin, obligé d'aller chercher quelque chose dans la moto qui aurait dû être dans la tente.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">L'astuce des clés : toujours au même endroit</h3>
-    <p>Un conseil aussi, au moment de monter ou démonter la tente, ou d'installer le campement de manière générale : <strong>aie un endroit où tu poses les clés de la moto, toujours au même endroit</strong>. Ça évite de les perdre, ça évite de les chercher, et ça permet de gagner du temps.</p>
-    <p>Ce n'est pas parce qu'on est en bivouac ou en camping qu'il ne faut pas être vigilant à cet aspect-là. Parce que monter ou démonter une tente sous une pluie battante, c'est quelque chose de très désagréable. Et ensuite attaquer la route mouillée, c'est encore pire, d'autant qu'on aura certainement du mal à faire sécher les habits.</p>
-
-    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
-  </div>
-
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <!-- CHAPITRE 14 — TOILETTE LESSIVE SOMMEIL -->
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <div class="guide-chapter-header" id="ch14">
-    <div class="guide-chapter-number">Chapitre 14</div>
-    <h2>Toilette, lessive, sommeil</h2>
-  </div>
-  <div class="mag-section">
-    <p>Une fois arrivé au bivouac, il faudra penser à faire la toilette, mais aussi peut-être à faire la lessive. Et là, ça risque d'être <strong>plus complexe selon la région et la météo</strong>.</p>
-    <p>Les détails sur la lessive et les sous-vêtements mérinos sont dans le chapitre 9 (textile technique).</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Le point crucial : la qualité du sommeil</h3>
-    <p>Et ensuite viendra un moment crucial : <strong>la qualité du sommeil</strong>. Il faut que celui-ci soit réparateur, parce que si sur 4 ou 5 jours on s'en sort sans problème, sur 3 ou 4 semaines ça va vraiment influencer ton road trip au complet.</p>
-
-    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
-  </div>
-
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <!-- CHAPITRE 15 — ASTUCES -->
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <div class="guide-chapter-header" id="ch15">
-    <div class="guide-chapter-number">Chapitre 15</div>
-    <h2>Astuces camping moto</h2>
-  </div>
-  <div class="mag-section">
-    <p>À force de bivouaquer, on apprend une foule de petits trucs qui changent tout. Voici mes <strong>astuces camping moto</strong> issues de milliers de kilomètres.</p>
-
-    <ol class="guide-tips">
-      <li><strong>Choisir son spot avant la nuit.</strong> Anticipe dans l'après-midi ton point de chute.</li>
-      <li><strong>Évaluer le terrain</strong> : pente, humidité, proximité d'un cours d'eau qui peut monter.</li>
-      <li><strong>Pas trop près de la moto, et à l'opposé de la béquille.</strong> Si elle tombe, vaut mieux que tu ne sois pas dessous.</li>
-      <li><strong>L'entrée de la tente à l'opposé du vent dominant.</strong> Banal, mais on y pense rarement quand on est fatigué.</li>
-      <li><strong>Des petits sacs poubelle toujours à portée de main</strong>, c'est super pratique. Pas des sacs de 100 L qui ne rentrent nulle part.</li>
-      <li><strong>Une petite bouteille en plastique</strong> à portée de main, pour les envies pressantes de la nuit où il fera 2 °C avec un temps exécrable. Ça rend bien service.</li>
-      <li><strong>Pense à mettre ton pantalon dans ton duvet</strong> un petit moment. Si tu as une nuit très froide, l'enfilage sera moins pénible.</li>
-      <li><strong>Toujours avoir ta bouteille d'eau à portée de main.</strong></li>
-      <li><strong>Toujours mettre les lunettes et la lampe au même endroit.</strong> Si tu dois agir rapidement, tu sais où sont les affaires.</li>
-      <li><strong>Idem pour les clés de la moto une fois que tu es dans la tente.</strong> Toujours rangées au même endroit. Évite de déroger à la règle.</li>
-      <li><strong>Les bottes dans la tente (si possible).</strong> Sinon ouvertures vers le bas pour éviter l'humidité.</li>
-    </ol>
-
-    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
-  </div>
-
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <!-- CHAPITRE 16 — KM PAR JOUR -->
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <div class="guide-chapter-header" id="ch16">
-    <div class="guide-chapter-number">Chapitre 16</div>
-    <h2>Combien peut-on faire de kilomètres par jour ?</h2>
-  </div>
-  <div class="mag-section">
-    <p>Une réponse évidente : ça dépend.</p>
-    <p>Si on parle de <strong>journées de route normales en road trip</strong>, je pense que la bonne moyenne se situe certainement entre <strong>250 et 350 km</strong>.</p>
-    <p>Maintenant, si c'est une <strong>route de transition</strong>, ça peut aller jusqu'à <strong>1000 km dans la journée</strong>.</p>
-    <p>Personnellement, il m'est arrivé de faire <strong>1500, 1600 km dans la journée</strong>. Ce sont des grandes journées de route par contre.</p>
-    <p>Une petite folie en rentrant de Roumanie, où j'ai roulé quasiment 26 h avec une pause d'une heure 30 pour faire une bonne sieste. Je me suis retrouvé au <strong>col du Grand Saint-Bernard à 3h du matin en pleine nuit</strong>. C'était assez impressionnant.</p>
-
-    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
-  </div>
-
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <!-- CHAPITRE 17 — FATIGUE -->
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <div class="guide-chapter-header" id="ch17">
-    <div class="guide-chapter-number">Chapitre 17</div>
-    <h2>La fatigue : le sujet qu'on sous-estime</h2>
-  </div>
-  <div class="mag-section">
-    <p><strong>On sous-estime toujours ce point, et c'est une erreur.</strong></p>
-    <p>En road trip, on enchaîne les journées de route, les mauvaises nuits de sommeil, et l'attention permanente exigée par la conduite de la moto. Forcément, tout ça va créer une <strong>fatigue générale</strong> qui s'accumule jour après jour. Et si les mauvaises nuits s'enchaînent, en 10 ou 15 jours, une grosse fatigue peut facilement s'installer.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">La fatigue te rend dangereux</h3>
-    <p>Tu l'auras compris, la fatigue te rend dangereux. <strong>Pour toi, et pour les autres.</strong></p>
-    <p>Un peu trop de fatigue, une seconde de réaction en trop dans un virage, et ça peut être le tout droit. L'accident. Donc forcément, <strong>la récupération doit être au centre du road trip</strong>.</p>
-    <p>Bien sûr, c'est plus facile à dire en écrivant ces lignes qu'à faire quand on est sur le terrain. Et je peux te dire que <strong>je sais de quoi je parle</strong>.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Les signes qui ne trompent pas</h3>
-    <p>Malgré tout, il faut être conscient des signes — ou tout au moins des prémices.</p>
-    <p>Si le matin, quand tu te lèves, <strong>tu as du mal à négocier tes premiers virages</strong>, c'est que la fatigue est là. Ce jour-là, tu feras une journée de route plus tranquille. Tu te surveilleras. Tu te ménageras. Et tu finiras peut-être ta journée de route plus tôt que prévu.</p>
-
-    <div class="guide-pullquote">Voyager longtemps sans se mettre en danger : savoir lever le pied avant que le corps ne le fasse pour toi.</div>
-
-    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
-  </div>
-
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <!-- CHAPITRE 18 — VOYAGE MOTO -->
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <div class="guide-chapter-header" id="ch18">
-    <div class="guide-chapter-number">Chapitre 18</div>
-    <h2>Le voyage à moto : une expérience à part</h2>
-  </div>
-  <div class="mag-section">
-    <p>Le voyage à moto a ce petit quelque chose qu'on ne retrouve qu'en moto : le fait d'être en <strong>contact direct avec l'extérieur</strong>. Si je fais le comparatif avec la voiture — évidemment, où on va être complètement cloisonné, installé comme dans un sofa, surtout dans les voitures d'aujourd'hui — eh bien à mon sens, ça casse un petit peu l'expérience du voyage. C'est une autre expérience.</p>
-    <p>Par contre, l'expérience du voyage à moto, ressentir l'air, ressentir les vibrations du moteur, le décor qui défile, cette <strong>prise directe avec le paysage</strong>... franchement, je pense que ça n'a pas son égal.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">S'arrêter à moto : pas si simple qu'on le croit</h3>
-    <p>On pense souvent qu'en moto, on peut s'arrêter plus facilement n'importe où. Ce n'est pas forcément vrai, et par moments, ça peut même être une vraie complication.</p>
-    <p>La complication peut venir du sol : est-ce qu'on va pouvoir béquiller la moto ou pas ? Une béquille latérale qui s'enfonce dans un bas-côté mou, un sol en pente, du gravier... ça peut vite devenir plus ou moins complexe. Et puis il y a la sécurité : sur une route un peu étroite, s'arrêter sur le bord avec la moto, c'est pas toujours super sécurisant, ni pour toi, ni pour ceux qui arrivent derrière.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Le motard, ce voyageur qui rapproche les gens</h3>
-    <p>J'ai souvent constaté que quand je traverse les villes, les villages, il y a un <strong>bon accueil en général pour le motard</strong>. Peut-être est-ce cette notion du voyageur qui ressort, et qui finalement, quelque part, rapproche un peu les gens.</p>
-    <p>Encore une fois, dans nos voitures, nous sommes isolés, confinés, séparés des autres. À moto, c'est l'inverse : on nous voit, on nous entend, on peut discuter à un feu rouge, saluer d'un pouce levé, échanger un mot à la terrasse d'un café. <strong>La moto nous rapproche. On est avec les gens, pas à côté.</strong> Et c'est vrai que c'est quelque chose qui amène un vrai plus au voyage.</p>
-
-    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
-  </div>
-
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <!-- CHAPITRE 19 — ALPES JURA -->
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <div class="guide-chapter-header" id="ch19">
-    <div class="guide-chapter-number">Chapitre 19</div>
-    <h2>Bivouac moto dans les Alpes et le Jura</h2>
-  </div>
-  <div class="mag-section">
-    <p>Basé à Annecy, j'ai la chance d'avoir les <strong>Alpes</strong> en bas de chez moi et le <strong>Jura</strong> à une heure de route. Résultat, j'ai pu tester mon matériel dans des conditions variées sans avoir à partir au bout du monde.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Bivouac moto Alpes : ce qu'il faut savoir</h3>
-    <p>Les Alpes, c'est le terrain de jeu rêvé pour le <strong>bivouac moto trail</strong>, mais attention aux zones protégées : le bivouac est <strong>interdit dans les parcs nationaux</strong> (Vanoise, Écrins, Mercantour). En revanche, il est toléré dans les <strong>parcs naturels régionaux</strong> (Bauges, Chartreuse, Vercors, Queyras) à condition de respecter les règles : une seule nuit, de 19h à 9h, feu proscrit, aucune trace au réveil.</p>
-    <p>Les cols d'altitude (Iseran, Galibier, Agnel, Lombarde) offrent des spots spectaculaires, mais anticipe la température : même en août, on descend sous les 5 °C la nuit au-dessus de 2 000 m. D'où l'intérêt d'un sac <strong>Nemo Sonic 0°</strong> plutôt que du 15 °C, même en plein été.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Bivouac moto Jura : la discrétion avant tout</h3>
-    <p>Le Jura est plus méconnu mais tout aussi intéressant pour le <strong>camping moto</strong>. Moins fréquenté que les Alpes, avec des routes sinueuses magnifiques (combes, cluses, route des Sapins), il offre des coins tranquilles pour poser la tente en forêt ou au bord d'un lac.</p>
-    <p>La règle pour un <strong>bivouac moto Jura</strong> réussi : la <strong>discrétion absolue</strong>. Les propriétaires privés sont plus pointilleux qu'en haute montagne. Je privilégie toujours les zones forestières éloignées des habitations, ou je demande directement l'autorisation à un agriculteur — très souvent acceptée avec le sourire.</p>
-
-    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
-  </div>
-
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <!-- CHAPITRE 20 — MAITRISE MOTO -->
-  <!-- ═════════════════════════════════════════════════════════════════════ -->
-  <div class="guide-chapter-header" id="ch20">
-    <div class="guide-chapter-number">Chapitre 20</div>
-    <h2>Pour conclure : maîtriser sa moto avant de partir</h2>
-  </div>
-  <div class="mag-section">
-    <p>À mon sens, <strong>avant de partir en road trip</strong>, tu dois savoir faire quelques petits gestes tout simples avec ta moto. Pas de la haute voltige, juste <strong>les bases qui te sauveront</strong> quand le contexte se complique.</p>
-
-    <h3 style="font-family:var(--mag-serif);font-size:1.5rem;margin:2rem 0 1rem;color:var(--mag-text);">Les gestes de base à maîtriser</h3>
-    <p><strong>Première chose : être capable de faire un demi-tour sur une route e
+</div>
+
+</div>
+</div>
+
+<a href="#" class="guide-scroll-top" id="scrollTop" aria-label="Retour en haut">↑</a>
+
+<div style="text-align: center; padding: 3rem 1rem 2rem; background: #1a1612; color: rgba(250, 246, 236, 0.65); margin-top: 4rem;">
+  <p style="font-family: 'Inter Tight', sans-serif; font-size: 1.6rem; font-weight: 800; color: #fff;">LC<em style="font-style: normal; color: #c19845;">D</em>MH</p>
+  <p style="font-size: 0.83rem; margin: 0.4rem 0 0; color: rgba(250, 246, 236, 0.45);">La Chaîne du Motard Heureux · Annecy, France</p>
+  <p style="font-size: 0.76rem; color: rgba(250, 246, 236, 0.3); margin-top: 1rem;">Article publié le 17 avril 2026 · © 2026 LCDMH</p>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var btn = document.getElementById('scrollTop');
+  if (!btn) return;
+  window.addEventListener('scroll', function() {
+    btn.classList.toggle('visible', window.pageYOffset > 400);
+  });
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+});
+</script>
+
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
