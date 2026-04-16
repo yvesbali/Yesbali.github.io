@@ -526,6 +526,54 @@ a{color:inherit;text-decoration:none}
     font-weight:800;
 }
 
+/* ── Badge NOUVEAU ─────────────────────────────── */
+.article-card{position:relative}
+.badge-new{
+    position:absolute;
+    top:10px;
+    left:10px;
+    background:var(--orange);
+    color:#fff;
+    font-family:'Montserrat',sans-serif;
+    font-size:.68rem;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    padding:.26rem .65rem;
+    border-radius:999px;
+    z-index:2;
+    box-shadow:0 2px 8px rgba(230,126,34,.45);
+    animation:pulse-badge 2.4s ease-in-out infinite;
+}
+@keyframes pulse-badge{
+    0%,100%{box-shadow:0 2px 8px rgba(230,126,34,.45)}
+    50%{box-shadow:0 2px 18px rgba(230,126,34,.75)}
+}
+
+/* ── À la une — bandeau plus visible ───────────── */
+.featured-label-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:.42rem;
+    background:var(--orange);
+    color:#fff;
+    font-family:'Montserrat',sans-serif;
+    font-size:.72rem;
+    font-weight:800;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    padding:.3rem .85rem;
+    border-radius:999px;
+    margin-bottom:.65rem;
+}
+.featured-block{
+    padding:1rem 0 0;
+    border-top:3px solid var(--orange);
+}
+.featured-main{
+    border:2px solid #f2c07a !important;
+}
+
 .noscript-fallback{
     max-width:var(--max);
     margin:1rem auto 0;
@@ -678,8 +726,9 @@ footer{background:#1a1a1a;color:rgba(255,255,255,.65);padding:2.8rem 6%;margin-t
     <section class="featured-block" id="a-la-une">
         <div class="section-head">
             <div>
+                <div class="featured-label-pill">⭐ Article à la une — change chaque jour</div>
                 <h2>À la une</h2>
-                <p>Un article principal mis en avant, modifiable chaque semaine sans toucher à toute la page.</p>
+                <p>L'article du moment sélectionné automatiquement parmi les meilleurs contenus LCDMH.</p>
             </div>
             <a class="section-link" href="#road-trips">Voir toutes les catégories →</a>
         </div>
@@ -789,7 +838,7 @@ footer{background:#1a1a1a;color:rgba(255,255,255,.65);padding:2.8rem 6%;margin-t
                     </div>
                 </a>
 
-                <a href="https://aoocci.fr/?ref=gvxyhqgv" target="_blank" rel="sponsored nofollow noopener" class="partner-card">
+                <a href="https://aoocci.fr/?ref=LCDMH" target="_blank" rel="sponsored nofollow noopener" class="partner-card">
                     <div class="partner-card-img" style="background-image:url('articles/images/partenaires/aoocci-u6.jpg');"></div>
                     <div class="partner-card-body">
                         <div class="partner-card-cat">GPS + Dashcam</div>
@@ -889,6 +938,7 @@ POUR CHANGER LES ARTICLES POPULAIRES :
    L'index est calculé depuis la date de référence ci-dessous.
    ─────────────────────────────────────────────────────────── */
 const FEATURED_ROTATION_SLUGS = [
+  "bivouac-moto-quel-equipement",
   "le-cap-nord-ca-va-mal-finir-cercle-arctique-polaire-road-tri",
   "gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti",
   "budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat",
@@ -898,10 +948,10 @@ const FEATURED_ROTATION_SLUGS = [
   "preparation-pour-le-voyage-road-trip-en-trk-702",
   "geirangerfjord-a-moto-le-plus-beau-fjord-de-norvege-road-tri",
 ];
-// Date de référence pour le calcul de rotation (ne pas changer)
-const _ROTATION_REF = new Date("2026-04-12");
+// Rotation quotidienne : l'article en vedette change chaque jour automatiquement
+const _ROTATION_REF = new Date("2026-04-17");
 const _daysSinceRef = Math.floor((Date.now() - _ROTATION_REF) / 86400000);
-const _rotIdx = Math.floor(Math.max(0, _daysSinceRef) / 56) % FEATURED_ROTATION_SLUGS.length;
+const _rotIdx = Math.abs(_daysSinceRef) % FEATURED_ROTATION_SLUGS.length;
 const FEATURED_SLUG = FEATURED_ROTATION_SLUGS[_rotIdx];
 
 const FEATURED_SECONDARY_SLUGS = [
@@ -917,6 +967,17 @@ const POPULAR_SLUGS = [
 ];
 
 const ARTICLES = [
+  {
+    slug: "bivouac-moto-quel-equipement",
+    href: "articles/bivouac-moto-quel-equipement.html",
+    img: "/articles/images/bivouac-moto-quel-equipement/hero-bivouac-moto-col-alpin.jpg",
+    alt: "Bivouac moto : quel équipement emporter ?",
+    tag: "Guide • Bivouac moto",
+    title: "Bivouac moto : quel équipement emporter ? Guide complet 2026",
+    excerpt: "Tente, couchage, cuisine, navigation, textile : le guide complet du bivouac moto par Yves, testé du Cap Nord à la Cappadoce.",
+    category: "guides-pratiques",
+    isNew: true
+  },
   {
     slug: "quel-komobi-pro-city-tracker-gps-detecteur-de-chute-antivol",
     href: "articles/quel-komobi-pro-city-tracker-gps-detecteur-de-chute-antivol.html",
@@ -1194,8 +1255,10 @@ function escapeHtml(str){
 }
 
 function createArticleCard(article){
+    const badgeNew = article.isNew ? `<span class="badge-new">✨ Nouveau</span>` : "";
     return `
         <a href="${article.href}" class="article-card">
+            ${badgeNew}
             <div class="article-thumb">
                 <img src="${article.img}" alt="${escapeHtml(article.alt)}" loading="lazy">
             </div>
