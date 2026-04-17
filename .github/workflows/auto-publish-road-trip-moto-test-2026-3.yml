@@ -38,4 +38,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          git diff --cached --quiet || git commit -m "Auto-publish: n
+          git diff --cached --quiet || git commit -m "Auto-publish: nouvelles videos road-trip-moto-test-2026-3"
+          git push
