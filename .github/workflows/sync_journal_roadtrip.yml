@@ -2,8 +2,8 @@ name: 🎬 Sync Journal Road Trip
 
 on:
   schedule:
-    # Tous les soirs à 18h00 UTC (20h heure française en été)
-    - cron: '0 18 * * *'
+    # Lun/Mer/Ven à 18h00 UTC — réduit le 17/04/2026 (était quotidien)
+    - cron: '0 18 * * 1,3,5'
   workflow_dispatch:
     inputs:
       trip_slug:
