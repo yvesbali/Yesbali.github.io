@@ -1341,4 +1341,31 @@ function renderPage(){
     const elFeatMain = document.getElementById("featured-main");
     if(elFeatMain) elFeatMain.innerHTML = createFeaturedMain(featured);
     const elFeatSide = document.getElementById("featured-side");
-    if(elFeatSide) elFeatSide.innerHTML = featuredSecondaries.map(createFeaturedMi
+    if(elFeatSide) elFeatSide.innerHTML = featuredSecondaries.map(createFeaturedMini).join("");
+
+    const elRT = document.getElementById("grid-road-trips");
+    if(elRT) elRT.innerHTML = roadTrips.map(createArticleCard).join("");
+    const elTM = document.getElementById("grid-tests-materiel");
+    if(elTM) elTM.innerHTML = testsMateriel.map(createArticleCard).join("");
+    const elGP = document.getElementById("grid-guides-pratiques");
+    if(elGP) elGP.innerHTML = guidesPratiques.map(createArticleCard).join("");
+    const elMoto = document.getElementById("grid-tests-motos");
+    if(elMoto) elMoto.innerHTML = testsMotos.map(createArticleCard).join("");
+    const elPhoto = document.getElementById("grid-photo-video");
+    if(elPhoto) elPhoto.innerHTML = photoVideo.map(createArticleCard).join("");
+
+    const elPop = document.getElementById("popular-list");
+    if(elPop) elPop.innerHTML = popularArticles.map(createPopularItem).join("");
+
+    const elStat = document.getElementById("stat-total-articles");
+    if(elStat) elStat.textContent = String(ARTICLES.length);
+    const elFoot = document.getElementById("footer-count");
+    if(elFoot) elFoot.textContent = `📖 ${ARTICLES.length} articles publiés — Page articles mise à jour`;
+}
+
+document.addEventListener("DOMContentLoaded", renderPage);
+</script>
+<script src="footer-loader.js" defer></script>
+<script src="maillage.js" defer></script>
+</body>
+</html>
