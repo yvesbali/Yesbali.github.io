@@ -2081,7 +2081,15 @@ def generate_day_html(day_data: Dict[str, Any], prev_day: Optional[int], next_da
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>J{day:02d} · {esc(day_date)}</title>
+<!-- Google tag (gtag.js) - GA4 LCDMH -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7GC33KPRMS"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-7GC33KPRMS');</script>
+<title>J{day:02d} · {esc(day_date)} — Road Trip Moto | LCDMH</title>
+<meta name="description" content="Journal de bord J{day:02d} · {esc(day_date)} : {esc(depart)} → {esc(arrivee)} ({km_total} km). Road trip moto LCDMH."/>
+<meta property="og:title" content="J{day:02d} · {esc(day_date)} — Road Trip Moto | LCDMH"/>
+<meta property="og:description" content="Étape {esc(depart)} → {esc(arrivee)}, {km_total} km. Journal de bord road trip moto LCDMH."/>
+<meta property="og:image" content="https://lcdmh.com/img/og-lcdmh.jpg"/>
+<meta property="og:type" content="article"/>
 {base_css()}
 <link rel="stylesheet" href="../css/roadbook-jour-override.css">
 </head>
@@ -2180,12 +2188,25 @@ def generate_master_html(days_data: List[Dict[str, Any]], trip_title: str, sourc
         </a>
         """)
 
+    import re as _re
+    _slug = _re.sub(r'[^a-z0-9]+', '-', trip_title.lower()).strip('-')[:60]
+    _desc = f"Itinéraire complet du road trip moto {esc(trip_title)} — étapes, distances, bivouacs et points de passage. LCDMH."
     return f"""<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{esc(trip_title)}</title>
+<!-- Google tag (gtag.js) - GA4 LCDMH -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7GC33KPRMS"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-7GC33KPRMS');</script>
+<title>{esc(trip_title)} — Road Trip Moto | LCDMH</title>
+<meta name="description" content="{_desc[:160]}"/>
+<link rel="canonical" href="https://lcdmh.com/roadtrips/{_slug}.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="{esc(trip_title)} — Road Trip Moto | LCDMH"/>
+<meta property="og:description" content="{_desc[:160]}"/>
+<meta property="og:url" content="https://lcdmh.com/roadtrips/{_slug}.html"/>
+<meta property="og:image" content="https://lcdmh.com/img/og-lcdmh.jpg"/>
 {base_css()}
 </head>
 <body>
