@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aperçu Design Premium — Bivouac moto | LCDMH</title>
+
+<!-- Fonts magazine premium -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter+Tight:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* Reset minimal */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #faf6ec;
+    color: #1a1612;
+    font-family: 'Crimson Pro', Georgia, serif;
+    line-height: 1.7;
+  }
+
+  /* Conteneur article */
+  .article-wrapper {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* HERO */
+  .mag-hero {
+    position: relative;
+    height: 70vh;
+    min-height: 550px;
+    margin-bottom: 0;
+    overflow: hidden;
+  }
+  .mag-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .mag-hero-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 3rem 2rem 3rem;
+    background: linear-gradient(180deg, transparent 0%, rgba(26, 22, 18, 0.3) 40%, rgba(26, 22, 18, 0.85) 100%);
+    color: #faf6ec;
+    text-align: center;
+  }
+  .mag-hero-overlay h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0.5rem auto 1rem;
+    max-width: 900px;
+  }
+  .mag-hero-caption {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+    font-style: italic;
+    font-weight: 400;
+    color: rgba(250, 246, 236, 0.9);
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+</style>
+
+<!-- CSS Guide Pratique v2 -->
+<link rel="stylesheet" href="guide-pratique-v2.css">
+</head>
+
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     HERO FULL-SCREEN
+     ══════════════════════════════════════════════════════════ -->
+<div class="mag-hero">
+  <img src="photos_optimisees/hero-bivouac-moto-col-alpin.jpg" alt="Bivouac moto sur un col alpin">
+  <div class="mag-hero-overlay">
+    <span class="guide-badge">Guide complet 2026</span>
+    <h1>Bivouac moto : quel équipement emporter ?</h1>
+    <p class="mag-hero-caption">Testé du Cap Nord à la Cappadoce — 70 000 km, 4 ans de permis, une seule certitude : l'essentiel, c'est de partir.</p>
+  </div>
+</div>
+
+<div class="article-wrapper">
+  <div class="mag-body">
+
+    <!-- MÉTA GUIDE -->
+    <div class="guide-meta">
+      <div class="guide-meta-item">⏱ <strong>15 min</strong> de lecture</div>
+      <div class="guide-meta-item">📖 <strong>20 chapitres</strong></div>
+      <div class="guide-meta-item">🏍 <strong>Par Yves</strong></div>
+      <div class="guide-meta-item">🗓 <strong>17 avril 2026</strong></div>
+    </div>
+
+    <!-- INTRODUCTION -->
+    <p><span class="guide-dropcap">B</span>onjour à toutes et bonjour à tous ! Si tu cherches à faire du <strong>bivouac moto</strong> et que tu te poses les bonnes questions, tu es au bon endroit. Eh bien, je vais tenter, au travers de cet article, de répondre à toutes ces questions. Avec du vécu, du matériel testé sur des milliers de kilomètres — du Cap Nord jusqu'à la Cappadoce — et sans te raconter d'histoires.</p>
+
+    <p><strong>C'est parti !</strong></p>
+
+    <!-- SOMMAIRE -->
+    <nav class="guide-toc" id="sommaire">
+      <div class="guide-toc-title">Le sommaire</div>
+      <div class="guide-toc-subtitle">Ce que ce guide contient</div>
+      <ol class="guide-toc-list">
+        <li><a href="#ch1">Le choix de la monture</a></li>
+        <li><a href="#ch2">L'aventure commence dans le garage</a></li>
+        <li><a href="#ch3">Où ranger tout ce matériel ?</a></li>
+        <li><a href="#ch4">Organisation du chargement</a></li>
+        <li><a href="#ch5">La tente : le choix crucial</a></li>
+        <li><a href="#ch6">Bien dormir : sac, matelas, drap</a></li>
+        <li><a href="#ch7">Cuisiner en bivouac</a></li>
+        <li><a href="#ch8">L'électricité en bivouac</a></li>
+        <li><a href="#ch9">Textile technique : 3 couches</a></li>
+        <li><a href="#ch10">Météo changeante : être prêt à tout</a></li>
+        <li><a href="#ch11">Quelle navigation choisir ?</a></li>
+        <li><a href="#ch12">Où poser la tente ?</a></li>
+        <li><a href="#ch13">L'installation du campement</a></li>
+        <li><a href="#ch14">Toilette, lessive, sommeil</a></li>
+        <li><a href="#ch15">Astuces camping moto</a></li>
+        <li><a href="#ch16">Combien de km par jour ?</a></li>
+        <li><a href="#ch17">La fatigue : le sujet sous-estimé</a></li>
+        <li><a href="#ch18">Voyager à moto vs en voiture</a></li>
+        <li><a href="#ch19">Bivouac Alpes et Jura</a></li>
+        <li><a href="#ch20">Maîtriser sa moto avant de partir</a></li>
+      </ol>
+    </nav>
+
+    <!-- ══════════════════════════════════════════════════════
+         PARTIE 1 - AVANT DE PARTIR
+         ══════════════════════════════════════════════════════ -->
+    <div class="guide-part-header">
+      <span class="guide-part-header-label">Partie 1</span>
+      <h2 class="guide-part-header-title">Avant de partir</h2>
+    </div>
+
+    <!-- CHAPITRE 1 -->
+    <header class="guide-chapter-header" id="ch1">
+      <div class="guide-chapter-number">01</div>
+      <h2>Le choix de la monture : faut-il une grosse moto ?</h2>
+    </header>
+
+    <p><span class="guide-dropcap">E</span>st-ce qu'avoir une grosse moto, c'est mieux pour faire un road trip ? La question mérite d'être posée, et la réponse, à mon avis, il n'y en a peut-être pas vraiment une seule.</p>
+    <p>Comme vous le savez certainement — pour ceux qui me suivent en tout cas — au moment où j'écris cet article, en avril 2026, je n'ai que <strong>4 ans de permis</strong>, mais j'ai déjà fait énormément de kilomètres. Forcément, sur ces 70 000 km, j'ai rencontré du monde. Beaucoup de monde.</p>
+
+    <!-- 🎯 STAT MISE EN SCÈNE -->
+    <div class="guide-stat">
+      <div class="guide-stat-number">70 000</div>
+      <div class="guide-stat-label">
+        <strong>Kilomètres parcourus</strong>
+        en 4 ans de permis — dont un tour d'Espagne, le Cap Nord, la Cappadoce, et bien d'autres
+      </div>
+    </div>
+
+    <p>Et quand la question se pose de savoir si une grosse moto, c'est mieux qu'une petite pour faire des road trips, eh bien franchement, j'ai rencontré des gens qui traversaient des pays en Vespa, et un Japonais qui faisait le tour du monde avec une 125 cm³.</p>
+    <p>Alors non, je ne pense pas que la cylindrée de la moto t'empêche d'aller loin.</p>
+
+    <h3 class="guide-subhead">Une grosse moto : du confort, pas une obligation</h3>
+
+    <p>Il est indéniable qu'une moto confortable va te faciliter le voyage. Des facilités de dépassement notamment, une meilleure capacité à avaler les kilomètres d'autoroute, peut-être plus de facilité face aux intempéries et au vent violent de face.</p>
+    <p>Mais je pense sincèrement que <strong>n'importe quel road trip peut se faire avec n'importe quelle moto</strong>.</p>
+
+    <!-- 🎯 BULLE "LE CONSEIL D'YVES" -->
+    <div class="guide-tip-card">
+      <div class="guide-tip-label">Le conseil d'Yves</div>
+      <p class="guide-tip-content">Mon premier road trip — le tour des parcs naturels de France — je l'ai fait avec une <strong>Benelli TRK 502</strong>. Et à aucun moment je n'ai eu de regrets. Si tu débutes, <strong>ne laisse pas ta cylindrée décider pour toi</strong> : pars avec ce que tu as sous la main.</p>
+    </div>
+
+    <h3 class="guide-subhead">Ma monture actuelle : la Honda NT1100</h3>
+
+    <p>Aujourd'hui, je voyage avec une <strong>Honda NT1100</strong>. Évidemment, cette puissance et ce confort apportent un agrément très appréciable lors des road trips longs. Mais en contrepartie, on va forcément exploser le budget.</p>
+
+    <!-- 🎯 PHOTO PORTRAIT + STAT -->
+    <div class="guide-photo-stat">
+      <figure class="guide-photo-stat-image">
+        <img src="photos_optimisees/honda-nt1100-chargee-road-trip.jpg" alt="Honda NT1100 chargée pour road trip">
+        <figcaption>Ma NT1100 chargée pour un road trip : valises SW-Motech TRAX Adv 45 L, top case Shad X59, MiniBags Lone Rider.</figcaption>
+      </figure>
+      <div class="guide-photo-stat-text">
+        <div class="guide-photo-stat-tag">Poids total chargé</div>
+        <div class="guide-photo-stat-bignumber">380<span style="font-size: 3rem; color: var(--gp-gold);">kg</span></div>
+        <p class="guide-photo-stat-descr">Moto + 160 L de bagages + bonhomme. La répartition des poids devient alors <em>cruciale</em>.</p>
+      </div>
+    </div>
+
+    <p>Rouler beaucoup avec une moto qui coûte cher — les pneus plus gros et plus chers, la consommation d'essence à l'avenant, l'entretien et les révisions qui vident le portefeuille plus vite — eh bien tu l'auras compris : <strong>ça finit par coûter très très cher</strong>.</p>
+
+    <!-- 🎯 CITATION MONUMENTALE -->
+    <blockquote class="guide-pullquote">
+      Ne te pose pas trop la question de la cylindrée.<br>
+      <em>Pars avec ce que tu as. L'essentiel, c'est de partir.</em>
+    </blockquote>
+
+    <!-- POUR ALLER PLUS LOIN -->
+    <div class="guide-related">
+      <div class="guide-related-label">Pour aller plus loin</div>
+      <a href="/articles/retour-honda-nt-1100-a-26000-kms.html">Mon avis complet sur la Honda NT1100 après 26 000 km</a>
+    </div>
+
+    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+
+    <!-- SÉPARATEUR -->
+    <div class="guide-divider">❦</div>
+
+    <!-- CHAPITRE 5 (AUTRE EXEMPLE - LA TENTE) -->
+    <header class="guide-chapter-header" id="ch5">
+      <div class="guide-chapter-number">05</div>
+      <h2>La tente : le choix crucial</h2>
+    </header>
+
+    <p><span class="guide-dropcap">L</span>a <strong>tente moto</strong>, c'est LE poste où il ne faut pas se louper. Une tente qui prend l'eau, qui se casse la figure au premier coup de vent ou qui met 25 minutes à monter après 500 km de selle, c'est une nuit gâchée.</p>
+
+    <!-- 🎯 ENCART "À SAVOIR" -->
+    <div class="guide-info-card">
+      <div class="guide-info-label">Deux critères à privilégier</div>
+      <p class="guide-info-content"><strong>1.</strong> Le poids et l'encombrement plié — tu dois pouvoir la caser quelque part entre deux valises. <strong>2.</strong> La rapidité de montage — après 8, 10 ou 12 h de route, tu as envie d'une toile qui se plante en 5 minutes, pas en 25.</p>
+    </div>
+
+    <p>Personnellement, mon choix se porte sur une tente rapide à monter. Il faut dire que je suis un gros rouleur et souvent je vais avoir des journées de route de 8, 10 voire 12 h de route. Et quand j'arrive, c'est vrai que j'ai envie de me poser rapidement et donc forcément d'avoir une tente rapide à monter.</p>
+
+    <h3 class="guide-subhead">Les deux tentes que j'utilise</h3>
+
+    <!-- 🎯 GRILLE PHOTOS DUO -->
+    <div class="guide-photo-duo">
+      <figure>
+        <img src="photos_optimisees/tente-lone-rider-adv-bivouac-moto.jpg" alt="Tente Lone Rider ADV">
+        <figcaption><strong>Lone Rider ADV</strong>Grande ouverture frontale, pensée pour les motards</figcaption>
+      </figure>
+      <figure>
+        <img src="photos_optimisees/tente-decathlon-fresh-black-motard.jpg" alt="Tente Décathlon Fresh & Black">
+        <figcaption><strong>Décathlon Fresh & Black</strong>Montage éclair, obscurité totale à l'intérieur</figcaption>
+      </figure>
+    </div>
+
+    <p>La <strong>Lone Rider ADV</strong> a cette <strong>grande ouverture de face</strong> qui fait toute la différence. Une petite ouverture va être forcément beaucoup plus compliquée lorsqu'on va devoir rentrer tout le matériel dans la toile, et ça peut devenir très vite fastidieux.</p>
+
+    <p>La <strong>Décathlon Fresh & Black</strong>, je l'ai utilisée pour mon dernier road trip en Norvège car je voulais une toile de tente qui bloque la lumière. Ce qui, dans les faits, se traduit par <strong>l'obscurité d'une salle de cinéma</strong>. Contrepartie : tu es toujours obligé d'avoir de la lumière dans la toile de tente et ça finalement, ce n'est pas top non plus.</p>
+
+    <!-- 🎯 BULLE CONSEIL -->
+    <div class="guide-tip-card">
+      <div class="guide-tip-label">Le conseil d'Yves</div>
+      <p class="guide-tip-content">Si tu hésites entre ces deux tentes : la <strong>Lone Rider ADV</strong> pour la route, la <strong>Décathlon Fresh & Black</strong> pour les destinations nordiques où tu veux récupérer même à 3 h du matin avec le soleil de minuit.</p>
+    </div>
+
+    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+
+    <!-- SÉPARATEUR -->
+    <div class="guide-divider">❦</div>
+
+    <!-- CHAPITRE 10 (AUTRE EXEMPLE - METEO CAPPADOCE) -->
+    <header class="guide-chapter-header" id="ch10">
+      <div class="guide-chapter-number">10</div>
+      <h2>Météo changeante : il faut être prêt à tout</h2>
+    </header>
+
+    <p><span class="guide-dropcap">B</span>ien sûr, au fil des jours, la météo sera changeante. Et il faut être prêt. Il y a des pays, comme la Norvège, où tu dois t'en souvenir : il faut être prêt à tout, <strong>du soleil le matin à la grêle l'après-midi</strong>.</p>
+
+    <!-- 🎯 CITATION MONUMENTALE -->
+    <blockquote class="guide-pullquote">
+      Le froid peut te mordre,<br>
+      <em>mais on se protège toujours plus facilement du froid que du chaud.</em>
+    </blockquote>
+
+    <h3 class="guide-subhead">Quand la chaleur devient dangereuse</h3>
+
+    <p>Je me rappelle par exemple de mon voyage en traversant l'Europe jusqu'à l'Asie, parti d'Annecy pour arriver en Cappadoce. La chaleur était telle par moments qu'au bout de quelques jours, <strong>mes forces ont littéralement fondu comme neige au soleil</strong>.</p>
+
+    <!-- 🎯 PHOTO + STAT CHALEUR -->
+    <div class="guide-photo-stat">
+      <figure class="guide-photo-stat-image">
+        <img src="photos_optimisees/bivouac-moto-finlande-lac-foret.jpg" alt="Bivouac moto en Finlande">
+        <figcaption>Le froid du Cap Nord a été plus facile à gérer que la chaleur de la Cappadoce.</figcaption>
+      </figure>
+      <div class="guide-photo-stat-text">
+        <div class="guide-photo-stat-tag">Températures extrêmes</div>
+        <div class="guide-photo-stat-bignumber">34<span style="font-size: 3rem; color: var(--gp-gold);">°C</span></div>
+        <p class="guide-photo-stat-descr">à l'ombre en Cappadoce. La carrosserie des voitures renvoyait une chaleur absolument incroyable, <em>impossible de respirer</em>.</p>
+      </div>
+    </div>
+
+    <p>Impossible aussi de rouler trop déshabillé à moto. Notre équipement et notre sécurité, c'est lui qui nous préserve, c'est lui qui veille sur nous.</p>
+
+    <!-- 🎯 ENCART NOIR 3 PAIRES DE GANTS -->
+    <div class="guide-info-card">
+      <div class="guide-info-label">Pour un grand trip</div>
+      <p class="guide-info-content"><strong>3 paires de gants</strong> dans les sacoches : gants d'été (40 % de mon usage), gants mi-saison (40 %), gants d'hiver chauffants (20 % — mais indispensables sur les plateaux scandinaves à 0 °C).</p>
+    </div>
+
+    <a href="#sommaire" class="guide-back-toc">Retour au sommaire</a>
+
+    <!-- SÉPARATEUR ET FIN APERCU -->
+    <div class="guide-divider">★ ★ ★</div>
+
+    <!-- NOTE APERÇU -->
+    <div style="background: var(--gp-gold); padding: 2rem; margin: 3rem 0; border-radius: 8px; text-align: center;">
+      <p style="font-family: var(--gp-display); font-style: italic; font-size: 1.3rem; color: var(--gp-ink); margin: 0;">
+        ☝️ Ceci est un <strong>aperçu</strong> montrant 3 chapitres redesignés.<br>
+        Les 17 autres chapitres seront traités de la même façon.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- Bouton flottant -->
+<a href="#" class="guide-scroll-top" id="scrollTop">↑</a>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var btn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', function() {
+    btn.classList.toggle('visible', window.pageYOffset > 400);
+  });
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+});
+</script>
+
+</body>
+</html>
