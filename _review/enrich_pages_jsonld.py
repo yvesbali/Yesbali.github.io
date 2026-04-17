@@ -196,21 +196,31 @@ def check_existing_jsonld(html_content: str, video_id: str) -> bool:
 
 def create_jsonld_videoobject(video_id: str, title: str,
                               suggestions: List[str],
-                              video_type: str) -> str:
-    """Crée le JSON-LD VideoObject ou Review+VideoObject."""
+                              video_type: str,
+                              upload_date: str = "") -> str:
+    """
+    Crée un JSON-LD VideoObject correct (schema.org).
 
-    # Description factuelle courte basée UNIQUEMENT sur le titre
-    description = title[:150]
-    if len(title) > 40:
-        description = title.split(" ")[0:5]
-        description = " ".join(description)
+    RÈGLE CRITIQUE : on ne génère PLUS de Review wrapper ici.
+    - Les pages test matériel ont leur propre schema Product dans le <head>
+    - Mélanger VideoObject dans un Review inversé provoque des erreurs Rich Results
+    - uploadDate est OBLIGATOIRE pour que Google valide le VideoObject
+    """
 
-    # Limiter à 20-40 mots
-    words = description.split()
-    if len(words) > 40:
-        description = " ".join(words[:40])
+    # Description : utiliser le titre complet (jamais tronqué à 5 mots)
+    description = title.strip()[:500]
 
-    # Créer le VideoObject
+    # Ajouter les suggestions en description étendue si disponibles
+    if suggestions:
+        sugg_str = " | ".join(suggestions[:3])
+        description = f"{description} — {sugg_str}"
+    description = description[:500]
+
+    # uploadDate : utiliser la date fournie ou aujourd'hui comme fallback
+    from datetime import date as _date
+    effective_upload_date = upload_date or _date.today().isoformat()
+
+    # Créer le VideoObject (structure correcte, uploadDate obligatoire)
     video_object = {
         "@context": "https://schema.org",
         "@type": "VideoObject",
@@ -219,38 +229,20 @@ def create_jsonld_videoobject(video_id: str, title: str,
         "thumbnailUrl": f"https://i.ytimg.com/vi/{video_id}/hqdefault.jpg",
         "contentUrl": f"https://www.youtube.com/watch?v={video_id}",
         "embedUrl": f"https://www.youtube.com/embed/{video_id}",
+        "uploadDate": effective_upload_date,
+        "author": {
+            "@type": "Person",
+            "name": "Yves — LCDMH"
+        }
     }
 
-    # Ajouter keywords si suggestions
     if suggestions:
-        keywords = ", ".join(suggestions[:5])
-        video_object["keywords"] = keywords
+        video_object["keywords"] = ", ".join(suggestions[:5])
 
-    # Si test_materiel, envelopper dans Review
-    if video_type == "test_materiel":
-        # Extraire produit et marque du titre
-        product_name = title.split(":")[0].strip() if ":" in title else title[:50]
-
-        review_object = {
-            "@context": "https://schema.org",
-            "@type": "Review",
-            "itemReviewed": {
-                "@type": "Product",
-                "name": product_name,
-                "brand": "LCDMH"
-            },
-            "author": {
-                "@type": "Person",
-                "name": "Yves — LCDMH"
-            },
-            "reviewBody": description,
-            "video": video_object
-        }
-        # JSON compact sans indentation
-        return json.dumps(review_object, ensure_ascii=False, separators=(',', ':'))
-    else:
-        # JSON compact sans indentation
-        return json.dumps(video_object, ensure_ascii=False, separators=(',', ':'))
+    # NOTE : pour les pages test_materiel (benelli, nt1100, dunlop, etc.),
+    # le schema Product/Review est géré directement dans le <head> de la page,
+    # par lcdmh_html_head.py. On génère ici UNIQUEMENT le VideoObject.
+    return json.dumps(video_object, ensure_ascii=False, indent=2)
 
 
 def process_page(source_path: Path, review_path: Path,
