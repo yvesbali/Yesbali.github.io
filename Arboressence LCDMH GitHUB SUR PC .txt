@@ -1,0 +1,58 @@
+PS F:\> cd "F:\LCDMH_GitHub_Audit"
+PS F:\LCDMH_GitHub_Audit> dir
+
+    Directory: F:\LCDMH_GitHub_Audit
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          15/03/2026    13:58                _audit
+d----          15/03/2026    13:58                .github
+d----          15/03/2026    13:58                data
+d----          15/03/2026    13:58                images
+d----          15/03/2026    13:58                js
+-a---          15/03/2026    13:58          23289 a-propos.html
+-a---          15/03/2026    13:58          20545 aferiy.html
+-a---          15/03/2026    13:58          37987 alpes-aventure-festival-moto.html
+-a---          15/03/2026    13:58         138886 alpes-cols-mythiques.html
+-a---          15/03/2026    13:58          46614 aoocci.html
+-a---          15/03/2026    13:58          17729 blackview.html
+-a---          15/03/2026    13:58          63134 cap-nord-moto.html
+-a---          15/03/2026    13:58          27839 carpuride.html
+-a---          15/03/2026    13:58              9 CNAME
+-a---          15/03/2026    13:58          34202 codes-promo.html
+-a---          15/03/2026    13:58           9222 contact.html
+-a---          15/03/2026    13:58          47512 ecosse-irlande.html
+-a---          15/03/2026    13:58          27345 equipement.html
+-a---          15/03/2026    13:58          50446 espagne-2023.html
+-a---          15/03/2026    13:58          60083 europe-asie-moto.html
+-a---          15/03/2026    13:58           1059 fetch_youtube.py
+-a---          15/03/2026    13:58          15127 gps.html
+-a---          15/03/2026    13:58          68382 index.html
+-a---          15/03/2026    13:58          26236 intercoms.html
+-a---          15/03/2026    13:58          23453 komobi.html
+-a---          15/03/2026    13:58          19786 LCDMH_Publication_v4_pin-yz.html
+-a---          15/03/2026    13:58          43629 les-alpes-dans-tous-les-sens.html
+-a---          15/03/2026    13:58           5481 nav-loader.js
+-a---          15/03/2026    13:58           9647 nav.html
+-a---          15/03/2026    13:58          14084 olight.html
+-a---          15/03/2026    13:58          16391 photo-video.html
+-a---          15/03/2026    13:58          55547 pneus.html
+-a---          15/03/2026    13:58           1143 projet_lcdmh.md
+-a---          15/03/2026    13:58           1127 README.md
+-a---          15/03/2026    13:58           7325 roadbooks-widget.js
+-a---          15/03/2026    13:58            898 roadbooks.json
+-a---          15/03/2026    13:58          58664 roadtrips.html
+-a---          15/03/2026    13:58             65 robots.txt
+-a---          15/03/2026    13:58          27749 securite.html
+-a---          15/03/2026    13:58           7882 send_report_email.py
+-a---          15/03/2026    13:58         126505 seo_stats.json
+-a---          15/03/2026    13:58          22362 seo_tracker.py
+-a---          15/03/2026    13:58          20417 sitemap.html
+-a---          15/03/2026    13:58           3462 sitemap.xml
+-a---          15/03/2026    13:58              0 test.txt
+-a---          15/03/2026    13:58          31566 tests-motos.html
+-a---          15/03/2026    13:58          12191 tests.html
+-a---          15/03/2026    13:58            529 trips.json
+-a---          15/03/2026    13:58            195 widget-roadtrip-snippet.html
+
+PS F:\LCDMH_GitHub_Audit>
