@@ -33,16 +33,34 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Review",
-  "itemReviewed": {
-    "@type": "Product",
-    "name": "Honda NT1100",
-    "brand": {"@type": "Brand", "name": "Honda"},
-    "category": "Moto GT / Routière"
+  "@type": "Product",
+  "name": "Honda NT1100",
+  "brand": {
+    "@type": "Brand",
+    "name": "Honda"
   },
-  "author": {"@type": "Person", "name": "Yves – LCDMH"},
-  "reviewRating": {"@type": "Rating", "ratingValue": "4", "bestRating": "5"},
-  "reviewBody": "Bonne moto de voyage, homogène, DCT excellente en montagne. Amortisseur arrière à changer rapidement, entretien coûteux."
+  "category": "Moto GT / Routière",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4",
+    "bestRating": "5",
+    "worstRating": "1",
+    "reviewCount": "1"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewBody": "Bonne moto de voyage, homogène, DCT excellente en montagne. Amortisseur arrière à changer rapidement, entretien coûteux.",
+    "author": {
+      "@type": "Person",
+      "name": "Yves – LCDMH"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4",
+      "bestRating": "5"
+    },
+    "datePublished": "2026-04-13"
+  }
 }
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
