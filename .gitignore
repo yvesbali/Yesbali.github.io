@@ -7,3 +7,5 @@ rapport-*.xlsx
 plan-sync-*.xlsx
 *_mockup.png
 _sauvegarde_*/
+__pycache__/
+*.pyc
