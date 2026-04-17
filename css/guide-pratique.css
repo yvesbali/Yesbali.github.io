@@ -846,6 +846,15 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════
+   HERO — override magazine.css (60vh → 50vh max)
+   ═══════════════════════════════════════════════════════════════════ */
+.mag-hero {
+  height: 50vh !important;
+  min-height: 300px !important;
+  max-height: 520px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
    RESPONSIVE GLOBAL
    ═══════════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
@@ -857,4 +866,5 @@
   .guide-conclusion { padding: 2rem 1.5rem; }
   .guide-conclusion h2 { font-size: 1.7rem; }
   .guide-stat-number { font-size: 4.5rem; }
+  .mag-hero { height: 40vh !important; min-height: 250px !important; }
 }
