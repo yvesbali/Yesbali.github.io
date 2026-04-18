@@ -31,12 +31,12 @@ RunOrShow "git status --short"
 
 # 1. Commit : dossier AUDIT_INGENIEUR_SEO (scripts, journaux, plan)
 RunOrShow "git add AUDIT_INGENIEUR_SEO/"
-RunOrShow 'git commit -m "audit(seo): initialise dossier AUDIT_INGENIEUR_SEO (plan, scripts, journaux)" --no-verify'
+RunOrShow 'git commit --allow-empty -m "audit(seo): initialise dossier AUDIT_INGENIEUR_SEO (plan, scripts, journaux)" --no-verify'
 
 # 2. Commit : Google Tag Manager sur toutes les pages
 RunOrShow "git add index.html a-propos.html aferiy.html alpes-aventure-festival-moto.html alpes-cols-mythiques-episode-01.html alpes-cols-mythiques.html aoocci.html articles.html blackview.html cap-nord-moto.html carpuride.html codes-promo.html contact.html dunlop-mutant.html equipement.html espagne-2023.html europe-asie-moto.html gps.html intercoms.html komobi.html les-alpes-dans-tous-les-sens.html mentions-legales.html olight.html photo-video.html pneus.html roadtrips.html securite.html sitemap.html tests-motos.html"
 RunOrShow "git add articles/*.html"
-RunOrShow 'git commit -m "seo(tracking): installe GTM-MVJK8VFG sur toutes les pages (gtag conserve en transition)" --no-verify'
+RunOrShow 'git commit --allow-empty -m "seo(tracking): installe GTM-MVJK8VFG sur toutes les pages (gtag conserve en transition)" --no-verify'
 
 # 3. Commit : Organization schema (index.html)
 #    Deja inclus au commit precedent si index.html etait modifie
