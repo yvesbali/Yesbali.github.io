@@ -502,3 +502,49 @@ Edition de `LCDMH_Cadrage_Projet.html` :
 2. Mounter `F:\Automate_YT` dans la session Cowork pour auditer les generateurs
    HTML et verifier qu'ils respectent la section 12.5.
 3. Renouveler ou retirer le code Aoocci LCDMH-28 expire (codes-promo.html + sitemap.html).
+
+
+---
+
+## 2026-04-18 (soir) — Action 10 : Correction bugs regex + batch de fixes SEO
+
+**Contexte**
+L'audit Action 08-09 (matin) avait signalé 106 Twitter Cards KO et 35 descriptions KO.
+Après investigation, la majorité étaient des **faux positifs** dus à deux bugs dans
+`validate_seo.py` et `add_twitter_cards.py` :
+
+1. **Bug ordre des attributs** : les regex supposaient `property="og:…" … content="…"`.
+   Les pages écrites dans l'ordre inverse (`content="…" … property="og:…"`) étaient
+   classées KO à tort.
+2. **Bug quote-aware** : `[^"']+` stoppait au premier apostrophe. Les descriptions
+   contenant "d'un", "L'âme", "aujourd'hui" étaient tronquées au niveau du match.
+
+**Actions**
+
+1. Correction des regex : backreferences `(["'])([^>]*?)` + support des deux ordres
+2. Nettoyage des 10 Twitter Cards tronquées (script inline), ré-alignement sur og:*
+3. Patch live des 2 pages Twitter Card vraiment manquantes
+4. Ajout width/height sur 96 + 9 `<img>` (13 pages) via `add_image_dimensions.py` (nouveau)
+5. Compression de 67 images > 500 KiB (gain 49 MiB) via `compress_heavy_images.py` (nouveau)
+   - Backups automatiques `.orig`, skip si compression grossirait, skip favicon
+6. Ajout `loading="lazy"` sur 83 `<img>` dans 13 pages via `add_lazy_loading.py` (nouveau)
+7. Injection JSON-LD (Article, CollectionPage) sur 4 pages sans structure
+8. Réparation de 9 chemins d'images cassés (blackview + radar-moto articles)
+
+**Résultats**
+
+Score moyen pages publiques :
+  - Début journée : 72/100 (chiffre gonflé par les bugs regex)
+  - Milieu : 76/100 (après fix regex)
+  - Fin : **81/100** (après tous les patchs)
+
+KO restants (11 total) :
+  - 5 pages : quelques `<img>` externes sans dimensions (YouTube, Carpuride)
+  - 4 pages : PNG alpha > 500 KiB (compression sans perte limitée)
+  - 2 pages : meta descriptions < 120 c. (nécessite rédaction humaine)
+
+**Commande de commit suggérée**
+```
+git add -A
+git commit -m "seo: fix regex quote-aware + batch fixes (+9 pts score)"
+```
