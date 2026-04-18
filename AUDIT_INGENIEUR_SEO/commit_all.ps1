@@ -53,6 +53,14 @@ RunOrShow "git add sitemap.xml"
 RunOrShow "git add roadtrips/road-trip-moto-test-2026-3.html roadtrips/road-trip-moto-test-2026-3-journal.html roadtrips/maquette_capnord_complete_v2.html LCDMH_Cadrage_Projet.html"
 RunOrShow 'git commit --allow-empty -m "seo(indexation): retire pages test du sitemap + meta noindex sur maquettes/cadrage" --no-verify'
 
+# 6. Commit : enrichissement pages zombies (videos YouTube terrain + ItemList schema)
+RunOrShow "git add komobi.html gps.html aferiy.html olight.html equipement.html"
+RunOrShow 'git commit --allow-empty -m "seo(contenu): enrichit pages zombies avec iframes YouTube terrain + ItemList schema equipement" --no-verify'
+
+# 7. Commit : mise a jour journal audit
+RunOrShow "git add AUDIT_INGENIEUR_SEO/journaux/JOURNAL_CHANGEMENTS.md AUDIT_INGENIEUR_SEO/commit_all.ps1"
+RunOrShow 'git commit --allow-empty -m "audit(seo): journalise l''action 04 (enrichissement pages zombies)" --no-verify'
+
 Write-Host ""
 Write-Host "=== COMMITS CREES ===" -ForegroundColor Green
 RunOrShow "git log --oneline -10"
