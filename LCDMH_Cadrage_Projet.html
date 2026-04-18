@@ -181,7 +181,7 @@
 <header class="doc-header">
   <h1>LCDMH — Cadrage Projet</h1>
   <p>Document de référence technique et éditorial pour toute nouvelle page, article ou roadbook publié sur <strong>lcdmh.com</strong>.</p>
-  <p>Dernière mise à jour : 11 avril 2026</p>
+  <p>Dernière mise à jour : 18 avril 2026 (ajout règles 6–8, section conformité, session ingénieur SEO)</p>
 </header>
 
 <nav class="toc">
@@ -198,6 +198,8 @@
     <li><a href="#recommandations">Recommandations d'amélioration priorisées</a></li>
     <li><a href="#historique">Historique des corrections appliquées</a></li>
     <li><a href="#infographie">Règles d'infographie et proportions visuelles</a></li>
+    <li><a href="#conformite">Conformité obligatoire (performance, accessibilité, RGPD, social)</a></li>
+    <li><a href="#session-avril">Session ingénieur SEO du 18 avril 2026 — récapitulatif</a></li>
   </ol>
 </nav>
 
@@ -235,6 +237,21 @@
 <div class="callout danger">
   <strong>Règle 5 — Nom unique par produit</strong>
   Un produit ne doit apparaître que sous un seul nom canonique dans tout le site (title, H1, meta description, OG, texte, Schema.org). Exemple : « Blackview Xplore X1 », et jamais « X1 », « XLOR X1 », « BV8800 Pro » dans le même article.
+</div>
+
+<div class="callout danger">
+  <strong>Règle 6 — Aucune image au-delà de 500 KiB sur disque</strong>
+  Une image publiée doit peser ≤ 500 KiB (1 600 px de large max, JPG qualité 82 ou WebP qualité 80). Une photo brute de 22 MiB (cas NEMO du 18 avril 2026) casse le LCP, gaspille la bande passante mobile et plombe le Core Web Vitals. Avant publication, passer toute nouvelle image par <code>AUDIT_INGENIEUR_SEO/scripts/convert_images_webp.py</code> qui génère le couple <code>.webp</code> + <code>.jpg</code> optimisés.
+</div>
+
+<div class="callout danger">
+  <strong>Règle 7 — Jamais d'URL lcdmh.com dans un message Facebook qui cible YouTube</strong>
+  Quand un post Facebook pointe sur une vidéo YouTube via le champ <code>link</code>, le texte du message ne doit <strong>jamais</strong> contenir d'URL <code>lcdmh.com</code> (ni nue, ni avec emoji 🔗). Facebook scrape la première URL rencontrée dans le texte <em>avant</em> le champ <code>link</code>, ce qui remplace la preview vidéo par la carte générique de la home. Utiliser « la chaîne » ou « en description » à la place. Voir Règle 7 détaillée dans la section Conformité.
+</div>
+
+<div class="callout danger">
+  <strong>Règle 8 — Aucun orphelin dans <code>/articles/images/</code> ou <code>/images/</code></strong>
+  Une image présente sur disque mais non référencée par un <code>&lt;img src&gt;</code>, <code>&lt;source srcset&gt;</code>, <code>background-image</code> ou <code>og:image</code> doit être supprimée ou insérée. Les orphelins gonflent le dépôt git sans bénéfice SEO et rendent le déploiement GitHub Pages plus lent. Exécuter <code>AUDIT_INGENIEUR_SEO/scripts/detect_orphans.py</code> avant chaque release majeure.
 </div>
 </section>
 
@@ -625,8 +642,114 @@
 </div>
 </section>
 
+<section id="conformite">
+<h2>12. Conformité obligatoire (performance, accessibilité, RGPD, social)</h2>
+
+<p>Ces obligations s'appliquent à <strong>toute</strong> nouvelle page HTML (article, page hub, page test produit, roadbook journalier, landing page). Elles sont l'extension des règles 6, 7 et 8 et complètent la checklist de la section 6.</p>
+
+<h3>12.1 Performance (Core Web Vitals)</h3>
+<p>Google utilise ces trois métriques comme signal de ranking depuis 2021. Seuils « bons » à viser sur chaque page (mesure via PageSpeed Insights ou Search Console) :</p>
+<table>
+  <thead><tr><th>Métrique</th><th>Seuil « bon »</th><th>Obligation de page</th></tr></thead>
+  <tbody>
+    <tr><td>LCP (Largest Contentful Paint)</td><td>≤ 2,5 s</td><td>Image de hero ≤ 200 KiB, <code>loading="eager"</code> + <code>fetchpriority="high"</code> dessus</td></tr>
+    <tr><td>CLS (Cumulative Layout Shift)</td><td>≤ 0,1</td><td>Attributs <code>width</code> et <code>height</code> sur toute balise <code>&lt;img&gt;</code> (pas seulement CSS)</td></tr>
+    <tr><td>INP (Interaction to Next Paint)</td><td>≤ 200 ms</td><td>Pas de script bloquant le main thread &gt; 50 ms. Charger GTM, Analytics et widgets YouTube en <code>defer</code></td></tr>
+  </tbody>
+</table>
+<ul>
+  <li>Toutes les images sous le premier écran portent <code>loading="lazy"</code></li>
+  <li>Les polices sont chargées via <code>preconnect</code> vers le CDN et <code>font-display: swap;</code> dans le CSS</li>
+  <li>Les vidéos YouTube embarquées utilisent <code>&lt;iframe loading="lazy"&gt;</code> ou un wrapper <em>lite-youtube</em> avec thumbnail statique</li>
+  <li>Aucun JS inline bloquant dans le <code>&lt;head&gt;</code>. Tout script métier passe en <code>defer</code> ou en fin de <code>&lt;body&gt;</code></li>
+</ul>
+
+<h3>12.2 Accessibilité (WCAG 2.1 niveau AA)</h3>
+<ul>
+  <li><strong>Contraste :</strong> ratio ≥ 4,5:1 pour le texte normal, ≥ 3:1 pour le texte grand (≥ 24 px). Orange <code>#e67e22</code> sur fond blanc ne passe pas pour le texte courant — réserver aux titres et éléments non textuels.</li>
+  <li><strong>Alt descriptifs réels :</strong> pas de répétition <code>alt="image"</code>, <code>alt="photo"</code>, ou répétition du nom de fichier. Décrire le contenu utile pour un lecteur d'écran. Image purement décorative : <code>alt=""</code> (vide mais présent).</li>
+  <li><strong>Navigation clavier :</strong> tous les liens et boutons doivent avoir un état <code>:focus</code> visible (outline orange 2 px ou équivalent). Pas de <code>outline: none;</code> sans remplacement.</li>
+  <li><strong>Structure sémantique :</strong> <code>&lt;main&gt;</code> une seule fois, <code>&lt;header&gt;</code> / <code>&lt;nav&gt;</code> / <code>&lt;footer&gt;</code> présents, hiérarchie H1→H2→H3 sans saut.</li>
+  <li><strong>Liens explicites :</strong> pas de « cliquer ici » ou « en savoir plus ». Libellé auto-portant (« Lire le test complet de l'AFERIY Nano 100 »).</li>
+  <li><strong>Langue :</strong> <code>&lt;html lang="fr"&gt;</code> obligatoire. Si un passage est en anglais ou dans une autre langue, <code>&lt;span lang="en"&gt;</code> ou <code>&lt;em lang="en"&gt;</code>.</li>
+</ul>
+
+<h3>12.3 RGPD et cookies</h3>
+<ul>
+  <li>Aucun cookie tiers (GTM, GA4, YouTube <em>non</em> <code>-nocookie</code>, pixels sociaux, cartes interactives tierces) ne doit être posé <strong>avant</strong> consentement explicite.</li>
+  <li>Les iframes YouTube doivent utiliser le domaine <code>youtube-nocookie.com</code> quand l'utilisateur n'a pas consenti au traçage.</li>
+  <li>Le bandeau consentement (CMP) doit proposer « Refuser tout » au premier niveau, aussi visible que « Accepter tout ». Pas de dark pattern.</li>
+  <li>Mentions légales et politique de confidentialité linkées depuis le footer de <strong>chaque</strong> page.</li>
+  <li>Liens d'affiliation signalés clairement (<code>rel="sponsored nofollow"</code> et mention visible « Lien affilié — LCDMH peut toucher une commission »).</li>
+</ul>
+
+<h3>12.4 Social (Facebook, X, LinkedIn, Pinterest)</h3>
+<ul>
+  <li><strong>OG complet obligatoire :</strong> <code>og:title</code>, <code>og:description</code>, <code>og:image</code> (1200×630 px, &lt; 300 KiB, JPG), <code>og:url</code>, <code>og:type</code>, <code>og:site_name</code>, <code>og:locale="fr_FR"</code>.</li>
+  <li><strong>Twitter Card :</strong> <code>twitter:card="summary_large_image"</code>, <code>twitter:title</code>, <code>twitter:description</code>, <code>twitter:image</code>.</li>
+  <li><strong>og:image différencié :</strong> chaque article / roadbook a <em>son</em> OG image. Jamais le logo LCDMH générique sur un article de test produit.</li>
+  <li><strong>Construction de payload Facebook (Graph API / Make.com) :</strong> quand le post pointe sur YouTube via le champ <code>link</code>, ne jamais écrire d'URL <code>lcdmh.com</code> dans le champ <code>message</code>. Facebook scrape la première URL présente dans le texte avant de lire <code>link</code>, ce qui détruit la preview vidéo. Voir <code>AUDIT_INGENIEUR_SEO/scripts/fix_facebook_messages.py</code>.</li>
+</ul>
+
+<h3>12.5 Contrats sur le HTML généré automatiquement</h3>
+<p>Toute page HTML générée par un script (automate YouTube, générateur d'articles LLM, template engine interne) doit impérativement sortir en conformité avec les points ci-dessous. Le script générateur porte la charge de preuve, pas le relecteur humain.</p>
+<ol>
+  <li>UTF-8 sans BOM ; <code>&lt;meta charset="UTF-8"&gt;</code> en première ligne du <code>&lt;head&gt;</code>.</li>
+  <li><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code>.</li>
+  <li><code>&lt;html lang="fr"&gt;</code>, <code>&lt;title&gt;</code> &lt; 65 c., <code>&lt;meta name="description"&gt;</code> 120–170 c., <code>&lt;link rel="canonical"&gt;</code> absolu.</li>
+  <li>OG + Twitter Card complets (voir 12.4) avec image dédiée à la page, pas au site.</li>
+  <li>Bloc JSON-LD <code>Article</code> (ou <code>CollectionPage</code> / <code>VideoObject</code>) valide, vérifié sur <a href="https://validator.schema.org">validator.schema.org</a>.</li>
+  <li>Un seul <code>&lt;h1&gt;</code>, hiérarchie H2/H3 propre.</li>
+  <li>Toutes les <code>&lt;img&gt;</code> : <code>alt</code> non vide + <code>width</code> + <code>height</code> + <code>loading="lazy"</code> (sauf hero).</li>
+  <li>Images ≤ 500 KiB, couple WebP + JPG via <code>&lt;picture&gt;</code> (voir <code>patch_picture_tags.py</code>).</li>
+  <li>Aucune URL <code>lcdmh.com</code> écrite dans un éventuel message social généré en parallèle (règle 7).</li>
+  <li>Ajout automatique de l'article dans <code>articles.html</code> (<code>ARTICLES[]</code>) et dans <code>sitemap.xml</code> avec <code>&lt;lastmod&gt;</code> à la date du jour.</li>
+</ol>
+
+<div class="callout danger">
+  <strong>Obligation de vérification</strong>
+  Tout script qui génère des pages HTML (notamment le dépôt <code>F:\Automate_YT</code>) doit exécuter une passe de validation locale avant écriture sur disque : parsing HTML, vérification des 10 points ci-dessus, rejet si un point est manquant. Cette passe est formalisée dans le script <code>AUDIT_INGENIEUR_SEO/scripts/validate_seo.py</code> (à écrire en P1).
+</div>
+</section>
+
+<section id="session-avril">
+<h2>13. Session ingénieur SEO du 18 avril 2026 — récapitulatif</h2>
+
+<p>Cette section consigne la session menée le 18 avril 2026 pour mémoire. Le détail commit par commit est dans <code>AUDIT_INGENIEUR_SEO/journaux/JOURNAL_CHANGEMENTS.md</code>.</p>
+
+<h3>13.1 Nettoyage orphelins et performance images</h3>
+<ul>
+  <li><strong>225 fichiers orphelins supprimés</strong> (≈ 64 MiB) : 63 quick-wins (special_chars, blog_generated, shopify_variants) + 152 doublons dans dossiers vidéo-only (<code>retour-honda-nt-1100-a-26000-kms</code>, <code>cols-mythiques-des-alpes-a-moto-trk-502-ep-1</code>) + 16 surnuméraires radar-moto. Source : <code>AUDIT_INGENIEUR_SEO/journaux/REVUE_218_ORPHELINS_AMBIGUS.md</code>.</li>
+  <li><strong>Photo NEMO bivouac compressée</strong> : 22 MiB → 243 KiB JPG + 155 KiB WebP (6 000×4 000 → 1 600×1 066, JPG q82 / WebP q80). Original archivé dans <code>AUDIT_INGENIEUR_SEO/backup_originaux/</code>.</li>
+  <li><strong>Gain total dépôt</strong> : ≈ 86 MiB (commit <code>6426323</code>).</li>
+</ul>
+
+<h3>13.2 Correction preview Facebook</h3>
+<ul>
+  <li>Bug observé sur le post du 15 avril 2026 (w05-aferiy-nano100) : card affichée « LCDMH — La Chaîne du Motard Heureux » + URL lcdmh.com générique, sans thumbnail YouTube.</li>
+  <li>Cause : le message contenait « 🔗 https://lcdmh.com » et « 👉 Mon test : lcdmh.com ». Facebook scrape la première URL du texte avant de lire le champ <code>link</code> YouTube.</li>
+  <li>Correctif : script <code>fix_facebook_messages.py</code>, 6 regex de nettoyage, 13 posts corrigés dans <code>facebook/facebook_payload_test.json</code>. Idempotent, skip des posts déjà publiés.</li>
+</ul>
+
+<h3>13.3 Données structurées VideoObject</h3>
+<ul>
+  <li><strong>67 <code>uploadDate</code> corrigés</strong> sur 7 fichiers (format <code>YYYY-MM-DD</code> → <code>YYYY-MM-DDT00:00:00Z</code>) pour répondre aux deux problèmes GSC « Valeur de date et heure incorrecte » et « timezone manquant ».</li>
+  <li>Script : <code>AUDIT_INGENIEUR_SEO/scripts/fix_uploaddate_timezone.py</code>.</li>
+</ul>
+
+<h3>13.4 Actions restant à planifier (backlog ingénieur SEO)</h3>
+<ol>
+  <li>Écrire <code>AUDIT_INGENIEUR_SEO/scripts/validate_seo.py</code> (pre-commit hook) — P1.</li>
+  <li>Renouveler ou retirer le code Aoocci LCDMH-28 expiré (présent dans <code>codes-promo.html</code> et <code>sitemap.html</code>) — P1.</li>
+  <li>Pages pilier Dolomites / Alpes / Espagne : slugs à valider avec l'utilisateur.</li>
+  <li>Rationaliser les 8 GitHub Actions actives (plusieurs redondantes).</li>
+  <li>Consolider la CSS dispersée dans plusieurs pages hub.</li>
+  <li>Vérifier que le générateur <code>Automate_YT</code> respecte bien la section 12.5 ci-dessus sur toutes les pages sorties.</li>
+</ol>
+</section>
+
 <footer class="doc-footer">
-  <p>LCDMH — Le Coin Des Motards Heureux · Document de cadrage projet · Version du 11 avril 2026</p>
+  <p>LCDMH — Le Coin Des Motards Heureux · Document de cadrage projet · Version du 18 avril 2026</p>
 </footer>
 
 </div>

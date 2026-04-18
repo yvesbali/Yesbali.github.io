@@ -386,3 +386,119 @@ founder : Yves → /a-propos.html
 3. Repondre a CLARIFICATIONS_UTILISATEUR.md
 4. Configurer GA4 dans GTM (Google Tag, Measurement ID G-7GC33KPRMS)
 5. Verifier Tag Assistant Chrome sur lcdmh.com
+
+---
+
+## 2026-04-18 (matinee) — Action 07 : Nettoyage 225 orphelins + compression photo NEMO
+
+**Contexte**
+Audit des images du depot : 218 fichiers image presents sur disque mais jamais
+references par aucun <img src>, <source srcset>, background-image ni og:image.
+Plus une photo NEMO de 22 MiB brute dans le dossier bivouac, jamais inseree.
+
+Sources de verite :
+- `AUDIT_INGENIEUR_SEO/journaux/dedup_ambiguous_orphans.txt` (218 chemins)
+- `AUDIT_INGENIEUR_SEO/journaux/dedup_categorized.json` (categorisation machine)
+- `AUDIT_INGENIEUR_SEO/journaux/REVUE_218_ORPHELINS_AMBIGUS.md` (revue humaine)
+
+**Actions**
+
+1. Categorisation des 218 orphelins en 5 groupes :
+   - `shopify_variants` (9 fichiers) : variantes taille Shopify inutilisees
+   - `blog_generated` (26 fichiers) : uploads CDN automatiques (Adobe AEM, YouTube)
+   - `special_chars` (28 fichiers) : noms avec accents/espaces, typos ("Lampre")
+   - `orphan_article` (100 fichiers) : 2 dossiers video-only (retour-honda + cols-alpes)
+   - `normal` (55 fichiers) : dont 16 radar-moto et 22 MiB NEMO bivouac
+
+2. Script `delete_validated_orphans.py` : suppression idempotente
+   - 63 quick-wins (special_chars + blog_generated + shopify_variants)
+   - 2 dossiers entiers (retour-honda + cols-alpes, 152 fichiers)
+   - 16 surnumeraires radar-moto
+   - Total : 225 fichiers (63 + 152 + 16 - doublons de comptage ajustes)
+
+3. Compression NEMO_Camping-DSC_0386.jpg :
+   - 22 MiB 6000x4000 JPG q90 -> 243 KiB 1600x1066 JPG q82
+   - + 155 KiB WebP q80 genere en parallele
+   - Original archive dans `AUDIT_INGENIEUR_SEO/backup_originaux/`
+
+**Resultats**
+- Gain depot : ~86 MiB (-64 MiB orphelins + -22 MiB NEMO)
+- Commit : `6426323`
+- Push : effectue (confirmation user "91ad0f4..6426323 main -> main")
+
+**Fichiers touches**
+- 225 fichiers images supprimes
+- 1 image compressee (NEMO)
+- 1 backup original
+- + scripts neufs : `delete_validated_orphans.py`
+
+---
+
+## 2026-04-18 (apres-midi) — Action 08 : Correction preview Facebook cassee
+
+**Contexte**
+Post Facebook du 15 avril 2026 (w05-aferiy-nano100) genere par Make.com/Graph API
+affiche une card degradee : "LCDMH - La Chaine du Motard Heureux" + lcdmh.com
+generique + pas de thumbnail. Attendu : preview YouTube avec miniature video.
+
+**Cause identifiee**
+Le champ `message` du payload contenait "🔗 https://lcdmh.com" et
+"👉 Mon test : lcdmh.com". Facebook scrape la PREMIERE URL trouvee dans le
+texte AVANT de lire le champ `link` YouTube. La home lcdmh.com a un og:image
+generique, d'ou la preview degradee.
+
+**Action**
+Script : `AUDIT_INGENIEUR_SEO/scripts/fix_facebook_messages.py`
+6 regex de nettoyage sur les 26 posts de `facebook/facebook_payload_test.json` :
+  1. Ligne entiere "🔗 https://lcdmh.com..." -> suppression
+  2. "👉 Mon test : lcdmh.com..." -> "👉 Mon test complet en video"
+  3. "👉 Mon test sur lcdmh.com..." -> "👉 Mon test complet en video"
+  4. "sur lcdmh.com avec" -> "sur la chaine avec"
+  5. "lcdmh.com/xxx.html" -> "(lien en description)"
+  6. "lcdmh.com" nu -> "la chaine"
+
+Idempotent, skip des posts deja publies.
+
+**Resultats**
+- 13 posts non publies modifies sur 26
+- 0 parasite lcdmh.com restant
+- Fichier : `facebook/facebook_payload_test.json`
+
+**Limitation**
+Le post du 15 avril ne peut plus etre re-edite (Facebook verrouille la card
+apres publication). Le correctif s'applique uniquement aux posts futurs.
+
+---
+
+## 2026-04-18 (soiree) — Action 09 : Renforcement cadrage projet
+
+**Contexte**
+Le document `LCDMH_Cadrage_Projet.html` n'integrait pas les regles apprises
+pendant la session du 18 avril. Risque : la prochaine session LLM ou le
+generateur `Automate_YT` reproduisent les bugs (URL parasite Facebook, photos
+non compressees, orphelins).
+
+**Action**
+Edition de `LCDMH_Cadrage_Projet.html` :
+- Ajout de 3 regles absolues dans la section 2 :
+  - Regle 6 : aucune image > 500 KiB (cap LCP)
+  - Regle 7 : aucune URL lcdmh.com dans message Facebook qui cible YouTube
+  - Regle 8 : aucun orphelin dans /articles/images/ ni /images/
+- Nouvelle section 12 "Conformite obligatoire" :
+  - 12.1 Core Web Vitals (LCP, CLS, INP)
+  - 12.2 Accessibilite WCAG 2.1 AA
+  - 12.3 RGPD et cookies (consentement, affiliation)
+  - 12.4 Social (OG, Twitter Card, payloads Facebook)
+  - 12.5 Contrats sur HTML genere automatiquement (10 points)
+- Nouvelle section 13 : recapitulatif session 18 avril
+- Mise a jour du sommaire et du footer (version 18 avril 2026)
+
+**Fichier touche**
+- `LCDMH_Cadrage_Projet.html` (+265 lignes, 29 KiB -> 43 KiB environ)
+
+**Prochaines etapes**
+1. Ecrire `AUDIT_INGENIEUR_SEO/scripts/validate_seo.py` (P1) pour automatiser
+   la verification des 10 points de la section 12.5.
+2. Mounter `F:\Automate_YT` dans la session Cowork pour auditer les generateurs
+   HTML et verifier qu'ils respectent la section 12.5.
+3. Renouveler ou retirer le code Aoocci LCDMH-28 expire (codes-promo.html + sitemap.html).
