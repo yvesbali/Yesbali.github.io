@@ -49,23 +49,35 @@ EXCLUDED_DIR_PARTS = {
     "data",  # versions historiques d'articles
 }
 
-OG_TITLE_RE = re.compile(
-    r'<meta[^>]+property\s*=\s*["\']og:title["\'][^>]+content\s*=\s*["\']([^"\']+)["\']',
-    re.IGNORECASE,
-)
-OG_DESC_RE = re.compile(
-    r'<meta[^>]+property\s*=\s*["\']og:description["\'][^>]+content\s*=\s*["\']([^"\']+)["\']',
-    re.IGNORECASE,
-)
-OG_IMG_RE = re.compile(
-    r'<meta[^>]+property\s*=\s*["\']og:image["\'][^>]+content\s*=\s*["\']([^"\']+)["\']',
-    re.IGNORECASE,
-)
+def _build_og_regex(key: str) -> re.Pattern:
+    """Regex agnostique à l'ordre des attributs ET quote-aware (accepte apostrophes dans content=\"...\")."""
+    k = re.escape(key)
+    # Utilise \1 / \2 backreferences pour matcher le même délimiteur d'ouverture et de fermeture
+    # Ordre 1 : property="og:xxx" ... content="..."
+    # Ordre 2 : content="..." ... property="og:xxx"
+    return re.compile(
+        r'<meta[^>]*(?:'
+        r'property\s*=\s*(["\'])' + k + r'\1[^>]*?content\s*=\s*(["\'])([^>]*?)\2'
+        r'|'
+        r'content\s*=\s*(["\'])([^>]*?)\4[^>]*?property\s*=\s*(["\'])' + k + r'\6'
+        r')',
+        re.IGNORECASE,
+    )
+
+
+OG_TITLE_RE = _build_og_regex("og:title")
+OG_DESC_RE = _build_og_regex("og:description")
+OG_IMG_RE = _build_og_regex("og:image")
 TWITTER_CARD_RE = re.compile(r'<meta[^>]+name\s*=\s*["\']twitter:card["\']', re.IGNORECASE)
 
 # Pour trouver le point d'insertion : après la dernière balise og:* du <head>
+# Detecte les deux ordres : property=... content=... OU content=... property=...
 LAST_OG_RE = re.compile(
-    r'(<meta[^>]+property\s*=\s*["\']og:[a-z_:]+["\'][^>]*>)',
+    r'(<meta[^>]*(?:'
+    r'property\s*=\s*["\']og:[a-z_:]+["\']'
+    r'|'
+    r'content\s*=\s*["\'][^"\']*["\'][^>]*property\s*=\s*["\']og:[a-z_:]+["\']'
+    r')[^>]*>)',
     re.IGNORECASE,
 )
 
@@ -103,9 +115,11 @@ def patch_page(path: Path, dry_run: bool) -> tuple[str, str]:
         missing = [n for n, m in [("og:title", m_title), ("og:description", m_desc), ("og:image", m_img)] if not m]
         return "NO_OG", f"og manquant : {', '.join(missing)}"
 
-    og_title = _html_escape(m_title.group(1))
-    og_desc = _html_escape(m_desc.group(1))
-    og_img = _html_escape(m_img.group(1))
+    # Groupes : (1 quote1), (2 quote2, 3 val1), (4 quote3, 5 val2), (6 quote4)
+    # val1 vient du 1er alternant (property avant content), val2 du 2ème (content avant property)
+    og_title = _html_escape(m_title.group(3) or m_title.group(5))
+    og_desc = _html_escape(m_desc.group(3) or m_desc.group(5))
+    og_img = _html_escape(m_img.group(3) or m_img.group(5))
 
     block_lines = [
         '<meta name="twitter:card" content="summary_large_image">',

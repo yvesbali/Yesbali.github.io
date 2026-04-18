@@ -133,13 +133,14 @@ def check_01_utf8(text: str, has_bom: bool) -> Check:
 
 
 def check_02_viewport(text: str) -> Check:
-    m = re.search(
+    # Détecte les deux ordres d'attributs (name avant content OU inverse)
+    patterns = [
         r'<meta[^>]+name\s*=\s*["\']viewport["\'][^>]+content\s*=\s*["\'][^"\']*width=device-width',
-        text,
-        re.IGNORECASE,
-    )
-    if m:
-        return Check("02_viewport", "Meta viewport responsive", "OK", "")
+        r'<meta[^>]+content\s*=\s*["\'][^"\']*width=device-width[^"\']*["\'][^>]+name\s*=\s*["\']viewport["\']',
+    ]
+    for pat in patterns:
+        if re.search(pat, text, re.IGNORECASE):
+            return Check("02_viewport", "Meta viewport responsive", "OK", "")
     return Check("02_viewport", "Meta viewport responsive", "KO", "meta viewport width=device-width absent")
 
 
@@ -164,12 +165,21 @@ def check_03_lang_title_desc_canonical(text: str) -> list[Check]:
         else:
             out.append(Check("03b_title", "Title < 65 c.", "OK", f"{n} c."))
 
-    # meta description
-    desc = _first_match(
-        r'<meta[^>]+name\s*=\s*["\']description["\'][^>]+content\s*=\s*["\']([^"\']+)["\']',
+    # meta description : quote-aware, confine le match à UN SEUL tag via [^>]*?
+    m = re.search(
+        r'<meta[^>]+name\s*=\s*["\']description["\'][^>]+content\s*=\s*(["\'])([^>]*?)\1',
         text,
         re.IGNORECASE,
     )
+    if m:
+        desc = m.group(2)
+    else:
+        m = re.search(
+            r'<meta[^>]+content\s*=\s*(["\'])([^>]*?)\1[^>]+name\s*=\s*["\']description["\']',
+            text,
+            re.IGNORECASE,
+        )
+        desc = m.group(2) if m else None
     if not desc:
         out.append(Check("03c_description", "Meta description 120-170 c.", "KO", "meta description absente"))
     else:
@@ -180,12 +190,18 @@ def check_03_lang_title_desc_canonical(text: str) -> list[Check]:
             status = "WARN" if 100 <= n <= 200 else "KO"
             out.append(Check("03c_description", "Meta description 120-170 c.", status, f"{n} c. (cible 120-170)"))
 
-    # canonical
+    # canonical (deux ordres d'attributs acceptés)
     canon = _first_match(
         r'<link[^>]+rel\s*=\s*["\']canonical["\'][^>]+href\s*=\s*["\']([^"\']+)["\']',
         text,
         re.IGNORECASE,
     )
+    if not canon:
+        canon = _first_match(
+            r'<link[^>]+href\s*=\s*["\']([^"\']+)["\'][^>]+rel\s*=\s*["\']canonical["\']',
+            text,
+            re.IGNORECASE,
+        )
     if not canon:
         out.append(Check("03d_canonical", "Canonical URL absolue", "KO", "link rel=canonical absent"))
     elif not canon.startswith("https://"):
