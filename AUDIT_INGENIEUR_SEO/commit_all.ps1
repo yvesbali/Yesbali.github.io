@@ -69,6 +69,14 @@ RunOrShow 'git commit --allow-empty -m "seo(schema): ajoute BreadcrumbList + Ite
 RunOrShow "git add AUDIT_INGENIEUR_SEO/journaux/JOURNAL_CHANGEMENTS.md AUDIT_INGENIEUR_SEO/commit_all.ps1"
 RunOrShow 'git commit --allow-empty -m "audit(seo): journalise l''action 05 (schemas road-trip-moto-france)" --no-verify'
 
+# 10. Commit : correction uploadDate VideoObject (ISO 8601 + UTC timezone)
+RunOrShow "git add alpes-aventure-festival-moto.html alpes-cols-mythiques-episode-01.html cap-nord-moto.html europe-asie-moto.html les-alpes-dans-tous-les-sens.html roadtrips/maquette_capnord_complete_v2.html roadtrips/securite-routiere-moto.html AUDIT_INGENIEUR_SEO/scripts/fix_uploaddate_timezone.py"
+RunOrShow 'git commit --allow-empty -m "seo(videoobject): corrige uploadDate ISO 8601 avec timezone UTC (67 dates, 7 fichiers) - resout alerte GSC" --no-verify'
+
+# 11. Commit : journal action 06
+RunOrShow "git add AUDIT_INGENIEUR_SEO/journaux/JOURNAL_CHANGEMENTS.md AUDIT_INGENIEUR_SEO/commit_all.ps1"
+RunOrShow 'git commit --allow-empty -m "audit(seo): journalise l''action 06 (uploadDate timezone fix)" --no-verify'
+
 Write-Host ""
 Write-Host "=== COMMITS CREES ===" -ForegroundColor Green
 RunOrShow "git log --oneline -10"
