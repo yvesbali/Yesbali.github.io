@@ -9,6 +9,59 @@ valide avant de pousser.
 
 ---
 
+## 2026-04-18 (fin apres-midi) — Action 05 : Schemas SEO road-trip-moto-france
+
+**Contexte**
+- Test Rich Results utilisateur sur `/roadtrips/road-trip-moto-france.html`
+  montre un resultat texte classique (title + description) sans rich snippet.
+- Page existante avait uniquement `CollectionPage` + `FAQPage`.
+- `FAQPage` rich snippets sont obsoletes depuis aout 2023 (reserves sites
+  gouvernementaux/sante), donc poids mort.
+
+**Changements**
+
+1. **Ajout `BreadcrumbList`** (3 niveaux : LCDMH > Road Trips > France).
+   La page avait deja la breadcrumb visuelle (HTML) ; on ajoute la version
+   JSON-LD pour eligibilite au fil d'Ariane Google SERP.
+
+2. **Ajout `ItemList`** (7 regions, avec URLs pointant vers les ancres
+   existantes de chaque `<section id="...">` :
+   - #annecy, #bauges-aravis, #tarentaise-beaufortain,
+     #maurienne-grands-cols, #haute-savoie-ain, #barcelonnette-ubaye,
+     #luberon-drome
+   - Signal "liste curee" pour Google, mieux indexe les sous-sections.
+
+3. **Retrait `FAQPage` JSON-LD** (deprecated).
+   - Les `<details>` visuelles restent en place pour l'UX utilisateur.
+   - Un commentaire HTML documente le pourquoi du retrait.
+
+**Non fait (volontairement, pas d'invention)**
+- Pas de `VideoObject` ×N. La page liste 30+ videos YouTube via `<a>` (pas
+  d'iframes embeddes), ajouter un VideoObject pour chacune necessiterait
+  des metadonnees (uploadDate, description) que je n'ai pas sans appel
+  YouTube API. Preserver l'honnetete > rich snippets inventes.
+  Si voulu plus tard : lancer `scripts/add_video_object_schema.py` en
+  local avec `YT_API_KEY` env var.
+
+**Fichiers touches (1)**
+- roadtrips/road-trip-moto-france.html
+
+**Verification post-deploiement**
+- https://search.google.com/test/rich-results → l'aperçu devrait
+  maintenant montrer 3 types : CollectionPage, BreadcrumbList, ItemList.
+- Apres recrawl Google (24-72h) : attendre apparition du fil d'Ariane
+  dans le SERP a la place de l'URL brute.
+
+**Commit suggere**
+
+```bash
+cd F:\LCDMH_GitHub_Audit
+git add roadtrips/road-trip-moto-france.html
+git commit -m "seo(schema): ajoute BreadcrumbList + ItemList sur road-trip-moto-france, retire FAQPage deprecated"
+```
+
+---
+
 ## 2026-04-18 (apres-midi) — Action 04 : Enrichissement pages zombies
 
 **Contexte**
