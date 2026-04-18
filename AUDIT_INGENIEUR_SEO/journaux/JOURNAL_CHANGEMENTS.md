@@ -9,6 +9,64 @@ valide avant de pousser.
 
 ---
 
+## 2026-04-18 (soir) — Action 06 : Correction uploadDate VideoObject (GSC issue)
+
+**Contexte**
+Google Search Console a signale 2 problemes Donnees structurees Videos :
+  - "Valeur de date et heure incorrecte pour uploadDate"
+  - "Il manque le fuseau horaire a la propriete uploadDate"
+
+Les `uploadDate` du site etaient au format `"YYYY-MM-DD"` (date seule,
+sans heure ni timezone). ISO 8601 exige une datetime complete avec
+timezone. Google reclasse periodiquement ces non-criticals en criticals.
+
+**Action**
+
+Script : `AUDIT_INGENIEUR_SEO/scripts/fix_uploaddate_timezone.py`
+  - Regex idempotente : detecte `"uploadDate": "YYYY-MM-DD"` (sans T ni TZ)
+  - Remplace par `"uploadDate": "YYYY-MM-DDT00:00:00Z"` (UTC minuit)
+  - Skip les dates qui ont deja un T ou un timezone (re-run safe)
+
+Choix de T00:00:00Z (UTC minuit) : on ne connait pas l'heure exacte
+d'upload YouTube cote site. Inventer une heure serait mensonger. Minuit
+UTC est le placeholder le plus neutre et satisfait le validator Google.
+
+**Resultats (run 2026-04-18)**
+
+```
+[PATCH] alpes-aventure-festival-moto.html              -> 8 uploadDate
+[PATCH] alpes-cols-mythiques-episode-01.html           -> 1 uploadDate
+[PATCH] cap-nord-moto.html                             -> 14 uploadDate
+[PATCH] europe-asie-moto.html                          -> 11 uploadDate
+[PATCH] les-alpes-dans-tous-les-sens.html              -> 8 uploadDate
+[PATCH] roadtrips/maquette_capnord_complete_v2.html    -> 13 uploadDate
+[PATCH] roadtrips/securite-routiere-moto.html          -> 12 uploadDate
+
+Total : 67 uploadDate corriges sur 7 fichiers.
+```
+
+**Verification post-deploiement**
+
+1. Valider 2-3 pages dans https://search.google.com/test/rich-results
+   -> confirmer VideoObject sans avertissement uploadDate.
+2. Dans Search Console > "Donnees structurees Videos" > cliquer
+   "Valider la correction" pour forcer Google a recrawler.
+3. Attendre 3-7 jours : les 2 problemes devraient disparaitre de GSC.
+
+**Fichiers touches (8)**
+- 7 HTML (liste ci-dessus)
+- + script neuf : `AUDIT_INGENIEUR_SEO/scripts/fix_uploaddate_timezone.py`
+
+**Commit suggere**
+
+```bash
+cd F:\LCDMH_GitHub_Audit
+git add alpes-aventure-festival-moto.html alpes-cols-mythiques-episode-01.html cap-nord-moto.html europe-asie-moto.html les-alpes-dans-tous-les-sens.html roadtrips/maquette_capnord_complete_v2.html roadtrips/securite-routiere-moto.html AUDIT_INGENIEUR_SEO/scripts/fix_uploaddate_timezone.py
+git commit -m "seo(videoobject): corrige uploadDate ISO 8601 avec timezone UTC (67 dates, 7 fichiers) - resout alerte GSC"
+```
+
+---
+
 ## 2026-04-18 (fin apres-midi) — Action 05 : Schemas SEO road-trip-moto-france
 
 **Contexte**
