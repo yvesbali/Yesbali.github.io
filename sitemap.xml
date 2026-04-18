@@ -195,19 +195,10 @@
     <priority>0.5</priority>
   </url>
 
-  <url>
-    <loc>https://lcdmh.com/roadtrips/road-trip-moto-test-2026-3.html</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://lcdmh.com/roadtrips/road-trip-moto-test-2026-3-journal.html</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+  <!-- [SUPPRIMÉS DU SITEMAP 2026-04-18] :
+       https://lcdmh.com/roadtrips/road-trip-moto-test-2026-3.html
+       https://lcdmh.com/roadtrips/road-trip-moto-test-2026-3-journal.html
+       Raison : pages de test, noindex ajouté sur les pages concernées. -->
 
   <!-- ═══════════════════════════════════════ -->
   <!-- PAGES UTILITAIRES              0.6/0.5  -->
