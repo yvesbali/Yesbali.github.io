@@ -8,3 +8,8 @@ rapport-*.xlsx
 plan-sync-*.xlsx
 *_mockup.png
 _sauvegarde_*/
+
+__pycache__/
+*.pyc
+
+AUDIT_INGENIEUR_SEO/backup_originaux/
