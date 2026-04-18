@@ -61,6 +61,14 @@ RunOrShow 'git commit --allow-empty -m "seo(contenu): enrichit pages zombies ave
 RunOrShow "git add AUDIT_INGENIEUR_SEO/journaux/JOURNAL_CHANGEMENTS.md AUDIT_INGENIEUR_SEO/commit_all.ps1"
 RunOrShow 'git commit --allow-empty -m "audit(seo): journalise l''action 04 (enrichissement pages zombies)" --no-verify'
 
+# 8. Commit : schemas SEO sur road-trip-moto-france
+RunOrShow "git add roadtrips/road-trip-moto-france.html"
+RunOrShow 'git commit --allow-empty -m "seo(schema): ajoute BreadcrumbList + ItemList sur road-trip-moto-france, retire FAQPage deprecated" --no-verify'
+
+# 9. Commit : journal action 05
+RunOrShow "git add AUDIT_INGENIEUR_SEO/journaux/JOURNAL_CHANGEMENTS.md AUDIT_INGENIEUR_SEO/commit_all.ps1"
+RunOrShow 'git commit --allow-empty -m "audit(seo): journalise l''action 05 (schemas road-trip-moto-france)" --no-verify'
+
 Write-Host ""
 Write-Host "=== COMMITS CREES ===" -ForegroundColor Green
 RunOrShow "git log --oneline -10"
