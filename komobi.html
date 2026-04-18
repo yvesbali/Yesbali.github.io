@@ -191,10 +191,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </details>
     </div>
 
-    <!-- VIDÉOS YOUTUBE -->
+    <!-- VIDÉOS TERRAIN (statiques, prioritaires) -->
+    <h2>Test terrain Komobi — vidéos</h2>
+    <div class="bar"></div>
+    <p>Deux vidéos complémentaires : une prise en main rapide (format Short) et le test complet sur route.</p>
+    <div style="display:grid;grid-template-columns:minmax(0,9fr) minmax(0,16fr);gap:1.5rem;margin:1.5rem 0;align-items:start">
+        <div>
+            <div style="position:relative;padding-bottom:177.77%;height:0;overflow:hidden;border-radius:10px;background:#000">
+                <iframe src="https://www.youtube.com/embed/uI7B5kLR95M" title="Komobi — prise en main rapide LCDMH" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"></iframe>
+            </div>
+            <p style="font-size:.9rem;color:#777;margin-top:.5rem;font-style:italic">Short : aperçu en 60 secondes</p>
+        </div>
+        <div>
+            <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;background:#000">
+                <iframe src="https://www.youtube.com/embed/qO7YMCBp-28" title="Test Komobi traceur GPS antivol moto — avis terrain LCDMH" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"></iframe>
+            </div>
+            <p style="font-size:.9rem;color:#777;margin-top:.5rem;font-style:italic">Test complet : installation + utilisation en road trip</p>
+        </div>
+    </div>
+
+    <!-- VIDÉOS YOUTUBE — feed dynamique (fallback + nouveautés) -->
     <h2 style="font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:800;text-align:center;margin:3rem 0 .4rem;color:#1a1a1a">Mes vidéos sur <em style="font-style:normal;color:#e67e22">Komobi</em></h2>
     <div style="width:52px;height:4px;background:#e67e22;border-radius:2px;margin:.6rem auto 2.2rem;"></div>
-    <p style="text-align:center;color:#666;margin-bottom:2rem;">Tests en conditions réelles sur YouTube</p>
+    <p style="text-align:center;color:#666;margin-bottom:2rem;">Autres vidéos sur la chaîne</p>
     <div id="komobi-video-feed"></div>
     <script src="js/product-feed.js" data-keywords="komobi" data-max="4" data-container="komobi-video-feed"></script>
 
