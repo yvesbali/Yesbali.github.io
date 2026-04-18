@@ -9,6 +9,82 @@ valide avant de pousser.
 
 ---
 
+## 2026-04-18 (apres-midi) — Action 04 : Enrichissement pages zombies
+
+**Contexte**
+- 6 pages zombies recevaient des impressions GSC sans clic. L'utilisateur
+  a fourni les VRAIES URLs YouTube de ses tests terrain (pas d'invention).
+- Objectif : convertir les impressions en clics grace a des embeds video
+  statiques (signal fort pour Google : VideoObject + contenu terrain).
+
+**komobi.html**
+- Ajout de 2 iframes YouTube statiques AVANT le feed dynamique :
+  - `uI7B5kLR95M` (YouTube Short, ratio 9:16 avec `padding-bottom:177.77%`)
+  - `qO7YMCBp-28` (test complet 16:9)
+- Nouveau h2 "Test terrain Komobi — videos"
+- Feed dynamique `product-feed.js` conserve comme "fallback + nouveautes"
+
+**gps.html**
+- Ajout d'une section hero video (fond noir) avec iframe
+  `pinxDxAs9jw` (test Aoocci U6 / BX / C6 PRO — GPS offline et autonome)
+- Position : juste apres l'intro, avant le comparatif 3 types de GPS
+- Ratio 16:9 avec box-shadow pour lisibilite premium
+
+**aferiy.html**
+- Remplacement des 2 iframes placeholders (`TMEUulIwbCQ`, `f8tI6Lm0TKs`)
+  par les vraies videos de test :
+  - `D1eLA6LRkLU` (test terrain bivouac moto)
+  - `d-s-wOZKjWI` (presentation / test bureau)
+- Titres et captions mis a jour pour refleter le contenu reel
+
+**olight.html**
+- Ajout de 2 iframes YouTube statiques AVANT le feed dynamique :
+  - `eJtSU-JAdB0` (test lampe frontale Perun 3)
+  - `1jWjwR2dMKs` (utilisation bivouac + fixation magnetique)
+- Nouveau h2 "Test terrain — Olight Perun 3"
+- Feed dynamique conserve comme "Autres videos Olight sur ma chaine"
+
+**intercoms.html**
+- **AUCUNE modification** — verification effectuee : la page contient
+  deja les bons iframes statiques :
+  - Sena 50S : `sZDUr0ewee0`
+  - Sena 60S : `PNlKbmWrKjY`
+- Title, meta description, comparatif, FAQ deja complets et coherents.
+
+**equipement.html**
+- Ajout d'un second bloc JSON-LD `ItemList` (3 items : bagagerie, Olight,
+  casque) en plus de l'Article schema existant. Signal "liste curee" pour
+  Google, meilleur eligibility au Top Pick SERP.
+- Ajout d'ancres `id="bagagerie"` et `id="casque"` sur les product-cards
+  pour que les URLs du ItemList pointent vers les bonnes sections.
+- `dateModified` mis a jour : 2026-04-18.
+- **PAS d'ajout de videos statiques** : l'utilisateur n'a pas fourni
+  d'IDs specifiques pour equipement.html ("a toi de voir le mieux"). Je
+  n'ai rien invente. Le feed dynamique continue de tirer les bonnes
+  videos via keywords : casque, equipement, veste, lampe, bivouac.
+
+**Fichiers touches (5 modifies + 1 verifie)**
+- komobi.html, gps.html, aferiy.html, olight.html, equipement.html
+- (intercoms.html verifie, inchange)
+
+**Verification post-deploiement**
+- Passer chaque page sur https://search.google.com/test/rich-results
+  et verifier : Article + ItemList (equipement) OK, VideoObject pas
+  encore attendu (il faudra lancer `add_video_object_schema.py` en local
+  pour l'ajouter — necessite YT_API_KEY).
+- Mesurer sur 30j en GSC : evolution CTR de ces pages. Sweet spot vise :
+  0% -> 1-2% CTR sur les memes impressions.
+
+**Commit suggere**
+
+```bash
+cd F:\LCDMH_GitHub_Audit
+git add komobi.html gps.html aferiy.html olight.html equipement.html
+git commit -m "seo(contenu): enrichit pages zombies avec iframes YouTube terrain + ItemList schema equipement"
+```
+
+---
+
 ## 2026-04-18 — Action 03 : Installation Google Tag Manager
 
 **Contexte**
