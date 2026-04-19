@@ -829,7 +829,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="sidebar-card" id="sidebar-populaires">
                 <h3>Articles populaires</h3>
                 <div class="popular-list" id="popular-list">
-<a href="articles/le-cap-nord-ca-va-mal-finir-cercle-arctique-polaire-road-tri.html" class="popular-item"><div class="popular-rank">1</div><div><strong>Le Cap Nord, ça va mal finir ! Cercle arctique polaire</strong><span>Road Trip • Cap Nord</span></div></a><a href="articles/dunlop-mutant-vs-bridgestone-t33-le-combat-quel-pneu-choisir.html" class="popular-item"><div class="popular-rank">2</div><div><strong>Dunlop Mutant vs Bridgestone T33 : le combat, quel pneu choisir ?</strong><span>Test • Pneus</span></div></a><a href="articles/voyager-en-norvege-ferries-budget-conseils-guide-de-voyage-n.html" class="popular-item"><div class="popular-rank">3</div><div><strong>Voyager en Norvège : ferries, budget, conseils</strong><span>Guide • Norvège</span></div></a><a href="articles/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti.html" class="popular-item"><div class="popular-rank">4</div><div><strong>GPS MOTO : GPS Offline U6 va-t-il sauver mes balades moto ?</strong><span>Test • GPS</span></div></a>
+<a href="articles/le-cap-nord-ca-va-mal-finir-cercle-arctique-polaire-road-tri.html" class="popular-item"><div class="popular-rank">1</div><div><strong>Le Cap Nord, ça va mal finir ! Cercle arctique polaire</strong><span>Road Trip • Cap Nord</span></div></a><a href="articles/dunlop-mutant-vs-bridgestone-t33-le-combat-quel-pneu-choisir.html" class="popular-item"><div class="popular-rank">2</div><div><strong>Dunlop Mutant vs Bridgestone T33 : le combat, quel pneu choisir ?</strong><span>Test • Pneus</span></div></a><a href="articles/voyager-en-norvege-ferries-budget-conseils-guide-de-voyage-n.html" class="popular-item"><div class="popular-rank">3</div><div><strong>Voyager en Norvège : ferries, budget, conseils</strong><span>Guide • Norvège</span></div></a><a href="articles/gps-moto-u6-comment-naviguer-offline.html" class="popular-item"><div class="popular-rank">4</div><div><strong>GPS MOTO : GPS Offline U6 va-t-il sauver mes balades moto ?</strong><span>Test • GPS</span></div></a>
 </div>
 
                 <div class="sidebar-box">
@@ -1158,7 +1158,7 @@ const ARTICLES = [
   },
   {
     slug: "gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti",
-    href: "articles/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti.html",
+    href: "articles/gps-moto-u6-comment-naviguer-offline.html",
     img: "/articles/images/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti/en-situation.webp",
     alt: "GPS MOTO : GPS Offline U6 va-t-il sauver mes balades moto ?",
     tag: "Test • GPS",
@@ -1358,31 +1358,4 @@ function renderPage(){
     const elFeatMain = document.getElementById("featured-main");
     if(elFeatMain) elFeatMain.innerHTML = createFeaturedMain(featured);
     const elFeatSide = document.getElementById("featured-side");
-    if(elFeatSide) elFeatSide.innerHTML = featuredSecondaries.map(createFeaturedMini).join("");
-
-    const elRT = document.getElementById("grid-road-trips");
-    if(elRT) elRT.innerHTML = roadTrips.map(createArticleCard).join("");
-    const elTM = document.getElementById("grid-tests-materiel");
-    if(elTM) elTM.innerHTML = testsMateriel.map(createArticleCard).join("");
-    const elGP = document.getElementById("grid-guides-pratiques");
-    if(elGP) elGP.innerHTML = guidesPratiques.map(createArticleCard).join("");
-    const elMoto = document.getElementById("grid-tests-motos");
-    if(elMoto) elMoto.innerHTML = testsMotos.map(createArticleCard).join("");
-    const elPhoto = document.getElementById("grid-photo-video");
-    if(elPhoto) elPhoto.innerHTML = photoVideo.map(createArticleCard).join("");
-
-    const elPop = document.getElementById("popular-list");
-    if(elPop) elPop.innerHTML = popularArticles.map(createPopularItem).join("");
-
-    const elStat = document.getElementById("stat-total-articles");
-    if(elStat) elStat.textContent = String(ARTICLES.length);
-    const elFoot = document.getElementById("footer-count");
-    if(elFoot) elFoot.textContent = `📖 ${ARTICLES.length} articles publiés — Page articles mise à jour`;
-}
-
-document.addEventListener("DOMContentLoaded", renderPage);
-</script>
-<script src="footer-loader.js" defer></script>
-<script src="maillage.js" defer></script>
-</body>
-</html>
+    if(elFeatSide) elFeatSide.innerHTML = featuredSecondaries.ma
