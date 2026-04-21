@@ -56,10 +56,32 @@ def save_json(path, data):
 # ══════════════════════════════════════════════════════════════════
 # TELECHARGER LE SHORT YOUTUBE (yt-dlp + cookies)
 # ══════════════════════════════════════════════════════════════════
+# Patterns stderr yt-dlp indiquant une video DEFINITIVEMENT supprimee/inaccessible
+# (a nettoyer dans le planning — pas une erreur technique)
+_DELETED_PATTERNS = (
+    "video unavailable",
+    "removed by the uploader",
+    "this video has been removed",
+    "private video",
+    "video is private",
+    "video is no longer available",
+    "terminated",
+)
+
+
+def _stderr_indique_video_supprimee(stderr_text):
+    """True si le stderr yt-dlp indique une video supprimee/inaccessible definitivement."""
+    if not stderr_text:
+        return False
+    low = stderr_text.lower()
+    return any(p in low for p in _DELETED_PATTERNS)
+
+
 def telecharger_video(video_id):
     """
     Telecharge le short YouTube via yt-dlp avec cookies.
-    Retourne le chemin du fichier video ou None.
+    Retourne un tuple (filepath | None, is_deleted: bool).
+    is_deleted=True si la video a ete supprimee/est inaccessible (a retirer du planning).
     """
     url = f"https://www.youtube.com/watch?v={video_id}"
     tmp_dir = tempfile.mkdtemp(prefix="lcdmh_short_")
@@ -93,24 +115,27 @@ def telecharger_video(video_id):
         if result.returncode == 0 and os.path.exists(output_path):
             size_mb = os.path.getsize(output_path) / (1024 * 1024)
             log(f"Telecharge: {size_mb:.1f} Mo")
-            return output_path
+            return output_path, False
         else:
             log(f"yt-dlp erreur (code {result.returncode})")
             if result.stderr:
                 err_lines = result.stderr.strip().split("\n")
                 for line in err_lines[-3:]:
                     log(f"  stderr: {line}")
-            return None
+            is_deleted = _stderr_indique_video_supprimee(result.stderr)
+            if is_deleted:
+                log(f"DIAGNOSTIC: video {video_id} SUPPRIMEE / INACCESSIBLE — a retirer du planning")
+            return None, is_deleted
 
     except subprocess.TimeoutExpired:
         log("yt-dlp timeout (120s)")
-        return None
+        return None, False
     except FileNotFoundError:
         log("yt-dlp non installe!")
-        return None
+        return None, False
     except Exception as e:
         log(f"Erreur telechargement: {e}")
-        return None
+        return None, False
 
 
 # ══════════════════════════════════════════════════════════════════
@@ -320,6 +345,8 @@ def main():
 
     succes = 0
     echecs = 0
+    echecs_deleted = 0          # echecs imputables a une video supprimee (non-bloquant)
+    videos_supprimees = []      # liste des video_id a retirer du planning
 
     for vid, data in videos.items():
         video = data["video"]
@@ -327,18 +354,24 @@ def main():
 
         # ── ETAPE 1 : Telecharger le short via yt-dlp ──
         log(f"Telechargement short: {video.get('titre', '')[:50]}...")
-        filepath = telecharger_video(vid)
+        filepath, is_deleted = telecharger_video(vid)
         is_video = True
 
-        # ── FALLBACK : Si yt-dlp echoue, utiliser la thumbnail ──
-        if not filepath:
+        # ── FALLBACK : Si yt-dlp echoue ET que ce n'est pas une video supprimee, tenter la thumbnail ──
+        # (si la video est supprimee, la thumbnail l'est aussi la plupart du temps — on n'insiste pas)
+        if not filepath and not is_deleted:
             log(f"Fallback thumbnail pour: {vid}")
             filepath = telecharger_thumbnail(vid)
             is_video = False
 
         if not filepath:
-            log(f"ECHEC total (video + thumbnail): {vid}")
-            echecs += len(pubs)
+            if is_deleted:
+                log(f"SKIP video supprimee: {vid} — {len(pubs)} publication(s) ignoree(s)")
+                videos_supprimees.append(vid)
+                echecs_deleted += len(pubs)
+            else:
+                log(f"ECHEC technique (video + thumbnail): {vid}")
+                echecs += len(pubs)
             continue
 
         # ── ETAPE 2 : Upload Cloudinary ──
@@ -383,8 +416,17 @@ def main():
     # Sauvegarder historique
     save_json(HISTORIQUE_FILE, historique)
 
-    log(f"Termine: {succes} succes, {echecs} echecs")
+    log(f"Termine: {succes} succes, {echecs} echecs techniques, {echecs_deleted} publications ignorees (videos supprimees)")
 
+    if videos_supprimees:
+        log("=" * 60)
+        log("ACTION REQUISE - videos a retirer du planning_v8.json :")
+        for v in videos_supprimees:
+            log(f"  - {v}")
+        log("=" * 60)
+
+    # Exit 1 UNIQUEMENT si echec technique reel et aucun succes.
+    # Une journee avec seulement des videos supprimees n'est pas une panne - c'est un planning obsolete.
     if echecs > 0 and succes == 0:
         sys.exit(1)
 
