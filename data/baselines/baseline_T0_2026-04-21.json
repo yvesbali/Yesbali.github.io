@@ -1,0 +1,1307 @@
+{
+  "schema_version": 1,
+  "label": "T0",
+  "generated_at": "2026-04-21T19:06:30",
+  "source_files": {
+    "seo_stats": "seo_stats.json",
+    "gsc": "data/baselines/gsc_queries_2026-04-21.csv",
+    "targets": "data/baselines/targets_batch_01.json"
+  },
+  "site_gsc": {
+    "kpis": {
+      "total_queries": 97,
+      "total_clicks": 52,
+      "total_impressions": 640,
+      "avg_ctr_pct": 8.12,
+      "queries_in_top3": 2,
+      "queries_in_top10": 40,
+      "queries_in_top20": 55
+    },
+    "queries": [
+      {
+        "query": "lcdmh",
+        "clicks": 26,
+        "impressions": 122,
+        "position": 2.7
+      },
+      {
+        "query": "cap nord moto budget",
+        "clicks": 2,
+        "impressions": 61,
+        "position": 10.1
+      },
+      {
+        "query": "quel carpuride choisir",
+        "clicks": 3,
+        "impressions": 56,
+        "position": 4.7
+      },
+      {
+        "query": "quel carpuride moto choisir",
+        "clicks": 3,
+        "impressions": 25,
+        "position": 5.7
+      },
+      {
+        "query": "cap nord moto seul",
+        "clicks": 0,
+        "impressions": 22,
+        "position": 6.1
+      },
+      {
+        "query": "la chaine du motard heureux",
+        "clicks": 2,
+        "impressions": 22,
+        "position": 4.1
+      },
+      {
+        "query": "carpuride comparatif",
+        "clicks": 2,
+        "impressions": 17,
+        "position": 3.7
+      },
+      {
+        "query": "komobi moto",
+        "clicks": 0,
+        "impressions": 17,
+        "position": 23.4
+      },
+      {
+        "query": "meilleur carpuride moto",
+        "clicks": 1,
+        "impressions": 17,
+        "position": 3.6
+      },
+      {
+        "query": "aferiy nano 100",
+        "clicks": 1,
+        "impressions": 14,
+        "position": 6.4
+      },
+      {
+        "query": "road trip moto cap nord pdf",
+        "clicks": 1,
+        "impressions": 14,
+        "position": 7.2
+      },
+      {
+        "query": "cap nord moto",
+        "clicks": 0,
+        "impressions": 13,
+        "position": 41.0
+      },
+      {
+        "query": "comparatif carpuride moto",
+        "clicks": 1,
+        "impressions": 12,
+        "position": 4.2
+      },
+      {
+        "query": "komobi",
+        "clicks": 0,
+        "impressions": 11,
+        "position": 8.9
+      },
+      {
+        "query": "meilleur carplay moto 2026",
+        "clicks": 2,
+        "impressions": 11,
+        "position": 8.4
+      },
+      {
+        "query": "aoocci u6",
+        "clicks": 0,
+        "impressions": 10,
+        "position": 15.9
+      },
+      {
+        "query": "quel est le meilleur carpuride",
+        "clicks": 0,
+        "impressions": 10,
+        "position": 4.4
+      },
+      {
+        "query": "komobi city",
+        "clicks": 0,
+        "impressions": 9,
+        "position": 59.7
+      },
+      {
+        "query": "motard heureux",
+        "clicks": 1,
+        "impressions": 9,
+        "position": 4.7
+      },
+      {
+        "query": "t33 vs road 6",
+        "clicks": 2,
+        "impressions": 9,
+        "position": 8.8
+      },
+      {
+        "query": "carpuride w702rs pro",
+        "clicks": 1,
+        "impressions": 7,
+        "position": 10.0
+      },
+      {
+        "query": "carpuride moto",
+        "clicks": 0,
+        "impressions": 6,
+        "position": 26.0
+      },
+      {
+        "query": "dunlop mutant vs michelin road 6",
+        "clicks": 0,
+        "impressions": 5,
+        "position": 11.0
+      },
+      {
+        "query": "voyage moto cap nord",
+        "clicks": 0,
+        "impressions": 5,
+        "position": 47.4
+      },
+      {
+        "query": "cap nord en moto",
+        "clicks": 0,
+        "impressions": 4,
+        "position": 45.8
+      },
+      {
+        "query": "carpuride origine",
+        "clicks": 0,
+        "impressions": 4,
+        "position": 39.8
+      },
+      {
+        "query": "carpuride vs aoocci",
+        "clicks": 0,
+        "impressions": 4,
+        "position": 3.0
+      },
+      {
+        "query": "nano 100",
+        "clicks": 0,
+        "impressions": 4,
+        "position": 6.5
+      },
+      {
+        "query": "road 6 vs t33",
+        "clicks": 1,
+        "impressions": 4,
+        "position": 4.8
+      },
+      {
+        "query": "road trip cap nord moto",
+        "clicks": 0,
+        "impressions": 4,
+        "position": 20.0
+      },
+      {
+        "query": "test intercom",
+        "clicks": 1,
+        "impressions": 4,
+        "position": 35.8
+      },
+      {
+        "query": "test intercom moto",
+        "clicks": 0,
+        "impressions": 4,
+        "position": 28.2
+      },
+      {
+        "query": "aferiy nano100",
+        "clicks": 0,
+        "impressions": 3,
+        "position": 6.7
+      },
+      {
+        "query": "aoocci",
+        "clicks": 0,
+        "impressions": 3,
+        "position": 20.7
+      },
+      {
+        "query": "aoocci vs carpuride",
+        "clicks": 0,
+        "impressions": 3,
+        "position": 6.7
+      },
+      {
+        "query": "blackview xplore x1",
+        "clicks": 1,
+        "impressions": 3,
+        "position": 10.0
+      },
+      {
+        "query": "carpuride",
+        "clicks": 0,
+        "impressions": 3,
+        "position": 18.7
+      },
+      {
+        "query": "ecran carpuride",
+        "clicks": 0,
+        "impressions": 3,
+        "position": 12.7
+      },
+      {
+        "query": "les plus beaux cols des alpes en moto",
+        "clicks": 1,
+        "impressions": 3,
+        "position": 31.0
+      },
+      {
+        "query": "metzeler roadtec 02 vs bridgestone t33",
+        "clicks": 0,
+        "impressions": 3,
+        "position": 8.3
+      },
+      {
+        "query": "road trip moto cap nord",
+        "clicks": 0,
+        "impressions": 3,
+        "position": 10.3
+      },
+      {
+        "query": "road trip moto turquie",
+        "clicks": 0,
+        "impressions": 3,
+        "position": 50.0
+      },
+      {
+        "query": "test carpuride",
+        "clicks": 0,
+        "impressions": 3,
+        "position": 26.7
+      },
+      {
+        "query": "voyage moto france",
+        "clicks": 0,
+        "impressions": 3,
+        "position": 77.3
+      },
+      {
+        "query": "w702rs pro",
+        "clicks": 0,
+        "impressions": 3,
+        "position": 5.7
+      },
+      {
+        "query": "alpes moto festival",
+        "clicks": 0,
+        "impressions": 2,
+        "position": 69.0
+      },
+      {
+        "query": "avis carpuride",
+        "clicks": 0,
+        "impressions": 2,
+        "position": 20.5
+      },
+      {
+        "query": "blackview xplore x1 review",
+        "clicks": 0,
+        "impressions": 2,
+        "position": 6.5
+      },
+      {
+        "query": "cap nord à moto",
+        "clicks": 0,
+        "impressions": 2,
+        "position": 53.0
+      },
+      {
+        "query": "carpuride 2026",
+        "clicks": 0,
+        "impressions": 2,
+        "position": 4.0
+      },
+      {
+        "query": "carpuride avis",
+        "clicks": 0,
+        "impressions": 2,
+        "position": 32.5
+      },
+      {
+        "query": "dunlop mutant",
+        "clicks": 0,
+        "impressions": 2,
+        "position": 34.0
+      },
+      {
+        "query": "dunlop mutant vs road 6",
+        "clicks": 0,
+        "impressions": 2,
+        "position": 5.0
+      },
+      {
+        "query": "intercom comparatif",
+        "clicks": 0,
+        "impressions": 2,
+        "position": 90.5
+      },
+      {
+        "query": "intercom moto comparatif",
+        "clicks": 0,
+        "impressions": 2,
+        "position": 81.5
+      },
+      {
+        "query": "moto barcelonnette",
+        "clicks": 0,
+        "impressions": 2,
+        "position": 66.0
+      },
+      {
+        "query": "road trip moto france",
+        "clicks": 0,
+        "impressions": 2,
+        "position": 78.0
+      },
+      {
+        "query": "test dunlop mutant",
+        "clicks": 0,
+        "impressions": 2,
+        "position": 32.5
+      },
+      {
+        "query": "alpes adventure",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 97.0
+      },
+      {
+        "query": "alpes aventure moto festival",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 67.0
+      },
+      {
+        "query": "alpes aventure motofestival",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 49.0
+      },
+      {
+        "query": "aoocci gps",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 11.0
+      },
+      {
+        "query": "aoocci u6 pro",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 10.0
+      },
+      {
+        "query": "aooccii",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 10.0
+      },
+      {
+        "query": "aooci u6",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 5.0
+      },
+      {
+        "query": "avis carplay moto",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 38.0
+      },
+      {
+        "query": "barcelonnette moto",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 64.0
+      },
+      {
+        "query": "battlax t33 vs road 6",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 10.0
+      },
+      {
+        "query": "blackview explorer x1",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 18.0
+      },
+      {
+        "query": "bridgestone t33 vs metzeler roadtec 02",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 6.0
+      },
+      {
+        "query": "carplay aoocci",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 21.0
+      },
+      {
+        "query": "carplay moto carpuride",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 24.0
+      },
+      {
+        "query": "carpuride honda",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 9.0
+      },
+      {
+        "query": "carpuride w701",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 19.0
+      },
+      {
+        "query": "carpuride w702",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 64.0
+      },
+      {
+        "query": "carpuride w702rs",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 4.0
+      },
+      {
+        "query": "code promo moto vision",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 10.0
+      },
+      {
+        "query": "comparatif intercom moto",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 80.0
+      },
+      {
+        "query": "dxr roadtrip",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 63.0
+      },
+      {
+        "query": "détection de chute moto",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 26.0
+      },
+      {
+        "query": "embourbage",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 17.0
+      },
+      {
+        "query": "festival moto barcelonnette",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 86.0
+      },
+      {
+        "query": "intercom test",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 11.0
+      },
+      {
+        "query": "les meilleurs carplay moto",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 7.0
+      },
+      {
+        "query": "meilleurs carplay moto",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 90.0
+      },
+      {
+        "query": "metzeler roadtec 02 test",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 8.0
+      },
+      {
+        "query": "metzeler roadtec 02 vs michelin road 6",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 61.0
+      },
+      {
+        "query": "mh road",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 6.0
+      },
+      {
+        "query": "michelin mutant",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 12.0
+      },
+      {
+        "query": "moto cap nord",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 50.0
+      },
+      {
+        "query": "moto lcd",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 6.0
+      },
+      {
+        "query": "promomoto",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 42.0
+      },
+      {
+        "query": "roadtec 02 test",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 18.0
+      },
+      {
+        "query": "test metzeler roadtec 02",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 62.0
+      },
+      {
+        "query": "test pneus moto",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 56.0
+      },
+      {
+        "query": "voyage moto alpes idées reçues conseils",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 16.0
+      },
+      {
+        "query": "xplore test",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 7.0
+      }
+    ]
+  },
+  "youtube": {
+    "kpis": {
+      "videos_total": 47,
+      "videos_with_data": 46,
+      "sum_views_30d": 16660,
+      "sum_impressions": 16456,
+      "avg_ctr_weighted": 8.96,
+      "avg_view_pct_mean": 52.7
+    },
+    "videos": [
+      {
+        "video_id": "CVBTcxnyJjc",
+        "views_30d": 0,
+        "impressions": 0,
+        "ctr_pct": 0,
+        "avg_view_pct": 0,
+        "avg_dur_s": 0,
+        "yt_search_pct": 0,
+        "related_video_pct": 0,
+        "subscriber_pct": 0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "Uh9LbEwftbs",
+        "views_30d": 941,
+        "impressions": 941,
+        "ctr_pct": 12.75,
+        "avg_view_pct": 49.5,
+        "avg_dur_s": 217,
+        "yt_search_pct": 2.3,
+        "related_video_pct": 5.2,
+        "subscriber_pct": 70.2,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "8KZbbN9Df8o",
+        "views_30d": 5897,
+        "impressions": 5897,
+        "ctr_pct": 11.01,
+        "avg_view_pct": 37.5,
+        "avg_dur_s": 451,
+        "yt_search_pct": 1.3,
+        "related_video_pct": 10.1,
+        "subscriber_pct": 77.7,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "1amp6h3y76E",
+        "views_30d": 989,
+        "impressions": 989,
+        "ctr_pct": 7.18,
+        "avg_view_pct": 88.7,
+        "avg_dur_s": 9,
+        "yt_search_pct": 3.6,
+        "related_video_pct": 1.8,
+        "subscriber_pct": 41.9,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "9U7WHJyX0go",
+        "views_30d": 1305,
+        "impressions": 1305,
+        "ctr_pct": 1.69,
+        "avg_view_pct": 45.5,
+        "avg_dur_s": 20,
+        "yt_search_pct": 2.4,
+        "related_video_pct": 0.2,
+        "subscriber_pct": 7.0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "AYjFZ1QfCWY",
+        "views_30d": 1373,
+        "impressions": 1373,
+        "ctr_pct": 11.51,
+        "avg_view_pct": 38.3,
+        "avg_dur_s": 354,
+        "yt_search_pct": 2.4,
+        "related_video_pct": 12.7,
+        "subscriber_pct": 61.7,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "D1eLA6LRkLU",
+        "views_30d": 1958,
+        "impressions": 1958,
+        "ctr_pct": 8.78,
+        "avg_view_pct": 35.8,
+        "avg_dur_s": 322,
+        "yt_search_pct": 2.4,
+        "related_video_pct": 8.6,
+        "subscriber_pct": 69.1,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "jKEeq45vtPU",
+        "views_30d": 702,
+        "impressions": 702,
+        "ctr_pct": 10.4,
+        "avg_view_pct": 39.5,
+        "avg_dur_s": 892,
+        "yt_search_pct": 8.4,
+        "related_video_pct": 20.8,
+        "subscriber_pct": 41.2,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "B5tRRo6zhLA",
+        "views_30d": 298,
+        "impressions": 298,
+        "ctr_pct": 6.38,
+        "avg_view_pct": 49.3,
+        "avg_dur_s": 132,
+        "yt_search_pct": 34.2,
+        "related_video_pct": 5.7,
+        "subscriber_pct": 16.8,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "BckcS7zmkOc",
+        "views_30d": 93,
+        "impressions": 93,
+        "ctr_pct": 2.15,
+        "avg_view_pct": 32.0,
+        "avg_dur_s": 53,
+        "yt_search_pct": 1.1,
+        "related_video_pct": 1.1,
+        "subscriber_pct": 64.5,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "8ZrBLfM8LT8",
+        "views_30d": 400,
+        "impressions": 400,
+        "ctr_pct": 12.5,
+        "avg_view_pct": 36.3,
+        "avg_dur_s": 826,
+        "yt_search_pct": 8.8,
+        "related_video_pct": 24.0,
+        "subscriber_pct": 37.2,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "TRvj9yLGdf8",
+        "views_30d": 81,
+        "impressions": 81,
+        "ctr_pct": 1.23,
+        "avg_view_pct": 62.3,
+        "avg_dur_s": 14,
+        "yt_search_pct": 13.6,
+        "related_video_pct": 6.2,
+        "subscriber_pct": 2.5,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "sLdoMKqZpqY",
+        "views_30d": 76,
+        "impressions": 76,
+        "ctr_pct": 1.32,
+        "avg_view_pct": 36.2,
+        "avg_dur_s": 18,
+        "yt_search_pct": 7.9,
+        "related_video_pct": 0,
+        "subscriber_pct": 3.9,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "MN5_ohYRKDw",
+        "views_30d": 50,
+        "impressions": 50,
+        "ctr_pct": 0.0,
+        "avg_view_pct": 44.5,
+        "avg_dur_s": 12,
+        "yt_search_pct": 8.0,
+        "related_video_pct": 0,
+        "subscriber_pct": 0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "5c4miS_k0xg",
+        "views_30d": 44,
+        "impressions": 44,
+        "ctr_pct": 0.0,
+        "avg_view_pct": 40.9,
+        "avg_dur_s": 11,
+        "yt_search_pct": 4.5,
+        "related_video_pct": 0,
+        "subscriber_pct": 0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "aEK5k7WHUog",
+        "views_30d": 27,
+        "impressions": 27,
+        "ctr_pct": 0.0,
+        "avg_view_pct": 35.6,
+        "avg_dur_s": 20,
+        "yt_search_pct": 7.4,
+        "related_video_pct": 0,
+        "subscriber_pct": 3.7,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "PlCkHEEbg6U",
+        "views_30d": 27,
+        "impressions": 27,
+        "ctr_pct": 0.0,
+        "avg_view_pct": 73.1,
+        "avg_dur_s": 24,
+        "yt_search_pct": 11.1,
+        "related_video_pct": 0,
+        "subscriber_pct": 0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "UqVgs5JqY_c",
+        "views_30d": 110,
+        "impressions": 110,
+        "ctr_pct": 0.91,
+        "avg_view_pct": 78.9,
+        "avg_dur_s": 21,
+        "yt_search_pct": 12.7,
+        "related_video_pct": 0,
+        "subscriber_pct": 17.3,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "aW5Ryq83oO4",
+        "views_30d": 221,
+        "impressions": 221,
+        "ctr_pct": 14.03,
+        "avg_view_pct": 35.1,
+        "avg_dur_s": 814,
+        "yt_search_pct": 6.8,
+        "related_video_pct": 29.7,
+        "subscriber_pct": 24.3,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "6GkR2VkWUuI",
+        "views_30d": 25,
+        "impressions": 25,
+        "ctr_pct": 0.0,
+        "avg_view_pct": 70.0,
+        "avg_dur_s": 11,
+        "yt_search_pct": 12.0,
+        "related_video_pct": 0,
+        "subscriber_pct": 12.0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "Kq36_wrfvnw",
+        "views_30d": 202,
+        "impressions": 202,
+        "ctr_pct": 8.91,
+        "avg_view_pct": 35.6,
+        "avg_dur_s": 711,
+        "yt_search_pct": 1.5,
+        "related_video_pct": 32.0,
+        "subscriber_pct": 33.5,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "laOPf6ffano",
+        "views_30d": 12,
+        "impressions": 12,
+        "ctr_pct": 0.0,
+        "avg_view_pct": 84.6,
+        "avg_dur_s": 16,
+        "yt_search_pct": 16.7,
+        "related_video_pct": 0,
+        "subscriber_pct": 0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "S_kAzsiNoUE",
+        "views_30d": 14,
+        "impressions": 14,
+        "ctr_pct": 0.0,
+        "avg_view_pct": 113.2,
+        "avg_dur_s": 20,
+        "yt_search_pct": 14.3,
+        "related_video_pct": 14.3,
+        "subscriber_pct": 0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "3ngrZodPfHM",
+        "views_30d": 56,
+        "impressions": 56,
+        "ctr_pct": 1.79,
+        "avg_view_pct": 98.7,
+        "avg_dur_s": 15,
+        "yt_search_pct": 8.9,
+        "related_video_pct": 5.4,
+        "subscriber_pct": 10.7,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "VrjDNkzVAZk",
+        "views_30d": 226,
+        "impressions": 226,
+        "ctr_pct": 8.85,
+        "avg_view_pct": 32.8,
+        "avg_dur_s": 806,
+        "yt_search_pct": 4.9,
+        "related_video_pct": 23.9,
+        "subscriber_pct": 25.7,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "_lV1S1_JXd0",
+        "views_30d": 241,
+        "impressions": 241,
+        "ctr_pct": 4.98,
+        "avg_view_pct": 21.6,
+        "avg_dur_s": 321,
+        "yt_search_pct": 22.4,
+        "related_video_pct": 19.1,
+        "subscriber_pct": 13.7,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "Q3a39FcIjQo",
+        "views_30d": 297,
+        "impressions": 297,
+        "ctr_pct": 7.07,
+        "avg_view_pct": 29.9,
+        "avg_dur_s": 705,
+        "yt_search_pct": 24.2,
+        "related_video_pct": 17.8,
+        "subscriber_pct": 29.3,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "S8ZTiB6CBEU",
+        "views_30d": 13,
+        "impressions": 13,
+        "ctr_pct": 7.69,
+        "avg_view_pct": 37.8,
+        "avg_dur_s": 22,
+        "yt_search_pct": 30.8,
+        "related_video_pct": 23.1,
+        "subscriber_pct": 7.7,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "REbAFm8Xe1w",
+        "views_30d": 33,
+        "impressions": 33,
+        "ctr_pct": 3.03,
+        "avg_view_pct": 53.8,
+        "avg_dur_s": 21,
+        "yt_search_pct": 36.4,
+        "related_video_pct": 0,
+        "subscriber_pct": 0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "fWXNqF1T2ns",
+        "views_30d": 10,
+        "impressions": 10,
+        "ctr_pct": 0.0,
+        "avg_view_pct": 70.0,
+        "avg_dur_s": 30,
+        "yt_search_pct": 40.0,
+        "related_video_pct": 0,
+        "subscriber_pct": 0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "H2dQaUtxbKk",
+        "views_30d": 12,
+        "impressions": 12,
+        "ctr_pct": 0.0,
+        "avg_view_pct": 63.1,
+        "avg_dur_s": 28,
+        "yt_search_pct": 58.3,
+        "related_video_pct": 0,
+        "subscriber_pct": 0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "6vp73RL1frA",
+        "views_30d": 120,
+        "impressions": 120,
+        "ctr_pct": 0.83,
+        "avg_view_pct": 28.1,
+        "avg_dur_s": 219,
+        "yt_search_pct": 1.7,
+        "related_video_pct": 7.5,
+        "subscriber_pct": 14.2,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "TKmVpFnKuq0",
+        "views_30d": 57,
+        "impressions": 57,
+        "ctr_pct": 1.75,
+        "avg_view_pct": 73.4,
+        "avg_dur_s": 24,
+        "yt_search_pct": 8.8,
+        "related_video_pct": 3.5,
+        "subscriber_pct": 1.8,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "rd-CjJh0lKU",
+        "views_30d": 221,
+        "impressions": 221,
+        "ctr_pct": 1.36,
+        "avg_view_pct": 22.2,
+        "avg_dur_s": 229,
+        "yt_search_pct": 19.9,
+        "related_video_pct": 2.3,
+        "subscriber_pct": 14.0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "WP3YXAuAkd0",
+        "views_30d": 6,
+        "impressions": 6,
+        "ctr_pct": 0.0,
+        "avg_view_pct": 105.0,
+        "avg_dur_s": 31,
+        "yt_search_pct": 33.3,
+        "related_video_pct": 0,
+        "subscriber_pct": 0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "IbjRClb1Ixg",
+        "views_30d": 5,
+        "impressions": 5,
+        "ctr_pct": 0.0,
+        "avg_view_pct": 0.0,
+        "avg_dur_s": 0,
+        "yt_search_pct": 20.0,
+        "related_video_pct": 0,
+        "subscriber_pct": 0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "8d_l50-kB1Y",
+        "views_30d": 6,
+        "impressions": 6,
+        "ctr_pct": 0.0,
+        "avg_view_pct": 60.0,
+        "avg_dur_s": 12,
+        "yt_search_pct": 33.3,
+        "related_video_pct": 0,
+        "subscriber_pct": 0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "88XTh3bJjto",
+        "views_30d": 4,
+        "impressions": 4,
+        "ctr_pct": 0.0,
+        "avg_view_pct": 87.7,
+        "avg_dur_s": 14,
+        "yt_search_pct": 50.0,
+        "related_video_pct": 0,
+        "subscriber_pct": 0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "Qjv4HHf8COs",
+        "views_30d": 2,
+        "impressions": 2,
+        "ctr_pct": 0.0,
+        "avg_view_pct": 49.8,
+        "avg_dur_s": 16,
+        "yt_search_pct": 50.0,
+        "related_video_pct": 0,
+        "subscriber_pct": 0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "bw89IZRW33g",
+        "views_30d": 2,
+        "impressions": 2,
+        "ctr_pct": 0.0,
+        "avg_view_pct": 0.0,
+        "avg_dur_s": 0,
+        "yt_search_pct": 50.0,
+        "related_video_pct": 0,
+        "subscriber_pct": 0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "PaEMRm_5H0U",
+        "views_30d": 204,
+        "impressions": 0,
+        "ctr_pct": 0,
+        "avg_view_pct": 33.3,
+        "avg_dur_s": 666,
+        "yt_search_pct": 20.1,
+        "related_video_pct": 17.6,
+        "subscriber_pct": 18.1,
+        "taken_at": "2026-03-14T18:16:13.602429"
+      },
+      {
+        "video_id": "WAdzM1EpLfE",
+        "views_30d": 11,
+        "impressions": 11,
+        "ctr_pct": 0.0,
+        "avg_view_pct": 53.8,
+        "avg_dur_s": 26,
+        "yt_search_pct": 9.1,
+        "related_video_pct": 0,
+        "subscriber_pct": 9.1,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "PDM5_YD1b8Q",
+        "views_30d": 5,
+        "impressions": 5,
+        "ctr_pct": 0.0,
+        "avg_view_pct": 121.5,
+        "avg_dur_s": 32,
+        "yt_search_pct": 40.0,
+        "related_video_pct": 0,
+        "subscriber_pct": 0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "0gOGw0xbLLU",
+        "views_30d": 15,
+        "impressions": 15,
+        "ctr_pct": 0.0,
+        "avg_view_pct": 85.6,
+        "avg_dur_s": 17,
+        "yt_search_pct": 13.3,
+        "related_video_pct": 0,
+        "subscriber_pct": 0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "fH97hYqd9p4",
+        "views_30d": 100,
+        "impressions": 100,
+        "ctr_pct": 5.0,
+        "avg_view_pct": 37.2,
+        "avg_dur_s": 170,
+        "yt_search_pct": 13.0,
+        "related_video_pct": 16.0,
+        "subscriber_pct": 16.0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "D7j6ENVHgT4",
+        "views_30d": 2,
+        "impressions": 2,
+        "ctr_pct": 0.0,
+        "avg_view_pct": 56.2,
+        "avg_dur_s": 17,
+        "yt_search_pct": 0,
+        "related_video_pct": 0,
+        "subscriber_pct": 0,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      },
+      {
+        "video_id": "cstTBA6HBGc",
+        "views_30d": 167,
+        "impressions": 167,
+        "ctr_pct": 12.57,
+        "avg_view_pct": 42.4,
+        "avg_dur_s": 771,
+        "yt_search_pct": 10.2,
+        "related_video_pct": 26.9,
+        "subscriber_pct": 20.4,
+        "taken_at": "2026-03-14T21:31:42.920587"
+      }
+    ]
+  },
+  "batch_targets": {
+    "_comment": "Batch 01 — 5 vidéos retenues pour rétro-optimisation description YouTube (template v2). Créé le 2026-04-21.",
+    "batch_id": "batch_01_2026-04-21",
+    "created_at": "2026-04-21",
+    "template_version": "v2",
+    "videos": [
+      {
+        "video_id": "AYjFZ1QfCWY",
+        "title": "Quel téléphone pour road trip ? Blackview X1 renforcé (pluie, chocs, froid)",
+        "cluster": "equipement_tech",
+        "primary_keyword": "telephone road trip moto",
+        "related_gsc_queries": [
+          "blackview xplore x1",
+          "blackview xplore x1 review",
+          "blackview explorer x1",
+          "xplore test"
+        ],
+        "baseline_views_30d": 1373,
+        "baseline_ctr_pct": 11.5,
+        "baseline_avg_view_pct": 38.3,
+        "baseline_avg_dur_s": 354,
+        "baseline_yt_search_pct": 2.4,
+        "site_page_related": "articles/quel-telephone-pour-road-trip-blackview-x1-renforce-pluie-ch.html",
+        "strategy": "explosion — position forte Google + YouTube, template v2 doit booster YT_SEARCH au-dessus de 10%",
+        "_stats_T0": {
+          "views_30d": 1373,
+          "impressions": 1373,
+          "ctr_pct": 11.51,
+          "avg_view_pct": 38.3,
+          "avg_dur_s": 354,
+          "yt_search_pct": 2.4,
+          "taken_at": "2026-03-14T21:31:42.920587"
+        }
+      },
+      {
+        "video_id": "jKEeq45vtPU",
+        "title": "Cap Nord Ep 14 — Guide pratique complet (budget, ferries, bivouac)",
+        "cluster": "cap_nord",
+        "primary_keyword": "road trip moto cap nord guide",
+        "related_gsc_queries": [
+          "cap nord moto budget",
+          "road trip moto cap nord pdf",
+          "road trip cap nord moto",
+          "road trip moto cap nord"
+        ],
+        "baseline_views_30d": 702,
+        "baseline_ctr_pct": 10.4,
+        "baseline_avg_view_pct": 39.5,
+        "baseline_avg_dur_s": 892,
+        "baseline_yt_search_pct": 8.4,
+        "site_page_related": "cap-nord-moto.html",
+        "strategy": "hub série Cap Nord — cible long-tails budget/guide/pdf (positions 7-10 GSC)",
+        "_stats_T0": {
+          "views_30d": 702,
+          "impressions": 702,
+          "ctr_pct": 10.4,
+          "avg_view_pct": 39.5,
+          "avg_dur_s": 892,
+          "yt_search_pct": 8.4,
+          "taken_at": "2026-03-14T21:31:42.920587"
+        }
+      },
+      {
+        "video_id": "eNVD7c6g3wM",
+        "title": "EP1. Alpes Aventure Moto Festival, Barcelonnette en Honda NT 1100 et Tracer 9 GT",
+        "cluster": "alpes_afma",
+        "primary_keyword": "alpes aventure moto festival barcelonnette",
+        "related_gsc_queries": [
+          "alpes moto festival",
+          "alpes aventure moto festival",
+          "alpes aventure motofestival",
+          "moto barcelonnette",
+          "barcelonnette moto",
+          "festival moto barcelonnette"
+        ],
+        "baseline_views_30d": null,
+        "baseline_ctr_pct": null,
+        "baseline_avg_view_pct": null,
+        "baseline_avg_dur_s": null,
+        "baseline_yt_search_pct": null,
+        "site_page_related": null,
+        "strategy": "terrain découverte — positions GSC 49-86 (désertées), template v2 peut remonter en page 2 rapidement",
+        "note": "Non trackée dans seo_stats.json — à ajouter via fetch_youtube.py côté poste",
+        "_stats_T0": null
+      },
+      {
+        "video_id": "dOjvRtEitX4",
+        "title": "EP2. Alpes Aventure Moto Festival : J'ai TOUT Raté (Essais, Chute, Moto cassée)",
+        "cluster": "alpes_afma",
+        "primary_keyword": "chute moto alpes aventure festival",
+        "related_gsc_queries": [
+          "alpes aventure moto festival",
+          "moto barcelonnette",
+          "détection de chute moto"
+        ],
+        "baseline_views_30d": null,
+        "baseline_ctr_pct": null,
+        "baseline_avg_view_pct": null,
+        "baseline_avg_dur_s": null,
+        "baseline_yt_search_pct": null,
+        "site_page_related": null,
+        "strategy": "angle émotionnel fort — titre déjà clickable, template v2 doit renforcer extractibilité IA",
+        "note": "Non trackée dans seo_stats.json",
+        "_stats_T0": null
+      },
+      {
+        "video_id": "xQSpEY5EsEc",
+        "title": "Un géant pour toi et facile à faire ! Valcavera, le col que tu vas aimer ! (retour AFMA)",
+        "cluster": "alpes_afma",
+        "primary_keyword": "col valcavera moto",
+        "related_gsc_queries": [
+          "les plus beaux cols des alpes en moto",
+          "voyage moto alpes idées reçues conseils"
+        ],
+        "baseline_views_30d": null,
+        "baseline_ctr_pct": null,
+        "baseline_avg_view_pct": null,
+        "baseline_avg_dur_s": null,
+        "baseline_yt_search_pct": null,
+        "site_page_related": null,
+        "strategy": "requête hyper-spécifique — 'Valcavera' peu de concurrence, position facile à obtenir",
+        "note": "Non trackée dans seo_stats.json",
+        "_stats_T0": null
+      }
+    ]
+  }
+}

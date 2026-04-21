@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<!--
+  Tâche planifiée Windows LCDMH — collecte quotidienne des stats à 07:30
+  ======================================================================
+  À importer ainsi (cmd admin) :
+      schtasks /Create /XML F:\LCDMH_GitHub_Audit\scripts\daily_stats_task.xml /TN "LCDMH\DailyStats"
+
+  Particularités :
+    - WakeToRun = true   → réveille le PC même s'il est en veille S3/S0
+    - RunOnlyIfNetworkAvailable = true (pas de sens sans internet)
+    - StartWhenAvailable = true → si le PC était éteint à 07:30, lance dès allumage
+    - ExecutionTimeLimit = PT1H → kill après 1 h si bloqué
+    - Idle = false (on ne dépend pas d'inactivité utilisateur)
+    - Script remet le PC en veille à la fin via -Sleep
+
+  ⚠️ PRÉREQUIS côté machine Windows :
+    1. Dans les paramètres d'alimentation : activer « Les minuteries de réveil »
+       (Panneau de config > Alimentation > Modifier les paramètres avancés)
+    2. Dans le BIOS : activer « Wake on Scheduled Time / Wake from S4/S5 » si
+       disponible (facultatif pour veille S3, requis pour hibernation S4)
+    3. Variable d'environnement YT_TOKEN_ANALYTICS (niveau Utilisateur)
+       définie avec le JSON OAuth complet
+-->
+<Task version="1.4" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+  <RegistrationInfo>
+    <Author>LCDMH</Author>
+    <Description>Collecte quotidienne des stats YouTube + GSC, alimente data/baselines/daily_stats_log.xlsx, commit + push GitHub, remet le PC en veille. Réveille le PC si nécessaire.</Description>
+    <URI>\LCDMH\DailyStats</URI>
+  </RegistrationInfo>
+  <Triggers>
+    <CalendarTrigger>
+      <StartBoundary>2026-04-22T07:30:00</StartBoundary>
+      <Enabled>true</Enabled>
+      <ScheduleByDay>
+        <DaysInterval>1</DaysInterval>
+      </ScheduleByDay>
+    </CalendarTrigger>
+  </Triggers>
+  <Principals>
+    <Principal id="Author">
+      <LogonType>InteractiveToken</LogonType>
+      <RunLevel>LeastPrivilege</RunLevel>
+    </Principal>
+  </Principals>
+  <Settings>
+    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
+    <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries>
+    <StopIfGoingOnBatteries>false</StopIfGoingOnBatteries>
+    <AllowHardTerminate>true</AllowHardTerminate>
+    <StartWhenAvailable>true</StartWhenAvailable>
+    <RunOnlyIfNetworkAvailable>true</RunOnlyIfNetworkAvailable>
+    <IdleSettings>
+      <StopOnIdleEnd>false</StopOnIdleEnd>
+      <RestartOnIdle>false</RestartOnIdle>
+    </IdleSettings>
+    <AllowStartOnDemand>true</AllowStartOnDemand>
+    <Enabled>true</Enabled>
+    <Hidden>false</Hidden>
+    <RunOnlyIfIdle>false</RunOnlyIfIdle>
+    <WakeToRun>true</WakeToRun>
+    <ExecutionTimeLimit>PT1H</ExecutionTimeLimit>
+    <Priority>7</Priority>
+  </Settings>
+  <Actions Context="Author">
+    <Exec>
+      <Command>powershell.exe</Command>
+      <Arguments>-NoProfile -ExecutionPolicy Bypass -File "F:\LCDMH_GitHub_Audit\scripts\daily_stats.ps1" -Commit -Sleep -Email</Arguments>
+      <WorkingDirectory>F:\LCDMH_GitHub_Audit</WorkingDirectory>
+    </Exec>
+  </Actions>
+</Task>

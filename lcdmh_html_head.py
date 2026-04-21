@@ -73,6 +73,15 @@ class PageMeta:
     # Breadcrumb personnalisé : liste de (nom, url)
     breadcrumb:    List[tuple] = field(default_factory=list)
 
+    # ── Extensions GEO (voir lcdmh_geo_extensions.py) ──
+    # Bloc "Réponse rapide" visible : dict {lead: str, table: list[(label, value)]}
+    quick_answer:  Optional[dict] = None
+    # Schéma HowTo : dict {name, description, total_time_days, estimated_cost_eur,
+    #                      supplies, tools, steps: list[{name, text}]}
+    howto:         Optional[dict] = None
+    # Schéma FAQPage : liste de dicts [{question, answer}]
+    faq:           List[dict] = field(default_factory=list)
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Helpers
 # ─────────────────────────────────────────────────────────────────────────────
@@ -337,6 +346,17 @@ def build_head(
     # 7. JSON-LD : Product si page test matériel
     if meta.product:
         parts.append(_schema_product(meta))
+
+    # 8. JSON-LD : HowTo et FAQPage (extensions GEO)
+    if meta.howto or meta.faq:
+        try:
+            from lcdmh_geo_extensions import schema_howto, schema_faqpage
+            if meta.howto:
+                parts.append(schema_howto(meta.howto, image_url=meta.og_image or DEFAULT_OG_IMG))
+            if meta.faq:
+                parts.append(schema_faqpage(meta.faq))
+        except ImportError:
+            print("⚠️  [lcdmh_html_head] lcdmh_geo_extensions introuvable — HowTo/FAQ ignorés")
 
     parts.append("</head>")
     return "\n".join(parts)

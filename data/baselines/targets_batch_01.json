@@ -1,0 +1,81 @@
+{
+  "_comment": "Batch 01 — 5 vidéos retenues pour rétro-optimisation description YouTube (template v2). Créé le 2026-04-21.",
+  "batch_id": "batch_01_2026-04-21",
+  "created_at": "2026-04-21",
+  "template_version": "v2",
+  "videos": [
+    {
+      "video_id": "AYjFZ1QfCWY",
+      "title": "Quel téléphone pour road trip ? Blackview X1 renforcé (pluie, chocs, froid)",
+      "cluster": "equipement_tech",
+      "primary_keyword": "telephone road trip moto",
+      "related_gsc_queries": ["blackview xplore x1", "blackview xplore x1 review", "blackview explorer x1", "xplore test"],
+      "baseline_views_30d": 1373,
+      "baseline_ctr_pct": 11.5,
+      "baseline_avg_view_pct": 38.3,
+      "baseline_avg_dur_s": 354,
+      "baseline_yt_search_pct": 2.4,
+      "site_page_related": "articles/quel-telephone-pour-road-trip-blackview-x1-renforce-pluie-ch.html",
+      "strategy": "explosion — position forte Google + YouTube, template v2 doit booster YT_SEARCH au-dessus de 10%"
+    },
+    {
+      "video_id": "jKEeq45vtPU",
+      "title": "Cap Nord Ep 14 — Guide pratique complet (budget, ferries, bivouac)",
+      "cluster": "cap_nord",
+      "primary_keyword": "road trip moto cap nord guide",
+      "related_gsc_queries": ["cap nord moto budget", "road trip moto cap nord pdf", "road trip cap nord moto", "road trip moto cap nord"],
+      "baseline_views_30d": 702,
+      "baseline_ctr_pct": 10.4,
+      "baseline_avg_view_pct": 39.5,
+      "baseline_avg_dur_s": 892,
+      "baseline_yt_search_pct": 8.4,
+      "site_page_related": "cap-nord-moto.html",
+      "strategy": "hub série Cap Nord — cible long-tails budget/guide/pdf (positions 7-10 GSC)"
+    },
+    {
+      "video_id": "eNVD7c6g3wM",
+      "title": "EP1. Alpes Aventure Moto Festival, Barcelonnette en Honda NT 1100 et Tracer 9 GT",
+      "cluster": "alpes_afma",
+      "primary_keyword": "alpes aventure moto festival barcelonnette",
+      "related_gsc_queries": ["alpes moto festival", "alpes aventure moto festival", "alpes aventure motofestival", "moto barcelonnette", "barcelonnette moto", "festival moto barcelonnette"],
+      "baseline_views_30d": null,
+      "baseline_ctr_pct": null,
+      "baseline_avg_view_pct": null,
+      "baseline_avg_dur_s": null,
+      "baseline_yt_search_pct": null,
+      "site_page_related": null,
+      "strategy": "terrain découverte — positions GSC 49-86 (désertées), template v2 peut remonter en page 2 rapidement",
+      "note": "Non trackée dans seo_stats.json — à ajouter via fetch_youtube.py côté poste"
+    },
+    {
+      "video_id": "dOjvRtEitX4",
+      "title": "EP2. Alpes Aventure Moto Festival : J'ai TOUT Raté (Essais, Chute, Moto cassée)",
+      "cluster": "alpes_afma",
+      "primary_keyword": "chute moto alpes aventure festival",
+      "related_gsc_queries": ["alpes aventure moto festival", "moto barcelonnette", "détection de chute moto"],
+      "baseline_views_30d": null,
+      "baseline_ctr_pct": null,
+      "baseline_avg_view_pct": null,
+      "baseline_avg_dur_s": null,
+      "baseline_yt_search_pct": null,
+      "site_page_related": null,
+      "strategy": "angle émotionnel fort — titre déjà clickable, template v2 doit renforcer extractibilité IA",
+      "note": "Non trackée dans seo_stats.json"
+    },
+    {
+      "video_id": "xQSpEY5EsEc",
+      "title": "Un géant pour toi et facile à faire ! Valcavera, le col que tu vas aimer ! (retour AFMA)",
+      "cluster": "alpes_afma",
+      "primary_keyword": "col valcavera moto",
+      "related_gsc_queries": ["les plus beaux cols des alpes en moto", "voyage moto alpes idées reçues conseils"],
+      "baseline_views_30d": null,
+      "baseline_ctr_pct": null,
+      "baseline_avg_view_pct": null,
+      "baseline_avg_dur_s": null,
+      "baseline_yt_search_pct": null,
+      "site_page_related": null,
+      "strategy": "requête hyper-spécifique — 'Valcavera' peu de concurrence, position facile à obtenir",
+      "note": "Non trackée dans seo_stats.json"
+    }
+  ]
+}
