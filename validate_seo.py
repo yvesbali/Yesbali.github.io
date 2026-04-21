@@ -311,6 +311,26 @@ def check_og_tags(html):
 # ─────────────────────────────────────────────────────────────────────────────
 # Vérification d'un fichier
 # ─────────────────────────────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────────────────────
+# Check GEO (optionnel, dépend de lcdmh_geo_extensions)
+# ─────────────────────────────────────────────────────────────────────────────
+def check_geo(html):
+    """Délègue à lcdmh_geo_extensions.check_geo_completeness si disponible."""
+    try:
+        from lcdmh_geo_extensions import check_geo_completeness
+    except ImportError:
+        return [(SEVERITY_WARN, "lcdmh_geo_extensions absent — checks GEO ignorés")]
+    out = []
+    for sev_key, msg in check_geo_completeness(html):
+        if sev_key == "crit":
+            out.append((SEVERITY_CRIT, msg))
+        elif sev_key == "warn":
+            out.append((SEVERITY_WARN, msg))
+        else:
+            out.append((SEVERITY_OK, msg))
+    return out
+
+
 CHECKS = [
     ("Titre",            check_title),
     ("Meta description", check_meta_description),
@@ -322,6 +342,7 @@ CHECKS = [
     ("VideoObject",      check_video_upload_date),
     ("Product/Review",   check_product_schema),
     ("Open Graph",       check_og_tags),
+    ("GEO (IA crawlers)", check_geo),
 ]
 
 

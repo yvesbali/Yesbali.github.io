@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!--
+═══════════════════════════════════════════════════════════════════════════════
+PATCH GEO — cap-nord-moto.html
+═══════════════════════════════════════════════════════════════════════════════
+
+Ce fichier contient DEUX patches à intégrer dans cap-nord-moto.html :
+
+  PATCH 1 : Bloc "Réponse rapide" HTML visible
+            → À coller dans <main>, JUSTE AVANT le <section class="section"> d'intro
+              (actuellement ligne ~343 de cap-nord-moto.html)
+            → Objectif : bloc extractible par ChatGPT Search, Perplexity, Copilot
+              quand ils font une recherche web en direct.
+
+  PATCH 2 : Schema JSON-LD HowTo "Comment préparer un road trip Cap Nord"
+            → À coller dans <head>, après le dernier <script type="application/ld+json">
+              existant (actuellement après le BreadcrumbList, ligne ~122)
+            → Objectif : Rich Snippet HowTo dans les SERP + signal GEO fort
+              pour les questions "comment préparer / comment aller au Cap Nord".
+
+Aucun CSS nouveau requis : le bloc utilise les classes et variables CSS déjà
+définies dans cap-nord-moto.html (--orange, --noir, --border, --alt, etc.).
+
+Valeurs factuelles vérifiées dans votre page existante.
+═══════════════════════════════════════════════════════════════════════════════
+-->
+
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- PATCH 1 — BLOC "RÉPONSE RAPIDE" (HTML visible, extractible par IA)      -->
+<!-- À insérer dans <main>, juste après </header> du hero-nord                 -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+
+<style>
+/* === Ajouts CSS pour bloc "Réponse rapide" ===
+   À ajouter au <style> de cap-nord-moto.html, ou à coller inline si patch autonome */
+.quick-answer{max-width:900px;margin:2.5rem auto;padding:1.8rem 2rem;background:#fff;border:2px solid var(--orange);border-radius:16px;box-shadow:0 4px 20px rgba(230,126,34,.08)}
+.quick-answer h2{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;color:var(--orange);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.quick-answer h2::before{content:'⚡';font-size:1.3rem}
+.quick-answer p.lead{font-size:1.02rem;line-height:1.7;color:#333;margin-bottom:1.2rem}
+.quick-answer p.lead strong{color:var(--noir)}
+.quick-table{width:100%;border-collapse:collapse;font-size:.92rem}
+.quick-table td{padding:.55rem .8rem;border-bottom:1px solid #f0ede8;vertical-align:top}
+.quick-table td:first-child{color:var(--muted);font-weight:600;width:42%;font-family:'Montserrat',sans-serif;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em}
+.quick-table td:last-child{color:var(--noir);font-weight:500}
+.quick-table tr:last-child td{border-bottom:none}
+@media(max-width:600px){.quick-answer{margin:1.5rem 1rem;padding:1.3rem 1.3rem}.quick-table td:first-child{width:46%}}
+</style>
+
+<section class="section" aria-labelledby="reponse-rapide">
+  <div class="quick-answer">
+    <h2 id="reponse-rapide">Réponse rapide : le Cap Nord à moto en chiffres</h2>
+
+    <p class="lead">
+      Un road trip moto au <strong>Cap Nord (Nordkapp)</strong> depuis la France représente
+      <strong>environ 10 000 km</strong> aller-retour, réalisable en <strong>4 semaines</strong>
+      sur une moto trail routier (idéalement <strong>700 à 1100 cm³</strong>). Budget
+      réaliste : <strong>3 000 à 4 500 €</strong> pour 30 jours en mixant bivouac sauvage,
+      campings et hyttter. La <strong>meilleure période</strong> se situe entre <strong>mai et
+      fin juillet</strong> : mai offre des paysages enneigés et des routes désertes (mais
+      nuits à 2 °C possibles), juillet garantit un climat plus clément mais une affluence
+      touristique maximale.
+    </p>
+
+    <table class="quick-table">
+      <tbody>
+        <tr><td>Distance totale</td><td>≈ 10 000 km aller-retour depuis Annecy</td></tr>
+        <tr><td>Durée recommandée</td><td>28 à 32 jours</td></tr>
+        <tr><td>Budget (30 jours)</td><td>3 000 à 4 500 € selon hébergement</td></tr>
+        <tr><td>Meilleure période</td><td>Mai (paysages enneigés) à fin juillet (plus doux)</td></tr>
+        <tr><td>Itinéraire conseillé</td><td>Côte ouest norvégienne + Lofoten, éviter la Finlande au retour</td></tr>
+        <tr><td>Moto recommandée</td><td>Trail routier 700–1100 cm³ (testé sur Honda NT1100)</td></tr>
+        <tr><td>Ferries à prévoir</td><td>≈ 14 traversées (passagers gratuits, véhicule 3–52 €)</td></tr>
+        <tr><td>Bivouac</td><td>Droit constitutionnel en Norvège, 150 m des habitations, 2 nuits max</td></tr>
+        <tr><td>Équipement critique</td><td>Duvet grand froid (nuits à 2 °C), vêtements techniques, pneus neufs</td></tr>
+        <tr><td>Apps indispensables</td><td>Entur (ferries), FerryPay (paiement auto), Revolut (0 frais)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- PATCH 2 — SCHEMA JSON-LD "HowTo" (à coller dans <head>)                  -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Comment préparer un road trip moto au Cap Nord",
+  "description": "Guide pratique en 10 étapes pour organiser un road trip moto au Cap Nord (Nordkapp) depuis la France, basé sur une expérience réelle de 10 000 km en solo sur Honda NT1100 en mai 2025.",
+  "image": "https://lcdmh.com/images/cap-nord-moto.jpg",
+  "totalTime": "P30D",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "EUR",
+    "value": "3750"
+  },
+  "supply": [
+    { "@type": "HowToSupply", "name": "Moto trail routier 700–1100 cm³ avec pneus neufs" },
+    { "@type": "HowToSupply", "name": "Tente 3 saisons + duvet grand froid (supporter 2 °C)" },
+    { "@type": "HowToSupply", "name": "Vêtements techniques moto chauds et imperméables" },
+    { "@type": "HowToSupply", "name": "Réchaud à gaz et popote légère" },
+    { "@type": "HowToSupply", "name": "Carte bancaire Revolut (0 frais à l'étranger)" }
+  ],
+  "tool": [
+    { "@type": "HowToTool", "name": "App Entur (horaires ferries norvégiens)" },
+    { "@type": "HowToTool", "name": "App FerryPay (paiement automatique plaque)" },
+    { "@type": "HowToTool", "name": "GPS moto (Aoocci utilisé pendant le voyage)" }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Choisir la période du voyage",
+      "text": "Partir entre mi-mai et fin juillet. Mai offre des paysages enneigés et des routes désertes, mais les nuits peuvent descendre à 2 °C. Juillet est plus clément mais saturé de camping-cars. Éviter juin uniquement si la météo annoncée est instable.",
+      "url": "https://lcdmh.com/cap-nord-moto.html#guide-pratique"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Préparer la moto",
+      "text": "Partir avec des pneus neufs : le bitume norvégien est abrasif et use les pneus rapidement. Un trail routier 700 à 1100 cm³ est idéal (testé sur Honda NT1100). Surveiller le poids des valises sur le pneu arrière."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Planifier l'itinéraire par la côte ouest",
+      "text": "Entrer en Norvège par Christiansand et remonter la côte ouest : Stavanger, Bergen, Sognefjord, Geirangerfjord, Lofoten, puis Nordkapp. Éviter le retour par la Finlande (lignes droites monotones) ; redescendre par l'intérieur de la Norvège est bien plus riche.",
+      "url": "https://lcdmh.com/cap-nord-moto.html#itineraire"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Budgéter le voyage",
+      "text": "Prévoir 3 000 à 4 500 € pour 30 jours. Postes principaux : essence 300–500 €, hébergement 500–1 000 € (mix bivouac + hyttter), ferries 150–250 €, nourriture 40–60 €/jour en station service. Un menu restaurant coûte 25–40 €, un hôtel 80–150 €."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Installer les apps indispensables",
+      "text": "Entur pour les horaires des ferries norvégiens (équivalent Google Maps local). FerryPay pour le paiement automatique via plaque d'immatriculation. Revolut pour payer sans frais à l'étranger."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 6,
+      "name": "Comprendre le système des ferries",
+      "text": "Depuis juillet 2022, les passagers sont gratuits sur tous les ferries publics norvégiens. Seul le véhicule paie (3 à 6 € pour une courte traversée, 21 € Bodø-Lofoten, 52 € Geirangerfjord). L'Autopass (181 € d'acompte) offre 50 % de réduction. Réserver impérativement les ferries Lofoten en haute saison."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 7,
+      "name": "Préparer le bivouac sauvage",
+      "text": "Le bivouac est un droit constitutionnel en Norvège : possible partout à condition d'être à 150 m minimum des habitations et de ne pas rester plus de 2 nuits au même endroit. Feux de camp strictement interdits du 15 avril au 15 septembre. Campings payants entre 18 et 30 €/nuit."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 8,
+      "name": "Prévoir l'équipement grand froid",
+      "text": "Même en été, les nuits peuvent descendre à 2 °C, surtout au-delà du Cercle Arctique. Emporter un duvet grand froid, des vêtements techniques chauds, un pantalon et une veste moto imperméables. Le vent du Groenland est une réalité, pas un mythe."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 9,
+      "name": "Gérer la fatigue et la solitude",
+      "text": "Le voyage est accessible (fait à 63 ans en solo), mais exigeant. Les vraies difficultés : fatigue accumulée (bivouac + longues journées), météo capricieuse, solitude psychologique après 3 semaines. Accepter le plan B comme partie intégrante du voyage."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 10,
+      "name": "Respecter les règles locales",
+      "text": "Tolérance zéro sur l'alcool au volant (0,02 %). Réseau mobile correct hors zones reculées. Carburant : prévoir la route, les stations peuvent être espacées dans le nord. Mode avion sur les ferries internationaux (eaux internationales)."
+    }
+  ]
+}
+</script>
+
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- INSTRUCTIONS DE POSE                                                     -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--
+  1. Ouvrir cap-nord-moto.html
+  2. Dans <head>, coller le bloc <script type="application/ld+json"> (PATCH 2)
+     après le BreadcrumbList existant (actuellement ligne ~122).
+  3. Ajouter les règles CSS .quick-answer, .quick-table etc. dans le <style>
+     existant (actuellement autour des lignes 127-297).
+  4. Dans <main>, insérer le bloc <section class="section"> contenant
+     .quick-answer (PATCH 1) juste APRÈS </header> du hero-nord
+     (actuellement fin de ligne 337) et AVANT la section intro-block
+     (actuellement ligne 343).
+  5. Sauvegarder, re-générer le site, déployer.
+  6. Valider le schema HowTo sur : https://validator.schema.org/
+  7. Demander l'indexation dans Google Search Console + Bing Webmaster Tools.
+
+  Effet attendu :
+  - Rich Snippet HowTo potentiel dans les SERP Google
+  - Contenu directement extractible par ChatGPT Search, Perplexity, Copilot
+    sur les requêtes "comment préparer road trip Cap Nord à moto", "budget Cap
+    Nord moto", "meilleure période Cap Nord moto".
+-->

@@ -1,0 +1,134 @@
+{
+  "_comment": "Données des 14 vidéos Cap Nord 2025 pour le script youtube_descriptions_updater.py. Les IDs sont extraits de cap-nord-moto.html (section timeline + hub-grid). À compléter : playlist_id, upload_date exact pour chaque épisode, chapitres exacts (timestamps).",
+  "playlist_id": "PL_REMPLACER_PAR_VRAI_ID_PLAYLIST_CAP_NORD",
+  "channel_id": "UCsmjag8fMTAqdawlg35T3Bg",
+  "series_name": "Cap Nord 2025",
+  "videos": [
+    {
+      "episode": 1,
+      "video_id": "aEEJXeNSsdg",
+      "first_line": "Road trip moto au Cap Nord — épisode 1 : le grand départ depuis Annecy sur Honda NT1100",
+      "location": "Annecy → Allemagne (départ)",
+      "km": 700,
+      "narrative": "Le grand départ depuis Annecy vers le Cap Nord. À 63 ans, seul sur ma Honda NT1100, direction la Scandinavie pour une aventure de 10 000 km à travers fjords, montagnes enneigées et bivouacs en pleine nature. Les premiers kilomètres marquent le début d'un voyage transformateur.",
+      "chapters_placeholder": "À compléter avec vrais timestamps de la vidéo"
+    },
+    {
+      "episode": 2,
+      "video_id": "YwiwUpp8yBY",
+      "first_line": "Road trip moto au Cap Nord — épisode 2 : les 7 plus belles routes de Norvège",
+      "location": "Norvège — Route côtière",
+      "km": null,
+      "narrative": "Découverte des 7 routes les plus spectaculaires de Norvège. Des paysages époustouflants qui marquent les premiers jours du voyage : montagnes escarpées, virages serrés et vues à couper le souffle. Les premières claques visuelles qui donnent le ton à toute l'aventure.",
+      "chapters_placeholder": "À compléter"
+    },
+    {
+      "episode": 3,
+      "video_id": "XbA7du0oX-I",
+      "first_line": "Road trip moto Cap Nord — épisode 3 : les 5 ferries de Stavanger à Bergen (250 km)",
+      "location": "Stavanger → Bergen, Norvège",
+      "km": 250,
+      "narrative": "250 kilomètres d'une folie pure entre Stavanger et Bergen : 5 ferries traversant des fjords spectaculaires, des routes côtières qui épousent les reliefs vertigineux. Un ballet impressionnant de courbes, de traversées en ferry et de paysages côtiers norvégiens dans toute leur magie.",
+      "chapters_placeholder": "À compléter"
+    },
+    {
+      "episode": 4,
+      "video_id": "MNKg781CFh0",
+      "first_line": "Road trip moto Cap Nord — épisode 4 : Bergen, Gaularfjellet et premier bivouac sauvage",
+      "location": "Bergen → Gaularfjellet, Norvège",
+      "km": null,
+      "narrative": "Bergen et ses fjords majestueux, puis la montée spectaculaire vers le Gaularfjellet. La première nuit en tente sous les étoiles norvégiennes marque un tournant émotionnel dans le voyage. Le silence de la nature arctique, la solitude bienfaisante, et la communion avec le paysage sauvage.",
+      "chapters_placeholder": "À compléter"
+    },
+    {
+      "episode": 5,
+      "video_id": "L9ZSCWiqNFU",
+      "first_line": "Road trip moto Cap Nord — épisode 5 : le Sognefjord, plus long fjord du monde (204 km)",
+      "location": "Sognefjord → Balestrand, Norvège",
+      "km": null,
+      "narrative": "On s'enfonce dans la Norvège. Bergen → Balestrand via le Sognefjord. Le plus long fjord du monde (204 km), le plus profond (1 308 m). Des routes féeriques qui s'accrochent aux parois. Spectaculaire, vraiment.",
+      "chapters_placeholder": "À compléter"
+    },
+    {
+      "episode": 6,
+      "video_id": "Fzj-lGDwedc",
+      "first_line": "Road trip moto Cap Nord — épisode 6 : le Geirangerfjord, le plus beau fjord de Norvège (UNESCO)",
+      "location": "Geirangerfjord, Norvège",
+      "km": null,
+      "narrative": "Le Geirangerfjord mérite son rang de plus beau fjord du monde (UNESCO). Les cascades qui tombent des falaises à 1 500 m, les eaux d'un bleu impossible. Le ferry à 52 € vaut chaque centime. Un épisode à regarder sur grand écran, en mode cinéma.",
+      "chapters_placeholder": "À compléter"
+    },
+    {
+      "episode": 7,
+      "video_id": "PaEMRm_5H0U",
+      "first_line": "Road trip moto Cap Nord — épisode 7 : approche du 66e parallèle, l'ivresse du voyage",
+      "location": "Norvège centrale, approche du 66e parallèle",
+      "km": null,
+      "narrative": "En approchant du 66e parallèle, les petites difficultés se font plus présentes. La fatigue, la météo capricieuse, les morsures du vent. Mais il y a des voyages qui s'emmènent loin, très loin. On oublie combien ce pays est montagneux — des routes sinueuses à rendre jaloux les cols les plus mythiques.",
+      "chapters_placeholder": "À compléter"
+    },
+    {
+      "episode": 8,
+      "video_id": "cstTBA6HBGc",
+      "first_line": "Road trip moto Cap Nord — épisode 8 : 350 km dans le froid, le vent du Groenland m'a brisé",
+      "location": "Nord de la Norvège, vent arctique",
+      "km": 350,
+      "narrative": "Il y a des jours où tu as vraiment la sale tête. C'est là où tu t'aperçois que le voyage, aussi beau soit-il, laisse des traces. La route, les nuits fraîches en tente, le vent arctique — tout ça finit par user le corps. Et fatiguer le motard. Mais le campement est plié, et on repart.",
+      "chapters_placeholder": "À compléter"
+    },
+    {
+      "episode": 9,
+      "video_id": "Q3a39FcIjQo",
+      "first_line": "Road trip moto Cap Nord — épisode 9 : bivouac par 2°C et grésil, la nuit la plus dure",
+      "location": "Norvège du nord, bivouac par 2 °C",
+      "km": null,
+      "narrative": "Oh ça caille, c'est terrible. Le voyage, c'est ça. Des routes infinies, des paysages à couper le souffle. Mais c'est aussi des nuits difficiles, parfois très courtes. Et cette nuit-là, j'ai craqué. Grésil dehors, 2°C, la tête qui n'ose plus sortir du duvet. L'épisode le plus honnête de toute la série.",
+      "chapters_placeholder": "À compléter"
+    },
+    {
+      "episode": 10,
+      "video_id": "VrjDNkzVAZk",
+      "first_line": "Road trip moto Cap Nord — épisode 10 : passage du Cercle Polaire Arctique",
+      "location": "Cercle Arctique, Norvège",
+      "km": null,
+      "narrative": "Franchissement du Cercle Arctique. Une étape qui semble ne jamais vouloir finir. La moto, la route, et cette météo qui ne lâche rien. Une nuit au Toranas Overnatting pour récupérer. Ce que le voyage t'apprend : reconnaître ses limites.",
+      "chapters_placeholder": "À compléter"
+    },
+    {
+      "episode": 11,
+      "video_id": "Kq36_wrfvnw",
+      "first_line": "Road trip moto Cap Nord — épisode 11 : ferry Bodø → Lofoten à moto (21 €)",
+      "location": "Bodø → Lofoten, Norvège",
+      "km": null,
+      "narrative": "Encore 1 800 km avant le Cap. 6 000 et quelques pour rentrer à la maison. La fatigue s'est installée, et pas qu'un peu. Mais le ferry de Bodø vers les Lofoten te récompense immédiatement : des montagnes qui surgissent de l'océan, des îles forgées par le souffle de l'Arctique. 21 € pour la moto, passager gratuit.",
+      "chapters_placeholder": "À compléter"
+    },
+    {
+      "episode": 12,
+      "video_id": "aW5Ryq83oO4",
+      "first_line": "Road trip moto Cap Nord — épisode 12 : les îles Lofoten à moto, terre mythique",
+      "location": "Îles Lofoten, Norvège",
+      "km": null,
+      "narrative": "La légende dit que certains lieux n'appartiennent pas tout à fait au monde des hommes. Entre mer déchaînée et sommets de granit, les Lofoten sont une terre mythique où la beauté naît de la rudesse. Tournage difficile dans des conditions extrêmes. Mais cette île reste gravée.",
+      "chapters_placeholder": "À compléter"
+    },
+    {
+      "episode": 13,
+      "video_id": "8ZrBLfM8LT8",
+      "first_line": "Road trip moto Cap Nord — épisode 13 : 700 km jusqu'au Nordkapp, arrivée à minuit et demi",
+      "location": "Lofoten → Nordkapp (Cap Nord)",
+      "km": 700,
+      "narrative": "Réveillé à 6h. 700 km à avaler. Les caméras qui plantent, plus de son, la boîte auto qui envoie des codes d'erreur, les pneus en limite. Et pourtant. À minuit et demi, dans le brouillard et les bourrasques à 60 km/h, j'arrive au Nordkapp. Je me réfugie dans les toilettes avec un cycliste pour me protéger du vent. À 1h30, le temps s'est levé. Complètement fou.",
+      "chapters_placeholder": "À compléter"
+    },
+    {
+      "episode": 14,
+      "video_id": "jKEeq45vtPU",
+      "first_line": "Road trip moto Cap Nord — épisode 14 : guide pratique complet (budget, ferries, bivouac)",
+      "location": "Bilan et guide pratique",
+      "km": null,
+      "narrative": "Le retour, et le bilan honnête. Budget, ferries, bivouac, couchage, langue, itinéraire. Tout ce que j'aurais voulu savoir avant de partir. Mon conseil : ne revenez pas par la Finlande — des lignes droites à perte de vue, d'un ennui mortel après la côte norvégienne. Comptez 3 000 à 4 500 € pour 30 jours sur 10 000 km.",
+      "chapters_placeholder": "À compléter"
+    }
+  ]
+}

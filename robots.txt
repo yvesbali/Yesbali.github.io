@@ -5,4 +5,59 @@ Disallow: /nav.html
 Disallow: /widget-roadtrip-snippet.html
 Disallow: /roadtrips/maquette_capnord_complete_v2.html
 
+# ══ Crawlers IA — autorisés explicitement ══════════════════
+# Signaux explicites aux moteurs génératifs (GEO / AEO)
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google (Gemini / AI Overviews)
+User-agent: Google-Extended
+Allow: /
+
+# Common Crawl (sert de base à beaucoup de LLM)
+User-agent: CCBot
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta (Llama)
+User-agent: FacebookBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# Bytedance (Doubao)
+User-agent: Bytespider
+Allow: /
+
+# ═════════════════════════════════════════════════════════
+
 Sitemap: https://lcdmh.com/sitemap.xml
