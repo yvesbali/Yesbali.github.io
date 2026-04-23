@@ -147,18 +147,72 @@ if ($ytdlp) {
     Write-Host "[OK] yt-dlp via 'python -m yt_dlp' (installe par pip)" -ForegroundColor Green
 }
 
-# 8) Rappel d'integration app.py
+# 8) Auto-patch d'app.py (propose)
+Write-Host ""
+Write-Host "=== Patch automatique app.py ===" -ForegroundColor Cyan
+Write-Host ""
+$patchScript = Join-Path $PipelineTarget "patch_app_py.py"
+$appPy = Join-Path $TargetRoot "app.py"
+
+if ((Test-Path $patchScript) -and (Test-Path $appPy)) {
+    Write-Host "On peut patcher automatiquement $appPy :"
+    Write-Host "  - ajoute le bloc d'import try/except de page_retention_extractor"
+    Write-Host "  - insere l'entree dans le dict _PAGE_DESCRIPTIONS"
+    Write-Host "  - insere l'entree dans la liste du st.radio 'Mode'"
+    Write-Host "  - insere le dispatch elif mode_app == ..."
+    Write-Host "Une backup horodatee est creee (app.py.bak.YYYYMMDD_HHMMSS)."
+    Write-Host ""
+    Write-Host "Lancer le patch automatique maintenant ? (o/N)" -ForegroundColor Yellow
+    $r = Read-Host
+    if ($r -eq "o" -or $r -eq "O") {
+        # Dry run d'abord pour voir ce qui se passerait
+        Write-Host ""
+        Write-Host "[*] Dry-run d'abord :"
+        & python $patchScript --app $appPy --dry-run
+        Write-Host ""
+        Write-Host "Appliquer ? (o/N)" -ForegroundColor Yellow
+        $r2 = Read-Host
+        if ($r2 -eq "o" -or $r2 -eq "O") {
+            & python $patchScript --app $appPy
+            Write-Host ""
+            Write-Host "Pour revenir en arriere en cas de probleme :"
+            Write-Host "  python $patchScript --app $appPy --revert" -ForegroundColor White
+        } else {
+            Write-Host "(patch non applique)"
+        }
+    } else {
+        Write-Host ""
+        Write-Host "OK, pas de patch auto. Patch manuel a ajouter :" -ForegroundColor Yellow
+        Write-Host ""
+        Write-Host "  # 1) En haut du fichier, apres les autres try/except d'imports de pages :"
+        Write-Host ""
+        Write-Host "  try:"
+        Write-Host "      from page_retention_extractor import page_retention_extractor"
+        Write-Host "      RETENTION_EXTRACTOR_OK = True"
+        Write-Host "  except ImportError:"
+        Write-Host "      RETENTION_EXTRACTOR_OK = False"
+        Write-Host "      def page_retention_extractor():"
+        Write-Host "          import streamlit as _st"
+        Write-Host '          _st.error("page_retention_extractor.py introuvable")'
+        Write-Host ""
+        Write-Host "  # 2) Dans le dict _PAGE_DESCRIPTIONS :"
+        Write-Host '  "Retention Extractor": "Extrait les meilleurs passages des videos longues..."'
+        Write-Host ""
+        Write-Host "  # 3) Dans la liste du st.radio Mode :"
+        Write-Host '  "Retention Extractor",'
+        Write-Host ""
+        Write-Host "  # 4) Dans le dispatch if/elif :"
+        Write-Host '  elif mode_app == "Retention Extractor":'
+        Write-Host "      page_retention_extractor()"
+        Write-Host ""
+    }
+} else {
+    Write-Host "[*] patch_app_py.py ou app.py introuvable, patch auto saute." -ForegroundColor Yellow
+}
+
 Write-Host ""
 Write-Host "=== TERMINE ===" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "Patch a ajouter dans $TargetRoot\app.py :" -ForegroundColor Yellow
-Write-Host ""
-Write-Host "  # 1) En haut du fichier, avec les autres imports de pages :"
-Write-Host "  from page_retention_extractor import page_retention_extractor" -ForegroundColor White
-Write-Host ""
-Write-Host "  # 2) Dans le dict/routing de pages, ajoute une entree :"
-Write-Host '  "Retention Extractor (clips best-of)": page_retention_extractor,' -ForegroundColor White
-Write-Host ""
-Write-Host "Puis relance ton app Streamlit :"
+Write-Host "Relance ton app Streamlit :"
 Write-Host "  streamlit run $TargetRoot\app.py" -ForegroundColor White
 Write-Host ""
