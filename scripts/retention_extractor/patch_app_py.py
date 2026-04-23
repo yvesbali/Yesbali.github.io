@@ -231,9 +231,15 @@ def patch_dispatch(content: str) -> tuple[str, str]:
     On localise le dernier bloc de ce type et on insere a la suite, en
     reprenant la meme variable et indentation.
     """
-    if '"🎯 Retention Extractor"' in content and re.search(
-        r'(if|elif)[^:]*"🎯 Retention Extractor"', content
-    ):
+    # Skip si le dispatch specifique est deja en place : on cherche EXACTEMENT
+    # un test d'egalite sur "🎯 Retention Extractor" directement suivi par
+    # un appel a page_retention_extractor(). N'importe quel autre faux
+    # positif (mots contenant "if", commentaires, dict values) est exclu.
+    already = re.search(
+        r'==\s*"🎯 Retention Extractor"\s*:\s*\n\s*page_retention_extractor\s*\(\s*\)',
+        content,
+    )
+    if already:
         return content, "skipped (deja present)"
 
     # Regex tres permissif : (elif|if) <var...> == "<mode string>": \n <indent> <fn>()
