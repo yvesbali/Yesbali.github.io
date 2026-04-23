@@ -601,6 +601,158 @@ def _render_step_tabs() -> None:
             _run_live(cmd, log)
 
 
+# ══════════════════════════════════════════════════════════════════════
+# Auto-scheduler (Phase B)
+# ══════════════════════════════════════════════════════════════════════
+def _import_auto_scheduler():
+    """Import paresseux du module auto_scheduler (depuis le dossier pipeline)."""
+    try:
+        sys.path.insert(0, str(PIPELINE_DIR))
+        import importlib
+        if "auto_scheduler" in sys.modules:
+            return importlib.reload(sys.modules["auto_scheduler"])
+        import auto_scheduler  # type: ignore
+        return auto_scheduler
+    except Exception as exc:
+        st.error(f"Impossible de charger auto_scheduler : {exc}")
+        return None
+
+
+def _render_auto_scheduler() -> None:
+    """Section Streamlit : analyse des trous + proposition + application."""
+    from datetime import date as _date
+
+    st.subheader("📅 Auto-scheduler")
+    st.caption("Detecte les trous dans `planning.json` + `planning_v8.json` "
+               "et propose d'y caser automatiquement les clips deja uploades "
+               "(fan-out YouTube -> FB / IG / Pinterest / Blogger).")
+
+    auto_sched = _import_auto_scheduler()
+    if auto_sched is None:
+        return
+
+    c1, c2, c3 = st.columns([1, 1, 2])
+    with c1:
+        days = st.number_input("Fenetre (jours)", min_value=3, max_value=60,
+                               value=int(st.session_state.get("sched_days", 14)),
+                               step=1, key="sched_days_input")
+        st.session_state["sched_days"] = days
+    with c2:
+        start_str = st.text_input(
+            "Debut (YYYY-MM-DD)",
+            value=st.session_state.get("sched_start", _date.today().isoformat()),
+            key="sched_start_input",
+        )
+        st.session_state["sched_start"] = start_str
+    with c3:
+        max_fanout = st.slider("Max plateformes / clip", 1, 5,
+                               int(st.session_state.get("sched_fanout", 4)),
+                               key="sched_fanout_input")
+        st.session_state["sched_fanout"] = max_fanout
+
+    start_date = auto_sched._parse_date(start_str) or _date.today()
+
+    b1, b2, b3 = st.columns(3)
+    analyze_clicked = b1.button("🔍 Analyser les trous du planning",
+                                key="btn_sched_analyze")
+    propose_clicked = b2.button("🎯 Proposer une programmation",
+                                key="btn_sched_propose")
+    apply_clicked = b3.button("✅ Valider et ajouter au planning",
+                              key="btn_sched_apply",
+                              type="primary")
+
+    # ─── Analyse ───
+    if analyze_clicked or st.session_state.get("sched_gaps_report"):
+        if analyze_clicked:
+            try:
+                report = auto_sched.analyze_gaps(start_date=start_date, days=days)
+                st.session_state["sched_gaps_report"] = report
+            except Exception as exc:
+                st.error(f"analyze_gaps a echoue : {exc}")
+                return
+
+        report = st.session_state.get("sched_gaps_report") or {}
+        gaps = report.get("gaps", [])
+        st.markdown(f"**Fenetre** : {report.get('window', {}).get('start','?')} "
+                    f"→ {report.get('window', {}).get('end','?')} "
+                    f"({report.get('window', {}).get('days',0)} jours)")
+        st.markdown(f"**Trous detectes** : {len(gaps)}")
+        if gaps:
+            st.dataframe(
+                [{"date": g["date"], "plateforme": g["platform"],
+                  "heure": g["suggested_hour"], "semaine": g.get("week", "")}
+                 for g in gaps],
+                use_container_width=True, height=250,
+            )
+        else:
+            st.info("Aucun trou sur la fenetre : le planning est deja plein.")
+
+    # ─── Proposition ───
+    if propose_clicked:
+        try:
+            report = auto_sched.analyze_gaps(start_date=start_date, days=days)
+            st.session_state["sched_gaps_report"] = report
+            clips = auto_sched.list_available_clips()
+            proposals = auto_sched.propose_schedule(
+                report["gaps"], clips, max_fanout_per_clip=int(max_fanout),
+            )
+            st.session_state["sched_proposals"] = proposals
+            st.session_state["sched_excluded"] = set()
+        except Exception as exc:
+            st.error(f"propose_schedule a echoue : {exc}")
+            return
+
+    proposals = st.session_state.get("sched_proposals") or []
+    if proposals:
+        st.markdown(f"**{len(proposals)} entrees proposees** "
+                    "(decoche pour exclure avant d'appliquer) :")
+        excluded: set = st.session_state.get("sched_excluded", set())
+        # Tableau avec cases a cocher (case par ligne).
+        for idx, item in enumerate(proposals):
+            clip = item.get("clip", {})
+            cols = st.columns([0.5, 1.5, 1, 1, 4])
+            with cols[0]:
+                checked = st.checkbox(
+                    " ", value=(idx not in excluded),
+                    key=f"sched_keep_{idx}", label_visibility="collapsed",
+                )
+            if not checked:
+                excluded.add(idx)
+            else:
+                excluded.discard(idx)
+            cols[1].write(f"`{item['target_file']}`")
+            cols[2].write(item["platform"])
+            cols[3].write(f"{item['date']} {item['heure']}")
+            cols[4].write(
+                f"[{clip.get('yt_video_id','?')}]({clip.get('yt_url','')}) "
+                f"— {item['entry'].get('titre','')[:70]}"
+            )
+        st.session_state["sched_excluded"] = excluded
+
+    # ─── Application ───
+    if apply_clicked:
+        proposals = st.session_state.get("sched_proposals") or []
+        excluded = st.session_state.get("sched_excluded", set())
+        keep = [p for i, p in enumerate(proposals) if i not in excluded]
+        if not keep:
+            st.warning("Aucune proposition selectionnee.")
+            return
+        try:
+            result = auto_sched.apply_schedule(keep, dry_run=False)
+        except Exception as exc:
+            st.error(f"apply_schedule a echoue : {exc}")
+            return
+        if result.get("errors"):
+            st.error(f"Erreurs : {result['errors']}")
+        st.success(
+            f"{result.get('added', 0)} entrees ajoutees. "
+            f"Fichiers : {', '.join(result.get('files_touched', [])) or '—'}"
+        )
+        # On reset la proposition pour forcer un nouveau cycle.
+        st.session_state.pop("sched_proposals", None)
+        st.session_state.pop("sched_excluded", None)
+
+
 def _render_clips_gallery() -> None:
     st.subheader("📦 Clips produits")
     if not CLIPS_DIR.exists():
@@ -735,6 +887,9 @@ def page_retention_extractor() -> None:
 
     st.divider()
     _render_clips_gallery()
+
+    st.divider()
+    _render_auto_scheduler()
 
 
 if __name__ == "__main__":

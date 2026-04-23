@@ -157,6 +157,64 @@ Les dossiers `data/retention/` et `out/clips/` sont ignorés par Git (voir
    rushs décompoupés (ils sont déjà en 4K, on peut les réutiliser pour
    d'autres montages).
 
+## Phase B — Auto-scheduler (combler les trous du planning)
+
+Une fois les clips extraits et uploadés (statut `pending_review` ou
+`published` dans les sidecars `*.republish.json`), l'auto-scheduler
+analyse les deux fichiers de planning — qui sont la **source de vérité** :
+
+- `data/publication_center/planning.json` (articles + short_souvenir sur
+  YouTube / Pinterest / Blogger)
+- `data/social_recyclage/planning_v8.json` (recyclage Facebook / Instagram)
+
+Il identifie les jours où il manque des publications pour atteindre une
+cible hebdomadaire, puis propose un fan-out : un même clip peut partir sur
+YouTube le lundi, Facebook le mardi, Instagram le mercredi, Pinterest le
+jeudi (jusqu'à 4 plateformes par clip).
+
+### Cibles par défaut (publications / semaine)
+
+| Plateforme  | Cible | Heures optimales        |
+|-------------|-------|-------------------------|
+| youtube     | 2     | 10:00 / 14:00 / 18:00   |
+| facebook    | 3     | 08:00 / 12:00 / 19:00   |
+| instagram   | 3     | 08:00 / 12:00 / 18:00   |
+| pinterest   | 2     | 12:00 / 19:00 / 21:00   |
+| blogger     | 1     | 09:00 / 14:00           |
+
+### CLI
+
+```powershell
+# Analyse des trous sur 14 jours à partir d'aujourd'hui
+python scripts/retention_extractor/auto_scheduler.py --analyze
+
+# Propose une programmation (sans écrire)
+python scripts/retention_extractor/auto_scheduler.py --propose --days 21
+
+# Applique (écrit dans planning.json + planning_v8.json)
+python scripts/retention_extractor/auto_scheduler.py --apply
+
+# Fenêtre personnalisée
+python scripts/retention_extractor/auto_scheduler.py --analyze --start 2026-05-01 --days 30
+```
+
+### Depuis Streamlit
+
+La page **Retention Extractor** expose la section "📅 Auto-scheduler" :
+- bouton "🔍 Analyser les trous du planning" → tableau des gaps par plateforme ;
+- bouton "🎯 Proposer une programmation" → liste des entrées proposées avec
+  cases à cocher pour exclure celles qu'on ne veut pas ;
+- bouton "✅ Valider et ajouter au planning" → appends dans les deux JSON
+  et log dans `sidecar.scheduled[]`.
+
+### Ce que fait (et ne fait pas) `apply_schedule`
+
+- ✅ Ajoute les entrées dans `planning.json` / `planning_v8.json`.
+- ✅ Logge le planning dans le sidecar du clip (champ `scheduled`).
+- ❌ Ne touche **pas** à la visibilité YouTube : le passage public / unlisted
+  reste géré par les boutons "Publier" de la galerie clips et par
+  `sync_playlists.py`.
+
 ## Dépendances et auth en résumé
 
 - `yt_token_analytics.json` → déjà au repo (scope `yt-analytics.readonly`).
