@@ -35,6 +35,8 @@ import requests
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import (  # noqa: E402
+    CONFIG_PATH,
+    CONFIG_EXAMPLE_PATH,
     data_dir,
     get_access_token,
     load_config,

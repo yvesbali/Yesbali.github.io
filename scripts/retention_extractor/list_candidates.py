@@ -124,6 +124,7 @@ def main() -> int:
 
     cfg = load_config()
     channel_id = cfg["channel_id"]
+    include_playlists: list[str] = cfg.get("include_playlists", [])
     exclude_playlists: list[str] = cfg.get("exclude_playlists", [])
     exclude_keywords: list[str] = cfg.get("exclude_title_keywords", [])
     include_keywords: list[str] = cfg.get("include_title_keywords", [])
@@ -134,6 +135,7 @@ def main() -> int:
     print(f"[list] Config : {cfg.get('_loaded_from')}")
     print(f"[list] Channel : {channel_id}")
     print(f"[list] Filtres  : duree>={min_duration}s, vues>={min_views}, apres={published_after}")
+    print(f"[list] Include  : {len(include_playlists)} playlist(s) whitelist")
     print(f"[list] Exclude  : {len(exclude_playlists)} playlist(s), {len(exclude_keywords)} mot(s)-cle(s)")
 
     token = get_access_token()
@@ -151,13 +153,33 @@ def main() -> int:
         except Exception as exc:
             print(f"[list]   ⚠ playlist {pid} inaccessible : {exc}")
 
-    # 2) IDs depuis la playlist Uploads
+    # 2) IDs whitelist (optionnel) : si include_playlists est rempli, on ne
+    #    considere QUE les videos membres de ces playlists. Sinon, on prend
+    #    toute la playlist Uploads comme avant.
+    included_ids: set[str] | None = None
+    if include_playlists:
+        included_ids = set()
+        for pid in include_playlists:
+            if not pid or "xxxx" in pid.lower():
+                continue
+            try:
+                pids = list_playlist_video_ids(token, pid)
+                included_ids.update(pids)
+                print(f"[list]   playlist whitelist {pid} : {len(pids)} videos")
+            except Exception as exc:
+                print(f"[list]   ⚠ playlist {pid} inaccessible : {exc}")
+
+    # 3) IDs depuis la playlist Uploads
     uploads_id = get_uploads_playlist_id(token, channel_id)
     all_ids = list_playlist_video_ids(token, uploads_id)
     print(f"[list] Uploads : {len(all_ids)} videos totales")
 
-    # 3) Enrichissement + filtrage
-    candidate_ids = [vid for vid in all_ids if vid not in excluded_ids]
+    # 4) Enrichissement + filtrage (include_playlists appliquee AVANT exclude)
+    if included_ids is not None:
+        candidate_ids = [vid for vid in all_ids if vid in included_ids and vid not in excluded_ids]
+        print(f"[list] Apres whitelist : {len(candidate_ids)} videos")
+    else:
+        candidate_ids = [vid for vid in all_ids if vid not in excluded_ids]
     details = fetch_video_details(token, candidate_ids)
     details_map = {d["id"]: d for d in details}
 
@@ -219,6 +241,7 @@ def main() -> int:
             "min_duration_s": min_duration,
             "min_views": min_views,
             "published_after": published_after,
+            "include_playlists": include_playlists,
             "exclude_playlists": exclude_playlists,
             "exclude_title_keywords": exclude_keywords,
             "include_title_keywords": include_keywords,

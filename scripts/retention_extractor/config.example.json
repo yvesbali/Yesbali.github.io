@@ -3,6 +3,7 @@
 
   "channel_id": "UCsmjag8fMTAqdawlg35T3Bg",
 
+  "include_playlists": [],
   "exclude_playlists": [
     "PLYEqidd8fqw6JQPvWxf-IuW0ImadFnE3N"
   ],
@@ -44,10 +45,16 @@
   "output_template": "{video_id}_clip{n:02d}_{start_ts}-{end_ts}.mp4",
 
   "republish_title_template": "Souvenir : {title}",
-  "republish_description_template": "Extrait de la video originale : {url}\nTournage : {published}\nDuree : {clip_minutes} min.\n\nSi tu aimes ce passage, la video complete est ici : {url}",
+  "republish_description_template": "[Extrait : {start_ts} → {end_ts}, durée {clip_minutes} min]\n\n{source_description}\n\n—\nVidéo complète : {url}\nPubliée le {published}",
   "republish_tags": ["moto", "voyage moto", "roadtrip moto", "lcdmh"],
 
   "auto_upload": false,
   "default_upload_privacy": "unlisted",
-  "upload_category_id": "19"
+  "upload_category_id": "19",
+  "upload_language": "fr",
+
+  "destination_pending_playlist_title": "À publier",
+  "destination_published_playlist_title": "Souvenirs LCDMH",
+  "destination_pending_playlist_id": "",
+  "destination_published_playlist_id": ""
 }

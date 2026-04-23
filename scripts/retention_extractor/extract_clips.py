@@ -46,16 +46,49 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+import requests
+
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import (  # noqa: E402
     data_dir,
     fmt_ts,
     fmt_ts_filename,
+    get_access_token,
     load_config,
     out_dir,
     read_json,
     write_json,
 )
+
+# Cap pour eviter de depasser la limite YouTube (5000 chars pour description)
+# et laisser de la place au template autour.
+SOURCE_DESCRIPTION_MAX_CHARS = 4000
+
+
+def fetch_source_description(token: str, video_id: str) -> str:
+    """
+    Recupere la description originale d'une video via videos.list (part=snippet).
+    Retourne chaine vide en cas d'erreur (on ne bloque pas le pipeline).
+    """
+    try:
+        r = requests.get(
+            "https://www.googleapis.com/youtube/v3/videos",
+            params={"part": "snippet", "id": video_id, "access_token": token},
+            timeout=30,
+        )
+        if r.status_code != 200:
+            print(f"[extract] videos.list({video_id}) -> {r.status_code} : {r.text[:200]}")
+            return ""
+        items = r.json().get("items", [])
+        if not items:
+            return ""
+        desc = items[0].get("snippet", {}).get("description", "") or ""
+        if len(desc) > SOURCE_DESCRIPTION_MAX_CHARS:
+            desc = desc[:SOURCE_DESCRIPTION_MAX_CHARS].rstrip() + "…"
+        return desc
+    except Exception as exc:
+        print(f"[extract] videos.list({video_id}) echoue : {exc}")
+        return ""
 
 
 def check_binaries(require_yt_dlp: bool = True) -> None:
@@ -95,14 +128,30 @@ def build_description(
     video_url: str,
     published: str,
     clip_duration_s: float,
+    start_ts: str = "",
+    end_ts: str = "",
+    source_description: str = "",
 ) -> str:
     clip_minutes = f"{clip_duration_s / 60:.1f}"
-    return template.format(
-        title=video_title,
-        url=video_url,
-        published=published,
-        clip_minutes=clip_minutes,
-    )
+    # On tolere les templates qui n'utilisent pas toutes les variables.
+    try:
+        return template.format(
+            title=video_title,
+            url=video_url,
+            published=published,
+            clip_minutes=clip_minutes,
+            start_ts=start_ts,
+            end_ts=end_ts,
+            source_description=source_description,
+        )
+    except KeyError as exc:
+        # Template avec une variable inconnue : on retombe sur un format minimal.
+        print(f"[extract] avertissement : cle inconnue dans template description ({exc})")
+        return (
+            f"[Extrait : {start_ts} → {end_ts}, durée {clip_minutes} min]\n\n"
+            f"{source_description}\n\n—\nVidéo complète : {video_url}\n"
+            f"Publiée le {published}"
+        )
 
 
 def download_clip(
@@ -252,9 +301,26 @@ def main() -> int:
     require_4k = bool(cfg.get("require_4k", False)) and not args.skip_4k_check
     force_kf = bool(cfg.get("force_keyframes_at_cuts", True))
     title_tpl = cfg.get("republish_title_template", "Souvenir : {title}")
-    desc_tpl = cfg.get("republish_description_template",
-                       "Extrait : {url}\nPublication originale : {published}.")
+    desc_tpl = cfg.get(
+        "republish_description_template",
+        "[Extrait : {start_ts} → {end_ts}, durée {clip_minutes} min]\n\n"
+        "{source_description}\n\n—\nVidéo complète : {url}\n"
+        "Publiée le {published}",
+    )
     tags = cfg.get("republish_tags", [])
+
+    # Token optionnel pour recuperer la description d'origine des videos source.
+    # On ne bloque pas l'extraction si le token n'est pas accessible (dry run etc.).
+    data_api_token: str | None = None
+    if not args.dry:
+        try:
+            data_api_token = get_access_token()
+        except Exception as exc:
+            print(f"[extract] Token YouTube Data API indisponible ({exc}), "
+                  "les descriptions originales ne seront pas injectees.")
+
+    # Cache local : 1 appel API par video_id pour toute la run.
+    source_desc_cache: dict[str, str] = {}
 
     clips = plan["clips"]
     if args.only:
@@ -322,12 +388,23 @@ def main() -> int:
 
         # Sidecar metadata republication
         cand = cand_by_id.get(vid, {})
+
+        # Recupere (ou lit en cache) la description d'origine via YouTube Data API
+        if vid in source_desc_cache:
+            source_description = source_desc_cache[vid]
+        elif data_api_token:
+            source_description = fetch_source_description(data_api_token, vid)
+            source_desc_cache[vid] = source_description
+        else:
+            source_description = ""
+
         sidecar = {
             "source_video_id": vid,
             "source_url": source_url,
             "source_title": clip["title"],
             "source_published": cand.get("published", ""),
             "source_views": cand.get("views", 0),
+            "source_description": source_description,
             "start_s": start_s,
             "end_s": end_s,
             "duration_s": round(end_s - start_s, 2),
@@ -340,6 +417,9 @@ def main() -> int:
             "suggested_description": build_description(
                 desc_tpl, clip["title"], source_url,
                 cand.get("published", ""), end_s - start_s,
+                start_ts=clip["start_ts"],
+                end_ts=clip["end_ts"],
+                source_description=source_description,
             ),
             "suggested_tags": tags,
             "generated_at": datetime.now(timezone.utc).isoformat(),
