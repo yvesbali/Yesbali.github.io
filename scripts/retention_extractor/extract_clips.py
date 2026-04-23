@@ -188,13 +188,21 @@ def download_clip(
         print(f"[extract] ffmpeg decoupe a echoue (code {result.returncode})")
         return False
 
-    # ─── ETAPE C : nettoyage ───
-    try:
-        full_video.unlink()
-        if not any(full_dir.iterdir()):
-            full_dir.rmdir()
-    except OSError as exc:
-        print(f"[extract] avertissement nettoyage : {exc}")
+    # ─── ETAPE C : nettoyage (avec retry car Windows peut verrouiller le handle) ───
+    for attempt in range(3):
+        try:
+            if full_video.exists():
+                full_video.unlink()
+            if full_dir.exists() and not any(full_dir.iterdir()):
+                full_dir.rmdir()
+            break
+        except OSError as exc:
+            if attempt < 2:
+                import time
+                time.sleep(1.5)
+                continue
+            print(f"[extract] avertissement nettoyage : {exc}")
+            print(f"[extract]   -> supprime manuellement : {full_dir}")
 
     return output_path.exists()
 
