@@ -334,6 +334,29 @@ def main() -> int:
     clips = plan["clips"]
     if args.only:
         clips = [c for c in clips if c["video_id"] == args.only]
+
+    # Filtrer AVANT d'appliquer --limit les clips dont le .mp4 final existe
+    # deja (resultat d'un run precedent). Sinon on mange sa quota de --limit
+    # sur des clips skip-deja-present et on traite moins de nouveautes.
+    base_out = out_dir(cfg)
+    not_yet: list[dict] = []
+    already_ok: list[dict] = []
+    for clip in clips:
+        vid = clip["video_id"]
+        same_vid_count = sum(1 for c in not_yet + already_ok if c["video_id"] == vid)
+        n = same_vid_count + 1
+        start_fs = fmt_ts_filename(float(clip["start_s"]))
+        end_fs = fmt_ts_filename(float(clip["end_s"]))
+        expected = base_out / vid / f"{vid}_clip{n:02d}_{start_fs}_{end_fs}.mp4"
+        if expected.exists():
+            already_ok.append(clip)
+        else:
+            not_yet.append(clip)
+
+    if already_ok:
+        print(f"[extract] {len(already_ok)} clip(s) deja extrait(s), ignores avant --limit")
+    clips = not_yet
+
     if args.limit > 0:
         clips = clips[: args.limit]
 
@@ -341,7 +364,6 @@ def main() -> int:
         print("[extract] Rien a extraire.")
         return 0
 
-    base_out = out_dir(cfg)
     print(f"[extract] {len(clips)} clip(s) a traiter -> {base_out}")
     print(f"[extract] Format yt-dlp : {fmt}")
     print(f"[extract] Require 4K : {require_4k}")
