@@ -19,12 +19,41 @@ from typing import Any
 
 import requests
 
-REPO_ROOT = Path(__file__).resolve().parent.parent.parent
+HERE = Path(__file__).resolve().parent
+
+
+def _find_repo_root() -> Path:
+    """
+    Cherche le dossier qui contient yt_token_analytics.json. On supporte :
+      - override explicite via LCDMH_REPO_ROOT
+      - deploiement dans F:\\Automate_YT\\retention_extractor\\  (parent.parent)
+      - deploiement dans <repo>/scripts/retention_extractor/     (parent.parent.parent)
+      - fallback : parent.parent.parent
+    """
+    env = os.environ.get("LCDMH_REPO_ROOT", "").strip()
+    if env:
+        p = Path(env).expanduser().resolve()
+        if p.exists():
+            return p
+
+    candidates = [
+        HERE.parent,          # common.py at root (rare)
+        HERE.parent.parent,   # deploiement plat F:\Automate_YT\retention_extractor\common.py
+        HERE.parent.parent.parent,  # repo: scripts/retention_extractor/common.py
+    ]
+    for p in candidates:
+        if (p / "yt_token_analytics.json").exists():
+            return p
+
+    return HERE.parent.parent.parent
+
+
+REPO_ROOT = _find_repo_root()
 TOKEN_PATH = REPO_ROOT / "yt_token_analytics.json"
 DEFAULT_DATA_DIR = REPO_ROOT / "data" / "retention"
 DEFAULT_OUT_DIR = REPO_ROOT / "out" / "clips"
 
-CONFIG_DIR = Path(__file__).resolve().parent
+CONFIG_DIR = HERE
 CONFIG_PATH = CONFIG_DIR / "config.json"
 CONFIG_EXAMPLE_PATH = CONFIG_DIR / "config.example.json"
 

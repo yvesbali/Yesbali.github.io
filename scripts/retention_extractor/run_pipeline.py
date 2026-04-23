@@ -51,6 +51,10 @@ def main() -> int:
     ap.add_argument("--skip-fetch", action="store_true")
     ap.add_argument("--skip-detect", action="store_true")
     ap.add_argument("--skip-extract", action="store_true")
+    ap.add_argument("--upload", action="store_true",
+                    help="Lance aussi upload_clip.py --all apres extraction.")
+    ap.add_argument("--upload-privacy", default="unlisted",
+                    choices=["public", "unlisted", "private"])
     args = ap.parse_args()
 
     py = sys.executable
@@ -98,6 +102,16 @@ def main() -> int:
         if run(cmd) != 0:
             print("[pipeline] Echec extract_clips.")
             return 4
+
+    # Etape 5 : upload (optionnelle)
+    if args.upload and not args.dry:
+        cmd = [py, str(HERE / "upload_clip.py"), "--all",
+               "--privacy", args.upload_privacy]
+        if args.limit > 0:
+            cmd += ["--limit", str(args.limit)]
+        if run(cmd) != 0:
+            print("[pipeline] Echec upload_clip.")
+            return 5
 
     print("\n[pipeline] Termine.")
     return 0

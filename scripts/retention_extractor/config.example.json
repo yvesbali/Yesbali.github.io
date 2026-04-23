@@ -45,5 +45,9 @@
 
   "republish_title_template": "Souvenir : {title}",
   "republish_description_template": "Extrait de la video originale : {url}\nTournage : {published}\nDuree : {clip_minutes} min.\n\nSi tu aimes ce passage, la video complete est ici : {url}",
-  "republish_tags": ["moto", "voyage moto", "roadtrip moto", "lcdmh"]
+  "republish_tags": ["moto", "voyage moto", "roadtrip moto", "lcdmh"],
+
+  "auto_upload": false,
+  "default_upload_privacy": "unlisted",
+  "upload_category_id": "19"
 }
