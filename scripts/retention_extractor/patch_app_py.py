@@ -271,40 +271,57 @@ def patch_dispatch(content: str) -> tuple[str, str]:
     indent_body = last.group(5)
     body_fn_name = last.group(6)
 
-    # Calculer la fin du body du dernier elif : on avance jusqu'a la premiere
-    # ligne qui a une indentation plus petite ou egale a celle du 'elif'/'if'.
+    # Detecter la forme : la derniere branche finit-elle par 'return' ?
+    # Si oui, on reproduit le pattern 'if X: ... return' (ou 'elif X: ... return').
+    # Sinon on utilise 'elif' sans return (chaine if/elif classique).
     body_start = last.end()
-    lines_after = content[body_start:].split("\n")
+    # Avancer ligne a ligne tant qu'on est dans le body du dernier match.
     end_offset = body_start
     current = body_start
+    lines_after = content[body_start:].split("\n")
+    last_body_line = ""
+    keyword_used = last.group(2)  # "if" ou "elif" du dernier match
+
     for i, line in enumerate(lines_after):
         if i == 0:
-            current += len(line) + 1  # premiere ligne : juste finir la ligne en cours
+            current += len(line) + 1
             continue
-        # Une ligne vide fait partie du bloc.
         if line.strip() == "":
             current += len(line) + 1
             continue
-        # Si indentation au moins egale a indent_body, on reste dans le body.
         leading = len(line) - len(line.lstrip(" "))
         if leading >= len(indent_body):
             current += len(line) + 1
+            last_body_line = line.strip()
             continue
-        # Sinon on sort.
-        end_offset = current - 1  # le - 1 pour ne pas manger le \n de fin
+        end_offset = current - 1
         break
     else:
         end_offset = current
 
-    # Construire le snippet en reprenant la meme forme de dispatch
-    new_branch = (
-        f"\n{indent_if}elif {dispatch_var} == \"🎯 Retention Extractor\":\n"
-        f"{indent_body}page_retention_extractor()\n"
-    )
+    body_ends_with_return = last_body_line == "return" or last_body_line.startswith("return ")
+
+    # Choisir la forme d'insertion en fonction du pattern detecte
+    if body_ends_with_return:
+        # Pattern 'if X: ... return' → nouvelle branche identique, 'if' independant.
+        new_branch = (
+            f"\n{indent_if}if {dispatch_var} == \"🎯 Retention Extractor\":\n"
+            f"{indent_body}page_retention_extractor()\n"
+            f"{indent_body}return\n"
+        )
+        form = "if/return"
+    else:
+        # Chaine if/elif classique
+        new_branch = (
+            f"\n{indent_if}elif {dispatch_var} == \"🎯 Retention Extractor\":\n"
+            f"{indent_body}page_retention_extractor()\n"
+        )
+        form = "elif"
+
     new_content = content[:end_offset] + new_branch + content[end_offset:]
     line_no = content[:end_offset].count("\n") + 1
     return new_content, (
-        f"OK (insere apres ligne {line_no}, var={dispatch_var!r}, "
+        f"OK (forme={form}, insere apres ligne {line_no}, var={dispatch_var!r}, "
         f"fn_ref={body_fn_name})"
     )
 
