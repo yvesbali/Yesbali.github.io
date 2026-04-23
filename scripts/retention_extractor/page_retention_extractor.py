@@ -28,6 +28,7 @@ import time
 from pathlib import Path
 from queue import Empty, Queue
 
+import requests
 import streamlit as st
 
 HERE = Path(__file__).resolve().parent
@@ -158,6 +159,210 @@ def _pipeline_cmd(args: list[str]) -> list[str]:
 
 def _single_step_cmd(script: str, args: list[str]) -> list[str]:
     return [sys.executable, str(PIPELINE_DIR / script), *args]
+
+
+# ══════════════════════════════════════════════════════════════════════
+# Helpers YouTube Data API pour actions Publier / Rejeter
+# ══════════════════════════════════════════════════════════════════════
+def _get_access_token() -> str | None:
+    """
+    Recupere un access_token en delegant au module common du pipeline.
+    Retourne None si le token est inaccessible (on affiche le message dans la UI).
+    """
+    try:
+        sys.path.insert(0, str(PIPELINE_DIR))
+        from common import get_access_token  # type: ignore
+        return get_access_token()
+    except Exception as exc:
+        st.error(f"Token OAuth indisponible : {exc}")
+        return None
+
+
+def _yt_update_privacy(token: str, video_id: str, privacy: str) -> bool:
+    """videos.update (part=status) pour passer une video en public/private/unlisted."""
+    try:
+        r = requests.put(
+            "https://www.googleapis.com/youtube/v3/videos",
+            params={"part": "status"},
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Content-Type": "application/json; charset=UTF-8",
+            },
+            data=json.dumps({
+                "id": video_id,
+                "status": {"privacyStatus": privacy},
+            }),
+            timeout=30,
+        )
+    except requests.RequestException as exc:
+        st.error(f"Erreur reseau videos.update : {exc}")
+        return False
+    if r.status_code not in (200, 201):
+        st.error(f"videos.update -> {r.status_code} : {r.text[:300]}")
+        return False
+    return True
+
+
+def _yt_find_playlist_item(token: str, playlist_id: str, video_id: str) -> str | None:
+    try:
+        r = requests.get(
+            "https://www.googleapis.com/youtube/v3/playlistItems",
+            params={
+                "part": "snippet",
+                "playlistId": playlist_id,
+                "videoId": video_id,
+                "maxResults": 50,
+                "access_token": token,
+            },
+            timeout=30,
+        )
+    except requests.RequestException as exc:
+        st.warning(f"playlistItems.list : {exc}")
+        return None
+    if r.status_code != 200:
+        return None
+    for item in r.json().get("items", []):
+        if item.get("snippet", {}).get("resourceId", {}).get("videoId") == video_id:
+            return item["id"]
+    return None
+
+
+def _yt_remove_from_playlist(token: str, playlist_item_id: str) -> bool:
+    try:
+        r = requests.delete(
+            "https://www.googleapis.com/youtube/v3/playlistItems",
+            params={"id": playlist_item_id},
+            headers={"Authorization": f"Bearer {token}"},
+            timeout=30,
+        )
+    except requests.RequestException as exc:
+        st.warning(f"playlistItems.delete : {exc}")
+        return False
+    return r.status_code in (200, 204)
+
+
+def _yt_add_to_playlist(token: str, playlist_id: str, video_id: str) -> bool:
+    try:
+        r = requests.post(
+            "https://www.googleapis.com/youtube/v3/playlistItems",
+            params={"part": "snippet"},
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Content-Type": "application/json; charset=UTF-8",
+            },
+            data=json.dumps({
+                "snippet": {
+                    "playlistId": playlist_id,
+                    "resourceId": {"kind": "youtube#video", "videoId": video_id},
+                }
+            }),
+            timeout=30,
+        )
+    except requests.RequestException as exc:
+        st.warning(f"playlistItems.insert : {exc}")
+        return False
+    return r.status_code in (200, 201)
+
+
+def _ensure_playlist_ui(token: str, title: str) -> str | None:
+    """Wrap ensure_playlist du pipeline pour l'utiliser cote UI."""
+    try:
+        sys.path.insert(0, str(PIPELINE_DIR))
+        from upload_clip import ensure_playlist  # type: ignore
+        return ensure_playlist(token, title)
+    except Exception as exc:
+        st.warning(f"ensure_playlist : {exc}")
+        return None
+
+
+def _action_publier(sidecar_path: Path, sidecar: dict) -> None:
+    """Passe la video en public, retire de pending, ajoute a published."""
+    uploads = sidecar.get("uploads") or []
+    if not uploads:
+        st.error("Pas d'upload sur ce sidecar.")
+        return
+    video_id = uploads[-1].get("video_id")
+    if not video_id:
+        st.error("video_id absent.")
+        return
+
+    cfg = _load_config()
+    pending_title = cfg.get("destination_pending_playlist_title", "À publier")
+    published_title = cfg.get("destination_published_playlist_title", "Souvenirs LCDMH")
+
+    token = _get_access_token()
+    if not token:
+        return
+
+    if not _yt_update_privacy(token, video_id, "public"):
+        return
+
+    pending_id = cfg.get("destination_pending_playlist_id") or _ensure_playlist_ui(
+        token, pending_title
+    )
+    published_id = cfg.get("destination_published_playlist_id") or _ensure_playlist_ui(
+        token, published_title
+    )
+
+    removed = added = False
+    if pending_id:
+        item_id = _yt_find_playlist_item(token, pending_id, video_id)
+        if item_id:
+            removed = _yt_remove_from_playlist(token, item_id)
+    if published_id:
+        added = _yt_add_to_playlist(token, published_id, video_id)
+
+    sidecar["status"] = "published"
+    uploads[-1]["privacy"] = "public"
+    sidecar.setdefault("playlist_history", []).append({
+        "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "action": "publier_ui",
+        "removed_from_pending": removed,
+        "added_to_published": added,
+    })
+    _write_json(sidecar_path, sidecar)
+    st.success(f"Publie {video_id} (retire pending={removed}, ajoute published={added})")
+
+
+def _action_rejeter(sidecar_path: Path, sidecar: dict) -> None:
+    """Passe la video en private + retire de pending."""
+    uploads = sidecar.get("uploads") or []
+    if not uploads:
+        st.error("Pas d'upload sur ce sidecar.")
+        return
+    video_id = uploads[-1].get("video_id")
+    if not video_id:
+        st.error("video_id absent.")
+        return
+
+    cfg = _load_config()
+    pending_title = cfg.get("destination_pending_playlist_title", "À publier")
+
+    token = _get_access_token()
+    if not token:
+        return
+
+    if not _yt_update_privacy(token, video_id, "private"):
+        return
+
+    pending_id = cfg.get("destination_pending_playlist_id") or _ensure_playlist_ui(
+        token, pending_title
+    )
+    removed = False
+    if pending_id:
+        item_id = _yt_find_playlist_item(token, pending_id, video_id)
+        if item_id:
+            removed = _yt_remove_from_playlist(token, item_id)
+
+    sidecar["status"] = "rejected"
+    uploads[-1]["privacy"] = "private"
+    sidecar.setdefault("playlist_history", []).append({
+        "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "action": "rejeter_ui",
+        "removed_from_pending": removed,
+    })
+    _write_json(sidecar_path, sidecar)
+    st.success(f"Rejete {video_id} (retire pending={removed})")
 
 
 # ══════════════════════════════════════════════════════════════════════
@@ -407,7 +612,25 @@ def _render_clips_gallery() -> None:
         st.info("Aucun clip produit. Lance l'extraction.")
         return
 
-    st.write(f"**{len(sidecars)} clip(s)** dans `{CLIPS_DIR}`")
+    # ─── Bouton de synchro globale des playlists ───
+    top_c1, top_c2 = st.columns([1, 3])
+    with top_c1:
+        if st.button("🔄 Sync playlists", key="btn_sync_playlists",
+                     help="Verifie privacyStatus de chaque clip uploade et "
+                          "deplace de 'À publier' vers 'Souvenirs LCDMH' "
+                          "les clips passes en public."):
+            cmd = _single_step_cmd("sync_playlists.py", [])
+            with st.status("Synchronisation des playlists...", expanded=True) as status:
+                log = st.empty()
+                rc = _run_live(cmd, log)
+                if rc == 0:
+                    status.update(label="✅ Sync terminee", state="complete")
+                else:
+                    status.update(label=f"❌ Sync echouee (code {rc})", state="error")
+            st.rerun()
+    with top_c2:
+        st.caption(f"**{len(sidecars)} clip(s)** dans `{CLIPS_DIR}`")
+
     for sc in sidecars[:20]:
         data = _read_json(sc) or {}
         mp4 = sc.with_suffix(".mp4")
@@ -436,8 +659,39 @@ def _render_clips_gallery() -> None:
                 uploads = data.get("uploads") or []
                 if uploads:
                     last = uploads[-1]
-                    st.success(f"Deja uploade : [{last.get('video_id')}]"
-                               f"({last.get('url','')}) ({last.get('privacy')})")
+                    status = data.get("status", "pending_review")
+
+                    # Badge de statut
+                    status_labels = {
+                        "pending_review": "🟡 En revue (pending_review)",
+                        "published": "🟢 Publie (published)",
+                        "rejected": "🔴 Rejete (rejected)",
+                    }
+                    st.markdown(
+                        f"**Upload** : [{last.get('video_id')}]({last.get('url','')}) "
+                        f"({last.get('privacy','?')})  \n"
+                        f"**Statut** : {status_labels.get(status, status)}"
+                    )
+
+                    # Actions Publier / Rejeter si pas deja publie/rejete
+                    if status not in ("published", "rejected"):
+                        c_ok, c_no = st.columns(2)
+                        if c_ok.button("✅ Publier", key=f"pub_{sc.stem}",
+                                       type="primary"):
+                            _action_publier(sc, data)
+                            st.rerun()
+                        if c_no.button("🗑️ Rejeter", key=f"rej_{sc.stem}"):
+                            _action_rejeter(sc, data)
+                            st.rerun()
+                    elif status == "published":
+                        # Permet quand meme de re-rejeter si besoin
+                        if st.button("🗑️ Rejeter malgre tout", key=f"rej2_{sc.stem}"):
+                            _action_rejeter(sc, data)
+                            st.rerun()
+                    else:  # rejected
+                        if st.button("✅ Re-publier", key=f"pub2_{sc.stem}"):
+                            _action_publier(sc, data)
+                            st.rerun()
                 else:
                     c_up1, c_up2 = st.columns(2)
                     if c_up1.button("⬆ Upload unlisted", key=f"up_u_{sc.stem}"):

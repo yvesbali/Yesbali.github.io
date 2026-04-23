@@ -50,17 +50,157 @@ UPLOAD_ENDPOINT = (
     "?uploadType=resumable&part=snippet,status"
 )
 
+PLAYLISTS_ENDPOINT = "https://www.googleapis.com/youtube/v3/playlists"
+PLAYLIST_ITEMS_ENDPOINT = "https://www.googleapis.com/youtube/v3/playlistItems"
+
 DEFAULT_CATEGORY_ID = "19"  # Travel & Events
 CHUNK_SIZE = 8 * 1024 * 1024  # 8 MiB
 
 
-def build_metadata(sidecar: dict, privacy: str, category_id: str) -> dict:
+# ──────────────────────────────────────────────────────────────────────
+# Helpers playlists (ensure, add item)
+# ──────────────────────────────────────────────────────────────────────
+def _load_config_raw() -> tuple[dict, Path]:
+    """
+    Relit config.json en live (utile pour persister l'ID de playlist creee
+    au milieu d'une run sans ecraser les edits de l'utilisateur). Si
+    config.json n'existe pas encore on le cree a partir du template.
+    """
+    target = CONFIG_PATH if CONFIG_PATH.exists() else CONFIG_EXAMPLE_PATH
+    data = json.loads(target.read_text(encoding="utf-8"))
+    data.pop("_comment", None)
+    return data, target
+
+
+def _persist_playlist_id(kind: str, playlist_id: str) -> None:
+    """
+    kind = 'pending' ou 'published'. Ecrit l'ID dans config.json (creation
+    si besoin, on NE modifie PAS config.example.json).
+    """
+    key = f"destination_{kind}_playlist_id"
+    if CONFIG_PATH.exists():
+        data = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
+    else:
+        # Copie le template pour ne pas perdre les autres reglages.
+        data = json.loads(CONFIG_EXAMPLE_PATH.read_text(encoding="utf-8"))
+    data.pop("_comment", None)
+    data[key] = playlist_id
+    CONFIG_PATH.write_text(
+        json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+
+
+def ensure_playlist(token: str, title: str) -> str | None:
+    """
+    Retourne l'ID d'une playlist 'À publier' ou 'Souvenirs LCDMH'.
+
+      - Lit la config : si destination_{kind}_playlist_id est rempli, on le retourne.
+      - Sinon on cree la playlist via playlists.insert et on persiste l'ID.
+
+    'kind' est deduit du titre (match exact avec les deux champs de config).
+    Si quoi que ce soit echoue (quota 403, reseau), on retourne None et on
+    laisse l'upload continuer sans crasher le pipeline.
+    """
+    try:
+        cfg, _ = _load_config_raw()
+    except Exception as exc:
+        print(f"[upload]   ensure_playlist: config illisible ({exc})")
+        return None
+
+    pending_title = cfg.get("destination_pending_playlist_title", "À publier")
+    published_title = cfg.get("destination_published_playlist_title", "Souvenirs LCDMH")
+
+    if title == pending_title:
+        kind = "pending"
+        privacy = "unlisted"
+    elif title == published_title:
+        kind = "published"
+        privacy = "public"
+    else:
+        print(f"[upload]   ensure_playlist: titre inconnu '{title}'")
+        return None
+
+    cached = cfg.get(f"destination_{kind}_playlist_id", "") or ""
+    if cached:
+        return cached
+
+    # Creation
+    payload = {
+        "snippet": {"title": title, "description": "Créée par retention_extractor"},
+        "status": {"privacyStatus": privacy},
+    }
+    try:
+        r = requests.post(
+            PLAYLISTS_ENDPOINT,
+            params={"part": "snippet,status"},
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Content-Type": "application/json; charset=UTF-8",
+            },
+            data=json.dumps(payload),
+            timeout=30,
+        )
+    except requests.RequestException as exc:
+        print(f"[upload]   ensure_playlist: erreur reseau ({exc})")
+        return None
+
+    if r.status_code not in (200, 201):
+        print(f"[upload]   ensure_playlist ({title}) -> {r.status_code} : {r.text[:300]}")
+        return None
+
+    new_id = r.json().get("id")
+    if not new_id:
+        print(f"[upload]   ensure_playlist: reponse sans id ({r.text[:200]})")
+        return None
+
+    try:
+        _persist_playlist_id(kind, new_id)
+    except Exception as exc:
+        print(f"[upload]   ensure_playlist: persist config echoue ({exc})")
+
+    print(f"[upload]   playlist creee '{title}' -> {new_id}")
+    return new_id
+
+
+def add_video_to_playlist(token: str, playlist_id: str, video_id: str) -> bool:
+    """Ajoute video_id a la playlist. Retourne True/False (ne crash pas)."""
+    payload = {
+        "snippet": {
+            "playlistId": playlist_id,
+            "resourceId": {"kind": "youtube#video", "videoId": video_id},
+        }
+    }
+    try:
+        r = requests.post(
+            PLAYLIST_ITEMS_ENDPOINT,
+            params={"part": "snippet"},
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Content-Type": "application/json; charset=UTF-8",
+            },
+            data=json.dumps(payload),
+            timeout=30,
+        )
+    except requests.RequestException as exc:
+        print(f"[upload]   add_to_playlist: erreur reseau ({exc})")
+        return False
+
+    if r.status_code not in (200, 201):
+        print(f"[upload]   add_to_playlist -> {r.status_code} : {r.text[:300]}")
+        return False
+    return True
+
+
+def build_metadata(sidecar: dict, privacy: str, category_id: str,
+                   language: str = "fr") -> dict:
     return {
         "snippet": {
             "title": sidecar["suggested_title"][:100],
             "description": sidecar["suggested_description"][:5000],
             "tags": sidecar.get("suggested_tags", [])[:30],
             "categoryId": category_id,
+            "defaultLanguage": language,
+            "defaultAudioLanguage": language,
         },
         "status": {
             "privacyStatus": privacy,
@@ -153,6 +293,7 @@ def upload_one(
     sidecar_path: Path,
     privacy: str,
     category_id: str,
+    language: str = "fr",
     dry: bool = False,
 ) -> dict:
     sidecar = read_json(sidecar_path)
@@ -172,11 +313,12 @@ def upload_one(
     if not mp4.exists():
         raise RuntimeError(f"MP4 introuvable pour {sidecar_path}")
 
-    metadata = build_metadata(sidecar, privacy, category_id)
+    metadata = build_metadata(sidecar, privacy, category_id, language=language)
     size = mp4.stat().st_size
     print(f"[upload] {mp4.name}  ({size/1024/1024:.1f} MiB)")
     print(f"[upload]   title    : {metadata['snippet']['title']}")
     print(f"[upload]   privacy  : {metadata['status']['privacyStatus']}")
+    print(f"[upload]   lang     : {metadata['snippet']['defaultLanguage']}")
 
     if dry:
         return {"status": "dry", "title": metadata["snippet"]["title"]}
@@ -197,16 +339,51 @@ def upload_one(
     video_url = f"https://www.youtube.com/watch?v={video_id}" if video_id else None
     print(f"[upload] OK -> {video_url}")
 
+    # ─── Ajout automatique a la playlist 'À publier' (review buffer) ───
+    # Tolerant aux erreurs : si quotaExceeded / 403 / reseau, on enchaine.
+    pending_playlist_id: str | None = None
+    added_to_pending = False
+    if video_id:
+        try:
+            cfg_live, _ = _load_config_raw()
+            pending_title = cfg_live.get(
+                "destination_pending_playlist_title", "À publier"
+            )
+            pending_playlist_id = ensure_playlist(token, pending_title)
+            if pending_playlist_id:
+                added_to_pending = add_video_to_playlist(
+                    token, pending_playlist_id, video_id
+                )
+                if added_to_pending:
+                    print(f"[upload]   ajoute a playlist '{pending_title}'")
+        except Exception as exc:
+            # on ne casse pas l'upload si la playlist echoue
+            print(f"[upload]   ajout playlist ignore ({exc})")
+
     # Mise a jour du sidecar avec le resultat
     sidecar.setdefault("uploads", []).append({
         "uploaded_at": datetime.now(timezone.utc).isoformat(),
         "video_id": video_id,
         "privacy": privacy,
         "url": video_url,
+        "language": language,
+        "pending_playlist_id": pending_playlist_id,
+        "added_to_pending": added_to_pending,
     })
+    # Statut initial : en revue tant que privacy != public
+    if privacy != "public":
+        sidecar.setdefault("status", "pending_review")
+    else:
+        sidecar.setdefault("status", "published")
     write_json(sidecar_path, sidecar)
 
-    return {"status": "ok", "video_id": video_id, "url": video_url, "title": metadata["snippet"]["title"]}
+    return {
+        "status": "ok",
+        "video_id": video_id,
+        "url": video_url,
+        "title": metadata["snippet"]["title"],
+        "pending_playlist_id": pending_playlist_id,
+    }
 
 
 def find_sidecars(clips_root: Path) -> list[Path]:
@@ -225,9 +402,11 @@ def main() -> int:
 
     cfg = load_config()
     privacy = args.privacy or cfg.get("default_upload_privacy", "unlisted")
+    language = cfg.get("upload_language", "fr")
 
     if args.sidecar and not args.all:
-        result = upload_one(Path(args.sidecar), privacy, args.category_id, dry=args.dry)
+        result = upload_one(Path(args.sidecar), privacy, args.category_id,
+                            language=language, dry=args.dry)
         return 0 if result["status"] in ("ok", "dry") else 1
 
     clips_root = out_dir()
@@ -254,7 +433,8 @@ def main() -> int:
     ok = failed = 0
     for sc in pending:
         try:
-            result = upload_one(sc, privacy, args.category_id, dry=args.dry)
+            result = upload_one(sc, privacy, args.category_id,
+                                language=language, dry=args.dry)
             if result["status"] in ("ok", "dry"):
                 ok += 1
             else:
