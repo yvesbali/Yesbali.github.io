@@ -266,10 +266,19 @@ def download_clip(
 
 
 def check_available_qualities(source_url: str) -> list[int]:
-    """Retourne la liste des hauteurs disponibles (pour require_4k)."""
-    cmd = yt_dlp_cmd() + ["-F", "--no-playlist", "--quiet", source_url]
+    """
+    Retourne la liste des hauteurs disponibles (pour require_4k).
+    IMPORTANT : on passe les memes extractor-args que pour le download,
+    sinon yt-dlp -F utilise les clients par defaut (web+android) qui
+    peuvent ne pas voir les formats 4K accessibles via ios.
+    """
+    cmd = yt_dlp_cmd() + [
+        "-F", "--no-playlist", "--quiet",
+        "--extractor-args", "youtube:player_client=ios,mweb,web",
+        source_url,
+    ]
     try:
-        res = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
+        res = subprocess.run(cmd, capture_output=True, text=True, timeout=90)
     except Exception as exc:
         print(f"[extract] Impossible d'interroger yt-dlp -F : {exc}")
         return []
