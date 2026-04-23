@@ -16,3 +16,9 @@ AUDIT_INGENIEUR_SEO/backup_originaux/
 
 # OAuth2 YouTube (local bootstrap)
 yt_token_analytics.json
+
+# Pipeline retention_extractor — sorties locales
+scripts/retention_extractor/config.json
+data/retention/
+out/clips/
+out/

@@ -1,0 +1,49 @@
+{
+  "_comment": "Copie ce fichier en config.json et ajuste les valeurs. Le pipeline lit config.json en priorite, sinon il retombe sur ce fichier exemple.",
+
+  "channel_id": "UCsmjag8fMTAqdawlg35T3Bg",
+
+  "exclude_playlists": [
+    "PLYEqidd8fqw6JQPvWxf-IuW0ImadFnE3N"
+  ],
+  "exclude_title_keywords": [
+    "cap nord",
+    "norvege",
+    "norvège",
+    "ecosse",
+    "écosse",
+    "irlande",
+    "jour "
+  ],
+  "include_title_keywords": [],
+
+  "min_duration_s": 360,
+  "min_views": 500,
+  "published_after": "2020-01-01",
+
+  "analytics_start_date": "2020-01-01",
+  "analytics_end_date": "",
+
+  "peak_threshold_ratio": 1.05,
+  "min_zone_duration_ratio": 0.03,
+  "smoothing_window": 3,
+
+  "pad_seconds_before": 60,
+  "pad_seconds_after": 60,
+
+  "min_clip_duration_s": 180,
+  "max_clip_duration_s": 360,
+  "max_clips_per_video": 2,
+  "min_gap_between_clips_s": 30,
+
+  "yt_dlp_format": "bv*[height=2160]+ba/bv*[height=1440]+ba/bv*[height=1080]+ba/bv*+ba/b",
+  "yt_dlp_merge_format": "mp4",
+  "require_4k": false,
+  "force_keyframes_at_cuts": true,
+  "output_dir": "out/clips",
+  "output_template": "{video_id}_clip{n:02d}_{start_ts}-{end_ts}.mp4",
+
+  "republish_title_template": "Souvenir : {title}",
+  "republish_description_template": "Extrait de la video originale : {url}\nTournage : {published}\nDuree : {clip_minutes} min.\n\nSi tu aimes ce passage, la video complete est ici : {url}",
+  "republish_tags": ["moto", "voyage moto", "roadtrip moto", "lcdmh"]
+}
