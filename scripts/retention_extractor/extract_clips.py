@@ -183,6 +183,10 @@ def download_clip(
     full_tpl = str(full_dir / f"{output_path.stem}_FULL.%(ext)s")
 
     # ─── ETAPE A : telechargement de la video complete ───
+    # extractor-args : on force des clients qui ne sont pas soumis a SABR
+    # streaming pour eviter les blocages silencieux de YouTube.
+    # Ordre : tv_embedded (le plus stable pour le 4K hors SABR) -> web ->
+    # android. yt-dlp prend le premier qui marche.
     dl_cmd = yt_dlp_cmd() + [
         "-f", fmt,
         "--merge-output-format", merge_fmt,
@@ -193,6 +197,11 @@ def download_clip(
         "--newline",
         "--progress",
         "--remote-components", "ejs:github",
+        "--extractor-args", "youtube:player_client=tv_embedded,web,android",
+        "--socket-timeout", "30",
+        "--retries", "3",
+        "--fragment-retries", "3",
+        "--concurrent-fragments", "4",
     ]
     dl_cmd.append(source_url)
 
