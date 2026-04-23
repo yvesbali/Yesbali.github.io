@@ -197,7 +197,7 @@ def download_clip(
         "--newline",
         "--progress",
         "--remote-components", "ejs:github",
-        "--extractor-args", "youtube:player_client=tv_embedded,web,android",
+        "--extractor-args", "youtube:player_client=ios,mweb,web",
         "--socket-timeout", "30",
         "--retries", "3",
         "--fragment-retries", "3",
