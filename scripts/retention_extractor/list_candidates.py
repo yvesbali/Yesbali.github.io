@@ -46,8 +46,39 @@ from common import (  # noqa: E402
     get_access_token,
     iso8601_duration_to_seconds,
     load_config,
+    out_dir,
+    read_json,
     write_json,
 )
+
+
+def already_processed_video_ids() -> set[str]:
+    """
+    Retourne les video_id deja traites par le pipeline. On considere qu'une
+    video est 'deja traitee' si au moins un sidecar .republish.json existe
+    dans out/clips/<video_id>/. On lit le champ source_video_id du sidecar
+    pour etre resistant aux renommages de dossiers.
+
+    On exclut uniquement les sidecars dont le status est 'published' ou
+    'rejected' (deja valides ou rejetes). Les 'pending_review' restent
+    candidats parce que l'utilisateur n'a pas encore tranche.
+    """
+    seen: set[str] = set()
+    clips_root = out_dir()
+    if not clips_root.exists():
+        return seen
+    for sidecar in clips_root.rglob("*.republish.json"):
+        data = read_json(sidecar) or {}
+        status = (data.get("status") or "").lower()
+        vid = data.get("source_video_id") or sidecar.parent.name
+        if not vid:
+            continue
+        # Par defaut on skippe : toute video ayant deja un clip extrait est
+        # consideree comme deja traitee (ca inclut les uploads pending_review).
+        # Si tu veux reintegrer les pending_review, change cette condition.
+        if status in ("published", "rejected", "pending_review", "") or data.get("uploads"):
+            seen.add(vid)
+    return seen
 
 
 def get_uploads_playlist_id(token: str, channel_id: str) -> str:
@@ -120,6 +151,8 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--limit", type=int, default=0, help="Limite le nombre de candidats retenus.")
     ap.add_argument("--verbose", action="store_true")
+    ap.add_argument("--include-processed", action="store_true",
+                    help="Inclut aussi les videos deja traitees (par defaut on les skippe).")
     args = ap.parse_args()
 
     cfg = load_config()
@@ -183,11 +216,23 @@ def main() -> int:
     details = fetch_video_details(token, candidate_ids)
     details_map = {d["id"]: d for d in details}
 
+    # Deduplication : on skippe les videos deja extraites dans un run precedent.
+    processed_ids: set[str] = set()
+    if not args.include_processed:
+        processed_ids = already_processed_video_ids()
+        if processed_ids:
+            print(f"[list] Deja traitees : {len(processed_ids)} video(s) skippees "
+                  f"(utilise --include-processed pour les reintegrer)")
+
     kept: list[dict] = []
     stats = {"not_public": 0, "too_short": 0, "too_few_views": 0, "too_old": 0,
-             "title_excluded": 0, "title_not_included": 0, "no_detail": 0}
+             "title_excluded": 0, "title_not_included": 0, "no_detail": 0,
+             "already_processed": 0}
 
     for vid in candidate_ids:
+        if vid in processed_ids:
+            stats["already_processed"] += 1
+            continue
         d = details_map.get(vid)
         if not d:
             stats["no_detail"] += 1
