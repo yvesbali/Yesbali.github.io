@@ -189,6 +189,10 @@ def download_clip(
     # on utilise les cookies du navigateur pour l'authentification.
     # C'est la methode la plus fiable depuis que YouTube a ajoute le
     # GVS PO Token requirement sur les clients ios/android.
+    # Clients yt-dlp qui LISENT les cookies : web, mweb, web_creator.
+    # android_vr les ignore completement → on doit le forcer a sortir.
+    # Sans forcage, yt-dlp essaie android_vr par defaut et echoue avec
+    # 'Sign in to confirm you're not a bot' meme quand --cookies est passe.
     dl_cmd = yt_dlp_cmd() + [
         "-f", fmt,
         "--merge-output-format", merge_fmt,
@@ -203,6 +207,9 @@ def download_clip(
         "--retries", "3",
         "--fragment-retries", "3",
         "--concurrent-fragments", "4",
+        "--extractor-args", "youtube:player_client=web,mweb,web_creator",
+        "--sleep-interval", "2",
+        "--max-sleep-interval", "5",
     ]
     # cookies_file a la priorite sur cookies_browser (plus fiable sur Windows
     # avec les versions recentes de Chrome qui ont App-Bound Encryption).
