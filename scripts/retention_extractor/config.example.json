@@ -41,6 +41,8 @@
   "yt_dlp_merge_format": "mp4",
   "require_4k": false,
   "force_keyframes_at_cuts": true,
+  "_cookies_from_browser_comment": "Active cookies_from_browser pour bypasser les PO Token requirements de YouTube. Valeurs : chrome, firefox, edge, brave, chromium, vivaldi, safari, opera. Laisser vide pour ne pas utiliser de cookies.",
+  "cookies_from_browser": "",
   "output_dir": "out/clips",
   "output_template": "{video_id}_clip{n:02d}_{start_ts}-{end_ts}.mp4",
 

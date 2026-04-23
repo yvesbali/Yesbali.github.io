@@ -163,6 +163,7 @@ def download_clip(
     merge_fmt: str,
     force_keyframes: bool,
     dry: bool = False,
+    cookies_browser: str = "",
 ) -> bool:
     """
     Telecharge un segment [start_s, end_s] via la strategie 2-passes (plan B) :
@@ -183,10 +184,10 @@ def download_clip(
     full_tpl = str(full_dir / f"{output_path.stem}_FULL.%(ext)s")
 
     # ─── ETAPE A : telechargement de la video complete ───
-    # extractor-args : on force des clients qui ne sont pas soumis a SABR
-    # streaming pour eviter les blocages silencieux de YouTube.
-    # Ordre : tv_embedded (le plus stable pour le 4K hors SABR) -> web ->
-    # android. yt-dlp prend le premier qui marche.
+    # Si cookies_browser est renseigne (chrome, firefox, edge...),
+    # on utilise les cookies du navigateur pour l'authentification.
+    # C'est la methode la plus fiable depuis que YouTube a ajoute le
+    # GVS PO Token requirement sur les clients ios/android.
     dl_cmd = yt_dlp_cmd() + [
         "-f", fmt,
         "--merge-output-format", merge_fmt,
@@ -197,12 +198,13 @@ def download_clip(
         "--newline",
         "--progress",
         "--remote-components", "ejs:github",
-        "--extractor-args", "youtube:player_client=ios,mweb,web",
         "--socket-timeout", "30",
         "--retries", "3",
         "--fragment-retries", "3",
         "--concurrent-fragments", "4",
     ]
+    if cookies_browser:
+        dl_cmd += ["--cookies-from-browser", cookies_browser]
     dl_cmd.append(source_url)
 
     print(f"[extract] $ {' '.join(dl_cmd)}")
@@ -265,18 +267,18 @@ def download_clip(
     return output_path.exists()
 
 
-def check_available_qualities(source_url: str) -> list[int]:
+def check_available_qualities(source_url: str, cookies_browser: str = "") -> list[int]:
     """
     Retourne la liste des hauteurs disponibles (pour require_4k).
-    IMPORTANT : on passe les memes extractor-args que pour le download,
-    sinon yt-dlp -F utilise les clients par defaut (web+android) qui
-    peuvent ne pas voir les formats 4K accessibles via ios.
+    Utilise les memes cookies-from-browser que le download pour voir
+    les memes formats que celui qui telechargera.
     """
     cmd = yt_dlp_cmd() + [
         "-F", "--no-playlist", "--quiet",
-        "--extractor-args", "youtube:player_client=ios,mweb,web",
         source_url,
     ]
+    if cookies_browser:
+        cmd = cmd[:-1] + ["--cookies-from-browser", cookies_browser, source_url]
     try:
         res = subprocess.run(cmd, capture_output=True, text=True, timeout=90)
     except Exception as exc:
@@ -318,6 +320,9 @@ def main() -> int:
     merge_fmt = cfg.get("yt_dlp_merge_format", "mp4")
     require_4k = bool(cfg.get("require_4k", False)) and not args.skip_4k_check
     force_kf = bool(cfg.get("force_keyframes_at_cuts", True))
+    cookies_browser = (cfg.get("cookies_from_browser") or "").strip()
+    if cookies_browser:
+        print(f"[extract] Cookies from browser : {cookies_browser}")
     title_tpl = cfg.get("republish_title_template", "Souvenir : {title}")
     desc_tpl = cfg.get(
         "republish_description_template",
@@ -390,7 +395,7 @@ def main() -> int:
 
         # Verif 4K si exige
         if require_4k and not args.dry:
-            heights = check_available_qualities(source_url)
+            heights = check_available_qualities(source_url, cookies_browser=cookies_browser)
             if 2160 not in heights:
                 print(f"[extract] {vid} : 2160p indisponible ({sorted(heights)}), skip.")
                 skipped += 1
@@ -419,6 +424,7 @@ def main() -> int:
             merge_fmt=merge_fmt,
             force_keyframes=force_kf,
             dry=args.dry,
+            cookies_browser=cookies_browser,
         )
         if not success:
             failed += 1
