@@ -125,8 +125,7 @@ def download_clip(
         "--no-playlist",
         "--no-overwrites",
         "--no-part",
-        "--quiet",
-        "--no-warnings",
+        "--newline",
         "--progress",
     ]
     if force_keyframes:
