@@ -115,28 +115,88 @@ def download_clip(
     force_keyframes: bool,
     dry: bool = False,
 ) -> bool:
-    """Lance yt-dlp sur une fenetre [start_s, end_s] avec qualite demandee."""
-    section = f"*{fmt_ts(start_s)}-{fmt_ts(end_s)}"
-    cmd = yt_dlp_cmd() + [
+    """
+    Telecharge un segment [start_s, end_s] via la strategie 2-passes (plan B) :
+      1. yt-dlp telecharge la VIDEO COMPLETE dans un fichier temporaire.
+      2. ffmpeg decoupe localement (rapide, fiable, bypass total du SABR
+         streaming et des challenges JS de YouTube sur --download-sections).
+      3. Le fichier temporaire complet est supprime.
+
+    Pourquoi ? --download-sections passe par ffmpeg qui se connecte aux URLs
+    googlevideo.com en streaming. YouTube protege ces URLs avec SABR +
+    challenges JS qui peuvent bloquer silencieusement le download. En
+    telechargeant la video complete en une passe, yt-dlp utilise ses clients
+    optimises (android_vr, etc.) qui ne sont pas soumis a SABR.
+    """
+    # Dossier temporaire pour la video complete (a cote du clip final)
+    full_dir = output_path.parent / ".tmp_full"
+    full_dir.mkdir(parents=True, exist_ok=True)
+    full_tpl = str(full_dir / f"{output_path.stem}_FULL.%(ext)s")
+
+    # ─── ETAPE A : telechargement de la video complete ───
+    dl_cmd = yt_dlp_cmd() + [
         "-f", fmt,
         "--merge-output-format", merge_fmt,
-        "--download-sections", section,
-        "-o", str(output_path),
+        "-o", full_tpl,
         "--no-playlist",
         "--no-overwrites",
         "--no-part",
         "--newline",
         "--progress",
+        "--remote-components", "ejs:github",
     ]
-    if force_keyframes:
-        cmd.append("--force-keyframes-at-cuts")
-    cmd.append(source_url)
+    dl_cmd.append(source_url)
 
-    print(f"[extract] $ {' '.join(cmd)}")
+    print(f"[extract] $ {' '.join(dl_cmd)}")
     if dry:
         return True
-    result = subprocess.run(cmd)
-    return result.returncode == 0
+
+    result = subprocess.run(dl_cmd)
+    if result.returncode != 0:
+        print(f"[extract] yt-dlp a echoue (code {result.returncode})")
+        return False
+
+    # yt-dlp a cree le fichier merge : <stem>_FULL.<merge_fmt>
+    full_candidates = list(full_dir.glob(f"{output_path.stem}_FULL.*"))
+    if not full_candidates:
+        print(f"[extract] fichier complet introuvable dans {full_dir}")
+        return False
+    full_video = full_candidates[0]
+    print(f"[extract] video complete : {full_video.name} "
+          f"({full_video.stat().st_size / 1024 / 1024:.0f} MiB)")
+
+    # ─── ETAPE B : decoupe locale via ffmpeg ───
+    duration = end_s - start_s
+    ff_cmd = [
+        "ffmpeg", "-y", "-loglevel", "warning", "-stats",
+        "-ss", fmt_ts(start_s),
+        "-i", str(full_video),
+        "-t", f"{duration:.2f}",
+    ]
+    if force_keyframes:
+        # Re-encode pour couper precisement aux timestamps demandes.
+        ff_cmd += ["-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
+                   "-c:a", "aac", "-b:a", "192k"]
+    else:
+        # Stream copy : 100x plus rapide mais coupe sur keyframes proches.
+        ff_cmd += ["-c", "copy"]
+    ff_cmd += ["-movflags", "+faststart", str(output_path)]
+
+    print(f"[extract] $ {' '.join(ff_cmd)}")
+    result = subprocess.run(ff_cmd)
+    if result.returncode != 0:
+        print(f"[extract] ffmpeg decoupe a echoue (code {result.returncode})")
+        return False
+
+    # ─── ETAPE C : nettoyage ───
+    try:
+        full_video.unlink()
+        if not any(full_dir.iterdir()):
+            full_dir.rmdir()
+    except OSError as exc:
+        print(f"[extract] avertissement nettoyage : {exc}")
+
+    return output_path.exists()
 
 
 def check_available_qualities(source_url: str) -> list[int]:
