@@ -187,80 +187,120 @@ def patch_page_descriptions(content: str) -> tuple[str, str]:
 
 def patch_radio_list(content: str) -> tuple[str, str]:
     """Ajoute une entree dans la liste du st.radio 'Mode'."""
-    # Check presence
-    if re.search(r'"🎯 Retention Extractor"\s*,', content):
-        # Verifier qu'elle est bien dans la liste du radio (pas juste dans le dict)
-        radio_block = re.search(
-            r"mode_app\s*=\s*st\.radio\(\s*\"Mode\",\s*\[([^\]]*)\]",
-            content,
-            re.DOTALL,
-        )
-        if radio_block and '"🎯 Retention Extractor"' in radio_block.group(1):
-            return content, "skipped (deja present)"
+    # Skip si deja present dans la liste radio
+    radio_block_re = re.compile(
+        r"st\.radio\([^)]*?\[([^\]]*)\]",
+        re.DOTALL,
+    )
+    for block in radio_block_re.finditer(content):
+        if '"🎯 Retention Extractor"' in block.group(1):
+            return content, "skipped (deja present dans radio)"
 
-    # Anchor : la ligne "🧑‍💻 Git / GitHub" dans la liste du radio
-    # (c'est la 2e occurrence dans le fichier, la 1re etant dans le dict)
-    pattern = re.compile(r'(\n)(\s+)"🧑‍💻 Git / GitHub",\n')
-    matches = list(pattern.finditer(content))
-    if len(matches) >= 2:
-        # 2e occurrence = liste radio
-        m = matches[1]
+    # Anchor : "🧑‍💻 Git / GitHub" suivi directement d'une virgule (format liste).
+    # Le format dict "🧑‍💻 Git / GitHub": ne matche PAS ce regex (deux-points
+    # au lieu de virgule), donc on ne risque pas de patcher le dict par erreur.
+    pattern = re.compile(r'(\n)(\s+)"\U0001f9d1‍\U0001f4bb Git / GitHub"\s*,\s*\n')
+    m = pattern.search(content)
+    if m:
         insert_at = m.start(1) + 1
         new_content = content[:insert_at] + RADIO_ENTRY_LINE + content[insert_at:]
-        return new_content, "OK (avant Git / GitHub dans radio list)"
-    elif len(matches) == 1:
-        # Fallback : cette unique occurrence est peut-etre dans la liste radio
-        # si on l'a deja ajoutee dans le dict (cas idempotence partielle)
-        m = matches[0]
-        # Verifier le contexte
-        before = content[max(0, m.start()-300):m.start()]
-        if "st.radio" in before or "mode_app" in before:
-            insert_at = m.start(1) + 1
-            new_content = content[:insert_at] + RADIO_ENTRY_LINE + content[insert_at:]
-            return new_content, "OK (1 match, contexte radio)"
+        return new_content, "OK (radio list, avant Git / GitHub)"
+
+    # Fallback : chercher n'importe quelle liste contenant "Git / GitHub",
+    # et inserer avant la derniere occurrence.
+    fallback = re.compile(r'(\n)(\s+)"[^"]*Git / GitHub"\s*,\s*\n')
+    matches = list(fallback.finditer(content))
+    if matches:
+        m = matches[-1]
+        insert_at = m.start(1) + 1
+        new_content = content[:insert_at] + RADIO_ENTRY_LINE + content[insert_at:]
+        return new_content, "OK (fallback Git / GitHub)"
 
     return content, "FAIL (aucun anchor Git / GitHub dans liste radio)"
 
 
 def patch_dispatch(content: str) -> tuple[str, str]:
-    """Ajoute le elif dispatch a la fin de la chaine if/elif mode_app."""
-    if re.search(r'elif\s+mode_app\s*==\s*"🎯 Retention Extractor"', content):
+    """
+    Ajoute le elif dispatch pour la page Retention Extractor.
+    Supporte plusieurs formes de dispatch :
+      - if/elif mode_app == "..."
+      - if/elif st.session_state.get("_mode_app") == "..."
+      - if/elif choice == "..."
+      - etc. (on detecte via la presence d'un page_xxx() / render_xxx()
+        directement apres le :)
+    On localise le dernier bloc de ce type et on insere a la suite, en
+    reprenant la meme variable et indentation.
+    """
+    if '"🎯 Retention Extractor"' in content and re.search(
+        r'(if|elif)[^:]*"🎯 Retention Extractor"', content
+    ):
         return content, "skipped (deja present)"
 
-    # Strategy : trouver toutes les occurrences de
-    # `elif mode_app == "..."` (ou `if mode_app == "..."`) qui sont suivies
-    # d'un appel de fonction (page_xxx() ou render_xxx()).
-    # Les vrais dispatches ont cette signature.
+    # Regex tres permissif : (elif|if) <var...> == "<mode string>": \n <indent> <fn>()
+    # <var...> peut etre : mode_app / choix / st.session_state.get("_mode_app") / etc.
+    # <fn> doit etre page_xxx ou render_xxx ou un nom pythonique valide.
     disp_pattern = re.compile(
-        r'(^\s*)(elif|if)\s+mode_app\s*==\s*"[^"]+"\s*:\s*\n'
-        r'(\s+)([a-zA-Z_]\w*)\s*\(\s*\)',
+        r'(^\s*)(elif|if)\s+(.+?)\s*==\s*"([^"]+)"\s*:\s*\n'
+        r'(\s+)([a-zA-Z_][a-zA-Z0-9_]*)\s*\(\s*\)',
         re.MULTILINE,
     )
     matches = list(disp_pattern.finditer(content))
-    if not matches:
-        return content, "FAIL (aucun dispatch if/elif mode_app trouve)"
 
-    # Dernier match = fin de la chaine dispatch
-    last = matches[-1]
-    indent_if = last.group(1)  # indentation de 'elif'
-    indent_body = last.group(3)  # indentation du body
+    # Filtrer : on garde seulement les matches ou la fonction est un
+    # page_xxx() / render_xxx() (sinon on attrape du if dans la sidebar).
+    filtered: list[re.Match[str]] = []
+    for m in matches:
+        fn_name = m.group(6)
+        if fn_name.startswith("page_") or fn_name.startswith("render_"):
+            filtered.append(m)
 
-    # On doit inserer apres le bloc complet du dernier elif. Trouver la fin du body.
+    if not filtered:
+        return content, "FAIL (aucun dispatch page_xxx()/render_xxx() trouve)"
+
+    # Grouper par variable de dispatch ; on prend le plus gros groupe contigus.
+    # Plus simple : dernier match de la plus longue chaine contigu.
+    last = filtered[-1]
+    indent_if = last.group(1)
+    dispatch_var = last.group(3).strip()
+    indent_body = last.group(5)
+    body_fn_name = last.group(6)
+
+    # Calculer la fin du body du dernier elif : on avance jusqu'a la premiere
+    # ligne qui a une indentation plus petite ou egale a celle du 'elif'/'if'.
     body_start = last.end()
-    body_end = body_start
-    for line_match in re.finditer(
-        rf'^({indent_body}.*|\s*$)', content[body_start:], re.MULTILINE,
-    ):
-        if line_match.group(0).strip() == "":
-            body_end = body_start + line_match.end()
+    lines_after = content[body_start:].split("\n")
+    end_offset = body_start
+    current = body_start
+    for i, line in enumerate(lines_after):
+        if i == 0:
+            current += len(line) + 1  # premiere ligne : juste finir la ligne en cours
             continue
-        if not line_match.group(0).startswith(indent_body):
-            break
-        body_end = body_start + line_match.end()
+        # Une ligne vide fait partie du bloc.
+        if line.strip() == "":
+            current += len(line) + 1
+            continue
+        # Si indentation au moins egale a indent_body, on reste dans le body.
+        leading = len(line) - len(line.lstrip(" "))
+        if leading >= len(indent_body):
+            current += len(line) + 1
+            continue
+        # Sinon on sort.
+        end_offset = current - 1  # le - 1 pour ne pas manger le \n de fin
+        break
+    else:
+        end_offset = current
 
-    snippet = f"\n{indent_if}elif mode_app == \"🎯 Retention Extractor\":\n{indent_body}page_retention_extractor()\n"
-    new_content = content[:body_end] + snippet + content[body_end:]
-    return new_content, f"OK (insere apres ligne {content[:body_end].count(chr(10))})"
+    # Construire le snippet en reprenant la meme forme de dispatch
+    new_branch = (
+        f"\n{indent_if}elif {dispatch_var} == \"🎯 Retention Extractor\":\n"
+        f"{indent_body}page_retention_extractor()\n"
+    )
+    new_content = content[:end_offset] + new_branch + content[end_offset:]
+    line_no = content[:end_offset].count("\n") + 1
+    return new_content, (
+        f"OK (insere apres ligne {line_no}, var={dispatch_var!r}, "
+        f"fn_ref={body_fn_name})"
+    )
 
 
 # ══════════════════════════════════════════════════════════════════════
