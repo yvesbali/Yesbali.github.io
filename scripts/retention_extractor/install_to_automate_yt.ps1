@@ -63,6 +63,8 @@ $PipelineFiles = @(
     "extract_clips.py",
     "upload_clip.py",
     "run_pipeline.py",
+    "sync_playlists.py",
+    "auto_scheduler.py",
     "patch_app_py.py",
     "config.example.json",
     "requirements.txt",
