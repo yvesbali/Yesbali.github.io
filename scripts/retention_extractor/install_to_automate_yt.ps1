@@ -63,9 +63,11 @@ $PipelineFiles = @(
     "extract_clips.py",
     "upload_clip.py",
     "run_pipeline.py",
+    "patch_app_py.py",
     "config.example.json",
     "requirements.txt",
-    "README.md"
+    "README.md",
+    "INTEGRATION_APP_PY.md"
 )
 foreach ($f in $PipelineFiles) {
     $src = Join-Path $SourceDir $f
