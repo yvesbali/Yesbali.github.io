@@ -164,6 +164,7 @@ def download_clip(
     force_keyframes: bool,
     dry: bool = False,
     cookies_browser: str = "",
+    cookies_file: str = "",
 ) -> bool:
     """
     Telecharge un segment [start_s, end_s] via la strategie 2-passes (plan B) :
@@ -203,7 +204,11 @@ def download_clip(
         "--fragment-retries", "3",
         "--concurrent-fragments", "4",
     ]
-    if cookies_browser:
+    # cookies_file a la priorite sur cookies_browser (plus fiable sur Windows
+    # avec les versions recentes de Chrome qui ont App-Bound Encryption).
+    if cookies_file:
+        dl_cmd += ["--cookies", cookies_file]
+    elif cookies_browser:
         dl_cmd += ["--cookies-from-browser", cookies_browser]
     dl_cmd.append(source_url)
 
@@ -267,18 +272,20 @@ def download_clip(
     return output_path.exists()
 
 
-def check_available_qualities(source_url: str, cookies_browser: str = "") -> list[int]:
+def check_available_qualities(source_url: str, cookies_browser: str = "",
+                              cookies_file: str = "") -> list[int]:
     """
     Retourne la liste des hauteurs disponibles (pour require_4k).
-    Utilise les memes cookies-from-browser que le download pour voir
-    les memes formats que celui qui telechargera.
+    Utilise les memes cookies que le download pour voir les memes formats.
     """
     cmd = yt_dlp_cmd() + [
         "-F", "--no-playlist", "--quiet",
-        source_url,
     ]
-    if cookies_browser:
-        cmd = cmd[:-1] + ["--cookies-from-browser", cookies_browser, source_url]
+    if cookies_file:
+        cmd += ["--cookies", cookies_file]
+    elif cookies_browser:
+        cmd += ["--cookies-from-browser", cookies_browser]
+    cmd.append(source_url)
     try:
         res = subprocess.run(cmd, capture_output=True, text=True, timeout=90)
     except Exception as exc:
@@ -321,7 +328,20 @@ def main() -> int:
     require_4k = bool(cfg.get("require_4k", False)) and not args.skip_4k_check
     force_kf = bool(cfg.get("force_keyframes_at_cuts", True))
     cookies_browser = (cfg.get("cookies_from_browser") or "").strip()
-    if cookies_browser:
+    cookies_file = (cfg.get("cookies_file") or "").strip()
+    if cookies_file:
+        # Resoudre le chemin relatif au repo root si ce n'est pas absolu
+        cf_path = Path(cookies_file)
+        if not cf_path.is_absolute():
+            from common import REPO_ROOT
+            cf_path = REPO_ROOT / cf_path
+        cookies_file = str(cf_path)
+        if not cf_path.exists():
+            print(f"[extract] ⚠ cookies_file introuvable : {cookies_file}")
+            cookies_file = ""
+        else:
+            print(f"[extract] Cookies file : {cookies_file}")
+    elif cookies_browser:
         print(f"[extract] Cookies from browser : {cookies_browser}")
     title_tpl = cfg.get("republish_title_template", "Souvenir : {title}")
     desc_tpl = cfg.get(
@@ -395,7 +415,11 @@ def main() -> int:
 
         # Verif 4K si exige
         if require_4k and not args.dry:
-            heights = check_available_qualities(source_url, cookies_browser=cookies_browser)
+            heights = check_available_qualities(
+                source_url,
+                cookies_browser=cookies_browser,
+                cookies_file=cookies_file,
+            )
             if 2160 not in heights:
                 print(f"[extract] {vid} : 2160p indisponible ({sorted(heights)}), skip.")
                 skipped += 1
@@ -425,6 +449,7 @@ def main() -> int:
             force_keyframes=force_kf,
             dry=args.dry,
             cookies_browser=cookies_browser,
+            cookies_file=cookies_file,
         )
         if not success:
             failed += 1
