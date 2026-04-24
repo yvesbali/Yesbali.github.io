@@ -54,6 +54,36 @@
   {
     "type": "short_souvenir",
     "titre": "Souvenir : Virages Moto Débutant : Le SECRET pour Maîtriser sa Trajectoire (A2)",
+    "plateforme": "blogger",
+    "date": "2026-04-23",
+    "heure": "19:00",
+    "url": "https://www.youtube.com/watch?v=ldvFVXCusC8",
+    "image_url": "https://i.ytimg.com/vi/ldvFVXCusC8/maxresdefault.jpg",
+    "video_id": "ldvFVXCusC8",
+    "id": "short_souvenir_souvenir-virages-mot_20260423",
+    "status": "programmé",
+    "created_at": "2026-04-23T14:56:57.437394",
+    "make_failed_at": "2026-04-23T22:41:02",
+    "make_error": "Missing parameter url / video_url - retried with corrected payload"
+  },
+  {
+    "type": "short_souvenir",
+    "titre": "Souvenir : Virages Moto Débutant : Le SECRET pour Maîtriser sa Trajectoire (A2)",
+    "plateforme": "pinterest",
+    "date": "2026-04-23",
+    "heure": "20:00",
+    "url": "https://www.youtube.com/watch?v=ldvFVXCusC8",
+    "image_url": "https://i.ytimg.com/vi/ldvFVXCusC8/maxresdefault.jpg",
+    "video_id": "ldvFVXCusC8",
+    "id": "short_souvenir_souvenir-virages-mot_20260423",
+    "status": "programmé",
+    "created_at": "2026-04-23T14:56:57.437420",
+    "make_failed_at": "2026-04-23T22:41:02",
+    "make_error": "Missing parameter url / video_url - retried with corrected payload"
+  },
+  {
+    "type": "short_souvenir",
+    "titre": "Souvenir : Virages Moto Débutant : Le SECRET pour Maîtriser sa Trajectoire (A2)",
     "plateforme": "pinterest",
     "date": "2026-04-24",
     "heure": "20:00",
@@ -63,19 +93,6 @@
     "id": "short_souvenir_souvenir-virages-mot_20260424",
     "status": "programmé",
     "created_at": "2026-04-23T16:47:06.583345"
-  },
-  {
-    "type": "short_souvenir",
-    "titre": "Souvenir : Honda NT1100 Android Auto 2025 : config en 5 min + astuces & solution bug écran noir",
-    "plateforme": "youtube",
-    "date": "2026-04-24",
-    "heure": "19:00",
-    "url": "https://www.youtube.com/watch?v=4NIinAzHvHk",
-    "image_url": "https://i.ytimg.com/vi/4NIinAzHvHk/maxresdefault.jpg",
-    "video_id": "4NIinAzHvHk",
-    "id": "short_souvenir_souvenir-honda-nt110_20260427",
-    "status": "programmé",
-    "created_at": "2026-04-23T16:47:06.583361"
   },
   {
     "type": "short_souvenir",
