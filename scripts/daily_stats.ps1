@@ -28,6 +28,9 @@ param(
 $ErrorActionPreference = "Stop"
 Set-Location $RepoRoot
 
+# Force UTF-8 pour les scripts Python (évite UnicodeEncodeError sur les emojis en cp1252)
+$env:PYTHONIOENCODING = "utf-8"
+
 # ----- 0. Auto-chargement credentials depuis F:\Automate_YT si vars d'env absentes -----
 if (-not $env:YT_TOKEN_ANALYTICS) {
   $tokAnalytics = "F:\Automate_YT\yt_token_analytics.json"
@@ -73,6 +76,32 @@ if (-not $Dry) {
   }
 } else {
   Log "Mode --Dry : fetch_youtube.py non exécuté."
+}
+
+# ----- 2b. seo_tracker.py --mode snapshot (régénère seo_stats.json lu par append_daily_log) -----
+if (-not $Dry) {
+  Log "Snapshot SEO (seo_tracker.py)…"
+  try {
+    python seo_tracker.py --mode snapshot 2>&1 | Tee-Object -FilePath $logFile -Append | Out-Null
+    Log "seo_tracker.py snapshot : OK"
+  } catch {
+    Log ("seo_tracker.py : ERREUR — {0}" -f $_.Exception.Message)
+  }
+} else {
+  Log "Mode --Dry : seo_tracker.py non exécuté."
+}
+
+# ----- 2c. fetch_gsc.py (export requêtes Search Console 28j -> CSV du jour) -----
+if (-not $Dry) {
+  Log "Export GSC (fetch_gsc.py)…"
+  try {
+    python scripts\fetch_gsc.py 2>&1 | Tee-Object -FilePath $logFile -Append | Out-Null
+    Log "fetch_gsc.py : OK"
+  } catch {
+    Log ("fetch_gsc.py : ERREUR — {0}" -f $_.Exception.Message)
+  }
+} else {
+  Log "Mode --Dry : fetch_gsc.py non exécuté."
 }
 
 # ----- 3. Collecte stats + ajout ligne dans daily_stats_log.xlsx -----
