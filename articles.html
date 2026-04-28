@@ -969,7 +969,10 @@ const FEATURED_ROTATION_SLUGS = [
 const _ROTATION_REF = new Date("2026-04-17");
 const _daysSinceRef = Math.floor((Date.now() - _ROTATION_REF) / 86400000);
 const _rotIdx = Math.abs(_daysSinceRef) % FEATURED_ROTATION_SLUGS.length;
-const FEATURED_SLUG = FEATURED_ROTATION_SLUGS[_rotIdx];
+// const FEATURED_SLUG = FEATURED_ROTATION_SLUGS[_rotIdx];
+// ── ARTICLE FORCÉ À LA UNE — pour revenir à la rotation, recommente la ligne ci-dessous
+//    et décommente la ligne ci-dessus
+const FEATURED_SLUG = "mekanik-annecy-honda-nt1100-panne-garantie";
 
 const FEATURED_SECONDARY_SLUGS = [
   "350-km-dans-le-froid-norvegien-le-vent-du-groenland-ma-brise",
@@ -984,6 +987,17 @@ const POPULAR_SLUGS = [
 ];
 
 const ARTICLES = [
+  {
+    slug: "mekanik-annecy-honda-nt1100-panne-garantie",
+    href: "articles/mekanik-annecy-honda-nt1100-panne-garantie.html",
+    img: "/articles/images/mekanik-annecy-honda-nt1100/hero-nt1100-tableau-bord-allume.jpg",
+    alt: "Mekanik Annecy – Honda NT1100 en panne sous garantie",
+    tag: "Expérience • SAV Honda",
+    title: "Mekanik Annecy – Mon expérience Honda NT1100 en panne sous garantie",
+    excerpt: "Honda NT1100 immobilisée chez Mekanik Annecy depuis le 16 avril 2026. Diagnostic contesté, GPS Komobi, pression sur avis Google. Mon expérience, preuves à l'appui.",
+    category: "guides-pratiques",
+    isNew: true
+  },
   {
     slug: "bivouac-moto-quel-equipement",
     href: "articles/bivouac-moto-quel-equipement.html",

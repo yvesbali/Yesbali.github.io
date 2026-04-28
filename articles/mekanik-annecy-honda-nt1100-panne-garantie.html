@@ -134,11 +134,13 @@ article strong{font-weight:600}
 .techbox p{color:rgba(255,255,255,.85);line-height:1.75;margin:.75rem 0}
 .techbox .tech-verdict{background:rgba(230,126,34,.2);border:1px solid var(--orange);border-radius:8px;padding:1rem 1.2rem;margin-top:1.2rem;font-weight:600;color:#fff;font-size:.95rem}
 
-/* ── PHOTOS ── */
-.photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:1.8rem 0}
-.photo-item img{width:100%;border-radius:10px;display:block;box-shadow:0 4px 15px rgba(0,0,0,.1)}
-.photo-caption{font-size:.82rem;color:var(--muted);text-align:center;margin-top:.4rem;line-height:1.5}
-.photo-placeholder{background:var(--bg);border:2px dashed var(--border);border-radius:10px;height:200px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.85rem;text-align:center;padding:1rem}
+/* ── PHOTOS ── cadres uniformes, dimensions raisonnables */
+.photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.8rem 0;max-width:760px;margin-left:auto;margin-right:auto}
+.photo-grid > div{display:flex;flex-direction:column}
+.photo-grid img{width:100%;height:240px;object-fit:cover;border-radius:10px;display:block;box-shadow:0 3px 12px rgba(0,0,0,.12);background:var(--bg)}
+.photo-caption{font-size:.78rem;color:var(--muted);text-align:center;margin-top:.4rem;line-height:1.5;padding:0 .3rem}
+.photo-placeholder{background:var(--bg);border:2px dashed var(--border);border-radius:10px;height:240px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.85rem;text-align:center;padding:1rem}
+@media(max-width:480px){.photo-grid img{height:200px}}
 
 /* ── COMMENTS ── */
 .community-section{margin:2.5rem 0}
@@ -269,6 +271,7 @@ footer{background:var(--noir);color:rgba(255,255,255,.65);padding:2.8rem 6%;marg
   <div class="tech-verdict">
     Conclusion technique : le Thunderbox, les accessoires connectés et l'écran Aoocci U6 ne peuvent pas être à l'origine du dysfonctionnement observé. La panne se situe dans le circuit électronique Honda d'origine.
   </div>
+  <p style="margin-top:1.2rem;color:rgba(255,255,255,.85);font-size:.95rem">C'est précisément ce point qui rend la conclusion communiquée oralement — <em>"il n'y a pas de panne, ce sont vos périphériques"</em> — techniquement difficile à soutenir. Le Thunderbox est conçu pour qu'aucun périphérique ne puisse perturber l'électronique d'origine du véhicule. Renvoyer la panne sur "les périphériques" revient à ignorer la fonction même du Thunderbox.</p>
 </div>
 
 
@@ -293,8 +296,8 @@ footer{background:var(--noir);color:rgba(255,255,255,.65);padding:2.8rem 6%;marg
 
   <div class="tl-item">
     <div class="tl-date">21 avril 2026</div>
-    <div class="tl-title">Appel de M. Fleury — diagnostic batterie + trajet GPS non autorisé</div>
-    <div class="tl-body">M. Fleury, responsable SAV, m'annonce que la batterie est "hors service" et propose son remplacement. Je lui pose la question directe : "Ce remplacement résoudra-t-il le problème d'écran restant allumé ?" Sa réponse est négative. Il évoque également l'intercom Bluetooth Sena 50S comme cause possible et me demande d'apporter mon casque — alors que ce casque se trouve déjà dans le top-case de la moto depuis son dépôt.<br><br>
+    <div class="tl-title">Appel du responsable SAV — diagnostic batterie + trajet GPS non autorisé</div>
+    <div class="tl-body">Le responsable SAV de la concession m'annonce par téléphone que la batterie est "hors service" et propose son remplacement. Je lui pose la question directe : "Ce remplacement résoudra-t-il le problème d'écran restant allumé ?" Sa réponse est négative. Il évoque également l'intercom Bluetooth Sena 50S comme cause possible et me demande d'apporter mon casque — alors que ce casque se trouve déjà dans le top-case de la moto depuis son dépôt.<br><br>
     Les données Komobi pour ce même jour enregistrent un trajet de <strong>13,6 km avec une vitesse maximale GPS de 153 km/h</strong>, effectué depuis l'adresse de Mekanik Annecy. Aucune autorisation ne m'a été demandée ni accordée pour un essai routier. (Pièce 3)</div>
   </div>
 
@@ -313,13 +316,13 @@ footer{background:var(--noir);color:rgba(255,255,255,.65);padding:2.8rem 6%;marg
   <div class="tl-item">
     <div class="tl-date">24 avril 2026</div>
     <div class="tl-title">Réponse de Honda France + batterie installée sans accord</div>
-    <div class="tl-body">Honda France (Lynn, Relations Clientèle) m'indique ne pouvoir intervenir directement auprès de Mekanik, les concessionnaires n'étant pas ses mandataires. (Pièce 7)<br><br>Le même jour, le responsable de la concession me confirme qu'une batterie d'occasion a été installée sur ma moto "pour faire des tests" — en violation de ma demande écrite du 22 avril. (Pièce 4)</div>
+    <div class="tl-body">Le service Relations Clientèle de Honda France m'indique ne pouvoir intervenir directement auprès de Mekanik Annecy, les concessionnaires n'étant pas ses mandataires. (Pièce 7)<br><br>Le même jour, la concession me confirme qu'une <strong>batterie d'occasion a été installée sur ma moto "pour faire des tests"</strong> — en violation de ma demande écrite du 22 avril (Pièce 5). C'est cette batterie d'occasion installée sans accord écrit qui a permis l'<strong>essai routier de 13,6 km à 153 km/h GPS</strong> du 21 avril, lui aussi sans accord écrit. Deux interventions consécutives, aucune autorisation. (Pièce 4)</div>
   </div>
 
   <div class="tl-item">
     <div class="tl-date">25 avril 2026</div>
     <div class="tl-title">Email du responsable de Mekanik — avis Google</div>
-    <div class="tl-body">M. Aurélien Hivar, responsable de la concession Mekanik Annecy, m'adresse un email me remerciant explicitement d'avoir modifié mon avis Google. Cet email constitue la preuve écrite, signée et horodatée, que la modification de cet avis m'avait bien été demandée dans le cadre de l'avancement du dossier. Malgré cette modification, il me confirme que le diagnostic ne sera pas réalisé avant <strong>fin mai</strong>. (Pièce 8)</div>
+    <div class="tl-body">Le responsable de la concession Mekanik Annecy m'adresse un email me remerciant explicitement d'avoir modifié mon avis Google. Cet email constitue la preuve écrite, signée et horodatée, que la modification de cet avis m'avait bien été demandée dans le cadre de l'avancement du dossier. Malgré cette modification, il me confirme par écrit que le diagnostic ne sera pas réalisé avant <strong>fin mai</strong>. (Pièce 8)</div>
   </div>
 
   <div class="tl-item">
@@ -347,7 +350,7 @@ footer{background:var(--noir);color:rgba(255,255,255,.65);padding:2.8rem 6%;marg
   <ul>
     <li><strong>16 avril au soir :</strong> le tracker émet normalement, malgré les multiples débranchages et tentatives de redémarrage. La batterie n'est pas "hors service".</li>
     <li><strong>17 avril 09h08–09h11 :</strong> mouvement de la moto à l'adresse de Mekanik. Aucune information écrite ne m'est transmise.</li>
-    <li><strong>21 avril :</strong> trajet de 13,6 km depuis Mekanik Annecy, vitesse maximale GPS : <strong>153 km/h</strong>. Ce jour-là, M. Fleury me téléphone pour m'annoncer que la batterie est "hors service". Le tracker, lui, émet parfaitement.</li>
+    <li><strong>21 avril :</strong> trajet de 13,6 km depuis Mekanik Annecy, vitesse maximale GPS : <strong>153 km/h</strong>. Ce jour-là, le responsable SAV me téléphone pour m'annoncer que la batterie est "hors service". Le tracker, lui, émet parfaitement.</li>
     <li><strong>21 au 25 avril :</strong> neuf captures d'alarmes documentent les manipulations successives du véhicule à la concession. (Pièce 4)</li>
   </ul>
 </div>
@@ -389,8 +392,18 @@ footer{background:var(--noir);color:rgba(255,255,255,.65);padding:2.8rem 6%;marg
   <div class="qa-block">
     <div class="qa-q">Mekanik Annecy a-t-il réalisé un diagnostic conforme aux symptômes que vous aviez documentés ?</div>
     <div class="qa-a">
-      <p>Le diagnostic proposé après cinq jours d'immobilisation consistait à remplacer la batterie. Or, lors de notre échange téléphonique du 21 avril, M. Fleury m'a lui-même confirmé que ce remplacement ne résoudrait pas le problème d'écran restant allumé contact coupé — les deux points n'étant "pas liés" selon ses propres termes.</p>
-      <p>Je me retrouvais donc dans la situation d'un diagnostic qui traite la conséquence — une batterie déchargée par une anomalie — sans chercher à identifier la cause. Cette cause reste à ce jour non identifiée.</p>
+      <p>À ce jour, je n'ai reçu <strong>aucun compte-rendu écrit de diagnostic</strong>. Les seules informations qui m'ont été communiquées l'ont été oralement, par téléphone.</p>
+      <p>Concrètement, voici ce qui a été fait selon ces échanges : une <strong>recherche de fuites électriques</strong> a été menée. Aucune fuite n'a été identifiée. Une batterie a ensuite été remplacée — sans accord écrit préalable de ma part, malgré ma demande formelle du 22 avril 2026 (Pièce 5). La conclusion qui m'a été communiquée oralement est, en substance : "il n'y a pas de panne identifiée, ce sont vos périphériques."</p>
+      <p>Lors de notre échange du 21 avril, le responsable SAV m'a lui-même confirmé que le remplacement de la batterie ne résoudrait pas le problème d'écran restant allumé contact coupé — les deux points n'étant "pas liés" selon ses propres termes. Je me retrouvais donc face à un diagnostic qui traite la conséquence — une batterie déchargée par une anomalie — sans chercher à identifier la cause. La cause d'origine reste à ce jour non identifiée.</p>
+    </div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-q">La batterie était-elle vraiment "hors service" le 21 avril, comme on vous l'a annoncé ?</div>
+    <div class="qa-a">
+      <p>Je ne sais pas. Ce que je sais, c'est que mon tracker GPS Komobi est <strong>alimenté exclusivement par la batterie principale de la moto</strong>. Pendant les cinq jours qui ont précédé l'appel du 21 avril, j'ai reçu <strong>chaque jour des alarmes de mouvement</strong> sur mon téléphone — émises par ce tracker, donc par la batterie.</p>
+      <p>Le 21 avril à 18h16, soit le jour même de l'appel m'annonçant que la batterie était "hors service", le tracker enregistre encore une alarme à l'adresse de Mekanik Annecy. Si la batterie avait réellement été hors service, cette alarme n'aurait pas pu m'être transmise.</p>
+      <p>Je relate les faits, simplement. C'est au lecteur de se faire son opinion.</p>
     </div>
   </div>
 
@@ -398,15 +411,25 @@ footer{background:var(--noir);color:rgba(255,255,255,.65);padding:2.8rem 6%;marg
     <div class="qa-q">L'hypothèse de l'intercom Bluetooth vous a surpris. Pourquoi ?</div>
     <div class="qa-a">
       <p>Lors de l'appel du 21 avril, il m'a été suggéré que l'intercom Bluetooth de mon casque — un Sena 50S — pourrait être responsable du tableau de bord restant allumé. J'aurais dû apporter mon casque "pour faire des essais".</p>
-      <p>Un intercom Bluetooth est un équipement totalement autonome, alimenté par sa propre batterie interne, sans aucune connexion filaire au circuit électrique du véhicule. Il lui est physiquement impossible de maintenir alimenté le tableau de bord d'une moto. De plus, ce casque se trouvait déjà dans le top-case de la moto depuis le dépôt. La communauté a réagi à cette hypothèse de manière éloquente — vous lirez leurs témoignages ci-dessous.</p>
+      <p>Un intercom Bluetooth est un équipement totalement autonome, alimenté par sa propre batterie interne, sans aucune connexion filaire au circuit électrique du véhicule. Il lui est physiquement impossible de maintenir alimenté le tableau de bord d'une moto. De plus, ce casque se trouvait déjà dans le top-case de la moto depuis le dépôt.</p>
+    </div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-q">Et que dit Honda France au sujet de cette hypothèse Bluetooth ?</div>
+    <div class="qa-a">
+      <p>C'est précisément là que la question se referme d'elle-même. Le responsable de la concession Mekanik Annecy m'a indiqué qu'un <strong>ticket avait été ouvert auprès de Honda France</strong> au sujet de l'hypothèse intercom Bluetooth.</p>
+      <p>La réponse officielle de Honda France a été <strong>négative</strong> : l'intercom Bluetooth n'est pas en cause dans la panne du tableau de bord. Cette confirmation provient donc du constructeur lui-même, par l'intermédiaire du ticket ouvert par la concession.</p>
+      <p>L'hypothèse est donc officiellement écartée par Honda France. La cause réelle de la panne, elle, reste à ce jour non identifiée.</p>
     </div>
   </div>
 
   <div class="qa-block">
     <div class="qa-q">Selon les données GPS Komobi, que s'est-il passé chez Mekanik Annecy le 21 avril ?</div>
     <div class="qa-a">
-      <p>Ce jour-là — le jour même où M. Fleury me téléphonait pour m'annoncer que la batterie était "hors service" — les données Komobi établissent qu'un trajet de 13,6 km a été effectué avec mon véhicule depuis l'adresse de Mekanik Annecy, avec une vitesse maximale GPS enregistrée de 153 km/h.</p>
-      <p>Je n'avais donné aucune autorisation pour un essai routier. Aucune information ne m'avait été transmise à ce sujet. J'ai mentionné cet élément dans la mise en demeure du 26 avril et demandé une réponse écrite sur ce point.</p>
+      <p>Ce jour-là — le jour même où le responsable SAV me téléphonait pour m'annoncer que la batterie était "hors service" — les données Komobi établissent qu'un trajet de <strong>13,6 km a été effectué avec mon véhicule depuis l'adresse de Mekanik Annecy, avec une vitesse maximale GPS enregistrée de 153 km/h</strong>.</p>
+      <p>Pour pouvoir effectuer ce trajet, la concession a installé une <strong>batterie d'occasion</strong> sur la moto — fait qui m'a été confirmé oralement le 24 avril. Or, par mon courrier recommandé du 22 avril, j'avais expressément demandé qu'aucune intervention ne soit réalisée sans mon accord écrit préalable.</p>
+      <p>Je n'avais donné aucune autorisation, ni pour l'installation de cette batterie, ni pour l'essai routier. Aucune information préalable ne m'avait été transmise. J'ai mentionné ces deux éléments dans la mise en demeure du 26 avril et demandé une réponse écrite sur ce point.</p>
     </div>
   </div>
 
@@ -422,7 +445,7 @@ footer{background:var(--noir);color:rgba(255,255,255,.65);padding:2.8rem 6%;marg
   <div class="qa-block">
     <div class="qa-q">Honda France vous a-t-elle aidé concrètement dans ce dossier ?</div>
     <div class="qa-a">
-      <p>Honda France a répondu à mon email de signalement du 23 avril le 24 avril par l'intermédiaire de Lynn, Relations Clientèle. La réponse indique que Honda France ne peut pas intervenir directement auprès de ses concessionnaires, ceux-ci n'étant pas ses mandataires.</p>
+      <p>Honda France a répondu à mon email de signalement du 23 avril le 24 avril par l'intermédiaire de son service Relations Clientèle. La réponse indique que Honda France ne peut pas intervenir directement auprès de ses concessionnaires, ceux-ci n'étant pas ses mandataires.</p>
       <p>J'entends cette position. Mais je ne suis pas en mesure de l'accepter comme aboutissement d'un dossier qui engage la responsabilité du constructeur sur un véhicule de 18 mois, encore sous garantie Honda 5 ans, dont la panne reste non identifiée. C'est pourquoi j'ai adressé une mise en demeure formelle à Honda France le 26 avril.</p>
       <p>Honda France a reçu ce courrier recommandé ce matin, 28 avril. La balle est dans leur camp.</p>
     </div>
@@ -480,7 +503,7 @@ footer{background:var(--noir);color:rgba(255,255,255,.65);padding:2.8rem 6%;marg
         <div class="comment-author">@christianfourmarier9336</div>
         <div class="comment-likes">❤ 3</div>
       </div>
-      <div class="comment-text">Bien le bonjour de Belgique. Je préfère savoir à quoi m'en tenir concernant cette concession car je vais faire un road trip dans les Alpes cet été — je sais maintenant où il ne faut surtout pas s'adresser en cas de problème. Sans oublier le niveau de politesse et le petit "chantage" !! ✌️🏍️🇧🇪</div>
+      <div class="comment-text">Bien le bonjour de Belgique. Je préfère savoir à quoi m'en tenir concernant cette concession car je vais faire un road trip dans les Alpes cet été — je sais maintenant où il ne faut surtout pas s'adresser en cas de problème. Sans oublier le niveau de politesse et les pressions exercées sur l'avis Google !! ✌️🏍️🇧🇪</div>
     </div>
 
   </div>
@@ -565,7 +588,7 @@ footer{background:var(--noir);color:rgba(255,255,255,.65);padding:2.8rem 6%;marg
         <div class="comment-author">@luccko45</div>
         <div class="comment-likes">❤ 4</div>
       </div>
-      <div class="comment-text">Avant toute chose, il y a un gros problème de communication dans cette affaire, et ce qui a été fait pour l'avis Google est inadmissible, et sans doute répréhensible par la loi. La demande du technicien concernant le Bluetooth peut avoir une logique théorique — mais ça ne justifie en rien la gestion du dossier.</div>
+      <div class="comment-text">Avant toute chose, il y a un gros problème de communication dans cette affaire, et ce qui a été fait pour l'avis Google est inacceptable. La demande du technicien concernant le Bluetooth peut avoir une logique théorique — mais ça ne justifie en rien la gestion du dossier.</div>
     </div>
 
   </div>
