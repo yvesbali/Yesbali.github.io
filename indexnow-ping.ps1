@@ -4,7 +4,7 @@
 
 $key = "1ffe11fd716a4f389f34bc02922c1684"
 $keyLocation = "https://lcdmh.com/$key.txt"
-$host = "lcdmh.com"
+$siteHost = "lcdmh.com"
 
 $urls = @(
     "https://lcdmh.com/articles/mekanik-annecy-honda-nt1100-panne-garantie.html",
@@ -15,7 +15,7 @@ $urls = @(
 )
 
 $body = @{
-    host = $host
+    host = $siteHost
     key = $key
     keyLocation = $keyLocation
     urlList = $urls
