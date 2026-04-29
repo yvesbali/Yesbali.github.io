@@ -1372,4 +1372,26 @@ function renderPage(){
     const elFeatMain = document.getElementById("featured-main");
     if(elFeatMain) elFeatMain.innerHTML = createFeaturedMain(featured);
     const elFeatSide = document.getElementById("featured-side");
-    if(elFeatSide) elFeatSide.innerHTML = featuredSecondaries.ma
+    if(elFeatSide) elFeatSide.innerHTML = featuredSecondaries.map(createFeaturedMini).join('');
+
+    const elPopular = document.getElementById("popular-list");
+    if(elPopular) elPopular.innerHTML = popularArticles.map((a, i) => createPopularItem(a, i)).join('');
+
+    const grids = {
+        "grid-road-trips": roadTrips,
+        "grid-tests-materiel": testsMateriel,
+        "grid-guides-pratiques": guidesPratiques,
+        "grid-tests-motos": testsMotos,
+        "grid-photo-video": photoVideo
+    };
+    Object.entries(grids).forEach(([id, articles]) => {
+        const el = document.getElementById(id);
+        if(el) el.innerHTML = articles.map(createArticleCard).join('');
+    });
+}
+
+document.addEventListener('DOMContentLoaded', renderPage);
+</script>
+
+</body>
+</html>
