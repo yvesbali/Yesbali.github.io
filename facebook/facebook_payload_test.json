@@ -1,12 +1,36 @@
 {
   "meta": {
-    "version": "3.0",
-    "generated": "2026-03-13",
-    "description": "Bibliothèque Facebook 3 mois — planning fusionné avec rattrapage (rattrapé le 5 mai)",
-    "total_posts": 26,
+    "version": "3.1",
+    "generated": "2026-05-06",
+    "description": "Bibliothèque Facebook 3 mois — ajout dossier Mekanik Annecy le 6 mai",
+    "total_posts": 28,
     "periode": "18 mars 2026 → 14 juin 2026"
   },
   "posts": [
+    {
+      "id": "mekanik-fb-video-suite",
+      "scheduled_date": "2026-05-07",
+      "scheduled_time": "08:00",
+      "type": "dossier",
+      "serie": "mekanik-annecy",
+      "video_id": "q5gECu0ROu0",
+      "published": false,
+      "message": "🎥 Suite de l'affaire Honda NT1100 — Mekanik Annecy m'a rendu la moto\n\nJ'ai testé la batterie qu'on m'avait annoncée hors service. Démarrage au booster, puis 3-4 démarrages enchaînés sans souci, 11,5 V minimum au testeur basique. Un testeur pro arrive demain pour confirmer.\n\nDans la vidéo : tutoriel multimètre (seuils 10,5 V / 11,5 V) + la suite du dossier. Direction Gorilla Performance le 15 juin pour le vrai diagnostic.\n\n👉 https://youtu.be/q5gECu0ROu0\n\n📰 L'article complet : https://lcdmh.com/articles/mekanik-annecy-honda-nt1100-panne-garantie.html\n\n#HondaNT1100 #MekanikAnnecy #BatterieMoto #Motard #LCDMH",
+      "link": "https://www.youtube.com/watch?v=q5gECu0ROu0",
+      "category": "dossier-mekanik"
+    },
+    {
+      "id": "mekanik-fb-article",
+      "scheduled_date": "2026-05-07",
+      "scheduled_time": "08:05",
+      "type": "dossier",
+      "serie": "mekanik-annecy",
+      "video_id": "3Lk6XilUlYU",
+      "published": false,
+      "message": "⚠️ Mon dossier Honda NT1100 chez Mekanik Annecy\n\nMa NT1100 a été immobilisée 3 semaines chez Mekanik Annecy (concessionnaire Honda agréé). Aucun diagnostic écrit, un essai routier à 153 km/h documenté par GPS sans mon accord, et un avis Google demandé contre l'avancement du dossier (preuve écrite à l'appui).\n\nJ'ai relaté tous les faits, dates, courriers, données GPS et pièces dans un article complet — mis à jour quotidiennement.\n\n👉 https://lcdmh.com/articles/mekanik-annecy-honda-nt1100-panne-garantie.html\n\n#HondaNT1100 #MekanikAnnecy #SAV #Garantie #Motard",
+      "link": "https://lcdmh.com/articles/mekanik-annecy-honda-nt1100-panne-garantie.html",
+      "category": "dossier-mekanik"
+    },
     {
       "id": "s04-cap-nord-orage",
       "scheduled_date": "2026-04-12",
