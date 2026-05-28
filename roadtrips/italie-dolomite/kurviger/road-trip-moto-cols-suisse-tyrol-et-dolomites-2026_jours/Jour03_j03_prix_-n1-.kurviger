@@ -1,0 +1,78 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature",
+    "avoid_toll_roads": true,
+    "avoid_toll_roads_factor": "1",
+    "avoid_motorways": true,
+    "avoid_motorways_factor": "1",
+    "avoid_incidents": true
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1779985521348,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        10.51276,
+        46.95449,
+        12.817813,
+        47.284142
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "address": "Camping Via Claudiasee Pfunds, Rauth 714, 6542 Pfunds Tyrol Autriche",
+          "name": "*Spot bivouac ? - *camping prix ?",
+          "category": "search_result",
+          "latitude": 46.95449,
+          "longitude": 10.51276
+        },
+        {
+          "address": "Camping Via Claudiasee Pfunds, Rauth 714, 6542 Pfunds Tyrol Autriche",
+          "category": "search_result",
+          "latitude": 46.95449,
+          "longitude": 10.51276,
+          "shaping": true
+        },
+        {
+          "category": "search_result",
+          "latitude": 47.284142,
+          "longitude": 12.817813,
+          "shaping": true
+        },
+        {
+          "name": "j03 - *camping prix ? -n1- ",
+          "latitude": 47.284142,
+          "longitude": 12.817813
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

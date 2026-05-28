@@ -1,0 +1,84 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature",
+    "avoid_toll_roads": true,
+    "avoid_toll_roads_factor": "1",
+    "avoid_motorways": true,
+    "avoid_motorways_factor": "1",
+    "avoid_incidents": true
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1779985521348,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        9.925311,
+        46.494411,
+        11.88549,
+        46.788307
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "*camping prix ? - n2",
+          "latitude": 46.788307,
+          "longitude": 11.88549
+        },
+        {
+          "latitude": 46.5753,
+          "longitude": 11.6728,
+          "shaping": true
+        },
+        {
+          "latitude": 46.494411,
+          "longitude": 11.354896,
+          "shaping": true
+        },
+        {
+          "latitude": 46.667934,
+          "longitude": 10.513229,
+          "shaping": true
+        },
+        {
+          "latitude": 46.64048,
+          "longitude": 10.290155,
+          "shaping": true
+        },
+        {
+          "name": "*camping Sango prix ?",
+          "category": "search_result",
+          "latitude": 46.579055,
+          "longitude": 9.925311
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

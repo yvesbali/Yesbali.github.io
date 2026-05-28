@@ -1,0 +1,90 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature",
+    "avoid_toll_roads": true,
+    "avoid_toll_roads_factor": "1",
+    "avoid_motorways": true,
+    "avoid_motorways_factor": "1",
+    "avoid_incidents": true
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1779985521348,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        6.062033,
+        45.810061,
+        8.361443,
+        46.562232
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "address": "Viuz-la-Chiésaz, Route d'Annecy, 74540, Viuz-la-Chiésaz, Auvergne-Rhône-Alpes, France",
+          "latitude": 45.810061,
+          "longitude": 6.062033
+        },
+        {
+          "name": "Col des Aravis",
+          "id": "fb_t3fwCOBzzkTS1jN8F3u4",
+          "latitude": 45.872277,
+          "longitude": 6.464875,
+          "shaping": true
+        },
+        {
+          "address": "Col des Montets, Route des Montets, 74400, Chamonix-Mont-Blanc, Auvergne-Rhône-Alpes, France",
+          "latitude": 46.004046,
+          "longitude": 6.923666,
+          "shaping": true
+        },
+        {
+          "weight": "curvature",
+          "latitude": 46.562232,
+          "longitude": 8.361443,
+          "shaping": true
+        },
+        {
+          "weight": "curvature",
+          "latitude": 46.561662,
+          "longitude": 8.345154,
+          "shaping": true
+        },
+        {
+          "address": "Alpenlodge Grimselpass, Grimselstrasse, 3999 Conches-les-haut Valais Suisse",
+          "name": "camping Sango prix ? - N1 ",
+          "category": "search_result",
+          "latitude": 46.560854,
+          "longitude": 8.344618
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}
