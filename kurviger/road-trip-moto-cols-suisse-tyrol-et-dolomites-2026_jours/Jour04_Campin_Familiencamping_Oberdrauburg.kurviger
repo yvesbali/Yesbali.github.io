@@ -1,0 +1,105 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature",
+    "avoid_toll_roads": true,
+    "avoid_toll_roads_factor": "1",
+    "avoid_motorways": true,
+    "avoid_motorways_factor": "1",
+    "avoid_incidents": true
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1779985521348,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        12.752724,
+        46.73186,
+        12.970047,
+        47.284142
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "j03 - *camping prix ? -n1- ",
+          "latitude": 47.284142,
+          "longitude": 12.817813
+        },
+        {
+          "address": "Oberes Nassfeld,  5672 Fusch an der Großglocknerstraße Salzbourg Autriche",
+          "name": "*Spots drone à filmer ? ",
+          "category": "search_result",
+          "latitude": 47.1216,
+          "longitude": 12.8235,
+          "shaping": true
+        },
+        {
+          "address": "Edelweißspitze,  5661 Rauris Salzbourg Autriche",
+          "category": "search_result",
+          "latitude": 47.123773,
+          "longitude": 12.831423,
+          "shaping": true
+        },
+        {
+          "address": "Hochtor,  5661 Rauris Salzbourg Autriche",
+          "category": "search_result",
+          "latitude": 47.082331,
+          "longitude": 12.842035,
+          "shaping": true
+        },
+        {
+          "name": "* Spots drone à filmer ?",
+          "latitude": 47.073863,
+          "longitude": 12.752724,
+          "shaping": true
+        },
+        {
+          "name": "*Spots drone à filmer ?",
+          "category": "search_result",
+          "latitude": 47.037228,
+          "longitude": 12.869668,
+          "shaping": true
+        },
+        {
+          "category": "search_result",
+          "latitude": 46.747801,
+          "longitude": 12.970042,
+          "shaping": true
+        },
+        {
+          "name": "Campin Familiencamping Oberdrauburg",
+          "category": "search_result",
+          "latitude": 46.73186,
+          "longitude": 12.970047
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

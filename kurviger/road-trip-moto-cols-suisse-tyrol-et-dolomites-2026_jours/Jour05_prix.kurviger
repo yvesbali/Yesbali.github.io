@@ -1,0 +1,78 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature",
+    "avoid_toll_roads": true,
+    "avoid_toll_roads_factor": "1",
+    "avoid_motorways": true,
+    "avoid_motorways_factor": "1",
+    "avoid_incidents": true
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1779985521348,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        12.613477,
+        46.708615,
+        12.970047,
+        46.832394
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "Campin Familiencamping Oberdrauburg",
+          "category": "search_result",
+          "latitude": 46.73186,
+          "longitude": 12.970047
+        },
+        {
+          "address": "Kaiser, Dorf 8, 9942 Obertilliach Tyrol Autriche",
+          "category": "search_result",
+          "latitude": 46.708615,
+          "longitude": 12.613477,
+          "shaping": true
+        },
+        {
+          "category": "search_result",
+          "latitude": 46.825612,
+          "longitude": 12.777314,
+          "shaping": true
+        },
+        {
+          "name": "*camping prix ?",
+          "category": "search_result",
+          "latitude": 46.832394,
+          "longitude": 12.770898
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

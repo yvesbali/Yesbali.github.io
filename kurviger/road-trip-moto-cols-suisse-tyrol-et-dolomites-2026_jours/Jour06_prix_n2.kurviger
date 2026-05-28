@@ -1,0 +1,105 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature",
+    "avoid_toll_roads": true,
+    "avoid_toll_roads_factor": "1",
+    "avoid_motorways": true,
+    "avoid_motorways_factor": "1",
+    "avoid_incidents": true
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1779985521348,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        11.88549,
+        46.518713,
+        12.770898,
+        46.923538
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "*camping prix ?",
+          "category": "search_result",
+          "latitude": 46.832394,
+          "longitude": 12.770898
+        },
+        {
+          "name": "*Spots drone à filmer ?",
+          "latitude": 46.923538,
+          "longitude": 12.44133,
+          "shaping": true
+        },
+        {
+          "latitude": 46.541388,
+          "longitude": 12.465363,
+          "shaping": true
+        },
+        {
+          "latitude": 46.619261,
+          "longitude": 12.2192,
+          "shaping": true
+        },
+        {
+          "latitude": 46.602369,
+          "longitude": 12.107577,
+          "shaping": true
+        },
+        {
+          "latitude": 46.518713,
+          "longitude": 12.01046,
+          "shaping": true
+        },
+        {
+          "latitude": 46.700142,
+          "longitude": 11.930637,
+          "shaping": true
+        },
+        {
+          "latitude": 46.724565,
+          "longitude": 11.971664,
+          "shaping": true
+        },
+        {
+          "latitude": 46.790717,
+          "longitude": 11.988316,
+          "shaping": true
+        },
+        {
+          "name": "*camping prix ? - n2",
+          "latitude": 46.788307,
+          "longitude": 11.88549
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}
