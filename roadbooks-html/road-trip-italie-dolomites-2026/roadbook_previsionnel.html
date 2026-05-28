@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Road trip Italie Dolomites 2026 - PDF</title>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+:root { --primary:#1a2b56; --accent:#f97316; --bg-light:#f8fafc; --white:#fff; --text:#334155; --border:#e2e8f0; }
+body { font-family:'Segoe UI',system-ui,sans-serif; margin:0; padding:0; background:#64748b; color:var(--text); line-height:1.4; }
+.page { width:210mm; min-height:297mm; margin:20px auto; background:#fff; padding:20mm; box-shadow:0 15px 35px rgba(0,0,0,.35); box-sizing:border-box; position:relative; page-break-after:always; }
+header { background:var(--primary); color:white; padding:15px 25px; margin:-20mm -20mm 30px -20mm; display:flex; justify-content:space-between; align-items:center; box-shadow:0 4px 10px rgba(0,0,0,.15); }
+.hero { text-align:center; margin-bottom:30px; }
+.hero h1 { color:var(--primary); font-size:3.3rem; margin:5px 0; text-transform:uppercase; letter-spacing:3px; }
+.hero .meta { color:#64748b; font-size:1.1rem; font-weight:bold; }
+.stats-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:15px; margin-bottom:25px; }
+.tile { border:1px solid var(--border); border-radius:12px; padding:15px; text-align:center; background:#fdfdfd; box-shadow:0 5px 12px rgba(0,0,0,.08); }
+.tile i { font-size:1.8rem; color:var(--accent); margin-bottom:10px; display:block; }
+.tile-val { font-size:1.5rem; font-weight:bold; color:var(--primary); display:block; }
+.tile-label { font-size:.8rem; color:#64748b; text-transform:uppercase; font-weight:bold; }
+.stay-tile { border:1px solid var(--border); border-radius:12px; padding:25px; margin-bottom:30px; display:flex; justify-content:space-around; background:#fdfdfd; box-shadow:0 5px 12px rgba(0,0,0,.08); }
+.stay-item { text-align:center; }
+.stay-item i { color:var(--accent); font-size:1.5rem; display:block; margin-bottom:8px; }
+.stay-item span { font-weight:bold; font-size:1rem; color:var(--primary); }
+.journey-box { border:1px solid var(--border); background:#f8fafc; padding:25px; border-radius:15px; box-shadow:0 6px 15px rgba(0,0,0,.08); }
+.journey-text { font-size:1rem; color:#475569; text-align:justify; columns:2; column-gap:40px; }
+.journey-box h2 { color:var(--primary); margin-top:0; font-size:1.5rem; border-bottom:2px solid var(--accent); padding-bottom:10px; }
+.admin-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.admin-card { border-left:5px solid var(--accent); background:#fffaf5; padding:20px; border-radius:0 12px 12px 0; box-shadow:0 5px 12px rgba(0,0,0,.08); }
+.admin-card h3 { margin:0 0 10px 0; font-size:1.1rem; color:var(--primary); text-transform:uppercase; }
+.admin-card ul { margin:0; padding-left:18px; }
+.expert-card { border:1px solid var(--border); padding:15px; border-radius:12px; background:#fdfdfd; box-shadow:0 5px 12px rgba(0,0,0,.08); }
+.expert-card h3 { margin:0 0 10px 0; color:var(--primary); font-size:1rem; border-bottom:1px solid var(--accent); padding-bottom:5px; }
+.qr-box { background:var(--primary); color:white; padding:20px; border-radius:15px; display:flex; align-items:center; justify-content:space-between; margin:20px 0; box-shadow:0 8px 20px rgba(0,0,0,.2); gap:20px; }
+.qr-box img { background:white; padding:8px; border-radius:10px; width:110px; height:110px; object-fit:contain; }
+.route-table { width:100%; border-collapse:collapse; font-size:.8rem; margin-top:15px; box-shadow:0 5px 15px rgba(0,0,0,.05); }
+.route-table th { background:var(--primary); color:white; text-align:left; padding:8px; }
+.route-table td { padding:8px; border-bottom:1px solid #eee; vertical-align:top; }
+.day-num { color:var(--accent); font-weight:bold; }
+footer { display:none !important; }
+
+/* === CORRECTIF POUR L'IMPRESSION PDF (weasyprint) === */
+@page {
+    size: A4;
+    margin: 15mm 15mm 25mm 15mm;
+    @bottom-left {
+        content: "Roadbook Moto - LCDMH";
+        font-size: 8pt;
+        color: #94a3b8;
+    }
+    @bottom-right {
+        content: "Page " counter(page);
+        font-size: 8pt;
+        color: #94a3b8;
+    }
+}
+
+@media print { 
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    body { 
+        background: #fff !important; 
+        margin: 0 !important;
+        padding: 0 !important;
+    } 
+    .page { 
+        margin: 0 !important; 
+        min-height: auto !important;
+        border: none !important; 
+        page-break-after: always !important; 
+        box-shadow: none !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+    .route-table { page-break-inside: auto !important; }
+    .route-table tr { page-break-inside: avoid !important; }
+    .expert-card { page-break-inside: avoid !important; }
+    .info-section { page-break-inside: avoid !important; }
+    .section-title { page-break-after: avoid !important; }
+    h2, h3 { page-break-after: avoid !important; }
+}
+/* ======================================= */
+
+</style>
+</head>
+<body>
+<div class='page'>
+  <header>
+    <div style='font-weight:bold;'>LCDMH - ROADBOOK MOTO 2026</div>
+    <div style='background:var(--accent); padding:4px 12px; border-radius:4px; font-weight:bold; font-size:.8rem;'>PRÉVISIONNEL</div>
+  </header>
+  <div class='hero'>
+    <p style='text-transform:uppercase; letter-spacing:2px; color:#64748b; font-weight:bold;'>Roadbook prévisionnel</p>
+    <h1>Road trip Italie Dolomites 2026</h1>
+    <p class='meta'>Du  au  • Honda NT1100 • Solo</p>
+  </div>
+  <div class='stats-grid'>
+    <div class='tile'><i class='fa-solid fa-road'></i><span class='tile-val'>3,482 km</span><span class='tile-label'>Distance</span></div>
+    <div class='tile'><i class='fa-solid fa-wallet'></i><span class='tile-val'>~1325 €</span><span class='tile-label'>Budget total</span></div>
+    <div class='tile'><i class='fa-solid fa-file-lines'></i><span class='tile-val'>14</span><span class='tile-label'>Jours calculés</span></div>
+    <div class='tile'><i class='fa-solid fa-calendar-days'></i><span class='tile-val'> → </span><span class='tile-label'>Période</span></div>
+  </div>
+  <div class='stay-tile'>
+    <div class='stay-item'><i class='fa-solid fa-tents'></i><span>12 Campings</span></div>
+    <div class='stay-item'><i class='fa-solid fa-mountain'></i><span>0 Bivouacs</span></div>
+    <div class='stay-item'><i class='fa-solid fa-hotel'></i><span>0 Hôtels / B&B</span></div>
+  </div>
+  <div class='expert-card' style='margin-bottom:20px;'>
+    <h3><i class='fa-solid fa-coins'></i> Budget Prévisionnel</h3>
+    <table style='width:100%; font-size:.9rem; border-collapse:collapse; margin-top:10px;'>
+      <tr style='border-bottom:1px solid #eee;'><td style='padding:6px 0;'><i class='fa-solid fa-gas-pump' style='color:var(--accent);width:20px;'></i> Carburant</td><td style='text-align:right; font-weight:bold;'>~385 €</td></tr>
+      <tr style='border-bottom:1px solid #eee;'><td style='padding:6px 0;'><i class='fa-solid fa-bed' style='color:var(--accent);width:20px;'></i> Hébergements</td><td style='text-align:right; font-weight:bold;'>240 €</td></tr>
+      <tr style='font-size:.8rem; color:#666;'><td style='padding:2px 0 2px 24px;'>12 nuits x 15 EUR = 180 EUR</td><td></td></tr>
+      <tr style='font-size:.8rem; color:#666;'><td style='padding:2px 0 2px 24px;'>0 nuits x 70 EUR = 0 EUR</td><td></td></tr>
+      <tr style='font-size:.8rem; color:#666;'><td style='padding:2px 0 2px 24px;'>0 nuits x 55 EUR = 0 EUR</td><td></td></tr>
+      <tr style='font-size:.8rem; color:#666;'><td style='padding:2px 0 6px 24px;'>0 nuits x 0 EUR = 0 EUR</td><td></td></tr>
+      <tr style='border-bottom:1px solid #eee;'><td style='padding:6px 0;'><i class='fa-solid fa-utensils' style='color:var(--accent);width:20px;'></i> Alimentation (50 €/jour x 14 jours)</td><td style='text-align:right; font-weight:bold;'>700 €</td></tr>
+      <tr style='background:#f0f9ff; font-weight:bold; font-size:1.1rem;'><td style='padding:10px 0; color:var(--primary);'>TOTAL ESTIMÉ</td><td style='text-align:right; color:var(--accent); font-size:1.2rem;'>~1325 €</td></tr>
+    </table>
+  </div>
+  <div class='journey-box'>
+    <h2><i class='fa-solid fa-map-location-dot'></i> L'Esprit du Parcours</h2>
+    <div class='journey-text'>Cette aventure de 14 jours couvre plus de 3 482 km à travers Autriche, France, Italie, Slovénie et Suisse. Au programme : 12 nuits en camping.
+
+Points forts : Col du Grimsel, Stelvio.
+
+Une aventure à moto où chaque étape promet son lot de découvertes et de rencontres.</div>
+  </div>
+  <footer><span>Roadbook Moto - LCDMH</span><span>Page 1</span></footer>
+</div>
+<div class='page'>
+  <h2 style='color:var(--primary); border-bottom:3px solid var(--accent); padding-bottom:10px;'>Informations Essentielles</h2>
+  <div class='admin-grid' style='margin-top:30px;'>
+    <div class='admin-card'><h3>Documents</h3><ul><li>Carte d&#x27;identité ou passeport valide (UE/Schengen).</li><li>Carte grise, permis, assurance.</li><li>Gilet jaune obligatoire à bord.</li><li>CEAM recommandée.</li></ul></div>
+    <div class='admin-card'><h3>Monnaies & Conversion</h3><ul><li>Monnaie : Euro (€).</li><li>Carburant : ~1.70-1.90 €/L.</li><li>Repas trattoria : 12-25 €.</li><li>Carte bancaire largement acceptée.</li></ul></div>
+    <div class='admin-card'><h3>Sur la route</h3><ul><li>Conduite à droite.</li><li>Vitesses : 50 km/h ville, 90 km/h route, 130 km/h autoroute.</li><li>Péages autoroute (Telepass ou tickets).</li><li>ZTL dans les centres-villes — attention aux amendes.</li><li>Taux alcool max : 0.5 g/L.</li></ul></div>
+    <div class='admin-card'><h3>Téléphone & Urgences</h3><ul><li>Indicatif : +39 | France : +33</li><li>Urgences : 112</li><li>Ambassade FR Rome : +39 06 686 011</li></ul></div>
+  </div>
+  <div style='display:grid; grid-template-columns:1fr 1fr; gap:15px; margin-top:20px;'>
+    <div class='expert-card'><h3>Résumé</h3><ul style='padding-left:15px; font-size:.85rem; margin-top:10px;'><li>Départ : </li><li>Retour : </li><li>Zone : Road trip Italie Dolomites 2026</li></ul></div>
+    <div class='expert-card'><h3>Équipement</h3><ul style='padding-left:15px; font-size:.85rem; margin-top:10px;'><li>Combinaison pluie complète.</li><li>Batteries caméra / drone chargées.</li><li>Petite marge carburant et imprévus.</li></ul></div>
+  </div>
+  <div class='expert-card' style='margin-top:15px;'><h3>Rituel du matin</h3><ul style='padding-left:15px; font-size:.85rem; margin-top:10px;'><li>Pression pneus, niveau huile, météo.</li><li>Batteries caméras / drone et cartes mémoire.</li><li>Horaires ferry / shuttle revérifiés.</li></ul></div>
+  <footer><span>Roadbook Moto - LCDMH</span><span>Page 2</span></footer>
+</div>
+<div class='page'>
+  <h2 style='color:var(--primary); border-bottom:3px solid var(--accent); padding-bottom:10px;'>Le Parcours</h2>
+  <div class='qr-box'>
+    <div style='width:70%;'>
+      <h3 style='margin:0; color:var(--accent); font-size:1.3rem;'>Trace GPS Digitale</h3>
+      <p style='font-size:.9rem; margin-top:5px;'>Scanner ce code pour importer l'intégralité du parcours dans Kurviger.</p>
+    </div>
+    <img src='data:image/png;base64,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' alt='QR Code'>
+  </div>
+  <table class='route-table'>
+    <thead><tr><th>Jour</th><th>Date</th><th>Départ</th><th>Arrivée</th><th>Distance</th><th>Durée</th><th>Nuit</th></tr></thead>
+    <tbody><tr><td class='day-num'>J01</td><td></td><td>J1 sam 30/05 DEPART - Annecy départ - etape 303km</td><td>J1 sam 30/05 NUIT N1 - Camping Grimselblick Innertkirchen *prix ? (303km)</td><td>426 km</td><td>7h06</td><td>Camping</td></tr>
+<tr><td class='day-num'>J02</td><td></td><td>J1 sam 30/05 NUIT N1 - Camping Grimselblick Innertkirchen *prix ? (303km)</td><td>J2 dim 31/05 NUIT N1 - Camping St. Moritz *prix ? (241km)</td><td>339 km</td><td>5h39</td><td>Camping</td></tr>
+<tr><td class='day-num'>J03</td><td></td><td>J2 dim 31/05 NUIT N1 - Camping St. Moritz *prix ? (241km)</td><td>J3 lun 01/06 NUIT N1/2 - Camping Trafoi (base Stelvio) *prix ? (81km)</td><td>114 km</td><td>1h53</td><td>Camping</td></tr>
+<tr><td class='day-num'>J04</td><td></td><td>J3 lun 01/06 NUIT N1/2 - Camping Trafoi (base Stelvio) *prix ? (81km)</td><td>J4 mar 02/06 NUIT N2/2 - Camping Trafoi (151km)</td><td>213 km</td><td>3h32</td><td>Camping</td></tr>
+<tr><td class='day-num'>J05</td><td></td><td>J4 mar 02/06 NUIT N2/2 - Camping Trafoi (151km)</td><td>J5 mer 03/06 NUIT N1/2 - Camping Löwenhof Brixen *prix ? (171km)</td><td>241 km</td><td>4h00</td><td>Camping</td></tr>
+<tr><td class='day-num'>J06</td><td></td><td>J5 mer 03/06 NUIT N1/2 - Camping Löwenhof Brixen *prix ? (171km)</td><td>J6 jeu 04/06 NUIT N2/2 - Camping Löwenhof Brixen (134km)</td><td>189 km</td><td>3h09</td><td>Camping</td></tr>
+<tr><td class='day-num'>J07</td><td></td><td>J6 jeu 04/06 NUIT N2/2 - Camping Löwenhof Brixen (134km)</td><td>J7 ven 05/06 NUIT N1/2 - Camp Špik Kranjska Gora *prix ? (242km)</td><td>341 km</td><td>5h41</td><td>À préciser</td></tr>
+<tr><td class='day-num'>J08</td><td></td><td>J7 ven 05/06 NUIT N1/2 - Camp Špik Kranjska Gora *prix ? (242km)</td><td>J8 sam 06/06 NUIT N2/2 - Camp Špik Kranjska Gora (93km)</td><td>132 km</td><td>2h11</td><td>À préciser</td></tr>
+<tr><td class='day-num'>J09</td><td></td><td>J8 sam 06/06 NUIT N2/2 - Camp Špik Kranjska Gora (93km)</td><td>J9 dim 07/06 NUIT N1 - Camping Falken Lienz *prix ? (129km)</td><td>181 km</td><td>3h01</td><td>Camping</td></tr>
+<tr><td class='day-num'>J10</td><td></td><td>J9 dim 07/06 NUIT N1 - Camping Falken Lienz *prix ? (129km)</td><td>J10 lun 08/06 NUIT N1 - Seecamp Zell am See *prix ? (91km)</td><td>128 km</td><td>2h07</td><td>À préciser</td></tr>
+<tr><td class='day-num'>J11</td><td></td><td>J10 lun 08/06 NUIT N1 - Seecamp Zell am See *prix ? (91km)</td><td>J11 mar 09/06 NUIT N1 - Ferienparadies Natterer See *prix ? (201km)</td><td>283 km</td><td>4h43</td><td>À préciser</td></tr>
+<tr><td class='day-num'>J12</td><td></td><td>J11 mar 09/06 NUIT N1 - Ferienparadies Natterer See *prix ? (201km)</td><td>J12 mer 10/06 NUIT N1 - Camping RinerLodge Davos *prix ? (190km)</td><td>267 km</td><td>4h27</td><td>Camping</td></tr>
+<tr><td class='day-num'>J13</td><td></td><td>J12 mer 10/06 NUIT N1 - Camping RinerLodge Davos *prix ? (190km)</td><td>J13 jeu 11/06 NUIT N1 - Camping Rendez-vous Kandersteg *prix ? (235km)</td><td>331 km</td><td>5h30</td><td>Camping</td></tr>
+<tr><td class='day-num'>J14</td><td></td><td>J13 jeu 11/06 NUIT N1 - Camping Rendez-vous Kandersteg *prix ? (235km)</td><td>J14 ven 12/06 ARRIVEE - Annecy retour (J13/14 marge)</td><td>297 km</td><td>4h57</td><td>Fin</td></tr></tbody>
+  </table>
+  <footer><span>Roadbook Moto - LCDMH</span><span>Page 3+</span></footer>
+</div>
+</body></html>

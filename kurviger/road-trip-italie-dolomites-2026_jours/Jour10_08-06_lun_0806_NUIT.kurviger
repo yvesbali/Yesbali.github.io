@@ -1,0 +1,77 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature",
+    "avoid_incidents": true
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1780001928048,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        12.771091,
+        46.822674,
+        12.881944,
+        47.33958
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "J9 dim 07/06 NUIT N1 - Camping Falken Lienz *prix ? (129km)",
+          "latitude": 46.822674,
+          "longitude": 12.771091
+        },
+        {
+          "name": "[J10 lun 08/06 - etape 91km] Iselsbergpass",
+          "latitude": 46.836389,
+          "longitude": 12.881944,
+          "shaping": true
+        },
+        {
+          "name": "Großglockner Hochtor *drone",
+          "latitude": 47.082331,
+          "longitude": 12.842035,
+          "shaping": true
+        },
+        {
+          "name": "Edelweißspitze 2571m *drone",
+          "latitude": 47.123773,
+          "longitude": 12.831423,
+          "shaping": true
+        },
+        {
+          "name": "J10 lun 08/06 NUIT N1 - Seecamp Zell am See *prix ? (91km)",
+          "latitude": 47.33958,
+          "longitude": 12.809316
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

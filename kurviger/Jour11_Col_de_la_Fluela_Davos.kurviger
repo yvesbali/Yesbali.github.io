@@ -1,0 +1,39 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "name": "Zillertal Krimml",
+          "latitude": 47.215278,
+          "longitude": 12.181389,
+          "shaping": true
+        },
+        {
+          "name": "Achensee",
+          "latitude": 47.461944,
+          "longitude": 11.7175,
+          "shaping": true
+        },
+        {
+          "name": "J11 mar 09/06 NUIT N1 - Ferienparadies Natterer See *prix ? (201km)",
+          "latitude": 47.238246,
+          "longitude": 11.338709
+        },
+        {
+          "name": "[J12 mer 10/06 - etape 190km] Silvretta Hochalpenstraße",
+          "latitude": 46.927222,
+          "longitude": 10.107778,
+          "shaping": true
+        },
+        {
+          "name": "Col de la Flüela (Davos)",
+          "latitude": 46.749903,
+          "longitude": 9.947798,
+          "shaping": true
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}

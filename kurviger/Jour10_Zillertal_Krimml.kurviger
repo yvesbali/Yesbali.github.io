@@ -1,0 +1,39 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "name": "Großglockner Hochtor *drone",
+          "latitude": 47.082331,
+          "longitude": 12.842035,
+          "shaping": true
+        },
+        {
+          "name": "Edelweißspitze 2571m *drone",
+          "latitude": 47.123773,
+          "longitude": 12.831423,
+          "shaping": true
+        },
+        {
+          "name": "J10 lun 08/06 NUIT N1 - Seecamp Zell am See *prix ? (91km)",
+          "latitude": 47.33958,
+          "longitude": 12.809316
+        },
+        {
+          "name": "[J11 mar 09/06 - etape 201km] Gerlospass",
+          "latitude": 47.2325,
+          "longitude": 12.099722,
+          "shaping": true
+        },
+        {
+          "name": "Zillertal Krimml",
+          "latitude": 47.215278,
+          "longitude": 12.181389,
+          "shaping": true
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature",
+    "avoid_incidents": true
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1780001928048,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        8.226364,
+        46.477901,
+        9.947798,
+        46.749903
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "J1 sam 30/05 NUIT N1 - Camping Grimselblick Innertkirchen *prix ? (303km)",
+          "latitude": 46.706222,
+          "longitude": 8.226364
+        },
+        {
+          "name": "[J2 dim 31/05 - etape 241km] Col de la Furka",
+          "latitude": 46.572938,
+          "longitude": 8.415431,
+          "shaping": true
+        },
+        {
+          "name": "Col de l'Oberalp",
+          "latitude": 46.658708,
+          "longitude": 8.671174,
+          "shaping": true
+        },
+        {
+          "name": "Col de la Flüela",
+          "latitude": 46.749903,
+          "longitude": 9.947798,
+          "shaping": true
+        },
+        {
+          "name": "J2 dim 31/05 NUIT N1 - Camping St. Moritz *prix ? (241km)",
+          "latitude": 46.477901,
+          "longitude": 9.82541
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

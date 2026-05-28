@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>J01 · 04/05/2026</title>
+
+<style>
+body {
+    margin:0;
+    background:#e5e7eb;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#0f172a;
+}
+.wrapper {
+    max-width:1160px;
+    margin:24px auto;
+    background:#ffffff;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+}
+.header {
+    background:#172554;
+    color:white;
+    padding:26px 30px;
+    border-bottom:4px solid #f97316;
+}
+.top-header-actions, .top-actions {
+    display:flex;
+    gap:12px;
+    margin-top:14px;
+    flex-wrap:wrap;
+}
+.top-btn {
+    display:inline-block;
+    background:#24324f;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:999px;
+    font-weight:bold;
+    font-size:14px;
+}
+.top-metrics {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    padding:24px 28px 12px 28px;
+}
+.metric {
+    background:#f8fafc;
+    border:1px solid #cbd5e1;
+    border-radius:14px;
+    padding:16px;
+    text-align:center;
+}
+.metric .big {
+    font-size:20px;
+    font-weight:bold;
+    color:#ea580c;
+}
+.info-box {
+    margin:8px 28px 16px 28px;
+    background:#f8fafc;
+    border:1px solid #cbd5e1;
+    border-left:4px solid #f97316;
+    border-radius:14px;
+    padding:18px;
+}
+.legend {
+    margin:0 0 10px 0;
+    padding:14px 28px;
+    border-top:1px solid #cbd5e1;
+    border-bottom:1px solid #cbd5e1;
+    background:#fff;
+}
+.content {
+    padding:18px 28px 8px 28px;
+}
+.comment-box {
+    margin:0 28px 24px 28px;
+    background:#f8fafc;
+    border:1px solid #cbd5e1;
+    border-radius:16px;
+    padding:18px;
+}
+.comment-box textarea {
+    width:100%;
+    min-height:140px;
+    border:1px solid #cbd5e1;
+    border-radius:12px;
+    padding:12px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+    resize:vertical;
+    box-sizing:border-box;
+}
+.comment-actions {
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:12px;
+}
+.comment-btn {
+    border:none;
+    background:#172554;
+    color:#fff;
+    padding:10px 16px;
+    border-radius:999px;
+    cursor:pointer;
+    font-weight:bold;
+}
+.comment-btn.secondary { background:#64748b; }
+.comment-btn.mic { background:#ea580c; }
+.footer-nav {
+    display:flex;
+    justify-content:space-between;
+    padding:0 28px 24px 28px;
+    gap:12px;
+}
+small.meta {
+    color:#64748b;
+    display:block;
+    margin-top:6px;
+}
+.status {
+    margin-top:10px;
+    color:#64748b;
+    font-size:14px;
+}
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+    gap:16px;
+    padding:24px 28px 28px 28px;
+}
+@media (max-width:900px) {
+    .top-metrics { grid-template-columns:repeat(2,1fr); }
+}
+</style>
+
+</head>
+<body>
+<div class="wrapper">
+    <div class="header">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;">
+            <h1 style="margin:0;">J01 · 04/05/2026</h1>
+            <div style="background:#f59e0b;color:white;padding:10px 18px;border-radius:999px;font-weight:bold;">
+                1000 km
+            </div>
+        </div>
+        <div class="top-header-actions">
+            <a class="top-btn" href="../index.html">🗺️ Index</a>
+            <a class="top-btn" href="https://lcdmh.com/LCDMH_Publication_v4_pin-yz.html">📤 Upload photos</a>
+        </div>
+    </div>
+
+    <div class="top-metrics">
+        <div class="metric"><div class="big">1000</div>Kilomètres</div>
+        <div class="metric"><div class="big">11h24</div>Temps route</div>
+        <div class="metric"><div class="big">101.72 €</div>Carburant estimé</div>
+        <div class="metric"><div class="big">6.5</div>/100 km</div>
+    </div>
+
+    <div class="info-box">
+        <div><strong>🏁 Départ du matin :</strong> Direct Annecy - Douvres</div>
+        <div><strong>🏁 Arrivée du soir :</strong> Hôtel The Shurland Hotel</div>
+        <small class="meta"><strong>Étape départ :</strong> Départ 4 mai 2026 J1 - Direct Annecy -Douvres</small>
+        <small class="meta"><strong>Étape arrivée :</strong> Couchage Hôtel The Shurland Hotel</small>
+        <small class="meta"><strong>Prix carburant appliqué :</strong> 1.565 €/L</small>
+        <small class="meta"><strong>Points utiles retenus :</strong> 4 (instructions de navigation ignorées)</small>
+    </div>
+
+    <div class="legend">
+        <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#22c55e;color:white;">Départ</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#ea580c;color:white;">Étape</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#64748b;color:white;">Passage</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#8b5cf6;color:white;">Spot drone</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#0891b2;color:white;">Ferry</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#2563eb;color:white;">Train</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#0f766e;color:white;">Spot photo</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#dc2626;color:white;">Alerte</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#3b82f6;color:white;">Arrivée</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#7c3aed;color:white;">Base / pause</span>
+    </div>
+
+    
+        <div class="info-box">
+            <h2 style="margin:0 0 10px 0;">⭐ Points forts du jour</h2>
+            <ul style="margin:0;padding-left:20px;color:#334155;">
+                <li><strong>*shuttle_info - Calais Attention Trouver Point GPS Passage avec la navette</strong> — ferry</li>
+            </ul>
+        </div>
+        
+
+    <div class="content">
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #22c55e;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">0 km</div>
+                <div style="font-size:13px;color:#64748b;">0h00</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #2</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Direct Annecy - Douvres</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#22c55e;color:white;">Départ</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">Départ 4 mai 2026 J1 - Direct Annecy -Douvres</p>
+                <p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> Les falaises blanches de Douvres, composées de craie calcaire, sont le résultat de dépôts marins datant de millions d&#x27;années. L&#x27;érosion constante par la mer a sculpté ce paysage emblématique, offrant une vue imprenable sur la Manche. On aperçoit même parfois la France !</p><p style="margin:0 0 6px;color:#334155;"><strong>Histoire :</strong> Douvres a été un point stratégique majeur pour la défense de l&#x27;Angleterre depuis l&#x27;époque romaine. Le château de Douvres, impressionnant, a été reconstruit par Henri II au XIIe siècle et a joué un rôle crucial pendant les deux guerres mondiales, notamment comme centre de commandement pour l&#x27;Opération Dynamo (évacuation de Dunkerque).</p><p style="margin:0 0 6px;color:#334155;"><strong>Anecdote :</strong> On raconte que les tunnels secrets sous le château de Douvres ont servi de décor pour des scènes du film &quot;James Bond contre Goldfinger&quot;. Imagine Bond en cuir, comme toi, mais en Aston Martin !</p><p style="margin:0 0 6px;color:#334155;"><strong>Spécialité :</strong> Goûte au &quot;Dover Sole&quot;, une sole locale pêchée dans les eaux environnantes, souvent préparée simplement meunière pour en apprécier la saveur délicate. Un délice après la traversée !</p><p style="margin:0 0 6px;color:#334155;"><strong>À ne pas rater :</strong> Canterbury, à environ 25 km de Douvres, abrite la magnifique cathédrale de Canterbury, siège de l&#x27;archevêque de Canterbury et lieu de pèlerinage depuis des siècles. Un spot photo spirituel et architectural !</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> Sois vigilant sur les routes côtières autour de Douvres. Elles peuvent être étroites, sinueuses et fréquentées par des camions. La météo peut changer rapidement, avec du brouillard venant de la mer. Prudence !</p>
+                <div style="font-size:12px;color:#94a3b8;">
+                    Royaume-Uni
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/search?q=Direct+Annecy+-+Douvres" target="_blank" rel="noopener">Maps</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #0891b2;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">856 km</div>
+                <div style="font-size:13px;color:#64748b;">8h57</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #3</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">*shuttle_info - Calais Attention Trouver Point GPS Passage avec la navette</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#0891b2;color:white;">Ferry</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">*shuttle_info - Calais Attention Trouver Point GPS Passage avec la navette</p>
+                <p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> On quitte les falaises calcaires françaises pour retrouver les mêmes de l&#x27;autre côté ! La craie blanche sculptée par la mer, c&#x27;est le fil rouge de ce passage.</p><p style="margin:0 0 6px;color:#334155;"><strong>Histoire :</strong> Calais, c&#x27;est le dernier bastion anglais en France pendant plus de 200 ans ! Henri VIII y a même fait son miel, venant régulièrement pour des affaires... et plus si affinités.</p><p style="margin:0 0 6px;color:#334155;"><strong>Anecdote :</strong> Saviez-vous que le célèbre &quot;tunnel sous la Manche&quot; a été imaginé dès 1802 par un ingénieur français ? Napoléon Bonaparte en était fan, mais l&#x27;Angleterre, beaucoup moins !</p><p style="margin:0 0 6px;color:#334155;"><strong>Spécialité :</strong> On oublie la bière française, direction le &quot;Kentish Ale&quot;, une bière blonde locale brassée avec du houblon du Kent, réputé pour son amertume !</p><p style="margin:0 0 6px;color:#334155;"><strong>À ne pas rater :</strong> Les &quot;White Cliffs of Dover&quot; ! À quelques kilomètres à l&#x27;est, ces falaises emblématiques offrent une vue imprenable sur la Manche. Un spot photo obligatoire !</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> Attention aux limitations de vitesse en Angleterre ! Elles sont souvent plus basses qu&#x27;en France et les contrôles, fréquents. Roulez cool, roulez safe !</p>
+                <div style="font-size:12px;color:#94a3b8;">
+                    Royaume-Uni
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/search?q=%2Ashuttle_info+-+Calais+Attention+Trouver+Point+GPS+Passage+avec+la+navette" target="_blank" rel="noopener">Maps</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #64748b;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">927 km</div>
+                <div style="font-size:13px;color:#64748b;">10h21</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #4</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Étape 2</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#64748b;color:white;">Passage</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">Étape 2</p>
+                <p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> Le contraste est saisissant : d&#x27;un côté le calcaire blanc, sculpté par l&#x27;érosion en falaises et vallées douces, de l&#x27;autre le granite sombre, plus massif et accidenté. L&#x27;eau a creusé des grottes et des gorges spectaculaires.</p><p style="margin:0 0 6px;color:#334155;"><strong>Histoire :</strong> Ici, on est peut-être sur les traces d&#x27;une ancienne voie romaine, utilisée pour transporter l&#x27;étain extrait des mines locales. Plus tard, des carrières de calcaire ont alimenté la construction de bâtiments emblématiques dans toute l&#x27;Angleterre.</p><p style="margin:0 0 6px;color:#334155;"><strong>Anecdote :</strong> La légende locale raconte que ce calcaire a des propriétés curatives. Les anciens frottaient leur peau contre les roches pour soulager les douleurs articulaires. À tester (ou pas) ! À moins de 30km, les ruines du château de Tintagel, liées à la légende du roi Arthur, offrent des vues imprenables sur la côte. Idéal pour quelques plans drone.</p><p style="margin:0 0 6px;color:#334155;"><strong>Spécialité :</strong> Goûte au &quot;Stargazy Pie&quot;, une tourte de poisson avec des têtes de poisson qui pointent vers le ciel. C&#x27;est... spécial !</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> Attention aux routes étroites et sinueuses, typiques de la région. Le brouillard peut arriver vite, surtout en altitude. Prévois une bonne visière et un anti-buée efficace.</p>
+                <div style="font-size:12px;color:#94a3b8;">
+                    Royaume-Uni
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/search?q=%C3%89tape+2" target="_blank" rel="noopener">Maps</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #3b82f6;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">1000 km</div>
+                <div style="font-size:13px;color:#64748b;">11h24</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #5</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Hôtel The Shurland Hotel</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#3b82f6;color:white;">Arrivée</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">Couchage Hôtel The Shurland Hotel</p>
+                <p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> L&#x27;île de Sheppey est principalement constituée de calcaire, ce qui explique les falaises blanches que tu as pu voir sur la côte. Le paysage est assez plat, avec des zones marécageuses dues à la proximité de l&#x27;estuaire de la Tamise.</p><p style="margin:0 0 6px;color:#334155;"><strong>Histoire :</strong> Le Shurland Hotel est situé sur l&#x27;île de Sheppey, historiquement un point stratégique pour la défense navale de l&#x27;Angleterre. Au Moyen Âge, l&#x27;île abritait une importante prison, souvent utilisée pour les prisonniers de guerre français.</p><p style="margin:0 0 6px;color:#334155;"><strong>Anecdote :</strong> La légende locale raconte que le Shurland Hotel serait hanté par le fantôme d&#x27;un ancien aubergiste qui aurait caché un trésor dans les murs... et qui le cherche encore ! De quoi pimenter la nuit !</p><p style="margin:0 0 6px;color:#334155;"><strong>Spécialité :</strong> Goûte au &quot;Sheppey Crunch&quot;, un gâteau croustillant aux pommes et aux noix, typique de l&#x27;île. Parfait avec une tasse de thé après une journée sur la route.</p><p style="margin:0 0 6px;color:#334155;"><strong>À ne pas rater :</strong> Le fort de Garrison Point à Sheerness (environ 10km). C&#x27;est un fort du XIXe siècle superbement conservé, offrant une vue imprenable sur l&#x27;estuaire de la Tamise. Idéal pour quelques plans drone !</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> Attention aux vents latéraux violents sur l&#x27;île, surtout si tu traverses le Sheppey Crossing (le pont). La météo peut changer très vite, donc prévois toujours un équipement adapté.</p>
+                <div style="font-size:12px;color:#94a3b8;">
+                    51.406951, 0.858203 · Royaume-Uni
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/maps?q=51.4069506,0.8582032" target="_blank" rel="noopener">Maps</a> · <a href="https://www.google.com/search?q=H%C3%B4tel+The+Shurland+Hotel" target="_blank" rel="noopener">Recherche</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="comment-box">
+        <h2 style="margin-top:0;">🗣️ Commentaire du jour J01</h2>
+        <textarea id="commentaire-jour" placeholder="Tu peux écrire ou dicter ton commentaire ici..."></textarea>
+        <div class="comment-actions">
+            <button id="btn-mic-comment" class="comment-btn mic">🎤 Micro</button>
+            <button id="btn-save-comment" class="comment-btn">💾 Enregistrer</button>
+            <button id="btn-clear-comment" class="comment-btn secondary">🗑️ Effacer</button>
+        </div>
+        <div id="commentaire-status" class="status">Prêt.</div>
+    </div>
+
+    <div class="footer-nav">
+        <span></span>
+        <a href="../index.html" style="color:#172554;text-decoration:none;">🗺️ Master planning</a>
+        <a href="jour-02.html" style="color:#ea580c;text-decoration:none;">Jour suivant →</a>
+    </div>
+</div>
+
+<script>
+(function() {
+    const storageKey = "roadbook_comment_J01";
+    const textarea = document.getElementById("commentaire-jour");
+    const status = document.getElementById("commentaire-status");
+    const btnSave = document.getElementById("btn-save-comment");
+    const btnClear = document.getElementById("btn-clear-comment");
+    const btnMic = document.getElementById("btn-mic-comment");
+
+    function setStatus(msg) {
+        if (status) status.textContent = msg;
+    }
+
+    function loadComment() {
+        const saved = localStorage.getItem(storageKey);
+        if (saved && textarea) {
+            textarea.value = saved;
+            setStatus("Commentaire rechargé depuis cet appareil.");
+        }
+    }
+
+    function saveComment() {
+        if (!textarea) return;
+        localStorage.setItem(storageKey, textarea.value || "");
+        setStatus("Commentaire enregistré sur cet appareil.");
+    }
+
+    function clearComment() {
+        if (!textarea) return;
+        textarea.value = "";
+        localStorage.removeItem(storageKey);
+        setStatus("Commentaire effacé sur cet appareil.");
+    }
+
+    if (btnSave) btnSave.addEventListener("click", saveComment);
+    if (btnClear) btnClear.addEventListener("click", clearComment);
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+        if (btnMic) {
+            btnMic.disabled = true;
+            btnMic.title = "Reconnaissance vocale non supportée par ce navigateur";
+        }
+        setStatus("Micro non supporté par ce navigateur.");
+    } else {
+        const recognition = new SpeechRecognition();
+        recognition.lang = "fr-FR";
+        recognition.interimResults = false;
+        recognition.continuous = false;
+
+        if (btnMic) {
+            btnMic.addEventListener("click", function() {
+                setStatus("Écoute en cours...");
+                recognition.start();
+            });
+        }
+
+        recognition.onresult = function(event) {
+            const text = event.results[0][0].transcript;
+            if (textarea) {
+                if (textarea.value && !textarea.value.endsWith(" ")) {
+                    textarea.value += " ";
+                }
+                textarea.value += text;
+            }
+            saveComment();
+            setStatus("Texte dicté et enregistré.");
+        };
+
+        recognition.onerror = function() {
+            setStatus("Erreur micro ou dictée interrompue.");
+        };
+
+        recognition.onend = function() {
+            if ((textarea && textarea.value) || localStorage.getItem(storageKey)) {
+                setStatus("Prêt.");
+            }
+        };
+    }
+
+    loadComment();
+})();
+</script>
+
+</body>
+</html>

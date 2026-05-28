@@ -1,0 +1,71 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature",
+    "avoid_incidents": true
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1780001928048,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        12.771091,
+        46.484893,
+        13.838178,
+        46.822674
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "J8 sam 06/06 NUIT N2/2 - Camp Špik Kranjska Gora (93km)",
+          "latitude": 46.484893,
+          "longitude": 13.838178
+        },
+        {
+          "name": "[J9 dim 07/06 - etape 129km] Wurzenpass (SLO-AT)",
+          "latitude": 46.519722,
+          "longitude": 13.748333,
+          "shaping": true
+        },
+        {
+          "name": "Gailbergsattel",
+          "latitude": 46.673056,
+          "longitude": 12.989167,
+          "shaping": true
+        },
+        {
+          "name": "J9 dim 07/06 NUIT N1 - Camping Falken Lienz *prix ? (129km)",
+          "latitude": 46.822674,
+          "longitude": 12.771091
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

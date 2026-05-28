@@ -1,0 +1,33 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "name": "Gailbergsattel",
+          "latitude": 46.673056,
+          "longitude": 12.989167,
+          "shaping": true
+        },
+        {
+          "name": "J9 dim 07/06 NUIT N1 - Camping Falken Lienz *prix ? (129km)",
+          "latitude": 46.822674,
+          "longitude": 12.771091
+        },
+        {
+          "name": "[J10 lun 08/06 - etape 91km] Iselsbergpass",
+          "latitude": 46.836389,
+          "longitude": 12.881944,
+          "shaping": true
+        },
+        {
+          "name": "Großglockner Hochtor *drone",
+          "latitude": 47.082331,
+          "longitude": 12.842035,
+          "shaping": true
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}

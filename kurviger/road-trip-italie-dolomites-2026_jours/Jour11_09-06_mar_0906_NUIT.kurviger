@@ -1,0 +1,77 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature",
+    "avoid_incidents": true
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1780001928048,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        11.338709,
+        47.215278,
+        12.809316,
+        47.461944
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "J10 lun 08/06 NUIT N1 - Seecamp Zell am See *prix ? (91km)",
+          "latitude": 47.33958,
+          "longitude": 12.809316
+        },
+        {
+          "name": "[J11 mar 09/06 - etape 201km] Gerlospass",
+          "latitude": 47.2325,
+          "longitude": 12.099722,
+          "shaping": true
+        },
+        {
+          "name": "Zillertal Krimml",
+          "latitude": 47.215278,
+          "longitude": 12.181389,
+          "shaping": true
+        },
+        {
+          "name": "Achensee",
+          "latitude": 47.461944,
+          "longitude": 11.7175,
+          "shaping": true
+        },
+        {
+          "name": "J11 mar 09/06 NUIT N1 - Ferienparadies Natterer See *prix ? (201km)",
+          "latitude": 47.238246,
+          "longitude": 11.338709
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature",
+    "avoid_incidents": true
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1780001928048,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        9.82541,
+        46.410167,
+        10.507345,
+        46.543901
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "J2 dim 31/05 NUIT N1 - Camping St. Moritz *prix ? (241km)",
+          "latitude": 46.477901,
+          "longitude": 9.82541
+        },
+        {
+          "name": "[J3 lun 01/06 - etape 81km] Col de la Bernina",
+          "latitude": 46.410167,
+          "longitude": 10.02475,
+          "shaping": true
+        },
+        {
+          "name": "Passo Foscagno",
+          "latitude": 46.504833,
+          "longitude": 10.218111,
+          "shaping": true
+        },
+        {
+          "name": "J3 lun 01/06 NUIT N1/2 - Camping Trafoi (base Stelvio) *prix ? (81km)",
+          "latitude": 46.543901,
+          "longitude": 10.507345
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}
