@@ -1,0 +1,71 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature",
+    "avoid_incidents": true
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1780001928048,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        9.779192,
+        46.744023,
+        11.338709,
+        47.238246
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "J11 mar 09/06 NUIT N1 - Ferienparadies Natterer See *prix ? (201km)",
+          "latitude": 47.238246,
+          "longitude": 11.338709
+        },
+        {
+          "name": "[J12 mer 10/06 - etape 190km] Silvretta Hochalpenstraße",
+          "latitude": 46.927222,
+          "longitude": 10.107778,
+          "shaping": true
+        },
+        {
+          "name": "Col de la Flüela (Davos)",
+          "latitude": 46.749903,
+          "longitude": 9.947798,
+          "shaping": true
+        },
+        {
+          "name": "J12 mer 10/06 NUIT N1 - Camping RinerLodge Davos *prix ? (190km)",
+          "latitude": 46.744023,
+          "longitude": 9.779192
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

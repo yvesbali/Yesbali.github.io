@@ -1,0 +1,71 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature",
+    "avoid_incidents": true
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1780001928048,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        10.507345,
+        46.543901,
+        11.64768,
+        46.8425
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "J4 mar 02/06 NUIT N2/2 - Camping Trafoi (151km)",
+          "latitude": 46.543901,
+          "longitude": 10.507345
+        },
+        {
+          "name": "[J5 mer 03/06 - etape 171km] Reschenpass / Passo Resia",
+          "latitude": 46.84,
+          "longitude": 10.51,
+          "shaping": true
+        },
+        {
+          "name": "Jaufenpass / Passo Giovo",
+          "latitude": 46.8425,
+          "longitude": 11.310833,
+          "shaping": true
+        },
+        {
+          "name": "J5 mer 03/06 NUIT N1/2 - Camping Löwenhof Brixen *prix ? (171km)",
+          "latitude": 46.734783,
+          "longitude": 11.64768
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

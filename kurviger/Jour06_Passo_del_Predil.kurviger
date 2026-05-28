@@ -1,0 +1,51 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "name": "Passo Sella *drone",
+          "latitude": 46.508611,
+          "longitude": 11.760833,
+          "shaping": true
+        },
+        {
+          "name": "Passo Pordoi",
+          "latitude": 46.488056,
+          "longitude": 11.8125,
+          "shaping": true
+        },
+        {
+          "name": "Passo Falzarego",
+          "latitude": 46.518889,
+          "longitude": 12.008056,
+          "shaping": true
+        },
+        {
+          "name": "Passo Giau *drone",
+          "latitude": 46.485278,
+          "longitude": 12.054167,
+          "shaping": true
+        },
+        {
+          "name": "J6 jeu 04/06 NUIT N2/2 - Camping Löwenhof Brixen (134km)",
+          "latitude": 46.734783,
+          "longitude": 11.64768
+        },
+        {
+          "name": "[J7 ven 05/06 - etape 242km] Plöckenpass / Passo Monte Croce",
+          "latitude": 46.611111,
+          "longitude": 12.953889,
+          "shaping": true
+        },
+        {
+          "name": "Passo del Predil",
+          "latitude": 46.434444,
+          "longitude": 13.578056,
+          "shaping": true
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}

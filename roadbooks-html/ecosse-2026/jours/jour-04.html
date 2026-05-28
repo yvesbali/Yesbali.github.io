@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>J04 · 08/05/2026</title>
+
+<style>
+body {
+    margin:0;
+    background:#e5e7eb;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#0f172a;
+}
+.wrapper {
+    max-width:1160px;
+    margin:24px auto;
+    background:#ffffff;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+}
+.header {
+    background:#172554;
+    color:white;
+    padding:26px 30px;
+    border-bottom:4px solid #f97316;
+}
+.top-header-actions, .top-actions {
+    display:flex;
+    gap:12px;
+    margin-top:14px;
+    flex-wrap:wrap;
+}
+.top-btn {
+    display:inline-block;
+    background:#24324f;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:999px;
+    font-weight:bold;
+    font-size:14px;
+}
+.top-metrics {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    padding:24px 28px 12px 28px;
+}
+.metric {
+    background:#f8fafc;
+    border:1px solid #cbd5e1;
+    border-radius:14px;
+    padding:16px;
+    text-align:center;
+}
+.metric .big {
+    font-size:20px;
+    font-weight:bold;
+    color:#ea580c;
+}
+.info-box {
+    margin:8px 28px 16px 28px;
+    background:#f8fafc;
+    border:1px solid #cbd5e1;
+    border-left:4px solid #f97316;
+    border-radius:14px;
+    padding:18px;
+}
+.legend {
+    margin:0 0 10px 0;
+    padding:14px 28px;
+    border-top:1px solid #cbd5e1;
+    border-bottom:1px solid #cbd5e1;
+    background:#fff;
+}
+.content {
+    padding:18px 28px 8px 28px;
+}
+.comment-box {
+    margin:0 28px 24px 28px;
+    background:#f8fafc;
+    border:1px solid #cbd5e1;
+    border-radius:16px;
+    padding:18px;
+}
+.comment-box textarea {
+    width:100%;
+    min-height:140px;
+    border:1px solid #cbd5e1;
+    border-radius:12px;
+    padding:12px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+    resize:vertical;
+    box-sizing:border-box;
+}
+.comment-actions {
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:12px;
+}
+.comment-btn {
+    border:none;
+    background:#172554;
+    color:#fff;
+    padding:10px 16px;
+    border-radius:999px;
+    cursor:pointer;
+    font-weight:bold;
+}
+.comment-btn.secondary { background:#64748b; }
+.comment-btn.mic { background:#ea580c; }
+.footer-nav {
+    display:flex;
+    justify-content:space-between;
+    padding:0 28px 24px 28px;
+    gap:12px;
+}
+small.meta {
+    color:#64748b;
+    display:block;
+    margin-top:6px;
+}
+.status {
+    margin-top:10px;
+    color:#64748b;
+    font-size:14px;
+}
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+    gap:16px;
+    padding:24px 28px 28px 28px;
+}
+@media (max-width:900px) {
+    .top-metrics { grid-template-columns:repeat(2,1fr); }
+}
+</style>
+
+</head>
+<body>
+<div class="wrapper">
+    <div class="header">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;">
+            <h1 style="margin:0;">J04 · 08/05/2026</h1>
+            <div style="background:#f59e0b;color:white;padding:10px 18px;border-radius:999px;font-weight:bold;">
+                279 km
+            </div>
+        </div>
+        <div class="top-header-actions">
+            <a class="top-btn" href="../index.html">🗺️ Index</a>
+            <a class="top-btn" href="https://lcdmh.com/LCDMH_Publication_v4_pin-yz.html">📤 Upload photos</a>
+        </div>
+    </div>
+
+    <div class="top-metrics">
+        <div class="metric"><div class="big">279</div>Kilomètres</div>
+        <div class="metric"><div class="big">5h46</div>Temps route</div>
+        <div class="metric"><div class="big">28.38 €</div>Carburant estimé</div>
+        <div class="metric"><div class="big">6.5</div>/100 km</div>
+    </div>
+
+    <div class="info-box">
+        <div><strong>🏁 Départ du matin :</strong> Camping Clachtoll Beach Campsite</div>
+        <div><strong>🏁 Arrivée du soir :</strong> Blair Castle (prix_indicatif alternatives_proches)</div>
+        <small class="meta"><strong>Étape départ :</strong> Camping Clachtoll Beach Campsite | N2 | camping | bord de mer</small>
+        <small class="meta"><strong>Étape arrivée :</strong> Blair Castle N2 (prix_indicatif alternatives_proches)</small>
+        <small class="meta"><strong>Prix carburant appliqué :</strong> 1.565 €/L</small>
+        <small class="meta"><strong>Points utiles retenus :</strong> 12 (instructions de navigation ignorées)</small>
+    </div>
+
+    <div class="legend">
+        <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#22c55e;color:white;">Départ</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#ea580c;color:white;">Étape</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#64748b;color:white;">Passage</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#8b5cf6;color:white;">Spot drone</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#0891b2;color:white;">Ferry</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#2563eb;color:white;">Train</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#0f766e;color:white;">Spot photo</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#dc2626;color:white;">Alerte</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#3b82f6;color:white;">Arrivée</span> <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#7c3aed;color:white;">Base / pause</span>
+    </div>
+
+    
+
+    <div class="content">
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #22c55e;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">0 km</div>
+                <div style="font-size:13px;color:#64748b;">0h00</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #7</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Camping Clachtoll Beach Campsite</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#22c55e;color:white;">Départ</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">camping · bord de mer</p>
+                <p style="margin:10px 0 6px;color:#334155;"><strong>Région :</strong> Assynt</p><p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> Le paysage ici est un mélange spectaculaire de calcaire blanc et de granite rose. L&#x27;érosion a sculpté des formations rocheuses étranges, créant des criques et des arches naturelles. Le contraste des couleurs est dingue !</p><p style="margin:0 0 6px;color:#334155;"><strong>Histoire :</strong> Clachtoll était autrefois un important centre de traitement du hareng, fournissant du travail à la communauté locale. La plage servait de point de débarquement pour les bateaux de pêche.</p><p style="margin:0 0 6px;color:#334155;"><strong>Anecdote :</strong> On raconte que les habitants de Clachtoll utilisaient autrefois la plage comme terrain de jeu pour des compétitions de lancer de caber (tronc d&#x27;arbre), prouvant leur force et leur agilité. Imagine les dégâts !</p><p style="margin:0 0 6px;color:#334155;"><strong>Spécialité :</strong> Goûte au Cullen Skink, une soupe épaisse et crémeuse à base d&#x27;églefin fumé, de pommes de terre et d&#x27;oignons. C&#x27;est le plat réconfortant parfait après une journée à moto dans les Highlands.</p><p style="margin:0 0 6px;color:#334155;"><strong>À ne pas rater :</strong> Direction Ardvreck Castle, à environ 20 km au sud. Ce château en ruine au bord du Loch Assynt offre un cadre photo dramatique et une ambiance mystérieuse.</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> Les routes dans l&#x27;Assynt sont magnifiques mais étroites et sinueuses. Attention aux moutons qui traversent et aux gravillons sur la chaussée. Prudence !</p>
+                <div style="font-size:12px;color:#94a3b8;">
+                    58.191823, -5.334462 · Royaume-Uni
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/maps?q=58.1918225,-5.3344618" target="_blank" rel="noopener">Maps</a> · <a href="https://www.google.com/search?q=Camping+Clachtoll+Beach+Campsite+camping+%C2%B7+bord+de+mer" target="_blank" rel="noopener">Recherche</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #f59e0b;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">24 km</div>
+                <div style="font-size:13px;color:#64748b;">0h37</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #8</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Room in shared flat</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#f59e0b;color:white;">Nuit</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">Room in s13hared flat</p>
+                <p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> Si tu es dans une zone calcaire, montre les falaises blanches typiques (si accessibles). Si c&#x27;est du granite, souligne l&#x27;aspect plus accidenté du paysage. Explique comment l&#x27;érosion a sculpté ces roches.</p><p style="margin:0 0 6px;color:#334155;"><strong>Histoire :</strong> Difficile d&#x27;isoler un fait précis pour un &quot;Room in shared flat&quot;. Concentre-toi plutôt sur l&#x27;histoire de la ville la plus proche (si c&#x27;est Londres, par exemple, tu peux parler du Grand Incendie, ou d&#x27;un bâtiment spécifique dans le quartier). Cherche des histoires de colocations insolites dans le coin. Y a-t-il eu une œuvre d&#x27;art célèbre créée dans une coloc&#x27; du quartier ? Un groupe de musique qui a démarré là ? Une invention un peu folle ? Creuse !</p><p style="margin:0 0 6px;color:#334155;"><strong>Spécialité :</strong> Oublie le fish and chips ! Y a-t-il une brasserie artisanale dans le coin ? Un marché local avec un produit spécifique ? Un plat traditionnel revisité dans un restaurant du quartier ?</p><p style="margin:0 0 6px;color:#334155;"><strong>À ne pas rater :</strong> Utilise un site comme Atlas Obscura pour trouver un truc bizarre et unique à moins de 50km. Un menhir caché, un pub hanté, un musée excentrique… Fais-nous voyager !</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> En fonction de la région, alerte sur les routes étroites et sinueuses (surtout si c&#x27;est une zone rurale), le trafic dense (Londres !), ou les conditions météo changeantes. N&#x27;oublie pas le sens de circulation à gauche !</p>
+                <div style="font-size:12px;color:#94a3b8;">
+                    Royaume-Uni
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/search?q=Room+in+shared+flat" target="_blank" rel="noopener">Maps</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #64748b;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">31 km</div>
+                <div style="font-size:13px;color:#64748b;">0h54</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #9</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Calton Hill</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#64748b;color:white;">Passage</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">Calton Hill</p>
+                <p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> Calton Hill offre une vue panoramique sur Édimbourg, mélangeant calcaire et granite. Son relief prononcé est dû à l&#x27;activité volcanique ancienne et à l&#x27;érosion glaciaire, offrant des perspectives uniques sur la ville et la mer.</p><p style="margin:0 0 6px;color:#334155;"><strong>Histoire :</strong> Calton Hill a accueilli l&#x27;Observatoire Royal d&#x27;Édimbourg depuis 1822, jouant un rôle crucial dans l&#x27;astronomie britannique. Le Monument National, commencé en 1826, était destiné à être une réplique du Parthénon, mais les fonds ont manqué, le laissant inachevé et lui valant le surnom de &quot;la Folie d&#x27;Édimbourg&quot;.</p><p style="margin:0 0 6px;color:#334155;"><strong>Anecdote :</strong> L&#x27;astronome Charles Piazzi Smyth, directeur de l&#x27;Observatoire au XIXe siècle, était obsédé par les pyramides égyptiennes. Il a passé des mois à mesurer la Grande Pyramide de Gizeh, convaincu qu&#x27;elle contenait des prophéties.</p><p style="margin:0 0 6px;color:#334155;"><strong>Spécialité :</strong> Goûte au *haggis*, mais pas n&#x27;importe lequel ! Cherche le *haggis* artisanal du Salt Horse, un pub réputé pour ses bières et ses plats locaux, à quelques kilomètres de Calton Hill.</p><p style="margin:0 0 6px;color:#334155;"><strong>À ne pas rater :</strong> Direction le Scott Monument, un impressionnant hommage gothique à l&#x27;écrivain Sir Walter Scott, à environ 2 km de Calton Hill. Grimpe ses 287 marches pour une vue imprenable sur la ville.</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> Attention aux pavés glissants, particulièrement par temps humide. La météo à Édimbourg est imprévisible, prévois une veste étanche ! Le vent peut être fort en hauteur.</p>
+                <div style="font-size:12px;color:#94a3b8;">
+                    55.955597, -3.182351 · Royaume-Uni
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/maps?q=55.9555969,-3.1823506" target="_blank" rel="noopener">Maps</a> · <a href="https://www.google.com/search?q=Calton+Hill" target="_blank" rel="noopener">Recherche</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #64748b;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">31 km</div>
+                <div style="font-size:13px;color:#64748b;">0h55</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #10</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">ÉDIMBOURG Arrivée</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#64748b;color:white;">Passage</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">ÉDIMBOURG Arrivée</p>
+                <p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> Édimbourg est construite sur sept collines d&#x27;origine volcanique et glaciaire, sculptées dans le calcaire et le granite. Arthur&#x27;s Seat, un ancien volcan, offre une vue panoramique sur la ville et la côte. Le contraste entre le gris de la pierre et le vert des collines est saisissant.</p><p style="margin:0 0 6px;color:#334155;"><strong>Histoire :</strong> Édimbourg, c&#x27;est ici que Marie Stuart, reine d&#x27;Écosse, a été emprisonnée et contrainte d&#x27;abdiquer en 1567 au château d&#x27;Édimbourg. Plus tard, en 1707, l&#x27;Acte d&#x27;Union a été signé dans la ville, unifiant les royaumes d&#x27;Angleterre et d&#x27;Écosse.</p><p style="margin:0 0 6px;color:#334155;"><strong>Anecdote :</strong> On raconte que le cimetière de Greyfriars Kirkyard est hanté par le poltergeist de George MacKenzie, un avocat persécuteur des Covenanters (protestants écossais). Des centaines de visiteurs affirment avoir subi des griffures et des brûlures en s&#x27;approchant de sa tombe.</p><p style="margin:0 0 6px;color:#334155;"><strong>Spécialité :</strong> Goûte au &quot;Cullen Skink&quot;, une soupe épaisse à base d&#x27;aiglefin fumé, de pommes de terre et d&#x27;oignons. C&#x27;est un plat réconfortant, parfait après une journée à moto dans le climat écossais.</p><p style="margin:0 0 6px;color:#334155;"><strong>À ne pas rater :</strong> Le Forth Bridge, à environ 15 km à l&#x27;ouest d&#x27;Édimbourg. Ce pont ferroviaire rouge emblématique est un chef-d&#x27;œuvre d&#x27;ingénierie victorienne et un site classé au patrimoine mondial de l&#x27;UNESCO.</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> Fais un point carburant, météo et lumière avant de repartir.</p>
+                <div style="font-size:12px;color:#94a3b8;">
+                    Royaume-Uni
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/search?q=%C3%89DIMBOURG+Arriv%C3%A9e" target="_blank" rel="noopener">Maps</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #64748b;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">32 km</div>
+                <div style="font-size:13px;color:#64748b;">0h58</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #11</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Victoria Street</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#64748b;color:white;">Passage</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">Victoria Street</p>
+                <p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> Ici, le calcaire prédomine, mais l&#x27;influence du granite utilisé dans les bâtiments est visible. Victoria Street est relativement plate, mais on peut apercevoir les collines avoisinantes si on regarde vers le sud.</p><p style="margin:0 0 6px;color:#334155;"><strong>Histoire :</strong> Victoria Street a été construite entre 1851 et 1858, directement après la construction du nouveau Palais de Westminster. L&#x27;objectif était de créer une avenue digne de ce nom reliant le Parlement et la gare de Victoria.</p><p style="margin:0 0 6px;color:#334155;"><strong>Anecdote :</strong> La construction de Victoria Street a nécessité la démolition de quartiers entiers, y compris des bidonvilles notoires. On disait que les rats étaient si nombreux qu&#x27;ils envahissaient les rues pendant les travaux !</p><p style="margin:0 0 6px;color:#334155;"><strong>Spécialité :</strong> Difficile de parler de spécialité locale précise pour Victoria Street. Concentre-toi plutôt sur les pubs traditionnels du quartier de Westminster et propose une pinte de *London Pride* (bière).</p><p style="margin:0 0 6px;color:#334155;"><strong>À ne pas rater :</strong> Les Churchill War Rooms, à moins de 2 km. Un bunker souterrain incroyable, centre névralgique des opérations pendant la Seconde Guerre mondiale. Images saisissantes garanties !</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> La circulation à Victoria Street est dense et souvent congestionnée. Attention aux bus et aux taxis qui s&#x27;arrêtent brusquement. Privilégie les heures creuses pour filmer.</p>
+                <div style="font-size:12px;color:#94a3b8;">
+                    55.876219, -4.292654 · Royaume-Uni
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/maps?q=55.8762192,-4.2926537" target="_blank" rel="noopener">Maps</a> · <a href="https://www.google.com/search?q=Victoria+Street" target="_blank" rel="noopener">Recherche</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #64748b;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">35 km</div>
+                <div style="font-size:13px;color:#64748b;">1h04</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #12</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Château Édimbourg</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#64748b;color:white;">Passage</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">Château Édimbourg</p>
+                <p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> Le château est perché sur Castle Rock, un neck volcanique formé il y a plus de 340 millions d&#x27;années. La vue panoramique permet d&#x27;observer le contraste entre les roches calcaires des Lothians et le granite des Highlands au loin. Le relief accidenté a évidemment joué un rôle stratégique.</p><p style="margin:0 0 6px;color:#334155;"><strong>Histoire :</strong> Le Château d&#x27;Édimbourg a été assiégé 26 fois, ce qui en fait le lieu le plus assiégé de Grande-Bretagne, voire du monde. Au XIIe siècle, David Ier y établit une résidence royale, transformant le château en un important centre administratif et militaire.</p><p style="margin:0 0 6px;color:#334155;"><strong>Anecdote :</strong> La pierre du destin (Stone of Scone), utilisée pour le couronnement des rois écossais, a été volée du château de Westminster en 1950 par des étudiants écossais et brièvement cachée avant d&#x27;être restituée... puis officiellement rendue à l&#x27;Écosse en 1996 et installée au Château d&#x27;Édimbourg.</p><p style="margin:0 0 6px;color:#334155;"><strong>Spécialité :</strong> Goûte un &quot;Edinburgh Fog&quot;, un cocktail local à base de whisky, Drambuie et crème. Tu peux aussi essayer les &quot;Edinburgh Rock&quot;, des bonbons traditionnels à la texture friable et aux saveurs variées.</p><p style="margin:0 0 6px;color:#334155;"><strong>À ne pas rater :</strong> À environ 20 km au sud-est d&#x27;Édimbourg, filme la chapelle de Rosslyn, célèbre pour ses sculptures énigmatiques et son lien supposé avec les Templiers et le Saint Graal. Un incontournable pour les amateurs d&#x27;ésotérisme.</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> Attention aux pavés glissants autour du château, surtout par temps humide. Le vent peut être violent en hauteur. Pense aussi que le stationnement est très limité dans le centre d&#x27;Édimbourg, prévois un parking en périphérie.</p>
+                <div style="font-size:12px;color:#94a3b8;">
+                    55.948687, -3.200417 · Royaume-Uni
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/maps?q=55.9486867,-3.2004175" target="_blank" rel="noopener">Maps</a> · <a href="https://www.google.com/search?q=Ch%C3%A2teau+%C3%89dimbourg" target="_blank" rel="noopener">Recherche</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #64748b;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">48 km</div>
+                <div style="font-size:13px;color:#64748b;">1h39</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #13</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Glasgow</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#64748b;color:white;">Passage</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">Glasgow</p>
+                <p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> Direction le Loch Lomond &amp; The Trossachs National Park (à environ 30 km au nord). Des paysages magnifiques, des routes sinueuses et des vues à couper le souffle t&#x27;attendent. Idéal pour une virée moto inoubliable.</p><p style="margin:0 0 6px;color:#334155;"><strong>Histoire :</strong> Glasgow fut un pilier du commerce transatlantique d&#x27;esclaves au 18ème siècle, une sombre réalité aujourd&#x27;hui commémorée par des plaques et des initiatives éducatives. Ironie du sort, c&#x27;est aussi ici que James Watt perfectionna la machine à vapeur, propulsant la révolution industrielle et... le développement des navires esclavagistes. Glasgow repose sur un mélange de calcaire et de granite, témoignant d&#x27;une histoire géologique mouvementée. Le calcaire, plus tendre, a été sculpté par les glaciers, créant des vallées douces, tandis que le granite, plus résistant, forme des collines offrant des vues panoramiques.</p><p style="margin:0 0 6px;color:#334155;"><strong>Anecdote :</strong> Le &quot;Duke of Wellington Statue&quot; devant le GoMA (Gallery of Modern Art) est souvent coiffé d&#x27;un cône de signalisation orange par les habitants. La police l&#x27;enlève régulièrement, mais il réapparaît aussitôt ! Un symbole d&#x27;humour et de rébellion pacifique typiquement glaswégien.</p><p style="margin:0 0 6px;color:#334155;"><strong>Spécialité :</strong> Goûte au &quot;Smoked Glasgow Ham&quot;, un jambon fumé localement, souvent servi en sandwich ou avec des œufs. Son goût fumé unique est dû à une méthode de préparation traditionnelle.</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> Méfiance avec la météo écossaise, même en été ! Le soleil peut alterner avec des averses en quelques minutes. Prépare-toi à adapter ta conduite et n&#x27;oublie pas l&#x27;équipement de pluie !</p>
+                <div style="font-size:12px;color:#94a3b8;">
+                    55.861155, -4.250169 · Royaume-Uni
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/maps?q=55.861155,-4.2501687" target="_blank" rel="noopener">Maps</a> · <a href="https://www.google.com/search?q=Glasgow" target="_blank" rel="noopener">Recherche</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #64748b;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">83 km</div>
+                <div style="font-size:13px;color:#64748b;">2h21</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #14</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Stirling Castle Château historique - Arrêt 1h</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#64748b;color:white;">Passage</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">Batailles indépendance écossaise</p>
+                <p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> Stirling Castle est perché sur un neck volcanique de basalte et de dolérite, dominant la plaine environnante. Le calcaire et le granite présents dans la région ont été utilisés pour la construction du château.</p><p style="margin:0 0 6px;color:#334155;"><strong>Histoire :</strong> Stirling Castle fut le lieu de couronnement de nombreux rois d&#x27;Écosse, dont Marie Stuart, Reine d&#x27;Écosse, en 1542. Le château fut assiégé à plusieurs reprises, notamment lors des guerres d&#x27;indépendance écossaises.</p><p style="margin:0 0 6px;color:#334155;"><strong>Anecdote :</strong> La Tapisserie des Licornes, une reconstitution moderne de tapisseries médiévales, est une attraction majeure. On dit que la cour royale utilisait des licornes réelles comme symboles de pureté et de pouvoir.</p><p style="margin:0 0 6px;color:#334155;"><strong>Spécialité :</strong> Le *Stirling Pie*, une tourte à la viande locale (souvent du bœuf ou du mouton), est un incontournable des boulangeries de la ville. Accompagne-la d&#x27;une *Irn-Bru*, la boisson gazeuse écossaise par excellence.</p><p style="margin:0 0 6px;color:#334155;"><strong>À ne pas rater :</strong> Le *Wallace Monument*, à Bridge of Allan (à environ 5 km), offre une vue imprenable et commémore William Wallace, héros de l&#x27;indépendance écossaise. L&#x27;ascension est un défi, mais la récompense est à la hauteur!</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> Les routes autour de Stirling peuvent être sinueuses et étroites, surtout si tu t&#x27;éloignes des axes principaux. Attention aux moutons qui peuvent divaguer sur la chaussée !</p>
+                <div style="font-size:12px;color:#94a3b8;">
+                    56.116500, -3.936900 · Royaume-Uni
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/maps?q=56.1165,-3.9369" target="_blank" rel="noopener">Maps</a> · <a href="https://www.google.com/search?q=Stirling+Castle+Ch%C3%A2teau+historique+-+Arr%C3%AAt+1h+Batailles+ind%C3%A9pendance+%C3%A9cossaise" target="_blank" rel="noopener">Recherche</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #64748b;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">178 km</div>
+                <div style="font-size:13px;color:#64748b;">3h53</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #15</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Visite St Andrews Pier Edge Viewpoint</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#64748b;color:white;">Passage</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">Visite St Andrews Pier Edge Viewpoint</p>
+                <p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> Ici, le calcaire rencontre le granite, offrant un contraste saisissant sur la côte. Le paysage est sculpté par l&#x27;érosion marine, avec des falaises abruptes et des formations rocheuses spectaculaires. On voit bien les différentes couches géologiques.</p><p style="margin:0 0 6px;color:#334155;"><strong>Histoire :</strong> Le St Andrews Pier, initialement construit au XVe siècle, servait de protection pour le port. Il a été détruit par une tempête en 1772 et reconstruit partiellement ensuite. La partie restante offre une vue imprenable.</p><p style="margin:0 0 6px;color:#334155;"><strong>Anecdote :</strong> La légende raconte que toucher la balustrade du Pier Edge Viewpoint porte bonheur... ou malheur, selon la direction du vent ! On dit que les étudiants de St Andrews y viennent avant leurs examens, en espérant la bonne fortune.</p><p style="margin:0 0 6px;color:#334155;"><strong>Spécialité :</strong> Goûte aux &quot;St Andrews Cakes&quot;, des biscuits sablés traditionnels, souvent parfumés au gingembre et au citron. Parfait pour accompagner un thé après la balade !</p><p style="margin:0 0 6px;color:#334155;"><strong>À ne pas rater :</strong> Direction le village de pêcheurs de Crail (environ 20 km), avec son port pittoresque et ses maisons colorées. On y trouve d&#x27;excellents fruits de mer frais.</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> Attention au vent sur la côte, surtout par mauvais temps ! Les rafales peuvent être fortes et surprendre les motards. Vérifie la météo avant de prendre la route.</p>
+                <div style="font-size:12px;color:#94a3b8;">
+                    Royaume-Uni
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/search?q=Visite+St+Andrews+Pier+Edge+Viewpoint" target="_blank" rel="noopener">Maps</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #64748b;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">231 km</div>
+                <div style="font-size:13px;color:#64748b;">5h01</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #16</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Étape 14</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#64748b;color:white;">Passage</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">Étape 14</p>
+                <p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> Le calcaire donne souvent des paysages vallonnés, avec des falaises blanches et des grottes. Le granite, plus dur, forme des reliefs plus abrupts et sauvages, parfois avec des landes désolées. La route serpente entre ces formations, offrant des panoramas contrastés.</p><p style="margin:0 0 6px;color:#334155;"><strong>Histoire :</strong> L&#x27;étape traverse probablement des régions marquées par l&#x27;histoire romaine, avec des vestiges de routes et de forts construits sur le calcaire. Le granite, lui, pourrait évoquer des sites préhistoriques comme des menhirs ou des cercles de pierres.</p><p style="margin:0 0 6px;color:#334155;"><strong>Anecdote :</strong> &quot;Ici, on raconte que les pierres calcaires locales étaient tellement prisées au Moyen-Âge qu&#x27;elles étaient parfois volées de nuit pour construire des maisons, créant de vives tensions entre les villages !&quot;</p><p style="margin:0 0 6px;color:#334155;"><strong>Spécialité :</strong> Si l&#x27;étape passe près du Peak District, il faut absolument goûter au &quot;Bakewell Tart&quot;, une tarte à la frangipane et à la confiture de framboises, une véritable institution locale.</p><p style="margin:0 0 6px;color:#334155;"><strong>À ne pas rater :</strong> Si l&#x27;itinéraire le permet, la ville de Bath, avec ses thermes romains incroyablement conservés, est un incontournable à moins de 50 km.</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> Attention aux routes de campagne étroites typiques de la région. Elles peuvent être bordées de murets en pierre et fréquentées par des tracteurs. Prudence !</p>
+                <div style="font-size:12px;color:#94a3b8;">
+                    Royaume-Uni
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/search?q=%C3%89tape+14" target="_blank" rel="noopener">Maps</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #64748b;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">279 km</div>
+                <div style="font-size:13px;color:#64748b;">5h46</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #17</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Visite Blair Castle Gardens</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#64748b;color:white;">Passage</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">Visite Blair Castle Gardens</p>
+                <p style="margin:10px 0 6px;color:#334155;"><strong>Région :</strong> Perthshire / Atholl</p><p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> La région est un patchwork de calcaire et de granite, offrant des paysages contrastés. Le calcaire crée des vallées fertiles tandis que le granite forme les montagnes environnantes, sculptées par les glaciers.</p><p style="margin:0 0 6px;color:#334155;"><strong>Histoire :</strong> Blair Castle a été le dernier château britannique à être assiégé, en 1746 pendant la rébellion jacobite. Détail croustillant : les assiégeants étaient menés par Lord George Murray, frère du propriétaire du château, Lord Tullibardine, qui lui, était assiégé à l&#x27;intérieur !</p><p style="margin:0 0 6px;color:#334155;"><strong>Anecdote :</strong> La plus haute haie du monde se trouve dans les jardins de Blair Castle ! Plantée en 1746, elle culmine à plus de 36 mètres. Imagine la taille des cisailles !</p><p style="margin:0 0 6px;color:#334155;"><strong>Spécialité :</strong> Goûte au &quot;Atholl Brose&quot;, un mélange de whisky, d&#x27;avoine, de miel et de crème. C&#x27;était la boisson favorite des clans de la région.</p><p style="margin:0 0 6px;color:#334155;"><strong>À ne pas rater :</strong> Le Queen&#x27;s View, à environ 15km au sud, offre un panorama époustouflant sur le Loch Tummel. La reine Victoria elle-même a adoré cet endroit.</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> Attention aux moutons qui divaguent sur les routes secondaires autour de Blair Atholl ! Prudence, surtout à l&#x27;aube et au crépuscule.</p>
+                <div style="font-size:12px;color:#94a3b8;">
+                    56.773336, -3.856854 · Royaume-Uni
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/maps?q=56.7733358,-3.856854" target="_blank" rel="noopener">Maps</a> · <a href="https://www.google.com/search?q=Visite+Blair+Castle+Gardens" target="_blank" rel="noopener">Recherche</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-left:6px solid #3b82f6;
+            border-radius:14px;
+            padding:18px;
+            margin-bottom:14px;
+            display:grid;
+            grid-template-columns:120px 1fr;
+            gap:16px;">
+            <div>
+                <div style="font-size:20px;font-weight:bold;color:#ea580c;">279 km</div>
+                <div style="font-size:13px;color:#64748b;">5h46</div>
+                <div style="font-size:12px;color:#94a3b8;">ligne CSV #18</div>
+            </div>
+            <div>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <h3 style="margin:0;color:#0f172a;">Blair Castle (prix_indicatif alternatives_proches)</h3>
+                    <span style="display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:bold;background:#3b82f6;color:white;">Arrivée</span>
+                </div>
+                <p style="margin:8px 0 8px;color:#334155;">Blair Castle N2 (prix_indicatif alternatives_proches)</p>
+                <p style="margin:10px 0 6px;color:#334155;"><strong>Région :</strong> Perthshire / Atholl</p><p style="margin:0 0 6px;color:#334155;"><strong>Géologie :</strong> On roule sur un mélange de calcaire et de granite. Les collines douces qu&#x27;on traverse sont le résultat de l&#x27;érosion glaciaire sur ces roches dures. Le granite forme des sommets plus massifs, tandis que le calcaire crée des vallées plus fertiles.</p><p style="margin:0 0 6px;color:#334155;"><strong>Histoire :</strong> Blair Castle est le siège ancestral des ducs d&#x27;Atholl. Fait unique, le duc possède sa propre armée privée, la Atholl Highlanders, la seule armée privée légale d&#x27;Europe, autorisée par la reine Victoria en 1845 !</p><p style="margin:0 0 6px;color:#334155;"><strong>Anecdote :</strong> Pendant le soulèvement Jacobite de 1745, le château a été pris à la fois par les forces gouvernementales et les Jacobites à des moments différents. Le frère du duc d&#x27;Atholl a pris possession du château pour le compte des Jacobites, tandis que le duc lui-même soutenait le gouvernement britannique. Ambiance familiale !</p><p style="margin:0 0 6px;color:#334155;"><strong>Spécialité :</strong> Goûte au &quot;Atholl Brose&quot;, un mélange de whisky, miel, crème et flocons d&#x27;avoine. C&#x27;est la boisson traditionnelle de la région, parfaite pour se réchauffer après une journée sur la route.</p><p style="margin:0 0 6px;color:#334155;"><strong>À ne pas rater :</strong> Direction le Queen&#x27;s View, à environ 20 km à l&#x27;ouest. Ce point de vue sur le Loch Tummel, rendu célèbre par la reine Victoria, offre un panorama époustouflant sur les Highlands.</p><p style="margin:0 0 8px;color:#334155;"><strong>Conseil :</strong> Attention aux moutons qui divaguent sur les routes secondaires autour de Blair Atholl. Sois particulièrement vigilant dans les virages aveugles et adapte ta vitesse.</p>
+                <div style="font-size:12px;color:#94a3b8;">
+                    56.773336, -3.856854 · Royaume-Uni
+                </div>
+                <div style="font-size:13px;color:#334155;margin-top:8px;">
+                    <a href="https://www.google.com/maps?q=56.7733358,-3.856854" target="_blank" rel="noopener">Maps</a> · <a href="https://www.google.com/search?q=Blair+Castle+%28prix_indicatif+alternatives_proches%29" target="_blank" rel="noopener">Recherche</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="comment-box">
+        <h2 style="margin-top:0;">🗣️ Commentaire du jour J04</h2>
+        <textarea id="commentaire-jour" placeholder="Tu peux écrire ou dicter ton commentaire ici..."></textarea>
+        <div class="comment-actions">
+            <button id="btn-mic-comment" class="comment-btn mic">🎤 Micro</button>
+            <button id="btn-save-comment" class="comment-btn">💾 Enregistrer</button>
+            <button id="btn-clear-comment" class="comment-btn secondary">🗑️ Effacer</button>
+        </div>
+        <div id="commentaire-status" class="status">Prêt.</div>
+    </div>
+
+    <div class="footer-nav">
+        <a href="jour-03.html" style="color:#ea580c;text-decoration:none;">← Jour précédent</a>
+        <a href="../index.html" style="color:#172554;text-decoration:none;">🗺️ Master planning</a>
+        <span></span>
+    </div>
+</div>
+
+<script>
+(function() {
+    const storageKey = "roadbook_comment_J04";
+    const textarea = document.getElementById("commentaire-jour");
+    const status = document.getElementById("commentaire-status");
+    const btnSave = document.getElementById("btn-save-comment");
+    const btnClear = document.getElementById("btn-clear-comment");
+    const btnMic = document.getElementById("btn-mic-comment");
+
+    function setStatus(msg) {
+        if (status) status.textContent = msg;
+    }
+
+    function loadComment() {
+        const saved = localStorage.getItem(storageKey);
+        if (saved && textarea) {
+            textarea.value = saved;
+            setStatus("Commentaire rechargé depuis cet appareil.");
+        }
+    }
+
+    function saveComment() {
+        if (!textarea) return;
+        localStorage.setItem(storageKey, textarea.value || "");
+        setStatus("Commentaire enregistré sur cet appareil.");
+    }
+
+    function clearComment() {
+        if (!textarea) return;
+        textarea.value = "";
+        localStorage.removeItem(storageKey);
+        setStatus("Commentaire effacé sur cet appareil.");
+    }
+
+    if (btnSave) btnSave.addEventListener("click", saveComment);
+    if (btnClear) btnClear.addEventListener("click", clearComment);
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+        if (btnMic) {
+            btnMic.disabled = true;
+            btnMic.title = "Reconnaissance vocale non supportée par ce navigateur";
+        }
+        setStatus("Micro non supporté par ce navigateur.");
+    } else {
+        const recognition = new SpeechRecognition();
+        recognition.lang = "fr-FR";
+        recognition.interimResults = false;
+        recognition.continuous = false;
+
+        if (btnMic) {
+            btnMic.addEventListener("click", function() {
+                setStatus("Écoute en cours...");
+                recognition.start();
+            });
+        }
+
+        recognition.onresult = function(event) {
+            const text = event.results[0][0].transcript;
+            if (textarea) {
+                if (textarea.value && !textarea.value.endsWith(" ")) {
+                    textarea.value += " ";
+                }
+                textarea.value += text;
+            }
+            saveComment();
+            setStatus("Texte dicté et enregistré.");
+        };
+
+        recognition.onerror = function() {
+            setStatus("Erreur micro ou dictée interrompue.");
+        };
+
+        recognition.onend = function() {
+            if ((textarea && textarea.value) || localStorage.getItem(storageKey)) {
+                setStatus("Prêt.");
+            }
+        };
+    }
+
+    loadComment();
+})();
+</script>
+
+</body>
+</html>

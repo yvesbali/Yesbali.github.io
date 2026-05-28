@@ -1,0 +1,33 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "name": "Sustenpass",
+          "latitude": 46.731667,
+          "longitude": 8.448889,
+          "shaping": true
+        },
+        {
+          "name": "J13 jeu 11/06 NUIT N1 - Camping Rendez-vous Kandersteg *prix ? (235km)",
+          "latitude": 46.496777,
+          "longitude": 7.683602
+        },
+        {
+          "name": "[J14 ven 12/06 - etape 211km] Col du Sanetsch",
+          "latitude": 46.341667,
+          "longitude": 7.2975,
+          "shaping": true
+        },
+        {
+          "name": "Col de la Forclaz (CH-FR)",
+          "latitude": 46.058333,
+          "longitude": 7,
+          "shaping": true
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}

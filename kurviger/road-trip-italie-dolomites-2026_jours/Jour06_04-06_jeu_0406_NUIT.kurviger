@@ -1,0 +1,89 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature",
+    "avoid_incidents": true
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1780001928048,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        11.64768,
+        46.485278,
+        12.054167,
+        46.734783
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "J5 mer 03/06 NUIT N1/2 - Camping Löwenhof Brixen *prix ? (171km)",
+          "latitude": 46.734783,
+          "longitude": 11.64768
+        },
+        {
+          "name": "[J6 jeu 04/06 - etape 134km] Passo Gardena / Grödner Joch",
+          "latitude": 46.555833,
+          "longitude": 11.8025,
+          "shaping": true
+        },
+        {
+          "name": "Passo Sella *drone",
+          "latitude": 46.508611,
+          "longitude": 11.760833,
+          "shaping": true
+        },
+        {
+          "name": "Passo Pordoi",
+          "latitude": 46.488056,
+          "longitude": 11.8125,
+          "shaping": true
+        },
+        {
+          "name": "Passo Falzarego",
+          "latitude": 46.518889,
+          "longitude": 12.008056,
+          "shaping": true
+        },
+        {
+          "name": "Passo Giau *drone",
+          "latitude": 46.485278,
+          "longitude": 12.054167,
+          "shaping": true
+        },
+        {
+          "name": "J6 jeu 04/06 NUIT N2/2 - Camping Löwenhof Brixen (134km)",
+          "latitude": 46.734783,
+          "longitude": 11.64768
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

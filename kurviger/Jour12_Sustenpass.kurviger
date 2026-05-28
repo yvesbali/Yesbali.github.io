@@ -1,0 +1,33 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "name": "Col de la Flüela (Davos)",
+          "latitude": 46.749903,
+          "longitude": 9.947798,
+          "shaping": true
+        },
+        {
+          "name": "J12 mer 10/06 NUIT N1 - Camping RinerLodge Davos *prix ? (190km)",
+          "latitude": 46.744023,
+          "longitude": 9.779192
+        },
+        {
+          "name": "[J13 jeu 11/06 - etape 235km] Oberalppass",
+          "latitude": 46.658708,
+          "longitude": 8.671174,
+          "shaping": true
+        },
+        {
+          "name": "Sustenpass",
+          "latitude": 46.731667,
+          "longitude": 8.448889,
+          "shaping": true
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}

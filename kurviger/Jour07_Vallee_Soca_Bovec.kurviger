@@ -1,0 +1,33 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "name": "Passo del Predil",
+          "latitude": 46.434444,
+          "longitude": 13.578056,
+          "shaping": true
+        },
+        {
+          "name": "J7 ven 05/06 NUIT N1/2 - Camp Špik Kranjska Gora *prix ? (242km)",
+          "latitude": 46.484893,
+          "longitude": 13.838178
+        },
+        {
+          "name": "[J8 sam 06/06 - etape 93km] Col du Vršič 50 lacets *drone",
+          "latitude": 46.432778,
+          "longitude": 13.745833,
+          "shaping": true
+        },
+        {
+          "name": "Vallée Soča Bovec",
+          "latitude": 46.3375,
+          "longitude": 13.554444,
+          "shaping": true
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}

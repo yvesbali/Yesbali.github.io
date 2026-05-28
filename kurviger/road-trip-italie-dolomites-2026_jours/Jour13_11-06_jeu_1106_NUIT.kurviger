@@ -1,0 +1,71 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature",
+    "avoid_incidents": true
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1780001928048,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        7.683602,
+        46.496777,
+        9.779192,
+        46.744023
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "J12 mer 10/06 NUIT N1 - Camping RinerLodge Davos *prix ? (190km)",
+          "latitude": 46.744023,
+          "longitude": 9.779192
+        },
+        {
+          "name": "[J13 jeu 11/06 - etape 235km] Oberalppass",
+          "latitude": 46.658708,
+          "longitude": 8.671174,
+          "shaping": true
+        },
+        {
+          "name": "Sustenpass",
+          "latitude": 46.731667,
+          "longitude": 8.448889,
+          "shaping": true
+        },
+        {
+          "name": "J13 jeu 11/06 NUIT N1 - Camping Rendez-vous Kandersteg *prix ? (235km)",
+          "latitude": 46.496777,
+          "longitude": 7.683602
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}
