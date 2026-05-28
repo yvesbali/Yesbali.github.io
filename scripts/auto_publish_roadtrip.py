@@ -1,19 +1,21 @@
 # -*- coding: utf-8 -*-
 """
-LCDMH — Auto-publish Road Trip CLI v3.2
+LCDMH — Auto-publish Road Trip CLI v3.1
 =======================================
 Script CLI pour GitHub Actions qui surveille une playlist YouTube
 et injecte automatiquement les nouvelles vidéos dans les pages road trip.
 
-v3.2 (07/04/2026):
-- SANS FILTRE PUBLIC : importe TOUTES les vidéos (même unlisted)
-- Parfait pour les pages road trip en test (non accessibles dans le menu)
-- Ignore seulement "Deleted video" et "Private video" (titre générique)
+v3.1 (07/04/2026):
+- FILTRE STRICT : seules les vidéos PUBLIQUES sont importées
+- Ignore "Deleted video", "Private video" (titre YouTube)
+- Ignore status.privacyStatus != "public" (private, unlisted)
+- Ignore les vidéos sans métadonnées (pas accessible)
 
 v3.0: 
 - Top 3 shorts par NOMBRE DE VUES sur la page principale
 - Journal : toutes les vidéos en ordre chronologique
 - Formatage corrigé pour correspondre au CSS
+- Ignore les "Deleted video" et "Private video"
 
 Usage:
     python auto_publish_roadtrip.py --config data/roadtrips/xxx/auto_publish_config.json
@@ -128,25 +130,28 @@ def fetch_playlist_videos_with_stats(playlist_id: str) -> List[Dict[str, Any]]:
         status = meta.get("status", {})
         position = item.get("snippet", {}).get("position", 0)
         
+        # ═══ FILTRE DE VISIBILITÉ ═══
+        # Vérifier le statut de confidentialité de la vidéo
+        privacy_status = status.get("privacyStatus", "")
+        
         # Vérifier si la vidéo est disponible via son titre
         title = snippet.get("title", "")
         
-        # ═══ RÈGLES DE FILTRAGE (MINIMAL) ═══
-        # Ignorer SEULEMENT les vidéos supprimées ou privées (titre générique YouTube)
+        # ═══ RÈGLES DE FILTRAGE ═══
+        # 1. Ignorer les vidéos supprimées ou privées (titre générique YouTube)
         if "Deleted video" in title or "Private video" in title:
-            print(f"   ⚠️ Vidéo ignorée (supprimée/privée): {video_id}")
+            print(f"   ⚠️ Vidéo ignorée (supprimée/privée - titre): {video_id}")
             continue
         
-        # Ignorer les vidéos sans métadonnées (vidéo pas accessible)
+        # 2. Ignorer les vidéos non publiques (private, unlisted)
+        if privacy_status and privacy_status != "public":
+            print(f"   ⚠️ Vidéo ignorée (statut {privacy_status}): {title[:40]}... [{video_id}]")
+            continue
+        
+        # 3. Ignorer les vidéos sans métadonnées (vidéo pas accessible)
         if not meta:
             print(f"   ⚠️ Vidéo ignorée (pas de métadonnées): {video_id}")
             continue
-        
-        # NOTE: On n'ignore PAS les vidéos unlisted (non répertoriées)
-        # car c'est utile pour les pages road trip en test
-        privacy_status = status.get("privacyStatus", "public")
-        if privacy_status != "public":
-            print(f"   📌 Vidéo incluse (statut {privacy_status}): {title[:40]}...")
         
         # Calculer la durée
         duration_s = parse_iso8601_duration(content.get("duration", ""))
@@ -321,21 +326,11 @@ def rebuild_journal(journal_path: Path, videos: List[Dict[str, Any]]) -> Dict[st
     
     content = journal_path.read_text(encoding="utf-8")
     
-    # Dedupliquer par video ID (chaque video une seule fois)
-    seen_ids = set()
-    unique_videos = []
-    for v in videos:
-        vid = v.get("id", v.get("video_id", ""))
-        if vid and vid not in seen_ids:
-            seen_ids.add(vid)
-            unique_videos.append(v)
-    print(f"  Videos uniques: {len(unique_videos)}/{len(videos)}")
-    
-    # Trier chronologiquement (ancien en haut, recent en bas)
+    # Trier les vidéos par date de publication (plus récent en premier)
     videos_sorted = sorted(
-        unique_videos,
+        videos,
         key=lambda v: v.get("published_at", ""),
-        reverse=False
+        reverse=True
     )
     
     # Générer le HTML pour toutes les vidéos
@@ -381,7 +376,7 @@ def rebuild_journal(journal_path: Path, videos: List[Dict[str, Any]]) -> Dict[st
             result["ok"] = True
             result["trace"].append(f"✅ {len(entries_html)} entrées insérées après section-kicker")
         else:
-            # Fallback: insérer juste après le kicker, avant </main>
+            # Fallback: remplacer tout après le kicker jusqu'à </main>
             main_close = content.find('</main>', insert_pos)
             if main_close != -1:
                 new_content = (
@@ -390,6 +385,7 @@ def rebuild_journal(journal_path: Path, videos: List[Dict[str, Any]]) -> Dict[st
                     content[main_close:]
                 )
             else:
+                # Dernier recours: ajouter après le kicker (pas de </main> trouvé)
                 new_content = (
                     content[:insert_pos] +
                     "\n" + "\n".join(entries_html) + "\n" +
@@ -498,9 +494,9 @@ def main():
         config = json.load(f)
     
     print("=" * 60)
-    print("LCDMH — Auto-publish Road Trip CLI v3.2")
+    print("LCDMH — Auto-publish Road Trip CLI v3.1")
     print("🎯 Top 3 par VUES + Journal complet")
-    print("📌 Mode TEST: inclut les vidéos non répertoriées")
+    print("🔒 Filtre: UNIQUEMENT les vidéos PUBLIQUES")
     print(f"Config: {config_path}")
     print("=" * 60)
     
@@ -534,13 +530,13 @@ def main():
     print(f"\n🎬 Récupération des vidéos YouTube (avec statistiques)...")
     try:
         videos = fetch_playlist_videos_with_stats(playlist_id)
-        print(f"   ✅ {len(videos)} vidéos trouvées (inclut unlisted)")
+        print(f"   ✅ {len(videos)} vidéos valides trouvées")
     except Exception as e:
         print(f"❌ Erreur YouTube API: {e}")
         sys.exit(1)
     
     if not videos:
-        print("   Aucune vidéo dans la playlist.")
+        print("   Aucune vidéo valide dans la playlist.")
         sys.exit(0)
     
     # Afficher les stats globales
