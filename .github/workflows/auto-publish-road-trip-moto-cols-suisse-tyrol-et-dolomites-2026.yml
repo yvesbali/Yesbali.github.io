@@ -1,4 +1,11 @@
-@"
+# Navigue dans le dossier du repo
+cd "C:\ton\chemin\vers\le\repo"
+
+# Supprime l'ancien fichier corrompu
+Remove-Item ".github\workflows\auto-publish-road-trip-moto-cols-suisse-tyrol-et-dolomites-2026.yml" -Force
+
+# Crée le fichier YAML propre (sans BOM, encodage UTF-8)
+$content = @"
 name: Auto-publish road-trip-moto-cols-suisse-tyrol-et-dolomites-2026
 on:
   schedule:
@@ -28,8 +35,8 @@ jobs:
         run: pip install google-api-python-client google-auth reportlab
       - name: Fetch and inject new videos
         env:
-          YT_CLIENT_SECRETS: ${{ secrets.YT_CLIENT_SECRETS }}
-          YT_TOKEN_ANALYTICS: ${{ secrets.YT_TOKEN_ANALYTICS }}
+          YT_CLIENT_SECRETS: `${{ secrets.YT_CLIENT_SECRETS }}`
+          YT_TOKEN_ANALYTICS: `${{ secrets.YT_TOKEN_ANALYTICS }}`
         run: |
           python scripts/auto_publish_roadtrip.py \
             --config data/roadtrips/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026/auto_publish_config.json
@@ -40,8 +47,12 @@ jobs:
           git add -A
           git diff --cached --quiet || git commit -m "Auto-publish: nouvelles videos road-trip-moto-cols-suisse-tyrol-et-dolomites-2026"
           git push
-"@ | Set-Content -Path ".github\workflows\auto-publish-road-trip-moto-cols-suisse-tyrol-et-dolomites-2026.yml" -Encoding UTF8
+"@
 
+# Écrit le fichier sans BOM, en UTF-8
+[System.IO.File]::WriteAllText(".github\workflows\auto-publish-road-trip-moto-cols-suisse-tyrol-et-dolomites-2026.yml", $content, [System.Text.UTF8Encoding]$false)
+
+# Commit et push
 git add .
-git commit -m "Workflow 10h-20h Paris exact (8h-18h UTC)"
+git commit -m "Fix: corrige erreur YAML workflow (encodage UTF-8 sans BOM)"
 git push origin main
