@@ -1,0 +1,40 @@
+name: Mise à jour journal road trip
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'   # toutes les 2 heures
+  workflow_dispatch:          # bouton "Run workflow" manuel
+
+permissions:
+  contents: write
+
+concurrency:
+  group: journal-update
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Reconstruire la page journal
+        run: python scripts/build_journal.py
+
+      - name: Commit & push si changement
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Rien à publier."
+          else
+            git commit -m "Auto: mise à jour journal Dolomites"
+            git push
+          fi
