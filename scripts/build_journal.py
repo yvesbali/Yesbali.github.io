@@ -8,8 +8,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 HANDLE = "@LCDMH"
-SLUG = "road-trip-moto-cols-suisse-tyrol-et-dolomites-2026"
-TITLE = "Road trip moto Cols Suisse, Tyrol et dolomites 2026"
+SLUG = "road-trip-italie-dolomites-2026"
+TITLE = "Road trip Italie Dolomites 2026"
 START = datetime(2026, 5, 30, tzinfo=timezone.utc)
 END = datetime(2026, 6, 13, tzinfo=timezone.utc)
 OUT = Path("roadtrips") / f"{SLUG}-journal.html"
