@@ -15,6 +15,7 @@ import os
 import sys
 import json
 import argparse
+import re
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -232,23 +233,56 @@ def get_traffic_sources(yt_anal, video_id: str, days_back: int = 30) -> dict:
 # ─────────────────────────────────────────────────────────────────────────────
 #  SNAPSHOT — SAUVEGARDE BASELINE
 # ─────────────────────────────────────────────────────────────────────────────
+def _youtube_id_from_entry(entry: dict) -> str:
+    """Extrait un ID YouTube depuis les champs connus des exports locaux/cloud."""
+    if entry.get("id"):
+        return entry["id"]
+
+    for key in ("url", "short_url", "thumb"):
+        value = str(entry.get(key) or "")
+        match = re.search(r"(?:v=|youtu\.be/|shorts/|/vi/)([A-Za-z0-9_-]{11})", value)
+        if match:
+            return match.group(1)
+
+    return ""
+
+
+def _load_video_ids_for_snapshot(limit: int = 50) -> list:
+    cache_file = DIR / "videos_cache.json"
+    if cache_file.exists():
+        data = json.loads(cache_file.read_text(encoding="utf-8"))
+        videos = data.get("videos", [])[:limit]
+        return [v["id"] for v in videos if v.get("id")]
+
+    feed_file = DIR / "data" / "videos.json"
+    if feed_file.exists():
+        data = json.loads(feed_file.read_text(encoding="utf-8"))
+        entries = data.get("videos", []) + data.get("shorts", [])
+        video_ids = []
+        seen = set()
+        for entry in entries:
+            video_id = _youtube_id_from_entry(entry)
+            if video_id and video_id not in seen:
+                video_ids.append(video_id)
+                seen.add(video_id)
+            if len(video_ids) >= limit:
+                break
+        return video_ids
+
+    err("Aucune source vidéo trouvée : videos_cache.json ou data/videos.json")
+    sys.exit(1)
+
+
 def snapshot(yt, yt_anal, video_ids: list = None):
     """
     Sauvegarde les stats actuelles comme baseline pour comparaison future.
-    Si video_ids=None, prend les vidéos récemment optimisées depuis last_optimization.json
+    Si video_ids=None, prend les vidéos depuis le cache local ou le flux cloud.
     """
     # Charger les vidéos à tracker
     if video_ids:
         videos_to_track = video_ids
     else:
-        # Lire le cache pour les 50 dernières vidéos optimisées
-        cache_file = DIR / "videos_cache.json"
-        if not cache_file.exists():
-            err("Cache absent. Lance d'abord : python desc_optimizer.py --mode fetch")
-            sys.exit(1)
-        data   = json.loads(cache_file.read_text(encoding="utf-8"))
-        videos = data["videos"][:50]
-        videos_to_track = [v["id"] for v in videos]
+        videos_to_track = _load_video_ids_for_snapshot()
 
     # Charger l'historique existant
     stats = {}
