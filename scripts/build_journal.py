@@ -3,7 +3,7 @@
 """Reconstruit la page journal du road trip a partir du flux YouTube public.
 Tourne dans GitHub Actions. Aucune cle API. Page reconstruite a chaque run."""
 from __future__ import annotations
-import html, re, urllib.request, xml.etree.ElementTree as ET
+import html, json, re, urllib.error, urllib.request, xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -14,6 +14,7 @@ START = datetime(2026, 5, 30, tzinfo=timezone.utc)
 END = datetime(2026, 6, 13, tzinfo=timezone.utc)
 OUT = Path("roadtrips") / f"{SLUG}-journal.html"
 MAIN = f"/roadtrips/{SLUG}.html"
+VIDEOS_JSON = Path("data") / "videos.json"
 UA = {"User-Agent": "Mozilla/5.0 (compatible; LCDMH/1.0)"}
 MOIS = ["", "janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet",
         "aout", "septembre", "octobre", "novembre", "decembre"]
@@ -23,11 +24,45 @@ def get(url):
     return urllib.request.urlopen(r, timeout=30).read().decode("utf-8", "replace")
 
 def channel_id():
+    if VIDEOS_JSON.exists():
+        try:
+            data = json.loads(VIDEOS_JSON.read_text(encoding="utf-8"))
+            cid = data.get("channel_id", "")
+            if re.fullmatch(r"UC[0-9A-Za-z_-]{22}", cid):
+                return cid
+        except Exception:
+            pass
+
     p = get(f"https://www.youtube.com/{HANDLE}")
     m = re.search(r'"channelId":"(UC[0-9A-Za-z_-]{22})"', p) or re.search(r'channel/(UC[0-9A-Za-z_-]{22})', p)
     if not m:
         raise SystemExit("channelId introuvable")
     return m.group(1)
+
+def video_id_from_entry(entry):
+    for key in ("url", "short_url", "thumb"):
+        value = str(entry.get(key) or "")
+        m = re.search(r"(?:v=|youtu\.be/|shorts/|/vi/)([A-Za-z0-9_-]{11})", value)
+        if m:
+            return m.group(1)
+    return str(entry.get("id") or "")
+
+def local_videos():
+    if not VIDEOS_JSON.exists():
+        return []
+    data = json.loads(VIDEOS_JSON.read_text(encoding="utf-8"))
+    out = []
+    for entry in data.get("videos", []) + data.get("shorts", []):
+        vid = video_id_from_entry(entry)
+        published = str(entry.get("published") or "")
+        if not vid or not published:
+            continue
+        if len(published) == 10:
+            dt = datetime.fromisoformat(published).replace(tzinfo=timezone.utc)
+        else:
+            dt = datetime.fromisoformat(published.replace("Z", "+00:00"))
+        out.append({"id": vid, "title": entry.get("title", "") or "", "dt": dt})
+    return out
 
 def videos(cid):
     feed = get(f"https://www.youtube.com/feeds/videos.xml?channel_id={cid}")
@@ -77,7 +112,15 @@ def page(cards):
             f'<main class="wrap"><div class="kick">Entrees du journal</div>{body}</main></body></html>')
 
 def main():
-    vids = [v for v in videos(channel_id()) if START <= v["dt"] < END]
+    try:
+        source = videos(channel_id())
+    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError) as exc:
+        print(f"Flux YouTube indisponible ({exc}); fallback data/videos.json.")
+        source = local_videos()
+    if not source:
+        raise SystemExit("Aucune video disponible pour reconstruire le journal.")
+
+    vids = [v for v in source if START <= v["dt"] < END]
     vids.sort(key=lambda v: v["dt"], reverse=True)
     new = page("".join(card(v) for v in vids))
     OUT.parent.mkdir(parents=True, exist_ok=True)
