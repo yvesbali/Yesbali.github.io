@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Reconstruit la page journal du road trip a partir du flux YouTube public.
+"""Reconstruit la page journal du road trip a partir de la playlist YouTube.
 Tourne dans GitHub Actions. Aucune cle API. Page reconstruite a chaque run."""
 from __future__ import annotations
 import html, json, re, urllib.error, urllib.request, xml.etree.ElementTree as ET
@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 HANDLE = "@LCDMH"
+PLAYLIST_ID = "PLYEqidd8fqw5Joqcagj_9S8sG23nOw8XR"
 SLUG = "road-trip-italie-dolomites-2026"
 TITLE = "Road trip Italie Dolomites 2026"
 START = datetime(2026, 5, 30, tzinfo=timezone.utc)
@@ -47,11 +48,11 @@ def video_id_from_entry(entry):
             return m.group(1)
     return str(entry.get("id") or "")
 
-def local_videos():
+def local_video_map():
     if not VIDEOS_JSON.exists():
-        return []
+        return {}
     data = json.loads(VIDEOS_JSON.read_text(encoding="utf-8"))
-    out = []
+    out = {}
     for entry in data.get("videos", []) + data.get("shorts", []):
         vid = video_id_from_entry(entry)
         published = str(entry.get("published") or "")
@@ -61,7 +62,37 @@ def local_videos():
             dt = datetime.fromisoformat(published).replace(tzinfo=timezone.utc)
         else:
             dt = datetime.fromisoformat(published.replace("Z", "+00:00"))
-        out.append({"id": vid, "title": entry.get("title", "") or "", "dt": dt})
+        out[vid] = {"id": vid, "title": entry.get("title", "") or "", "dt": dt}
+    return out
+
+def local_videos():
+    return list(local_video_map().values())
+
+def playlist_video_ids():
+    p = get(f"https://www.youtube.com/playlist?list={PLAYLIST_ID}")
+    ids = []
+    for pattern in (r'"videoId":"([A-Za-z0-9_-]{11})"', r"watch\?v=([A-Za-z0-9_-]{11})"):
+        for m in re.finditer(pattern, p):
+            vid = m.group(1)
+            if vid not in ids:
+                ids.append(vid)
+    return ids
+
+def video_title_from_oembed(vid):
+    try:
+        raw = get(f"https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v={vid}&format=json")
+        return json.loads(raw).get("title", "") or f"Video YouTube {vid}"
+    except Exception:
+        return f"Video YouTube {vid}"
+
+def playlist_videos():
+    local = local_video_map()
+    out = []
+    for vid in playlist_video_ids():
+        if vid in local:
+            out.append(local[vid])
+        else:
+            out.append({"id": vid, "title": video_title_from_oembed(vid), "dt": START})
     return out
 
 def videos(cid):
@@ -113,9 +144,18 @@ def page(cards):
 
 def main():
     try:
-        source = videos(channel_id())
+        source = playlist_videos()
+        if not source:
+            raise RuntimeError("playlist vide")
     except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError) as exc:
-        print(f"Flux YouTube indisponible ({exc}); fallback data/videos.json.")
+        print(f"Playlist YouTube indisponible ({exc}); fallback flux chaine.")
+        try:
+            source = videos(channel_id())
+        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError) as exc2:
+            print(f"Flux YouTube indisponible ({exc2}); fallback data/videos.json.")
+            source = local_videos()
+    except RuntimeError as exc:
+        print(f"Playlist YouTube indisponible ({exc}); fallback data/videos.json.")
         source = local_videos()
     if not source:
         raise SystemExit("Aucune video disponible pour reconstruire le journal.")
