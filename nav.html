@@ -73,12 +73,14 @@
     <li class="lcdmh-desktop-cta"><a class="lcdmh-last-video" href="/index.html#videos"><span class="lcdmh-badge-new">NOUVEAU</span><span class="lcdmh-badge-title">Dernière vidéo</span></a></li>
     <li class="lcdmh-desktop-cta"><a class="lcdmh-subscribe" href="https://www.youtube.com/@LCDMH?sub_confirmation=1" target="_blank" rel="noopener">▶ S'abonner</a></li>
     <li class="lcdmh-desktop-cta"><a class="lcdmh-youtube" href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">📺 YouTube</a></li>
+    <li class="lcdmh-mobile-close"><a href="#" id="lcdmh-mobile-close-btn" style="color:#e67e22;font-size:1.2rem;text-align:right;border:none">✕ Fermer</a></li>
   </ul>
 </nav>
 
 <script src="/js/lcdmh-search.js" defer></script>
 
 <style>
+  /* === DESKTOP NAV (inchangé) === */
   #lcdmh-nav{
     --lcdmh-orange:#e67e22;
     --lcdmh-orange-dark:#d35400;
@@ -90,7 +92,7 @@
     top:0;
     z-index:2000;
     display:flex;
-    align-items:flex-start;  /* MODIFIÉ: de 'center' à 'flex-start' pour aligner par le haut */
+    align-items:flex-start;
     justify-content:space-between;
     gap:1rem;
     min-height:82px;
@@ -109,7 +111,7 @@
     letter-spacing:-.03em;
     white-space:nowrap;
     flex-shrink:0;
-    line-height:1.2;  /* AJOUTÉ: pour contrôler la hauteur de ligne */
+    line-height:1.2;
   }
   #lcdmh-nav .lcdmh-logo span{color:var(--lcdmh-orange)}
   #lcdmh-nav .lcdmh-nav-links{
@@ -134,7 +136,7 @@
     letter-spacing:.04em;
     white-space:nowrap;
     transition:color .2s ease, background .2s ease;
-    line-height:1.2;  /* AJOUTÉ: pour uniformiser avec le logo */
+    line-height:1.2;
   }
   #lcdmh-nav .lcdmh-nav-links>li>a:hover,
   #lcdmh-nav .lcdmh-nav-links>li>a.active,
@@ -157,167 +159,147 @@
     transition:opacity .22s ease, transform .22s ease, visibility 0s linear .22s;
   }
   #lcdmh-nav .lcdmh-dropdown::before{
-    content:'';
-    position:absolute;
-    left:0;
-    right:0;
-    top:-18px;
-    height:18px;
+    content:'';position:absolute;
+    left:0;right:0;top:-18px;height:18px;
   }
   #lcdmh-nav .lcdmh-has-drop:hover>.lcdmh-dropdown,
   #lcdmh-nav .lcdmh-has-drop:focus-within>.lcdmh-dropdown,
   #lcdmh-nav .lcdmh-has-drop.open>.lcdmh-dropdown{
-    opacity:1;
-    visibility:visible;
-    pointer-events:auto;
-    transform:translateY(0);
-    transition-delay:0s;
+    opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);transition-delay:0s;
   }
   #lcdmh-nav .lcdmh-dropdown a{
-    display:block;
-    padding:.82rem 1.08rem;
-    color:var(--lcdmh-black);
-    font-size:.98rem;
-    font-weight:600;
-    text-transform:none;
-    letter-spacing:normal;
-    white-space:nowrap;
+    display:block;padding:.82rem 1.08rem;
+    color:var(--lcdmh-black);font-size:.98rem;font-weight:600;
+    text-transform:none;letter-spacing:normal;white-space:nowrap;
   }
   #lcdmh-nav .lcdmh-dropdown a:hover,
   #lcdmh-nav .lcdmh-dropdown a.active{background:#fff8f2;color:var(--lcdmh-orange)}
-
   #lcdmh-nav .lcdmh-last-video{
-    display:inline-flex !important;
-    align-items:center;
-    gap:.45rem;
-    padding:.42rem .95rem !important;
-    border:1px solid #f0a500;
-    border-radius:999px;
-    background:#fff7ef;
-    color:var(--lcdmh-black) !important;
-    text-transform:none !important;
-    letter-spacing:normal !important;
-    font-size:.82rem !important;
-    box-shadow:0 1px 3px rgba(0,0,0,.05);
+    display:inline-flex !important;align-items:center;gap:.45rem;
+    padding:.42rem .95rem !important;border:1px solid #f0a500;border-radius:999px;
+    background:#fff7ef;color:var(--lcdmh-black) !important;
+    text-transform:none !important;letter-spacing:normal !important;
+    font-size:.82rem !important;box-shadow:0 1px 3px rgba(0,0,0,.05);
   }
-  #lcdmh-nav .lcdmh-last-video:hover{background:#fff1df;color:var(--lcdmh-orange) !important}
-  #lcdmh-nav .lcdmh-badge-new{
-    color:var(--lcdmh-orange);
-    font-size:.75rem;
-    font-weight:800;
-    letter-spacing:.08em;
-    animation:lcdmhPulse 1.4s infinite;
-  }
+  #lcdmh-nav .lcdmh-last-video:hover{background:#fff1df;color:var(--lcdmh-orange)!important}
+  #lcdmh-nav .lcdmh-badge-new{color:var(--lcdmh-orange);font-size:.75rem;font-weight:800;letter-spacing:.08em;animation:lcdmhPulse 1.4s infinite}
   #lcdmh-nav .lcdmh-badge-title{font-size:.88rem;font-weight:600;color:inherit;text-transform:none}
-  #lcdmh-nav .lcdmh-subscribe,
-  #lcdmh-nav .lcdmh-youtube{
-    color:#fff !important;
-    border-radius:999px;
-    padding:.72rem 1.15rem !important;
-  }
+  #lcdmh-nav .lcdmh-subscribe,#lcdmh-nav .lcdmh-youtube{color:#fff!important;border-radius:999px;padding:.72rem 1.15rem!important}
   #lcdmh-nav .lcdmh-subscribe{background:var(--lcdmh-orange)}
-  #lcdmh-nav .lcdmh-subscribe:hover{background:var(--lcdmh-orange-dark);color:#fff !important}
+  #lcdmh-nav .lcdmh-subscribe:hover{background:var(--lcdmh-orange-dark);color:#fff!important}
   #lcdmh-nav .lcdmh-youtube{background:#ff0000}
-  #lcdmh-nav .lcdmh-youtube:hover{background:#d80000;color:#fff !important}
-
+  #lcdmh-nav .lcdmh-youtube:hover{background:#d80000;color:#fff!important}
   #lcdmh-nav .lcdmh-search-nav-btn{
-    background:none;
-    border:none;
-    cursor:pointer;
-    font-size:1.1rem;
-    padding:.45rem;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    transition:color .2s ease,transform .2s ease;
-    color:var(--lcdmh-black);
+    background:none;border:none;cursor:pointer;font-size:1.1rem;
+    padding:.45rem;display:flex;align-items:center;justify-content:center;
+    transition:color .2s ease,transform .2s ease;color:var(--lcdmh-black);
   }
   #lcdmh-nav .lcdmh-search-nav-btn:hover{color:var(--lcdmh-orange);transform:scale(1.15)}
-
-  #lcdmh-nav .lcdmh-menu-toggle{
-    display:none;
-    background:none;
-    border:none;
-    cursor:pointer;
-    color:var(--lcdmh-black);
-    font-size:2rem;
-    line-height:1;
-    padding:.45rem;
-  }
-
+  #lcdmh-nav .lcdmh-menu-toggle{display:none}
   @keyframes lcdmhPulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .lcdmh-mobile-close{display:none}
 
-  *, *::before, *::after{box-sizing:border-box}
-  html,body{width:100%;max-width:100%;overflow-x:hidden;margin:0;padding:0}
-
+  /* === MOBILE — OVERLAY PLEIN ÉCRAN === */
   @media (max-width:1100px){
-    #lcdmh-nav{
-      min-height:74px;
-      padding:0.5rem 1rem 0;
-      align-items:center;  /* AJOUTÉ: on revient à center pour le mobile */
-    }
+    html,body{overflow-x:hidden;margin:0;padding:0}
+    *,*::before,*::after{box-sizing:border-box}
+
+    #lcdmh-nav{min-height:74px;padding:0.5rem 1rem 0;align-items:center}
     #lcdmh-nav .lcdmh-logo{font-size:1.48rem}
-    #lcdmh-nav .lcdmh-menu-toggle{display:block}
+    #lcdmh-nav .lcdmh-menu-toggle{
+      display:flex;align-items:center;justify-content:center;
+      background:none;border:none;cursor:pointer;
+      font-size:2rem;width:48px;height:48px;color:var(--lcdmh-black);padding:0;
+    }
+
+    /* Overlay plein écran */
     #lcdmh-nav .lcdmh-nav-links{
-      display:none;
-      position:absolute;
-      top:74px;
-      left:0;
-      right:0;
-      width:100%;
+      display:flex !important;
       flex-direction:column;
-      align-items:stretch;
+      position:fixed !important;
+      top:0 !important;left:0 !important;right:0 !important;bottom:0 !important;
+      width:100vw;height:100vh;
+      background:rgba(20,20,20,.97);
+      z-index:9999;
+      margin:0;padding:5rem 2rem 2rem;
+      overflow-y:auto;
+      overflow-x:hidden;
+      opacity:0;
+      visibility:hidden;
+      pointer-events:none;
+      transition:opacity .3s ease, visibility .3s ease;
       gap:0;
-      background:#fff;
-      box-shadow:0 10px 20px rgba(0,0,0,.1);
-      padding:.7rem 0 1rem;
-      max-height:calc(100vh - 74px);
-      -webkit-overflow-scrolling:touch;
-      overflow:auto;
-    }
-    #lcdmh-nav .lcdmh-nav-links.active{display:flex}
-    #lcdmh-nav .lcdmh-nav-links>li{width:100%;text-align:center}
-    #lcdmh-nav .lcdmh-nav-links>li>a{
-      width:100%;
-      padding:1rem !important;
-      font-size:.98rem;
-      white-space:normal;
-    }
-    #lcdmh-nav .lcdmh-has-drop>a::after{display:none}
-    #lcdmh-nav .lcdmh-dropdown{
-      position:static;
-      min-width:0;
-      width:100%;
-      max-width:100%;
-      box-sizing:border-box;
+      list-style:none;
       box-shadow:none;
-      border:none;
-      border-top:1px solid #ececec;
-      border-radius:0;
-      padding:0;
-      margin:0;
-      background:#fafafa;
+      max-height:none;
+    }
+    #lcdmh-nav .lcdmh-nav-links.active{
+      opacity:1 !important;
+      visibility:visible !important;
+      pointer-events:auto !important;
+      display:flex !important;
+    }
+    #lcdmh-nav .lcdmh-nav-links>li{width:100%;text-align:left;margin:0;padding:0;border:none}
+    #lcdmh-nav .lcdmh-nav-links>li>a{
+      display:block;
+      width:100%;
+      padding:.9rem 0;
+      font-size:1.05rem;
+      font-weight:600;
+      color:rgba(255,255,255,.85);
+      text-transform:none;
+      letter-spacing:normal;
+      white-space:normal;
+      border-bottom:1px solid rgba(255,255,255,.08) !important;
+    }
+    #lcdmh-nav .lcdmh-nav-links>li>a:hover,
+    #lcdmh-nav .lcdmh-nav-links>li>a.active{color:var(--lcdmh-orange)}
+    #lcdmh-nav .lcdmh-has-drop>a::after{content:' ▾';color:var(--lcdmh-orange);margin-left:.3rem}
+    #lcdmh-nav .lcdmh-has-drop.open>a::after{content:' ▴'}
+
+    /* Bouton fermer */
+    .lcdmh-mobile-close{display:block;position:fixed;top:.8rem;right:1rem;z-index:10000;width:auto!important}
+    .lcdmh-mobile-close a{font-size:1.3rem!important;padding:.5rem!important;border:none!important;color:var(--lcdmh-orange)!important}
+
+    /* Sous-menus accordéon */
+    #lcdmh-nav .lcdmh-dropdown{
+      position:static !important;
       max-height:0;
       overflow:hidden;
-      opacity:1;
-      visibility:visible;
-      pointer-events:auto;
-      transform:none;
+      opacity:1 !important;visibility:visible !important;pointer-events:auto !important;
+      transform:none !important;
       transition:max-height .35s ease;
+      padding:0;
+      margin:0 0 0 .5rem;
+      background:transparent !important;
+      border:none !important;box-shadow:none !important;border-radius:0 !important;
+      min-width:0 !important;width:100% !important;
     }
     #lcdmh-nav .lcdmh-dropdown::before{display:none}
-    #lcdmh-nav .lcdmh-has-drop.open>.lcdmh-dropdown{max-height:5000px;overflow-y:auto;transition:max-height .35s ease}
-    #lcdmh-nav .lcdmh-dropdown a{white-space:normal;word-break:break-word;overflow-wrap:break-word;padding:.65rem 1rem;font-size:.88rem;width:100%;max-width:100%;box-sizing:border-box}
-    #lcdmh-nav .lcdmh-desktop-cta{padding:0 .8rem}
+    #lcdmh-nav .lcdmh-has-drop.open>.lcdmh-dropdown{max-height:5000px !important}
+    #lcdmh-nav .lcdmh-dropdown a{
+      display:block;
+      padding:.65rem 0 .65rem .5rem;
+      color:rgba(255,255,255,.65);
+      font-size:.95rem;font-weight:400;
+      white-space:normal;
+      word-break:break-word;
+      overflow-wrap:break-word;
+      width:100%;max-width:100%;
+      border-bottom:1px solid rgba(255,255,255,.04);
+      text-transform:none;letter-spacing:normal;
+      background:transparent !important;
+    }
+    #lcdmh-nav .lcdmh-dropdown a:hover,
+    #lcdmh-nav .lcdmh-dropdown a.active{color:var(--lcdmh-orange)}
+    #lcdmh-nav .lcdmh-desktop-cta{padding:.5rem 0;border-bottom:none!important}
     #lcdmh-nav .lcdmh-last-video,
     #lcdmh-nav .lcdmh-subscribe,
     #lcdmh-nav .lcdmh-youtube{
       display:inline-flex !important;
       justify-content:center;
       width:auto;
-      margin:.4rem auto;
+      margin:.4rem 0;
     }
   }
 </style>
-
-
