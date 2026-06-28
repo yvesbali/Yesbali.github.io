@@ -247,6 +247,9 @@
 
   @keyframes lcdmhPulse{0%,100%{opacity:1}50%{opacity:.35}}
 
+  *, *::before, *::after{box-sizing:border-box}
+  html,body{width:100%;max-width:100%;overflow-x:hidden;margin:0;padding:0}
+
   @media (max-width:1100px){
     #lcdmh-nav{
       min-height:74px;
@@ -269,6 +272,7 @@
       box-shadow:0 10px 20px rgba(0,0,0,.1);
       padding:.7rem 0 1rem;
       max-height:calc(100vh - 74px);
+      -webkit-overflow-scrolling:touch;
       overflow:auto;
     }
     #lcdmh-nav .lcdmh-nav-links.active{display:flex}
@@ -284,11 +288,14 @@
       position:static;
       min-width:0;
       width:100%;
+      max-width:100%;
+      box-sizing:border-box;
       box-shadow:none;
       border:none;
       border-top:1px solid #ececec;
       border-radius:0;
       padding:0;
+      margin:0;
       background:#fafafa;
       max-height:0;
       overflow:hidden;
@@ -296,11 +303,11 @@
       visibility:visible;
       pointer-events:auto;
       transform:none;
-      transition:max-height .25s ease;
+      transition:max-height .35s ease;
     }
     #lcdmh-nav .lcdmh-dropdown::before{display:none}
-    #lcdmh-nav .lcdmh-has-drop.open>.lcdmh-dropdown{max-height:540px}
-    #lcdmh-nav .lcdmh-dropdown a{white-space:normal}
+    #lcdmh-nav .lcdmh-has-drop.open>.lcdmh-dropdown{max-height:5000px;overflow-y:auto;transition:max-height .35s ease}
+    #lcdmh-nav .lcdmh-dropdown a{white-space:normal;word-break:break-word;overflow-wrap:break-word;padding:.65rem 1rem;font-size:.88rem;width:100%;max-width:100%;box-sizing:border-box}
     #lcdmh-nav .lcdmh-desktop-cta{padding:0 .8rem}
     #lcdmh-nav .lcdmh-last-video,
     #lcdmh-nav .lcdmh-subscribe,
