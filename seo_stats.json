@@ -20089,58 +20089,6 @@
   "Z8F8ruQEkKY": {
     "snapshots": [
       {
-        "taken_at": "2026-06-20T10:14:23.880260",
-        "views_30d": 3735,
-        "watch_min": 10808.0,
-        "avg_view_pct": 54.8,
-        "avg_dur_s": 173,
-        "subs": 9,
-        "impressions": 40327,
-        "ctr": 9.26,
-        "sources": {
-          "NO_LINK_OTHER": {
-            "views": 164,
-            "pct": 4.4
-          },
-          "SUBSCRIBER": {
-            "views": 2594,
-            "pct": 69.5
-          },
-          "YT_CHANNEL": {
-            "views": 119,
-            "pct": 3.2
-          },
-          "YT_SEARCH": {
-            "views": 162,
-            "pct": 4.3
-          },
-          "RELATED_VIDEO": {
-            "views": 338,
-            "pct": 9.0
-          },
-          "YT_OTHER_PAGE": {
-            "views": 57,
-            "pct": 1.5
-          },
-          "EXT_URL": {
-            "views": 32,
-            "pct": 0.9
-          },
-          "PLAYLIST": {
-            "views": 4,
-            "pct": 0.1
-          },
-          "NOTIFICATION": {
-            "views": 206,
-            "pct": 5.5
-          },
-          "END_SCREEN": {
-            "views": 59,
-            "pct": 1.6
-          }
-        }
-      },
-      {
         "taken_at": "2026-06-21T10:47:54.327830",
         "views_30d": 3774,
         "watch_min": 10919.0,
@@ -20711,63 +20659,63 @@
             "pct": 1.7
           }
         }
+      },
+      {
+        "taken_at": "2026-07-02T10:15:07.267222",
+        "views_30d": 4125,
+        "watch_min": 11913.0,
+        "avg_view_pct": 54.7,
+        "avg_dur_s": 173,
+        "subs": 10,
+        "impressions": 45299,
+        "ctr": 9.11,
+        "sources": {
+          "NO_LINK_OTHER": {
+            "views": 181,
+            "pct": 4.4
+          },
+          "SUBSCRIBER": {
+            "views": 2745,
+            "pct": 66.5
+          },
+          "YT_CHANNEL": {
+            "views": 176,
+            "pct": 4.3
+          },
+          "YT_SEARCH": {
+            "views": 233,
+            "pct": 5.6
+          },
+          "RELATED_VIDEO": {
+            "views": 371,
+            "pct": 9.0
+          },
+          "YT_OTHER_PAGE": {
+            "views": 68,
+            "pct": 1.6
+          },
+          "EXT_URL": {
+            "views": 67,
+            "pct": 1.6
+          },
+          "PLAYLIST": {
+            "views": 5,
+            "pct": 0.1
+          },
+          "NOTIFICATION": {
+            "views": 208,
+            "pct": 5.0
+          },
+          "END_SCREEN": {
+            "views": 71,
+            "pct": 1.7
+          }
+        }
       }
     ]
   },
   "JWVGNllw9qI": {
     "snapshots": [
-      {
-        "taken_at": "2026-06-20T10:14:23.880260",
-        "views_30d": 11056,
-        "watch_min": 113735.0,
-        "avg_view_pct": 28.8,
-        "avg_dur_s": 617,
-        "subs": 50,
-        "impressions": 118014,
-        "ctr": 9.37,
-        "sources": {
-          "NO_LINK_OTHER": {
-            "views": 415,
-            "pct": 3.8
-          },
-          "SUBSCRIBER": {
-            "views": 8395,
-            "pct": 75.9
-          },
-          "YT_CHANNEL": {
-            "views": 255,
-            "pct": 2.3
-          },
-          "YT_SEARCH": {
-            "views": 220,
-            "pct": 2.0
-          },
-          "RELATED_VIDEO": {
-            "views": 1256,
-            "pct": 11.4
-          },
-          "YT_OTHER_PAGE": {
-            "views": 195,
-            "pct": 1.8
-          },
-          "EXT_URL": {
-            "views": 125,
-            "pct": 1.1
-          },
-          "PLAYLIST": {
-            "views": 8,
-            "pct": 0.1
-          },
-          "NOTIFICATION": {
-            "views": 182,
-            "pct": 1.6
-          },
-          "END_SCREEN": {
-            "views": 3,
-            "pct": 0.0
-          }
-        }
-      },
       {
         "taken_at": "2026-06-21T10:47:54.327830",
         "views_30d": 11153,
@@ -21339,63 +21287,63 @@
             "pct": 0.0
           }
         }
+      },
+      {
+        "taken_at": "2026-07-02T10:15:07.267222",
+        "views_30d": 11837,
+        "watch_min": 120485.0,
+        "avg_view_pct": 28.5,
+        "avg_dur_s": 610,
+        "subs": 55,
+        "impressions": 127797,
+        "ctr": 9.26,
+        "sources": {
+          "NO_LINK_OTHER": {
+            "views": 440,
+            "pct": 3.7
+          },
+          "SUBSCRIBER": {
+            "views": 8851,
+            "pct": 74.8
+          },
+          "YT_CHANNEL": {
+            "views": 322,
+            "pct": 2.7
+          },
+          "YT_SEARCH": {
+            "views": 266,
+            "pct": 2.2
+          },
+          "RELATED_VIDEO": {
+            "views": 1396,
+            "pct": 11.8
+          },
+          "YT_OTHER_PAGE": {
+            "views": 211,
+            "pct": 1.8
+          },
+          "EXT_URL": {
+            "views": 155,
+            "pct": 1.3
+          },
+          "PLAYLIST": {
+            "views": 8,
+            "pct": 0.1
+          },
+          "NOTIFICATION": {
+            "views": 183,
+            "pct": 1.5
+          },
+          "END_SCREEN": {
+            "views": 3,
+            "pct": 0.0
+          }
+        }
       }
     ]
   },
   "ND1EVaW5MLA": {
     "snapshots": [
-      {
-        "taken_at": "2026-06-20T10:14:23.880260",
-        "views_30d": 6068,
-        "watch_min": 4187.0,
-        "avg_view_pct": 70.4,
-        "avg_dur_s": 65,
-        "subs": 3,
-        "impressions": 24996,
-        "ctr": 24.28,
-        "sources": {
-          "NO_LINK_OTHER": {
-            "views": 4,
-            "pct": 0.1
-          },
-          "SUBSCRIBER": {
-            "views": 1712,
-            "pct": 28.2
-          },
-          "YT_CHANNEL": {
-            "views": 414,
-            "pct": 6.8
-          },
-          "YT_SEARCH": {
-            "views": 72,
-            "pct": 1.2
-          },
-          "YT_OTHER_PAGE": {
-            "views": 190,
-            "pct": 3.1
-          },
-          "EXT_URL": {
-            "views": 33,
-            "pct": 0.5
-          },
-          "PLAYLIST": {
-            "views": 2,
-            "pct": 0.0
-          },
-          "NOTIFICATION": {
-            "views": 500,
-            "pct": 8.2
-          },
-          "END_SCREEN": {
-            "views": 49,
-            "pct": 0.8
-          },
-          "SHORTS": {
-            "views": 3088,
-            "pct": 50.9
-          }
-        }
-      },
       {
         "taken_at": "2026-06-21T10:47:54.327830",
         "views_30d": 6075,
@@ -21967,63 +21915,63 @@
             "pct": 56.6
           }
         }
+      },
+      {
+        "taken_at": "2026-07-02T10:15:07.267222",
+        "views_30d": 3078,
+        "watch_min": 1989.0,
+        "avg_view_pct": 66.3,
+        "avg_dur_s": 61,
+        "subs": 2,
+        "impressions": 11603,
+        "ctr": 26.53,
+        "sources": {
+          "NO_LINK_OTHER": {
+            "views": 2,
+            "pct": 0.1
+          },
+          "SUBSCRIBER": {
+            "views": 669,
+            "pct": 21.7
+          },
+          "YT_CHANNEL": {
+            "views": 186,
+            "pct": 6.0
+          },
+          "YT_SEARCH": {
+            "views": 53,
+            "pct": 1.7
+          },
+          "YT_OTHER_PAGE": {
+            "views": 106,
+            "pct": 3.4
+          },
+          "EXT_URL": {
+            "views": 19,
+            "pct": 0.6
+          },
+          "PLAYLIST": {
+            "views": 1,
+            "pct": 0.0
+          },
+          "NOTIFICATION": {
+            "views": 110,
+            "pct": 3.6
+          },
+          "END_SCREEN": {
+            "views": 46,
+            "pct": 1.5
+          },
+          "SHORTS": {
+            "views": 1884,
+            "pct": 61.2
+          }
+        }
       }
     ]
   },
   "CIYvbiJV9ag": {
     "snapshots": [
-      {
-        "taken_at": "2026-06-20T10:14:23.880260",
-        "views_30d": 7048,
-        "watch_min": 52310.0,
-        "avg_view_pct": 49.8,
-        "avg_dur_s": 445,
-        "subs": 44,
-        "impressions": 84770,
-        "ctr": 8.31,
-        "sources": {
-          "NO_LINK_OTHER": {
-            "views": 291,
-            "pct": 4.1
-          },
-          "SUBSCRIBER": {
-            "views": 4588,
-            "pct": 65.1
-          },
-          "YT_CHANNEL": {
-            "views": 346,
-            "pct": 4.9
-          },
-          "YT_SEARCH": {
-            "views": 114,
-            "pct": 1.6
-          },
-          "RELATED_VIDEO": {
-            "views": 1182,
-            "pct": 16.8
-          },
-          "YT_OTHER_PAGE": {
-            "views": 135,
-            "pct": 1.9
-          },
-          "EXT_URL": {
-            "views": 87,
-            "pct": 1.2
-          },
-          "PLAYLIST": {
-            "views": 7,
-            "pct": 0.1
-          },
-          "NOTIFICATION": {
-            "views": 273,
-            "pct": 3.9
-          },
-          "END_SCREEN": {
-            "views": 25,
-            "pct": 0.4
-          }
-        }
-      },
       {
         "taken_at": "2026-06-21T10:47:54.327830",
         "views_30d": 7073,
@@ -22595,63 +22543,59 @@
             "pct": 0.1
           }
         }
+      },
+      {
+        "taken_at": "2026-07-02T10:15:07.267222",
+        "views_30d": 786,
+        "watch_min": 5032.0,
+        "avg_view_pct": 43.0,
+        "avg_dur_s": 384,
+        "subs": 9,
+        "impressions": 14744,
+        "ctr": 5.33,
+        "sources": {
+          "NO_LINK_OTHER": {
+            "views": 65,
+            "pct": 8.3
+          },
+          "SUBSCRIBER": {
+            "views": 163,
+            "pct": 20.8
+          },
+          "YT_CHANNEL": {
+            "views": 171,
+            "pct": 21.8
+          },
+          "YT_SEARCH": {
+            "views": 26,
+            "pct": 3.3
+          },
+          "RELATED_VIDEO": {
+            "views": 301,
+            "pct": 38.4
+          },
+          "YT_OTHER_PAGE": {
+            "views": 26,
+            "pct": 3.3
+          },
+          "EXT_URL": {
+            "views": 24,
+            "pct": 3.1
+          },
+          "PLAYLIST": {
+            "views": 3,
+            "pct": 0.4
+          },
+          "NOTIFICATION": {
+            "views": 5,
+            "pct": 0.6
+          }
+        }
       }
     ]
   },
   "6rdFANBBwmY": {
     "snapshots": [
-      {
-        "taken_at": "2026-06-20T10:14:23.880260",
-        "views_30d": 3728,
-        "watch_min": 30000.0,
-        "avg_view_pct": 32.3,
-        "avg_dur_s": 482,
-        "subs": 20,
-        "impressions": 43586,
-        "ctr": 8.55,
-        "sources": {
-          "NO_LINK_OTHER": {
-            "views": 126,
-            "pct": 3.4
-          },
-          "SUBSCRIBER": {
-            "views": 2530,
-            "pct": 67.9
-          },
-          "YT_CHANNEL": {
-            "views": 154,
-            "pct": 4.1
-          },
-          "YT_SEARCH": {
-            "views": 87,
-            "pct": 2.3
-          },
-          "RELATED_VIDEO": {
-            "views": 573,
-            "pct": 15.4
-          },
-          "YT_OTHER_PAGE": {
-            "views": 81,
-            "pct": 2.2
-          },
-          "EXT_URL": {
-            "views": 37,
-            "pct": 1.0
-          },
-          "PLAYLIST": {
-            "views": 5,
-            "pct": 0.1
-          },
-          "NOTIFICATION": {
-            "views": 116,
-            "pct": 3.1
-          },
-          "END_SCREEN": {
-            "views": 19,
-            "pct": 0.5
-          }
-        }
-      },
       {
         "taken_at": "2026-06-21T10:47:54.327830",
         "views_30d": 3731,
@@ -23211,63 +23155,59 @@
             "pct": 0.4
           }
         }
+      },
+      {
+        "taken_at": "2026-07-02T10:15:07.267222",
+        "views_30d": 462,
+        "watch_min": 3676.0,
+        "avg_view_pct": 31.9,
+        "avg_dur_s": 477,
+        "subs": 4,
+        "impressions": 8067,
+        "ctr": 5.73,
+        "sources": {
+          "NO_LINK_OTHER": {
+            "views": 16,
+            "pct": 3.5
+          },
+          "SUBSCRIBER": {
+            "views": 178,
+            "pct": 38.5
+          },
+          "YT_CHANNEL": {
+            "views": 32,
+            "pct": 6.9
+          },
+          "YT_SEARCH": {
+            "views": 21,
+            "pct": 4.5
+          },
+          "RELATED_VIDEO": {
+            "views": 183,
+            "pct": 39.6
+          },
+          "YT_OTHER_PAGE": {
+            "views": 15,
+            "pct": 3.2
+          },
+          "EXT_URL": {
+            "views": 13,
+            "pct": 2.8
+          },
+          "PLAYLIST": {
+            "views": 3,
+            "pct": 0.6
+          },
+          "NOTIFICATION": {
+            "views": 1,
+            "pct": 0.2
+          }
+        }
       }
     ]
   },
   "_-KEIR4QtsY": {
     "snapshots": [
-      {
-        "taken_at": "2026-06-20T10:14:23.880260",
-        "views_30d": 723,
-        "watch_min": 4346.0,
-        "avg_view_pct": 35.0,
-        "avg_dur_s": 360,
-        "subs": 10,
-        "impressions": 12287,
-        "ctr": 5.88,
-        "sources": {
-          "NO_LINK_OTHER": {
-            "views": 27,
-            "pct": 3.8
-          },
-          "SUBSCRIBER": {
-            "views": 246,
-            "pct": 34.6
-          },
-          "YT_CHANNEL": {
-            "views": 108,
-            "pct": 15.2
-          },
-          "YT_SEARCH": {
-            "views": 23,
-            "pct": 3.2
-          },
-          "RELATED_VIDEO": {
-            "views": 274,
-            "pct": 38.5
-          },
-          "YT_OTHER_PAGE": {
-            "views": 13,
-            "pct": 1.8
-          },
-          "EXT_URL": {
-            "views": 14,
-            "pct": 2.0
-          },
-          "ANNOTATION": {
-            "views": 3,
-            "pct": 0.4
-          },
-          "PLAYLIST": {
-            "views": 1,
-            "pct": 0.1
-          },
-          "NOTIFICATION": {
-            "views": 2,
-            "pct": 0.3
-          }
-        }
-      },
       {
         "taken_at": "2026-06-21T10:47:54.327830",
         "views_30d": 677,
@@ -23831,51 +23771,59 @@
             "pct": 0.2
           }
         }
+      },
+      {
+        "taken_at": "2026-07-02T10:15:07.267222",
+        "views_30d": 450,
+        "watch_min": 2864.0,
+        "avg_view_pct": 37.0,
+        "avg_dur_s": 381,
+        "subs": 8,
+        "impressions": 7626,
+        "ctr": 5.9,
+        "sources": {
+          "NO_LINK_OTHER": {
+            "views": 20,
+            "pct": 4.4
+          },
+          "SUBSCRIBER": {
+            "views": 182,
+            "pct": 40.4
+          },
+          "YT_CHANNEL": {
+            "views": 58,
+            "pct": 12.9
+          },
+          "YT_SEARCH": {
+            "views": 5,
+            "pct": 1.1
+          },
+          "RELATED_VIDEO": {
+            "views": 167,
+            "pct": 37.1
+          },
+          "YT_OTHER_PAGE": {
+            "views": 10,
+            "pct": 2.2
+          },
+          "EXT_URL": {
+            "views": 5,
+            "pct": 1.1
+          },
+          "ANNOTATION": {
+            "views": 2,
+            "pct": 0.4
+          },
+          "NOTIFICATION": {
+            "views": 1,
+            "pct": 0.2
+          }
+        }
       }
     ]
   },
   "6g1TqJd7E9k": {
     "snapshots": [
-      {
-        "taken_at": "2026-06-20T10:14:23.880260",
-        "views_30d": 173,
-        "watch_min": 362.0,
-        "avg_view_pct": 34.9,
-        "avg_dur_s": 125,
-        "subs": 0,
-        "impressions": 1917,
-        "ctr": 9.02,
-        "sources": {
-          "NO_LINK_OTHER": {
-            "views": 5,
-            "pct": 2.9
-          },
-          "SUBSCRIBER": {
-            "views": 102,
-            "pct": 59.0
-          },
-          "YT_CHANNEL": {
-            "views": 35,
-            "pct": 20.2
-          },
-          "YT_SEARCH": {
-            "views": 5,
-            "pct": 2.9
-          },
-          "RELATED_VIDEO": {
-            "views": 12,
-            "pct": 6.9
-          },
-          "YT_OTHER_PAGE": {
-            "views": 11,
-            "pct": 6.4
-          },
-          "NOTIFICATION": {
-            "views": 3,
-            "pct": 1.7
-          }
-        }
-      },
       {
         "taken_at": "2026-06-21T10:47:54.327830",
         "views_30d": 167,
@@ -24275,59 +24223,47 @@
             "pct": 6.2
           }
         }
+      },
+      {
+        "taken_at": "2026-07-02T10:15:07.267222",
+        "views_30d": 136,
+        "watch_min": 272.0,
+        "avg_view_pct": 33.3,
+        "avg_dur_s": 120,
+        "subs": 0,
+        "impressions": 1523,
+        "ctr": 8.93,
+        "sources": {
+          "NO_LINK_OTHER": {
+            "views": 4,
+            "pct": 2.9
+          },
+          "SUBSCRIBER": {
+            "views": 81,
+            "pct": 59.6
+          },
+          "YT_CHANNEL": {
+            "views": 25,
+            "pct": 18.4
+          },
+          "YT_SEARCH": {
+            "views": 11,
+            "pct": 8.1
+          },
+          "RELATED_VIDEO": {
+            "views": 7,
+            "pct": 5.1
+          },
+          "YT_OTHER_PAGE": {
+            "views": 8,
+            "pct": 5.9
+          }
+        }
       }
     ]
   },
   "q5gECu0ROu0": {
     "snapshots": [
-      {
-        "taken_at": "2026-06-20T10:14:23.880260",
-        "views_30d": 1115,
-        "watch_min": 5241.0,
-        "avg_view_pct": 40.3,
-        "avg_dur_s": 282,
-        "subs": 9,
-        "impressions": 15775,
-        "ctr": 7.07,
-        "sources": {
-          "NO_LINK_OTHER": {
-            "views": 39,
-            "pct": 3.5
-          },
-          "SUBSCRIBER": {
-            "views": 629,
-            "pct": 56.4
-          },
-          "YT_CHANNEL": {
-            "views": 81,
-            "pct": 7.3
-          },
-          "YT_SEARCH": {
-            "views": 30,
-            "pct": 2.7
-          },
-          "RELATED_VIDEO": {
-            "views": 298,
-            "pct": 26.7
-          },
-          "YT_OTHER_PAGE": {
-            "views": 15,
-            "pct": 1.3
-          },
-          "EXT_URL": {
-            "views": 18,
-            "pct": 1.6
-          },
-          "PLAYLIST": {
-            "views": 2,
-            "pct": 0.2
-          },
-          "NOTIFICATION": {
-            "views": 3,
-            "pct": 0.3
-          }
-        }
-      },
       {
         "taken_at": "2026-06-21T10:47:54.327830",
         "views_30d": 1109,
@@ -24855,51 +24791,55 @@
             "pct": 0.2
           }
         }
+      },
+      {
+        "taken_at": "2026-07-02T10:15:07.267222",
+        "views_30d": 893,
+        "watch_min": 4692.0,
+        "avg_view_pct": 45.0,
+        "avg_dur_s": 315,
+        "subs": 7,
+        "impressions": 13778,
+        "ctr": 6.48,
+        "sources": {
+          "NO_LINK_OTHER": {
+            "views": 35,
+            "pct": 3.9
+          },
+          "SUBSCRIBER": {
+            "views": 464,
+            "pct": 52.0
+          },
+          "YT_CHANNEL": {
+            "views": 62,
+            "pct": 6.9
+          },
+          "YT_SEARCH": {
+            "views": 26,
+            "pct": 2.9
+          },
+          "RELATED_VIDEO": {
+            "views": 286,
+            "pct": 32.0
+          },
+          "YT_OTHER_PAGE": {
+            "views": 10,
+            "pct": 1.1
+          },
+          "EXT_URL": {
+            "views": 9,
+            "pct": 1.0
+          },
+          "NOTIFICATION": {
+            "views": 1,
+            "pct": 0.1
+          }
+        }
       }
     ]
   },
   "Wh6nuZKp6sQ": {
     "snapshots": [
-      {
-        "taken_at": "2026-06-20T10:14:23.880260",
-        "views_30d": 152,
-        "watch_min": 313.0,
-        "avg_view_pct": 34.3,
-        "avg_dur_s": 123,
-        "subs": 0,
-        "impressions": 1933,
-        "ctr": 7.86,
-        "sources": {
-          "NO_LINK_OTHER": {
-            "views": 2,
-            "pct": 1.3
-          },
-          "SUBSCRIBER": {
-            "views": 68,
-            "pct": 44.7
-          },
-          "YT_CHANNEL": {
-            "views": 16,
-            "pct": 10.5
-          },
-          "YT_SEARCH": {
-            "views": 10,
-            "pct": 6.6
-          },
-          "RELATED_VIDEO": {
-            "views": 34,
-            "pct": 22.4
-          },
-          "YT_OTHER_PAGE": {
-            "views": 4,
-            "pct": 2.6
-          },
-          "EXT_URL": {
-            "views": 18,
-            "pct": 11.8
-          }
-        }
-      },
       {
         "taken_at": "2026-06-21T10:47:54.327830",
         "views_30d": 143,
@@ -25339,51 +25279,51 @@
             "pct": 18.4
           }
         }
+      },
+      {
+        "taken_at": "2026-07-02T10:15:07.267222",
+        "views_30d": 94,
+        "watch_min": 205.0,
+        "avg_view_pct": 36.4,
+        "avg_dur_s": 131,
+        "subs": 0,
+        "impressions": 1095,
+        "ctr": 8.59,
+        "sources": {
+          "NO_LINK_OTHER": {
+            "views": 1,
+            "pct": 1.1
+          },
+          "SUBSCRIBER": {
+            "views": 41,
+            "pct": 43.6
+          },
+          "YT_CHANNEL": {
+            "views": 8,
+            "pct": 8.5
+          },
+          "YT_SEARCH": {
+            "views": 3,
+            "pct": 3.2
+          },
+          "RELATED_VIDEO": {
+            "views": 22,
+            "pct": 23.4
+          },
+          "YT_OTHER_PAGE": {
+            "views": 1,
+            "pct": 1.1
+          },
+          "EXT_URL": {
+            "views": 18,
+            "pct": 19.1
+          }
+        }
       }
     ]
   },
   "6rnuYw9FJVI": {
     "snapshots": [
-      {
-        "taken_at": "2026-06-20T10:14:23.880260",
-        "views_30d": 546,
-        "watch_min": 1291.0,
-        "avg_view_pct": 39.3,
-        "avg_dur_s": 141,
-        "subs": 1,
-        "impressions": 4545,
-        "ctr": 12.01,
-        "sources": {
-          "NO_LINK_OTHER": {
-            "views": 12,
-            "pct": 2.2
-          },
-          "SUBSCRIBER": {
-            "views": 13,
-            "pct": 2.4
-          },
-          "YT_CHANNEL": {
-            "views": 26,
-            "pct": 4.8
-          },
-          "YT_SEARCH": {
-            "views": 172,
-            "pct": 31.5
-          },
-          "RELATED_VIDEO": {
-            "views": 20,
-            "pct": 3.7
-          },
-          "YT_OTHER_PAGE": {
-            "views": 4,
-            "pct": 0.7
-          },
-          "EXT_URL": {
-            "views": 299,
-            "pct": 54.8
-          }
-        }
-      },
       {
         "taken_at": "2026-06-21T10:47:54.327830",
         "views_30d": 549,
@@ -25823,51 +25763,51 @@
             "pct": 52.5
           }
         }
+      },
+      {
+        "taken_at": "2026-07-02T10:15:07.267222",
+        "views_30d": 637,
+        "watch_min": 1528.0,
+        "avg_view_pct": 39.9,
+        "avg_dur_s": 143,
+        "subs": 1,
+        "impressions": 5924,
+        "ctr": 10.75,
+        "sources": {
+          "NO_LINK_OTHER": {
+            "views": 18,
+            "pct": 2.8
+          },
+          "SUBSCRIBER": {
+            "views": 6,
+            "pct": 0.9
+          },
+          "YT_CHANNEL": {
+            "views": 19,
+            "pct": 3.0
+          },
+          "YT_SEARCH": {
+            "views": 236,
+            "pct": 37.0
+          },
+          "RELATED_VIDEO": {
+            "views": 22,
+            "pct": 3.5
+          },
+          "YT_OTHER_PAGE": {
+            "views": 7,
+            "pct": 1.1
+          },
+          "EXT_URL": {
+            "views": 329,
+            "pct": 51.6
+          }
+        }
       }
     ]
   },
   "4NIinAzHvHk": {
     "snapshots": [
-      {
-        "taken_at": "2026-06-20T10:14:23.880260",
-        "views_30d": 285,
-        "watch_min": 591.0,
-        "avg_view_pct": 34.5,
-        "avg_dur_s": 124,
-        "subs": 0,
-        "impressions": 2491,
-        "ctr": 11.44,
-        "sources": {
-          "NO_LINK_OTHER": {
-            "views": 9,
-            "pct": 3.2
-          },
-          "SUBSCRIBER": {
-            "views": 65,
-            "pct": 22.8
-          },
-          "YT_CHANNEL": {
-            "views": 15,
-            "pct": 5.3
-          },
-          "YT_SEARCH": {
-            "views": 58,
-            "pct": 20.4
-          },
-          "RELATED_VIDEO": {
-            "views": 15,
-            "pct": 5.3
-          },
-          "YT_OTHER_PAGE": {
-            "views": 5,
-            "pct": 1.8
-          },
-          "EXT_URL": {
-            "views": 118,
-            "pct": 41.4
-          }
-        }
-      },
       {
         "taken_at": "2026-06-21T10:47:54.327830",
         "views_30d": 271,
@@ -26307,6 +26247,46 @@
             "pct": 36.0
           }
         }
+      },
+      {
+        "taken_at": "2026-07-02T10:15:07.267222",
+        "views_30d": 265,
+        "watch_min": 593.0,
+        "avg_view_pct": 37.2,
+        "avg_dur_s": 134,
+        "subs": 0,
+        "impressions": 2657,
+        "ctr": 9.97,
+        "sources": {
+          "NO_LINK_OTHER": {
+            "views": 9,
+            "pct": 3.4
+          },
+          "SUBSCRIBER": {
+            "views": 63,
+            "pct": 23.8
+          },
+          "YT_CHANNEL": {
+            "views": 9,
+            "pct": 3.4
+          },
+          "YT_SEARCH": {
+            "views": 68,
+            "pct": 25.7
+          },
+          "RELATED_VIDEO": {
+            "views": 17,
+            "pct": 6.4
+          },
+          "YT_OTHER_PAGE": {
+            "views": 5,
+            "pct": 1.9
+          },
+          "EXT_URL": {
+            "views": 94,
+            "pct": 35.5
+          }
+        }
       }
     ]
   },
@@ -26580,58 +26560,6 @@
   },
   "lDqsZVpp6CE": {
     "snapshots": [
-      {
-        "taken_at": "2026-06-20T10:14:23.880260",
-        "views_30d": 17126,
-        "watch_min": 5152.0,
-        "avg_view_pct": 97.4,
-        "avg_dur_s": 34,
-        "subs": 10,
-        "impressions": 61222,
-        "ctr": 27.97,
-        "sources": {
-          "NO_LINK_OTHER": {
-            "views": 0,
-            "pct": 0.0
-          },
-          "SUBSCRIBER": {
-            "views": 6532,
-            "pct": 38.1
-          },
-          "YT_CHANNEL": {
-            "views": 404,
-            "pct": 2.4
-          },
-          "YT_SEARCH": {
-            "views": 118,
-            "pct": 0.7
-          },
-          "RELATED_VIDEO": {
-            "views": 40,
-            "pct": 0.2
-          },
-          "YT_OTHER_PAGE": {
-            "views": 298,
-            "pct": 1.7
-          },
-          "EXT_URL": {
-            "views": 3,
-            "pct": 0.0
-          },
-          "PLAYLIST": {
-            "views": 2,
-            "pct": 0.0
-          },
-          "NOTIFICATION": {
-            "views": 718,
-            "pct": 4.2
-          },
-          "SHORTS": {
-            "views": 9008,
-            "pct": 52.6
-          }
-        }
-      },
       {
         "taken_at": "2026-06-21T10:47:54.327830",
         "views_30d": 17146,
@@ -27203,59 +27131,63 @@
             "pct": 56.1
           }
         }
+      },
+      {
+        "taken_at": "2026-07-02T10:15:07.267222",
+        "views_30d": 8211,
+        "watch_min": 2435.0,
+        "avg_view_pct": 93.9,
+        "avg_dur_s": 32,
+        "subs": 6,
+        "impressions": 31075,
+        "ctr": 26.42,
+        "sources": {
+          "NO_LINK_OTHER": {
+            "views": 0,
+            "pct": 0.0
+          },
+          "SUBSCRIBER": {
+            "views": 3442,
+            "pct": 42.0
+          },
+          "YT_CHANNEL": {
+            "views": 225,
+            "pct": 2.7
+          },
+          "YT_SEARCH": {
+            "views": 56,
+            "pct": 0.7
+          },
+          "RELATED_VIDEO": {
+            "views": 38,
+            "pct": 0.5
+          },
+          "YT_OTHER_PAGE": {
+            "views": 129,
+            "pct": 1.6
+          },
+          "EXT_URL": {
+            "views": 3,
+            "pct": 0.0
+          },
+          "PLAYLIST": {
+            "views": 2,
+            "pct": 0.0
+          },
+          "NOTIFICATION": {
+            "views": 131,
+            "pct": 1.6
+          },
+          "SHORTS": {
+            "views": 4177,
+            "pct": 50.9
+          }
+        }
       }
     ]
   },
   "NdCn6DjWCBU": {
     "snapshots": [
-      {
-        "taken_at": "2026-06-20T10:14:23.880260",
-        "views_30d": 3637,
-        "watch_min": 1126.0,
-        "avg_view_pct": 72.2,
-        "avg_dur_s": 30,
-        "subs": 5,
-        "impressions": 11458,
-        "ctr": 31.74,
-        "sources": {
-          "NO_LINK_OTHER": {
-            "views": 1,
-            "pct": 0.0
-          },
-          "SUBSCRIBER": {
-            "views": 556,
-            "pct": 15.3
-          },
-          "YT_CHANNEL": {
-            "views": 217,
-            "pct": 6.0
-          },
-          "YT_SEARCH": {
-            "views": 71,
-            "pct": 2.0
-          },
-          "YT_OTHER_PAGE": {
-            "views": 129,
-            "pct": 3.5
-          },
-          "EXT_URL": {
-            "views": 2,
-            "pct": 0.1
-          },
-          "PLAYLIST": {
-            "views": 1,
-            "pct": 0.0
-          },
-          "NOTIFICATION": {
-            "views": 255,
-            "pct": 7.0
-          },
-          "SHORTS": {
-            "views": 2405,
-            "pct": 66.1
-          }
-        }
-      },
       {
         "taken_at": "2026-06-21T10:47:54.327830",
         "views_30d": 3645,
@@ -27799,55 +27731,59 @@
             "pct": 69.4
           }
         }
+      },
+      {
+        "taken_at": "2026-07-02T10:15:07.267222",
+        "views_30d": 1010,
+        "watch_min": 324.0,
+        "avg_view_pct": 72.8,
+        "avg_dur_s": 30,
+        "subs": 2,
+        "impressions": 3755,
+        "ctr": 26.9,
+        "sources": {
+          "NO_LINK_OTHER": {
+            "views": 1,
+            "pct": 0.1
+          },
+          "SUBSCRIBER": {
+            "views": 142,
+            "pct": 14.1
+          },
+          "YT_CHANNEL": {
+            "views": 97,
+            "pct": 9.6
+          },
+          "YT_SEARCH": {
+            "views": 24,
+            "pct": 2.4
+          },
+          "RELATED_VIDEO": {
+            "views": 1,
+            "pct": 0.1
+          },
+          "YT_OTHER_PAGE": {
+            "views": 44,
+            "pct": 4.4
+          },
+          "EXT_URL": {
+            "views": 3,
+            "pct": 0.3
+          },
+          "NOTIFICATION": {
+            "views": 60,
+            "pct": 5.9
+          },
+          "SHORTS": {
+            "views": 638,
+            "pct": 63.2
+          }
+        }
       }
     ]
   },
   "exn4YzmHXsk": {
     "snapshots": [
-      {
-        "taken_at": "2026-06-20T10:14:23.880260",
-        "views_30d": 2999,
-        "watch_min": 1062.0,
-        "avg_view_pct": 57.3,
-        "avg_dur_s": 31,
-        "subs": 1,
-        "impressions": 10112,
-        "ctr": 29.66,
-        "sources": {
-          "NO_LINK_OTHER": {
-            "views": 0,
-            "pct": 0.0
-          },
-          "SUBSCRIBER": {
-            "views": 676,
-            "pct": 22.5
-          },
-          "YT_CHANNEL": {
-            "views": 142,
-            "pct": 4.7
-          },
-          "YT_SEARCH": {
-            "views": 48,
-            "pct": 1.6
-          },
-          "YT_OTHER_PAGE": {
-            "views": 93,
-            "pct": 3.1
-          },
-          "EXT_URL": {
-            "views": 5,
-            "pct": 0.2
-          },
-          "NOTIFICATION": {
-            "views": 247,
-            "pct": 8.2
-          },
-          "SHORTS": {
-            "views": 1788,
-            "pct": 59.6
-          }
-        }
-      },
       {
         "taken_at": "2026-06-21T10:47:54.327830",
         "views_30d": 3009,
@@ -28359,59 +28295,59 @@
             "pct": 71.3
           }
         }
-      }
-    ]
-  },
-  "hmJAEZLiF48": {
-    "snapshots": [
+      },
       {
-        "taken_at": "2026-06-20T10:14:23.880260",
-        "views_30d": 2246,
-        "watch_min": 770.0,
-        "avg_view_pct": 56.5,
+        "taken_at": "2026-07-02T10:15:07.267222",
+        "views_30d": 838,
+        "watch_min": 302.0,
+        "avg_view_pct": 60.3,
         "avg_dur_s": 33,
-        "subs": 2,
-        "impressions": 7375,
-        "ctr": 30.46,
+        "subs": 1,
+        "impressions": 2504,
+        "ctr": 33.46,
         "sources": {
           "NO_LINK_OTHER": {
             "views": 0,
             "pct": 0.0
           },
           "SUBSCRIBER": {
-            "views": 345,
-            "pct": 15.4
+            "views": 86,
+            "pct": 10.3
           },
           "YT_CHANNEL": {
-            "views": 99,
-            "pct": 4.4
+            "views": 74,
+            "pct": 8.8
           },
           "YT_SEARCH": {
-            "views": 34,
-            "pct": 1.5
+            "views": 26,
+            "pct": 3.1
           },
           "RELATED_VIDEO": {
-            "views": 1,
-            "pct": 0.0
-          },
-          "YT_OTHER_PAGE": {
-            "views": 98,
-            "pct": 4.4
-          },
-          "EXT_URL": {
-            "views": 4,
+            "views": 2,
             "pct": 0.2
           },
+          "YT_OTHER_PAGE": {
+            "views": 21,
+            "pct": 2.5
+          },
+          "EXT_URL": {
+            "views": 3,
+            "pct": 0.4
+          },
           "NOTIFICATION": {
-            "views": 247,
-            "pct": 11.0
+            "views": 34,
+            "pct": 4.1
           },
           "SHORTS": {
-            "views": 1418,
-            "pct": 63.1
+            "views": 592,
+            "pct": 70.6
           }
         }
-      },
+      }
+    ]
+  },
+  "hmJAEZLiF48": {
+    "snapshots": [
       {
         "taken_at": "2026-06-21T10:47:54.327830",
         "views_30d": 2247,
@@ -28939,51 +28875,59 @@
             "pct": 61.5
           }
         }
-      }
-    ]
-  },
-  "D8jnD3-bNAk": {
-    "snapshots": [
+      },
       {
-        "taken_at": "2026-06-20T10:14:23.880260",
-        "views_30d": 1684,
-        "watch_min": 292.0,
-        "avg_view_pct": 112.7,
-        "avg_dur_s": 25,
-        "subs": 1,
-        "impressions": 5902,
-        "ctr": 28.53,
+        "taken_at": "2026-07-02T10:15:07.267222",
+        "views_30d": 600,
+        "watch_min": 180.0,
+        "avg_view_pct": 51.5,
+        "avg_dur_s": 30,
+        "subs": 0,
+        "impressions": 2073,
+        "ctr": 28.94,
         "sources": {
           "NO_LINK_OTHER": {
             "views": 0,
             "pct": 0.0
           },
           "SUBSCRIBER": {
-            "views": 276,
-            "pct": 16.4
+            "views": 75,
+            "pct": 12.5
           },
           "YT_CHANNEL": {
-            "views": 114,
-            "pct": 6.8
+            "views": 46,
+            "pct": 7.7
           },
           "YT_SEARCH": {
-            "views": 25,
-            "pct": 1.5
+            "views": 11,
+            "pct": 1.8
+          },
+          "RELATED_VIDEO": {
+            "views": 2,
+            "pct": 0.3
           },
           "YT_OTHER_PAGE": {
-            "views": 51,
-            "pct": 3.0
+            "views": 28,
+            "pct": 4.7
+          },
+          "EXT_URL": {
+            "views": 3,
+            "pct": 0.5
           },
           "NOTIFICATION": {
-            "views": 298,
-            "pct": 17.7
+            "views": 39,
+            "pct": 6.5
           },
           "SHORTS": {
-            "views": 920,
-            "pct": 54.6
+            "views": 395,
+            "pct": 65.9
           }
         }
-      },
+      }
+    ]
+  },
+  "D8jnD3-bNAk": {
+    "snapshots": [
       {
         "taken_at": "2026-06-21T10:47:54.327830",
         "views_30d": 1686,
@@ -29423,59 +29367,51 @@
             "pct": 60.0
           }
         }
-      }
-    ]
-  },
-  "b_yXwV0iPmU": {
-    "snapshots": [
+      },
       {
-        "taken_at": "2026-06-20T10:14:23.880260",
-        "views_30d": 3197,
-        "watch_min": 647.0,
-        "avg_view_pct": 50.3,
-        "avg_dur_s": 23,
-        "subs": 1,
-        "impressions": 7308,
-        "ctr": 43.75,
+        "taken_at": "2026-07-02T10:15:07.267222",
+        "views_30d": 228,
+        "watch_min": 23.0,
+        "avg_view_pct": 78.3,
+        "avg_dur_s": 18,
+        "subs": 0,
+        "impressions": 936,
+        "ctr": 24.35,
         "sources": {
           "NO_LINK_OTHER": {
             "views": 0,
             "pct": 0.0
           },
           "SUBSCRIBER": {
-            "views": 156,
-            "pct": 4.9
+            "views": 23,
+            "pct": 10.1
           },
           "YT_CHANNEL": {
-            "views": 198,
-            "pct": 6.2
+            "views": 48,
+            "pct": 21.1
           },
           "YT_SEARCH": {
-            "views": 67,
-            "pct": 2.1
-          },
-          "RELATED_VIDEO": {
-            "views": 1,
-            "pct": 0.0
+            "views": 5,
+            "pct": 2.2
           },
           "YT_OTHER_PAGE": {
-            "views": 92,
-            "pct": 2.9
-          },
-          "ANNOTATION": {
-            "views": 1,
-            "pct": 0.0
+            "views": 8,
+            "pct": 3.5
           },
           "NOTIFICATION": {
-            "views": 179,
-            "pct": 5.6
+            "views": 3,
+            "pct": 1.3
           },
           "SHORTS": {
-            "views": 2503,
-            "pct": 78.3
+            "views": 141,
+            "pct": 61.8
           }
         }
-      },
+      }
+    ]
+  },
+  "b_yXwV0iPmU": {
+    "snapshots": [
       {
         "taken_at": "2026-06-21T10:47:54.327830",
         "views_30d": 2841,
@@ -29983,55 +29919,55 @@
             "pct": 85.9
           }
         }
+      },
+      {
+        "taken_at": "2026-07-02T10:15:07.267222",
+        "views_30d": 1333,
+        "watch_min": 227.0,
+        "avg_view_pct": 43.6,
+        "avg_dur_s": 20,
+        "subs": 0,
+        "impressions": 2707,
+        "ctr": 49.25,
+        "sources": {
+          "NO_LINK_OTHER": {
+            "views": 0,
+            "pct": 0.0
+          },
+          "SUBSCRIBER": {
+            "views": 27,
+            "pct": 2.0
+          },
+          "YT_CHANNEL": {
+            "views": 108,
+            "pct": 8.1
+          },
+          "YT_SEARCH": {
+            "views": 20,
+            "pct": 1.5
+          },
+          "YT_OTHER_PAGE": {
+            "views": 42,
+            "pct": 3.2
+          },
+          "ANNOTATION": {
+            "views": 1,
+            "pct": 0.1
+          },
+          "NOTIFICATION": {
+            "views": 2,
+            "pct": 0.2
+          },
+          "SHORTS": {
+            "views": 1133,
+            "pct": 85.0
+          }
+        }
       }
     ]
   },
   "vumi5rsqBHA": {
     "snapshots": [
-      {
-        "taken_at": "2026-06-20T10:14:23.880260",
-        "views_30d": 186,
-        "watch_min": 36.0,
-        "avg_view_pct": 44.2,
-        "avg_dur_s": 22,
-        "subs": 0,
-        "impressions": 1670,
-        "ctr": 11.14,
-        "sources": {
-          "NO_LINK_OTHER": {
-            "views": 2,
-            "pct": 1.1
-          },
-          "SUBSCRIBER": {
-            "views": 5,
-            "pct": 2.7
-          },
-          "YT_CHANNEL": {
-            "views": 109,
-            "pct": 58.6
-          },
-          "YT_SEARCH": {
-            "views": 14,
-            "pct": 7.5
-          },
-          "YT_OTHER_PAGE": {
-            "views": 6,
-            "pct": 3.2
-          },
-          "PLAYLIST": {
-            "views": 4,
-            "pct": 2.2
-          },
-          "END_SCREEN": {
-            "views": 1,
-            "pct": 0.5
-          },
-          "SHORTS": {
-            "views": 45,
-            "pct": 24.2
-          }
-        }
-      },
       {
         "taken_at": "2026-06-21T10:47:54.327830",
         "views_30d": 180,
@@ -30487,51 +30423,47 @@
             "pct": 19.4
           }
         }
+      },
+      {
+        "taken_at": "2026-07-02T10:15:07.267222",
+        "views_30d": 76,
+        "watch_min": 16.0,
+        "avg_view_pct": 47.4,
+        "avg_dur_s": 23,
+        "subs": 0,
+        "impressions": 742,
+        "ctr": 10.24,
+        "sources": {
+          "NO_LINK_OTHER": {
+            "views": 2,
+            "pct": 2.6
+          },
+          "SUBSCRIBER": {
+            "views": 4,
+            "pct": 5.3
+          },
+          "YT_CHANNEL": {
+            "views": 49,
+            "pct": 64.5
+          },
+          "YT_SEARCH": {
+            "views": 6,
+            "pct": 7.9
+          },
+          "YT_OTHER_PAGE": {
+            "views": 2,
+            "pct": 2.6
+          },
+          "SHORTS": {
+            "views": 13,
+            "pct": 17.1
+          }
+        }
       }
     ]
   },
   "Rl7E1y_dNvA": {
     "snapshots": [
-      {
-        "taken_at": "2026-06-20T10:14:23.880260",
-        "views_30d": 311,
-        "watch_min": 47.0,
-        "avg_view_pct": 70.7,
-        "avg_dur_s": 21,
-        "subs": 1,
-        "impressions": 2311,
-        "ctr": 13.46,
-        "sources": {
-          "NO_LINK_OTHER": {
-            "views": 0,
-            "pct": 0.0
-          },
-          "SUBSCRIBER": {
-            "views": 7,
-            "pct": 2.3
-          },
-          "YT_CHANNEL": {
-            "views": 83,
-            "pct": 26.7
-          },
-          "YT_SEARCH": {
-            "views": 72,
-            "pct": 23.2
-          },
-          "YT_OTHER_PAGE": {
-            "views": 5,
-            "pct": 1.6
-          },
-          "EXT_URL": {
-            "views": 23,
-            "pct": 7.4
-          },
-          "SHORTS": {
-            "views": 121,
-            "pct": 38.9
-          }
-        }
-      },
       {
         "taken_at": "2026-06-21T10:47:54.327830",
         "views_30d": 306,
@@ -30971,6 +30903,46 @@
             "pct": 28.2
           }
         }
+      },
+      {
+        "taken_at": "2026-07-02T10:15:07.267222",
+        "views_30d": 203,
+        "watch_min": 43.0,
+        "avg_view_pct": 79.6,
+        "avg_dur_s": 24,
+        "subs": 1,
+        "impressions": 2016,
+        "ctr": 10.07,
+        "sources": {
+          "NO_LINK_OTHER": {
+            "views": 0,
+            "pct": 0.0
+          },
+          "SUBSCRIBER": {
+            "views": 6,
+            "pct": 3.0
+          },
+          "YT_CHANNEL": {
+            "views": 44,
+            "pct": 21.7
+          },
+          "YT_SEARCH": {
+            "views": 79,
+            "pct": 38.9
+          },
+          "YT_OTHER_PAGE": {
+            "views": 4,
+            "pct": 2.0
+          },
+          "EXT_URL": {
+            "views": 27,
+            "pct": 13.3
+          },
+          "SHORTS": {
+            "views": 43,
+            "pct": 21.2
+          }
+        }
       }
     ]
   },
@@ -31319,6 +31291,54 @@
           "NOTIFICATION": {
             "views": 108,
             "pct": 8.6
+          },
+          "END_SCREEN": {
+            "views": 5,
+            "pct": 0.4
+          }
+        }
+      },
+      {
+        "taken_at": "2026-07-02T10:15:07.267222",
+        "views_30d": 1283,
+        "watch_min": 6123.0,
+        "avg_view_pct": 25.1,
+        "avg_dur_s": 286,
+        "subs": 1,
+        "impressions": 13019,
+        "ctr": 9.85,
+        "sources": {
+          "NO_LINK_OTHER": {
+            "views": 60,
+            "pct": 4.7
+          },
+          "SUBSCRIBER": {
+            "views": 843,
+            "pct": 65.7
+          },
+          "YT_CHANNEL": {
+            "views": 95,
+            "pct": 7.4
+          },
+          "YT_SEARCH": {
+            "views": 20,
+            "pct": 1.6
+          },
+          "RELATED_VIDEO": {
+            "views": 92,
+            "pct": 7.2
+          },
+          "YT_OTHER_PAGE": {
+            "views": 36,
+            "pct": 2.8
+          },
+          "EXT_URL": {
+            "views": 24,
+            "pct": 1.9
+          },
+          "NOTIFICATION": {
+            "views": 108,
+            "pct": 8.4
           },
           "END_SCREEN": {
             "views": 5,
