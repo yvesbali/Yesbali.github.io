@@ -119,15 +119,20 @@ img{display:block}
 .tile-media img{width:100%;height:100%;object-fit:cover;transition:transform .4s;display:block}
 .tile:hover .tile-media img{transform:scale(1.06)}
 /* 2 grosses tuiles pleine largeur : media plus haut + layout 2 colonnes texte */
+.tile-hero{min-height:320px}
 .tile-hero .tile-media{height:300px}
 @media(min-width:901px){
   .tile-hero{flex-direction:row}
   .tile-hero .tile-media{flex:0 0 45%;height:auto;min-height:100%}
   .tile-hero .inside{flex:1}
 }
+/* alternance image droite pour les tuiles paires (zigzag) */
+.tile-flip{flex-direction:row-reverse}
+@media(max-width:900px){.tile-flip{flex-direction:column}}
 /* 2 tuiles horizontales dessous */
 .tile-wide{flex-direction:row}
 .tile-wide .tile-media{height:auto;min-height:100%;flex:0 0 38%}
+.tile-wide{min-height:200px}
 @media(max-width:900px){.tile-hero{flex-direction:column}.tile-hero .tile-media{flex:auto;height:200px}.tile-wide{flex-direction:column}.tile-wide .tile-media{flex:auto;height:150px}}
 .tile .inside{padding:1rem 1rem 1.1rem;display:flex;flex-direction:column;flex:1}
 .tile .t-cat{font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin-bottom:.3rem}
@@ -346,7 +351,7 @@ async function load(){
      </div>
      <div class="tiles-grid" style="margin-top:1.2rem">` +
      u.slice(1).map((it, idx) => `
-       <a class="tile ${idx < 2 ? 'tile-hero' : 'tile-wide'}" href="${esc(it.link)}" target="_blank" rel="noopener">
+       <a class="tile ${idx < 2 ? 'tile-hero' : 'tile-wide'} ${idx % 2 === 1 ? 'tile-flip' : ''}" href="${esc(it.link)}" target="_blank" rel="noopener">
          <div class="tile-media"><img src="${esc(it.image)}" alt="${esc(it.title)}" loading="lazy"></div>
          <div class="inside">
            <span class="t-cat">${esc(it.cat)}</span>
