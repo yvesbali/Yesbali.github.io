@@ -386,12 +386,23 @@ async function load(){
       </div>
     </article>`).join("");
 
-  /* ——— THÈMES : liste texte (aucune image → jamais 2 fois la même photo) ——— */
-  document.getElementById("themes").innerHTML = Object.entries(d.categories).map(([cat, items]) => `
-    <div class="topic">
-      <h3>${esc(cat)}</h3>
-      <ul>${items.slice(0,4).map(it => `<li><a href="${esc(it.link)}" target="_blank" rel="noopener">${esc(it.title)}</a></li>`).join("")}</ul>
-    </div>`).join("");
+  /* ——— THÈMES : liens vidéo LCDMH (chaîne Yves) par thème ——— */
+  const themeVideos = {
+    "Pneus": {id:"Z8F8ruQEkKY", t:"Bridgestone T33 : mon avis après 4 500 km"},
+    "Casques": {id:"RaWIvYQ-JiE", t:"Schuberth C5 vs HJC RPHA 91"},
+    "Infos route": {id:"mqrxymLts_0", t:"Virages Moto Débutant : maîtriser sa trajectoire"},
+    "Équipement": {id:"UwYUuXJvxKsM", t:"Mon équipement secret pour affronter le froid"},
+    "Equipement": {id:"UwYUuXJvxKsM", t:"Mon équipement secret pour affronter le froid"}
+  };
+  document.getElementById("themes").innerHTML = Object.entries(d.categories)
+    .filter(([cat]) => themeVideos[cat])
+    .map(([cat]) => {
+      const v = themeVideos[cat];
+      return `<div class="topic">
+        <h3>${esc(cat)}</h3>
+        <ul><li><a href="https://youtu.be/${v.id}" target="_blank" rel="noopener">${esc(v.t)}</a></li></ul>
+      </div>`;
+    }).join("");
 
   document.getElementById("loading").style.display="none";
   document.getElementById("content").style.display="block";
