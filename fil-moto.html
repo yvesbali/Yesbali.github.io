@@ -149,8 +149,9 @@ img{display:block}
 .tile .tile-vid .tv-head{display:flex;align-items:center;gap:.45rem;font-size:.76rem;font-weight:800;color:var(--orange);margin-bottom:.35rem}
 .tile .tile-vid .tv-head .tv-ico{background:var(--orange);color:#fff;width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.68em;flex-shrink:0}
 .tile .tile-vid .tv-title{font-size:.8rem;font-weight:700;color:var(--noir);line-height:1.35;margin-bottom:.4rem}
-.tile .tile-editorial{font-size:.8rem;color:#4a2c0a;line-height:1.55;background:linear-gradient(90deg,#f8ead2,#fdf6e8);border-left:4px solid #c47a1d;padding:.7rem .8rem;border-radius:0 8px 8px 0;margin:.6rem 0;box-shadow:inset 0 1px 0 rgba(255,255,255,.5);}
-.tile .tile-editorial .ed-label{color:#a05c12;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.15rem;}
+.tile .tile-editorial{font-size:.82rem;color:#4a2c0a;line-height:1.6;background:linear-gradient(90deg,#fdf0dc,#fff8ec);border-left:5px solid #e07b00;padding:.8rem .9rem;border-radius:0 10px 10px 0;margin:.6rem 0;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 2px 6px rgba(192,122,29,.12);}
+.tile .tile-editorial .ed-label{display:inline-block;color:#fff;background:#e07b00;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;padding:.28rem .65rem;border-radius:6px;margin-bottom:.45rem;box-shadow:0 1px 3px rgba(0,0,0,.15);}
+.tile .tile-editorial .ed-text{font-style:italic;font-size:.85rem;}
 .tile .tile-vid{background:#eef3f7;border-left:4px solid #3f638d;border-radius:0 8px 8px 0;padding:.5rem .6rem;}
 .tile .tile-vid .tv-head{color:#2f4a72;}
 .tile .tile-vid .tv-text{font-size:.78rem;color:#1c2c40;line-height:1.5;background:#f4f8fb;border-left:3px solid #4a7bb5;padding:.45rem .7rem;border-radius:0 6px 6px 0;margin:.3rem 0 .55rem;}
@@ -363,7 +364,7 @@ async function load(){
              <span class="sum-concl">${esc(it.summary.conclusion)}</span>
              <span class="sum-src">(Source : ${esc(it.src)})</span>
            </div>
-           <div class="tile-editorial"><span class="ed-label"><strong>Commentaire LCDMH</strong></span><br>${esc(it.editorial || "").replace("Commentaire LCDMH — ","")}</div>
+           <div class="tile-editorial"><span class="ed-label">✍️ Commentaire LCDMH</span><div class="ed-text">${esc(it.editorial || "").replace("Commentaire LCDMH — ","")}</div></div>
            <div class="tile-vid">
              <span class="tv-head"><span class="tv-ico">▶</span>Ma vidéo</span>
              <div class="tv-title">${esc(it.video_title)}</div>
