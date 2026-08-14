@@ -16,8 +16,9 @@ header.hero p{color:#cbd5e1;margin-top:10px;max-width:760px;margin-left:auto;mar
 main{max-width:960px;margin:0 auto;padding:28px 20px 60px}
 .intro{background:#eef2ff;border:1px solid #c7d2fe;border-radius:12px;padding:18px 22px;margin-bottom:28px;font-size:.92rem;color:var(--text2)}
 .intro strong{color:var(--bleu)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:22px}
-@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.grid{columns:2;column-gap:24px}
+.country-card{break-inside:avoid;margin-bottom:24px}
+@media(max-width:900px){.grid{columns:1}}
 .country-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(15,23,42,.05)}
 .flag-bar{height:6px}
 .country-head{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line)}
