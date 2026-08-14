@@ -31,6 +31,20 @@ main{max-width:960px;margin:0 auto;padding:28px 20px 60px}
 .section-detail li{padding:3px 0 3px 18px;position:relative}
 .section-detail li::before{content:"•";position:absolute;left:4px;color:#1d4ed8}
 footer{text-align:center;padding:24px;color:#94a3b8;font-size:.8rem;border-top:1px solid var(--line);margin-top:30px}
+
+.mg-tabs{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.mg-tab{background:#1e293b;color:#94a3b8;border:1px solid #334155;border-radius:30px;padding:9px 22px;cursor:pointer;font-size:.9rem;font-weight:700;transition:all .2s}
+.mg-tab.active{background:#c4a35a;color:#0f172a;border-color:#c4a35a}
+.mg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.mg-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.08);text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s;display:block}
+.mg-card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,.14)}
+.mg-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.mg-card .mg-t{font-size:.9rem;font-weight:700;padding:12px 14px;line-height:1.45;color:#1e293b}
+.mg-card .mg-c{padding:0 14px 12px;font-size:.75rem;color:#64748b}
+.mg-section{background:#f8fafc;border:1px solid #e2e8f0;border-radius:18px;padding:28px;margin:36px 0 12px}
+.mg-section h2{font-size:1.25rem;color:#0f172a;margin-bottom:18px}
+.mg-hidden{display:none}
+@media(max-width:600px){.mg-grid{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
