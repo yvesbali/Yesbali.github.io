@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maquette MAGAZINE — Cap Nord à Moto | LCDMH (prototype premier écran)</title>
+<meta name="robots" content="noindex, nofollow">
+<!--
+  ═══════════════════════════════════════════════════════════════════
+  MAQUETTE STYLE MAGAZINE — Premier écran de cap-nord-moto.html
+  Agent B · 16/08/2026 · Prototype autonome (CSS inline, sans JS)
+  À NE PAS publier sur le site — simple maquette de validation.
+  Image : ../Yesbali.github.io/images/cap-nord-moto.jpg (en local),
+          /images/cap-nord-moto.jpg en production.
+  ═══════════════════════════════════════════════════════════════════
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════ RESET & TOKENS ═══════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --encre:#1b1b1f;            /* noir encre éditorial */
+  --encre-2:#26262c;
+  --paper:#faf8f4;            /* papier crème magazine */
+  --paper-2:#f3efe8;          /* crème légèrement plus sombre */
+  --card:#ffffff;
+  --orange:#e67e22;           /* orange LCDMH */
+  --orange-deep:#d35400;
+  --orange-soft:#fdeee0;
+  --nord:#24435f;             /* bleu nuit norvégien */
+  --muted:#6b6b72;
+  --line:#e7e1d8;             /* filets éditoriaux */
+  --line-dark:rgba(255,255,255,.14);
+  --white:#fff;
+  --radius:14px;
+  --shadow:0 10px 30px rgba(27,27,31,.08);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Montserrat',Arial,sans-serif;
+  --body:'Inter',Helvetica,Arial,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--paper);color:var(--encre);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+p{margin-bottom:1rem}
+
+/* ═══════════ TOPBAR (bandeau noir fin, style presse) ═══════════ */
+.topbar{background:var(--encre);color:rgba(255,255,255,.72);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.topbar-inner{max-width:1240px;margin:0 auto;padding:.55rem 2rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.topbar .tb-left{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.topbar .tb-left em{font-style:normal;color:var(--orange);font-weight:700}
+.topbar .tb-right{display:flex;gap:1.4rem;align-items:center;flex-shrink:0}
+.topbar .tb-right a{color:rgba(255,255,255,.72);transition:color .2s}
+.topbar .tb-right a:hover{color:var(--orange)}
+.topbar .tb-live{display:inline-flex;align-items:center;gap:.45rem;color:#fff;background:var(--orange-deep);padding:.22rem .7rem;border-radius:50px;letter-spacing:.08em;font-size:.66rem}
+.topbar .tb-live::before{content:'';width:7px;height:7px;background:#fff;border-radius:50%;animation:blink 1.4s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* ═══════════ HEADER (sticky, clair, éditorial) ═══════════ */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.header-inner{max-width:1240px;margin:0 auto;padding:.9rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.logo{display:flex;align-items:center;gap:.7rem;flex-shrink:0}
+.logo-mark{width:42px;height:42px;border-radius:11px;background:var(--encre);color:var(--orange);display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:900;font-size:1.02rem;letter-spacing:-.02em;box-shadow:inset 0 0 0 2px var(--orange)}
+.logo-text{line-height:1.05}
+.logo-text .l-name{font-family:var(--sans);font-weight:900;font-size:1.28rem;letter-spacing:.06em;color:var(--encre)}
+.logo-text .l-name em{font-style:normal;color:var(--orange)}
+.logo-text .l-tag{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.main-nav ul{list-style:none;display:flex;align-items:center;gap:.2rem}
+.main-nav a{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.1em;padding:.55rem .7rem;border-radius:8px;color:var(--encre);transition:color .2s,background .2s;display:inline-block}
+.main-nav a:hover{color:var(--orange);background:var(--orange-soft)}
+.main-nav a.active{color:var(--orange-deep)}
+.main-nav a.active::after{content:'';display:block;height:2px;background:var(--orange);border-radius:2px;margin-top:2px}
+.nav-cta{background:var(--orange);color:#fff !important;border-radius:50px;padding:.55rem 1.1rem !important;margin-left:.6rem}
+.nav-cta:hover{background:var(--orange-deep);color:#fff !important}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;padding:.4rem;flex-direction:column;gap:5px}
+.nav-burger span{display:block;width:26px;height:3px;background:var(--encre);border-radius:3px;transition:.3s}
+#nav-toggle{display:none}
+
+/* ═══════════ HERO ÉDITORIAL (grille magazine) ═══════════ */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(1200px 500px at 85% -10%,rgba(230,126,34,.10),transparent 60%),
+  var(--paper)}
+.hero-inner{max-width:1240px;margin:0 auto;padding:3.4rem 2rem 3.2rem;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:3.2rem;align-items:center}
+
+/* Colonne texte */
+.breadcrumb{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:1.3rem;display:flex;flex-wrap:wrap;gap:.35rem}
+.breadcrumb a{color:var(--muted);transition:color .2s}
+.breadcrumb a:hover{color:var(--orange)}
+.breadcrumb .sep{color:var(--line)}
+.breadcrumb .cur{color:var(--encre);font-weight:700}
+
+.kicker{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--sans);font-size:.72rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:1.1rem}
+.kicker::before{content:'';width:34px;height:3px;background:var(--orange);border-radius:3px}
+
+.hero h1{font-family:var(--sans);font-weight:900;font-size:clamp(2.1rem,4.6vw,3.55rem);line-height:1.08;letter-spacing:-.015em;color:var(--encre);margin-bottom:1.2rem}
+.hero h1 .hl{color:var(--orange-deep)}
+.hero h1 .hl-serif{font-family:var(--serif);font-style:italic;font-weight:700;color:var(--nord)}
+.hero h1 .underline{position:relative;white-space:nowrap}
+.hero h1 .underline::after{content:'';position:absolute;left:0;right:0;bottom:.06em;height:.16em;background:var(--orange-soft);z-index:-1;border-radius:2px}
+
+.hero-sub{font-size:clamp(1rem,1.6vw,1.14rem);line-height:1.75;color:#44444c;max-width:34rem;margin-bottom:1.4rem}
+.hero-sub strong{color:var(--encre);font-weight:700}
+
+.hero-meta{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;font-size:.8rem;color:var(--muted);font-weight:600;margin-bottom:1.9rem;padding-top:1.1rem;border-top:1px solid var(--line)}
+.hero-meta span{display:inline-flex;align-items:center;gap:.4rem}
+.hero-meta b{color:var(--encre);font-weight:700}
+
+/* CTA duo + micro-lien */
+.cta-row{display:flex;flex-wrap:wrap;gap:.9rem;align-items:center;margin-bottom:1.2rem}
+.btn{font-family:var(--sans);font-weight:800;font-size:.86rem;letter-spacing:.03em;padding:.95rem 1.7rem;border-radius:12px;display:inline-flex;align-items:center;gap:.55rem;transition:transform .18s,box-shadow .18s,background .18s;cursor:pointer;border:none}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--orange);color:#fff;box-shadow:0 8px 22px rgba(230,126,34,.35)}
+.btn-primary:hover{background:var(--orange-deep);box-shadow:0 10px 26px rgba(211,84,0,.4)}
+.btn-ghost{background:#fff;color:var(--encre);border:2px solid var(--encre);box-shadow:0 4px 12px rgba(27,27,31,.06)}
+.btn-ghost:hover{background:var(--encre);color:#fff}
+.btn-ghost .sub{display:block;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.05rem}
+.btn-ghost:hover .sub{color:rgba(255,255,255,.65)}
+.cta-note{font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:.45rem;font-weight:500}
+.cta-note a{color:var(--nord);font-weight:700;border-bottom:2px solid var(--orange-soft);transition:color .2s,border-color .2s}
+.cta-note a:hover{color:var(--orange-deep);border-color:var(--orange)}
+
+.hero-quote{font-family:var(--serif);font-style:italic;font-size:1.02rem;color:#55555e;border-left:3px solid var(--orange);padding:.35rem 0 .35rem 1.1rem;max-width:33rem}
+.hero-quote strong{color:var(--orange-deep);font-weight:700}
+
+/* Colonne cover (style couverture de magazine) */
+.cover{position:relative}
+.cover-frame{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);background:linear-gradient(160deg,#1f3a52,#0d1b2a)}
+.cover-frame img{width:100%;aspect-ratio:4/4.6;object-fit:cover;opacity:.96}
+.cover-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(13,27,42,.62) 0%,rgba(13,27,42,.12) 38%,transparent 60%)}
+.cover-top{position:absolute;top:1rem;left:1rem;right:1rem;z-index:2;display:flex;justify-content:space-between;align-items:center}
+.cover-badge{background:var(--orange);color:#fff;font-family:var(--sans);font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:.4rem .85rem;border-radius:50px;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.cover-num{background:rgba(13,27,42,.75);color:#fff;font-family:var(--sans);font-size:.66rem;font-weight:800;letter-spacing:.1em;padding:.4rem .85rem;border-radius:50px;backdrop-filter:blur(4px)}
+.cover-bottom{position:absolute;left:1.2rem;right:1.2rem;bottom:1.2rem;z-index:2;color:#fff}
+.cover-bottom .c-loc{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:700;margin-bottom:.35rem}
+.cover-bottom .c-title{font-family:var(--serif);font-style:italic;font-size:1.28rem;line-height:1.3;font-weight:700}
+.cover-float{position:absolute;right:-1.1rem;bottom:2.4rem;z-index:3;background:#fff;border-radius:12px;padding:.85rem 1.1rem;box-shadow:0 12px 30px rgba(13,27,42,.28);border:1px solid var(--line);display:flex;align-items:center;gap:.8rem;transform:rotate(-2deg)}
+.cover-float .cf-icon{width:40px;height:40px;border-radius:10px;background:var(--orange-soft);display:flex;align-items:center;justify-content:center;font-size:1.15rem}
+.cover-float .cf-val{font-family:var(--sans);font-weight:900;font-size:1.02rem;color:var(--encre);line-height:1.05}
+.cover-float .cf-val small{display:block;font-family:var(--body);font-weight:600;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* ═══════════ BANDEAU STATS (chiffres du voyage) ═══════════ */
+.stats-band{background:var(--encre);color:#fff;border-top:4px solid var(--orange);border-bottom:1px solid var(--encre)}
+.stats-inner{max-width:1240px;margin:0 auto;padding:2.2rem 2rem;display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+.stat-cell{text-align:center;padding:.4rem 1rem;border-left:1px solid var(--line-dark)}
+.stat-cell:first-child{border-left:none}
+.stat-cell .s-val{font-family:var(--sans);font-weight:900;font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.1;color:var(--orange);letter-spacing:-.01em}
+.stat-cell .s-val small{font-size:.55em;font-weight:800}
+.stat-cell .s-label{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.62);font-weight:600;margin-top:.35rem}
+.stats-head{max-width:1240px;margin:0 auto;padding:1.4rem 2rem .2rem;display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.stats-head .sh-title{font-family:var(--sans);font-weight:800;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--orange)}
+.stats-head .sh-note{font-size:.76rem;color:rgba(255,255,255,.45);font-style:italic}
+
+/* ═══════════ RÉPONSE RAPIDE (encart éditorial clair) ═══════════ */
+.quick{max-width:1240px;margin:0 auto;padding:3.4rem 2rem 3.8rem}
+.quick-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.quick-head{display:flex;align-items:center;gap:1rem;padding:1.4rem 2rem;background:linear-gradient(90deg,var(--orange-soft),#fff 70%);border-bottom:1px solid var(--line)}
+.quick-head .qh-ic{width:46px;height:46px;border-radius:12px;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;box-shadow:0 6px 16px rgba(230,126,34,.35)}
+.quick-head .qh-k{font-size:.68rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--orange-deep)}
+.quick-head h2{font-family:var(--sans);font-weight:900;font-size:clamp(1.15rem,2.4vw,1.5rem);color:var(--encre);line-height:1.2;margin-top:.15rem}
+.quick-body{padding:1.8rem 2rem 2.1rem;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:2.4rem}
+.quick-lead{font-size:1.02rem;line-height:1.8;color:#3d3d45;margin-bottom:1.4rem}
+.quick-lead strong{color:var(--encre);font-weight:700}
+.quick-lead .pill{display:inline-block;background:var(--orange-soft);color:var(--orange-deep);font-weight:700;border-radius:6px;padding:0 .35rem}
+.quick-table{width:100%;border-collapse:collapse}
+.quick-table tr{border-bottom:1px solid var(--line)}
+.quick-table tr:last-child{border-bottom:none}
+.quick-table td{padding:.72rem .2rem;vertical-align:top;font-size:.9rem}
+.quick-table td:first-child{font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);width:38%;padding-right:1rem}
+.quick-table td:last-child{color:var(--encre);font-weight:600}
+.quick-table td:last-child b{color:var(--orange-deep);font-weight:800}
+.quick-aside{border-left:1px solid var(--line);padding-left:2.2rem}
+.qa-title{font-family:var(--sans);font-weight:800;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--nord);margin-bottom:1.1rem;display:flex;align-items:center;gap:.5rem}
+.qa-title::before{content:'';width:22px;height:3px;background:var(--orange);border-radius:3px}
+.qa-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.qa-cell{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:1rem 1.05rem}
+.qa-cell .qa-val{font-family:var(--sans);font-weight:900;font-size:1.45rem;line-height:1.05;color:var(--encre)}
+.qa-cell .qa-val small{font-size:.58em;color:var(--orange-deep)}
+.qa-cell .qa-lab{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:.45rem}
+.qa-note{margin-top:1.2rem;font-size:.8rem;color:var(--muted);font-style:italic;line-height:1.6}
+.qa-note b{color:var(--nord);font-style:normal}
+
+/* ═══════════ FIN DE MAQUETTE ═══════════ */
+.mock-end{border-top:4px double var(--line);background:var(--paper-2);text-align:center;padding:2.2rem 2rem;color:var(--muted);font-size:.82rem}
+.mock-end strong{color:var(--encre)}
+.mock-end .dots{letter-spacing:.4em;color:var(--orange);font-weight:900;margin-bottom:.4rem}
+
+/* ═══════════ RESPONSIVE ═══════════ */
+@media(max-width:1080px){
+  .hero-inner{grid-template-columns:1fr;gap:2.6rem}
+  .cover{max-width:480px;margin:0 auto;width:100%}
+  .cover-frame img{aspect-ratio:16/10}
+  .cover-float{right:.6rem}
+  .stats-inner{grid-template-columns:repeat(3,1fr);gap:.6rem}
+  .stat-cell{border-left:none;border-top:1px solid var(--line-dark);padding:1rem .5rem}
+  .stat-cell:nth-child(-n+3){border-top:none}
+  .quick-body{grid-template-columns:1fr;gap:1.8rem}
+  .quick-aside{border-left:none;padding-left:0;border-top:1px solid var(--line);padding-top:1.6rem}
+}
+@media(max-width:900px){
+  .main-nav{position:fixed;top:0;right:0;bottom:0;width:min(320px,84vw);background:#fff;border-left:1px solid var(--line);padding:5.2rem 1.6rem 2rem;transform:translateX(105%);transition:transform .32s ease;box-shadow:-20px 0 50px rgba(0,0,0,.15);overflow-y:auto}
+  .main-nav ul{flex-direction:column;align-items:stretch;gap:.3rem}
+  .main-nav a{font-size:.85rem;padding:.85rem 1rem;border-radius:10px}
+  .main-nav a.active::after{display:none}
+  .main-nav a.active{background:var(--orange-soft)}
+  .nav-cta{margin-left:0;margin-top:.5rem;text-align:center}
+  .nav-burger{display:flex}
+  #nav-toggle:checked ~ .header-inner .main-nav{transform:translateX(0)}
+  #nav-toggle:checked ~ .header-inner .nav-burger span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  #nav-toggle:checked ~ .header-inner .nav-burger span:nth-child(2){opacity:0}
+  #nav-toggle:checked ~ .header-inner .nav-burger span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  .header-inner{flex-wrap:wrap}
+  .nav-burger{margin-left:auto;order:3}
+  .topbar .tb-right{display:none}
+}
+@media(max-width:640px){
+  .hero-inner{padding:2.4rem 1.15rem 2.6rem}
+  .quick{padding:2.4rem 1.15rem 2.8rem}
+  .stats-inner{padding:1.6rem 1.15rem;grid-template-columns:1fr 1fr}
+  .stat-cell:nth-child(-n+3){border-top:1px solid var(--line-dark)}
+  .stat-cell:nth-child(1),.stat-cell:nth-child(2){border-top:none}
+  .stats-head{flex-direction:column;gap:.3rem}
+  .quick-head,.quick-body{padding-left:1.3rem;padding-right:1.3rem}
+  .qa-grid{grid-template-columns:1fr 1fr}
+  .cover-float{position:static;transform:none;margin-top:-2.4rem;margin-right:1rem;margin-left:auto;width:fit-content}
+  .cover-bottom .c-title{font-size:1.05rem}
+  .hero-meta{gap:.5rem 1.1rem}
+  .btn{width:100%;justify-content:center}
+  .cta-note{justify-content:center}
+  .hero-quote{font-size:.95rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ TOPBAR ═══════════ -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="tb-left">La Chaîne du <em>Motard Heureux</em> — Road trips, tests &amp; grands reportages</div>
+    <div class="tb-right">
+      <a href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">▶ YouTube</a>
+      <span class="tb-live">Nouvel épisode</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ HEADER + MENU ═══════════ -->
+<header class="site-header">
+  <input type="checkbox" id="nav-toggle" aria-hidden="true">
+  <div class="header-inner">
+    <a class="logo" href="index.html" aria-label="LCDMH — Accueil">
+      <span class="logo-mark">LC</span>
+      <span class="logo-text">
+        <span class="l-name">LCD<em>MH</em></span>
+        <span class="l-tag">La Chaîne du Motard Heureux</span>
+      </span>
+    </a>
+    <nav class="main-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="actu.html">Actu</a></li>
+        <li><a href="roadtrips.html" class="active">Road Trips</a></li>
+        <li><a href="tests.html">Tests &amp; Équipements</a></li>
+        <li><a href="codes-promo.html">Codes Promo</a></li>
+        <li><a href="dossiers-noirs.html">Dossiers Noirs</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a class="nav-cta" href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">▶ S'abonner</a></li>
+      </ul>
+    </nav>
+    <label for="nav-toggle" class="nav-burger" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </label>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══════════ HERO ÉDITORIAL ═══════════ -->
+<section class="hero">
+  <div class="hero-inner">
+
+    <!-- Texte -->
+    <div class="hero-text">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a><span class="sep">›</span>
+        <a href="roadtrips.html">Road Trips</a><span class="sep">›</span>
+        <span class="cur">Cap Nord 2025</span>
+      </nav>
+
+      <p class="kicker">Grand reportage · Norvège · Mai–Juin 2025</p>
+
+      <h1>Cap Nord à Moto&nbsp;: <span class="hl">10&nbsp;000&nbsp;km solo</span> <span class="hl-serif">à 63 ans</span></h1>
+
+      <p class="hero-sub">
+        D'<strong>Annecy au Nordkapp</strong> sur <strong>Honda NT1100</strong> : 14 épisodes,
+        des bivouacs à <strong>2&nbsp;°C</strong> au pays des fjords, les <strong>Lofoten</strong>,
+         +14 ferries, le vent du Groenland… et une arrivée au bout du monde
+        <strong>à minuit</strong>. Le récit complet, épisode par épisode, et le guide pratique
+        pour partir à votre tour.
+      </p>
+
+      <div class="hero-meta">
+        <span>✍️ <b>Yves – LCDMH</b></span>
+        <span>📅 <b>Mai–Juin 2025</b></span>
+        <span>🏍️ <b>Honda NT1100</b></span>
+        <span>🎬 <b>14 épisodes</b></span>
+        <span>👁️ <b>+130&nbsp;000 spectateurs</b></span>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#episodes">🎬 Voir les épisodes</a>
+        <a class="btn btn-ghost" href="/roadbooks/road-trip-cap-nord-2025-roadbook.pdf" download="road-trip-cap-nord-2025-roadbook.pdf">
+          📖 Télécharger le roadbook
+          <span class="sub">PDF · itinéraire détaillé</span>
+        </a>
+      </div>
+      <p class="cta-note">
+        🗺️ Envie de rouler la même route ? <a href="/roadbook/cap-nord-2025/trace.gpx" download="cap-nord-2025-trace.gpx">Télécharger la trace GPX</a> (11&nbsp;111&nbsp;km réels)
+      </p>
+
+      <blockquote class="hero-quote">
+        « Le chemin compte plus que la destination. Ce ruban d'asphalte,
+        lien de vie entre les rencontres et les paysages. » — <strong>Yves</strong>
+      </blockquote>
+    </div>
+
+    <!-- Cover façon magazine -->
+    <div class="cover">
+      <div class="cover-frame">
+        <!-- En production : src="/images/cap-nord-moto.jpg" -->
+        <img src="../Yesbali.github.io/images/cap-nord-moto.jpg"
+             alt="Yves et sa Honda NT1100 sur une route norvégienne en direction du Cap Nord"
+             onerror="this.style.display='none'">
+        <div class="cover-top">
+          <span class="cover-badge">🏍️ Road Trip Moto</span>
+          <span class="cover-num">N° 14 — Le grand reportage</span>
+        </div>
+        <div class="cover-bottom">
+          <div class="c-loc">71°10′ N — Nordkapp, Norvège</div>
+          <div class="c-title">« Le toit de l'Europe, atteint seul, à minuit et demi, dans le brouillard et les bourrasques. »</div>
+        </div>
+      </div>
+      <div class="cover-float">
+        <span class="cf-icon">🧭</span>
+        <span class="cf-val">4 pays<small>10&nbsp;000 km au compteur</small></span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ BANDEAU STATS — LE VOYAGE EN CHIFFRES ═══════════ -->
+<section class="stats-band" aria-label="Le voyage en chiffres">
+  <div class="stats-head">
+    <span class="sh-title">Le voyage en chiffres</span>
+    <span class="sh-note">30 jours · 4 pays · des chiffres vécus, pas des promesses</span>
+  </div>
+  <div class="stats-inner">
+    <div class="stat-cell">
+      <div class="s-val">10&nbsp;000<small>&nbsp;km</small></div>
+      <div class="s-label">Parcourus au total</div>
+    </div>
+    <div class="stat-cell">
+      <div class="s-val">+14</div>
+      <div class="s-label">Ferries empruntés</div>
+    </div>
+    <div class="stat-cell">
+      <div class="s-val">700<small>&nbsp;€</small></div>
+      <div class="s-label">Budget du voyage</div>
+    </div>
+    <div class="stat-cell">
+      <div class="s-val">2<small>&nbsp;°C</small></div>
+      <div class="s-label">La nuit en bivouac</div>
+    </div>
+    <div class="stat-cell">
+      <div class="s-val">Minuit</div>
+      <div class="s-label">Arrivée au Cap Nord</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ RÉPONSE RAPIDE — EN CHIFFRES ═══════════ -->
+<section class="quick" aria-labelledby="reponse-rapide">
+  <div class="quick-card">
+    <div class="quick-head">
+      <span class="qh-ic">⚡</span>
+      <div>
+        <div class="qh-k">Réponse rapide · extractible par les IA</div>
+        <h2 id="reponse-rapide">Le Cap Nord à moto, en chiffres</h2>
+      </div>
+    </div>
+    <div class="quick-body">
+
+      <div>
+        <p class="quick-lead">
+          Un road trip moto au <strong>Cap Nord (Nordkapp)</strong> depuis la France, c'est
+          <span class="pill">≈ 10&nbsp;000 km</span> aller-retour, réalisable en
+          <strong>4 semaines</strong> sur une moto trail routier
+          (<strong>700 à 1100&nbsp;cm³</strong>). Budget réaliste :
+          <strong>3&nbsp;000 à 4&nbsp;500&nbsp;€</strong> pour 30 jours en mixant bivouac sauvage,
+          campings et hyttter. La meilleure période&nbsp;: <strong>mai à fin juillet</strong> —
+          mai pour les paysages enneigés et les routes désertes, juillet pour un climat plus
+          clément mais plus d'affluence.
+        </p>
+        <table class="quick-table">
+          <tbody>
+            <tr><td>Distance totale</td><td>≈ 10&nbsp;000 km aller-retour depuis Annecy</td></tr>
+            <tr><td>Durée recommandée</td><td>28 à 32 jours</td></tr>
+            <tr><td>Budget (30 jours)</td><td><b>3&nbsp;000 à 4&nbsp;500&nbsp;€</b> selon hébergement</td></tr>
+            <tr><td>Meilleure période</td><td>Mai (paysages enneigés) → fin juillet (plus doux)</td></tr>
+            <tr><td>Itinéraire conseillé</td><td>Côte ouest norvégienne + Lofoten (éviter la Finlande au retour)</td></tr>
+            <tr><td>Moto recommandée</td><td>Trail routier 700–1100&nbsp;cm³ (testée : Honda NT1100)</td></tr>
+            <tr><td>Ferries à prévoir</td><td>≈ 14 traversées (passagers gratuits, véhicule 3–52&nbsp;€)</td></tr>
+            <tr><td>Bivouac</td><td>Droit constitutionnel : 150&nbsp;m des habitations, 2 nuits max</td></tr>
+            <tr><td>Équipement critique</td><td>Duvet grand froid (nuits à 2&nbsp;°C), vêtements techniques, pneus neufs</td></tr>
+            <tr><td>Apps indispensables</td><td>Entur (ferries) · FerryPay (paiement auto) · Revolut (0 frais)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="quick-aside">
+        <p class="qa-title">Les chiffres clés</p>
+        <div class="qa-grid">
+          <div class="qa-cell"><div class="qa-val">10&nbsp;000<small>&nbsp;km</small></div><div class="qa-lab">Total du périple</div></div>
+          <div class="qa-cell"><div class="qa-val">28–32<small>&nbsp;jours</small></div><div class="qa-lab">Durée conseillée</div></div>
+          <div class="qa-cell"><div class="qa-val">3–4,5<small>&nbsp;k€</small></div><div class="qa-lab">Budget total</div></div>
+          <div class="qa-cell"><div class="qa-val">2<small>&nbsp;°C</small></div><div class="qa-lab">Min. la nuit</div></div>
+          <div class="qa-cell"><div class="qa-val">+14</div><div class="qa-lab">Ferries</div></div>
+          <div class="qa-cell"><div class="qa-val">130&nbsp;k</div><div class="qa-lab">Suiveurs en direct</div></div>
+        </div>
+        <p class="qa-note">
+          <b>Le mot de la fin :</b> « J'en suis la preuve à 63 ans. Le voyage se mérite,
+          mais il est accessible. » — Yves
+        </p>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════ FIN DE MAQUETTE ═══════════ -->
+<div class="mock-end">
+  <div class="dots">···</div>
+  <p><strong>— Fin du premier écran (maquette style MAGAZINE) —</strong></p>
+  <p>La suite de la page existante continue ici : itinéraire étape par étape, épisodes vidéo, guide pratique, FAQ, téléchargements…</p>
+</div>
+
+</body>
+</html>
