@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="LCDMH" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Europe–Asie 2024 — étapes indicatives</name>
+    <desc>Trace indicative reconstituée depuis les étapes du récit Europe–Asie 2024 (Annecy → Cappadoce → Annecy, 10 000 km, Benelli TRK 702). Segments directs entre étapes — l'itinéraire réel a suivi les routes.</desc>
+  </metadata>
+  <trk>
+    <name>Europe–Asie 2024 — 13 étapes</name>
+    <trkseg>
+      <trkpt lat="45.899200" lon="6.129400"></trkpt>
+      <trkpt lat="45.996500" lon="9.256100"></trkpt>
+      <trkpt lat="46.056900" lon="14.505800"></trkpt>
+      <trkpt lat="44.880400" lon="15.616100"></trkpt>
+      <trkpt lat="43.343800" lon="17.807800"></trkpt>
+      <trkpt lat="42.424700" lon="18.771200"></trkpt>
+      <trkpt lat="41.327500" lon="19.818700"></trkpt>
+      <trkpt lat="39.704600" lon="21.626900"></trkpt>
+      <trkpt lat="41.008200" lon="28.978400"></trkpt>
+      <trkpt lat="38.643100" lon="34.829700"></trkpt>
+      <trkpt lat="42.697700" lon="23.321900"></trkpt>
+      <trkpt lat="45.586300" lon="24.625700"></trkpt>
+      <trkpt lat="45.899200" lon="6.129400"></trkpt>
+    </trkseg>
+  </trk>
+  <wpt lat="45.899200" lon="6.129400"><name>Annecy (départ)</name></wpt>
+  <wpt lat="45.996500" lon="9.256100"><name>Lac de Côme</name></wpt>
+  <wpt lat="46.056900" lon="14.505800"><name>Slovénie — Ljubljana</name></wpt>
+  <wpt lat="44.880400" lon="15.616100"><name>Croatie — Plitvice</name></wpt>
+  <wpt lat="43.343800" lon="17.807800"><name>Bosnie — Mostar</name></wpt>
+  <wpt lat="42.424700" lon="18.771200"><name>Monténégro — Kotor</name></wpt>
+  <wpt lat="41.327500" lon="19.818700"><name>Albanie — Tirana</name></wpt>
+  <wpt lat="39.704600" lon="21.626900"><name>Grèce — Météores</name></wpt>
+  <wpt lat="41.008200" lon="28.978400"><name>Turquie — Istanbul</name></wpt>
+  <wpt lat="38.643100" lon="34.829700"><name>Turquie — Cappadoce (Göreme)</name></wpt>
+  <wpt lat="42.697700" lon="23.321900"><name>Bulgarie — Sofia</name></wpt>
+  <wpt lat="45.586300" lon="24.625700"><name>Roumanie — Transfăgărășan (Bâlea Lac)</name></wpt>
+  <wpt lat="45.899200" lon="6.129400"><name>Annecy (retour)</name></wpt>
+</gpx>

@@ -414,6 +414,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .f-nav a:hover{color:var(--orange)}
 .f-legal{font-size:.76rem;color:rgba(255,255,255,.3);margin-top:1.1rem;line-height:1.7}
         </style>
+<style>
+.dl-wrap{background:linear-gradient(135deg,#f97316,#ea580c);border-radius:14px;padding:18px;margin:28px 0;color:#fff;box-shadow:0 4px 14px rgba(0,0,0,.15)}
+.dl-title{font-size:1.2rem;font-weight:800;margin-bottom:4px}
+.dl-sub{font-size:.85rem;opacity:.9;margin-bottom:14px}
+.dl-flex{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.dl-qr{background:#fff;padding:8px;border-radius:10px}
+.dl-qr img{width:120px;height:120px;display:block}
+.dl-qr-cap{font-size:.7rem;color:#fff;opacity:.9;margin-top:6px;max-width:130px;text-align:center}
+.dl-btns{display:flex;flex-direction:column;gap:10px;flex:1;min-width:220px}
+.dl-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#ea580c;font-weight:700;padding:12px 20px;border-radius:10px;text-decoration:none;font-size:.95rem;transition:.2s}
+.dl-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.2)}
+@media(max-width:720px){.dl-flex{flex-direction:column;align-items:flex-start}.dl-btns{width:100%}}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1092,6 +1105,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="a-propos.html">À propos</a></li>
     </ul>
     <p class="f-legal">Ce site contient des liens d'affiliation. Leur utilisation me permet de continuer à produire du contenu gratuit sur YouTube.<br>LCDMH © 2026 – Yves · Annecy, France</p>
+<div class="dl-wrap" id="telechargements">
+<div class="dl-title">🗺️ Prêt à partir ?</div>
+<div class="dl-sub">Téléchargez la trace GPX et scannez le QR code pour charger l'itinéraire dans Kurviger.</div>
+<div class="dl-flex">
+<div class="dl-qr"><img src="images/roadtrips/europe-asie-2024/qr-guide.png" alt="QR code Kurviger Europe-Asie"><div class="dl-qr-cap">Scannez pour charger l'itinéraire dans Kurviger</div></div>
+<div class="dl-btns">
+<a class="dl-btn" href="roadbook/europe-asie-2024/trace.gpx" download>📍 Télécharger la trace GPX</a>
+</div>
+</div>
+</div>
 </footer>
 
 <script src="footer-loader.js" defer></script>

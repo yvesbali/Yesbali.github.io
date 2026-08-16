@@ -344,6 +344,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .quick-table td:last-child{color:var(--noir);font-weight:500}
 .quick-table tr:last-child td{border-bottom:none}
 @media(max-width:600px){.quick-answer{margin:1.5rem 1rem;padding:1.3rem 1.3rem}.quick-table td:first-child{width:46%}}
+
+        /* === TÉLÉCHARGEMENTS === */
+        .dl-wrap{max-width:1050px;margin:0 auto}
+        .dl-box{display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;background:linear-gradient(180deg,#fff9f2,#fff);border:2px solid var(--orange);border-radius:20px;padding:28px 30px;box-shadow:0 10px 28px rgba(0,0,0,.06)}
+        .dl-main{flex:1 1 460px;min-width:280px}
+        .dl-kicker{font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+        .dl-main h3{font-size:1.15rem;color:var(--noir);margin-bottom:10px}
+        .dl-main p{color:#5f5f5f;font-size:.92rem;margin-bottom:14px}
+        .dl-actions{display:flex;flex-wrap:wrap;gap:12px}
+        .dl-btn{white-space:nowrap}
+        .dl-note{font-size:.74rem;color:#8a8a8a;font-style:italic;margin-top:12px}
+        .dl-qr{flex:0 0 190px;text-align:center}
+        .dl-qrbox{background:#fff;border:2px dashed var(--orange);border-radius:16px;padding:14px}
+        .dl-qrlabel{font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:800;color:#24384d;margin-bottom:8px}
+        .dl-qr img{width:150px;height:150px;object-fit:contain;margin:0 auto 8px;display:block;border-radius:10px;background:#fff}
+        .dl-qrsmall{font-size:.68rem;font-weight:600;color:#777;line-height:1.35}
+        @media(max-width:720px){.dl-box{padding:20px}.dl-actions{flex-direction:column}.dl-actions .dl-btn{width:100%;text-align:center}.dl-qr{flex-basis:100%}}
 </style>
 </head>
 
@@ -419,9 +436,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- ══ TÉLÉCHARGEMENTS ════════════════════════════════════ -->
+<section class="section" id="telechargements" aria-labelledby="telechargements-title">
+    <div class="sec-head">
+        <h2 id="telechargements-title">T&eacute;l&eacute;chargements</h2>
+        <div class="bar"></div>
+        <p>Trace GPX, roadbook PDF et QR code Kurviger &mdash; emportez le Cap Nord 2025 avec vous.</p>
+    </div>
+    <div class="dl-wrap">
+        <div class="dl-box">
+            <div class="dl-main">
+                <div class="dl-kicker">📥 Ressources du voyage</div>
+                <h3>Cap Nord 2025 &mdash; les fichiers du road trip</h3>
+                <p>La trace GPX compl&egrave;te du trajet r&eacute;ellement parcouru (11&nbsp;111&nbsp;km, 36 jours, 104 points d&rsquo;&eacute;tape nomm&eacute;s) et le roadbook PDF d&eacute;taill&eacute;. Scannez le QR code pour charger l&rsquo;itin&eacute;raire directement dans Kurviger.</p>
+                <div class="dl-actions">
+                    <a class="btn btn-orange dl-btn" href="/roadbook/cap-nord-2025/trace.gpx" download="cap-nord-2025-trace.gpx">🗺️ T&eacute;l&eacute;charger la trace GPX</a>
+                    <a class="btn btn-outline dl-btn" href="/roadbooks/road-trip-cap-nord-2025-roadbook.pdf" download="road-trip-cap-nord-2025-roadbook.pdf">📖 Roadbook PDF</a>
+                </div>
+                <p class="dl-note">Trace GPX issue de l&rsquo;itin&eacute;raire r&eacute;el (points &eacute;chantillonn&eacute;s &agrave; 150&nbsp;m pour all&eacute;ger le fichier). Selon la m&eacute;t&eacute;o, l&rsquo;&eacute;tat des routes ou les impr&eacute;vus, votre itin&eacute;raire pourra varier.</p>
+            </div>
+            <div class="dl-qr">
+                <div class="dl-qrbox">
+                    <div class="dl-qrlabel">📱 Scan rapide</div>
+                    <img src="/roadbook/cap-nord-2025/qr.png" alt="QR code Kurviger &mdash; itin&eacute;raire Cap Nord 2025" width="150" height="150" loading="lazy">
+                    <div class="dl-qrsmall">Scannez pour charger l&rsquo;itin&eacute;raire dans Kurviger</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ══ INTRO ════════════════════════════════════ -->
-<div id="lcdmh-ressources"></div>
-<script src="roadbooks-widget.js" defer></script>
 
 <section class="section">
     <div class="intro-block">

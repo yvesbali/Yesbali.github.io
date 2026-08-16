@@ -92,6 +92,56 @@ def _fmt_delta(d, unit="", digits=0):
     return f"{sign}{d:.{digits}f}{unit}"
 
 
+def build_debrief(last: dict, prev: dict) -> str:
+    """Débrief explicatif (règles simples, 0 token) — lit les deltas et explique la tendance."""
+    if prev is None:
+        return "(première ligne de suivi — le débrief commencera demain)"
+    l = []
+
+    # YouTube — vues
+    dv = _delta(last, prev, "sum_views_30d")
+    if dv is not None:
+        if dv > 0:   l.append(f"📈 Les vues cumulées 30j progressent (+{int(dv):,} vs hier) — la dynamique est bonne")
+        elif dv < 0: l.append(f"📉 Les vues cumulées 30j reculent ({int(dv):,}) — un ancien video fort s'essouffle ?")
+        else:        l.append("➡️ Les vues cumulées sont stables")
+
+    # YouTube — CTR
+    ctr = _num(last.get("avg_ctr_weighted"))
+    if ctr:
+        if ctr >= 10: l.append(f"🎯 Le CTR YouTube est EXCELLENT ({ctr:.1f} % — la moyenne chaîne est ~4-6 %) : tes vignettes/titres accrochent")
+        elif ctr >= 6: l.append(f"👍 CTR YouTube correct ({ctr:.1f} %) — au-dessus de la moyenne")
+        else: l.append(f"⚠️ CTR YouTube un peu faible ({ctr:.1f} %) — penser à optimiser vignettes/titres")
+
+    # YouTube — rétention
+    ret = _num(last.get("avg_view_pct_mean"))
+    if ret:
+        if ret >= 45: l.append(f"⏱️ Rétention {ret:.0f} % : TRÈS bonne (>= 40 % est déjà excellent) — les vidéos gardent les spectateurs")
+        elif ret >= 35: l.append(f"⏱️ Rétention {ret:.0f} % : correcte (la moyenne ~40 %)")
+        else: l.append(f"⏱️ Rétention {ret:.0f} % : à surveiller — vérifier les hooks de début de vidéo")
+
+    # GSC — clics
+    dc = _delta(last, prev, "gsc_clicks")
+    if dc is not None:
+        if dc > 0:   l.append(f"🔍 Les clics Google progressent (+{int(dc)}) — la visibilité SEO monte")
+        elif dc < 0: l.append(f"🔍 Les clics Google reculent ({int(dc)}) — léger repli, à surveiller")
+        else:        l.append("🔍 Clics Google stables")
+
+    # GSC — CTR
+    gctr = _num(last.get("gsc_ctr_pct"))
+    if gctr:
+        if gctr >= 3:  l.append(f"💡 CTR Google {gctr:.1f} % : bon (la moyenne SEO est ~2-3 %)")
+        elif gctr >= 2: l.append(f"💡 CTR Google {gctr:.1f} % : moyen — optimiser les titles/meta descriptions")
+        else:          l.append(f"💡 CTR Google {gctr:.1f} % : faible — les pages ne sont pas assez attrayantes dans les résultats (titres/meta à retravailler)")
+
+    # GSC — positions
+    dt10 = _delta(last, prev, "gsc_top10")
+    if dt10 is not None:
+        if dt10 > 0: l.append(f"📊 Top 10 Google : +{int(dt10)} requêtes en première page — le SEO progresse")
+        elif dt10 < 0: l.append(f"📊 Top 10 Google : {int(dt10)} requêtes sorties de la première page — à surveiller")
+
+    return "\n".join(l)
+
+
 def build_email(last: dict, prev: dict) -> tuple:
     date_s = _fmt_date(last.get("Date"))
     subject = f"LCDMH — Daily tracking {date_s}"
@@ -131,7 +181,11 @@ Top 3 / 10 / 20    : {last.get('gsc_top3')} / {last.get('gsc_top10')} / {last.ge
 Source GSC : {last.get('notes')}
 Référence  : {prev_label}
 
-Dashboard complet : F:\\LCDMH_GitHub_Audit\\data\\baselines\\daily_stats_log.xlsx
+📋 DÉBRIEF
+----------
+{build_debrief(last, prev)}
+
+Dashboard complet : F:\\\\LCDMH_GitHub_Audit\\\\data\\\\baselines\\\\daily_stats_log.xlsx
 
 --
 LCDMH — tracking automatique
