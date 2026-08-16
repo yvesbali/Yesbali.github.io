@@ -132,18 +132,20 @@
   #lcdmh-nav .lcdmh-has-drop>a::after{content:' ▾';font-size:.7rem;opacity:.7}
 
   /* Dropdown desktop */
+  /* Le <li> parent est le bloc englobant : le sous-menu est collé à son bord bas
+     (top:100%) sans gap → le survol reste actif du parent jusqu'au sous-menu. */
+  #lcdmh-nav .lcdmh-has-drop{position:relative}
   #lcdmh-nav .lcdmh-dropdown{
     position:absolute;top:100%;left:0;
     min-width:250px;padding:.5rem 0;
     background:#fff;border:1px solid #e7e7e7;border-radius:12px;
     box-shadow:0 14px 34px rgba(0,0,0,.12);
     opacity:0;visibility:hidden;pointer-events:none;
-    transform:translateY(8px);
-    transition:opacity .2s,transform .2s,visibility 0s linear .2s;
+    transition:opacity .2s,visibility 0s linear .2s;
   }
   #lcdmh-nav .lcdmh-has-drop:hover .lcdmh-dropdown,
   #lcdmh-nav .lcdmh-has-drop.open .lcdmh-dropdown{
-    opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);
+    opacity:1;visibility:visible;pointer-events:auto;
     transition-delay:0s;
   }
   #lcdmh-nav .lcdmh-dropdown a{
