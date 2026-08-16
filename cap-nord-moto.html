@@ -835,27 +835,258 @@ footer::before{content:'';position:absolute;top:-1px;left:0;right:0;height:3px;b
 
 <body>
 
-<!-- ══════════ HEADER ══════════ -->
-<header class="header" id="header">
-    <a href="/index.html" class="logo" aria-label="LCDMH — accueil">LCD<em>MH</em><span class="tag">La Chaîne du Motard Heureux</span></a>
+<!-- ══════════ NAVIGATION — menu riche LCDMH (copie conforme de nav.html, identique aux autres pages) ══════════ -->
+<nav id="lcdmh-nav" aria-label="Navigation principale LCDMH">
+  <a class="lcdmh-logo" href="/index.html" aria-label="Accueil LCDMH">LC<span>D</span>MH</a>
 
-    <nav aria-label="Navigation principale">
-        <ul class="nav" id="nav">
-            <li><a href="/index.html">Accueil</a></li>
-            <li><a href="/fil-moto.html">Actu</a></li>
-            <li><a href="/roadtrips.html" class="active">Road Trips</a></li>
-            <li><a href="/equipement.html">Tests &amp; Équipements</a></li>
-            <li><a href="/codes-promo.html">Codes Promo</a></li>
-            <li><a href="/articles.html">Dossiers Noirs</a></li>
-            <li><a href="/articles.html">Articles</a></li>
-            <li><a href="/roadbooks/road-trip-cap-nord-2025-roadbook.pdf" class="nav-cta" download>📖 Roadbook PDF</a></li>
-        </ul>
-    </nav>
+  <button id="lcdmh-menu-toggle" class="lcdmh-menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="lcdmh-nav-links">☰</button>
 
-    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-    </button>
-</header>
+  <ul id="lcdmh-nav-links" class="lcdmh-nav-links">
+    <li><a href="/index.html">Accueil</a></li>
+
+    <li class="lcdmh-has-drop">
+      <a href="#" data-nav-trigger="actu" aria-haspopup="true" aria-expanded="false">Actu</a>
+      <div class="lcdmh-dropdown" data-nav-menu="actu">
+        <a href="/fil-moto.html">📰 Fil Moto — l'actu qui compte</a>
+        <a href="/voyager-europe-moto.html">🌍 Voyager en Europe à moto — guide pratique</a>
+      </div>
+    </li>
+
+    <li class="lcdmh-has-drop">
+      <a href="#" data-nav-trigger="roadtrips" aria-haspopup="true" aria-expanded="false">Road Trips</a>
+      <div class="lcdmh-dropdown" data-nav-menu="roadtrips">
+        <a href="/roadtrips.html">Tous les road trips</a>
+        <a href="/roadtrips/road-trip-moto-france.html">🇫🇷 France — Alpes &amp; Cols</a>
+        <a href="/alpes-cols-mythiques.html">📋 Alpes &amp; Cols — 47 vidéos</a>
+        <a href="/alpes/annecy-et-ses-environs-moto.html">📍 Annecy et ses environs — 15 vidéos</a>
+        <a href="/cap-nord-moto.html">🏔️ Cap Nord 2025</a>
+        <a href="/les-alpes-dans-tous-les-sens.html">⛰️ Les Alpes dans tous les sens</a>
+        <a href="/europe-asie-moto.html">🌍 Europe–Asie 2024</a>
+        <a href="/espagne-2023.html">🇪🇸 Espagne 2023</a>
+        <a href="/alpes-aventure-festival-moto.html">🏍️ Alpes Festival 2025</a>
+        <a href="/roadtrips/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026.html">🏍️ Road trip moto Cols Suisse, Tyrol et dolomites 2026</a>
+      </div>
+    </li>
+
+    <li class="lcdmh-has-drop">
+      <a href="#" data-nav-trigger="tests" aria-haspopup="true" aria-expanded="false">Tests &amp; équipements</a>
+      <div class="lcdmh-dropdown" data-nav-menu="tests">
+        <a href="/pneus.html">🛞 Pneus</a>
+        <a href="/articles/dunlop-mutant-vs-bridgestone-t33-le-combat-quel-pneu-choisir.html">⚔️ Dunlop Mutant vs T33</a>
+        <a href="/dunlop-mutant.html">🛞 Dunlop Mutant — fiche produit</a>
+        <a href="/tests-motos.html">🏍️ Tests motos</a>
+        <a href="/equipement.html">🧥 Équipement</a>
+        <a href="/intercoms.html">🎧 Intercoms</a>
+        <a href="/gps.html">🗺️ GPS Moto</a>
+        <a href="/photo-video.html">📷 Photo / Vidéo</a>
+        <a href="/securite.html">🛡️ Sécurité</a>
+      </div>
+    </li>
+
+    <li class="lcdmh-has-drop">
+      <a href="#" data-nav-trigger="codes" aria-haspopup="true" aria-expanded="false">Codes promo</a>
+      <div class="lcdmh-dropdown" data-nav-menu="codes">
+        <a href="/codes-promo.html">Tous les codes</a>
+        <a href="/aoocci.html">Aoocci</a>
+        <a href="/carpuride.html">Carpuride</a>
+        <a href="/blackview.html">Blackview</a>
+        <a href="/olight.html">Olight</a>
+        <a href="/komobi.html">Komobi</a>
+      </div>
+    </li>
+
+    <li class="lcdmh-has-drop">
+      <a href="#" data-nav-trigger="dossiers" aria-haspopup="true" aria-expanded="false">📂 Dossiers Noirs</a>
+      <div class="lcdmh-dropdown" data-nav-menu="dossiers">
+        <a href="/articles/accessoires-moto-garantie-vos-droits.html">⚖️ Garantie &amp; accessoires</a>
+        <a href="/articles/mekanik-annecy-honda-nt1100-panne-garantie.html">🔧 Mekanik — la concession de la honte</a>
+      </div>
+    </li>
+    
+    <li><a href="/articles.html">📖 Articles</a></li>
+
+    <li class="lcdmh-has-drop">
+      <a href="#" data-nav-trigger="apropos" aria-haspopup="true" aria-expanded="false">À propos</a>
+      <div class="lcdmh-dropdown" data-nav-menu="apropos">
+        <a href="/a-propos.html">À propos</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/sitemap.html">Plan du site</a>
+      </div>
+    </li>
+
+    <li><button id="lcdmh-search-nav-btn" class="lcdmh-search-nav-btn" type="button" title="Rechercher les vidéos">🔍</button></li>
+
+    <li class="lcdmh-desktop-cta"><a class="lcdmh-last-video" href="/index.html#videos"><span class="lcdmh-badge-new">NOUVEAU</span><span class="lcdmh-badge-title">Dernière vidéo</span></a></li>
+    <li class="lcdmh-desktop-cta"><a class="lcdmh-subscribe" href="https://www.youtube.com/@LCDMH?sub_confirmation=1" target="_blank" rel="noopener">▶ S'abonner</a></li>
+    <li class="lcdmh-desktop-cta"><a class="lcdmh-youtube" href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">📺 YouTube</a></li>
+    <li class="lcdmh-mobile-close"><a href="#" id="lcdmh-mobile-close-btn" style="color:#e67e22;font-size:1.2rem;text-align:right;border:none">✕ Fermer</a></li>
+  </ul>
+</nav>
+
+<style>
+  /* === STYLES GÉNÉRAUX === */
+  *, *::before, *::after{box-sizing:border-box}
+  html,body{width:100%;max-width:100%;overflow-x:hidden;margin:0;padding:0}
+
+  /* === BARRE DE NAVIGATION === */
+  #lcdmh-nav{
+    --lcdmh-orange:#e67e22;
+    --lcdmh-black:#1a1a1a;
+    --lcdmh-muted:#555;
+    position:sticky;top:0;z-index:2000;
+    display:flex;align-items:center;justify-content:space-between;
+    min-height:72px;padding:0 4%;
+    background:#fff;
+    box-shadow:0 2px 12px rgba(0,0,0,.07);
+    font-family:'Inter',sans-serif;
+  }
+  #lcdmh-nav a{text-decoration:none;color:inherit}
+
+  /* Logo */
+  #lcdmh-nav .lcdmh-logo{
+    font-family:'Montserrat',sans-serif;
+    font-size:1.6rem;font-weight:900;
+    color:var(--lcdmh-black);letter-spacing:-.03em;
+    white-space:nowrap;flex-shrink:0;
+  }
+  #lcdmh-nav .lcdmh-logo span{color:var(--lcdmh-orange)}
+
+  /* Liens desktop */
+  #lcdmh-nav .lcdmh-nav-links{
+    display:flex;align-items:center;gap:.3rem 1rem;
+    list-style:none;margin:0;padding:0;
+  }
+  #lcdmh-nav .lcdmh-nav-links>li>a{
+    display:block;padding:.5rem .6rem;
+    font-size:.88rem;font-weight:700;
+    color:var(--lcdmh-muted);text-transform:uppercase;
+    letter-spacing:.04em;white-space:nowrap;
+    transition:color .2s;
+  }
+  #lcdmh-nav .lcdmh-nav-links>li>a:hover,
+  #lcdmh-nav .lcdmh-nav-links>li>a.active{color:var(--lcdmh-orange)}
+  #lcdmh-nav .lcdmh-has-drop>a::after{content:' ▾';font-size:.7rem;opacity:.7}
+
+  /* Dropdown desktop */
+  /* Le <li> parent est le bloc englobant : le sous-menu est collé à son bord bas
+     (top:100%) sans gap → le survol reste actif du parent jusqu'au sous-menu. */
+  #lcdmh-nav .lcdmh-has-drop{position:relative}
+  #lcdmh-nav .lcdmh-dropdown{
+    position:absolute;top:100%;left:0;
+    min-width:250px;padding:.5rem 0;
+    background:#fff;border:1px solid #e7e7e7;border-radius:12px;
+    box-shadow:0 14px 34px rgba(0,0,0,.12);
+    opacity:0;visibility:hidden;pointer-events:none;
+    transition:opacity .2s,visibility 0s linear .2s;
+  }
+  #lcdmh-nav .lcdmh-has-drop:hover .lcdmh-dropdown,
+  #lcdmh-nav .lcdmh-has-drop.open .lcdmh-dropdown{
+    opacity:1;visibility:visible;pointer-events:auto;
+    transition-delay:0s;
+  }
+  #lcdmh-nav .lcdmh-dropdown a{
+    display:block;padding:.7rem 1rem;
+    color:var(--lcdmh-black);font-size:.95rem;font-weight:600;
+    white-space:nowrap;
+  }
+  #lcdmh-nav .lcdmh-dropdown a:hover{background:#fff8f2;color:var(--lcdmh-orange)}
+
+  /* Boutons spéciaux desktop */
+  #lcdmh-nav .lcdmh-last-video{
+    display:inline-flex;align-items:center;gap:.4rem;
+    padding:.4rem .8rem;border:1px solid #f0a500;border-radius:999px;
+    background:#fff7ef;font-size:.78rem;
+  }
+  #lcdmh-nav .lcdmh-last-video:hover{background:#fff1df}
+  #lcdmh-nav .lcdmh-badge-new{color:var(--lcdmh-orange);font-size:.72rem;font-weight:800;animation:lcdmhPulse 1.4s infinite}
+  #lcdmh-nav .lcdmh-subscribe,#lcdmh-nav .lcdmh-youtube{color:#fff!important;border-radius:999px;padding:.6rem 1rem!important}
+  #lcdmh-nav .lcdmh-subscribe{background:var(--lcdmh-orange)}
+  #lcdmh-nav .lcdmh-subscribe:hover{background:#d35400}
+  #lcdmh-nav .lcdmh-youtube{background:#ff0000}
+  #lcdmh-nav .lcdmh-search-nav-btn{
+    background:none;border:none;cursor:pointer;
+    font-size:1rem;padding:.4rem;color:var(--lcdmh-black);
+  }
+  @keyframes lcdmhPulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+  /* Hamburger caché sur desktop */
+  #lcdmh-nav .lcdmh-menu-toggle{display:none}
+
+  /* === MOBILE — MENU SIMPLE SANS RISQUE === */
+  @media (max-width:1100px){
+    /* Barre nav plus petite */
+    #lcdmh-nav{min-height:64px;padding:0 1rem}
+
+    /* Afficher le hamburger */
+    #lcdmh-nav .lcdmh-menu-toggle{
+      display:flex;align-items:center;justify-content:center;
+      background:none;border:none;cursor:pointer;
+      font-size:1.8rem;padding:8px;color:#222;
+    }
+
+    /* Cacher les liens desktop */
+    #lcdmh-nav .lcdmh-nav-links{display:none !important}
+
+    /* Quand le menu est actif: overlay fixe */
+    #lcdmh-nav .lcdmh-nav-links.active{
+      display:flex !important;
+      position:fixed;top:0;left:0;right:0;bottom:0;
+      width:100vw;height:100vh;
+      background:#fff;
+      z-index:99999;
+      flex-direction:column;
+      align-items:stretch;
+      justify-content:flex-start;
+      padding:5rem 1.5rem 2rem;
+      overflow-y:auto;
+      margin:0;
+      list-style:none;
+      gap:0;
+    }
+
+    /* Chaque lien occupe toute la largeur */
+    #lcdmh-nav .lcdmh-nav-links.active>li{width:100%;text-align:left}
+    #lcdmh-nav .lcdmh-nav-links.active>li>a{
+      display:flex;align-items:center;
+      width:100%;padding:1rem 0;
+      font-size:1.1rem;font-weight:600;color:#222;
+      text-transform:none;letter-spacing:normal;
+      border-bottom:1px solid #eee;white-space:normal;
+    }
+
+    /* Sous-menus en accordéon */
+    #lcdmh-nav .lcdmh-nav-links.active .lcdmh-dropdown{
+      display:none;
+      position:static;opacity:1;visibility:visible;pointer-events:auto;
+      transform:none;border:none;box-shadow:none;border-radius:0;
+      background:transparent;margin:0;padding:0 0 0 1rem;width:100%;
+      min-width:0;max-height:none;
+    }
+    #lcdmh-nav .lcdmh-nav-links.active .lcdmh-has-drop.open .lcdmh-dropdown{
+      display:block;
+    }
+    #lcdmh-nav .lcdmh-nav-links.active .lcdmh-dropdown a{
+      color:#555;font-weight:400;font-size:.95rem;
+      padding:.7rem 0;white-space:normal;
+      border-bottom:1px solid #f0f0f0;
+    }
+
+    /* Boutons CTA en mobile */
+    #lcdmh-nav .lcdmh-nav-links.active .lcdmh-last-video,
+    #lcdmh-nav .lcdmh-nav-links.active .lcdmh-subscribe,
+    #lcdmh-nav .lcdmh-nav-links.active .lcdmh-youtube{
+      display:flex !important;justify-content:center;width:100%;margin:.5rem 0;
+    }
+
+    /* Cache le bouton recherche du menu mobile (trop petit) */
+    #lcdmh-nav .lcdmh-nav-links.active .lcdmh-search-nav-btn{display:none}
+  }
+
+/* ═══ Correction homothétie : toutes les images respectent leur ratio ═══ */
+img{max-width:100%;height:auto}
+.thumb img,.frame img,.intro-figure img{width:100%;height:100%;object-fit:cover}
+.dl-qr img{object-fit:contain}
+</style>
 
 <main>
 
@@ -1979,24 +2210,47 @@ footer::before{content:'';position:absolute;top:-1px;left:0;right:0;height:3px;b
 </footer>
 
 <script>
-/* ═══ Menu mobile ═══ */
-const burger=document.getElementById('burger');
-const nav=document.getElementById('nav');
-burger.addEventListener('click',()=>{
-    nav.classList.toggle('open');
-    burger.classList.toggle('open');
-    burger.setAttribute('aria-expanded',nav.classList.contains('open'));
+/* ═══ Navigation riche LCDMH (mécanisme identique aux autres pages — cf. nav.html + js/lcdmh-nav-loader.js) ═══ */
+const navToggle=document.getElementById('lcdmh-menu-toggle');
+const navLinks=document.getElementById('lcdmh-nav-links');
+if(navToggle&&navLinks){
+    navToggle.addEventListener('click',()=>{
+        const isOpen=navLinks.classList.toggle('active');
+        navToggle.setAttribute('aria-expanded',isOpen?'true':'false');
+        navToggle.textContent=isOpen?'✕':'☰';
+    });
+}
+/* Sous-menus : accordéon sur mobile (clic), hover géré en CSS sur desktop */
+document.querySelectorAll('#lcdmh-nav .lcdmh-has-drop').forEach(item=>{
+    const trigger=item.querySelector('[data-nav-trigger]');
+    if(!trigger)return;
+    trigger.addEventListener('click',e=>{
+        if(window.innerWidth<=1100){
+            e.preventDefault();
+            document.querySelectorAll('#lcdmh-nav .lcdmh-has-drop').forEach(other=>{
+                if(other!==item)other.classList.remove('open');
+            });
+            item.classList.toggle('open');
+            trigger.setAttribute('aria-expanded',item.classList.contains('open')?'true':'false');
+        }
+    });
 });
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-    nav.classList.remove('open');burger.classList.remove('open');
-    burger.setAttribute('aria-expanded','false');
-}));
-
-/* ═══ Header : ombre au scroll ═══ */
-const header=document.getElementById('header');
-window.addEventListener('scroll',()=>{
-    header.classList.toggle('scrolled',window.scrollY>24);
-},{passive:true});
+/* Fermer le menu mobile quand on clique sur un lien */
+document.querySelectorAll('#lcdmh-nav-links a:not([data-nav-trigger])').forEach(a=>{
+    a.addEventListener('click',()=>{
+        if(navLinks)navLinks.classList.remove('active');
+        if(navToggle){navToggle.setAttribute('aria-expanded','false');navToggle.textContent='☰';}
+    });
+});
+/* Marquer le lien actif */
+const currentPath=window.location.pathname;
+document.querySelectorAll('#lcdmh-nav a[href]').forEach(a=>{
+    const href=a.getAttribute('href');
+    if(!href||href==='#')return;
+    if(currentPath===href||currentPath.endsWith(href))a.classList.add('active');
+    const section=href.replace('/','').replace('.html','');
+    if(section&&currentPath.includes('/'+section+'/'))a.classList.add('active');
+});
 
 /* ═══ Apparition au scroll ═══ */
 const io=new IntersectionObserver(entries=>{
