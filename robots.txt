@@ -4,6 +4,14 @@ Disallow: /LCDMH_Cadrage_Projet.html
 Disallow: /nav.html
 Disallow: /widget-roadtrip-snippet.html
 Disallow: /roadtrips/maquette_capnord_complete_v2.html
+# ⚠️ Dossiers de travail / doublons — hors indexation (signal GSC 19/08 « Page avec redirection »)
+Disallow: /seo/
+Disallow: /data/
+Disallow: /_review/
+Disallow: /roadbooks-html/
+Disallow: /GEO_PATCHES/
+Disallow: /_apercu_design_premium/
+Disallow: /articles/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-peti.html
 
 # ══ Crawlers IA — autorisés explicitement ══════════════════
 # Signaux explicites aux moteurs génératifs (GEO / AEO)
