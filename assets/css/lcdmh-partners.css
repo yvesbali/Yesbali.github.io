@@ -30,9 +30,9 @@
   color:#92400e;border-radius:8px;padding:.28rem .7rem;font-size:.78rem;font-weight:600;margin-bottom:.8rem}
 .bp-code strong{font-weight:900}
 
-.bp-btn{display:block;text-align:center;background:#e67e22;color:#fff;border-radius:10px;
-  padding:.68rem .6rem;font-weight:700;font-size:.88rem;letter-spacing:.2px;
-  transition:background .15s}
+.bp-btn{display:block;text-align:center;background:#e67e22;color:#fff;border-radius:999px;
+  padding:.7rem 1rem;font-weight:700;font-size:.88rem;font-family:Montserrat,Inter,sans-serif;letter-spacing:.2px;
+  transition:background .15s;box-shadow:0 2px 6px rgba(230,126,34,.25)}
 .bp-card:hover .bp-btn{background:#d35400}
 
 .bp-mention{text-align:center;font-size:.72rem;color:#9aa5b1;margin-top:1.2rem}
