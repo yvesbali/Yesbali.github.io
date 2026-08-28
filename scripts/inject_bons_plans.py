@@ -23,13 +23,17 @@ def render_block(offers: dict) -> str:
     cards = ""
     for o in offers.get("offres", []):
         lien = (o.get("lien") or "").strip()
-        inner = (f"<span class=\"bp-icon\">{o.get('icone','🛍️')}</span>"
+        couleur = o.get("couleur") or ""
+        cls = f" bp-card--{couleur}" if couleur else ""
+        inner = (f"<span class=\"bp-img-wrap\"><img class=\"bp-img\" src=\"{o.get('image','')}\" "
+                 f"alt=\"{o.get('produit','')}\" loading=\"lazy\"></span>"
                  f"<span class=\"bp-name\">{o.get('produit','')}</span>"
+                 f"<span class=\"bp-slogan\">{o.get('slogan','')}</span>"
                  f"<span class=\"bp-code\">{o.get('avantage','')}</span>")
         if lien:
-            cards += f'<a class="bp-card" href="{lien}" target="_blank" rel="noopener">{inner}</a>\n'
+            cards += f'<a class="bp-card{cls}" href="{lien}" target="_blank" rel="noopener">{inner}</a>\n'
         else:
-            cards += f'<div class="bp-card">{inner}</div>\n'
+            cards += f'<div class="bp-card{cls}">{inner}</div>\n'
     acc = f"<p>{accroche}</p>" if accroche else ""
     return f"""{START}
 <section class="bp-block" id="bons-plans">

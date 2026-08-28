@@ -1,16 +1,25 @@
 /* ═══════════════════════════════════════════════════════════
    BONS PLANS LCDMH — bloc standard en bas de page (28/08/2026)
    Source des offres : promos/bons_plans.json (éditer CE fichier
-   pour changer une promo, puis relancer scripts/inject_bons_plans.py)
-   Design : tuiles-boutons compactes, texte intégré (consigne Yves)
+   pour modifier une promo — puis scripts/inject_bons_plans.py)
    ═══════════════════════════════════════════════════════════ */
-.bp-block{max-width:960px;margin:0 auto;padding:1.6rem 0}
-.bp-head{text-align:center;margin-bottom:1rem}
-.bp-head h2{font-size:1.15rem;margin:0 0 .2rem;color:#163251}
-.bp-head p{font-size:.84rem;color:#6f7782;margin:0;max-width:620px;margin-left:auto;margin-right:auto}
-.bp-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:.7rem}
-.bp-card{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:170px;min-height:104px;padding:.65rem .8rem;border-radius:12px;border:1px solid #e5e7eb;background:#fff;box-shadow:0 3px 10px rgba(0,0,0,.05);text-decoration:none;color:inherit;text-align:center;transition:transform .15s,box-shadow .15s,border-color .15s}
-a.bp-card:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.10);border-color:#e67e22}
-.bp-icon{font-size:1.35rem;line-height:1}
-.bp-name{font-weight:700;font-size:.83rem;line-height:1.25;color:#163251;display:block}
-.bp-code{font-size:.72rem;font-weight:700;color:#92400e;background:#fef3c7;border:1px dashed #f59e0b;border-radius:999px;padding:.18rem .55rem;display:inline-block;white-space:nowrap}
+.bp-block{max-width:960px;margin:0 auto;padding:1.8rem 0}
+.bp-head{text-align:center;margin-bottom:1.3rem}
+.bp-head h2{font-size:1.2rem;margin:0 0 .25rem;color:#163251}
+.bp-head p{font-size:.87rem;color:#6f7782;margin:0}
+.bp-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem}
+/* ── Tuile-bouton de base ── */
+.bp-card{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px;
+  width:200px;min-height:225px;padding:1rem .8rem;border-radius:16px;text-decoration:none;
+  transition:transform .18s,box-shadow .18s;text-align:center;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.bp-card:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(0,0,0,.18)}
+.bp-img-wrap{background:#fff;border-radius:12px;width:100%;height:110px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:6px;margin-bottom:2px}
+.bp-img{max-width:100%;max-height:100%;object-fit:contain}
+.bp-name{font-size:.95rem;font-weight:800;letter-spacing:.2px}
+.bp-slogan{font-size:.74rem;font-style:italic;opacity:.92;line-height:1.35;min-height:34px;display:flex;align-items:center}
+.bp-code{font-size:.72rem;font-weight:800;color:#7c2d12;background:#fde68a;border:1px dashed #d97706;border-radius:999px;padding:.26rem .6rem;margin-top:auto}
+/* ── 3 couleurs de tuiles ── */
+.bp-card--carpuride{background:linear-gradient(160deg,#ff7a1a,#e84d0e)}
+.bp-card--aoocci{background:linear-gradient(160deg,#1e90ff,#0b5ed7)}
+.bp-card--colight{background:linear-gradient(160deg,#3a3f4b,#111318)}
+@media (max-width:640px){.bp-card{width:100%;max-width:300px}}
