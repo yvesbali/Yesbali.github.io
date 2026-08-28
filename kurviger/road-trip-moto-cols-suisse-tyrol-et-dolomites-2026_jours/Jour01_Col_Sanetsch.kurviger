@@ -1,0 +1,121 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature"
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1787915666829,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        6.061889,
+        45.809866,
+        7.319673,
+        46.331402
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "Départ 29/08/2026",
+          "latitude": 45.809866,
+          "longitude": 6.061889
+        },
+        {
+          "name": "Plan drone vallée et début vidéo",
+          "weight": "fastest",
+          "latitude": 46.045238,
+          "longitude": 6.62158,
+          "shaping": true
+        },
+        {
+          "name": "Plan drone début des vidéos. ",
+          "weight": "fastest",
+          "latitude": 46.106446,
+          "longitude": 6.713848,
+          "shaping": true
+        },
+        {
+          "name": "Plan drone",
+          "latitude": 46.2003,
+          "longitude": 6.758013,
+          "shaping": true
+        },
+        {
+          "latitude": 46.206448,
+          "longitude": 6.776333,
+          "shaping": true
+        },
+        {
+          "latitude": 46.301021,
+          "longitude": 6.673722,
+          "shaping": true
+        },
+        {
+          "latitude": 46.21025,
+          "longitude": 6.984215,
+          "shaping": true
+        },
+        {
+          "latitude": 46.164614,
+          "longitude": 7.18214,
+          "shaping": true
+        },
+        {
+          "name": "Plan drone",
+          "weight": "curvaturefastest",
+          "latitude": 46.310044,
+          "longitude": 7.319673,
+          "shaping": true
+        },
+        {
+          "name": "Plan drone suivi ",
+          "weight": "curvaturefastest",
+          "latitude": 46.319755,
+          "longitude": 7.307033,
+          "shaping": true
+        },
+        {
+          "name": "Plan drone suivi fin",
+          "weight": "curvaturefastest",
+          "latitude": 46.328758,
+          "longitude": 7.288742,
+          "shaping": true
+        },
+        {
+          "name": "N1 *bivouac ? *camping ? Col du Sanetsch",
+          "weight": "curvaturefastest",
+          "category": "search_result",
+          "latitude": 46.331402,
+          "longitude": 7.286167
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature"
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1787915666829,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        9.753142,
+        46.48421,
+        10.506964,
+        46.749903
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "N1 Camping Albula ",
+          "latitude": 46.61902,
+          "longitude": 9.753142
+        },
+        {
+          "latitude": 46.719152,
+          "longitude": 9.765472,
+          "shaping": true
+        },
+        {
+          "name": "46.749903,9.947798",
+          "category": "coordinate",
+          "latitude": 46.749903,
+          "longitude": 9.947798,
+          "shaping": true
+        },
+        {
+          "name": "Camping Chapella",
+          "latitude": 46.6326,
+          "longitude": 10.013384,
+          "shaping": true
+        },
+        {
+          "latitude": 46.48421,
+          "longitude": 9.910355,
+          "shaping": true
+        },
+        {
+          "latitude": 46.52958,
+          "longitude": 10.138664,
+          "shaping": true
+        },
+        {
+          "latitude": 46.539558,
+          "longitude": 10.433192,
+          "shaping": true
+        },
+        {
+          "name": "*Camping prix Option? ",
+          "latitude": 46.601295,
+          "longitude": 10.423869,
+          "shaping": true
+        },
+        {
+          "name": "N1 Camping Trafoi",
+          "category": "pass",
+          "latitude": 46.543794,
+          "longitude": 10.506964
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

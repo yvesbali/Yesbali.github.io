@@ -1,0 +1,98 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature"
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1787915666829,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        8.380208,
+        46.460566,
+        9.877052,
+        46.731154
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "N1 Gotthard Camping Andermatt",
+          "latitude": 46.631756,
+          "longitude": 8.591121
+        },
+        {
+          "latitude": 46.570447,
+          "longitude": 8.394931,
+          "shaping": true
+        },
+        {
+          "latitude": 46.476268,
+          "longitude": 8.380208,
+          "shaping": true
+        },
+        {
+          "name": "St. Gotthard",
+          "id": "fb_eDi0rHbFWMN8gl6nrlSG",
+          "category": "pass",
+          "latitude": 46.558934,
+          "longitude": 8.561912,
+          "shaping": true
+        },
+        {
+          "category": "pass",
+          "latitude": 46.660747,
+          "longitude": 8.66066,
+          "shaping": true
+        },
+        {
+          "latitude": 46.731154,
+          "longitude": 8.951025,
+          "shaping": true
+        },
+        {
+          "latitude": 46.460566,
+          "longitude": 9.670029,
+          "shaping": true
+        },
+        {
+          "category": "pass",
+          "latitude": 46.515169,
+          "longitude": 9.877052,
+          "shaping": true
+        },
+        {
+          "name": "N1 Camping Albula ",
+          "latitude": 46.61902,
+          "longitude": 9.753142
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}
