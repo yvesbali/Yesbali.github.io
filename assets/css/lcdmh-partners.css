@@ -23,6 +23,7 @@
 .bp-img{width:100%;height:100%;object-fit:contain}
 
 .bp-mid{display:flex;flex-direction:column;gap:2px;text-align:center;flex:1}
+.bp-ico{font-size:1rem;margin-right:.25rem;vertical-align:middle}
 .bp-name{font-weight:800;font-size:1.02rem;color:#163251;letter-spacing:.4px}
 .bp-texte{font-size:.82rem;color:#6f7782;line-height:1.35;margin-bottom:.55rem}
 
@@ -36,6 +37,13 @@
 .bp-card:hover .bp-btn{background:#d35400}
 
 .bp-mention{text-align:center;font-size:.72rem;color:#9aa5b1;margin-top:1.2rem}
+
+.bp-cta{display:block;text-align:center;margin:1.4rem auto 0;max-width:520px;
+  background:var(--noir,#1a1a1a);color:#fff;border-radius:8px;
+  padding:1rem 2rem;font-weight:800;font-size:1.05rem;
+  font-family:'Montserrat',sans-serif;letter-spacing:.3px;text-decoration:none;
+  transition:background .15s,transform .15s}
+.bp-cta:hover{background:var(--orange,#e67e22);transform:translateY(-2px)}
 
 @media(max-width:980px){
   .bp-grid{grid-template-columns:repeat(2,1fr)}

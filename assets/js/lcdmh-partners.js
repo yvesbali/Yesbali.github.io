@@ -15,16 +15,18 @@
         + '<div class="bp-grid">';
       (d.offres || []).forEach(function (o) {
         html += '<a class="bp-card" href="' + o.lien + '" target="_blank" rel="sponsored nofollow noopener">'
-          + '<span class="bp-img-wrap"><img class="bp-img" src="' + o.image + '" alt="' + o.alt + '" width="84" height="84" loading="lazy"></span>'
+          + '<span class="bp-img-wrap"><img class="bp-img" src="' + o.image + '" alt="' + o.alt + '" width="64" height="64" loading="lazy"></span>'
           + '<span class="bp-mid">'
-          + '<span class="bp-name">' + o.nom + '</span>'
+          + '<span class="bp-name"><span class="bp-ico" aria-hidden="true">' + (o.icone || '') + '</span>' + o.nom + '</span>'
           + '<span class="bp-texte">' + o.texte + '</span>'
           + '<span class="bp-code">' + o.code_label + ' <strong>' + o.code + '</strong></span>'
           + '</span>'
           + '<span class="bp-btn">' + o.bouton + '</span>'
           + '</a>';
       });
-      html += '</div><p class="bp-mention">' + d.mention + '</p></div>';
+      html += '</div>';
+      if (d.cta && d.cta.lien) { html += '<a class="bp-cta" href="' + d.cta.lien + '">' + d.cta.texte + '</a>'; }
+      html += '<p class="bp-mention">' + d.mention + '</p></div>';
       C.innerHTML = html;
     })
     .catch(function () { C.innerHTML = ''; });

@@ -1,10 +1,15 @@
 {
   "titre": "LES BONS PLANS LCDMH",
   "sous_titre": "Les équipements que j'utilise, teste ou sélectionne pour la moto",
+  "cta": {
+    "texte": "Voir tous les codes promo →",
+    "lien": "/codes-promo.html"
+  },
   "mention": "Certains liens peuvent être affiliés. Ils peuvent soutenir LCDMH sans modifier le prix payé.",
   "offres": [
     {
       "nom": "CARPURIDE",
+      "icone": "🖥️",
       "texte": "Écrans connectés et GPS moto",
       "image": "/images/bons-plans/carpuride.jpg",
       "alt": "Écran Carpuride",
@@ -15,6 +20,7 @@
     },
     {
       "nom": "AOOCCI",
+      "icone": "🖥️",
       "texte": "Navigation, écrans et équipements connectés pour la moto",
       "image": "/images/bons-plans/aoocci.webp",
       "alt": "Aoocci",
@@ -25,6 +31,7 @@
     },
     {
       "nom": "COLIGHT",
+      "icone": "💡",
       "texte": "Éclairage LED et feux auxiliaires pour la moto",
       "image": "/images/bons-plans/colight.png",
       "alt": "CO-LIGHT feux moto",
