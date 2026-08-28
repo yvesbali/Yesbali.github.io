@@ -1,30 +1,37 @@
 {
-  "titre": "🏷 Les bons plans équipement LCDMH",
-  "accroche": "L'équipement qui change la conduite : codes exclusifs lecteurs LCDMH 👇",
+  "titre": "LES BONS PLANS LCDMH",
+  "sous_titre": "Les équipements que j'utilise, teste ou sélectionne pour la moto",
+  "mention": "Certains liens peuvent être affiliés. Ils peuvent soutenir LCDMH sans modifier le prix payé.",
   "offres": [
     {
-      "produit": "Écran Carpuride",
+      "nom": "CARPURIDE",
+      "texte": "Écrans connectés et GPS moto",
       "image": "/images/bons-plans/carpuride.jpg",
-      "slogan": "Ta route, enfin claire.",
-      "avantage": "Code LCDMH : -30% off",
+      "alt": "Écran Carpuride",
+      "code_label": "Code LCDMH :",
+      "code": "-30% off",
       "lien": "https://carpuride.com/fr?ref=uxcepkkq",
-      "couleur": "carpuride"
+      "bouton": "Voir les écrans Carpuride"
     },
     {
-      "produit": "Aoocci GPS moto",
+      "nom": "AOOCCI",
+      "texte": "Navigation, écrans et équipements connectés pour la moto",
       "image": "/images/bons-plans/aoocci.webp",
-      "slogan": "Le regard posé sur la route.",
-      "avantage": "Code LCDMH25",
+      "alt": "Aoocci",
+      "code_label": "Code LCDMH :",
+      "code": "LCDMH25",
       "lien": "https://aoocci.fr/?ref=gvxyhqgv",
-      "couleur": "aoocci"
+      "bouton": "Découvrir AOOCCI"
     },
     {
-      "produit": "CO-LIGHT",
+      "nom": "COLIGHT",
+      "texte": "Éclairage LED et feux auxiliaires pour la moto",
       "image": "/images/bons-plans/colight.webp",
-      "slogan": "Perce la nuit, dompte le brouillard.",
-      "avantage": "Code LCDMH : 12% de réduction",
-      "lien": "https://www.amazon.fr/CO-LIGHT-Puissant-R%C3%A9sistant-Installation/dp/B0F438DN54",
-      "couleur": "colight"
+      "alt": "CO-LIGHT feux moto",
+      "code_label": "Code LCDMH :",
+      "code": "12%",
+      "lien": "https://www.amazon.fr/dp/B0F438DN54",
+      "bouton": "Voir les éclairages COLIGHT"
     }
   ]
 }

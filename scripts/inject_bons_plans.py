@@ -1,65 +1,48 @@
 # -*- coding: utf-8 -*-
-"""Injecte le bloc « Bons plans LCDMH » dans chaque page HTML du site.
+"""Injecte le conteneur du bandeau « Bons plans LCDMH » dans chaque page HTML du site.
 
-SOURCE UNIQUE : promos/bons_plans.json — modifier une promo = éditer ce JSON,
-puis relancer ce script (il met à jour TOUTES les pages automatiquement).
+CENTRALISATION ABSOLUE (consigne Yves 28/08/2026) :
+- Les DONNÉES (texte, code, lien, image, bouton, ordre) vivent dans promos/bons_plans.json
+- Le RENDU est fait par assets/js/lcdmh-partners.js (fetch du JSON) au chargement de chaque page
+- Ce script ne fait que déposer sur chaque page : le conteneur <div id="lcdmh-partners">
+  + les liens CSS/JS. Modifier une promo = éditer le JSON (immédiat partout, sans relancer).
 
 Usage :  python scripts/inject_bons_plans.py [--dry-run]
 """
-import json, re, sys, shutil
+import re, sys, shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-JSON_PATH = ROOT / "promos" / "bons_plans.json"
-CSS_LINK = '<link rel="stylesheet" href="css/bons-plans.css">'
+CSS_LINK = '<link rel="stylesheet" href="assets/css/lcdmh-partners.css">'
+JS_TAG = '<script src="assets/js/lcdmh-partners.js" defer></script>'
+OLD_CSS_LINK = 'css/bons-plans.css'
 START = "<!-- LCDMH_BONS_PLANS:START -->"
 END = "<!-- LCDMH_BONS_PLANS:END -->"
 EXCLUDES = {"nav.html"}
-
-
-def render_block(offers: dict) -> str:
-    titre = offers.get("titre", "🏷 Les bons plans équipement LCDMH")
-    accroche = offers.get("accroche", "")
-    cards = ""
-    for o in offers.get("offres", []):
-        lien = (o.get("lien") or "").strip()
-        couleur = o.get("couleur") or ""
-        cls = f" bp-card--{couleur}" if couleur else ""
-        inner = (f"<span class=\"bp-img-wrap\"><img class=\"bp-img\" src=\"{o.get('image','')}\" "
-                 f"alt=\"{o.get('produit','')}\" loading=\"lazy\"></span>"
-                 f"<span class=\"bp-mid\"><span class=\"bp-name\">{o.get('produit','')}</span>"
-                 f"<span class=\"bp-slogan\">{o.get('slogan','')}</span></span>"
-                 f"<span class=\"bp-code\">{o.get('avantage','')}</span>"
-                 f"<span class=\"bp-arrow\">→</span>")
-        if lien:
-            cards += f'<a class="bp-card{cls}" href="{lien}" target="_blank" rel="noopener">{inner}</a>\n'
-        else:
-            cards += f'<div class="bp-card{cls}">{inner}</div>\n'
-    acc = f"<p>{accroche}</p>" if accroche else ""
-    return f"""{START}
-<section class="bp-block" id="bons-plans">
-<div class="bp-head"><h2>{titre}</h2>{acc}</div>
-<div class="bp-grid">{cards}</div>
-</section>
+CONTAINER = f"""{START}
+<div id="lcdmh-partners"></div>
 {END}"""
 
 
-def inject_in_page(page: Path, block: str, dry: bool) -> bool:
+def inject_in_page(page: Path, dry: bool) -> bool:
     text = page.read_text(encoding="utf-8", errors="replace")
     new = text
     if START in text and END in text:
-        new = re.sub(re.escape(START) + r".*?" + re.escape(END), block, text, flags=re.S)
+        new = re.sub(re.escape(START) + r".*?" + re.escape(END), CONTAINER, text, flags=re.S)
     else:
-        # Insérer avant le footer (ou </body> en fallback)
         if "<footer" in text:
-            new = text.replace("<footer", block + "\n<footer", 1)
+            new = text.replace("<footer", CONTAINER + "\n<footer", 1)
         elif "</body>" in text:
-            new = text.replace("</body>", block + "\n</body>", 1)
+            new = text.replace("</body>", CONTAINER + "\n</body>", 1)
         else:
             return False
-    # Ajouter le lien CSS dans le <head> si absent
-    if 'bons-plans.css' not in new and "<head>" in new:
+    # CSS/JS : migrer l'ancien lien bons-plans.css vers le nouveau, puis ajouter les tags si absents
+    if OLD_CSS_LINK in new and "lcdmh-partners.css" not in new:
+        new = new.replace(f'href="{OLD_CSS_LINK}"', 'href="assets/css/lcdmh-partners.css"')
+    if "lcdmh-partners.css" not in new and "<head>" in new:
         new = new.replace("<head>", f"<head>\n{CSS_LINK}", 1)
+    if "lcdmh-partners.js" not in new and "</body>" in new:
+        new = new.replace("</body>", f"{JS_TAG}\n</body>", 1)
     if new == text:
         return True  # déjà à jour
     if not dry:
@@ -72,18 +55,15 @@ def inject_in_page(page: Path, block: str, dry: bool) -> bool:
 
 def main():
     dry = "--dry-run" in sys.argv
-    offers = json.loads(JSON_PATH.read_text(encoding="utf-8"))
-    block = render_block(offers)
     pages = [p for p in ROOT.rglob("*.html") if p.name not in EXCLUDES]
     ok, skipped = 0, 0
     for p in sorted(pages):
-        if inject_in_page(p, block, dry):
+        if inject_in_page(p, dry):
             ok += 1
         else:
             skipped += 1
             print(f"  ⚠️  {p.relative_to(ROOT)} : pas de <footer>/</body>")
     print(f"{'[DRY-RUN] ' if dry else ''}Pages traitées : {ok} | ignorées : {skipped}")
-    print(f"Bloc généré depuis : {JSON_PATH.name} ({len(offers.get('offres', []))} offres)")
 
 
 if __name__ == "__main__":
