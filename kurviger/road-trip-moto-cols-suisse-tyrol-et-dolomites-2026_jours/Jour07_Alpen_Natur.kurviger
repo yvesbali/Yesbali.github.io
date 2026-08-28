@@ -1,0 +1,108 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature"
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1787915666829,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        11.188202,
+        46.775902,
+        12.823781,
+        47.328468
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "N2 Ferienparadies Natterer See",
+          "latitude": 47.238318,
+          "longitude": 11.339084
+        },
+        {
+          "name": "Visite ville ",
+          "latitude": 47.328468,
+          "longitude": 11.188202,
+          "shaping": true
+        },
+        {
+          "latitude": 47.26432,
+          "longitude": 11.400719,
+          "shaping": true
+        },
+        {
+          "category": "pass",
+          "latitude": 47.27662,
+          "longitude": 11.523972,
+          "shaping": true
+        },
+        {
+          "latitude": 47.249523,
+          "longitude": 11.867294,
+          "shaping": true
+        },
+        {
+          "category": "pass",
+          "latitude": 47.238879,
+          "longitude": 11.850249,
+          "shaping": true
+        },
+        {
+          "category": "pass",
+          "latitude": 47.236355,
+          "longitude": 12.159119,
+          "shaping": true
+        },
+        {
+          "name": "N1 Camping Krimmler Wasserfälle",
+          "latitude": 47.218231,
+          "longitude": 12.175429,
+          "shaping": true
+        },
+        {
+          "latitude": 47.116102,
+          "longitude": 12.823781,
+          "shaping": true
+        },
+        {
+          "latitude": 46.873101,
+          "longitude": 12.134056,
+          "shaping": true
+        },
+        {
+          "name": "N1 Alpen Natur Camping",
+          "latitude": 46.775902,
+          "longitude": 12.037588
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

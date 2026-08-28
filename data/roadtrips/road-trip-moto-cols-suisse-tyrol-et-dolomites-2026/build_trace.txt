@@ -1,7 +1,7 @@
 [BUILD] ═══════════════════════════════════════════════════════
 [BUILD] GÉNÉRATION ROAD TRIP — Road Trip Moto Cols Suisse Tyrol et Dolomites 2026
 [BUILD] ═══════════════════════════════════════════════════════
-[BUILD] Démarrage : 2026-08-28T13:42:07
+[BUILD] Démarrage : 2026-08-28T14:08:37
 [BUILD] project_dir = C:\Users\yves\Documents\Administratif\Z-Road Trip Moto\Raod trip Suisse Tyrol Italie
 [BUILD] site_root = F:\Automate_YT\.test_build_20260828
 [BUILD] MODULE_DIR = F:\Automate_YT
@@ -42,6 +42,7 @@
 [DAYS] Avertissements : 0
 [STEP  38%] Enrichissement des journées…
 [ENRICH] Enrichissement de base terminé (online=False)
+[VILLES] 19/19 jours avec ville résolue
 [CLAUDE-ENRICH] Ignoré : enrichissement en ligne désactivé
 [ENRICH] Enrichissement terminé (online=False)
 [GPS-V2] Cache geocoding sauvegardé
@@ -102,9 +103,9 @@
 [TEMPLATE]   CSS inline détecté (pas de fichier externe)
 [RENDER] Résolution des placeholders...
 [RENDER] ✅ Tous les placeholders résolus
-[RENDER] HTML final : 23895 caractères
+[RENDER] HTML final : 24189 caractères
 [BUILD] ✅ Page principale écrite : F:\Automate_YT\.test_build_20260828\roadtrips\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026.html
-[BUILD]   Taille HTML : 23895 caractères
+[BUILD]   Taille HTML : 24189 caractères
 [CSS] Recherche du dossier CSS...
 [CSS]   F:\Automate_YT\templates\css → TROUVÉ ✅
 [CSS]   F:\Automate_YT\templates\templates\css → absent
