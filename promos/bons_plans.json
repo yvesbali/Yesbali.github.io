@@ -1,27 +1,30 @@
 {
   "titre": "🏷 Les bons plans équipement LCDMH",
-  "accroche": "L'écran déporté, c'est la liberté sur la route : GPS, musique et appels sans quitter la route des yeux. Codes exclusifs lecteurs LCDMH 👇",
+  "accroche": "L'équipement qui change la conduite : codes exclusifs lecteurs LCDMH 👇",
   "offres": [
     {
-      "icone": "🖥️",
       "produit": "Écran Carpuride",
+      "image": "/images/bons-plans/carpuride.jpg",
+      "slogan": "Ta route, enfin claire.",
       "avantage": "Code LCDMH : -30% off",
       "lien": "https://carpuride.com/fr?ref=uxcepkkq",
-      "cta": "Voir l'offre →"
+      "couleur": "carpuride"
     },
     {
-      "icone": "📟",
-      "produit": "Aoocci écran / GPS moto",
-      "avantage": "Code LCDMH25 : réduction exclusive",
+      "produit": "Aoocci GPS moto",
+      "image": "/images/bons-plans/aoocci.webp",
+      "slogan": "Le regard posé sur la route.",
+      "avantage": "Code LCDMH25",
       "lien": "https://aoocci.fr/?ref=gvxyhqgv",
-      "cta": "Voir l'offre →"
+      "couleur": "aoocci"
     },
     {
-      "icone": "💡",
-      "produit": "Colight",
+      "produit": "CO-LIGHT",
+      "image": "/images/bons-plans/colight.webp",
+      "slogan": "Perce la nuit, dompte le brouillard.",
       "avantage": "Code LCDMH : 12% de réduction",
-      "lien": "",
-      "cta": "Voir l'offre →"
+      "lien": "https://www.amazon.fr/CO-LIGHT-Puissant-R%C3%A9sistant-Installation/dp/B0F438DN54",
+      "couleur": "colight"
     }
   ]
 }
