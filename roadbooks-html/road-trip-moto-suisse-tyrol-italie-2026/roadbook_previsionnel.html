@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Road trip moto Suisse Tyrol Italie 2026 - PDF</title>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+:root { --primary:#1a2b56; --accent:#f97316; --bg-light:#f8fafc; --white:#fff; --text:#334155; --border:#e2e8f0; }
+body { font-family:'Segoe UI',system-ui,sans-serif; margin:0; padding:0; background:#64748b; color:var(--text); line-height:1.4; }
+.page { width:210mm; min-height:297mm; margin:20px auto; background:#fff; padding:20mm; box-shadow:0 15px 35px rgba(0,0,0,.35); box-sizing:border-box; position:relative; page-break-after:always; }
+header { background:var(--primary); color:white; padding:15px 25px; margin:-20mm -20mm 30px -20mm; display:flex; justify-content:space-between; align-items:center; box-shadow:0 4px 10px rgba(0,0,0,.15); }
+.hero { text-align:center; margin-bottom:30px; }
+.hero h1 { color:var(--primary); font-size:3.3rem; margin:5px 0; text-transform:uppercase; letter-spacing:3px; }
+.hero .meta { color:#64748b; font-size:1.1rem; font-weight:bold; }
+.stats-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:15px; margin-bottom:25px; }
+.tile { border:1px solid var(--border); border-radius:12px; padding:15px; text-align:center; background:#fdfdfd; box-shadow:0 5px 12px rgba(0,0,0,.08); }
+.tile i { font-size:1.8rem; color:var(--accent); margin-bottom:10px; display:block; }
+.tile-val { font-size:1.5rem; font-weight:bold; color:var(--primary); display:block; }
+.tile-label { font-size:.8rem; color:#64748b; text-transform:uppercase; font-weight:bold; }
+.stay-tile { border:1px solid var(--border); border-radius:12px; padding:25px; margin-bottom:30px; display:flex; justify-content:space-around; background:#fdfdfd; box-shadow:0 5px 12px rgba(0,0,0,.08); }
+.stay-item { text-align:center; }
+.stay-item i { color:var(--accent); font-size:1.5rem; display:block; margin-bottom:8px; }
+.stay-item span { font-weight:bold; font-size:1rem; color:var(--primary); }
+.journey-box { border:1px solid var(--border); background:#f8fafc; padding:25px; border-radius:15px; box-shadow:0 6px 15px rgba(0,0,0,.08); }
+.journey-text { font-size:1rem; color:#475569; text-align:justify; columns:2; column-gap:40px; }
+.journey-box h2 { color:var(--primary); margin-top:0; font-size:1.5rem; border-bottom:2px solid var(--accent); padding-bottom:10px; }
+.admin-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.admin-card { border-left:5px solid var(--accent); background:#fffaf5; padding:20px; border-radius:0 12px 12px 0; box-shadow:0 5px 12px rgba(0,0,0,.08); }
+.admin-card h3 { margin:0 0 10px 0; font-size:1.1rem; color:var(--primary); text-transform:uppercase; }
+.admin-card ul { margin:0; padding-left:18px; }
+.expert-card { border:1px solid var(--border); padding:15px; border-radius:12px; background:#fdfdfd; box-shadow:0 5px 12px rgba(0,0,0,.08); }
+.expert-card h3 { margin:0 0 10px 0; color:var(--primary); font-size:1rem; border-bottom:1px solid var(--accent); padding-bottom:5px; }
+.qr-box { background:var(--primary); color:white; padding:20px; border-radius:15px; display:flex; align-items:center; justify-content:space-between; margin:20px 0; box-shadow:0 8px 20px rgba(0,0,0,.2); gap:20px; }
+.qr-box img { background:white; padding:8px; border-radius:10px; width:110px; height:110px; object-fit:contain; }
+.route-table { width:100%; border-collapse:collapse; font-size:.8rem; margin-top:15px; box-shadow:0 5px 15px rgba(0,0,0,.05); }
+.route-table th { background:var(--primary); color:white; text-align:left; padding:8px; }
+.route-table td { padding:8px; border-bottom:1px solid #eee; vertical-align:top; }
+.day-num { color:var(--accent); font-weight:bold; }
+footer { display:none !important; }
+
+/* === CORRECTIF POUR L'IMPRESSION PDF (weasyprint) === */
+@page {
+    size: A4;
+    margin: 15mm 15mm 25mm 15mm;
+    @bottom-left {
+        content: "Roadbook Moto - LCDMH";
+        font-size: 8pt;
+        color: #94a3b8;
+    }
+    @bottom-right {
+        content: "Page " counter(page);
+        font-size: 8pt;
+        color: #94a3b8;
+    }
+}
+
+@media print { 
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    body { 
+        background: #fff !important; 
+        margin: 0 !important;
+        padding: 0 !important;
+    } 
+    .page { 
+        margin: 0 !important; 
+        min-height: auto !important;
+        border: none !important; 
+        page-break-after: always !important; 
+        box-shadow: none !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+    .route-table { page-break-inside: auto !important; }
+    .route-table tr { page-break-inside: avoid !important; }
+    .expert-card { page-break-inside: avoid !important; }
+    .info-section { page-break-inside: avoid !important; }
+    .section-title { page-break-after: avoid !important; }
+    h2, h3 { page-break-after: avoid !important; }
+}
+/* ======================================= */
+
+</style>
+</head>
+<body>
+<div class='page'>
+  <header>
+    <div style='font-weight:bold;'>LCDMH - ROADBOOK MOTO 2026</div>
+    <div style='background:var(--accent); padding:4px 12px; border-radius:4px; font-weight:bold; font-size:.8rem;'>PRÉVISIONNEL</div>
+  </header>
+  <div class='hero'>
+    <p style='text-transform:uppercase; letter-spacing:2px; color:#64748b; font-weight:bold;'>Roadbook prévisionnel</p>
+    <h1>Road trip moto Suisse Tyrol Italie 2026</h1>
+    <p class='meta'>Du 29/08/2026 au 16/09/2026 • Honda NT1100 • Solo</p>
+  </div>
+  <div class='stats-grid'>
+    <div class='tile'><i class='fa-solid fa-road'></i><span class='tile-val'>3,371 km</span><span class='tile-label'>Distance</span></div>
+    <div class='tile'><i class='fa-solid fa-wallet'></i><span class='tile-val'>~1743 €</span><span class='tile-label'>Budget total</span></div>
+    <div class='tile'><i class='fa-solid fa-file-lines'></i><span class='tile-val'>19</span><span class='tile-label'>Jours calculés</span></div>
+    <div class='tile'><i class='fa-solid fa-calendar-days'></i><span class='tile-val'>29/08/2026 → 16/09/2026</span><span class='tile-label'>Période</span></div>
+    <div class='tile'><i class='fa-solid fa-mountain-sun'></i><span class='tile-val'>118 867 m</span><span class='tile-label'>Dénivelé +</span></div>
+  </div>
+  <div class='stay-tile'>
+    <div class='stay-item'><i class='fa-solid fa-tents'></i><span>15 Campings</span></div>
+    <div class='stay-item'><i class='fa-solid fa-mountain'></i><span>0 Bivouacs</span></div>
+    <div class='stay-item'><i class='fa-solid fa-hotel'></i><span>1 Hôtels / B&B</span></div>
+  </div>
+  <div class='expert-card' style='margin-bottom:20px;'>
+    <h3><i class='fa-solid fa-coins'></i> Budget Prévisionnel</h3>
+    <table style='width:100%; font-size:.9rem; border-collapse:collapse; margin-top:10px;'>
+      <tr style='border-bottom:1px solid #eee;'><td style='padding:6px 0;'><i class='fa-solid fa-gas-pump' style='color:var(--accent);width:20px;'></i> Carburant</td><td style='text-align:right; font-weight:bold;'>~408 €</td></tr>
+      <tr style='border-bottom:1px solid #eee;'><td style='padding:6px 0;'><i class='fa-solid fa-bed' style='color:var(--accent);width:20px;'></i> Hébergements</td><td style='text-align:right; font-weight:bold;'>385 €</td></tr>
+      <tr style='font-size:.8rem; color:#666;'><td style='padding:2px 0 2px 24px;'>15 nuits x 15 EUR = 225 EUR</td><td></td></tr>
+      <tr style='font-size:.8rem; color:#666;'><td style='padding:2px 0 2px 24px;'>1 nuits x 70 EUR = 70 EUR</td><td></td></tr>
+      <tr style='font-size:.8rem; color:#666;'><td style='padding:2px 0 2px 24px;'>0 nuits x 55 EUR = 0 EUR</td><td></td></tr>
+      <tr style='font-size:.8rem; color:#666;'><td style='padding:2px 0 6px 24px;'>0 nuits x 0 EUR = 0 EUR</td><td></td></tr>
+      <tr style='border-bottom:1px solid #eee;'><td style='padding:6px 0;'><i class='fa-solid fa-utensils' style='color:var(--accent);width:20px;'></i> Alimentation (50 €/jour x 19 jours)</td><td style='text-align:right; font-weight:bold;'>950 €</td></tr>
+      <tr style='background:#f0f9ff; font-weight:bold; font-size:1.1rem;'><td style='padding:10px 0; color:var(--primary);'>TOTAL ESTIMÉ</td><td style='text-align:right; color:var(--accent); font-size:1.2rem;'>~1743 €</td></tr>
+    </table>
+  </div>
+  <div class='journey-box'>
+    <h2><i class='fa-solid fa-map-location-dot'></i> L'Esprit du Parcours</h2>
+    <div class='journey-text'>Ce voyage de 19 jours couvre plus de 3 371 km à travers Autriche, France, Italie et Suisse. Au programme : 14 nuits en camping et 1 nuit en hôtel.
+
+Points forts : Dolomites.
+
+Une aventure à moto où chaque étape promet son lot de découvertes et de rencontres.</div>
+    <p style='margin-top:12px; font-size:.92rem;'><strong>🏔️ Cols au programme :</strong> Col du Sanetsch · Plan Drone Grimsel pass · St Gothard · Reschenpass - Passo di Resia · Misurinapass - Col Sant&#x27;Angelo · Valparolapass · Karerpass</p>
+  </div>
+  <footer><span>Roadbook Moto - LCDMH</span><span>Page 1</span></footer>
+</div>
+<div class='page'>
+  <h2 style='color:var(--primary); border-bottom:3px solid var(--accent); padding-bottom:10px;'>Informations Essentielles</h2>
+  <div class='admin-grid' style='margin-top:30px;'>
+    <div class='admin-card'><h3>Documents</h3><ul><li>Carte d&#x27;identité ou passeport valide (UE/Schengen).</li><li>Carte grise, permis, assurance.</li><li>Gilet jaune obligatoire à bord.</li><li>CEAM recommandée.</li></ul></div>
+    <div class='admin-card'><h3>Monnaies & Conversion</h3><ul><li>Monnaie : Euro (€). Carburant SP95 ≈ 1.85 €/L.</li><li>Monnaie : Franc suisse (CHF) — 1 € ≈ 0.94 CHF. Carburant ≈ 1.75 CHF/L.</li><li>Monnaie : Euro (€). Carburant SP95 ≈ 1.80 €/L.</li><li>Monnaie : Euro (€). Carburant SP95 ≈ 1.65 €/L.</li><li>Règle rapide : prix en CHF ≈ prix en € (1 € ≈ 0.94 CHF).</li></ul></div>
+    <div class='admin-card'><h3>Sur la route</h3><ul><li>Conduite à droite.</li><li>Vitesses : 50 km/h ville, 90 km/h route, 130 km/h autoroute.</li><li>Péages autoroute (Telepass ou tickets).</li><li>ZTL dans les centres-villes — attention aux amendes.</li><li>Taux alcool max : 0.5 g/L.</li></ul></div>
+    <div class='admin-card'><h3>Téléphone & Urgences</h3><ul><li>Indicatif : +39 | France : +33</li><li>Urgences : 112</li><li>Ambassade FR Rome : +39 06 686 011</li></ul></div>
+  </div>
+  <div style='display:grid; grid-template-columns:1fr 1fr; gap:15px; margin-top:20px;'>
+    <div class='expert-card'><h3>Résumé</h3><ul style='padding-left:15px; font-size:.85rem; margin-top:10px;'><li>Départ : 29/08/2026</li><li>Retour : 16/09/2026</li><li>Zone : Road trip moto Suisse Tyrol Italie 2026</li><li>Dénivelé positif : ~118 867 m</li></ul></div>
+    <div class='expert-card'><h3>Playlist vidéo</h3><ul style='padding-left:15px; font-size:.85rem; margin-top:10px;'><li>Playlist LCDMH — à venir</li></ul></div>
+  </div>
+  <footer><span>Roadbook Moto - LCDMH</span><span>Page 2</span></footer>
+</div>
+<div class='page'>
+  <h2 style='color:var(--primary); border-bottom:3px solid var(--accent); padding-bottom:10px;'>Le Parcours</h2>
+  <div class='qr-box'>
+    <div style='width:70%;'>
+      <h3 style='margin:0; color:var(--accent); font-size:1.3rem;'>Trace GPS Digitale</h3>
+      <p style='font-size:.9rem; margin-top:5px;'>Scanner ce code pour importer l'intégralité du parcours dans Kurviger.</p>
+    </div>
+    <img src='data:image/png;base64,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' alt='QR Code'>
+  </div>
+  <table class='route-table'>
+    <thead><tr><th>Jour</th><th>Date</th><th>Départ</th><th>Arrivée</th><th>Distance</th><th>Durée</th><th>Nuit</th></tr></thead>
+    <tbody><tr><td class='day-num'>J01</td><td>29/08/2026</td><td>Départ</td><td>Col du Sanetsch — Glarey</td><td>259 km</td><td>4h18</td><td>1 nuit</td></tr><tr class='gps-row'><td colspan='7'>📍 46.331402, 7.286167 — Col du Sanetsch — Glarey</td></tr>
+<tr><td class='day-num'>J02</td><td>30/08/2026</td><td>Col du Sanetsch</td><td>Gotthard Camping Andermatt</td><td>249 km</td><td>4h08</td><td>1 nuit</td></tr><tr class='gps-row'><td colspan='7'>📍 46.631756, 8.591121 — Gotthard Camping Andermatt</td></tr>
+<tr><td class='day-num'>J03</td><td>31/08/2026</td><td>Gotthard Camping Andermatt</td><td>Camping Albula — Bergün/Bravuogn</td><td>301 km</td><td>5h00</td><td>1 nuit</td></tr><tr class='gps-row'><td colspan='7'>📍 46.619020, 9.753142 — Camping Albula — Bergün/Bravuogn</td></tr>
+<tr><td class='day-num'>J04</td><td>01/09/2026</td><td>Camping Albula</td><td>Camping Trafoi</td><td>196 km</td><td>3h16</td><td>1 nuit</td></tr><tr class='gps-row'><td colspan='7'>📍 46.543794, 10.506964 — Camping Trafoi</td></tr>
+<tr><td class='day-num'>J05</td><td>02/09/2026</td><td>Camping Trafoi</td><td>Camping Moosbauer — Bolzano</td><td>301 km</td><td>5h00</td><td>2 nuits</td></tr><tr class='gps-row'><td colspan='7'>📍 46.503806, 11.298433 — Camping Moosbauer — Bolzano</td></tr>
+<tr class='pause-row'><td class='day-num'>J06</td><td>03/09/2026</td><td colspan='5'>🔒 Journée sur place — base : Camping Moosbauer</td><td></td></tr>
+<tr><td class='day-num'>J07</td><td>04/09/2026</td><td>Camping Moosbauer</td><td>Camping Miravalle — Campitello di Fassa - Ciampedel</td><td>63 km</td><td>1h03</td><td>4 nuits</td></tr><tr class='gps-row'><td colspan='7'>📍 46.474281, 11.738205 — Camping Miravalle — Campitello di Fassa - Ciampedel</td></tr>
+<tr class='pause-row'><td class='day-num'>J08</td><td>05/09/2026</td><td colspan='5'>🔒 Journée sur place — base : Camping Miravalle</td><td></td></tr>
+<tr class='pause-row'><td class='day-num'>J09</td><td>06/09/2026</td><td colspan='5'>🔒 Journée sur place — base : Camping Miravalle</td><td></td></tr>
+<tr class='pause-row'><td class='day-num'>J10</td><td>07/09/2026</td><td colspan='5'>🔒 Journée sur place — base : Camping Miravalle</td><td></td></tr>
+<tr><td class='day-num'>J11</td><td>08/09/2026</td><td>Camping Miravalle</td><td>Ferienparadies Natterer See — Natters</td><td>155 km</td><td>2h35</td><td>2 nuits</td></tr><tr class='gps-row'><td colspan='7'>📍 47.238318, 11.339084 — Ferienparadies Natterer See — Natters</td></tr>
+<tr class='pause-row'><td class='day-num'>J12</td><td>09/09/2026</td><td colspan='5'>🔒 Journée sur place — base : Ferienparadies Natterer See</td><td></td></tr>
+<tr><td class='day-num'>J13</td><td>10/09/2026</td><td>Ferienparadies Natterer See</td><td>Camping Krimmler Wasserfälle</td><td>164 km</td><td>2h43</td><td>1 nuit</td></tr><tr class='gps-row'><td colspan='7'>📍 47.218231, 12.175429 — Camping Krimmler Wasserfälle</td></tr>
+<tr><td class='day-num'>J14</td><td>11/09/2026</td><td>Camping Krimmler Wasserfälle</td><td>Alpen Natur Camping — Niederrasen - Rasun di Sotto</td><td>210 km</td><td>3h29</td><td>1 nuit</td></tr><tr class='gps-row'><td colspan='7'>📍 46.775902, 12.037588 — Alpen Natur Camping — Niederrasen - Rasun di Sotto</td></tr>
+<tr><td class='day-num'>J15</td><td>12/09/2026</td><td>Alpen Natur Camping</td><td>Camping Miravalle — Campitello di Fassa - Ciampedel</td><td>403 km</td><td>6h43</td><td>1 nuit</td></tr><tr class='gps-row'><td colspan='7'>📍 46.476350, 11.743355 — Camping Miravalle — Campitello di Fassa - Ciampedel</td></tr>
+<tr><td class='day-num'>J16</td><td>13/09/2026</td><td>Camping Miravalle</td><td>Campeggio Busin — Caviola</td><td>102 km</td><td>1h41</td><td>1 nuit</td></tr><tr class='gps-row'><td colspan='7'>📍 46.360938, 11.897078 — Campeggio Busin — Caviola</td></tr>
+<tr><td class='day-num'>J17</td><td>14/09/2026</td><td>Campeggio Busin</td><td>Camping Park Baita Dolomiti S.R.L. — Sarnonico</td><td>237 km</td><td>3h56</td><td>1 nuit</td></tr><tr class='gps-row'><td colspan='7'>📍 46.421324, 11.139488 — Camping Park Baita Dolomiti S.R.L. — Sarnonico</td></tr>
+<tr><td class='day-num'>J18</td><td>15/09/2026</td><td>Camping Park Baita Dolomiti S.R.L.</td><td>Bagnella</td><td>387 km</td><td>6h27</td><td>1 nuit</td></tr><tr class='gps-row'><td colspan='7'>📍 45.875692, 8.410042 — Bagnella</td></tr>
+<tr><td class='day-num'>J19</td><td>16/09/2026</td><td>Trouver Hotel</td><td>Arrivée — Viuz-la-Chiésaz</td><td>344 km</td><td>5h44</td><td>Retour</td></tr><tr class='gps-row'><td colspan='7'>📍 45.809784, 6.061958 — Arrivée — Viuz-la-Chiésaz</td></tr></tbody>
+  </table>
+  <footer><span>Roadbook Moto - LCDMH</span><span>Page 3+</span></footer>
+</div>
+</body></html>
