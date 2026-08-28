@@ -1,0 +1,181 @@
+[BUILD] ═══════════════════════════════════════════════════════
+[BUILD] GÉNÉRATION ROAD TRIP — Road Trip Moto Cols Suisse Tyrol et Dolomites 2026
+[BUILD] ═══════════════════════════════════════════════════════
+[BUILD] Démarrage : 2026-08-28T13:42:07
+[BUILD] project_dir = C:\Users\yves\Documents\Administratif\Z-Road Trip Moto\Raod trip Suisse Tyrol Italie
+[BUILD] site_root = F:\Automate_YT\.test_build_20260828
+[BUILD] MODULE_DIR = F:\Automate_YT
+[BUILD] slug = road-trip-moto-cols-suisse-tyrol-et-dolomites-2026
+[BUILD] trip_year = 2026
+[BUILD] trip_start_date = 2026-08-29
+[BUILD] use_online = False
+
+[STEP   5%] Analyse du dossier projet…
+[DETECT] Fichiers détectés :
+[DETECT]   CSV : None
+[DETECT]   Hero : C:\Users\yves\Documents\Administratif\Z-Road Trip Moto\Raod trip Suisse Tyrol Italie\Tyrol Sud.jpeg
+[DETECT]   QR : C:\Users\yves\Documents\Administratif\Z-Road Trip Moto\Raod trip Suisse Tyrol Italie\Qr code Dolomites.png
+[DETECT]   Kurviger : C:\Users\yves\Documents\Administratif\Z-Road Trip Moto\Raod trip Suisse Tyrol Italie\Annecy Alpes Suisses et Dolomites.kurviger
+[DETECT]   GPX Sygic : None
+[STEP  12%] Création des dossiers de publication…
+[DIRS] Dossiers créés :
+[DIRS]   site_root = F:\Automate_YT\.test_build_20260828
+[DIRS]   roadtrips = F:\Automate_YT\.test_build_20260828\roadtrips
+[DIRS]   data_trip = F:\Automate_YT\.test_build_20260828\data\roadtrips\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026
+[DIRS]   sources = F:\Automate_YT\.test_build_20260828\data\roadtrips\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026\sources
+[DIRS]   images_trip = F:\Automate_YT\.test_build_20260828\images\roadtrips\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026
+[DIRS]   kurviger = F:\Automate_YT\.test_build_20260828\kurviger
+[DIRS]   roadbooks = F:\Automate_YT\.test_build_20260828\roadbooks
+[DIRS]   roadbooks_html = F:\Automate_YT\.test_build_20260828\roadbooks-html\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026
+[DIRS]   status = F:\Automate_YT\.test_build_20260828\data\roadtrips\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026
+[STEP  18%] Conversion .kurviger → points…
+[KURVIGER] Fichier source : C:\Users\yves\Documents\Administratif\Z-Road Trip Moto\Raod trip Suisse Tyrol Italie\Annecy Alpes Suisses et Dolomites.kurviger
+[KURVIGER] [kurviger] Facteur correction distance : x1.71 (haversine → route)
+[KURVIGER] [kurviger] 12 fichiers .kurviger journaliers generes dans C:\Users\yves\Documents\Administratif\Z-Road Trip Moto\Raod trip Suisse Tyrol Italie\kurviger_jours
+[KURVIGER] [kurviger] Conversion terminee : 96 points (15 etapes, 81 POIs, 0 jours detectes), 3370 km estimes
+[KURVIGER] ✅ Points générés : 96
+[KURVIGER] Dénivelé positif : 118868 m
+[STEP  22%] Fusion GPS .kurviger → CSV…
+[GPS-V2] ✅ .kurviger : 96 waypoints, 96 matchés, 0 GPS injectés
+[STEP  26%] Calcul des journées…
+[DAYS] Journées calculées : 19
+[DAYS] Avertissements : 0
+[STEP  38%] Enrichissement des journées…
+[ENRICH] Enrichissement de base terminé (online=False)
+[CLAUDE-ENRICH] Ignoré : enrichissement en ligne désactivé
+[ENRICH] Enrichissement terminé (online=False)
+[GPS-V2] Cache geocoding sauvegardé
+[JOURNEY] ✅ Texte 'Esprit du parcours' généré automatiquement
+[JOURNEY]   Basé sur 19 jours de données
+[STEP  52%] Génération du roadbook HTML détaillé…
+[ROADBOOK] HTML généré :
+[ROADBOOK]   index = F:\Automate_YT\.test_build_20260828\roadbooks-html\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026\index.html
+[ROADBOOK]   jours = F:\Automate_YT\.test_build_20260828\roadbooks-html\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026\jours
+[CSS] ✅ roadbook-jour-override.css copié dans F:\Automate_YT\.test_build_20260828\roadbooks-html\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026\css
+[ROADBOOK] ✅ Tous les fichiers roadbook générés
+[STEP  62%] Copie des ressources…
+[COPY] Ressources copiées :
+[COPY]   hero → F:\Automate_YT\.test_build_20260828\images\roadtrips\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026\Tyrol Sud.jpeg
+[COPY]   qr → F:\Automate_YT\.test_build_20260828\images\roadtrips\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026\Qr code Dolomites.png
+[COPY]   kurviger → F:\Automate_YT\.test_build_20260828\kurviger\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026.kurviger
+[COPY]   csv → N/A (source .kurviger)
+[COPY]   kurviger_jours → F:\Automate_YT\.test_build_20260828\kurviger\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026_jours
+[STEP  69%] Découpage .kurviger par jour…
+[KURVIGER-JOURS] ✅ 14 fichiers .kurviger par jour dans F:\Automate_YT\.test_build_20260828\kurviger
+[GPX-JOURS] ✅ 14 fichiers GPX générés depuis .kurviger dans F:\Automate_YT\.test_build_20260828\kurviger
+[STEP  72%] Création du HTML imprimable du PDF…
+[PDF] HTML imprimable créé : F:\Automate_YT\.test_build_20260828\roadbooks-html\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026\roadbook_previsionnel.html
+[STEP  80%] Conversion HTML → PDF…
+[PDF] ✅ PDF généré : F:\Automate_YT\.test_build_20260828\roadbooks\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026-roadbook.pdf
+[STEP  88%] Génération de la page principale du road trip…
+
+[TEMPLATE] ═══ RENDU VIA MOTEUR DE TEMPLATES ═══
+[TEMPLATE] tpl.DEFAULT_TEMPLATES_DIR = F:\Automate_YT\templates
+[YOUTUBE] Shorts page principale : 0 vidéo(s)
+[YOUTUBE] Entrées journal : 0 vidéo(s)
+[YOUTUBE] Titres récupérés automatiquement : 0/0
+[CONFIG] ℹ️ Aucun trip_config trouvé — sections guide/épisodes désactivées
+[MAIN PAGE] _render_main_page appelé
+[MAIN PAGE]   project_dir = C:\Users\yves\Documents\Administratif\Z-Road Trip Moto\Raod trip Suisse Tyrol Italie
+[MAIN PAGE]   MODULE_DIR = F:\Automate_YT
+[MAIN PAGE] has_guide_cards = False
+[MAIN PAGE] has_episodes = False
+[MAIN PAGE] Données construites : 48 clés
+[MAIN PAGE]   title = Road Trip Moto Cols Suisse Tyrol et Dolomites 2026
+[MAIN PAGE]   total_km_label = 3 371 km
+[MAIN PAGE]   route_hint = Départ 29/08/2026
+[MAIN PAGE]   has_shorts = False
+[RENDER] render_page('main_roadtrip') appelé
+[RENDER]   extra_dirs = ['C:\\Users\\yves\\Documents\\Administratif\\Z-Road Trip Moto\\Raod trip Suisse Tyrol Italie', 'F:\\Automate_YT']
+[RENDER]   templates_dir = None
+[TEMPLATE] Recherche de 'main_roadtrip'
+[TEMPLATE] Dossiers de recherche : ['C:\\Users\\yves\\Documents\\Administratif\\Z-Road Trip Moto\\Raod trip Suisse Tyrol Italie', 'F:\\Automate_YT', 'F:\\Automate_YT\\templates', 'F:\\Automate_YT\\templates', 'F:\\Automate_YT']
+[TEMPLATE] Fichiers cherchés : ['template_roadtrip_principal.html', 'template_roadtrip_main.html']
+[TEMPLATE]   C:\Users\yves\Documents\Administratif\Z-Road Trip Moto\Raod trip Suisse Tyrol Italie\template_roadtrip_principal.html → absent
+[TEMPLATE]   C:\Users\yves\Documents\Administratif\Z-Road Trip Moto\Raod trip Suisse Tyrol Italie\template_roadtrip_main.html → absent
+[TEMPLATE]   F:\Automate_YT\template_roadtrip_principal.html → absent
+[TEMPLATE]   F:\Automate_YT\template_roadtrip_main.html → absent
+[TEMPLATE]   F:\Automate_YT\templates\template_roadtrip_principal.html → TROUVÉ ✅
+[TEMPLATE] ✅ Chargé : F:\Automate_YT\templates\template_roadtrip_principal.html (16787 caractères)
+[TEMPLATE] ✅ Chargé : F:\Automate_YT\templates\template_roadtrip_principal.html (16787 caractères)
+[TEMPLATE]   Placeholders trouvés : 36
+[TEMPLATE]   CSS inline détecté (pas de fichier externe)
+[RENDER] Résolution des placeholders...
+[RENDER] ✅ Tous les placeholders résolus
+[RENDER] HTML final : 23895 caractères
+[BUILD] ✅ Page principale écrite : F:\Automate_YT\.test_build_20260828\roadtrips\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026.html
+[BUILD]   Taille HTML : 23895 caractères
+[CSS] Recherche du dossier CSS...
+[CSS]   F:\Automate_YT\templates\css → TROUVÉ ✅
+[CSS]   F:\Automate_YT\templates\templates\css → absent
+[CSS]   F:\Automate_YT\templates\css → TROUVÉ ✅
+[CSS]   F:\Automate_YT\templates\css → TROUVÉ ✅
+[CSS]   F:\Automate_YT\css → TROUVÉ ✅
+[CSS] Dossier source : F:\Automate_YT\templates\css
+[CSS] Dossier cible : F:\Automate_YT\.test_build_20260828\roadtrips\css
+[CSS] ✅ Copié : roadbook-blocs.css → F:\Automate_YT\.test_build_20260828\roadtrips\css\roadbook-blocs.css
+[CSS] ✅ Copié : roadbook-ecosse.css → F:\Automate_YT\.test_build_20260828\roadtrips\css\roadbook-ecosse.css
+[CSS] ✅ Copié : roadbook-fusion.css → F:\Automate_YT\.test_build_20260828\roadtrips\css\roadbook-fusion.css
+[CSS] ✅ Copié : roadbook-jour-override.css → F:\Automate_YT\.test_build_20260828\roadtrips\css\roadbook-jour-override.css
+[CSS] ✅ Copié : roadbook.css → F:\Automate_YT\.test_build_20260828\roadtrips\css\roadbook.css
+[BUILD] CSS copiés : 5 fichier(s)
+[BUILD] ✅ CSS vérifié : F:\Automate_YT\.test_build_20260828\roadtrips\css\roadbook.css EXISTE
+[BUILD] ✅ CSS fusion vérifié : F:\Automate_YT\.test_build_20260828\roadtrips\css\roadbook-fusion.css EXISTE
+[BUILD] ✅ CSS blocs vérifié : F:\Automate_YT\.test_build_20260828\roadtrips\css\roadbook-blocs.css EXISTE
+
+[VERIFY] ═══ VÉRIFICATION DES FICHIERS RÉFÉRENCÉS ═══
+[VERIFY] Page HTML : F:\Automate_YT\.test_build_20260828\roadtrips\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026.html
+[VERIFY] Dossier roadtrips : F:\Automate_YT\.test_build_20260828\roadtrips
+[VERIFY] Site root : F:\Automate_YT\.test_build_20260828
+[VERIFY] URLs trouvées dans le HTML : 16
+[VERIFY]   /images/roadtrips/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026/Tyrol Sud.jpeg
+[VERIFY]     → F:\Automate_YT\.test_build_20260828\images\roadtrips\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026\Tyrol Sud.jpeg : ✅ EXISTE
+[VERIFY]   /index.html
+[VERIFY]     → F:\Automate_YT\.test_build_20260828\index.html : ❌ MANQUANT
+[VERIFY]   /roadtrips.html
+[VERIFY]     → F:\Automate_YT\.test_build_20260828\roadtrips.html : ❌ MANQUANT
+[VERIFY]   /kurviger/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026.kurviger
+[VERIFY]     → F:\Automate_YT\.test_build_20260828\kurviger\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026.kurviger : ✅ EXISTE
+[VERIFY]   /roadbooks/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026-roadbook.pdf
+[VERIFY]     → F:\Automate_YT\.test_build_20260828\roadbooks\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026-roadbook.pdf : ✅ EXISTE
+[VERIFY]   /roadbooks-html/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026/index.html
+[VERIFY]     → F:\Automate_YT\.test_build_20260828\roadbooks-html\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026\index.html : ✅ EXISTE
+[VERIFY]   /roadtrips/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026-journal.html
+[VERIFY]     → F:\Automate_YT\.test_build_20260828\roadtrips\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026-journal.html : ❌ MANQUANT
+[VERIFY]   /images/roadtrips/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026/Qr code Dolomites.png
+[VERIFY]     → F:\Automate_YT\.test_build_20260828\images\roadtrips\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026\Qr code Dolomites.png : ✅ EXISTE
+[VERIFY]   /roadtrips/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026-journal.html
+[VERIFY]     → F:\Automate_YT\.test_build_20260828\roadtrips\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026-journal.html : ❌ MANQUANT
+[VERIFY]   /roadtrips.html
+[VERIFY]     → F:\Automate_YT\.test_build_20260828\roadtrips.html : ❌ MANQUANT
+[VERIFY]   /roadtrips.html
+[VERIFY]     → F:\Automate_YT\.test_build_20260828\roadtrips.html : ❌ MANQUANT
+[VERIFY]   /a-propos.html
+[VERIFY]     → F:\Automate_YT\.test_build_20260828\a-propos.html : ❌ MANQUANT
+[VERIFY]   /js/lcdmh-nav-loader.js
+[VERIFY]     → F:\Automate_YT\.test_build_20260828\js\lcdmh-nav-loader.js : ❌ MANQUANT
+
+[HERO] ═══ VÉRIFICATION IMAGE HERO ═══
+[HERO] Chemin dans le HTML : /images/roadtrips/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026/Tyrol Sud.jpeg
+[HERO] Résolu vers : F:\Automate_YT\.test_build_20260828\images\roadtrips\road-trip-moto-cols-suisse-tyrol-et-dolomites-2026\Tyrol Sud.jpeg
+[HERO] Fichier existe : True
+[HERO] ✅ Taille : 264 KB
+
+[HTML] ═══ EXTRAIT DU HTML GÉNÉRÉ (hero) ═══
+[HTML] L10: <meta property="og:image" content="https://lcdmh.com/images/roadtrips/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026/Tyrol Sud.jpeg">
+[HTML] L15: body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--noir);line-height:1.7}
+[HTML] L17: .topbar{background:var(--orange);color:#fff;text-align:center;padding:12px 16px;font-weight:700;font-size:.9rem}
+[HTML] L19: .hero{position:relative;overflow:hidden;color:#fff;min-height:600px;background:linear-gradient(135deg,var(--h1),var(--h2))}
+[HTML] L20: .hero::before{content:"";position:absolute;inset:0;opacity:.42;background-image:url('/images/roadtrips/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026/Tyrol Sud.jpeg');background-size:cover;backgro
+
+[PUBLIC] ═══ URLS PUBLIQUES ATTENDUES ═══
+[PUBLIC]   Page principale: https://lcdmh.com/roadtrips/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026.html
+[PUBLIC]   Journal: https://lcdmh.com/roadtrips/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026-journal.html
+[PUBLIC]   Hero image: https://lcdmh.com/images/roadtrips/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026/Tyrol Sud.jpeg
+[PUBLIC]   QR code: https://lcdmh.com/images/roadtrips/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026/Qr code Dolomites.png
+[PUBLIC]   PDF: https://lcdmh.com/roadbooks/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026-roadbook.pdf
+[PUBLIC]   Roadbook HTML: https://lcdmh.com/roadbooks-html/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026/index.html
+[PUBLIC]   Kurviger: https://lcdmh.com/kurviger/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026.kurviger
+[PUBLIC]   CSS roadbook: https://lcdmh.com/roadtrips/css/roadbook.css
+[PUBLIC]   CSS fusion: https://lcdmh.com/roadtrips/css/roadbook-fusion.css
+[PUBLIC]   CSS blocs: https://lcdmh.com/roadtrips/css/roadbook-blocs.css

@@ -1,0 +1,51 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "name": "N1 Camping Miravalle",
+          "category": "search_result",
+          "latitude": 46.47635,
+          "longitude": 11.743355
+        },
+        {
+          "latitude": 46.419872,
+          "longitude": 11.68087,
+          "shaping": true
+        },
+        {
+          "name": "Karerpass",
+          "id": "fb_61ObqmyK7LEaEME7GxVu",
+          "category": "pass",
+          "latitude": 46.404235,
+          "longitude": 11.609073,
+          "shaping": true
+        },
+        {
+          "latitude": 46.32678,
+          "longitude": 11.484489,
+          "shaping": true
+        },
+        {
+          "address": "Passo San Pellegrino,  38036 Moena Trentin-Haut-Adige Italie",
+          "category": "search_result",
+          "latitude": 46.378358,
+          "longitude": 11.79172,
+          "shaping": true
+        },
+        {
+          "latitude": 46.35925,
+          "longitude": 11.846008,
+          "shaping": true
+        },
+        {
+          "name": "N1 Campeggio Busin",
+          "latitude": 46.360938,
+          "longitude": 11.897078
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}

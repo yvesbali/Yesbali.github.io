@@ -1,0 +1,60 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "name": "N1 Camping Trafoi",
+          "category": "pass",
+          "latitude": 46.543794,
+          "longitude": 10.506964
+        },
+        {
+          "name": "*Camping Trafoi ",
+          "category": "pass",
+          "latitude": 46.619585,
+          "longitude": 10.597301,
+          "shaping": true
+        },
+        {
+          "name": "*Camping prix Option?  Camping zum See",
+          "latitude": 46.764033,
+          "longitude": 10.533774,
+          "shaping": true
+        },
+        {
+          "name": "Reschenpass - Passo di Resia",
+          "id": "fb_rAYtIzPXvqi241MJmciT",
+          "category": "pass",
+          "latitude": 46.834345,
+          "longitude": 10.510255,
+          "shaping": true
+        },
+        {
+          "name": "Visite Altfinstermünz Plan Drone ancienne forteresse douanière",
+          "latitude": 46.930236,
+          "longitude": 10.489534,
+          "shaping": true
+        },
+        {
+          "latitude": 47.221703,
+          "longitude": 10.833668,
+          "shaping": true
+        },
+        {
+          "latitude": 46.611026,
+          "longitude": 11.255397,
+          "shaping": true
+        },
+        {
+          "name": "N2 Camping Moosbauer",
+          "category": "pass",
+          "latitude": 46.503806,
+          "longitude": 11.298433,
+          "shaping": true
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}

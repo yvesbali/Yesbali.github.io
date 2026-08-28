@@ -1,0 +1,48 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "name": "N1 Camping Park Baita Dolomiti S.R.L.",
+          "latitude": 46.421324,
+          "longitude": 11.139488
+        },
+        {
+          "name": "Camping Aprica",
+          "latitude": 46.157767,
+          "longitude": 10.174799,
+          "shaping": true
+        },
+        {
+          "latitude": 46.17258,
+          "longitude": 9.403439,
+          "shaping": true
+        },
+        {
+          "latitude": 45.993145,
+          "longitude": 8.946648,
+          "shaping": true
+        },
+        {
+          "latitude": 45.966186,
+          "longitude": 8.624268,
+          "shaping": true
+        },
+        {
+          "latitude": 45.922976,
+          "longitude": 8.429947,
+          "shaping": true
+        },
+        {
+          "address": "Vicolo Pasquello,  28887 Omegna Piémont Italie",
+          "name": "N1 Trouver Hotel",
+          "category": "search_result",
+          "latitude": 45.875692,
+          "longitude": 8.410042
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}

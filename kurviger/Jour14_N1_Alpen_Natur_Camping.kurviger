@@ -1,0 +1,31 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "name": "N1 Camping Krimmler Wasserfälle",
+          "latitude": 47.218231,
+          "longitude": 12.175429,
+          "shaping": true
+        },
+        {
+          "latitude": 47.116102,
+          "longitude": 12.823781,
+          "shaping": true
+        },
+        {
+          "latitude": 46.873101,
+          "longitude": 12.134056,
+          "shaping": true
+        },
+        {
+          "name": "N1 Alpen Natur Camping",
+          "latitude": 46.775902,
+          "longitude": 12.037588
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}

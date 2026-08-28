@@ -1,0 +1,45 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "name": "N1 Campeggio Busin",
+          "latitude": 46.360938,
+          "longitude": 11.897078
+        },
+        {
+          "latitude": 46.305913,
+          "longitude": 12.013206,
+          "shaping": true
+        },
+        {
+          "latitude": 46.204547,
+          "longitude": 11.922913,
+          "shaping": true
+        },
+        {
+          "latitude": 46.066799,
+          "longitude": 11.653061,
+          "shaping": true
+        },
+        {
+          "latitude": 46.271275,
+          "longitude": 11.423378,
+          "shaping": true
+        },
+        {
+          "latitude": 46.145113,
+          "longitude": 11.099968,
+          "shaping": true
+        },
+        {
+          "name": "N1 Camping Park Baita Dolomiti S.R.L.",
+          "latitude": 46.421324,
+          "longitude": 11.139488
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}

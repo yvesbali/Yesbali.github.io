@@ -1,0 +1,37 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "name": "N2 Camping Moosbauer",
+          "category": "pass",
+          "latitude": 46.503806,
+          "longitude": 11.298433,
+          "shaping": true
+        },
+        {
+          "name": "Plan drone Chateau",
+          "latitude": 46.478125,
+          "longitude": 11.304655,
+          "shaping": true
+        },
+        {
+          "address": "Via Piave - Piavestraße,  39100 Bolzano Trentin-Haut-Adige Italie",
+          "name": "Visite ville",
+          "category": "search_result",
+          "latitude": 46.500032,
+          "longitude": 11.359731,
+          "shaping": true
+        },
+        {
+          "name": "N4 Camping Miravalle",
+          "category": "search_result",
+          "latitude": 46.474281,
+          "longitude": 11.738205
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}

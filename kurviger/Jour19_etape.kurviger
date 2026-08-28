@@ -1,0 +1,42 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "address": "Vicolo Pasquello,  28887 Omegna Piémont Italie",
+          "name": "N1 Trouver Hotel",
+          "category": "search_result",
+          "latitude": 45.875692,
+          "longitude": 8.410042
+        },
+        {
+          "latitude": 45.538099,
+          "longitude": 7.826385,
+          "shaping": true
+        },
+        {
+          "weight": "fastest",
+          "latitude": 45.629825,
+          "longitude": 6.783591,
+          "shaping": true
+        },
+        {
+          "latitude": 45.695629,
+          "longitude": 6.656342,
+          "shaping": true
+        },
+        {
+          "latitude": 45.745246,
+          "longitude": 6.421852,
+          "shaping": true
+        },
+        {
+          "latitude": 45.809784,
+          "longitude": 6.061958
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}
