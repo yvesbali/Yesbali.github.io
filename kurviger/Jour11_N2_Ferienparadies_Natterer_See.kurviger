@@ -1,0 +1,27 @@
+{
+  "paths": [
+    {
+      "waypoints": [
+        {
+          "name": "N4 Camping Miravalle",
+          "category": "search_result",
+          "latitude": 46.474281,
+          "longitude": 11.738205
+        },
+        {
+          "category": "pass",
+          "latitude": 47.042054,
+          "longitude": 11.486206,
+          "shaping": true
+        },
+        {
+          "name": "N2 Ferienparadies Natterer See",
+          "latitude": 47.238318,
+          "longitude": 11.339084
+        }
+      ],
+      "distance": 0,
+      "time": 0
+    }
+  ]
+}
