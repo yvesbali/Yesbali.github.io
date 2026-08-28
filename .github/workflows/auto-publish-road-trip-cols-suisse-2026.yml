@@ -1,0 +1,51 @@
+name: Auto-publish road-trip-cols-suisse-2026
+on:
+  schedule:
+    - cron: '0 6 * * *'
+    - cron: '0 7 * * *'
+    - cron: '0 8 * * *'
+    - cron: '0 9 * * *'
+    - cron: '0 10 * * *'
+    - cron: '0 11 * * *'
+    - cron: '0 12 * * *'
+    - cron: '0 13 * * *'
+    - cron: '0 14 * * *'
+    - cron: '0 15 * * *'
+    - cron: '0 16 * * *'
+    - cron: '0 17 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install google-api-python-client google-auth reportlab
+
+      - name: Fetch and inject new videos
+        env:
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
+          YT_CLIENT_SECRETS: ${{ secrets.YT_CLIENT_SECRETS }}
+          YT_TOKEN_ANALYTICS: ${{ secrets.YT_TOKEN_ANALYTICS }}
+        run: python scripts/auto_publish_lite.py --config data/roadtrips/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026/auto_publish_config.json
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "Aucune nouvelle vidéo à ajouter."
+          else
+            git commit -m "🎬 [Road Trip Cols Suisse 2026] Mise à jour journal + shorts $(date +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
