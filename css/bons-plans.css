@@ -1,25 +1,43 @@
 /* ═══════════════════════════════════════════════════════════
    BONS PLANS LCDMH — bloc standard en bas de page (28/08/2026)
    Source des offres : promos/bons_plans.json (éditer CE fichier
-   pour modifier une promo — puis scripts/inject_bons_plans.py)
+   pour modifier une promo, puis relancer scripts/inject_bons_plans.py)
    ═══════════════════════════════════════════════════════════ */
-.bp-block{max-width:960px;margin:0 auto;padding:1.8rem 0}
+
+.bp-block{max-width:1080px;margin:0 auto;padding:1.8rem 0}
 .bp-head{text-align:center;margin-bottom:1.3rem}
-.bp-head h2{font-size:1.2rem;margin:0 0 .25rem;color:#163251}
-.bp-head p{font-size:.87rem;color:#6f7782;margin:0}
-.bp-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem}
-/* ── Tuile-bouton de base ── */
-.bp-card{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px;
-  width:200px;min-height:225px;padding:1rem .8rem;border-radius:16px;text-decoration:none;
-  transition:transform .18s,box-shadow .18s;text-align:center;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.12)}
-.bp-card:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(0,0,0,.18)}
-.bp-img-wrap{background:#fff;border-radius:12px;width:100%;height:110px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:6px;margin-bottom:2px}
-.bp-img{max-width:100%;max-height:100%;object-fit:contain}
-.bp-name{font-size:.95rem;font-weight:800;letter-spacing:.2px}
-.bp-slogan{font-size:.74rem;font-style:italic;opacity:.92;line-height:1.35;min-height:34px;display:flex;align-items:center}
-.bp-code{font-size:.72rem;font-weight:800;color:#7c2d12;background:#fde68a;border:1px dashed #d97706;border-radius:999px;padding:.26rem .6rem;margin-top:auto}
-/* ── 3 couleurs de tuiles ── */
-.bp-card--carpuride{background:linear-gradient(160deg,#ff7a1a,#e84d0e)}
-.bp-card--aoocci{background:linear-gradient(160deg,#1e90ff,#0b5ed7)}
-.bp-card--colight{background:linear-gradient(160deg,#3a3f4b,#111318)}
-@media (max-width:640px){.bp-card{width:100%;max-width:300px}}
+.bp-head h2{font-size:1.25rem;margin:0 0 .3rem;color:#163251}
+.bp-head p{font-size:.88rem;color:#6f7782;margin:0}
+
+.bp-grid{display:flex;flex-direction:column;gap:.8rem;width:100%}
+
+/* Bande horizontale pleine largeur — consigne Yves 28/08 */
+.bp-card{display:flex;align-items:center;gap:.9rem;width:100%;max-width:1080px;
+  padding:.7rem 1.1rem;border-radius:14px;text-decoration:none;color:#fff;
+  box-shadow:0 4px 14px rgba(0,0,0,.10);transition:transform .15s,box-shadow .15s;
+  text-align:left;box-sizing:border-box}
+.bp-card:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.16)}
+
+.bp-img-wrap{flex:0 0 84px;width:84px;height:84px;border-radius:12px;background:#fff;
+  display:flex;align-items:center;justify-content:center;overflow:hidden}
+.bp-img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+
+.bp-mid{flex:1;display:flex;flex-direction:column;gap:.1rem;min-width:0}
+.bp-name{font-weight:800;font-size:1.05rem;letter-spacing:.2px}
+.bp-slogan{font-size:.85rem;opacity:.92;font-style:italic}
+
+.bp-code{flex:0 0 auto;background:rgba(255,255,255,.92);color:#92400e;
+  border:1px dashed #f59e0b;border-radius:999px;padding:.35rem .8rem;
+  font-size:.82rem;font-weight:700;white-space:nowrap}
+.bp-arrow{flex:0 0 auto;font-size:1.2rem;font-weight:700;opacity:.95}
+
+/* ── 3 couleurs différentes par marque ── */
+.bp-card--carpuride{background:linear-gradient(135deg,#e67e22,#d35400)}
+.bp-card--aoocci{background:linear-gradient(135deg,#2563eb,#1e40af)}
+.bp-card--colight{background:linear-gradient(135deg,#1f2937,#0f172a)}
+
+@media (max-width:600px){
+  .bp-card{flex-wrap:wrap;justify-content:center;text-align:center}
+  .bp-mid{align-items:center}
+  .bp-code{order:3}
+}

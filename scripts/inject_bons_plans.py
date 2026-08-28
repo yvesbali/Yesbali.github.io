@@ -27,9 +27,10 @@ def render_block(offers: dict) -> str:
         cls = f" bp-card--{couleur}" if couleur else ""
         inner = (f"<span class=\"bp-img-wrap\"><img class=\"bp-img\" src=\"{o.get('image','')}\" "
                  f"alt=\"{o.get('produit','')}\" loading=\"lazy\"></span>"
-                 f"<span class=\"bp-name\">{o.get('produit','')}</span>"
-                 f"<span class=\"bp-slogan\">{o.get('slogan','')}</span>"
-                 f"<span class=\"bp-code\">{o.get('avantage','')}</span>")
+                 f"<span class=\"bp-mid\"><span class=\"bp-name\">{o.get('produit','')}</span>"
+                 f"<span class=\"bp-slogan\">{o.get('slogan','')}</span></span>"
+                 f"<span class=\"bp-code\">{o.get('avantage','')}</span>"
+                 f"<span class=\"bp-arrow\">→</span>")
         if lien:
             cards += f'<a class="bp-card{cls}" href="{lien}" target="_blank" rel="noopener">{inner}</a>\n'
         else:
