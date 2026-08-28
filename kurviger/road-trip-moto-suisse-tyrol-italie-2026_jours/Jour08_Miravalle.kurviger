@@ -1,0 +1,154 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature"
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1787915666829,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        11.743355,
+        46.437147,
+        13.005753,
+        46.775902
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "N1 Alpen Natur Camping",
+          "latitude": 46.775902,
+          "longitude": 12.037588
+        },
+        {
+          "latitude": 46.729507,
+          "longitude": 12.494202,
+          "shaping": true
+        },
+        {
+          "name": "Ballade aprés-midi",
+          "latitude": 46.674883,
+          "longitude": 13.005753,
+          "shaping": true
+        },
+        {
+          "latitude": 46.540916,
+          "longitude": 12.463303,
+          "shaping": true
+        },
+        {
+          "latitude": 46.705425,
+          "longitude": 12.220412,
+          "shaping": true
+        },
+        {
+          "name": "Misurinapass - Col Sant'Angelo",
+          "id": "fb_Yj0coDfw2oIf9y6s6Y8f",
+          "category": "pass",
+          "latitude": 46.581699,
+          "longitude": 12.251749,
+          "shaping": true
+        },
+        {
+          "latitude": 46.535071,
+          "longitude": 12.138058,
+          "shaping": true
+        },
+        {
+          "address": "Passo Falzarego,  32043 Cortina d'Ampezzo Vénétie Italie",
+          "category": "search_result",
+          "latitude": 46.51875,
+          "longitude": 12.008432,
+          "shaping": true
+        },
+        {
+          "name": "Valparolapass",
+          "id": "fb_oYuwA0fa059W0hG4Oacf",
+          "category": "pass",
+          "latitude": 46.531476,
+          "longitude": 11.989045,
+          "shaping": true
+        },
+        {
+          "latitude": 46.553194,
+          "longitude": 11.876221,
+          "shaping": true
+        },
+        {
+          "latitude": 46.531941,
+          "longitude": 11.78009,
+          "shaping": true
+        },
+        {
+          "latitude": 46.498392,
+          "longitude": 11.882401,
+          "shaping": true
+        },
+        {
+          "latitude": 46.437147,
+          "longitude": 11.981792,
+          "shaping": true
+        },
+        {
+          "latitude": 46.472626,
+          "longitude": 11.776829,
+          "shaping": true
+        },
+        {
+          "name": "N1 Camping Miravalle",
+          "category": "search_result",
+          "latitude": 46.47635,
+          "longitude": 11.743355
+        },
+        {
+          "name": "⭐ Point de vue",
+          "latitude": "46.480018",
+          "longitude": "11.772725",
+          "weight": "fastest",
+          "shaping": "True"
+        },
+        {
+          "name": "⭐ Punto video",
+          "latitude": "46.435118",
+          "longitude": "11.761055",
+          "weight": "fastest",
+          "shaping": "True"
+        },
+        {
+          "name": "⭐ Pian de Sele",
+          "latitude": "46.450522",
+          "longitude": "11.762949",
+          "weight": "fastest",
+          "shaping": "True"
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

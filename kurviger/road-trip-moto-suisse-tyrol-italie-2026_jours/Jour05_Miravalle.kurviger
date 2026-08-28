@@ -1,0 +1,118 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature"
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1787915666829,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        10.489534,
+        46.474281,
+        11.738205,
+        47.221703
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "N1 Camping Trafoi",
+          "category": "pass",
+          "latitude": 46.543794,
+          "longitude": 10.506964
+        },
+        {
+          "name": "*Camping Trafoi ",
+          "category": "pass",
+          "latitude": 46.619585,
+          "longitude": 10.597301,
+          "shaping": true
+        },
+        {
+          "name": "*Camping prix Option?  Camping zum See",
+          "latitude": 46.764033,
+          "longitude": 10.533774,
+          "shaping": true
+        },
+        {
+          "name": "Reschenpass - Passo di Resia",
+          "id": "fb_rAYtIzPXvqi241MJmciT",
+          "category": "pass",
+          "latitude": 46.834345,
+          "longitude": 10.510255,
+          "shaping": true
+        },
+        {
+          "name": "Visite Altfinstermünz Plan Drone ancienne forteresse douanière",
+          "latitude": 46.930236,
+          "longitude": 10.489534,
+          "shaping": true
+        },
+        {
+          "latitude": 47.221703,
+          "longitude": 10.833668,
+          "shaping": true
+        },
+        {
+          "latitude": 46.611026,
+          "longitude": 11.255397,
+          "shaping": true
+        },
+        {
+          "name": "N2 Camping Moosbauer",
+          "category": "pass",
+          "latitude": 46.503806,
+          "longitude": 11.298433,
+          "shaping": true
+        },
+        {
+          "name": "Plan drone Chateau",
+          "latitude": 46.478125,
+          "longitude": 11.304655,
+          "shaping": true
+        },
+        {
+          "address": "Via Piave - Piavestraße,  39100 Bolzano Trentin-Haut-Adige Italie",
+          "name": "Visite ville",
+          "category": "search_result",
+          "latitude": 46.500032,
+          "longitude": 11.359731,
+          "shaping": true
+        },
+        {
+          "name": "N4 Camping Miravalle",
+          "category": "search_result",
+          "latitude": 46.474281,
+          "longitude": 11.738205
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

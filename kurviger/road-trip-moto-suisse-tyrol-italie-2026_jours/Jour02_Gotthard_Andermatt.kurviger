@@ -1,0 +1,106 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature"
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1787915666829,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        7.286167,
+        46.331402,
+        8.597934,
+        46.745766
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "N1 *bivouac ? *camping ? Col du Sanetsch",
+          "weight": "curvaturefastest",
+          "category": "search_result",
+          "latitude": 46.331402,
+          "longitude": 7.286167
+        },
+        {
+          "latitude": 46.506,
+          "longitude": 8.307,
+          "shaping": true
+        },
+        {
+          "latitude": 46.5594,
+          "longitude": 8.3548,
+          "shaping": true
+        },
+        {
+          "name": "Plan Drone Grimsel pass",
+          "latitude": 46.562416,
+          "longitude": 8.339642,
+          "shaping": true
+        },
+        {
+          "weight": "curvaturebooster",
+          "latitude": 46.70591,
+          "longitude": 8.229318,
+          "shaping": true
+        },
+        {
+          "name": "Plan Drone",
+          "latitude": 46.72936,
+          "longitude": 8.447092,
+          "shaping": true
+        },
+        {
+          "name": "Plan drone en mode suivi",
+          "latitude": 46.737129,
+          "longitude": 8.453773,
+          "shaping": true
+        },
+        {
+          "name": "Récupération drone",
+          "latitude": 46.745766,
+          "longitude": 8.482239,
+          "shaping": true
+        },
+        {
+          "name": "St Gothard",
+          "latitude": 46.706808,
+          "longitude": 8.597934,
+          "shaping": true
+        },
+        {
+          "name": "N1 Gotthard Camping Andermatt",
+          "latitude": 46.631756,
+          "longitude": 8.591121
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

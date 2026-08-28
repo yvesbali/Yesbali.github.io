@@ -1,0 +1,104 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature"
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1787915666829,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        11.099968,
+        46.066799,
+        12.013206,
+        46.421324
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "N1 Campeggio Busin",
+          "latitude": 46.360938,
+          "longitude": 11.897078
+        },
+        {
+          "latitude": 46.305913,
+          "longitude": 12.013206,
+          "shaping": true
+        },
+        {
+          "latitude": 46.204547,
+          "longitude": 11.922913,
+          "shaping": true
+        },
+        {
+          "latitude": 46.066799,
+          "longitude": 11.653061,
+          "shaping": true
+        },
+        {
+          "latitude": 46.271275,
+          "longitude": 11.423378,
+          "shaping": true
+        },
+        {
+          "latitude": 46.145113,
+          "longitude": 11.099968,
+          "shaping": true
+        },
+        {
+          "name": "N1 Camping Park Baita Dolomiti S.R.L.",
+          "latitude": 46.421324,
+          "longitude": 11.139488
+        },
+        {
+          "name": "⭐ Point de vue",
+          "latitude": "46.447320",
+          "longitude": "11.175740",
+          "weight": "fastest",
+          "shaping": "True"
+        },
+        {
+          "name": "⭐ Castel Malosco",
+          "latitude": "46.437289",
+          "longitude": "11.140381",
+          "weight": "fastest",
+          "shaping": "True"
+        },
+        {
+          "name": "⭐ Castel Vasio",
+          "latitude": "46.426206",
+          "longitude": "11.113131",
+          "weight": "fastest",
+          "shaping": "True"
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

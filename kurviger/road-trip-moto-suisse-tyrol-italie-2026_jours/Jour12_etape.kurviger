@@ -1,0 +1,101 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature"
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1787915666829,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        6.061958,
+        45.538099,
+        8.410042,
+        45.875692
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "address": "Vicolo Pasquello,  28887 Omegna Piémont Italie",
+          "name": "N1 Trouver Hotel",
+          "category": "search_result",
+          "latitude": 45.875692,
+          "longitude": 8.410042
+        },
+        {
+          "latitude": 45.538099,
+          "longitude": 7.826385,
+          "shaping": true
+        },
+        {
+          "weight": "fastest",
+          "latitude": 45.629825,
+          "longitude": 6.783591,
+          "shaping": true
+        },
+        {
+          "latitude": 45.695629,
+          "longitude": 6.656342,
+          "shaping": true
+        },
+        {
+          "latitude": 45.745246,
+          "longitude": 6.421852,
+          "shaping": true
+        },
+        {
+          "latitude": 45.809784,
+          "longitude": 6.061958
+        },
+        {
+          "name": "⭐ Point de vue",
+          "latitude": "45.797784",
+          "longitude": "6.107276",
+          "weight": "fastest",
+          "shaping": "True"
+        },
+        {
+          "name": "⭐ Belvédère du Sentier du Planay",
+          "latitude": "45.807817",
+          "longitude": "6.116570",
+          "weight": "fastest",
+          "shaping": "True"
+        },
+        {
+          "name": "⭐ Belvédère de Bénévent",
+          "latitude": "45.813328",
+          "longitude": "6.121522",
+          "weight": "fastest",
+          "shaping": "True"
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}

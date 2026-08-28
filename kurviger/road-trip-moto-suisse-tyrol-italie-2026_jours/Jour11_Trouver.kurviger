@@ -1,0 +1,107 @@
+{
+  "alternative": 0,
+  "info": {
+    "creator": "Kurviger",
+    "copyrights": [
+      "Kurviger",
+      "GraphHopper",
+      "OpenStreetMap contributors"
+    ],
+    "compatibility_date": "2023_02_28"
+  },
+  "hints": {
+    "weighting": "curvature"
+  },
+  "details": [
+    "route_information",
+    "tomtom_incident",
+    "max_speed",
+    "street_name"
+  ],
+  "calculatedAt": 1787915666829,
+  "paths": [
+    {
+      "distance": 0,
+      "weight": 0,
+      "time": 0,
+      "transfers": 0,
+      "points_encoded": true,
+      "bbox": [
+        8.410042,
+        45.875692,
+        11.139488,
+        46.421324
+      ],
+      "points": "",
+      "instructions": [],
+      "legs": [],
+      "details": {},
+      "ascend": 0,
+      "descend": 0,
+      "snapped_waypoints": "",
+      "waypoints": [
+        {
+          "name": "N1 Camping Park Baita Dolomiti S.R.L.",
+          "latitude": 46.421324,
+          "longitude": 11.139488
+        },
+        {
+          "name": "Camping Aprica",
+          "latitude": 46.157767,
+          "longitude": 10.174799,
+          "shaping": true
+        },
+        {
+          "latitude": 46.17258,
+          "longitude": 9.403439,
+          "shaping": true
+        },
+        {
+          "latitude": 45.993145,
+          "longitude": 8.946648,
+          "shaping": true
+        },
+        {
+          "latitude": 45.966186,
+          "longitude": 8.624268,
+          "shaping": true
+        },
+        {
+          "latitude": 45.922976,
+          "longitude": 8.429947,
+          "shaping": true
+        },
+        {
+          "address": "Vicolo Pasquello,  28887 Omegna Piémont Italie",
+          "name": "N1 Trouver Hotel",
+          "category": "search_result",
+          "latitude": 45.875692,
+          "longitude": 8.410042
+        },
+        {
+          "name": "⭐ Area Panoramica Belvedere",
+          "latitude": "45.870975",
+          "longitude": "8.376962",
+          "weight": "fastest",
+          "shaping": "True"
+        },
+        {
+          "name": "⭐ Point de vue",
+          "latitude": "45.842969",
+          "longitude": "8.425026",
+          "weight": "fastest",
+          "shaping": "True"
+        },
+        {
+          "name": "⭐ Colle Vallessa",
+          "latitude": "45.915679",
+          "longitude": "8.382341",
+          "weight": "fastest",
+          "shaping": "True"
+        }
+      ],
+      "elevation": false,
+      "service": "Kurviger"
+    }
+  ]
+}
