@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recherche sur LCDMH — trouvez une page, un test, une vidéo</title>
+<meta name="description" content="Recherche par mot-clé sur lcdmh.com : road trips moto, tests d'équipement, GPS, pneus, intercoms, codes promo et vidéos. Trouvez en 1 seconde ce que vous cherchez.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://lcdmh.com/recherche.html">
+<link rel="icon" href="/images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/images/favicon.png">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MVJK8VFG');</script>
+<!-- Google tag (gtag.js) - GA4 LCDMH -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7GC33KPRMS"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-7GC33KPRMS');</script>
+<style>
+  :root{
+    --orange:#e67e22; --orange-dark:#d35400; --noir:#141210; --noir-2:#1e1b18;
+    --beige:#f6f1e9; --card:#fff; --texte:#1c1a17; --muted:#6b6560; --bordure:#e8e0d5;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0;width:100%;max-width:100%}
+  body{background:var(--beige);color:var(--texte);font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6}
+
+  /* HÉROS */
+  .hero{background:linear-gradient(150deg,var(--noir) 0%,var(--noir-2) 100%);color:#fff;padding:3.5rem 5% 3rem;text-align:center}
+  .hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(1.6rem,4vw,2.5rem);margin:0 0 .6rem;font-weight:900;letter-spacing:-.02em}
+  .hero h1 span{color:var(--orange)}
+  .hero p{margin:0 auto 1.8rem;max-width:640px;color:#c9c2ba;font-size:1rem}
+  .searchbox{max-width:760px;margin:0 auto;display:flex;gap:.6rem;background:#fff;padding:.5rem;border-radius:999px;box-shadow:0 12px 40px rgba(0,0,0,.35)}
+  .searchbox input{flex:1;border:none;outline:none;font-size:1.05rem;padding:.85rem 1.2rem;background:transparent;color:#1c1a17;font-family:inherit}
+  .searchbox button{background:var(--orange);color:#fff;border:none;border-radius:999px;padding:.85rem 1.6rem;font-size:1rem;font-weight:700;cursor:pointer;transition:background .2s;font-family:inherit}
+  .searchbox button:hover{background:var(--orange-dark)}
+  .hint{margin-top:1rem;font-size:.85rem;color:#9a938b}
+  .hint a{color:var(--orange);text-decoration:none;cursor:pointer;margin:0 .35rem;display:inline-block}
+  .hint a:hover{text-decoration:underline}
+
+  /* CONTENU */
+  main{max-width:1100px;margin:0 auto;padding:2.5rem 5% 4rem}
+  .stats{text-align:center;color:var(--muted);font-size:.92rem;margin-bottom:1.6rem}
+  .stats strong{color:var(--texte)}
+  h2.grp{font-family:'Montserrat',sans-serif;font-size:1.05rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:2.2rem 0 .9rem;border-bottom:2px solid var(--bordure);padding-bottom:.5rem}
+  h2.grp:first-of-type{margin-top:.5rem}
+  .resultats{display:grid;gap:.9rem}
+  .carte{display:block;background:var(--card);border:1px solid var(--bordure);border-radius:14px;padding:1.1rem 1.3rem;text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s,border-color .15s}
+  .carte:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.09);border-color:var(--orange)}
+  .carte .type{display:inline-block;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--orange);background:#fdf1e6;border-radius:999px;padding:.15rem .6rem;margin-bottom:.45rem}
+  .carte h3{margin:0 0 .35rem;font-size:1.08rem;font-weight:700;color:var(--texte);line-height:1.35}
+  .carte h3 mark,.carte p mark{background:#ffe9c9;color:inherit;padding:0 .12em;border-radius:3px}
+  .carte p{margin:0;font-size:.92rem;color:var(--muted)}
+  .carte .url{font-size:.78rem;color:#a49d95;margin-top:.4rem;word-break:break-all}
+  .vide {text-align:center;padding:3rem 1rem;color:var(--muted)}
+  .vide .emoji{font-size:2.6rem;display:block;margin-bottom:.6rem}
+  .spinner{text-align:center;color:var(--muted);padding:2rem}
+  .retour{display:inline-block;margin-top:2rem;color:var(--orange);text-decoration:none;font-weight:600}
+  .retour:hover{text-decoration:underline}
+  @media (max-width:640px){
+    .hero{padding:2.4rem 4% 2.2rem}
+    .searchbox{border-radius:16px;flex-direction:column;padding:.6rem}
+    .searchbox button{width:100%;border-radius:12px}
+    main{padding:1.8rem 4% 3rem}
+    .carte{padding:.95rem 1rem}
+  }
+</style>
+</head>
+<body>
+<div id="lcdmh-nav"></div>
+
+<header class="hero">
+  <h1>🔍 Rechercher sur <span>LCDMH</span></h1>
+  <p>Tapez un mot-clé : un road trip, un col, un GPS, un pneu, un intercom, une marque, un code promo…</p>
+  <form class="searchbox" id="form" role="search" onsubmit="return false">
+    <input type="search" id="q" placeholder="Ex : Carpuride, Timmelsjoch, pneus, bivouac…" aria-label="Rechercher sur le site" autocomplete="off" enterkeyhint="search">
+    <button type="submit" id="btn">Rechercher</button>
+  </form>
+  <div class="hint">
+    Essayez :
+    <a data-q="Carpuride">Carpuride</a><a data-q="Cap Nord">Cap Nord</a><a data-q="pneus">pneus</a><a data-q="intercom">intercom</a><a data-q="code promo">code promo</a><a data-q="Dolomites">Dolomites</a>
+  </div>
+</header>
+
+<main>
+  <div class="stats" id="stats"></div>
+  <div id="out"></div>
+  <a class="retour" href="/index.html">← Retour à l'accueil</a>
+</main>
+
+<script src="/js/lcdmh-nav-loader.js" defer></script>
+<script>
+(function(){
+  "use strict";
+  var INDEX_PAGES = [], INDEX_VIDEOS = [], charges = false;
+
+  function norm(s){
+    return (s||"").toString().toLowerCase()
+      .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+      .replace(/[’'`]/g," ").replace(/[^a-z0-9\s-]/g," ").replace(/\s+/g," ").trim();
+  }
+  function charger(){
+    if (charges) return Promise.resolve();
+    return Promise.all([
+      fetch("/data/site-index.json").then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
+      fetch("/data/search-index.json").then(function(r){return r.ok?r.json():[];}).catch(function(){return [];})
+    ]).then(function(res){
+      INDEX_PAGES = res[0]||[]; INDEX_VIDEOS = res[1]||[];
+      charges = true;
+    });
+  }
+  function score(termes, champs){
+    // chaque terme doit apparaître ; pondération par champ
+    var total = 0;
+    for (var i=0;i<termes.length;i++){
+      var t = termes[i], meilleur = 0;
+      for (var j=0;j<champs.length;j++){
+        var txt = champs[j].txt, poids = champs[j].poids;
+        if (!txt) continue;
+        if (txt === t) meilleur = Math.max(meilleur, poids*3);
+        else if (txt.indexOf(t) === 0) meilleur = Math.max(meilleur, poids*2.2);
+        else if (txt.indexOf(" "+t) > -1) meilleur = Math.max(meilleur, poids*1.8);
+        else if (txt.indexOf(t) > -1) meilleur = Math.max(meilleur, poids);
+      }
+      if (meilleur === 0) return 0;   // terme absent → exclusion (ET logique)
+      total += meilleur;
+    }
+    return total;
+  }
+  function surligner(txt, termes){
+    var out = txt||"";
+    for (var i=0;i<termes.length;i++){
+      var t = termes[i]; if (t.length < 2) continue;
+      var re = new RegExp("("+t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","gi");
+      out = out.replace(re, "<mark>$1</mark>");
+    }
+    return out;
+  }
+  function esc(s){ return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+  function chercher(q){
+    var termes = norm(q).split(" ").filter(function(x){return x.length>1;});
+    if (!termes.length) return {pages:[],videos:[]};
+
+    var pages = [];
+    for (var i=0;i<INDEX_PAGES.length;i++){
+      var p = INDEX_PAGES[i];
+      var s = score(termes, [
+        {txt:norm(p.titre), poids:10},
+        {txt:norm(p.h1), poids:8},
+        {txt:norm(p.description), poids:6},
+        {txt:norm(p.sections), poids:3},
+        {txt:norm(p.extrait), poids:2},
+        {txt:norm(p.url), poids:1.5}
+      ]);
+      if (s>0) pages.push({score:s, url:p.url, titre:p.titre, desc:p.description||p.extrait, type:"Page"});
+    }
+    var videos = [];
+    for (var k=0;k<INDEX_VIDEOS.length;k++){
+      var v = INDEX_VIDEOS[k];
+      var tags = (v.tags||v.tags1||[]).join(" ");
+      var s2 = score(termes, [
+        {txt:norm(v.title), poids:10},
+        {txt:norm(v.description), poids:5},
+        {txt:norm(tags), poids:4},
+        {txt:norm(v.zone), poids:3},
+        {txt:norm(v.episode), poids:2}
+      ]);
+      if (s2>0) videos.push({score:s2, url:v.link||v.youtubeUrl, titre:v.title, desc:v.description, type:"Vidéo", pageUrl:v.pageUrl});
+    }
+    pages.sort(function(a,b){return b.score-a.score;});
+    videos.sort(function(a,b){return b.score-a.score;});
+    return {pages:pages.slice(0,30), videos:videos.slice(0,20), termes:termes};
+  }
+
+  function rendre(q){
+    var out = document.getElementById("out"), stats = document.getElementById("stats");
+    var r = chercher(q);
+    if (!q || !norm(q)) { out.innerHTML=""; stats.innerHTML=""; return; }
+    var np = (r.pages||[]).length, nv = (r.videos||[]).length;
+    stats.innerHTML = "<strong>"+(np+nv)+"</strong> résultat"+(np+nv>1?"s":"")+" pour « <strong>"+esc(q)+"</strong> »"+(np?" — "+np+" page"+(np>1?"s":""):"")+(nv?" · "+nv+" vidéo"+(nv>1?"s":""):"");
+    if (!np && !nv){
+      out.innerHTML = '<div class="vide"><span class="emoji">🤔</span>Aucun résultat pour « '+esc(q)+' ».<br>Essayez un autre mot-clé (marque, col, type d\'équipement…).</div>';
+      return;
+    }
+    var html = "";
+    if (np){
+      html += '<h2 class="grp">📄 Pages du site</h2><div class="resultats">';
+      for (var i=0;i<r.pages.length;i++){
+        var p = r.pages[i];
+        html += '<a class="carte" href="'+esc(p.url)+'">'
+          + '<span class="type">'+esc(p.type)+'</span>'
+          + '<h3>'+surligner(esc(p.titre), r.termes)+'</h3>'
+          + (p.desc ? '<p>'+surligner(esc(p.desc.slice(0,190)), r.termes)+'</p>' : '')
+          + '<div class="url">'+esc(p.url)+'</div></a>';
+      }
+      html += '</div>';
+    }
+    if (nv){
+      html += '<h2 class="grp">📺 Vidéos YouTube</h2><div class="resultats">';
+      for (var j=0;j<r.videos.length;j++){
+        var v = r.videos[j];
+        html += '<a class="carte" href="'+esc(v.url)+'" target="_blank" rel="noopener">'
+          + '<span class="type">'+esc(v.type)+'</span>'
+          + '<h3>'+surligner(esc(v.titre), r.termes)+'</h3>'
+          + (v.desc ? '<p>'+surligner(esc(v.desc.slice(0,180)), r.termes)+'</p>' : '')
+          + '</a>';
+      }
+      html += '</div>';
+    }
+    out.innerHTML = html;
+  }
+
+  function lancer(q, majUrl){
+    document.getElementById("q").value = q;
+    if (majUrl && q) history.replaceState(null,"","?q="+encodeURIComponent(q));
+    rendre(q);
+  }
+
+  document.addEventListener("DOMContentLoaded", function(){
+    var input = document.getElementById("q");
+    var params = new URLSearchParams(location.search);
+    var q0 = params.get("q") || "";
+    charger().then(function(){
+      if (q0) lancer(q0, false); 
+      if (input) { input.focus(); input.select(); }
+    });
+    document.getElementById("btn").addEventListener("click", function(){ lancer(input.value, true); });
+    document.getElementById("form").addEventListener("submit", function(){ lancer(input.value, true); });
+    var d;
+    input.addEventListener("input", function(){
+      clearTimeout(d); var v = input.value;
+      d = setTimeout(function(){ if (charges) { rendre(v); if (!v) history.replaceState(null,"",location.pathname); } }, 180);
+    });
+    input.addEventListener("keydown", function(e){ if (e.key === "Enter"){ e.preventDefault(); lancer(input.value, true); } });
+    var liens = document.querySelectorAll(".hint a[data-q]");
+    for (var i=0;i<liens.length;i++){
+      liens[i].addEventListener("click", function(e){ e.preventDefault(); lancer(this.getAttribute("data-q"), true); });
+    }
+    charger().then(function(){ /* index prêt pour la frappe */ });
+  });
+})();
+</script>
+<script defer src="/js/lcdmh-promo-loader.js"></script>
+</body>
+</html>
