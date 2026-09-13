@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bibliothèque vidéo LCDMH — index complet</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/images/favicon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbfaf8;--card:#fff;--border:#e8e2d9;--orange:#e67e22;--noir:#141210;--text:#1f1c19;--text2:#5f5850;--beige:#f6f1e9}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.7}
+.wrap{max-width:1200px;margin:0 auto;padding:0 4%}
+header{background:linear-gradient(150deg,var(--noir),#2b2622);color:#fff;padding:2.4rem 4% 2rem}
+header h1{font-family:'Montserrat',sans-serif;font-size:clamp(1.5rem,3.6vw,2.2rem);font-weight:900;margin:0 0 .5rem}
+header p{color:#c8c1b9;margin:0;font-size:.95rem;max-width:760px}
+.stats{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:1.3rem;font-size:.86rem;color:#9a938b}
+.stats b{color:var(--orange);font-size:1.15rem;font-family:'Montserrat',sans-serif}
+.bar{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--border);padding:.9rem 4%;display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+.bar input[type=search]{flex:1;min-width:230px;padding:.7rem 1rem;border:1.5px solid var(--border);border-radius:10px;font-size:.95rem;font-family:inherit}
+.bar input[type=search]:focus{outline:none;border-color:var(--orange)}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap}
+.chip{background:#fff;border:1px solid var(--border);border-radius:999px;padding:.35rem .8rem;font-size:.8rem;cursor:pointer;font-weight:600;white-space:nowrap}
+.chip:hover{border-color:var(--orange)}
+.chip.on{background:var(--orange);color:#fff;border-color:var(--orange)}
+main{padding:1.6rem 4% 4rem;max-width:1200px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:1.1rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:13px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--beige)}
+.card .b{padding:.9rem 1rem 1.1rem;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:.95rem;font-weight:700;margin:0 0 .35rem;line-height:1.35}
+.card .m{font-size:.75rem;color:var(--text2);margin-bottom:.5rem}
+.card .a{font-size:.82rem;color:var(--text2);line-height:1.5;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card .l{margin-top:.7rem;display:flex;gap:.4rem;flex-wrap:wrap}
+.card .l a{font-size:.8rem;font-weight:700;text-decoration:none;padding:.4rem .75rem;border-radius:7px;background:var(--orange);color:#fff}
+.card .l a.alt{background:var(--beige);color:var(--noir)}
+.tag{display:inline-block;background:var(--beige);color:var(--noir);font-size:.7rem;font-weight:700;padding:.2rem .55rem;border-radius:999px;margin-right:.3rem}
+.kw{background:var(--card);border:1px solid var(--border);border-radius:13px;padding:1rem 1.2rem;margin-bottom:.8rem}
+.kw h3{margin:0 0 .5rem;font-size:1rem;color:var(--orange);font-family:'Montserrat',sans-serif}
+.kw a{display:inline-block;font-size:.85rem;margin:0 .5rem .45rem 0;color:var(--text);text-decoration:none;border-bottom:1px dashed var(--border)}
+.kw a:hover{color:var(--orange);border-color:var(--orange)}
+.kw .ts{color:var(--text2);font-size:.78rem}
+.empty{text-align:center;padding:3rem 1rem;color:var(--text2)}
+.note{background:#fff8f2;border-left:4px solid var(--orange);border-radius:0 10px 10px 0;padding:1rem 1.2rem;margin:1.4rem 0;font-size:.9rem}
+footer{background:var(--noir);color:#9a938b;padding:1.6rem 4%;font-size:.82rem;text-align:center}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>📚 Bibliothèque vidéo LCDMH</h1>
+    <p>Index complet de la chaîne : toutes les vidéos, transcrites et indexées. Tape un mot-clé (un modèle, un lieu, un problème technique, un équipement) pour retrouver <strong>où et quand</strong> le sujet a été traité — avec le lien direct au bon moment dans la vidéo.</p>
+    <div class="stats" id="stats"><span>Chargement…</span></div>
+  </div>
+</header>
+<div class="bar">
+  <input type="search" id="q" placeholder="🔍 Rechercher : TRK 702, disque avant, Cap Nord, duvet, Dolomites…" autocomplete="off">
+  <div class="chips" id="chips"></div>
+</div>
+<main>
+  <div id="motos"></div>
+  <div id="kwzone"></div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" style="display:none">Aucun résultat.</div>
+</main>
+<footer>Bibliothèque interne LCDMH — index généré automatiquement. <span id="gen"></span></footer>
+
+<script>
+let DATA = null, filtre = "tout", tous = [];
+const $ = s => document.querySelector(s);
+const esc = s => (s||"").replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const sansAcc = s => (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+const vmap = () => Object.fromEntries((DATA.videos||[]).map(v => [v.id, v]));
+
+function afficheStats(){
+  $("#stats").innerHTML = `<span><b>${DATA.total}</b> vidéos</span>
+    <span><b>${DATA.avec_transcription}</b> transcrites</span>
+    <span><b>${Object.keys(DATA.index||{}).length}</b> mots-clés indexés</span>`;
+  $("#gen").textContent = "Dernière mise à jour : " + (DATA.genere||"").slice(0,16).replace("T"," ");
+}
+function afficheChips(){
+  const th = ["tout", ...(DATA.themes||[])];
+  $("#chips").innerHTML = th.map(t => `<span class="chip${t===filtre?' on':''}" data-t="${esc(t)}">${t==="tout"?"Tout":esc(t)}</span>`).join("");
+  document.querySelectorAll(".chip").forEach(c => c.onclick = () => { filtre = c.dataset.t; afficheChips(); cherche(); });
+}
+function carte(v){
+  const apercu = (v.apercu||v.desc||"").slice(0,190);
+  const kw = v.transcrit ? "" : `<span class="tag" style="background:#f6e9dc">pas encore transcrit</span>`;
+  return `<div class="card">
+    <a href="${v.url}" target="_blank" rel="noopener"><img loading="lazy" src="${v.thumb}" alt=""></a>
+    <div class="b">
+      <div class="m">${v.publie} ${v.duree_estimee?`· ${v.duree_estimee} min`:""} ${v.transcrit?`· ${v.nb_segments} phrases indexées`:""}</div>
+      <h3>${esc(v.titre)}</h3>
+      <div style="margin-bottom:.4rem"><span class="tag">${v.theme}</span>${kw}</div>
+      <div class="a">${esc(apercu)}</div>
+      <div class="l">
+        <a href="${v.url}" target="_blank" rel="noopener">▶ Voir</a>
+        ${v.transcrit?`<a class="alt" href="#kw" onclick="rechercheMot('${esc((v.apercu||'').split(' ')[0]||'')}')">🔎 Dans la vidéo</a>`:""}
+      </div>
+    </div>
+  </div>`;
+}
+function cherche(){
+  const q = sansAcc($("#q").value.trim());
+  let res = tous;
+  if (filtre !== "tout") res = res.filter(v => v.theme === filtre);
+  if (q){
+    res = res.filter(v => sansAcc(v.titre).includes(q) || sansAcc(v.apercu||"").includes(q) || sansAcc(v.desc||"").includes(q));
+  }
+  $("#grid").innerHTML = res.slice(0,300).map(carte).join("");
+  $("#empty").style.display = res.length ? "none" : "block";
+  // zone mots-clés (index inversé)
+  const zone = $("#kwzone");
+  if (q.length >= 3){
+    const hits = Object.keys(DATA.index||{}).filter(k => k.includes(q)).slice(0,8);
+    if (hits.length){
+      const vm = vmap();
+      zone.innerHTML = hits.map(k => {
+        const liens = (DATA.index[k]||[]).slice(0,6).map(o => {
+          const v = vm[o.v]; if(!v) return "";
+          const mm = String(Math.floor(o.t/60)).padStart(2,'0'), ss = String(o.t%60).padStart(2,'0');
+          return `<a href="${v.url}&t=${o.t}" target="_blank" rel="noopener" title="${esc(o.x)}">${esc(v.titre.slice(0,42))} <span class="ts">→ ${mm}:${ss}</span></a>`;
+        }).join("");
+        return `<div class="kw" id="kw"><h3>« ${esc(k)} »</h3>${liens}</div>`;
+      }).join("");
+      const tot = $("#grid").children.length;
+      zone.innerHTML = `<div class="note">🔎 <strong>${hits.length}</strong> mot(s)-clé(s) trouvé(s) dans les transcriptions · ${tot} vidéo(s) correspondante(s) ci-dessous.</div>` + zone.innerHTML;
+    } else zone.innerHTML = "";
+  } else zone.innerHTML = "";
+}
+function afficheMotos(){
+  fetch("/data/biblio/fiches-motos.json").then(r => r.json()).then(d => {
+    const html = (d.motos||[]).map(m => {
+      const prob = (m.problemes||[]).map(x => `<li>${esc(x)}</li>`).join("");
+      const voy = (m.voyages||[]).map(x => `<li>${esc(x)}</li>`).join("");
+      const vids = (m.videos_cles||[]).map(x => `<span class="tag" style="background:#f6e9dc">${esc(x)}</span>`).join(" ");
+      const aConf = (m.a_confirmer||[]).map(x => `<li>${esc(x)}</li>`).join("");
+      return `<div class="kw" style="border-left:4px solid var(--orange);border-radius:0 13px 13px 0">
+        <h3 style="font-size:1.15rem">🏍️ ${esc(m.nom)}</h3>
+        <p style="font-size:.86rem;color:var(--text2);margin:.2rem 0 .7rem">
+          <strong>${esc(m.marque)}</strong> · ${esc(m.type)} · <strong>${esc(m.periode)}</strong><br>
+          <span style="color:var(--orange);font-weight:700">${esc(m.statut)}</span>
+          ${m.km_fin?` · Fin : <strong>${esc(m.km_fin)}</strong>`:""}${m.km_actuel?` · <strong>${esc(m.km_actuel)}</strong>`:""}
+        </p>
+        ${voy?`<div style="font-size:.88rem"><strong>🧭 Voyages</strong><ul style="margin:.3rem 0 .7rem;padding-left:1.1rem">${voy}</ul></div>`:""}
+        ${prob?`<div style="font-size:.88rem"><strong>⚠️ Problèmes & historique SAV</strong><ul style="margin:.3rem 0 .7rem;padding-left:1.1rem">${prob}</ul></div>`:""}
+        ${vids?`<div style="font-size:.84rem"><strong>🎬 Vidéos liées</strong><div style="margin-top:.35rem">${vids}</div></div>`:""}
+        ${aConf?`<div style="font-size:.8rem;color:var(--text2);margin-top:.6rem"><strong>À confirmer :</strong><ul style="margin:.2rem 0 0;padding-left:1.1rem">${aConf}</ul></div>`:""}
+      </div>`;
+    }).join("");
+    $("#motos").innerHTML = `<h2 style="font-family:'Montserrat',sans-serif;font-size:1.3rem;margin:0 0 .8rem">🏍️ Mes motos — historique</h2>` + html;
+  }).catch(()=>{});
+}
+function rechercheMot(m){ if(m){ $("#q").value = m; cherche(); } }
+fetch("/data/biblio/biblio-data.json").then(r => r.json()).then(d => {
+  DATA = d; tous = d.videos || [];
+  afficheStats(); afficheChips(); cherche(); afficheMotos();
+  $("#q").addEventListener("input", cherche);
+}).catch(e => {
+  $("#stats").innerHTML = "<span>⚠️ Données absentes — lancer le générateur.</span>";
+  $("#empty").style.display = "block";
+  $("#empty").textContent = "Bibliothèque en cours de construction (collecte des transcriptions en cours).";
+});
+</script>
+</body>
+</html>
