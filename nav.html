@@ -26,7 +26,7 @@
         <a href="/europe-asie-moto.html">🌍 Europe–Asie 2024</a>
         <a href="/espagne-2023.html">🇪🇸 Espagne 2023</a>
         <a href="/alpes-aventure-festival-moto.html">🏍️ Alpes Festival 2025</a>
-              <a href="/roadtrips/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026.html">🏍️ Road trip moto Cols Suisse, Tyrol et dolomites 2026</a>
+        <a href="/roadtrips/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026.html">🏍️ Road Trip Moto Suisse, Tyrol &amp; Dolomites 2026</a>
       </div>
     </li>
 
@@ -76,13 +76,17 @@
       </div>
     </li>
 
-    <li><button id="lcdmh-search-nav-btn" class="lcdmh-search-nav-btn" type="button" title="Rechercher les vidéos">🔍</button></li>
+    <li class="lcdmh-search-item">
+      <form class="lcdmh-search-form" action="/recherche.html" method="get" role="search" aria-label="Rechercher sur le site">
+        <input type="search" name="q" id="lcdmh-nav-search" placeholder="Rechercher…" aria-label="Rechercher sur lcdmh.com" autocomplete="off">
+        <button type="submit" title="Rechercher sur le site" aria-label="Lancer la recherche">🔍</button>
+      </form>
+    </li>
 
     <li class="lcdmh-desktop-cta"><a class="lcdmh-last-video" href="/index.html#videos"><span class="lcdmh-badge-new">NOUVEAU</span><span class="lcdmh-badge-title">Dernière vidéo</span></a></li>
     <li class="lcdmh-desktop-cta"><a class="lcdmh-subscribe" href="https://www.youtube.com/@LCDMH?sub_confirmation=1" target="_blank" rel="noopener">▶ S'abonner</a></li>
     <li class="lcdmh-desktop-cta"><a class="lcdmh-youtube" href="https://www.youtube.com/@LCDMH" target="_blank" rel="noopener">📺 YouTube</a></li>
-    <li class="lcdmh-mobile-close"><a href="#" id="lcdmh-mobile-close-btn" style="color:#e67e22;font-size:1.2rem;text-align:right;border:none">✕ Fermer</a></li>
-      <li class="lcdmh-auto-roadtrip"><a href="roadtrips/road-trip-moto-suisse-tyrol-italie-2026.html">Road Trip Moto Suisse Tyrol Italie 2026</a></li>
+    <li class="lcdmh-mobile-close"><a href="#" id="lcdmh-mobile-close-btn">✕ Fermer le menu</a></li>
 </ul>
 </nav>
 
@@ -168,6 +172,28 @@
   #lcdmh-nav .lcdmh-subscribe{background:var(--lcdmh-orange)}
   #lcdmh-nav .lcdmh-subscribe:hover{background:#d35400}
   #lcdmh-nav .lcdmh-youtube{background:#ff0000}
+  /* Recherche dans la barre de navigation */
+  #lcdmh-nav .lcdmh-search-item{display:flex;align-items:center}
+  #lcdmh-nav .lcdmh-search-form{
+    display:flex;align-items:center;gap:0;
+    background:#f5f2ee;border:1px solid #e3ddd5;border-radius:999px;
+    padding:.15rem .15rem .15rem .8rem;transition:border-color .2s,box-shadow .2s;
+  }
+  #lcdmh-nav .lcdmh-search-form:focus-within{border-color:var(--lcdmh-orange);box-shadow:0 0 0 3px rgba(230,126,34,.15);background:#fff}
+  #lcdmh-nav .lcdmh-search-form input{
+    border:none;outline:none;background:transparent;
+    font-size:.82rem;font-family:inherit;color:var(--lcdmh-black);
+    width:110px;padding:.4rem 0;transition:width .25s;
+  }
+  #lcdmh-nav .lcdmh-search-form input:focus{width:170px}
+  #lcdmh-nav .lcdmh-search-form input::placeholder{color:#9a938c}
+  #lcdmh-nav .lcdmh-search-form button{
+    background:var(--lcdmh-orange);border:none;cursor:pointer;
+    border-radius:999px;width:30px;height:30px;flex-shrink:0;
+    font-size:.82rem;line-height:1;color:#fff;
+    display:flex;align-items:center;justify-content:center;
+  }
+  #lcdmh-nav .lcdmh-search-form button:hover{background:#d35400}
   #lcdmh-nav .lcdmh-search-nav-btn{
     background:none;border:none;cursor:pointer;
     font-size:1rem;padding:.4rem;color:var(--lcdmh-black);
@@ -176,6 +202,23 @@
 
   /* Hamburger caché sur desktop */
   #lcdmh-nav .lcdmh-menu-toggle{display:none}
+
+  /* 🔴 Le bouton "Fermer" n'existe QUE pour le menu mobile — il était visible sur desktop */
+  #lcdmh-nav .lcdmh-mobile-close{display:none}
+
+  /* === RESPONSIVE INTERMÉDIAIRE (tablettes / petits écrans) === */
+  @media (max-width:1400px){
+    #lcdmh-nav{padding:0 2%}
+    #lcdmh-nav .lcdmh-nav-links{gap:.2rem .5rem}
+    #lcdmh-nav .lcdmh-nav-links>li>a{font-size:.8rem;padding:.5rem .4rem}
+    #lcdmh-nav .lcdmh-subscribe,#lcdmh-nav .lcdmh-youtube{padding:.5rem .7rem!important;font-size:.72rem}
+    #lcdmh-nav .lcdmh-last-video{font-size:.72rem;padding:.35rem .6rem}
+  }
+  @media (max-width:1250px){
+    #lcdmh-nav .lcdmh-badge-title{display:none}   /* ne garder que "NOUVEAU" */
+    #lcdmh-nav .lcdmh-youtube span{display:none}
+    #lcdmh-nav .lcdmh-nav-links>li>a{font-size:.76rem}
+  }
 
   /* === MOBILE — MENU SIMPLE SANS RISQUE === */
   @media (max-width:1100px){
@@ -243,7 +286,20 @@
       display:flex !important;justify-content:center;width:100%;margin:.5rem 0;
     }
 
-    /* Cache le bouton recherche du menu mobile (trop petit) */
+    /* Bouton Fermer : visible UNIQUEMENT dans le menu mobile ouvert */
+    #lcdmh-nav .lcdmh-nav-links.active .lcdmh-mobile-close{display:block}
+    #lcdmh-nav .lcdmh-mobile-close a{
+      display:flex!important;align-items:center;justify-content:flex-end;
+      width:100%;padding:.9rem 0;color:#e67e22!important;
+      font-weight:700;font-size:1rem;border:none!important;
+    }
+
+    /* Champ de recherche en mobile : pleine largeur, bien visible */
+    #lcdmh-nav .lcdmh-nav-links.active .lcdmh-search-item{display:block;width:100%;margin:.6rem 0}
+    #lcdmh-nav .lcdmh-nav-links.active .lcdmh-search-form{width:100%;padding:.35rem .35rem .35rem 1rem}
+    #lcdmh-nav .lcdmh-nav-links.active .lcdmh-search-form input{width:100%;font-size:1rem;padding:.6rem 0}
+    #lcdmh-nav .lcdmh-nav-links.active .lcdmh-search-form input:focus{width:100%}
+    #lcdmh-nav .lcdmh-nav-links.active .lcdmh-search-form button{width:38px;height:38px;font-size:1rem}
     #lcdmh-nav .lcdmh-nav-links.active .lcdmh-search-nav-btn{display:none}
   }
 </style>
