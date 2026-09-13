@@ -24,6 +24,8 @@ footer{background:#1a1a1a;color:rgba(255,255,255,.65);padding:2.8rem 6%;margin-t
 <div class="f-logo">LC<em>D</em>MH</div>
 <p class="f-tagline">La Chaîne du Motard Heureux · Annecy, France</p>
 <ul class="f-nav">
+  <li><a href="${base}roadtrips.html">Road trips</a></li>
+  <li><a href="${base}roadtrips/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026.html">Suisse, Tyrol & Dolomites 2026</a></li>
   <li><a href="${base}codes-promo.html">Codes promo</a></li>
   <li><a href="${base}carpuride.html">Carpuride</a></li>
   <li><a href="${base}aferiy.html">AFERIY</a></li>
