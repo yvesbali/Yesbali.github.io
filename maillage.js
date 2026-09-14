@@ -125,6 +125,9 @@
   }
 
   function injectRelatedBlock() {
+    // ⚠️ GARDE ANTI-DOUBLON (14/09/2026) : le bloc « À lire aussi » est désormais pré-rendu en HTML
+    // statique dans chaque page (pour le SEO). Si ce bloc existe déjà, on n'injecte rien.
+    if (document.querySelector('.maillage-section')) return;
     const currentPage = getCurrentPage();
     const related = getRelatedPages(currentPage);
 
