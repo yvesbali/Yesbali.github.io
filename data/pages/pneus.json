@@ -117,5 +117,51 @@
       "name": "pneus.fr",
       "affiliate_url": "https://www.awin1.com/cread.php?awinmid=7928&awinaffid=2753560&ued=https%3A%2F%2Fwww.pneus.fr%2Fpneus%2Fmoto"
     }
-  ]
+  ],
+  "guidage": {
+    "_note": "Moteur de guidage LCDMH v1.0 — prototype. Rendu par js/lcdmh-guidage.js dans #lcdmh-guidage. Ne pas confondre avec 'videos' (feed automatique par mots-cles) : ici les associations sont EXPLICITES et verifiees.",
+    "next_question": "Vous choisissez vos pneus pour quel usage ?",
+    "next_steps": [
+      {
+        "label": "Montagne / cols",
+        "emoji": "🏔",
+        "url": "/alpes-cols-mythiques.html",
+        "why": "Les cols sont ce qui use le plus un pneu : lacets, pentes fortes, revêtement dégradé. Voici les routes où mes pneus ont le plus souffert.",
+        "video": "BBGFCW3cmdw",
+        "intent": "rouler"
+      },
+      {
+        "label": "Grand voyage",
+        "emoji": "🧳",
+        "url": "/roadtrips.html",
+        "why": "Un grand voyage use un pneu en continu. Voici les road trips que j'ai réellement faits, avec ce que chaque matériel a donné sur la durée.",
+        "video": "Z8F8ruQEkKY",
+        "intent": "voyager"
+      },
+      {
+        "label": "Toutes conditions",
+        "emoji": "🌦",
+        "url": "/articles/t33-vs-road-6.html",
+        "why": "Le comparatif qui répond à « lequel tient le plus longtemps » : c'est déjà la page où le plus de lecteurs de ce comparatif continuent.",
+        "video": "GE7VK6iQr6o",
+        "intent": "choisir-materiel"
+      }
+    ],
+    "proof": {
+      "video": "DcySGCRQFXA",
+      "placement": "fin-de-page",
+      "titre": "T33 après 5 000 km : les 47 % promis ?",
+      "cta": "Voir le test après 5 000 km",
+      "format": "facade"
+    },
+    "voyage_bridge": {
+      "texte": "Ces pneus servent à rouler. Où allez-vous partir ?",
+      "url": "/roadtrips.html"
+    },
+    "next_big_step": {
+      "texte": "Et si vous préparez un long voyage, la question suivante c'est la navigation.",
+      "url": "/gps.html",
+      "label": "Choisir une navigation"
+    }
+  }
 }
