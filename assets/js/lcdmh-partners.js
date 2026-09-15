@@ -5,6 +5,55 @@
    Aucune bibliothèque requise (fetch natif).
    ═══════════════════════════════════════════════════════════ */
 (function () {
+  /* ═══════════════════════════════════════════════════════════
+     MESURE DES CLICS PARTENAIRES (15/09/2026)
+     Objectif : savoir QUELLE page génère des clics vers les marques,
+     donc du revenu potentiel. On utilise le système analytics DÉJÀ
+     chargé par le site (gtag). Aucun script tiers, aucun cookie en plus.
+     Écouteur global : capte aussi les liens ajoutés dynamiquement
+     (bandeau bons plans, bloc guidage).
+     ═══════════════════════════════════════════════════════════ */
+  var PARTENAIRES = {
+    'carpuride.com': 'Carpuride',
+    'aoocci.fr': 'Aoocci',
+    'olightstore.fr': 'Olight',
+    'innovv.com': 'INNOVV',
+    'komobi.com': 'Komobi',
+    'tidd.ly': '123pneus',
+    'blackview.hk': 'Blackview',
+    'amazon.fr': 'Amazon'
+  };
+  function partenaireDe(href) {
+    for (var d in PARTENAIRES) {
+      if (PARTENAIRES.hasOwnProperty(d) && href.indexOf(d) !== -1) return PARTENAIRES[d];
+    }
+    return null;
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target;
+    while (a && a.tagName !== 'A') a = a.parentNode;
+    if (!a || a.tagName !== 'A') return;
+    var href = a.getAttribute('href') || '';
+    if (!/^https?:\/\//i.test(href)) return;       // lien interne relatif : ignoré
+    if (href.indexOf('lcdmh.com') !== -1) return;  // lien interne absolu : ignoré
+    var part = partenaireDe(href);
+    if (!part) return;                             // pas un partenaire : ignoré
+    try {
+      var p = {
+        partenaire: part,
+        page_source: location.pathname,
+        page_target: href.substring(0, 300),
+        lien_texte: (a.textContent || '').replace(/\s+/g, ' ').trim().substring(0, 100),
+        transport_type: 'beacon'                   // envoi immédiat (la page va naviguer)
+      };
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'clic_partenaire', p);
+      } else if (window.dataLayer && typeof window.dataLayer.push === 'function') {
+        window.dataLayer.push(Object.assign({ event: 'clic_partenaire' }, p));
+      }
+    } catch (err) { /* la mesure ne casse jamais la navigation */ }
+  }, true);
+
   var C = document.getElementById('lcdmh-partners');
   if (!C) return;
   fetch('/promos/bons_plans.json', { cache: 'no-store' })
