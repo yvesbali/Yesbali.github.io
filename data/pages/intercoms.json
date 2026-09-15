@@ -105,5 +105,41 @@
       "image": "https://images.unsplash.com/photo-1558981359-219d6364c9c8?q=80&w=1974",
       "image_alt": "Intercom moto pluie étanche"
     }
-  ]
+  ],
+  "guidage": {
+    "_note": "Moteur de guidage LCDMH v1.0 — lot 1. ATTENTION : ce contenu est de classe C (analyse documentaire, pas un test terrain de tous les produits). Aucun bloc preuve video n'est affiche.",
+    "next_question": "Vous roulez seul, en duo, ou en groupe ?",
+    "next_steps": [
+      {
+        "label": "En duo, pilote et passager",
+        "emoji": "👥",
+        "url": "/cap-nord-moto.html",
+        "why": "Parler à son passager pendant 10 000 km, c'est le test le plus exigeant qu'un intercom puisse passer.",
+        "intent": "voyager"
+      },
+      {
+        "label": "Avec un écran GPS",
+        "emoji": "🧭",
+        "url": "/gps.html",
+        "why": "Intercom et écran doivent cohabiter : c'est là que le mélange audio et le jog dial font la différence.",
+        "intent": "equiper-ma-moto"
+      },
+      {
+        "label": "Le comparatif écrit",
+        "emoji": "📄",
+        "url": "/articles/meilleur-intercom-moto-2026.html",
+        "why": "Une comparaison documentaire des modèles du marché — pas un test terrain de chacun d'eux.",
+        "intent": "choisir-materiel"
+      }
+    ],
+    "voyage_bridge": {
+      "texte": "Un intercom change la façon de voyager à deux. Où allez-vous partir ?",
+      "url": "/roadtrips.html"
+    },
+    "next_big_step": {
+      "texte": "Et pour voir la route et vos messages en même temps, la question suivante c'est l'écran.",
+      "url": "/carpuride.html",
+      "label": "Voir les écrans connectés"
+    }
+  }
 }

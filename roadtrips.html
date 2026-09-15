@@ -33,6 +33,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- LCDMH guidage (lot 1) -->
+    <link rel="stylesheet" href="/js/lcdmh-guidage.css">
     
     <!-- Balises pour mobile et Search Console -->
     <meta name="format-detection" content="telephone=no">
@@ -1151,6 +1153,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- LCDMH_BONS_PLANS:START -->
 <div id="lcdmh-partners"></div>
 <!-- LCDMH_BONS_PLANS:END -->
+<!-- ══════════ MOTEUR DE GUIDAGE LCDMH — lot 1 ══════════
+     Contenu injecté par /js/lcdmh-guidage.js depuis data/pages/roadtrips.json.
+     Section masquée par défaut : si le JS échoue ou si le JSON est invalide,
+     rien ne s'affiche et la page reste exactement telle qu'avant. -->
+<section id="lcdmh-guidage" class="gd-section" data-json="/data/pages/roadtrips.json" hidden></section>
+<script src="/js/lcdmh-guidage.js" defer></script>
+
 <footer>
     <div class="f-logo">LC<em>D</em>MH</div>
     <p style="font-size:.83rem;margin:.4rem 0 0;color:rgba(255,255,255,.45)">La Chaîne du Motard Heureux · Annecy, France</p>
