@@ -1,0 +1,53 @@
+{
+  "_meta": {
+    "schema_version": "1.0",
+    "slug": "gps",
+    "last_updated": "2026-09-15"
+  },
+  "guidage": {
+    "_note": "Moteur de guidage LCDMH v1.0 — Lot 2. Rendu par js/lcdmh-guidage.js dans #lcdmh-guidage. Les associations de vidéos sont EXPLICITES et vérifiées (biblio LCDMH). Aucune destination ne pointe vers la page elle-même.",
+    "next_question": "Vous naviguez avec quoi ?",
+    "next_steps": [
+      {
+        "label": "Un écran CarPlay",
+        "emoji": "📺",
+        "url": "/carpuride.html",
+        "why": "L'écran affiche votre téléphone en grand, avec les cartes hors ligne. C'est le test le plus complet du site.",
+        "video": "R6vjnL3bwYk",
+        "intent": "choisir-materiel"
+      },
+      {
+        "label": "Un GPS moto dédié",
+        "emoji": "🛰️",
+        "url": "/aoocci.html",
+        "why": "Un GPS autonome ne dépend pas du téléphone : pas de surchauffe, pas de batterie qui fond au soleil. Mon avis après test.",
+        "video": "JteIWVZLIvg",
+        "intent": "choisir-materiel"
+      },
+      {
+        "label": "Mon téléphone, renforcé",
+        "emoji": "📱",
+        "url": "/blackview.html",
+        "why": "La solution la moins chère si vous avez déjà un téléphone — à condition qu'il résiste à la pluie, aux chocs et au froid.",
+        "video": "AYjFZ1QfCWY",
+        "intent": "choisir-materiel"
+      }
+    ],
+    "proof": {
+      "video": "R6vjnL3bwYk",
+      "placement": "fin-de-page",
+      "titre": "Carpuride W702 Plus : le GPS moto autonome",
+      "cta": "Voir le test complet",
+      "format": "facade"
+    },
+    "voyage_bridge": {
+      "texte": "Une navigation, ça sert d'abord à partir quelque part.",
+      "url": "/roadtrips.html"
+    },
+    "next_big_step": {
+      "texte": "Et pour vous faire entendre sans quitter la route des yeux, la question suivante c'est l'intercom.",
+      "url": "/intercoms.html",
+      "label": "Choisir un intercom"
+    }
+  }
+}

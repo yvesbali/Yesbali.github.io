@@ -1,0 +1,52 @@
+{
+  "_meta": {
+    "schema_version": "1.0",
+    "slug": "equipement",
+    "last_updated": "2026-09-15"
+  },
+  "guidage": {
+    "_note": "Moteur de guidage LCDMH v1.0 — Lot 2. Rendu par js/lcdmh-guidage.js dans #lcdmh-guidage. Les associations de vidéos sont EXPLICITES et vérifiées (biblio LCDMH). Aucune destination ne pointe vers la page elle-même.",
+    "next_question": "Vous équipez votre moto pour quel usage ?",
+    "next_steps": [
+      {
+        "label": "Partir plusieurs jours",
+        "emoji": "🧳",
+        "url": "/roadtrips.html",
+        "why": "La bagagerie, c'est ce qui décide de ce que vous emportez. Voici les voyages où la mienne a été chargée pour de vrai.",
+        "video": "C22Vu27ov00",
+        "intent": "voyager"
+      },
+      {
+        "label": "Bivouaquer, camper",
+        "emoji": "⛺",
+        "url": "/olight.html",
+        "why": "En bivouac, la lumière change tout : monter la tente de nuit, cuisiner, réparer. Voici la lampe que j'utilise réellement.",
+        "video": "FYw1a7SGA2s",
+        "intent": "choisir-materiel"
+      },
+      {
+        "label": "Être autonome en énergie",
+        "emoji": "🔋",
+        "url": "/aferiy.html",
+        "why": "Un long voyage, c'est aussi recharger tout le matériel sans prise à proximité. Voici la solution que j'emporte.",
+        "intent": "choisir-materiel"
+      }
+    ],
+    "proof": {
+      "video": "C22Vu27ov00",
+      "placement": "fin-de-page",
+      "titre": "Lone Rider MiniBag 6L : la sacoche que j'emporte",
+      "cta": "Voir la sacoche en voyage",
+      "format": "facade"
+    },
+    "voyage_bridge": {
+      "texte": "Tout cet équipement ne sert qu'à une chose : partir.",
+      "url": "/roadtrips.html"
+    },
+    "next_big_step": {
+      "texte": "Une fois équipé, reste à savoir où vous allez : la question suivante, c'est la navigation.",
+      "url": "/gps.html",
+      "label": "Voir les GPS moto"
+    }
+  }
+}
