@@ -73,6 +73,9 @@
     try {
       // ?gd_debug=1 dans l'URL -> l'événement devient visible dans GA4 DebugView
       if (/[?&]gd_debug=1/.test(location.search)) payload.debug_mode = true;
+      // Envoi IMMÉDIAT (sendBeacon) : un clic de guidage déclenche une navigation.
+      // En mode groupé (« batch »), gtag perdrait l'événement au changement de page.
+      payload.transport_type = 'beacon';
       if (typeof window.gtag === 'function') {
         window.gtag('event', evt, payload);
       } else if (window.dataLayer && typeof window.dataLayer.push === 'function') {
