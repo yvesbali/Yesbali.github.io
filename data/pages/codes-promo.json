@@ -1,0 +1,53 @@
+{
+  "_meta": {
+    "schema_version": "1.0",
+    "slug": "codes-promo",
+    "last_updated": "2026-09-15"
+  },
+  "guidage": {
+    "_note": "Moteur de guidage LCDMH v1.0 — Lot 2. Rendu par js/lcdmh-guidage.js dans #lcdmh-guidage. Les associations de vidéos sont EXPLICITES et vérifiées (biblio LCDMH). Aucune destination ne pointe vers la page elle-même.",
+    "next_question": "Vous cherchez une réduction sur quel équipement ?",
+    "next_steps": [
+      {
+        "label": "Un écran / GPS",
+        "emoji": "📺",
+        "url": "/carpuride.html",
+        "why": "Les écrans CarPlay et Android Auto : c'est l'équipement où la remise négociée est la plus forte.",
+        "video": "UzXt64MNw0k",
+        "intent": "acheter"
+      },
+      {
+        "label": "Un intercom",
+        "emoji": "🎧",
+        "url": "/intercoms.html",
+        "why": "Sena 50S et 60S : les deux modèles que j'utilise réellement, avec ceux qu'il faut comparer avant d'acheter.",
+        "video": "sZDUr0ewee0",
+        "intent": "acheter"
+      },
+      {
+        "label": "Des pneus",
+        "emoji": "🛞",
+        "url": "/pneus.html",
+        "why": "Les pneus sont ce qui s'use le plus vite en voyage. Mieux vaut choisir le bon modèle avant de chercher une remise.",
+        "video": "DcySGCRQFXA",
+        "intent": "acheter"
+      }
+    ],
+    "proof": {
+      "video": "sZDUr0ewee0",
+      "placement": "fin-de-page",
+      "titre": "Sena 50S : 2 ans plus tard, toujours content ?",
+      "cta": "Voir le retour après 2 ans",
+      "format": "facade"
+    },
+    "voyage_bridge": {
+      "texte": "Un code promo ne sert à rien si le produit n'est pas le bon pour vous.",
+      "url": "/equipement.html"
+    },
+    "next_big_step": {
+      "texte": "Tous mes tests terrain sont regroupés au même endroit.",
+      "url": "/articles.html",
+      "label": "Voir tous les tests"
+    }
+  }
+}

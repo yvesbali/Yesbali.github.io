@@ -114,6 +114,13 @@
 /* ---------- Les 3 choix d'usage ---------- */
 .gd-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: .85rem; }
 
+/* ---------- Variante 4 choix (accueil : 4 intentions, consigne Yves) ---------- */
+.gd-steps.gd-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 900px) {
+  .gd-steps.gd-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
 .gd-step {
   display: flex;
   flex-direction: column;
@@ -165,6 +172,7 @@
   .gd-section { margin: 2rem auto 1rem; padding: 0 .85rem; }
   .gd-title { font-size: 1.15rem; }
   .gd-steps { grid-template-columns: 1fr; gap: .7rem; }
+  .gd-steps.gd-4 { grid-template-columns: 1fr; }
   .gd-step {
     min-height: 0;
     padding: 1rem .95rem;

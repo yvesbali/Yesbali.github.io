@@ -1,0 +1,41 @@
+{
+  "_meta": {
+    "schema_version": "1.0",
+    "slug": "index",
+    "last_updated": "2026-09-15"
+  },
+  "guidage": {
+    "_note": "Moteur de guidage LCDMH v1.0 — Lot 2. Rendu par js/lcdmh-guidage.js dans #lcdmh-guidage. Les associations de vidéos sont EXPLICITES et vérifiées (biblio LCDMH). Aucune destination ne pointe vers la page elle-même. Accueil : 4 intentions maximum (consigne Yves 15/09/2026).",
+    "next_question": "Vous venez pour quoi ?",
+    "next_steps": [
+      {
+        "label": "Préparer un voyage",
+        "emoji": "🗺️",
+        "url": "/roadtrips.html",
+        "why": "Itinéraires, cols et budget : les road trips que j'ai réellement roulés.",
+        "intent": "voyager"
+      },
+      {
+        "label": "Équiper ma moto",
+        "emoji": "🎒",
+        "url": "/equipement.html",
+        "why": "Bagagerie, éclairage, casque : ce que j'emporte vraiment, testé sur la route.",
+        "intent": "equiper"
+      },
+      {
+        "label": "Choisir un pneu",
+        "emoji": "🛞",
+        "url": "/pneus.html",
+        "why": "Le poste qui compte le plus sur la route : comparatif de ceux que j'ai usés.",
+        "intent": "choisir-materiel"
+      },
+      {
+        "label": "Trouver un code promo",
+        "emoji": "🏷️",
+        "url": "/codes-promo.html",
+        "why": "Les remises négociées auprès des marques que j'utilise vraiment.",
+        "intent": "acheter"
+      }
+    ]
+  }
+}

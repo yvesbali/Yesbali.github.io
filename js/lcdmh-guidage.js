@@ -130,9 +130,13 @@
     var st = g.next_steps;
     if (!hasArr(st)) return '';
     var q = esc(g.next_question || 'Et maintenant ?');
-    var h = '<div class="gd-block"><h2 class="gd-title">' + q + '</h2><div class="gd-steps">';
+    // Règle du projet : 3 choix maximum. Exception assumée : l'accueil en a 4
+    // (4 intentions d'entrée, consigne Yves). Au-delà de 4, on coupe.
+    var max = st.length >= 4 ? 4 : 3;
+    var cls = 'gd-steps' + (max === 4 ? ' gd-4' : '');
+    var h = '<div class="gd-block"><h2 class="gd-title">' + q + '</h2><div class="' + cls + '">';
     var n = 0;
-    for (var i = 0; i < st.length && n < 3; i++) {
+    for (var i = 0; i < st.length && n < max; i++) {
       var s = st[i] || {};
       var u = safeUrl(s.url);
       if (!u) continue;                  // URL invalide -> on saute l'entrée
