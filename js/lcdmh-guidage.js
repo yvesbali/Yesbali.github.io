@@ -16,8 +16,12 @@
    conteneur absent -> rien. JSON absent/invalide -> rien.
    Toute erreur -> la section reste masquée, la page reste intacte.
 
-   TRACKING : console/debug uniquement (GTM/gtag non clarifié).
-   Aucun envoi vers GA4 tant que l'architecture n'est pas tranchée.
+   TRACKING : envoi via le système analytics DÉJÀ chargé (gtag / GTM).
+   Événements : next_step_choice (choix), internal_nav (pont + étape),
+   youtube_click (lien vidéo). Paramètres : page_source, choice_label,
+   page_target, intent. Replis : gtag -> dataLayer -> console.
+   ?gd_debug=1 dans l'URL active debug_mode pour GA4 DebugView.
+   Un échec de mesure ne casse jamais la page.
 
    Aucune dépendance. Aucune bibliothèque.
    ═══════════════════════════════════════════════════════════════════ */
@@ -53,9 +57,35 @@
     return (typeof id === 'string' && /^[A-Za-z0-9_-]{11}$/.test(id)) ? id : null;
   }
 
-  // Journalisation : console uniquement, jamais d'envoi réseau
+  /* ---------- Journalisation des clics de guidage ----------
+     Envoi via le système analytics DÉJÀ chargé par le site (gtag).
+     AUCUNE nouvelle architecture, aucun script tiers, aucun cookie en plus.
+     • page_source  : la page où se trouve le visiteur (dynamique)
+     • choice_label : QUEL choix a été cliqué (texte lisible)
+     • page_target  : la destination
+     Replis successifs : gtag -> dataLayer (si GTM seul) -> console.
+     Un échec de mesure ne doit JAMAIS casser la page. */
   function track(evt, data) {
-    try { console.debug('[lcdmh-guidage]', evt, data || {}); } catch (e) {}
+    var payload = data || {};
+    payload.page_source = location.pathname;
+    payload.page_title = (document.title || '').substring(0, 100);
+    try { console.debug('[lcdmh-guidage]', evt, payload); } catch (e) {}
+    try {
+      // ?gd_debug=1 dans l'URL -> l'événement devient visible dans GA4 DebugView
+      if (/[?&]gd_debug=1/.test(location.search)) payload.debug_mode = true;
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', evt, payload);
+      } else if (window.dataLayer && typeof window.dataLayer.push === 'function') {
+        window.dataLayer.push(Object.assign({ event: evt }, payload));
+      }
+    } catch (e) { /* silencieux : la mesure ne casse jamais la navigation */ }
+  }
+
+  // Libellé lisible du lien cliqué — pour savoir QUEL choix a été pris
+  function labelOf(a) {
+    var el = a.querySelector('.gd-step-label, .gd-bridge-txt, .gd-next-txt');
+    var txt = el ? el.textContent : a.textContent;
+    return (txt || '').replace(/\s+/g, ' ').trim().substring(0, 100);
   }
 
   // Élément absent ou tableau vide -> on ne rend rien (droit de ne rien afficher)
@@ -177,13 +207,30 @@
       while (t && t !== C && t.tagName !== 'A') t = t.parentNode;
       if (!t || t.tagName !== 'A') return;
       if (t.classList.contains('gd-step')) {
-        track('next_step_choice', { page_source: '/pneus.html', intent: t.getAttribute('data-intent') || '', page_target: t.getAttribute('href') });
+        track('next_step_choice', {
+          intent: t.getAttribute('data-intent') || '',
+          choice_label: labelOf(t),
+          page_target: t.getAttribute('href')
+        });
       } else if (t.getAttribute('data-bridge')) {
-        track('internal_nav', { page_source: '/pneus.html', bloc: 'pont-voyage', page_target: t.getAttribute('href') });
+        track('internal_nav', {
+          bloc: 'pont-voyage',
+          choice_label: labelOf(t),
+          page_target: t.getAttribute('href')
+        });
       } else if (t.getAttribute('data-next')) {
-        track('internal_nav', { page_source: '/pneus.html', bloc: 'etape-suivante', page_target: t.getAttribute('href') });
+        track('internal_nav', {
+          bloc: 'etape-suivante',
+          choice_label: labelOf(t),
+          page_target: t.getAttribute('href')
+        });
       } else if (t.classList.contains('gd-proof-yt')) {
-        track('youtube_click', { page_source: '/pneus.html', video_id: (C.querySelector('.gd-proof') || {}).dataset ? C.querySelector('.gd-proof').getAttribute('data-video') : '', emplacement: 'preuve-terrain', cta_type: 'lien-direct' });
+        var pf = C.querySelector('.gd-proof');
+        track('youtube_click', {
+          video_id: pf ? pf.getAttribute('data-video') : '',
+          emplacement: 'preuve-terrain',
+          cta_type: 'lien-direct'
+        });
       }
     });
   }
