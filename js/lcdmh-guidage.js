@@ -188,6 +188,28 @@
     });
   }
 
+  /* ---------- Anti-empilement : masquer le maillage générique ----------
+     RÈGLE GÉNÉRIQUE (v1.0) : si cette page affiche un guidage contextuel,
+     le bloc générique « À lire aussi » (maillage.js) est masqué — sinon les
+     deux feraient doublon.
+     IMPORTANT :
+     - le bloc est MASQUÉ, jamais supprimé : les liens restent dans le HTML et
+       demeurent visibles par les robots (aucune perte SEO, aucun lien cassé) ;
+     - on ne touche PAS à maillage.js ni à ses liens contextuels dans le texte ;
+     - le masquage n'a lieu QUE si le guidage s'est réellement rendu (voir plus
+       bas) : si le JSON est cassé ou absent, le maillage reste affiché. */
+  function masquerMaillageGenerique() {
+    var blocs = document.querySelectorAll('.maillage-section');
+    for (var i = 0; i < blocs.length; i++) {
+      blocs[i].setAttribute('hidden', '');
+      blocs[i].setAttribute('aria-hidden', 'true');
+      blocs[i].setAttribute('data-masque-par', 'lcdmh-guidage');
+    }
+    if (blocs.length) {
+      try { console.debug('[lcdmh-guidage] maillage generique masque (' + blocs.length + ' bloc(s)) — guidage contextuel actif'); } catch (e) {}
+    }
+  }
+
   /* ---------- Chargement et orchestration ---------- */
   fetch(SRC, { cache: 'no-store' })
     .then(function (r) {
@@ -203,6 +225,7 @@
       C.removeAttribute('hidden');                  // n'apparaît que si rendu
       bindProof();
       bindTracks();
+      masquerMaillageGenerique();                   // évite le doublon avec « À lire aussi »
     })
     .catch(function (err) {
       // JSON cassé, 404, erreur réseau : la section reste masquée, page intacte
