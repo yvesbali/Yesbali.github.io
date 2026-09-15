@@ -129,5 +129,51 @@
       "promo_discount": "-30%",
       "affiliate_url": "https://carpuride.com/fr/collections/motorcycle-7-inch-series/products/carpuride-w702-plus-motorcycle-stereo-supports-app-installation?ref=uxcepkkq"
     }
-  ]
+  ],
+  "guidage": {
+    "_note": "Moteur de guidage LCDMH v1.0 — lot 1. Rendu par js/lcdmh-guidage.js dans #lcdmh-guidage. Associations explicites, verifiees.",
+    "next_question": "Vous voulez naviguer comment ?",
+    "next_steps": [
+      {
+        "label": "Avec mon téléphone (CarPlay / Android Auto)",
+        "emoji": "📱",
+        "url": "/articles/gps-moto-u6-comment-naviguer-offline.html",
+        "why": "Le mode le plus courant : votre téléphone fait le GPS, l'écran l'affiche. Voici comment ça se comporte quand le réseau disparaît.",
+        "video": "4NIinAzHvHk",
+        "intent": "equiper-ma-moto"
+      },
+      {
+        "label": "Sans téléphone (GPS intégré)",
+        "emoji": "🛰",
+        "url": "/gps.html",
+        "why": "Tous les écrans ne savent pas naviguer seuls. Ce comparatif montre lesquels ont un vrai GPS et lesquels dépendent du téléphone.",
+        "video": "R6vjnL3bwYk",
+        "intent": "equiper-ma-moto"
+      },
+      {
+        "label": "Comparer Carpuride et Aoocci",
+        "emoji": "⚖",
+        "url": "/articles/carpuride-ou-aoocci-ecran-gps-moto.html",
+        "why": "Les deux marques que j'utilise réellement : ce qui les sépare sur la route, pas sur la fiche technique.",
+        "video": "6vp73RL1frA",
+        "intent": "choisir-materiel"
+      }
+    ],
+    "proof": {
+      "video": "R6vjnL3bwYk",
+      "placement": "fin-de-page",
+      "titre": "Carpuride W702 Plus : le GPS moto autonome",
+      "cta": "Voir le test du W702 Plus en vidéo",
+      "format": "facade"
+    },
+    "voyage_bridge": {
+      "texte": "Ces écrans servent à rouler. Où allez-vous partir ?",
+      "url": "/roadtrips.html"
+    },
+    "next_big_step": {
+      "texte": "Un écran ne sert à rien si personne ne vous entend. La question suivante, c'est l'intercom.",
+      "url": "/intercoms.html",
+      "label": "Choisir un intercom"
+    }
+  }
 }
