@@ -1,0 +1,53 @@
+name: Contrôle maillage LCDMH
+
+# Contrôle NON BLOQUANT sur les critères éditoriaux subjectifs.
+# Bloque UNIQUEMENT sur les défauts techniques démontrés.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**.html"
+      - "data/maillage.json"
+      - "maillage.js"
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  audit-maillage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Source unique présente
+        run: |
+          if [ ! -f data/maillage.json ]; then
+            echo "::error::data/maillage.json absent — source unique du maillage manquante"
+            exit 1
+          fi
+          echo "OK : $(python3 -c "import json;print(len(json.load(open('data/maillage.json'))['relations']))") relations"
+
+      - name: Build idempotent (dry-run)
+        run: |
+          python3 SEO_CHANTIER/scripts/build_maillage.py --dry-run
+          echo "--- le build ne doit RIEN modifier sur un dépôt à jour ---"
+          python3 SEO_CHANTIER/scripts/build_maillage.py
+          if ! git diff --quiet; then
+            echo "::error::Le build modifie des fichiers — le dépôt n'est pas à jour. Lancez build_maillage.py en local."
+            git diff --stat
+            exit 1
+          fi
+
+      - name: Audit maillage (bloque sur ERROR)
+        run: python3 SEO_CHANTIER/scripts/audit_maillage.py --strict
+
+      - name: Rapport
+        if: always()
+        run: |
+          echo "=== Rapport d'audit ==="
+          cat data/audit_maillage_dernier.json 2>/dev/null | head -40 || echo "pas de rapport"
