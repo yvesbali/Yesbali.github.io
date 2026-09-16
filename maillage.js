@@ -37,6 +37,13 @@
     'tests-motos.html':          { title: 'Tests Motos', cat: 'test', icon: '🏍️' },
     'securite.html':             { title: 'Sécurité Moto', cat: 'conseil', icon: '🛡️' },
     'codes-promo.html':          { title: 'Codes Promo Moto', cat: 'promo', icon: '🎁' },
+
+    // ── Articles récents (ajout 16/09/2026 — ils n'héritaient d'aucun maillage) ──
+    'tvs-apache-rtx-300-le-trail-indien-qui-arrive-en-europe.html': { title: 'TVS Apache RTX 300 : le trail qui arrive', cat: 'test', icon: '🏍️' },
+    'carpuride-w702-plus-retour-usage-intensif.html': { title: 'Carpuride W702 Plus : retour intensif', cat: 'test', icon: '📱' },
+    'test-honda-nt1100-avis-25000-km-road-trip.html': { title: 'Honda NT1100 : avis après 25 000 km', cat: 'test', icon: '🏍️' },
+    'mekanik-annecy-honda-nt1100-panne-garantie.html': { title: 'Honda NT1100 : la panne et la garantie', cat: 'test', icon: '🔧' },
+    'quel-carpuride-moto-choisir.html': { title: 'Quel Carpuride choisir ?', cat: 'test', icon: '🧭' },
   };
 
   // Relations manuelles : pour chaque page, les pages les plus pertinentes
@@ -49,10 +56,10 @@
     'espagne-2023.html':         ['roadtrips.html', 'europe-asie-moto.html', 'pneus.html', 'equipement.html'],
     'ecosse-irlande.html':       ['roadtrips.html', 'cap-nord-moto.html', 'equipement.html', 'olight.html', 'aferiy.html'],
     'roadtrips.html':            ['cap-nord-moto.html', 'europe-asie-moto.html', 'espagne-2023.html', 'les-alpes-dans-tous-les-sens.html', 'ecosse-irlande.html'],
-    'pneus.html':                ['roadtrips.html', 'gps.html', 'equipement.html', 'codes-promo.html'],
+    'pneus.html':                ['roadtrips.html', 'gps.html', 'equipement.html', 'codes-promo.html', 'test-honda-nt1100-avis-25000-km-road-trip.html'],
     'aoocci.html':               ['carpuride.html', 'gps.html', 'codes-promo.html', 'roadtrips.html'],
-    'carpuride.html':            ['aoocci.html', 'gps.html', 'codes-promo.html', 'roadtrips.html'],
-    'gps.html':                  ['aoocci.html', 'carpuride.html', 'codes-promo.html', 'roadtrips.html'],
+    'carpuride.html':            ['aoocci.html', 'gps.html', 'codes-promo.html', 'roadtrips.html', 'carpuride-w702-plus-retour-usage-intensif.html', 'quel-carpuride-moto-choisir.html'],
+    'gps.html':                  ['aoocci.html', 'carpuride.html', 'codes-promo.html', 'roadtrips.html', 'carpuride-w702-plus-retour-usage-intensif.html'],
     'komobi.html':               ['securite.html', 'equipement.html', 'codes-promo.html', 'roadtrips.html'],
     'intercoms.html':            ['equipement.html', 'gps.html', 'codes-promo.html'],
     'olight.html':               ['aferiy.html', 'equipement.html', 'cap-nord-moto.html', 'codes-promo.html'],
@@ -60,12 +67,18 @@
     'aferiy.html':               ['olight.html', 'equipement.html', 'cap-nord-moto.html', 'codes-promo.html'],
     'equipement.html':           ['pneus.html', 'gps.html', 'intercoms.html', 'olight.html', 'roadtrips.html'],
     'photo-video.html':          ['equipement.html', 'roadtrips.html', 'blackview.html'],
-    'tests-motos.html':          ['pneus.html', 'equipement.html', 'roadtrips.html'],
+    'tests-motos.html':          ['pneus.html', 'equipement.html', 'roadtrips.html', 'tvs-apache-rtx-300-le-trail-indien-qui-arrive-en-europe.html', 'test-honda-nt1100-avis-25000-km-road-trip.html'],
     'securite.html':             ['komobi.html', 'equipement.html', 'roadtrips.html'],
     'codes-promo.html':          ['aoocci.html', 'carpuride.html', 'pneus.html', 'olight.html', 'aferiy.html', 'komobi.html'],
     'index.html':                ['roadtrips.html', 'cap-nord-moto.html', 'pneus.html', 'codes-promo.html', 'gps.html'],
     'a-propos.html':             ['roadtrips.html', 'contact.html', 'codes-promo.html'],
     'contact.html':              ['a-propos.html', 'roadtrips.html', 'codes-promo.html'],
+    // ── Articles récents (16/09/2026) ──
+    'tvs-apache-rtx-300-le-trail-indien-qui-arrive-en-europe.html': ['tests-motos.html', 'roadtrips.html', 'pneus.html', 'equipement.html'],
+    'carpuride-w702-plus-retour-usage-intensif.html': ['carpuride.html', 'gps.html', 'aoocci.html', 'codes-promo.html'],
+    'test-honda-nt1100-avis-25000-km-road-trip.html': ['mekanik-annecy-honda-nt1100-panne-garantie.html', 'pneus.html', 'cap-nord-moto.html', 'roadtrips.html'],
+    'mekanik-annecy-honda-nt1100-panne-garantie.html': ['test-honda-nt1100-avis-25000-km-road-trip.html', 'tests-motos.html', 'roadtrips.html'],
+    'quel-carpuride-moto-choisir.html': ['carpuride.html', 'gps.html', 'codes-promo.html'],
   };
 
   // ═══════════════════════════════════════════════════════════════════════
@@ -85,6 +98,10 @@
     { keywords: ['écosse', 'irlande', 'highlands', 'nc500'], url: 'ecosse-irlande.html', label: 'Road Trip Écosse' },
     { keywords: ['codes promo', 'code promo', 'réduction'], url: 'codes-promo.html', label: 'Codes promo' },
     { keywords: ['intercom', 'sena', 'cardo'],   url: 'intercoms.html',    label: 'Test intercoms' },
+    // ── Articles récents (16/09/2026) ──
+    { keywords: ['tvs', 'apache', 'rtx 300', 'trail indien'], url: 'tvs-apache-rtx-300-le-trail-indien-qui-arrive-en-europe.html', label: 'TVS Apache RTX 300' },
+    { keywords: ['w702 plus', 'w702+', 'carpuride w702 plus'], url: 'carpuride-w702-plus-retour-usage-intensif.html', label: 'Carpuride W702 Plus : retour' },
+    { keywords: ['nt1100', 'nt 1100', 'honda nt1100'], url: 'test-honda-nt1100-avis-25000-km-road-trip.html', label: 'Honda NT1100 : avis 25 000 km' },
   ];
 
   // ═══════════════════════════════════════════════════════════════════════
