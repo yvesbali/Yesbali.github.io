@@ -1,0 +1,74 @@
+{
+ "date": "2026-09-16",
+ "commit": "f6d21176",
+ "pages_total": 141,
+ "pages_indexables": 131,
+ "pages_noindex": 10,
+ "sitemap_urls": 77,
+ "relations_source_unique": 954,
+ "liens_editoriaux_total": 475,
+ "pages_avec_bloc": 134,
+ "orphelines": 58,
+ "culs_de_sac": 1,
+ "auto_liens": 0,
+ "liens_casses": 0,
+ "blocs_residuels": 0,
+ "error_audit": 0,
+ "warning_audit": 62,
+ "hubs": {
+  "/voyager-moto.html": {
+   "entrants_editoriaux": 14,
+   "entrants_total": 15,
+   "sortants_editoriaux": 5,
+   "profondeur": 2
+  },
+  "/roadtrips.html": {
+   "entrants_editoriaux": 120,
+   "entrants_total": 121,
+   "sortants_editoriaux": 8,
+   "profondeur": 1
+  },
+  "/roadtrips/road-trip-moto-france.html": {
+   "entrants_editoriaux": 7,
+   "entrants_total": 9,
+   "sortants_editoriaux": 4,
+   "profondeur": 2
+  },
+  "/alpes-cols-mythiques.html": {
+   "entrants_editoriaux": 15,
+   "entrants_total": 21,
+   "sortants_editoriaux": 8,
+   "profondeur": 1
+  },
+  "/cap-nord-moto.html": {
+   "entrants_editoriaux": 17,
+   "entrants_total": 26,
+   "sortants_editoriaux": 8,
+   "profondeur": 1
+  },
+  "/gps.html": {
+   "entrants_editoriaux": 9,
+   "entrants_total": 21,
+   "sortants_editoriaux": 8,
+   "profondeur": 1
+  },
+  "/bagagerie-moto.html": {
+   "entrants_editoriaux": 7,
+   "entrants_total": 7,
+   "sortants_editoriaux": 6,
+   "profondeur": 2
+  },
+  "/voyager-europe-moto.html": {
+   "entrants_editoriaux": 5,
+   "entrants_total": 6,
+   "sortants_editoriaux": 8,
+   "profondeur": 2
+  },
+  "/equipement.html": {
+   "entrants_editoriaux": 16,
+   "entrants_total": 25,
+   "sortants_editoriaux": 8,
+   "profondeur": 1
+  }
+ }
+}
