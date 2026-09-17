@@ -171,6 +171,39 @@ def main():
         if d is not None and d > 3:
             warnings.append(f"PROFONDEUR : {u} à {d} clics (objectif ≤ 3)")
 
+    # ── VIGNETTES YOUTUBE : format 16:9 garanti
+    # Ajouté le 17/09/2026 après un défaut constaté sur les cartes d'accueil :
+    # hqdefault.jpg (480x360, 4:3) dans un cadre 16:9 avec object-fit:cover
+    # rognait le haut de l'image — donc les titres incrustés des vignettes.
+    # Règle : src = maxresdefault.jpg (16:9 natif), repli onerror = hqdefault.jpg,
+    # et css/vignettes.css chargé pour neutraliser les hauteurs fixes.
+    for u, pg in pages.items():
+        t = pg["html"]
+        nb_yt = len(re.findall(r"i\.ytimg\.com", t))
+        if not nb_yt:
+            continue
+        # a) une vignette 4:3 appelée directement en src (hors repli onerror)
+        srcs_4_3 = re.findall(r'src="[^"]*hqdefault\.jpg"', t)
+        if srcs_4_3:
+            erreurs.append(
+                f"VIGNETTE 4:3 : {u} appelle hqdefault.jpg ({len(srcs_4_3)}×) en src — "
+                f"480x360 rogné, utiliser maxresdefault.jpg"
+            )
+        # b) le CSS de sécurité des vignettes doit être chargé
+        if "vignettes.css" not in t:
+            erreurs.append(
+                f"VIGNETTE SANS CSS : {u} affiche {nb_yt} vignette(s) YouTube "
+                f"sans charger css/vignettes.css (hauteurs fixes non neutralisées)"
+            )
+        # c) hauteur fixe posée sur une vignette YouTube (écrase aspect-ratio)
+        for m in re.finditer(r'<img[^>]*i\.ytimg\.com[^>]*>', t):
+            if re.search(r'style="[^"]*height\s*:\s*(?!auto)[0-9]', m.group(0)):
+                erreurs.append(
+                    f"VIGNETTE HAUTEUR FIXE : {u} impose un height inline sur une "
+                    f"vignette YouTube — écrase aspect-ratio, rognage variable"
+                )
+                break
+
     # ── RÉSULTAT
     print("=" * 100)
     print("AUDIT MAILLAGE LCDMH")
