@@ -10,6 +10,9 @@ on:
       - "**.html"
       - "data/maillage.json"
       - "maillage.js"
+      - "scripts/build_maillage.py"
+      - "scripts/audit_maillage.py"
+      - ".github/workflows/audit-maillage.yml"
   pull_request:
     branches: [main]
   workflow_dispatch:
