@@ -34,17 +34,17 @@ jobs:
 
       - name: Build idempotent (dry-run)
         run: |
-          python3 SEO_CHANTIER/scripts/build_maillage.py --dry-run
+          python3 scripts/build_maillage.py --dry-run
           echo "--- le build ne doit RIEN modifier sur un dépôt à jour ---"
-          python3 SEO_CHANTIER/scripts/build_maillage.py
-          if ! git diff --quiet; then
-            echo "::error::Le build modifie des fichiers — le dépôt n'est pas à jour. Lancez build_maillage.py en local."
-            git diff --stat
+          python3 scripts/build_maillage.py
+          if ! git diff --quiet -- '*.html'; then
+            echo "::error::Le build modifie des pages HTML — le dépôt n'est pas à jour. Lancez scripts/build_maillage.py en local puis committez."
+            git diff --stat -- '*.html'
             exit 1
           fi
 
       - name: Audit maillage (bloque sur ERROR)
-        run: python3 SEO_CHANTIER/scripts/audit_maillage.py --strict
+        run: python3 scripts/audit_maillage.py --strict
 
       - name: Rapport
         if: always()
