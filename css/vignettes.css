@@ -1,0 +1,81 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   VIGNETTES LCDMH — FORMAT 16:9 GARANTI
+   ═══════════════════════════════════════════════════════════════════════════
+   Fichier créé le 17/09/2026 après un défaut constaté sur les cartes d'accueil.
+
+   LE PROBLÈME RÉSOLU
+   ------------------
+   Les cartes affichaient des vignettes YouTube en 4:3 (hqdefault.jpg, 480x360)
+   dans un cadre 16:9 avec object-fit:cover. Le recadrage emportait le haut de
+   l'image — donc les titres incrustés (« Norvège 2023 », etc.).
+
+   En plus, certaines classes forçaient une hauteur fixe (height:180px) qui
+   ÉCRASAIT aspect-ratio : le cadre changeait de forme selon la largeur d'écran,
+   rendant le rognage imprévisible.
+
+   LA RÈGLE D'OR
+   -------------
+   1. La source est en 16:9 (maxresdefault.jpg) → lue par le HTML
+   2. Le cadre est en 16:9 → imposé ICI par aspect-ratio
+   3. Les deux ratios coïncident → object-fit:cover ne coupe RIEN
+   4. height:auto neutralise toute hauteur fixe posée ailleurs
+   5. Le fond beige fait office de « passe-partout » propre si une source
+      n'est malgré tout pas au bon format (Shorts 9:16, image carrée)
+
+   POURQUOI LA SPÉCIFICITÉ FONCTIONNE
+   -----------------------------------
+   img[src*="i.ytimg.com"]  →  (0,1,1)  1 élément + 1 attribut
+   .home-article__img       →  (0,1,0)  1 classe
+   La règle ci-dessous GAGNE donc sur les classes, sans !important.
+
+   ⚠️ Seuls les styles INLINE (style="...") la battent. C'est pourquoi la règle
+   pose aussi height:auto — pour neutraliser les height de classes.
+
+   NE PAS MODIFIER SANS LIRE CE BLOC. Le contrôle automatique
+   (scripts/audit_maillage.py) vérifie que toute vignette YouTube du site
+   respecte ce format. Une régression sera détectée au prochain push.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+img[src*="i.ytimg.com"]{
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;                /* neutralise les height fixes des classes */
+    max-height: none;
+    object-fit: cover;
+    object-position: center;     /* centrage horizontal ET vertical */
+    background: #f0ede8;         /* beige charte LCDMH = le « cadre » */
+    display: block;
+}
+
+/* Variante explicite : si un conteneur impose déjà 16:9 avec height:100%,
+   l'image doit remplir ce conteneur au lieu d'imposer son propre ratio. */
+.thumb img[src*="i.ytimg.com"],
+.ep-thumb img[src*="i.ytimg.com"],
+.journal-thumb img[src*="i.ytimg.com"],
+.episode-thumb img[src*="i.ytimg.com"],
+.video-thumb img[src*="i.ytimg.com"],
+.video-mini img[src*="i.ytimg.com"],
+.thumb-img img[src*="i.ytimg.com"],
+.card-image img[src*="i.ytimg.com"],
+.featured-image img[src*="i.ytimg.com"]{
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+    object-position: center;
+    background: #f0ede8;
+}
+
+/* Vignettes rondes ou à coins arrondis : on conserve le rayon du conteneur */
+img[src*="i.ytimg.com"].rounded,
+.thumb img[src*="i.ytimg.com"],
+.video-mini img[src*="i.ytimg.com"]{
+    border-radius: inherit;
+}
+
+/* Repli propre quand la miniature haute résolution n'existe pas :
+   le onerror bascule sur hqdefault.jpg (4:3) avec object-fit:cover,
+   ce qui retire les bandes noires sans déformer l'image. */
+img[src*="i.ytimg.com"][src*="hqdefault"]{
+    object-fit: cover;
+    object-position: center;
+}
