@@ -256,3 +256,45 @@ Les **WARNING ne bloquent pas** (critères éditoriaux subjectifs).
 | Que faire d'un doute ? | ne pas ajouter la relation |
 | Où est le bloc généré ? | entre `MAILLAGE_STATIQUE_SEO` et `FIN_MAILLAGE_STATIQUE_SEO` |
 | Combien de liens par page ? | **8 maximum**, la pertinence domine |
+
+---
+
+## 🔴 PIÈGES DU CI — vécus le 17/09/2026 (3 bugs successifs)
+
+Le premier run du CI a échoué. Les 3 causes, à ne jamais reproduire :
+
+### 1. Chemin des scripts faux → `No such file or directory` (échec en 8 s)
+Le workflow appelait `SEO_CHANTIER/scripts/build_maillage.py`, mais **`SEO_CHANTIER/` n'existe PAS dans le dépôt** — les scripts sont dans `scripts/`.
+> **Règle** : les scripts EXÉCUTÉS par le CI doivent être dans le dépôt, et le workflow doit pointer sur un chemin qui existe VRAIMENT. Vérifier avec `git ls-files scripts/`.
+
+### 2. `git diff --quiet` trop large → échec à tort
+Le contrôle d'idempotence testait TOUS les fichiers. Or `data/biblio/biblio-data.json` et `index-mots-cles.json` (8 Mo) sont **régénérés chaque matin à 5h50 par un cron**, et `data/audit_maillage_dernier.json` est réécrit à chaque audit.
+> **Règle** : scoper le contrôle au périmètre du build → `git diff --quiet -- '*.html'`. Jamais de `git diff` global dans un CI où d'autres processus écrivent.
+
+### 3. Le workflow ne se déclenchait pas sur sa propre correction
+Le filtre `on.push.paths` ne listait que `**.html`, `data/maillage.json` et `maillage.js`. Pousser une correction du `.yml` **ne déclenchait rien** → impossible de valider le correctif.
+> **Règle** : inclure le workflow lui-même ET les scripts dans `paths:`.
+```yaml
+paths:
+  - "**.html"
+  - "data/maillage.json"
+  - "maillage.js"
+  - "scripts/build_maillage.py"
+  - "scripts/audit_maillage.py"
+  - ".github/workflows/audit-maillage.yml"
+```
+
+### ✅ Vérifier un run SANS `gh` (le VPS n'a pas le CLI GitHub)
+Le dépôt est public → l'API REST répond sans authentification :
+```bash
+# état global
+curl -s "https://api.github.com/repos/yvesbali/Yesbali.github.io/actions/runs?per_page=5"
+# workflow précis (id 359696298 = contrôle maillage)
+curl -s "https://api.github.com/repos/yvesbali/Yesbali.github.io/actions/workflows/359696298/runs"
+# détail étape par étape d'un run
+curl -s "https://api.github.com/repos/yvesbali/Yesbali.github.io/actions/runs/<RUN_ID>/jobs"
+```
+Résultat du 17/09 : **run 35203754601 — success, 9 s, toutes étapes vertes.**
+
+### ⚠️ Point d'attention restant
+`data/biblio/biblio-data.json` (4,4 Mo) et `data/biblio/index-mots-cles.json` (3,5 Mo) sont **modifiés quotidiennement par un cron mais jamais committés** → ils apparaissent en permanence comme « modifiés » dans `git status`. Cela peut gêner un `git pull --rebase` (`cannot pull with rebase: You have unstaged changes`). **À trancher** : soit le cron les commite, soit on les met en `.gitignore`.
