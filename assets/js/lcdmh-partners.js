@@ -21,7 +21,9 @@
     'komobi.com': 'Komobi',
     'tidd.ly': '123pneus',
     'blackview.hk': 'Blackview',
-    'amazon.fr': 'Amazon'
+    'amazon.fr': 'Amazon',
+    'led-colight.com': 'Colight',
+    'reurl.cc': 'Colight'
   };
   function partenaireDe(href) {
     for (var d in PARTENAIRES) {
