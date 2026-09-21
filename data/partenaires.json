@@ -99,11 +99,10 @@
       "nom": "Colight",
       "categorie": "Éclairage LED moto",
       "statut": "actif",
-      "code_promo": "LCDMH15",
-      "reduction": "-15% sur un set",
+      "code_promo": "LCDMH",
+      "reduction": "-12%",
       "codes": {
-        "LCDMH15": "-15% sur un set",
-        "FALL18": "-18% sur deux sets (promo automne, durée limitée)"
+        "LCDMH": "-12% de réduction (code officiel GoAffPro)"
       },
       "commission": "8%",
       "lien_affilie": "https://www.led-colight.com/collections/hot-sale?ref=LCDMH",
@@ -113,8 +112,9 @@
       },
       "contact": "sponsor@led-colight.com",
       "materiel": "Atlas 5\" Multi-Modes LED (reçu le 04/09/2026, installé)",
-      "note": "Promo automne en cours : 18% sur 2 sets. Macky recommande de rappeler aux abonnés de NE PAS cliquer sur les annonces Google, pour que la commission soit bien attribuée.",
-      "consigne_abonnes": "Ne pas cliquer sur les annonces Google — passer par le lien affilié"
+      "note": "Code officiel = LCDMH (-12%), celui du portail GoAffPro, donc suivi pour la commission. Les codes LCDMH15 (-15%) et FALL18 (-18% sur 2 sets) ont ete testes valides sur la boutique mais ne figurent PAS dans le portail GoAffPro : ne pas les mettre en avant.",
+      "consigne_abonnes": "Ne pas cliquer sur les annonces Google — passer par le lien affilié",
+      "source_code": "Portail GoAffPro led-colight.goaffpro.com (confirme par Yves 21/09/2026)"
     }
   }
 }
