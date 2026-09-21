@@ -21,3 +21,10 @@ videos_cache.json
 gsc_token.json
 data/make_config.json
 *.bak_bonsplans
+
+# Sauvegardes / fichiers de travail — JAMAIS publies
+*.bak_boutons
+*.bak_nul
+*.bak_noms
+*.bak-*
+*.bak_*
