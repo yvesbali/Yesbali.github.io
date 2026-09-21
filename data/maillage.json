@@ -1,6 +1,6 @@
 {
  "$schema": "lcdmh-maillage-v1",
- "genere_le": "2026-09-16",
+ "genere_le": "2026-09-21",
  "description": "SOURCE UNIQUE DU MAILLAGE ÉDITORIAL LCDMH. Chaque relation est une question logique du lecteur, jamais un mot-clé. Le script build_maillage.py génère les blocs HTML depuis ce fichier. NE PAS éditer les blocs HTML à la main : modifier ce fichier puis relancer le build.",
  "regles": [
   "Une relation doit répondre à : quelle est la prochaine question logique du lecteur ?",
@@ -3252,6 +3252,54 @@
    "type": "DESTINATION",
    "bloc": "a_lire_aussi",
    "justification": "relation existante détectée dans a_lire_aussi"
+  },
+  {
+   "source": "/articles/metzeler-roadtec-02-vs-michelin-road-6-gt.html",
+   "cible": "/articles/choisir-son-pneu-moto.html",
+   "ancre": "📝 Comment je choisis mes pneus moto",
+   "type": "NEXT_STEP",
+   "bloc": "maillage_section",
+   "justification": "Après un comparatif, la logique du lecteur est : comment choisir le mien (usage, charge, kilométrage)."
+  },
+  {
+   "source": "/articles/metzeler-roadtec-02-vs-michelin-road-6-gt.html",
+   "cible": "/articles/dunlop-mutant-vs-bridgestone-t33-le-combat-quel-pneu-choisir.html",
+   "ancre": "🥊 Dunlop Mutant vs Bridgestone T33",
+   "type": "COMPARISON",
+   "bloc": "maillage_section",
+   "justification": "Le comparatif de pneus polyvalents pour qui roule toute l'année, pas seulement en touring."
+  },
+  {
+   "source": "/articles/metzeler-roadtec-02-vs-michelin-road-6-gt.html",
+   "cible": "/articles/t33-vs-road-6.html",
+   "ancre": "⚖️ Bridgestone T33 vs Michelin Road 6",
+   "type": "COMPARISON",
+   "bloc": "maillage_section",
+   "justification": "Autre duel sport-touring : complète la même question pour qui cherche une alternative au Road 6."
+  },
+  {
+   "source": "/articles/metzeler-roadtec-02-vs-michelin-road-6-gt.html",
+   "cible": "/articles/test-honda-nt1100-avis-25000-km-road-trip.html",
+   "ancre": "🏍️ Ma Honda NT1100 après 25 000 km",
+   "type": "EXPERIENCE",
+   "bloc": "maillage_section",
+   "justification": "La moto qui sert de banc d'essai : indispensable pour juger un pneu arrière sur cette machine."
+  },
+  {
+   "source": "/articles/metzeler-roadtec-02-vs-michelin-road-6-gt.html",
+   "cible": "/cap-nord-moto.html",
+   "ancre": "🧭 Le Cap Nord à moto en solo",
+   "type": "EXPERIENCE",
+   "bloc": "maillage_section",
+   "justification": "Le voyage où ces deux pneus ont été usés : le contexte réel du test."
+  },
+  {
+   "source": "/articles/metzeler-roadtec-02-vs-michelin-road-6-gt.html",
+   "cible": "/pneus.html",
+   "ancre": "🛞 Quel pneu pour quel usage ?",
+   "type": "PARENT",
+   "bloc": "maillage_section",
+   "justification": "Le hub pneus répond à la question d'ensemble (profil, usage, saison) une fois le duel tranché."
   },
   {
    "source": "/articles/preparation-pour-le-voyage-road-trip-en-trk-702.html",
