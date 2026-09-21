@@ -2,10 +2,11 @@ User-agent: *
 Allow: /
 Disallow: /nav.html
 Disallow: /widget-roadtrip-snippet.html
-# ⚠️ Dossiers de travail / doublons — hors indexation (signal GSC 19/08 « Page avec redirection »)
+# Dossier de travail interne
 Disallow: /data/
-Disallow: /roadbooks-html/
-Disallow: /articles/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-peti.html
+# Page de redirection (ancien nom de l'article GPS U6) — ⚠️ le nom DOIT correspondre
+# exactement au fichier, sinon la règle ne s'applique pas et la page reste explorable.
+Disallow: /articles/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti.html
 
 # ══ Crawlers IA — autorisés explicitement ══════════════════
 # Signaux explicites aux moteurs génératifs (GEO / AEO)
