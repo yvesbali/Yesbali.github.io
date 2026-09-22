@@ -99,7 +99,7 @@ li{margin-bottom:.42rem}
 .breadcrumb{max-width:860px;margin:0 auto;padding:1.1rem 1.25rem 0;font-size:.85rem;color:var(--muted)}
 .breadcrumb a{color:var(--muted);text-decoration:none}
 .breadcrumb a:hover{color:var(--orange)}
-figure.comparaison{margin:1.8rem 0;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;padding:0}
+figure.comparaison{max-width:620px;margin:1.7rem auto;background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;padding:0}
 figure.comparaison picture{display:block;line-height:0}
 figure.comparaison img{display:block;width:100%;height:auto;aspect-ratio:1100/618;background:#0d0d10}
 figure.comparaison figcaption{padding:.9rem 1.15rem;font-size:.88rem;color:var(--muted);border-top:1px solid var(--border)}
@@ -177,8 +177,7 @@ blockquote cite{display:block;margin-top:.7rem;font-style:normal;font-size:.83re
         <p class="lead">Les feux additionnels, ce n'est pas une question de « watts en plus ». Sur une route de montagne, la nuit, le problème n'est pas seulement de voir loin devant : c'est de <strong>comprendre où va la route</strong>.</p>
 
         <div class="essentiel" style="border-left-color:#c0392b">
-            <p><strong>⚠️ À lire avant tout.</strong> Les COLIGHT Apex sont des <strong>feux d'aventure</strong>, conçus par le fabricant pour un usage <strong>tout-terrain et off-road</strong> — pistes, chemins, terrain libre. C'est leur domaine.</p>
-            <p><strong>Ils ne sont pas homologués pour la route.</strong> Le fabricant me l'a confirmé par écrit le 17 septembre 2026 : la certification européenne ECE est <strong>« une démarche en cours »</strong>, donc pas encore obtenue. Cette page n'est pas un conseil d'achat pour rouler sur route ouverte : c'est le récit d'un test, avec ses limites écrites noir sur blanc.</p>
+            <p><strong>⚠️ À lire avant tout.</strong> Les COLIGHT Apex sont des <strong>feux d'aventure</strong> conçus pour le <strong>tout-terrain</strong> — pistes, chemins, terrain libre. <strong>Ils ne sont pas homologués pour rouler sur la route</strong> : le fabricant me l'a confirmé, la certification européenne ECE est <strong>« une démarche en cours »</strong>. Cette page est le récit d'un test, pas un conseil d'achat pour rouler sur route ouverte.</p>
         </div>
 
         <p>Une courbe qui se referme, une chaussée qui se resserre, un bord qui disparaît, un virage qui monte — ces informations se lisent dans l'éclairage latéral. Un faisceau très concentré au centre peut être puissant et laisser l'entrée du virage complètement noire.</p>
@@ -342,14 +341,18 @@ blockquote cite{display:block;margin-top:.7rem;font-style:normal;font-size:.83re
 
         <h3>Les photos, prises au même endroit</h3>
         <p>Voici la comparaison, faite <strong>au même endroit, sur la même route, dans les mêmes conditions</strong>. Les mentions indiquent ce qui est allumé, à gauche et à droite.</p>
-
-        <figure>
-            <img src="/images/colight/colight-apex-comparaison-code.jpg" alt="Comparaison nocturne sur route de campagne : à gauche, éclairage d'origine Honda seul ; à droite, avec les feux COLIGHT Apex" loading="lazy">
+        <figure class="comparaison">
+            <picture>
+                <source type="image/webp" srcset="/images/colight/colight-apex-comparaison-code.webp">
+                <img src="/images/colight/colight-apex-comparaison-code.jpg" alt="Comparaison nocturne sur route de campagne : à gauche, éclairage d'origine Honda seul ; à droite, avec les feux COLIGHT Apex" width="1100" height="618" loading="lazy" decoding="async">
+            </picture>
             <figcaption>Feux de croisement : à gauche l'éclairage d'origine seul, à droite avec les Apex.</figcaption>
         </figure>
-
-        <figure>
-            <img src="/images/colight/colight-apex-comparaison-phare.jpg" alt="Comparaison nocturne sur la même route : à gauche, phares et antibrouillards d'origine ; à droite, avec les feux COLIGHT Apex" loading="lazy">
+        <figure class="comparaison">
+            <picture>
+                <source type="image/webp" srcset="/images/colight/colight-apex-comparaison-phare.webp">
+                <img src="/images/colight/colight-apex-comparaison-phare.jpg" alt="Comparaison nocturne sur la même route : à gauche, phares et antibrouillards d'origine ; à droite, avec les feux COLIGHT Apex" width="1100" height="618" loading="lazy" decoding="async">
+            </picture>
             <figcaption>En phares : à gauche l'éclairage d'origine, à droite avec les Apex.</figcaption>
         </figure>
 
@@ -407,8 +410,6 @@ blockquote cite{display:block;margin-top:.7rem;font-style:normal;font-size:.83re
 
         <p>De nuit, sur piste et hors agglomération, mieux lire le terrain change la conduite. Sur ces trois sorties, j'ai ressenti une meilleure perception de l'environnement.</p>
 
-        <p><strong>Une chose à savoir avant d'acheter :</strong> ces feux sont conçus pour le <strong>tout-terrain</strong> — pistes, chemins, terrain libre. C'est leur domaine. <strong>Ils ne sont pas homologués pour rouler sur la route</strong> : le fabricant me l'a confirmé, ses éclairages sont « spécialement conçus pour le tout-terrain » et la certification européenne ECE est « une démarche en cours », donc pas encore obtenue.</p>
-
         <!-- ══════ 14. CE QUE J'AI FAIT ══════ -->
         <h2><span class="n">13.</span> Ce que j'ai fait, et quand</h2>
 
@@ -433,6 +434,7 @@ blockquote cite{display:block;margin-top:.7rem;font-style:normal;font-size:.83re
             <div class="etape fait">
                 <h3>Publication de la vidéo de test</h3>
                 <p class="quand">21 septembre 2026</p>
+                <p>Test de nuit filmé en intégralité, montage publié avec les chapitres.</p>
                 
             </div>
         </div>
