@@ -46,6 +46,18 @@ jobs:
             exit 1
           fi
 
+
+      - name: Index de recherche à jour
+        run: |
+          python3 scripts/generer_index_recherche.py --verifier || {
+            echo "::error::data/site-index.json est désynchronisé — des pages publiées sont introuvables par la recherche du site. Lancez scripts/generer_index_recherche.py puis committez."
+            exit 1
+          }
+          python3 scripts/generer_sitemap.py --verifier || {
+            echo "::error::sitemap.xml est désynchronisé — lancez scripts/generer_sitemap.py puis committez."
+            exit 1
+          }
+
       - name: Audit maillage (bloque sur ERROR)
         run: python3 scripts/audit_maillage.py --strict
 
