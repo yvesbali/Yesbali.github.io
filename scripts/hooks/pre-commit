@@ -1,0 +1,85 @@
+#!/bin/bash
+# ══════════════════════════════════════════════════════════════════════════════
+# GARDE-FOU LOCAL DU SITE LCDMH  (versionné — installer avec :
+#   bash scripts/installer_garde_fou_sitemap.sh )
+#
+# Principe : ce hook exécute EXACTEMENT les mêmes contrôles que le robot GitHub
+# (.github/workflows/audit-maillage.yml). Un échec est donc bloqué ici, sur le
+# VPS — jamais sur GitHub, jamais par mail chez Yves.
+#
+# Vécu 21/09/2026 : le robot a échoué 7 fois en 28 minutes → 7 mails
+# « Run failed: Contrôle maillage LCDMH » dans la boîte d'Yves. Cause : le hook
+# ne vérifiait que 2 contrôles sur 5. Le n°2 (build idempotent) échouait à chaque
+# push sans qu'on le sache avant.
+#
+# ⚠️ .git/hooks n'est PAS versionné : relancer l'installeur après tout clone.
+# ══════════════════════════════════════════════════════════════════════════════
+REPO="$(git rev-parse --show-toplevel)"
+cd "$REPO" || exit 0
+ECHEC=0
+
+rouge() { echo ""; echo "🔴 $1 — commit refusé."; echo "$2"; echo ""; }
+
+# ── 1. La source unique du maillage doit exister ──────────────────────────────
+if [ ! -f "data/maillage.json" ]; then
+  rouge "SOURCE UNIQUE DU MAILLAGE ABSENTE" "   data/maillage.json est introuvable."
+  exit 1
+fi
+
+# ── 2. LE BUILD DOIT ÊTRE IDEMPOTENT ─────────────────────────────────────────
+# Le contrôle qui manquait et qui a causé les 7 mails du 21/09.
+# Si le build modifie une page HTML, c'est que le dépôt n'est pas à jour :
+# GitHub le détectera à son tour et enverra un mail.
+if [ -f "scripts/build_maillage.py" ]; then
+  python3 scripts/build_maillage.py >/dev/null 2>&1
+  if ! git diff --quiet -- '*.html'; then
+    echo ""
+    echo "🔴 LE BUILD DU MAILLAGE MODIFIE DES PAGES HTML — commit refusé."
+    echo ""
+    git diff --stat -- '*.html' | tail -12 | sed 's/^/   /'
+    echo ""
+    echo "   → les pages ne correspondent pas à data/maillage.json."
+    echo "   → lancer : python3 scripts/build_maillage.py  puis ajouter les pages modifiées"
+    echo "   → ou forcer : git commit --no-verify"
+    echo ""
+    exit 1
+  fi
+fi
+
+# ── 3. Le sitemap doit correspondre au contenu réel ───────────────────────────
+if [ -f "scripts/generer_sitemap.py" ]; then
+  SORTIE=$(python3 scripts/generer_sitemap.py --verifier 2>&1)
+  if [ $? -ne 0 ]; then
+    rouge "SITEMAP DÉSYNCHRONISÉ" "$SORTIE
+   → lancer : python3 scripts/generer_sitemap.py  puis re-commiter"
+    ECHEC=1
+  fi
+fi
+
+# ── 4. L'index de recherche doit être à jour ──────────────────────────────────
+# Vécu 22/09/2026 : la recherche du site ne trouvait pas des pages publiées
+# depuis des semaines — le fichier était maintenu à la main.
+if [ -f "scripts/generer_index_recherche.py" ]; then
+  SORTIE2=$(python3 scripts/generer_index_recherche.py --verifier 2>&1)
+  if [ $? -ne 0 ]; then
+    rouge "INDEX DE RECHERCHE DU SITE DÉSYNCHRONISÉ" "$SORTIE2
+   → lancer : python3 scripts/generer_index_recherche.py  puis re-commiter"
+    ECHEC=1
+  fi
+fi
+
+# ── 5. L'audit du maillage ne doit pas remonter d'ERREUR ──────────────────────
+if [ -f "scripts/audit_maillage.py" ]; then
+  python3 scripts/audit_maillage.py --strict >/tmp/audit_maillage_hook.log 2>&1
+  if [ $? -ne 0 ]; then
+    rouge "AUDIT DU MAILLAGE EN ERREUR" "$(tail -20 /tmp/audit_maillage_hook.log)
+   → rapport complet : python3 scripts/audit_maillage.py"
+    ECHEC=1
+  fi
+fi
+
+if [ "$ECHEC" -ne 0 ]; then exit 1; fi
+
+# ── Résumé silencieux quand tout va bien ─────────────────────────────────────
+echo "✅ garde-fou site : maillage idempotent, sitemap, recherche, audit — OK"
+exit 0
