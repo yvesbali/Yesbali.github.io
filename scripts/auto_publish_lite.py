@@ -113,6 +113,35 @@ def youtube_api_get(endpoint, params):
         return None
 
 
+def garder_uniquement_publiques(videos):
+    """Ne conserve que les videos REELLEMENT publiques.
+
+    Pourquoi c'est indispensable : quand on interroge l'API avec le jeton du
+    PROPRIETAIRE de la chaine, une video privee remonte avec son vrai titre
+    (le filtre sur le titre « Private video » ne la voit donc pas). Une video
+    privee publiee sur le site = lien mort et fuite de contenu non publie.
+
+    On demande donc le statut reel, par paquets de 50 (limite de l'API).
+    Les identifiants inexistants disparaissent aussi : l'API ne les renvoie pas.
+    """
+    ids = [v["video_id"] for v in videos]
+    publiques = set()
+    for i in range(0, len(ids), 50):
+        paquet = ids[i:i + 50]
+        data = youtube_api_get("videos", {"part": "status", "id": ",".join(paquet)})
+        if not data:
+            continue
+        for item in data.get("items", []):
+            if item.get("status", {}).get("privacyStatus") == "public":
+                publiques.add(item["id"])
+
+    gardees = [v for v in videos if v["video_id"] in publiques]
+    ecartees = len(videos) - len(gardees)
+    if ecartees:
+        log(f"{ecartees} video(s) ecartee(s) (privee, non repertoriee ou inexistante)")
+    return gardees
+
+
 def get_playlist_videos(playlist_id, max_results=50):
     """Recupere les videos d'une playlist YouTube."""
     videos = []
@@ -166,7 +195,8 @@ def get_playlist_videos(playlist_id, max_results=50):
         if not page_token or len(videos) >= max_results:
             break
 
-    return videos
+    # Regle absolue : seules les videos PUBLIQUES vont sur le site
+    return garder_uniquement_publiques(videos)
 
 
 # ══════════════════════════════════════════════════════════════════
