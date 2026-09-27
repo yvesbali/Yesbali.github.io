@@ -1,6 +1,6 @@
 {
   "$schema": "lcdmh-maillage-v1",
-  "genere_le": "2026-09-21",
+  "genere_le": "2026-09-27T11:19:23",
   "description": "SOURCE UNIQUE DU MAILLAGE ÉDITORIAL LCDMH. Chaque relation est une question logique du lecteur, jamais un mot-clé. Le script build_maillage.py génère les blocs HTML depuis ce fichier. NE PAS éditer les blocs HTML à la main : modifier ce fichier puis relancer le build.",
   "regles": [
     "Une relation doit répondre à : quelle est la prochaine question logique du lecteur ?",
@@ -7140,6 +7140,86 @@
       "type": "SIBLING",
       "bloc": "maillage_section",
       "justification": "le lecteur qui cherche un code veut voir le test"
+    },
+    {
+      "source": "/articles/choisir-son-pneu-moto.html",
+      "cible": "/pneus.html",
+      "ancre": "🛞 Tous mes pneus moto passés au test",
+      "type": "PARENT",
+      "bloc": "maillage_section",
+      "justification": "choisir un pneu → revenir au hub de la catégorie pour comparer les modèles"
+    },
+    {
+      "source": "/articles/choisir-son-pneu-moto.html",
+      "cible": "/articles/metzeler-roadtec-02-vs-michelin-road-6-gt.html",
+      "ancre": "⚖️ Metzeler Roadtec 02 face au Michelin Road 6 GT",
+      "type": "COMPARISON",
+      "bloc": "maillage_section",
+      "justification": "après avoir compris les critères, la comparaison des deux pneus route de référence"
+    },
+    {
+      "source": "/articles/choisir-son-pneu-moto.html",
+      "cible": "/articles/t33-vs-road-6.html",
+      "ancre": "🏁 Bridgestone T33 ou Michelin Road 6 : le duel",
+      "type": "COMPARISON",
+      "bloc": "maillage_section",
+      "justification": "deuxième comparaison utile avant l'achat, sur un autre budget"
+    },
+    {
+      "source": "/articles/carpuride-ou-aoocci-ecran-gps-moto.html",
+      "cible": "/gps.html",
+      "ancre": "🗺️ Choisir son GPS moto : le comparatif complet",
+      "type": "PARENT",
+      "bloc": "maillage_section",
+      "justification": "l'article compare deux écrans → remonter au hub GPS moto"
+    },
+    {
+      "source": "/articles/carpuride-ou-aoocci-ecran-gps-moto.html",
+      "cible": "/carpuride.html",
+      "ancre": "📺 Carpuride : toute la gamme d'écrans CarPlay moto",
+      "type": "NAVIGATION",
+      "bloc": "maillage_section",
+      "justification": "le lecteur veut voir la marque retenue en détail"
+    },
+    {
+      "source": "/articles/carpuride-ou-aoocci-ecran-gps-moto.html",
+      "cible": "/aoocci.html",
+      "ancre": "📱 Aoocci : l'alternative CarPlay moins chère",
+      "type": "NAVIGATION",
+      "bloc": "maillage_section",
+      "justification": "l'autre marque citée dans la comparaison, à examiner en détail"
+    },
+    {
+      "source": "/articles/carpuride-ou-aoocci-ecran-gps-moto.html",
+      "cible": "/articles/carpuride-w702-plus-retour-usage-intensif.html",
+      "ancre": "🧭 Carpuride W702 Plus : le retour après usage intensif",
+      "type": "NEXT_STEP",
+      "bloc": "maillage_section",
+      "justification": "après le choix du modèle, le retour de terrain sur le W702 Plus"
+    },
+    {
+      "source": "/pneus.html",
+      "cible": "/articles/metzeler-roadtec-02-vs-michelin-road-6-gt.html",
+      "ancre": "⚖️ Metzeler Roadtec 02 face au Michelin Road 6 GT",
+      "type": "COMPARISON",
+      "bloc": "maillage_section",
+      "justification": "le hub pneus doit renvoyer vers son comparatif route le plus récent"
+    },
+    {
+      "source": "/equipement.html",
+      "cible": "/articles/guide-nettoyage-bulle-moto.html",
+      "ancre": "🧼 Nettoyer sa visière et sa bulle sans les rayer",
+      "type": "NEXT_STEP",
+      "bloc": "maillage_section",
+      "justification": "depuis le hub équipement : entretenir son matériel, la question suivante du lecteur"
+    },
+    {
+      "source": "/articles/guide-nettoyage-bulle-moto.html",
+      "cible": "/equipement.html",
+      "ancre": "🧰 Tout l'équipement moto : le sommaire",
+      "type": "PARENT",
+      "bloc": "maillage_section",
+      "justification": "remonter au hub depuis le guide d'entretien"
     }
   ]
 }

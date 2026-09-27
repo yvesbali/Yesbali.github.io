@@ -13,7 +13,7 @@ Usage :
     python scripts/audit_maillage.py
     python scripts/audit_maillage.py --strict   # exit 1 si ERROR
 """
-import os, re, json, sys, collections, html
+import os, re, json, sys, collections, html, posixpath
 
 # RACINE auto-détectée : le dépôt est le parent du dossier scripts/
 RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,6 +21,10 @@ SOURCE = os.path.join(RACINE, "data", "maillage.json")
 
 # navigation globale : à NE PAS compter comme maillage éditorial
 NAV_FICHIERS = {"nav.html", "footer.html"}
+# FRAGMENTS : bouts de page inclus ailleurs (jamais autonomes, jamais dans le sitemap).
+# Ne doivent déclencher ni « sans bloc », ni « orpheline », ni « cul-de-sac ».
+FRAGMENTS = {"nav.html", "footer.html", "header.html", "sitemap.html"}
+PREFIXES_FRAGMENTS = ("widget-",)
 NAV_CLASSES = ["lcdmh-dropdown", "breadcrumb", "hero-crumbs", "lcdmh-nav",
                "site-footer", "lcdh-footer", "lcdmh-footer", "menu-"]
 # exceptions légitimes d'auto-lien
@@ -55,8 +59,38 @@ def liens_editoriaux(t):
     return out
 
 
-def liens_tous(t):
-    return re.findall(r'href="(/[^"#?]*?\.html)"', t)
+def resoudre(page_url, href):
+    """Résout un href (absolu OU relatif) en URL canonique de page du site.
+    Corrige le faux positif vécu : les liens relatifs (`jours/jour-01.html`,
+    `articles/x.html`, `../y.html`) n'étaient PAS comptés → des pages pourtant
+    liées étaient signalées orphelines (détecteur trop étroit, cf. PIÈGE N°4)."""
+    if not isinstance(href, str):
+        return None
+    if href.startswith(("http://", "https://", "mailto:", "tel:", "javascript:", "#", "data:")):
+        return None
+    href = href.split("#")[0].split("?")[0].strip()
+    if not href.endswith(".html"):
+        return None
+    if href.startswith("/"):
+        return posixpath.normpath(href)
+    if href in ("", "."):
+        return None
+    return posixpath.normpath(posixpath.join(posixpath.dirname(page_url), href))
+
+
+def liens_tous(page_url, t):
+    out = []
+    for m in re.finditer(r'href="([^"]+)"', t):
+        u = resoudre(page_url, m.group(1))
+        if u:
+            out.append(u)
+    return out
+
+
+def est_fragment(u):
+    """Fichier inclus ailleurs (nav, footer, widget-*) : ni autonome ni à mailler."""
+    nom = u.rsplit("/", 1)[-1]
+    return nom in FRAGMENTS or nom.startswith(PREFIXES_FRAGMENTS)
 
 
 def main():
@@ -77,7 +111,7 @@ def main():
 
     # ── B. LIENS CASSÉS (tout le site)
     for u, p in pages.items():
-        for l in set(liens_tous(p["html"])):
+        for l in set(liens_tous(u, p["html"])):
             c = l.lstrip("/")
             if not (os.path.exists(os.path.join(RACINE, c)) or
                     os.path.exists(os.path.join(RACINE, c, "index.html"))):
@@ -109,7 +143,7 @@ def main():
 
     # ── F. PAGES SANS BLOC
     for u, p in pages.items():
-        if u in ("/nav.html", "/footer.html") or "noindex" in p["html"].lower():
+        if est_fragment(u) or "noindex" in p["html"].lower():
             continue
         if "MAILLAGE_STATIQUE_SEO" not in p["html"]:
             warnings.append(f"SANS BLOC : {u} (aucune recommandation éditoriale)")
@@ -117,19 +151,19 @@ def main():
     # ── G. PAGES ORPHELINES (aucun lien entrant éditorial ni navigation)
     entrants = collections.defaultdict(set)
     for u, p in pages.items():
-        for l in set(liens_tous(p["html"])):
+        for l in set(liens_tous(u, p["html"])):
             entrants[l].add(u)
     for u in indexables:
-        if u in ("/", "/index.html"):
+        if u in ("/", "/index.html") or est_fragment(u):
             continue
         if not entrants.get(u):
             warnings.append(f"ORPHELINE : {u} (aucun lien entrant)")
 
     # ── H. CULS-DE-SAC (aucune sortie contextuelle)
     for u, p in indexables.items():
-        if u in ("/", "/index.html"):
+        if u in ("/", "/index.html") or est_fragment(u):
             continue
-        if not liens_editoriaux(p["html"]) and not liens_tous(p["html"]):
+        if not liens_editoriaux(p["html"]) and not liens_tous(u, p["html"]):
             warnings.append(f"CUL-DE-SAC : {u}")
 
     # ── I. CIBLES NOINDEX recevant beaucoup de liens éditoriaux
@@ -141,7 +175,7 @@ def main():
     # ── J. PROFONDEUR depuis l'accueil (BFS)
     graphe = collections.defaultdict(set)
     for u, p in pages.items():
-        for l in set(liens_tous(p["html"])):
+        for l in set(liens_tous(u, p["html"])):
             if l != u:
                 graphe[u].add(l)
     prof = {"/": 0, "/index.html": 0}
