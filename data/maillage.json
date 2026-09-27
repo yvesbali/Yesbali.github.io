@@ -1,6 +1,6 @@
 {
   "$schema": "lcdmh-maillage-v1",
-  "genere_le": "2026-09-27T11:19:23",
+  "genere_le": "2026-09-27T11:26:54",
   "description": "SOURCE UNIQUE DU MAILLAGE ÉDITORIAL LCDMH. Chaque relation est une question logique du lecteur, jamais un mot-clé. Le script build_maillage.py génère les blocs HTML depuis ce fichier. NE PAS éditer les blocs HTML à la main : modifier ce fichier puis relancer le build.",
   "regles": [
     "Une relation doit répondre à : quelle est la prochaine question logique du lecteur ?",
@@ -7220,6 +7220,22 @@
       "type": "PARENT",
       "bloc": "maillage_section",
       "justification": "remonter au hub depuis le guide d'entretien"
+    },
+    {
+      "source": "/espagne-2023.html",
+      "cible": "/roadtrips/road-trip-espagne-solo.html",
+      "ancre": "🇪🇸 L'Espagne en solo : le carnet de route complet",
+      "type": "NEXT_STEP",
+      "bloc": "maillage_section",
+      "justification": "depuis la page Espagne, le récit détaillé du voyage en solo"
+    },
+    {
+      "source": "/alpes-cols-mythiques.html",
+      "cible": "/alpes-cols-mythiques-episode-01.html",
+      "ancre": "📼 Cols mythiques des Alpes — épisode 1 (Benelli TRK 502)",
+      "type": "CHILD",
+      "bloc": "maillage_section",
+      "justification": "la page des cols doit lier son premier épisode vidéo (0 lien déclaré aujourd'hui)"
     }
   ]
 }
