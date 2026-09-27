@@ -24,7 +24,15 @@ MARQUEUR_FIN = "<!-- FIN_MAILLAGE_STATIQUE_SEO -->"
 EXCLUES_SORTIE = {"/codes-promo.html", "/mentions-legales.html", "/a-propos.html",
                   "/articles.html", "/roadbooks.html"}
 
-MAX_LIENS = 8   # borne : la pertinence domine, on ne dépile pas 129 liens
+MAX_LIENS = 12  # borne par page. La pertinence domine, mais 8 était TROP BAS :
+                # mesuré le 27/09/2026 → 469 relations publiées sur 891 déclarées (53 %).
+                # À 12 : 532 publiées. Le tri ci-dessous répartit en plus les liens
+                # vers les pages qui en manquent (fin des orphelines par plafond).
+
+# Types ÉDITORIAUX prioritaires : ils ne doivent jamais être évincés par les
+# relations de masse (DESTINATION / EQUIPMENT / SIBLING issues de l'ancien import).
+TYPES_PRIORITAIRES = ("PARENT", "CHILD", "PREPARATION", "COMPARISON", "NEXT_STEP",
+                      "EXPERIENCE", "REGULATION", "NAVIGATION")
 
 
 def charger():
@@ -33,16 +41,33 @@ def charger():
 
 
 def relations_par_page(data):
+    """Sélection DÉTERMINISTE des liens publiés sur chaque page.
+
+    Deux règles apprises à l'usage :
+      1. **Équité** : à type égal, on sert d'abord la cible qui a le MOINS de
+         relations entrantes déclarées → une page oubliée remonte, au lieu d'être
+         écartée par l'ordre alphabétique (cause des orphelines « par plafond »).
+      2. **Priorité éditoriale** : les types éditoriaux sont placés avant les
+         relations de masse, donc jamais évincés par le plafond.
+    """
     par = collections.defaultdict(list)
+    entrees = collections.Counter()
     for r in data["relations"]:
         if r["cible"] in EXCLUES_SORTIE:
             continue
         par[r["source"]].append(r)
-    # tri déterministe : par type puis par cible (évite les variations d'ordre)
+        entrees[r["cible"]] += 1
+
     ORDRE = ["PARENT", "CHILD", "DESTINATION", "PREPARATION", "EQUIPMENT",
              "NAVIGATION", "REGULATION", "EXPERIENCE", "COMPARISON", "SIBLING", "NEXT_STEP"]
+
+    def rang_type(t):
+        if t in TYPES_PRIORITAIRES:
+            return ORDRE.index(t)
+        return len(ORDRE) + (ORDRE.index(t) if t in ORDRE else 99)
+
     for u in par:
-        par[u].sort(key=lambda x: (ORDRE.index(x["type"]) if x["type"] in ORDRE else 99, x["cible"]))
+        par[u].sort(key=lambda x: (rang_type(x["type"]), entrees[x["cible"]], x["cible"]))
         par[u] = par[u][:MAX_LIENS]
     return par
 
