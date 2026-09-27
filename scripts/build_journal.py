@@ -109,10 +109,14 @@ def videos(cid):
 
 def card(v):
     u = f"https://www.youtube.com/watch?v={v['id']}"
-    th = f"https://i.ytimg.com/vi/{v['id']}/hqdefault.jpg"
+    # Vignette 16:9 native + repli 4:3 : une hqdefault.jpg seule est rognée dans un
+    # cadre 16:9 (les titres incrustés sautent) — règle imposée par l'audit du site.
+    th = f"https://i.ytimg.com/vi/{v['id']}/maxresdefault.jpg"
+    th_repli = f"https://i.ytimg.com/vi/{v['id']}/hqdefault.jpg"
     d = f"{v['dt'].day} {MOIS[v['dt'].month]} {v['dt'].year}"
     return (f'<div class="jc"><div class="jt"><span class="jb">{html.escape(d)}</span>'
-            f'<a href="{u}" target="_blank" rel="noopener"><img src="{th}" alt="" loading="lazy"></a></div>'
+            f'<a href="{u}" target="_blank" rel="noopener"><img src="{th}"'
+            f' onerror="this.onerror=null;this.src=\'{th_repli}\'" alt="" loading="lazy"></a></div>'
             f'<div class="jd"><h2>{html.escape(v["title"])}</h2>'
             f'<a class="bs" href="{u}" target="_blank" rel="noopener">Voir la video</a></div></div>')
 
