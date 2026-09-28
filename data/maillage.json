@@ -1,6 +1,6 @@
 {
   "$schema": "lcdmh-maillage-v1",
-  "genere_le": "2026-09-27T11:26:54",
+  "genere_le": "2026-09-28T18:38:14",
   "description": "SOURCE UNIQUE DU MAILLAGE ÉDITORIAL LCDMH. Chaque relation est une question logique du lecteur, jamais un mot-clé. Le script build_maillage.py génère les blocs HTML depuis ce fichier. NE PAS éditer les blocs HTML à la main : modifier ce fichier puis relancer le build.",
   "regles": [
     "Une relation doit répondre à : quelle est la prochaine question logique du lecteur ?",
@@ -7236,6 +7236,30 @@
       "type": "CHILD",
       "bloc": "maillage_section",
       "justification": "la page des cols doit lier son premier épisode vidéo (0 lien déclaré aujourd'hui)"
+    },
+    {
+      "source": "/photo-video.html",
+      "cible": "/articles/filmer-son-road-trip-moto-setup-camera-dji-gopro.html",
+      "ancre": "🎬 Mon setup vidéo complet : matériel, réglages et logistique",
+      "type": "NEXT_STEP",
+      "bloc": "maillage_section",
+      "justification": "depuis la page matériel, le lecteur veut la mise en pratique : quel appareil pour quel plan, et comment tout alimenter"
+    },
+    {
+      "source": "/articles/filmer-son-road-trip-moto-setup-camera-dji-gopro.html",
+      "cible": "/photo-video.html",
+      "ancre": "📹 Tout mon matériel vidéo, page par page",
+      "type": "PARENT",
+      "bloc": "maillage_section",
+      "justification": "le hub matériel du site : l'article en détail renvoie à la vue d'ensemble"
+    },
+    {
+      "source": "/articles/filmer-son-road-trip-moto-setup-camera-dji-gopro.html",
+      "cible": "/bagagerie-moto.html",
+      "ancre": "🎒 Bagagerie moto : comment je répartis tout ce matériel",
+      "type": "NEXT_STEP",
+      "bloc": "maillage_section",
+      "justification": "après le matériel, la question du rangement sur la moto"
     }
   ]
 }
