@@ -265,10 +265,14 @@ def generate_journal_entry_html(video: Dict[str, Any]) -> str:
     date_label = video.get("date_label", "")
     video_id = video.get("video_id", "")
     view_count = video.get("view_count", 0)
-    
+    # Vignette 16:9 native + repli : l'API YouTube renvoie « high » = hqdefault.jpg
+    # (480x360, 4:3) pour les Shorts → image rognée dans un cadre 16:9. On force donc
+    # le maxres (16:9), avec repli sur la vignette fournie si elle n'existe pas.
+    thumb_169 = f"https://i.ytimg.com/vi/{video_id}/maxresdefault.jpg" if video_id else thumb
+
     return f'''<article class="journal-card" data-video-id="{video_id}">
-<div class="journal-thumb" style="background-image:url('{thumb}')">
-<img src="{thumb}" alt="{title}" loading="lazy">
+<div class="journal-thumb" style="background-image:url('{thumb_169}')">
+<img src="{thumb_169}" onerror="this.onerror=null;this.src='{thumb}'" alt="{title}" loading="lazy">
 <span class="journal-badge">{date_label}</span>
 </div>
 <div class="journal-body">
@@ -297,9 +301,10 @@ def generate_main_card_html(video: Dict[str, Any], entry_num: int = 1) -> str:
     video_id = video.get("video_id", "")
     view_count = video.get("view_count", 0)
     date_label = video.get("date_label", "")
-    
+    thumb_169 = f"https://i.ytimg.com/vi/{video_id}/maxresdefault.jpg" if video_id else thumb
+
     return f'''<article class="jc" data-video-id="{video_id}">
-<img src="{thumb}" alt="{title}">
+<img src="{thumb_169}" onerror="this.onerror=null;this.src='{thumb}'" alt="{title}">
 <div class="jb">
 <div class="jm">{date_label} • 👁️ {view_count:,} vues</div>
 <h3>{title[:50]}{'...' if len(title) > 50 else ''}</h3>
