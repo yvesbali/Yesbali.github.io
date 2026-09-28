@@ -1,6 +1,6 @@
 {
   "$schema": "lcdmh-maillage-v1",
-  "genere_le": "2026-09-28T18:38:14",
+  "genere_le": "2026-09-28T19:43:36",
   "description": "SOURCE UNIQUE DU MAILLAGE ÉDITORIAL LCDMH. Chaque relation est une question logique du lecteur, jamais un mot-clé. Le script build_maillage.py génère les blocs HTML depuis ce fichier. NE PAS éditer les blocs HTML à la main : modifier ce fichier puis relancer le build.",
   "regles": [
     "Une relation doit répondre à : quelle est la prochaine question logique du lecteur ?",
@@ -328,7 +328,7 @@
     {
       "source": "/alpes/annecy-et-ses-environs-moto.html",
       "cible": "/carpuride.html",
-      "ancre": "Carpuride",
+      "ancre": "Carpuride W702 Pro : mon avis après 5 000 km",
       "type": "EQUIPMENT",
       "bloc": "a_lire_aussi",
       "justification": "relation existante détectée dans a_lire_aussi"
@@ -672,7 +672,7 @@
     {
       "source": "/aoocci.html",
       "cible": "/carpuride.html",
-      "ancre": "Carpuride CarPlay",
+      "ancre": "Carpuride W702 Pro : prix, promo et différences",
       "type": "EQUIPMENT",
       "bloc": "maillage_box",
       "justification": "relation existante détectée dans maillage_box"
@@ -888,7 +888,7 @@
     {
       "source": "/articles/350-km-dans-le-froid-norvegien-le-vent-du-groenland-ma-brise.html",
       "cible": "/carpuride.html",
-      "ancre": "Carpuride",
+      "ancre": "Différence entre Carpuride W702 et W702 Pro",
       "type": "EQUIPMENT",
       "bloc": "a_lire_aussi",
       "justification": "relation existante détectée dans a_lire_aussi"
@@ -1016,7 +1016,7 @@
     {
       "source": "/articles/aferiy-nano-100-autonomie-electrique-en-road-trip.html",
       "cible": "/carpuride.html",
-      "ancre": "Carpuride",
+      "ancre": "Écran CarPlay moto : le test du Carpuride W702 Pro",
       "type": "EQUIPMENT",
       "bloc": "a_lire_aussi",
       "justification": "relation existante détectée dans a_lire_aussi"
@@ -1104,7 +1104,7 @@
     {
       "source": "/articles/alpes-en-moto-barcelonnette-cuneo-benelli-trk-502-ep3.html",
       "cible": "/carpuride.html",
-      "ancre": "Carpuride",
+      "ancre": "Carpuride W702 Plus : mon retour d'usage",
       "type": "EQUIPMENT",
       "bloc": "a_lire_aussi",
       "justification": "relation existante détectée dans a_lire_aussi"
@@ -1192,7 +1192,7 @@
     {
       "source": "/articles/balade-moto-massif-des-bauges-semnoz-col-du-frene-savoie.html",
       "cible": "/carpuride.html",
-      "ancre": "Carpuride",
+      "ancre": "Quel Carpuride choisir : W702, W702 Pro, S Pro",
       "type": "EQUIPMENT",
       "bloc": "a_lire_aussi",
       "justification": "relation existante détectée dans a_lire_aussi"
@@ -1280,7 +1280,7 @@
     {
       "source": "/articles/bivouac-moto-comment-bien-dormir-en-tente-test-nemo-sonic-0.html",
       "cible": "/carpuride.html",
-      "ancre": "Carpuride",
+      "ancre": "Carpuride W702 Pro : mon avis après 5 000 km",
       "type": "EQUIPMENT",
       "bloc": "a_lire_aussi",
       "justification": "relation existante détectée dans a_lire_aussi"
@@ -1424,7 +1424,7 @@
     {
       "source": "/articles/blackview-xplore-x1-le-telephone-qui-ne-lache-jamais-en-road.html",
       "cible": "/carpuride.html",
-      "ancre": "Carpuride",
+      "ancre": "Carpuride W702 Pro : prix, promo et différences",
       "type": "EQUIPMENT",
       "bloc": "a_lire_aussi",
       "justification": "relation existante détectée dans a_lire_aussi"
@@ -1608,7 +1608,7 @@
     {
       "source": "/articles/budget-road-trip-moto-norvege-ferries-couchage-conseils.html",
       "cible": "/carpuride.html",
-      "ancre": "Carpuride",
+      "ancre": "Différence entre Carpuride W702 et W702 Pro",
       "type": "EQUIPMENT",
       "bloc": "a_lire_aussi",
       "justification": "relation existante détectée dans a_lire_aussi"
@@ -1792,7 +1792,7 @@
     {
       "source": "/articles/dunlop-mutant-vs-bridgestone-t33-le-combat-quel-pneu-choisir.html",
       "cible": "/carpuride.html",
-      "ancre": "Carpuride",
+      "ancre": "Écran CarPlay moto : le test du Carpuride W702 Pro",
       "type": "EQUIPMENT",
       "bloc": "a_lire_aussi",
       "justification": "relation existante détectée dans a_lire_aussi"
@@ -1896,7 +1896,7 @@
     {
       "source": "/articles/filmer-son-road-trip-moto-setup-camera-dji-gopro.html",
       "cible": "/carpuride.html",
-      "ancre": "Carpuride",
+      "ancre": "Carpuride W702 Plus : mon retour d'usage",
       "type": "EQUIPMENT",
       "bloc": "a_lire_aussi",
       "justification": "relation existante détectée dans a_lire_aussi"
@@ -1976,7 +1976,7 @@
     {
       "source": "/articles/geirangerfjord-a-moto-le-plus-beau-fjord-de-norvege-road-tri.html",
       "cible": "/carpuride.html",
-      "ancre": "Carpuride",
+      "ancre": "Quel Carpuride choisir : W702, W702 Pro, S Pro",
       "type": "EQUIPMENT",
       "bloc": "a_lire_aussi",
       "justification": "relation existante détectée dans a_lire_aussi"
@@ -2472,7 +2472,7 @@
     {
       "source": "/articles/guide-nettoyage-bulle-moto.html",
       "cible": "/carpuride.html",
-      "ancre": "Carpuride",
+      "ancre": "Carpuride W702 Pro : mon avis après 5 000 km",
       "type": "EQUIPMENT",
       "bloc": "a_lire_aussi",
       "justification": "relation existante détectée dans a_lire_aussi"
@@ -2616,7 +2616,7 @@
     {
       "source": "/articles/le-cap-nord-ca-va-mal-finir-cercle-arctique-polaire-road-tri.html",
       "cible": "/carpuride.html",
-      "ancre": "Carpuride",
+      "ancre": "Carpuride W702 Pro : prix, promo et différences",
       "type": "EQUIPMENT",
       "bloc": "a_lire_aussi",
       "justification": "relation existante détectée dans a_lire_aussi"
@@ -2744,7 +2744,7 @@
     {
       "source": "/articles/mekanik-annecy-honda-nt1100-panne-garantie.html",
       "cible": "/carpuride.html",
-      "ancre": "Carpuride",
+      "ancre": "Différence entre Carpuride W702 et W702 Pro",
       "type": "EQUIPMENT",
       "bloc": "a_lire_aussi",
       "justification": "relation existante détectée dans a_lire_aussi"
@@ -3160,7 +3160,7 @@
     {
       "source": "/articles/quel-carpuride-moto-choisir.html",
       "cible": "/carpuride.html",
-      "ancre": "Carpuride",
+      "ancre": "Écran CarPlay moto : le test du Carpuride W702 Pro",
       "type": "EQUIPMENT",
       "bloc": "a_lire_aussi",
       "justification": "relation existante détectée dans a_lire_aussi"
@@ -3352,7 +3352,7 @@
     {
       "source": "/articles/quel-telephone-pour-road-trip-blackview-x1-renforce-pluie-ch.html",
       "cible": "/carpuride.html",
-      "ancre": "Carpuride",
+      "ancre": "Carpuride W702 Plus : mon retour d'usage",
       "type": "EQUIPMENT",
       "bloc": "a_lire_aussi",
       "justification": "relation existante détectée dans a_lire_aussi"
@@ -3488,7 +3488,7 @@
     {
       "source": "/articles/t33-vs-road-6.html",
       "cible": "/carpuride.html",
-      "ancre": "Carpuride",
+      "ancre": "Quel Carpuride choisir : W702, W702 Pro, S Pro",
       "type": "EQUIPMENT",
       "bloc": "a_lire_aussi",
       "justification": "relation existante détectée dans a_lire_aussi"
@@ -4672,7 +4672,7 @@
     {
       "source": "/fil-moto.html",
       "cible": "/carpuride.html",
-      "ancre": "Carpuride CarPlay",
+      "ancre": "Carpuride W702 Pro : mon avis après 5 000 km",
       "type": "EQUIPMENT",
       "bloc": "maillage_box",
       "justification": "relation existante détectée dans maillage_box"
@@ -5024,7 +5024,7 @@
     {
       "source": "/gps.html",
       "cible": "/carpuride.html",
-      "ancre": "Carpuride CarPlay",
+      "ancre": "Carpuride W702 Pro : prix, promo et différences",
       "type": "EQUIPMENT",
       "bloc": "maillage_box",
       "justification": "relation existante détectée dans maillage_box"
