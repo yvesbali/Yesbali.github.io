@@ -1,6 +1,6 @@
 {
   "$schema": "lcdmh-maillage-v1",
-  "genere_le": "2026-09-28T19:43:36",
+  "genere_le": "2026-09-29T07:56:47",
   "description": "SOURCE UNIQUE DU MAILLAGE ÉDITORIAL LCDMH. Chaque relation est une question logique du lecteur, jamais un mot-clé. Le script build_maillage.py génère les blocs HTML depuis ce fichier. NE PAS éditer les blocs HTML à la main : modifier ce fichier puis relancer le build.",
   "regles": [
     "Une relation doit répondre à : quelle est la prochaine question logique du lecteur ?",
@@ -7260,6 +7260,22 @@
       "type": "NEXT_STEP",
       "bloc": "maillage_section",
       "justification": "après le matériel, la question du rangement sur la moto"
+    },
+    {
+      "source": "/carpuride.html",
+      "cible": "/articles/quel-carpuride-moto-choisir.html",
+      "ancre": "⚖️ Comparatif 2026 : les 4 modèles Carpuride côte à côte",
+      "type": "CHILD",
+      "bloc": "maillage_section",
+      "justification": "la page pilier du W702 Pro renvoie au comparatif dédié (évite que les deux pages se concurrencent)"
+    },
+    {
+      "source": "/articles/quel-carpuride-moto-choisir.html",
+      "cible": "/carpuride.html",
+      "ancre": "Carpuride W702 Pro : mon avis après 5 000 km",
+      "type": "NEXT_STEP",
+      "bloc": "maillage_section",
+      "justification": "le comparatif renvoie au test détaillé du modèle recommandé"
     }
   ]
 }
