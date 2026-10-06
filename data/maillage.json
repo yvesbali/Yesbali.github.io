@@ -1,6 +1,6 @@
 {
   "$schema": "lcdmh-maillage-v1",
-  "genere_le": "2026-09-29T07:56:47",
+  "genere_le": "2026-10-05T18:01:09",
   "description": "SOURCE UNIQUE DU MAILLAGE ÉDITORIAL LCDMH. Chaque relation est une question logique du lecteur, jamais un mot-clé. Le script build_maillage.py génère les blocs HTML depuis ce fichier. NE PAS éditer les blocs HTML à la main : modifier ce fichier puis relancer le build.",
   "regles": [
     "Une relation doit répondre à : quelle est la prochaine question logique du lecteur ?",
@@ -7276,6 +7276,118 @@
       "type": "NEXT_STEP",
       "bloc": "maillage_section",
       "justification": "le comparatif renvoie au test détaillé du modèle recommandé"
+    },
+    {
+      "source": "/articles/tenue-moto-4-saisons-spidi-test-road-trip.html",
+      "cible": "/equipement.html",
+      "ancre": "🧥 Équipement moto road trip : ma sélection terrain",
+      "type": "EQUIPMENT",
+      "bloc": "maillage_section",
+      "justification": "depuis un test vêtement : le lecteur veut voir l'ensemble de l'équipement de road trip"
+    },
+    {
+      "source": "/articles/tenue-moto-4-saisons-spidi-test-road-trip.html",
+      "cible": "/articles/bivouac-moto-quel-equipement.html",
+      "ancre": "Équipement de bivouac moto : la liste complète",
+      "type": "EQUIPMENT",
+      "bloc": "maillage_section",
+      "justification": "après le vêtement de route : la question de l'équipement de bivouac"
+    },
+    {
+      "source": "/articles/tenue-moto-4-saisons-spidi-test-road-trip.html",
+      "cible": "/intercoms.html",
+      "ancre": "Intercom moto : comment choisir le bon modèle",
+      "type": "EQUIPMENT",
+      "bloc": "maillage_section",
+      "justification": "l'intercom complète la tenue sur la route"
+    },
+    {
+      "source": "/articles/tenue-moto-4-saisons-spidi-test-road-trip.html",
+      "cible": "/pneus.html",
+      "ancre": "Pneus moto : tests et comparatif longue distance",
+      "type": "EQUIPMENT",
+      "bloc": "maillage_section",
+      "justification": "le pneu est l'autre poste d'équipement d'un road trip"
+    },
+    {
+      "source": "/articles/tenue-moto-4-saisons-spidi-test-road-trip.html",
+      "cible": "/articles/test-honda-nt1100-avis-25000-km-road-trip.html",
+      "ancre": "Honda NT1100 : mon avis après 25 000 km",
+      "type": "EXPERIENCE",
+      "bloc": "maillage_section",
+      "justification": "la tenue a été testée sur la NT1100 : le lecteur veut le retour sur la moto"
+    },
+    {
+      "source": "/articles/tenue-moto-4-saisons-spidi-test-road-trip.html",
+      "cible": "/roadtrips/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026.html",
+      "ancre": "Road trip moto Suisse, Tyrol & Dolomites 2026",
+      "type": "DESTINATION",
+      "bloc": "maillage_section",
+      "justification": "le test a été fait lors de ce voyage en montagne"
+    },
+    {
+      "source": "/articles/tenue-moto-4-saisons-spidi-test-road-trip.html",
+      "cible": "/cap-nord-moto.html",
+      "ancre": "Road trip Cap Nord à moto — 10 000 km solo",
+      "type": "EXPERIENCE",
+      "bloc": "maillage_section",
+      "justification": "l'expérience du froid et de la pluie longue vient de là"
+    },
+    {
+      "source": "/articles/tenue-moto-4-saisons-spidi-test-road-trip.html",
+      "cible": "/articles/bivouac-moto-comment-bien-dormir-en-tente-test-nemo-sonic-0.html",
+      "ancre": "Bien dormir en bivouac moto : le test de la tente",
+      "type": "PREPARATION",
+      "bloc": "maillage_section",
+      "justification": "la doudoune sert de veste au camping : suite logique, la nuit en bivouac"
+    },
+    {
+      "source": "/equipement.html",
+      "cible": "/articles/tenue-moto-4-saisons-spidi-test-road-trip.html",
+      "ancre": "Veste Spidi 4 SEASONS V3 : mon test après 1 500 km",
+      "type": "CHILD",
+      "bloc": "maillage_section",
+      "justification": "page fille du hub équipement : un test vêtement testé sur la route"
+    },
+    {
+      "source": "/articles/bivouac-moto-quel-equipement.html",
+      "cible": "/articles/tenue-moto-4-saisons-spidi-test-road-trip.html",
+      "ancre": "Quelle tenue pour le road trip ? Mon test Spidi",
+      "type": "EQUIPMENT",
+      "bloc": "maillage_section",
+      "justification": "le vêtement est la première pièce de l'équipement de bivouac"
+    },
+    {
+      "source": "/articles/test-honda-nt1100-avis-25000-km-road-trip.html",
+      "cible": "/articles/tenue-moto-4-saisons-spidi-test-road-trip.html",
+      "ancre": "Mon équipement : la tenue Spidi 4 SEASONS V3",
+      "type": "EXPERIENCE",
+      "bloc": "maillage_section",
+      "justification": "le compagnon d'équipement de la NT1100 sur les longs trajets"
+    },
+    {
+      "source": "/roadtrips/road-trip-moto-cols-suisse-tyrol-et-dolomites-2026.html",
+      "cible": "/articles/tenue-moto-4-saisons-spidi-test-road-trip.html",
+      "ancre": "Quelle tenue pour un road trip en montagne ?",
+      "type": "PREPARATION",
+      "bloc": "maillage_section",
+      "justification": "préparer le voyage : quel équipement contre les écarts de température"
+    },
+    {
+      "source": "/bagagerie-moto.html",
+      "cible": "/articles/tenue-moto-4-saisons-spidi-test-road-trip.html",
+      "ancre": "Tenue Spidi 4 SEASONS V3 : le test après 1 500 km",
+      "type": "EQUIPMENT",
+      "bloc": "maillage_section",
+      "justification": "charger sa moto et choisir sa tenue : deux questions de préparation liées"
+    },
+    {
+      "source": "/articles/bivouac-moto-comment-bien-dormir-en-tente-test-nemo-sonic-0.html",
+      "cible": "/articles/tenue-moto-4-saisons-spidi-test-road-trip.html",
+      "ancre": "La tenue Spidi 4 SEASONS V3 en bivouac",
+      "type": "PREPARATION",
+      "bloc": "maillage_section",
+      "justification": "la doudoune sert le soir au camping : suite logique"
     }
   ]
 }
