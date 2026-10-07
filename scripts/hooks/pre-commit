@@ -78,6 +78,28 @@ if [ -f "scripts/audit_maillage.py" ]; then
   fi
 fi
 
+# ── 6. Un article modifié ne doit pas se contredire lui-même ──────────────────
+# Vécu 06/10/2026 : l'article Spidi est parti en ligne avec une phrase disant
+# « je n'ai pas de tarif vérifié » juste au-dessus de la section qui donne les prix.
+# Cause : je modifie un article morceau par morceau et je vérifie chaque morceau
+# isolément — aucun contrôle ne relisait l'ENSEMBLE. C'est ici, au moment de la
+# publication, que ça doit se voir, jamais après.
+# Contrôle limité aux articles touchés par CE commit : instantané, et ça ne
+# re-vérifie pas des pages qui évoluent légitimement.
+if [ -f "scripts/audit_coherence_article.py" ]; then
+  ARTICLES_TOUCHES=$(git diff --cached --name-only --diff-filter=ACM -- 'articles/*.html')
+  for art in $ARTICLES_TOUCHES; do
+    [ -f "$art" ] || continue
+    if ! python3 scripts/audit_coherence_article.py "$art" >/tmp/coherence_hook.log 2>&1; then
+      rouge "ARTICLE QUI SE CONTREDIT : $art" "$(grep -E '🔴|la page NIE|et AFFIRME|ligne|→' /tmp/coherence_hook.log | head -16)
+   → corriger le texte (souvent : une phrase devenue fausse après une modification)
+   → rapport complet : python3 scripts/audit_coherence_article.py $art
+   → ou forcer : git commit --no-verify"
+      ECHEC=1
+    fi
+  done
+fi
+
 if [ "$ECHEC" -ne 0 ]; then exit 1; fi
 
 # ── Résumé silencieux quand tout va bien ─────────────────────────────────────
