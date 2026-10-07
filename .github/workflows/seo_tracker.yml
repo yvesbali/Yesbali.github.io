@@ -1,8 +1,21 @@
 name: LCDMH – SEO Tracker mensuel
-
+# 🔴 AUTOMATISATION RETIRÉE LE 07/10/2026 — ne se déclenche plus tout seul.
+#
+# Même incident que « Update YouTube feed » : échec à l'étape « Run SEO Tracker ».
+# Dernier succès le 01/09/2026, échec le 01/10. Cause : les secrets OAuth Google
+# stockés côté GitHub ne s'authentifient plus (l'étape « Setup credentials » fabrique
+# client_secrets.json / yt_token_analytics.json à partir d'eux).
+#
+# Les tokens Google/YouTube vivent désormais sur le VPS et y fonctionnent. Les chiffres
+# SEO mensuels sont déjà produits sur le VPS : cron « SEO — repère mensuel Search Console »
+# (1er du mois), qui interroge l'API Search Console directement.
+#
+# Conservé en LANCEMENT MANUEL seulement, pour arrêter l'email d'échec du 1er de chaque mois.
+# Pour le réactiver : reposer des secrets YT_CLIENT_SECRETS / YT_TOKEN_ANALYTICS valides,
+# puis remettre le bloc `schedule:` ci-dessous.
+#   schedule:
+#     - cron: '0 8 1 * *'
 on:
-  schedule:
-    - cron: '0 8 1 * *'
   workflow_dispatch:
 
 permissions:
