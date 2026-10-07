@@ -7388,6 +7388,54 @@
       "type": "PREPARATION",
       "bloc": "maillage_section",
       "justification": "la doudoune sert le soir au camping : suite logique"
+    },
+    {
+      "source": "/articles/zfe-moto-2026-villes-concernees.html",
+      "cible": "/articles/controle-technique-moto-2026-calendrier-prix-contre-visite.html",
+      "ancre": "Contrôle technique moto 2026 : la date limite du 31 décembre",
+      "type": "SIBLING",
+      "bloc": "maillage_section",
+      "justification": "deux obligations qui tombent en 2026 — le lecteur des ZFE a la même échéance"
+    },
+    {
+      "source": "/articles/choisir-son-pneu-moto.html",
+      "cible": "/articles/controle-technique-moto-2026-calendrier-prix-contre-visite.html",
+      "ancre": "Contrôle technique moto 2026 : ce qui fait recaler",
+      "type": "PREPARATION",
+      "bloc": "maillage_section",
+      "justification": "l'usure des pneus est un des points de contrôle : le lecteur qui choisit son pneu y sera confronté"
+    },
+    {
+      "source": "/articles/test-honda-nt1100-avis-25000-km-road-trip.html",
+      "cible": "/articles/controle-technique-moto-2026-calendrier-prix-contre-visite.html",
+      "ancre": "Contrôle technique moto : où en est ma NT1100 ?",
+      "type": "EXPERIENCE",
+      "bloc": "maillage_section",
+      "justification": "la moto de l'essai atteint l'échéance des 5 ans — question logique du lecteur"
+    },
+    {
+      "source": "/articles/controle-technique-moto-2026-calendrier-prix-contre-visite.html",
+      "cible": "/articles/zfe-moto-2026-villes-concernees.html",
+      "ancre": "ZFE et moto : ce que ton deux-roues risque en 2026",
+      "type": "SIBLING",
+      "bloc": "maillage_section",
+      "justification": "réciproque : même calendrier 2026, le lecteur enchaîne sur les autres règles"
+    },
+    {
+      "source": "/articles/preparation-pour-le-voyage-road-trip-en-trk-702.html",
+      "cible": "/articles/zfe-moto-2026-villes-concernees.html",
+      "ancre": "ZFE : les villes où ton road trip passe",
+      "type": "PREPARATION",
+      "bloc": "maillage_section",
+      "justification": "préparer un itinéraire impose de savoir quelles villes pénalisent le deux-roues"
+    },
+    {
+      "source": "/voyager-moto.html",
+      "cible": "/articles/zfe-moto-2026-villes-concernees.html",
+      "ancre": "ZFE moto 2026 : ce qui change pour voyager en France",
+      "type": "REGULATION",
+      "bloc": "maillage_section",
+      "justification": "le hub voyage doit signaler la contrainte réglementaire urbaine"
     }
   ]
 }
