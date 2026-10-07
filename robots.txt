@@ -4,9 +4,14 @@ Disallow: /nav.html
 Disallow: /widget-roadtrip-snippet.html
 # Dossier de travail interne
 Disallow: /data/
-# Page de redirection (ancien nom de l'article GPS U6) — ⚠️ le nom DOIT correspondre
-# exactement au fichier, sinon la règle ne s'applique pas et la page reste explorable.
-Disallow: /articles/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti.html
+# 🔴 ANCIENNE PAGE DE REDIRECTION GPS U6 — NE PAS LA BLOQUER ICI (corrigé 07/10/2026)
+# Elle est bloquée -> Google ne peut plus l'explorer -> il ne voit donc JAMAIS son
+# <meta name="robots" content="noindex"> et la garde indexée : Search Console remonte
+# « Indexée malgré le blocage par le fichier robots.txt ».
+# La bonne méthode pour sortir une page de l'index : LA LAISSER EXPLORABLE + noindex.
+# La page porte déjà noindex, follow + canonical vers /articles/gps-moto-u6-comment-naviguer-offline.html
+# -> on débloque pour que Google lise le noindex et la retire. Voir .bak_20261007
+#Disallow: /articles/gps-moto-gps-offline-u6-va-t-il-sauver-mes-balades-moto-peti.html
 
 # ══ Crawlers IA — autorisés explicitement ══════════════════
 # Signaux explicites aux moteurs génératifs (GEO / AEO)
