@@ -1,7 +1,20 @@
 name: Update YouTube feed
+# 🔴 AUTOMATISATION RETIRÉE LE 07/10/2026 — ne se déclenche plus tout seul.
+#
+# Ce workflow échouait à chaque exécution depuis le 02/10/2026 (dernier succès : 30/09),
+# à l'étape « Fetch YouTube videos » : le secret YT_TOKEN_ANALYTICS n'authentifie plus.
+# Reproduit en local, sans secret : « Aucune méthode d'authentification disponible ».
+#
+# Le token YouTube vit sur le VPS et y fonctionne. C'est donc le VPS qui fait le travail
+# désormais : ~/.hermes/scripts/maj_feed_youtube.py (Lun/Mer/Ven 6h), qui met à jour
+# data/, commit et pousse.
+#
+# Conservé en LANCEMENT MANUEL seulement, pour arrêter les emails d'échec.
+# Pour le réactiver : reposer un secret YT_TOKEN_ANALYTICS valide, puis remettre le bloc
+# `schedule:` ci-dessous.
+#   schedule:
+#     - cron: '0 6 * * 1,3,5'  # Lun/Mer/Ven à 6h UTC
 on:
-  schedule:
-    - cron: '0 6 * * 1,3,5'  # Lun/Mer/Ven à 6h UTC (était quotidien — réduit le 17/04/2026)
   workflow_dispatch:
 
 permissions:
