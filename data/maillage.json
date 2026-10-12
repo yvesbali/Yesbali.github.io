@@ -7436,6 +7436,62 @@
       "type": "REGULATION",
       "bloc": "maillage_section",
       "justification": "le hub voyage doit signaler la contrainte réglementaire urbaine"
+    },
+    {
+      "source": "/articles/gants-moto-obligatoires-france-amende-espagne.html",
+      "cible": "/articles/controle-technique-moto-2026-calendrier-prix-contre-visite.html",
+      "ancre": "⚖️ Contrôle technique moto 2026",
+      "type": "REGULATION",
+      "bloc": "maillage_section",
+      "justification": "autre obligation légale du motard : enchaînement réglementaire naturel"
+    },
+    {
+      "source": "/articles/gants-moto-obligatoires-france-amende-espagne.html",
+      "cible": "/equipement.html",
+      "ancre": "🧥 Tout l'équipement du motard",
+      "type": "EQUIPMENT",
+      "bloc": "maillage_section",
+      "justification": "le lecteur qui vérifie ses gants veut vérifier le reste de son équipement"
+    },
+    {
+      "source": "/articles/gants-moto-obligatoires-france-amende-espagne.html",
+      "cible": "/articles/tenue-moto-4-saisons-spidi-test-road-trip.html",
+      "ancre": "🧥 Tenue 4 saisons : mon test terrain",
+      "type": "EXPERIENCE",
+      "bloc": "maillage_section",
+      "justification": "équipement testé réellement, complète le propos sur le froid"
+    },
+    {
+      "source": "/articles/gants-moto-obligatoires-france-amende-espagne.html",
+      "cible": "/securite.html",
+      "ancre": "🦺 Sécurité moto : les fondamentaux",
+      "type": "PARENT",
+      "bloc": "maillage_section",
+      "justification": "la page parente du thème sécurité"
+    },
+    {
+      "source": "/articles/controle-technique-moto-2026-calendrier-prix-contre-visite.html",
+      "cible": "/articles/gants-moto-obligatoires-france-amende-espagne.html",
+      "ancre": "🧤 Gants moto : l'amende réelle et la règle espagnole",
+      "type": "REGULATION",
+      "bloc": "maillage_section",
+      "justification": "même famille réglementaire : les deux obligations du motard"
+    },
+    {
+      "source": "/equipement.html",
+      "cible": "/articles/gants-moto-obligatoires-france-amende-espagne.html",
+      "ancre": "🧤 Gants moto : êtes-vous vraiment en règle ?",
+      "type": "REGULATION",
+      "bloc": "maillage_section",
+      "justification": "l'équipement obligatoire le plus méconnu"
+    },
+    {
+      "source": "/securite.html",
+      "cible": "/articles/gants-moto-obligatoires-france-amende-espagne.html",
+      "ancre": "🧤 Gants moto : la règle exacte (68 €)",
+      "type": "REGULATION",
+      "bloc": "maillage_section",
+      "justification": "équipement de protection obligatoire"
     }
   ]
 }
