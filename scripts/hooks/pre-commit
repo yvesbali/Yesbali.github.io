@@ -100,8 +100,24 @@ if [ -f "scripts/audit_coherence_article.py" ]; then
   done
 fi
 
+# ── 7. Le moteur de guidage doit rester MONTÉ sur ses 8 pages ─────────────────
+# Vécu 13/10/2026 : le commit 17fde98c (16/09, migration maillage) a emporté, sur
+# pneus/gps/carpuride, la section #lcdmh-guidage + son script + le conteneur
+# partenaires (retirés avec </main> et le footer). 27 jours sans être vu : la
+# mesure regardait le trafic, pas la présence du dispositif. Résultat : 3 des
+# 8 pages « équipées » n'ont produit aucun clic pendant toute la mesure T0+28.
+if [ -f "scripts/audit_montage_guidage.py" ]; then
+  SORTIE3=$(python3 scripts/audit_montage_guidage.py 2>&1)
+  if [ $? -ne 0 ]; then
+    rouge "MOTEUR DE GUIDAGE DÉMONTÉ" "$SORTIE3
+   → remettre la section #lcdmh-guidage + <script src=\"/js/lcdmh-guidage.js\"> 
+   → ou forcer : git commit --no-verify"
+    ECHEC=1
+  fi
+fi
+
 if [ "$ECHEC" -ne 0 ]; then exit 1; fi
 
 # ── Résumé silencieux quand tout va bien ─────────────────────────────────────
-echo "✅ garde-fou site : maillage idempotent, sitemap, recherche, audit — OK"
+echo "✅ garde-fou site : maillage idempotent, sitemap, recherche, audit, guidage monté — OK"
 exit 0
