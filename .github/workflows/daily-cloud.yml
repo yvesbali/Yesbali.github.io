@@ -82,13 +82,10 @@ jobs:
       - name: Append daily dashboard row
         run: python scripts/append_daily_log.py
 
-      - name: Send daily email
-        if: ${{ github.event_name == 'schedule' || inputs.send_email }}
-        env:
-          GMAIL_USER: ${{ secrets.GMAIL_USER || 'yvesbali@gmail.com' }}
-          EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT || secrets.GMAIL_USER || 'yvesbali@gmail.com' }}
-        run: python scripts/send_daily_email.py
-
+      # 🔴 ÉTAPE SUPPRIMÉE le 18/10/2026 (décision Yves) : l'email « LCDMH — Daily tracking »
+      # était un rapport FAUX — GSC figé au 30/09/2026 (fetch_gsc.py en échec silencieux à cause
+      # des `continue-on-error: true`), donc tous les Δ à +0. La mesure réelle se fait depuis le
+      # VPS (API Search Console + GA4). Ne pas réintroduire cette étape sans données fiables.
       - name: Cleanup credentials
         if: always()
         run: rm -f client_secrets.json yt_token_analytics.json gsc_token.json .env
