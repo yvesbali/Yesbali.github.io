@@ -79,3 +79,36 @@ img[src*="i.ytimg.com"][src*="hqdefault"]{
     object-fit: cover;
     object-position: center;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   GARDE-FOU 19/10/2026 — TOUTE vignette de carte, QUELLE QUE SOIT SA SOURCE
+   ───────────────────────────────────────────────────────────────────────────
+   Incident : sur la page d'accueil, la carte AFERIY utilisait une image locale
+   en portrait (1000×1333, ratio 0.75). Les règles ci-dessus ne visaient que
+   i.ytimg.com : l'attribut HTML height="1333" n'était donc neutralisé par
+   aucun height:auto, et la carte s'affichait deux fois plus haute que ses
+   voisines 16:9.
+
+   La règle ci-dessous s'applique à toutes les vignettes de carte du site,
+   y compris les fichiers locaux (/articles/images/…webp). height:auto est le
+   point critique : sans lui, tout attribut height d'une image non-16:9 casse
+   l'alignement de la grille.
+   ═══════════════════════════════════════════════════════════════════════════ */
+.home-article__img,
+.home-article img,
+.card-image img,
+.thumb img,
+.video-thumb img,
+.ep-thumb img,
+.episode-thumb img,
+.journal-thumb img,
+.featured-image img{
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: cover;
+    object-position: center;
+    background: #f0ede8;
+    display: block;
+}

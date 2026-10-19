@@ -313,6 +313,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                desormais la seule source de verite (voir css/vignettes.css). */
             aspect-ratio:16/9;
             width:100%;
+            /* 19/10/2026 : height:auto OBLIGATOIRE. Sans lui, l'attribut HTML
+               height="1333" d'une image portrait (AFERIY) s'appliquait comme
+               hauteur CSS et la carte devenait deux fois plus haute que ses
+               voisines 16:9. Ne pas retirer. */
+            height:auto;
+            max-height:none;
             object-fit:cover;
             object-position:center;
             background:#f0ede8;
@@ -685,7 +691,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </a>
 <a class="home-article" href="/articles/aferiy-nano-100-autonomie-electrique-en-road-trip.html">
-<img alt="AFERIY Nano 100 — autonomie électrique en road trip" class="home-article__img" height="1333" loading="lazy" onerror="this.style.background='#ddd'" src="/articles/images/aferiy-nano-100-autonomie-electrique-en-road-trip/AFERIY_Station_d_alimentation_portable_de_31_000_mAh_99_2_Wh_100w_8_1000x.webp" width="1000">
+<img alt="AFERIY Nano 100 — autonomie électrique en road trip" class="home-article__img" height="720" loading="lazy" onerror="this.style.background='#ddd'" src="/articles/images/aferiy-nano-100-autonomie-electrique-en-road-trip/aferiy-nano-100-vignette-16x9.webp" width="1280">
 <div class="home-article__body">
 <span class="home-article__tag">Test · Énergie</span>
 <h3>AFERIY Nano 100 : autonomie électrique en road trip ?</h3>
