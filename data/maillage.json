@@ -7492,6 +7492,38 @@
       "type": "REGULATION",
       "bloc": "maillage_section",
       "justification": "équipement de protection obligatoire"
+    },
+    {
+      "source": "/articles/test-hjc-i72-casque-integral-220-euros.html",
+      "cible": "/articles.html",
+      "ancre": "Tous les essais et guides moto LCDMH",
+      "type": "HUB",
+      "bloc": "a_lire_aussi",
+      "justification": "retour vers l'index des articles"
+    },
+    {
+      "source": "/articles/test-hjc-i72-casque-integral-220-euros.html",
+      "cible": "/articles/test-honda-nt1100-avis-25000-km-road-trip.html",
+      "ancre": "Honda NT1100 : mon avis après 25 000 km",
+      "type": "RELATED",
+      "bloc": "a_lire_aussi",
+      "justification": "moto utilisée pendant l'essai"
+    },
+    {
+      "source": "/articles/test-hjc-i72-casque-integral-220-euros.html",
+      "cible": "/articles/tenue-moto-4-saisons-spidi-test-road-trip.html",
+      "ancre": "Tenue 4 saisons Spidi",
+      "type": "RELATED",
+      "bloc": "a_lire_aussi",
+      "justification": "même famille équipement"
+    },
+    {
+      "source": "/articles/test-honda-nt1100-avis-25000-km-road-trip.html",
+      "cible": "/articles/test-hjc-i72-casque-integral-220-euros.html",
+      "ancre": "HJC i72",
+      "type": "RELATED",
+      "bloc": "maillage_section",
+      "justification": "lien entrant vers le nouvel essai casque"
     }
   ]
 }
