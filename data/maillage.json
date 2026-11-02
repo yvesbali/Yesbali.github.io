@@ -7524,6 +7524,38 @@
       "type": "RELATED",
       "bloc": "maillage_section",
       "justification": "lien entrant vers le nouvel essai casque"
+    },
+    {
+      "source": "/articles/loi-montagne-pneus-hiver-moto.html",
+      "cible": "/articles/gants-moto-obligatoires-france-amende-espagne.html",
+      "ancre": "🧤 Gants obligatoires : la vraie amende",
+      "type": "NEXT_STEP",
+      "bloc": "maillage_section",
+      "justification": "Après l'équipement hivernal, la question suivante est l'obligation des gants et son amende réelle."
+    },
+    {
+      "source": "/articles/loi-montagne-pneus-hiver-moto.html",
+      "cible": "/pneus.html",
+      "ancre": "🛞 Quel pneu pour quel usage ?",
+      "type": "EQUIPMENT",
+      "bloc": "maillage_section",
+      "justification": "Le pneu hiver moto n'existe quasiment pas : la question suivante est de choisir un pneu adapté à son usage."
+    },
+    {
+      "source": "/articles/loi-montagne-pneus-hiver-moto.html",
+      "cible": "/equipement.html",
+      "ancre": "🧥 L'équipement de road trip",
+      "type": "EQUIPMENT",
+      "bloc": "maillage_section",
+      "justification": "Le froid se gère par l'équipement : la page équipement est l'étape logique après la réglementation."
+    },
+    {
+      "source": "/articles/loi-montagne-pneus-hiver-moto.html",
+      "cible": "/articles/test-honda-nt1100-avis-25000-km-road-trip.html",
+      "ancre": "🏍️ Ma NT1100 après 26 000 km",
+      "type": "SIBLING",
+      "bloc": "maillage_section",
+      "justification": "L'article cite la NT1100 (dimensions de pneus, bulle, 26 000 km) : le test complet est la référence."
     }
   ]
 }
