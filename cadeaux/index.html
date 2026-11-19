@@ -6,6 +6,16 @@
 <title>Mes aventures à moto - LCDMH</title>
 <meta name="description" content="Bienvenue dans mes aventures : Cap Nord, Espagne, cols des Alpes, Turquie. Choisis ton voyage, regarde les épisodes, et participe au cadeau si tu veux.">
 <link rel="canonical" href="https://lcdmh.com/cadeaux/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LCDMH">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://lcdmh.com/cadeaux/">
+<meta property="og:title" content="Cadeau : un Blackview ROCK 2 — et mes road trips à découvrir">
+<meta property="og:description" content="Je donne le téléphone testé dans ma dernière vidéo. Choisis un road trip, découvre les épisodes, partage-les. Tirage au sort le 27 novembre 2026.">
+<meta property="og:image" content="https://lcdmh.com/cadeaux/img/cap-nord-moto.jpg">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="900">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 :root{--o:#e67e22;--n:#2c3e50;--b:#f0ede8;--w:#fff8f2}
 *{box-sizing:border-box}
@@ -104,6 +114,7 @@ footer a{color:#fff}
   <button class="card" data-i="4"><img src="/cadeaux/img/lesalpes.jpg" alt="Les Alpes dans tous les sens" loading="lazy" width="700" height="394"><b>Les Alpes dans tous les sens</b><span>Iseran, Bonette, Galibier : les cols encha&icirc;n&eacute;s, dans un sens puis dans l'autre.</span><em>Ouvrir cette aventure &rarr;</em></button>
   <button class="card" data-i="5"><img src="/cadeaux/img/alpes-festival-aventure.jpg" alt="Alpes Aventure Festival" loading="lazy" width="700" height="394"><b>Annecy &rarr; Nice par les cols</b><span>Les Alpes du Nord au Sud, d'Annecy &agrave; la M&eacute;diterran&eacute;e.</span><em>Ouvrir cette aventure &rarr;</em></button>
   <button class="card" data-i="6"><img src="https://i.ytimg.com/vi/25QDcsN3K18/maxresdefault.jpg" alt="Moto en hiver dans les Aravis" loading="lazy" width="700" height="394"><b>Épisodes d'hiver</b><span>La neige, le froid, La Clusaz : quand la moto ne s'arrête pas en hiver. Juste pour le plaisir.</span><em>Ouvrir cette s&eacute;rie &rarr;</em></button>
+  <button class="card" data-i="7"><img src="https://i.ytimg.com/vi/o4NSUSvf1eg/maxresdefault.jpg" alt="Alpes Aventure Festival, la claque" loading="lazy" width="700" height="394"><b>Alpes Aventure Festival — La Claque</b><span>Barcelonnette, le rassemblement, et la dernière claque : le road trip est fini.</span><em>Ouvrir cette s&eacute;rie &rarr;</em></button>
  </div>
 
  <div id="detail">
@@ -117,6 +128,7 @@ footer a{color:#fff}
     <button id="sh-cp" class="alt">Copier le lien</button>
     <a id="sh-fb" class="alt" href="#" target="_blank" rel="noopener">Facebook</a>
    </div>
+   <p class="mini" style="margin-top:8px">Si Facebook tourne en rond, copie le texte et colle-le dans ton groupe : le lien y sera inclus.</p>
   </div>
   <div class="row">
    <a class="btn" id="d-lien" href="#">Voir la page du voyage</a>
@@ -136,7 +148,7 @@ footer a{color:#fff}
  <form id="f" novalidate>
   <label>Pr&eacute;nom<input name="prenom" required autocomplete="given-name"></label>
   <label>E-mail<input name="email" type="email" required autocomplete="email"></label>
-  <label>Un mot sur toi (facultatif)<textarea name="motif" rows="3" placeholder="Où et comment utiliserais-tu ce téléphone ?"></textarea></label>
+  <label>Lien de ton partage Facebook (le groupe ou le profil o&ugrave; tu as publi&eacute;)<input name="lien" type="url" placeholder="https://www.facebook.com/groups/.../posts/..."></label>
   <label class="chk"><input type="checkbox" name="ok" required> J'ai partag&eacute; un ou deux road trips et j'accepte que mon e-mail serve au tirage au sort.</label>
   <button type="submit">Envoyer ma demande</button>
   <p class="mini">Le bouton ouvre ton logiciel de messagerie avec la demande d&eacute;j&agrave; r&eacute;dig&eacute;e : tu n'as plus qu'&agrave; envoyer. Ou &eacute;cris &agrave; <a href="mailto:yvesbali@gmail.com">yvesbali@gmail.com</a>.</p>
@@ -176,7 +188,7 @@ function renderEps(i){
   im.loading='lazy';im.alt=e.t;im.width=132;im.height=74;
   var b=document.createElement('div');b.className='ep-b';
   var t=document.createElement('p');t.className='ep-t';
-  t.innerHTML=e.t+(e.st?' <span class="st">&#9733;</span>':'');
+  t.innerHTML=e.t+(e.st?' <span class="st" title="L\'épisode le plus regardé de la série">&#9733;&#9733;&#9733;</span>':'');
   var te=document.createElement('p');te.className='ep-teaser';
   b.appendChild(t);
   if(e.x){te.innerHTML=e.x;b.appendChild(te);}
@@ -244,11 +256,11 @@ document.getElementById('d-valider').addEventListener('click',function(){
 });
 document.getElementById('f').addEventListener('submit',function(e){
  e.preventDefault();
- var f=e.target,p=f.prenom.value.trim(),m=f.email.value.trim(),t=f.motif.value.trim();
+ var f=e.target,p=f.prenom.value.trim(),m=f.email.value.trim(),t=f.lien.value.trim();
  if(!p||!m){alert('Il manque le prenom ou l email.');return;}
  if(!f.ok.checked){alert('Il faut cocher la case d accord.');return;}
  var s='Demande cadeau Blackview ROCK 2 - '+p;
- var b='Prenom : '+p+'\nE-mail : '+m+'\n\nPourquoi ce telephone me serait utile :\n'+t+'\n';
+ var b='Prenom : '+p+'\nE-mail : '+m+'\nLien du partage Facebook : '+(t||'non fourni')+'\n';
  var url='mailto:yvesbali@gmail.com?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(b);
  window.__lastMailto=url;
  location.href=url;
