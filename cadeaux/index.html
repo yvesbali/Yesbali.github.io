@@ -93,6 +93,7 @@ footer a{color:#fff}
 .hero .deal li{margin:9px 0;line-height:1.55}
 .hero .cledeal{display:inline-block;background:var(--o);color:#fff;border-radius:999px;padding:6px 18px;font-size:1.08rem;text-shadow:none;margin:6px 0}
 .etape-inscription{margin-top:12px;padding:12px;border:2px solid var(--o);border-radius:10px;background:#fff}
+#f textarea{width:100%;font:inherit;padding:10px;border:1px solid #d9cfc0;border-radius:8px;background:#fff;color:var(--n)}
 </style>
 <link rel="stylesheet" href="/css/vignettes.css">
 </head>
@@ -166,6 +167,7 @@ footer a{color:#fff}
   <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><input name="site" tabindex="-1" autocomplete="off"></div>
   <label>Pr&eacute;nom<input name="prenom" required autocomplete="given-name"></label>
   <label>E-mail<input name="email" type="email" required autocomplete="email"></label>
+  <label>Pourquoi toi ? (ta motivation, facultatif)<textarea name="motivation" rows="3" maxlength="1500" placeholder="En quelques lignes : à quoi te servirait ce téléphone ?"></textarea></label>
   <label>Lien de ton partage (obligatoire)<input name="lien" type="text" placeholder="Lien de ta publication Facebook, ou écris WhatsApp" autocomplete="off"><span class="mini" style="display:block;margin-top:4px">Facebook : colle le lien de ta publication (le groupe ou le profil où tu as publié). WhatsApp : écris simplement &laquo; WhatsApp &raquo;.</span></label>
   <label class="chk"><input type="checkbox" name="ok" required> J'ai partag&eacute; un ou deux road trips et j'accepte que mon e-mail serve au tirage au sort.</label>
   <button type="submit">Envoyer ma demande</button>
@@ -314,7 +316,7 @@ document.getElementById('d-valider').addEventListener('click',function(){
  part.scrollIntoView({behavior:'smooth',block:'start'});
 });
 var FORM_URL='https://docs.google.com/forms/d/e/1FAIpQLSf7z-3tiHiEOEGrRpRmJJtrNQ3KHqpGKWfUgcWU26DBGEyKHw/formResponse';
-var FORM_ENTRY={prenom:'entry.25825078',email:'entry.873877111',lien:'entry.248385164',details:'entry.1479282757'};
+var FORM_ENTRY={motivation:'entry.992259930',prenom:'entry.25825078',email:'entry.873877111',lien:'entry.248385164',details:'entry.1479282757'};
 var ENDPOINT=function(){return window.LCDMH_ENDPOINT||FORM_URL;};
 function fmsg(t){document.getElementById('f-msg').textContent=t;}
 function queueGet(){try{return JSON.parse(localStorage.getItem('lcdmh_queue')||'[]');}catch(e){return[];}}
@@ -322,7 +324,7 @@ function queueSet(a){try{localStorage.setItem('lcdmh_queue',JSON.stringify(a));}
 function send(p){var u=ENDPOINT();if(!u)return Promise.resolve(false);
  if(u.indexOf('docs.google.com/forms')>=0){
   var d=new URLSearchParams();
-  d.append(FORM_ENTRY.prenom,p.prenom);d.append(FORM_ENTRY.email,p.email);d.append(FORM_ENTRY.lien,p.lien||'');
+  d.append(FORM_ENTRY.motivation,p.motivation||'');d.append(FORM_ENTRY.prenom,p.prenom);d.append(FORM_ENTRY.email,p.email);d.append(FORM_ENTRY.lien,p.lien||'');
   d.append(FORM_ENTRY.details,'Videos partagees : '+(p.titres||[]).join(' | ')+'\nCanaux : '+(p.canaux||[]).join(', ')+'\nCode : '+(p.code||'')+'\nDate : '+p.date);
   return fetch(u,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:d.toString()}).then(function(){return true;},function(){return false;});}
  var o={method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(p)};
@@ -330,7 +332,7 @@ function send(p){var u=ENDPOINT();if(!u)return Promise.resolve(false);
   function(){return fetch(u,{method:'POST',mode:'no-cors',headers:o.headers,body:o.body}).then(function(){return true;},function(){return false;});});}
 function flush(){var q=queueGet();if(!q.length||!ENDPOINT())return;var rest=[];
  q.reduce(function(pr,p){return pr.then(function(){return send(p).then(function(ok){if(!ok)rest.push(p);});});},Promise.resolve()).then(function(){queueSet(rest);});}
-function mailto(p){var b='Prenom : '+p.prenom+'\nE-mail : '+p.email+'\nLien du partage Facebook : '+(p.lien||'non fourni')+'\nVideos partagees : '+(p.titres||[]).join(' | ')+'\nCanaux : '+(p.canaux||[]).join(', ')+'\n';
+function mailto(p){var b='Prenom : '+p.prenom+'\nE-mail : '+p.email+'\nLien du partage Facebook : '+(p.lien||'non fourni')+'\nMotivation : '+(p.motivation||'non indiquee')+'\nVideos partagees : '+(p.titres||[]).join(' | ')+'\nCanaux : '+(p.canaux||[]).join(', ')+'\n';
  return 'mailto:yvesbali@gmail.com?subject='+encodeURIComponent('Demande cadeau Blackview ROCK 2 - '+p.prenom)+'&body='+encodeURIComponent(b);}
 form.addEventListener('submit',function(e){
  e.preventDefault();
@@ -342,11 +344,11 @@ form.addEventListener('submit',function(e){
  if(t.length<8&&!/whatsapp/i.test(t)){fmsg('Ce lien semble incomplet : colle le lien de ta publication, ou écris « WhatsApp ».');return;}
  if(!form.ok.checked){fmsg('Il faut cocher la case d\'accord.');return;}
  if(form.site&&form.site.value)return;
- var payload={code:CODE,date:new Date().toISOString(),prenom:p,email:m,lien:t,videos:DECL.ids,titres:DECL.titres,canaux:DECL.canaux};
+ var payload={motivation:(form.motivation?form.motivation.value.trim().slice(0,1500):''),code:CODE,date:new Date().toISOString(),prenom:p,email:m,lien:t,videos:DECL.ids,titres:DECL.titres,canaux:DECL.canaux};
  if(!ENDPOINT()){window.__lastMailto=mailto(payload);track('form_submit',{mode:'mail',videos:DECL.ids.length});location.href=window.__lastMailto;return;}
  var btn=form.querySelector('button[type=submit]');btn.disabled=true;fmsg('Envoi en cours…');
  send(payload).then(function(ok){
-  if(ok){track('form_submit',{mode:'direct',videos:DECL.ids.length,canal:DECL.canaux.join('+')||'inconnu'});fmsg('Merci ! Votre demande est bien enregistrée. Résultat du tirage le 27 novembre 2026.');Array.prototype.forEach.call(form.elements,function(x){x.disabled=true;});}
+  if(ok){track('form_submit',{mode:'direct',videos:DECL.ids.length,canal:DECL.canaux.join('+')||'inconnu'});fmsg('Merci ! Votre demande est bien enregistrée. Elle sera retenue pour le tirage si votre partage est vérifié (lien de votre publication ou ouvertures de vos liens de partage). Résultat du tirage le 27 novembre 2026.');Array.prototype.forEach.call(form.elements,function(x){x.disabled=true;});}
   else{queueSet(queueGet().concat([payload]));track('form_error',{});window.__lastMailto=mailto(payload);fmsg('Votre demande n\'a pas pu être envoyée automatiquement : elle est gardée sur cet appareil et sera renvoyée à votre prochaine visite. Vous pouvez aussi cliquer sur le bouton pour l\'envoyer par e-mail.');btn.disabled=false;btn.textContent='Envoyer par e-mail';btn.onclick=function(ev){ev.preventDefault();location.href=window.__lastMailto;};}
  });
 });
