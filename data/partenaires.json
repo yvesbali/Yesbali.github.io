@@ -1,6 +1,21 @@
 {
  "version": "2026-10-23",
  "partenaires": {
+  "eiotclub": {
+   "nom": "EIOTCLUB",
+   "code_promo": "LCDMH",
+   "reduction": "-5%",
+   "statut": "actif",
+   "commission": "20%",
+   "liens": {
+    "general": "https://eiotclub-de.com/?ref=LCDMH",
+    "amazon": "https://www.amazon.fr/dp/B0H4YJ2XH3?tag=lcdmh-21"
+   },
+   "description_courte": "eSIM data voyage — rester connecté hors UE sans roaming",
+   "code_dashboard_goaffpro": "YVESVELLA",
+   "note": "Message EIOTCLUB du 19/11/2026 : code communauté = LCDMH, remise annoncée 5% 'à vérifier lors de la commande', lien https://eiotclub-de.com/?ref=LCDMH. Le dashboard GoAffPro (relevé 20/10/2026) affichait un code YVESVELLA à 5% et un lien https://eiotclub.de/?ref=LCDMH (domaine qui ne répondait pas depuis le VPS le 19/11). Produit : data uniquement, pas de voix/SMS.",
+   "engagement": "Vidéo longue + Short + article site (partenariat EIOTCLUB, contact Zoey Li)"
+  },
   "carpuride": {
    "nom": "Carpuride",
    "code_promo": "LCDMH",
