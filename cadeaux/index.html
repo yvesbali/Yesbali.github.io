@@ -238,15 +238,18 @@ function textePartage(){
  SEL.forEach(function(id){
   var lab=document.querySelector('.ep-ck[value="'+id+'"]');
   var ti=lab?lab.closest('.ep').querySelector('.ep-t').textContent.replace(/★★★/,'').trim():'';
-  l.push((ti?ti+' : ':'')+'https://youtu.be/'+id);
+  l.push((ti?ti+' : ':'')+lien(id));
  });
  return 'Je te conseille '+(SEL.length>1?'ces épisodes':'cet épisode')+' de LCDMH — '+v+' :\n'+l.join('\n')
   +'\n\nTous ses road trips à moto : https://lcdmh.com/cadeaux/';
 }
+var CODE='';try{CODE=localStorage.getItem('lcdmh_code')||'';}catch(e){}
+if(!CODE){CODE=Math.random().toString(36).slice(2,8);try{localStorage.setItem('lcdmh_code',CODE);}catch(e){}}
+function lien(id){return 'https://lcdmh.com/v/'+id+'.html?c='+CODE;}
 var edited=false,lastKey='',chan={},attempted=false,DECL=null;
 try{DECL=JSON.parse(localStorage.getItem('lcdmh_decl')||'null');}catch(e){DECL=null;}
 function track(n,p){try{if(typeof gtag==='function')gtag('event',n,p||{});}catch(e){}}
-function msgText(){var t=document.getElementById('sh-msg').value.trim();SEL.forEach(function(id){if(t.indexOf(id)<0)t+='\nhttps://youtu.be/'+id;});return t;}
+function msgText(){var t=document.getElementById('sh-msg').value.trim();SEL.forEach(function(id){if(t.indexOf(id)<0)t+='\n'+lien(id);});return t;}
 function majSel(){
  var bar=document.getElementById('selbar');
  document.getElementById('seltxt').textContent=SEL.length+' / '+MAX+' episodes selectionnes';
@@ -267,7 +270,7 @@ function info(h){document.getElementById('sh-info').innerHTML=h;}
 document.getElementById('sh-fb').addEventListener('click',function(){
  if(!SEL.length)return;
  copieMsg();didShare('facebook');
- window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('https://youtu.be/'+SEL[0]),'_blank','noopener,noreferrer');
+ window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(lien(SEL[0])),'_blank','noopener,noreferrer');
  info('Votre message est copi&eacute;. Si Facebook ne s\'ouvre pas ou n\'avance pas, ouvrez-le vous-m&ecirc;me (<a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">facebook.com</a>), &eacute;crivez une publication ou un message dans un groupe et collez-le. Quand c\'est fait, cliquez sur &laquo; J\'ai partag&eacute; &raquo;.');
 });
 document.getElementById('sh-wa').addEventListener('click',function(){
@@ -319,7 +322,7 @@ function send(p){var u=ENDPOINT();if(!u)return Promise.resolve(false);
  if(u.indexOf('docs.google.com/forms')>=0){
   var d=new URLSearchParams();
   d.append(FORM_ENTRY.prenom,p.prenom);d.append(FORM_ENTRY.email,p.email);d.append(FORM_ENTRY.lien,p.lien||'');
-  d.append(FORM_ENTRY.details,'Videos partagees : '+(p.titres||[]).join(' | ')+'\nCanaux : '+(p.canaux||[]).join(', ')+'\nDate : '+p.date);
+  d.append(FORM_ENTRY.details,'Videos partagees : '+(p.titres||[]).join(' | ')+'\nCanaux : '+(p.canaux||[]).join(', ')+'\nCode : '+(p.code||'')+'\nDate : '+p.date);
   return fetch(u,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:d.toString()}).then(function(){return true;},function(){return false;});}
  var o={method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(p)};
  return fetch(u,o).then(function(r){if(!r.ok)return false;return r.json().then(function(j){return j.ok===true;},function(){return true;});},
@@ -338,7 +341,7 @@ form.addEventListener('submit',function(e){
  if(t.length<8&&!/whatsapp/i.test(t)){fmsg('Ce lien semble incomplet : colle le lien de ta publication, ou écris « WhatsApp ».');return;}
  if(!form.ok.checked){fmsg('Il faut cocher la case d\'accord.');return;}
  if(form.site&&form.site.value)return;
- var payload={date:new Date().toISOString(),prenom:p,email:m,lien:t,videos:DECL.ids,titres:DECL.titres,canaux:DECL.canaux};
+ var payload={code:CODE,date:new Date().toISOString(),prenom:p,email:m,lien:t,videos:DECL.ids,titres:DECL.titres,canaux:DECL.canaux};
  if(!ENDPOINT()){window.__lastMailto=mailto(payload);track('form_submit',{mode:'mail',videos:DECL.ids.length});location.href=window.__lastMailto;return;}
  var btn=form.querySelector('button[type=submit]');btn.disabled=true;fmsg('Envoi en cours…');
  send(payload).then(function(ok){
