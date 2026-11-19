@@ -87,6 +87,7 @@ footer a{color:#fff}
 .ep-star{font-size:.78rem;color:var(--o);font-weight:600;margin:0 0 4px}
 #sh-declare{margin-top:10px}
 #f:has(:disabled) label,#f:has(:disabled) button{opacity:.55}
+.note-copie{background:var(--w);border:1px dashed #d9cfc0;border-left:4px solid var(--o);border-radius:8px;padding:9px 12px;font-size:.86rem;line-height:1.5;margin:8px 0}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7GC33KPRMS"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-7GC33KPRMS");</script>
@@ -132,12 +133,13 @@ footer a{color:#fff}
    <label class="mini" for="sh-msg" style="display:block;opacity:.9;margin:0 0 4px">Votre message de partage (vous pouvez le modifier)</label>
    <textarea id="sh-msg" rows="6"></textarea>
    <div class="share">
-    <button type="button" id="sh-nat" hidden>Partager&hellip;</button>
-    <button type="button" id="sh-fb">Facebook</button>
-    <button type="button" id="sh-wa">WhatsApp</button>
-    <button type="button" id="sh-cp" class="alt">Copier le message</button>
+    <button type="button" id="sh-cp">Copier le message</button>
+    <button type="button" id="sh-fb" class="alt">Facebook</button>
+    <button type="button" id="sh-wa" class="alt">WhatsApp</button>
+    <button type="button" id="sh-nat" class="alt" hidden>Partager&hellip;</button>
    </div>
-   <p class="mini" id="sh-info">Si Facebook ne s'ouvre pas ou n'avance pas, collez simplement le message dans une publication ou un groupe : les liens y sont inclus.</p>
+   <p class="note-copie" id="sh-note"><strong>Le partage n'est pas automatique.</strong> Cliquez sur &laquo; Copier le message &raquo;, puis ouvrez Facebook, &eacute;crivez une publication (ou un message dans un groupe) et <strong>collez-y le message</strong> : les liens des vid&eacute;os y sont inclus. Les boutons Facebook et WhatsApp essaient d'ouvrir l'application avec le message, mais Facebook peut ne pas s'ouvrir ou s'arr&ecirc;ter : le copier-coller fonctionne toujours.</p>
+   <p class="mini" id="sh-info"></p>
    <div id="sh-declare" hidden><button type="button" id="sh-done" class="btn">J'ai partag&eacute;</button> <span class="mini">Cliquez ici une fois le message publi&eacute; ou envoy&eacute; : le formulaire s'ouvre.</span></div>
   </div>
   <div class="row">
@@ -155,7 +157,7 @@ footer a{color:#fff}
   <p>Frais d'envoi &agrave; ta charge : 15,49 &euro; (Colissimo assur&eacute; 300 &euro;) ou 14,79 &euro; en point retrait. Aucun autre frais.</p>
  </div>
 
- <p class="mini" id="f-gate" style="margin:0 0 10px"><strong>Le formulaire s'ouvre d&egrave;s que vous avez partag&eacute; au moins un voyage</strong> (Facebook, WhatsApp ou copie du message), puis cliqu&eacute; sur &laquo; J'ai partag&eacute; &raquo;.</p>
+ <p class="mini" id="f-gate" style="margin:0 0 10px"><strong>Le formulaire s'ouvre d&egrave;s que vous avez partag&eacute; au moins un voyage</strong> (copier-coller du message dans Facebook, ou WhatsApp), puis cliqu&eacute; sur &laquo; J'ai partag&eacute; &raquo;.</p>
  <form id="f" novalidate>
   <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><input name="site" tabindex="-1" autocomplete="off"></div>
   <label>Pr&eacute;nom<input name="prenom" required autocomplete="given-name"></label>
