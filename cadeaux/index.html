@@ -94,6 +94,7 @@ footer a{color:#fff}
 .hero .cledeal{display:inline-block;background:var(--o);color:#fff;border-radius:999px;padding:6px 18px;font-size:1.08rem;text-shadow:none;margin:6px 0}
 .etape-inscription{margin-top:12px;padding:12px;border:2px solid var(--o);border-radius:10px;background:#fff}
 #f textarea{width:100%;font:inherit;padding:10px;border:1px solid #d9cfc0;border-radius:8px;background:#fff;color:var(--n)}
+.merci{background:#fff;border:1px solid #e3ddd4;border-left:5px solid var(--o);border-radius:12px;padding:16px;margin:16px 0}.merci h3{margin:0 0 8px}.merci-liens{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.merci .abonne{background:var(--o);color:#fff}.star-pick{margin:0 0 10px;background:#fff;border:2px solid var(--o);color:var(--n);font-weight:700;border-radius:10px;padding:10px 12px;cursor:pointer}
 </style>
 <link rel="stylesheet" href="/css/vignettes.css">
 </head>
@@ -175,6 +176,17 @@ footer a{color:#fff}
   <p class="mini" id="f-msg" aria-live="polite"></p>
   <p class="mini" id="f-note">Le bouton ouvre ton logiciel de messagerie avec la demande d&eacute;j&agrave; r&eacute;dig&eacute;e : tu n'as plus qu'&agrave; envoyer. Ou &eacute;cris &agrave; <a href="mailto:yvesbali@gmail.com">yvesbali@gmail.com</a>.</p>
  </form>
+ <div id="merci" class="merci" hidden>
+  <h3>En attendant le tirage&hellip;</h3>
+  <p>Tu es inscrit. Si tu as aim&eacute; ce que tu as vu, voici trois &eacute;pisodes o&ugrave; les spectateurs restent le plus longtemps devant l'&eacute;cran, et la cha&icirc;ne pour ne rien manquer des prochains voyages.</p>
+  <div class="merci-liens">
+   <a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=XlpyhrLkfVo">Roumanie : la Transfăgărășan</a>
+   <a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=OAgMxHPiTco">Espagne : routes sauvages au lever du jour</a>
+   <a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=F0wjVN88D_E">Alpes : de Barcelonnette &agrave; Cuneo</a>
+  </div>
+  <p><a class="btn abonne" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCsmjag8fMTAqdawlg35T3Bg?sub_confirmation=1">S'abonner &agrave; la cha&icirc;ne</a></p>
+  <p class="mini">Tu peux aussi partager d'autres voyages et t'inscrire de nouveau : il n'y a pas de limite d'inscriptions, mais un seul lot par personne.</p>
+ </div>
  <p class="mini" style="text-align:center"><a href="/cadeaux/regles.html">R&egrave;glement complet et confidentialit&eacute;</a></p>
 </section>
 
@@ -225,6 +237,10 @@ function renderEps(i){
   ck.addEventListener('change',function(){toggle(ck,lab);});
   box.appendChild(lab);
  });
+ var star=list.filter(function(e){return e.st;})[0];
+ if(star){var bt=document.createElement('button');bt.type='button';bt.className='btn star-pick';bt.innerHTML='&#9733; Choisir l\'&eacute;pisode o&ugrave; les spectateurs restent le plus longtemps';
+  bt.addEventListener('click',function(){var c=document.querySelector('.ep-ck[value="'+star.id+'"]');if(c&&!c.checked){c.checked=true;toggle(c,c.closest('.ep'));}track('star_pick',{video:star.id});});
+  box.insertBefore(bt,box.firstChild);}
  majSel();
 }
 function toggle(ck,lab){
@@ -319,6 +335,10 @@ document.getElementById('d-valider').addEventListener('click',function(){
 var FORM_URL='https://docs.google.com/forms/d/e/1FAIpQLSf7z-3tiHiEOEGrRpRmJJtrNQ3KHqpGKWfUgcWU26DBGEyKHw/formResponse';
 var FORM_ENTRY={motivation:'entry.992259930',prenom:'entry.25825078',email:'entry.873877111',lien:'entry.248385164',details:'entry.1479282757'};
 var ENDPOINT=function(){return window.LCDMH_ENDPOINT||FORM_URL;};
+function merci(){
+ var box=document.getElementById('merci');if(!box)return;
+ box.hidden=false;box.scrollIntoView({behavior:'smooth',block:'center'});track('merci_affiche',{});
+}
 function fmsg(t){document.getElementById('f-msg').textContent=t;}
 function queueGet(){try{return JSON.parse(localStorage.getItem('lcdmh_queue')||'[]');}catch(e){return[];}}
 function queueSet(a){try{localStorage.setItem('lcdmh_queue',JSON.stringify(a));}catch(e){}}
@@ -349,7 +369,7 @@ form.addEventListener('submit',function(e){
  if(!ENDPOINT()){window.__lastMailto=mailto(payload);track('form_submit',{mode:'mail',videos:DECL.ids.length});location.href=window.__lastMailto;return;}
  var btn=form.querySelector('button[type=submit]');btn.disabled=true;fmsg('Envoi en cours…');
  send(payload).then(function(ok){
-  if(ok){track('form_submit',{mode:'direct',videos:DECL.ids.length,canal:DECL.canaux.join('+')||'inconnu'});fmsg('Merci ! Votre demande est bien enregistrée. Elle sera retenue pour le tirage si votre partage est vérifié (lien de votre publication ou ouvertures de vos liens de partage). Résultat du tirage le 27 novembre 2026.');Array.prototype.forEach.call(form.elements,function(x){x.disabled=true;});}
+  if(ok){track('form_submit',{mode:'direct',videos:DECL.ids.length,canal:DECL.canaux.join('+')||'inconnu'});fmsg('Merci ! Votre demande est bien enregistrée. Elle sera retenue pour le tirage si votre partage est vérifié (lien de votre publication ou ouvertures de vos liens de partage). Résultat du tirage le 27 novembre 2026.');merci();Array.prototype.forEach.call(form.elements,function(x){x.disabled=true;});}
   else{queueSet(queueGet().concat([payload]));track('form_error',{});window.__lastMailto=mailto(payload);fmsg('Votre demande n\'a pas pu être envoyée automatiquement : elle est gardée sur cet appareil et sera renvoyée à votre prochaine visite. Vous pouvez aussi cliquer sur le bouton pour l\'envoyer par e-mail.');btn.disabled=false;btn.textContent='Envoyer par e-mail';btn.onclick=function(ev){ev.preventDefault();location.href=window.__lastMailto;};}
  });
 });
