@@ -27,7 +27,7 @@ header{background:var(--n);color:#fff;padding:13px 0}
 header .wrap{display:flex;justify-content:space-between;align-items:center}
 header b{font-family:Montserrat,sans-serif;letter-spacing:.5px}
 header a{color:#fff;text-decoration:none;font-size:.88rem;opacity:.85}
-.hero{padding:64px 0 48px;text-align:center;background:linear-gradient(rgba(15,28,38,.38),rgba(15,28,38,.55)),url(/cadeaux/img/cap-nord-moto.jpg) center 60%/cover no-repeat;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.65)}
+.hero{padding:56px 0 48px;text-align:center;background:linear-gradient(rgba(15,28,38,.66),rgba(15,28,38,.78)),url(/cadeaux/img/cap-nord-moto.jpg) center 60%/cover no-repeat;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.65)}
 .hero h1{font-size:1.85rem;margin-bottom:.6em;color:#fff}
 .hero p{font-size:1.04rem;max-width:660px;margin:.7em auto;color:#fff;opacity:.96}
 .card img{width:100%;height:150px;object-fit:cover;border-radius:8px;margin-bottom:10px;display:block}
@@ -88,6 +88,10 @@ footer a{color:#fff}
 #sh-declare{margin-top:10px}
 #f:has(:disabled) label,#f:has(:disabled) button{opacity:.55}
 .note-copie{background:var(--w);border:1px dashed #d9cfc0;border-left:4px solid var(--o);border-radius:8px;padding:9px 12px;font-size:.86rem;line-height:1.5;margin:8px 0}
+.hero p{font-size:1.1rem;line-height:1.65}
+.hero .deal{background:rgba(44,62,80,.88);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:16px 20px 16px 38px;margin:14px auto;max-width:640px;text-shadow:none;font-size:1.04rem}
+.hero .deal li{margin:9px 0;line-height:1.55}
+.hero .cledeal{display:inline-block;background:var(--o);color:#fff;border-radius:999px;padding:6px 18px;font-size:1.08rem;text-shadow:none;margin:6px 0}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7GC33KPRMS"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-7GC33KPRMS");</script>
@@ -105,7 +109,7 @@ footer a{color:#fff}
   <li>De votre côté, je vous demande de choisir un ou deux de mes road trips et de les partager sur Facebook, pour faire découvrir mes voyages à d'autres personnes.</li>
   <li>Si vous êtes tiré au sort, l'appareil est offert. Seuls les frais d'expédition seront à votre charge.</li>
  </ul>
- <p><strong>Voilà, c'est le deal ! 🤝</strong></p>
+ <p><strong class="cledeal">Voilà, c'est le deal ! 🤝</strong></p>
  <p>Pour vous faciliter la vie, j'ai regroupé mes voyages ci-dessous. Vous choisissez une destination, vous découvrez les épisodes et vous sélectionnez ceux qui vous plaisent.</p>
  <p>Le site prépare même votre message de partage, que vous pouvez modifier comme bon vous semble.</p>
  <p>Et qui sait ? Peut-être qu'au passage, vous découvrirez des aventures qui vous donneront envie de prendre la route à votre tour !</p>
@@ -133,12 +137,12 @@ footer a{color:#fff}
    <label class="mini" for="sh-msg" style="display:block;opacity:.9;margin:0 0 4px">Votre message de partage (vous pouvez le modifier)</label>
    <textarea id="sh-msg" rows="6"></textarea>
    <div class="share">
-    <button type="button" id="sh-cp">Copier le message</button>
-    <button type="button" id="sh-fb" class="alt">Facebook</button>
-    <button type="button" id="sh-wa" class="alt">WhatsApp</button>
+    <button type="button" id="sh-fb">Facebook</button>
+    <button type="button" id="sh-wa">WhatsApp</button>
+    <button type="button" id="sh-cp" class="alt">Copier le message</button>
     <button type="button" id="sh-nat" class="alt" hidden>Partager&hellip;</button>
    </div>
-   <p class="note-copie" id="sh-note"><strong>Le partage n'est pas automatique.</strong> Cliquez sur &laquo; Copier le message &raquo;, puis ouvrez Facebook, &eacute;crivez une publication (ou un message dans un groupe) et <strong>collez-y le message</strong> : les liens des vid&eacute;os y sont inclus. Les boutons Facebook et WhatsApp essaient d'ouvrir l'application avec le message, mais Facebook peut ne pas s'ouvrir ou s'arr&ecirc;ter : le copier-coller fonctionne toujours.</p>
+   <p class="note-copie" id="sh-note"><strong>Si le partage automatique ne fonctionne pas</strong> (Facebook peut ne pas s'ouvrir ou s'arr&ecirc;ter), faites un <strong>copier-coller</strong> : cliquez sur &laquo; Copier le message &raquo;, ouvrez Facebook, &eacute;crivez une publication (ou un message dans un groupe) et <strong>collez-y le message</strong>. Les liens des vid&eacute;os y sont inclus.</p>
    <p class="mini" id="sh-info"></p>
    <div id="sh-declare" hidden><button type="button" id="sh-done" class="btn">J'ai partag&eacute;</button> <span class="mini">Cliquez ici une fois le message publi&eacute; ou envoy&eacute; : le formulaire s'ouvre.</span></div>
   </div>
@@ -157,7 +161,7 @@ footer a{color:#fff}
   <p>Frais d'envoi &agrave; ta charge : 15,49 &euro; (Colissimo assur&eacute; 300 &euro;) ou 14,79 &euro; en point retrait. Aucun autre frais.</p>
  </div>
 
- <p class="mini" id="f-gate" style="margin:0 0 10px"><strong>Le formulaire s'ouvre d&egrave;s que vous avez partag&eacute; au moins un voyage</strong> (copier-coller du message dans Facebook, ou WhatsApp), puis cliqu&eacute; sur &laquo; J'ai partag&eacute; &raquo;.</p>
+ <p class="mini" id="f-gate" style="margin:0 0 10px"><strong>Le formulaire s'ouvre d&egrave;s que vous avez partag&eacute; au moins un voyage</strong> (Facebook, WhatsApp ou copier-coller du message), puis cliqu&eacute; sur &laquo; J'ai partag&eacute; &raquo;.</p>
  <form id="f" novalidate>
   <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><input name="site" tabindex="-1" autocomplete="off"></div>
   <label>Pr&eacute;nom<input name="prenom" required autocomplete="given-name"></label>
