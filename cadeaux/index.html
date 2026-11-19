@@ -23,6 +23,8 @@ header a{color:#fff;text-decoration:none;font-size:.88rem;opacity:.85}
 .hero .q{font-family:Montserrat,sans-serif;font-weight:700;font-size:1.15rem;color:var(--o)}
 .note{background:#fff;border:1px dashed #d9cfc0;border-radius:12px;padding:13px 16px;max-width:640px;margin:22px auto 0;font-size:.93rem}
 .note b{color:var(--o)}
+.deal{max-width:640px;margin:12px auto;padding-left:22px;text-align:left;font-size:.96rem}
+.deal li{margin:7px 0}
 h2.sec{text-align:center;margin:38px 0 6px;font-size:1.25rem}
 .cards{display:grid;grid-template-columns:1fr;gap:11px;margin:16px 0}
 @media(min-width:640px){.cards{grid-template-columns:1fr 1fr}}
@@ -76,15 +78,23 @@ footer a{color:#fff}
 <header><div class="wrap"><b>LCDMH</b><a href="/roadtrips.html">Tous mes voyages &rarr;</a></div></header>
 
 <section class="hero"><div class="wrap">
- <h1>Bienvenue dans mes aventures</h1>
- <p>Vous me connaissez pour mes essais de mat&eacute;riel&nbsp;?</p>
- <p>Mais derri&egrave;re les &eacute;quipements, il y a surtout des milliers de kilom&egrave;tres &agrave; moto.</p>
- <p class="q">Alors, quelle route vous fait envie aujourd'hui&nbsp;?</p>
- <div class="note"><b>&#127873; Vous &ecirc;tes venu pour un cadeau&nbsp;?</b> D&eacute;couvrez les voyages, partagez ceux qui vous plaisent, puis revenez &agrave; votre inscription.</div>
+ <h1>Bienvenue dans mes aventures !</h1>
+ <p>Vous me connaissez peut-être pour mes essais de matériel. Mais derrière les équipements, il y a surtout des milliers de kilomètres à moto, des voyages, de magnifiques paysages et quelques belles rencontres !</p>
+ <p>Si vous êtes ici, c'est probablement parce que vous avez vu ma vidéo dans laquelle je propose de vous offrir un appareil.</p>
+ <p><strong>Le principe est simple :</strong></p>
+ <ul class="deal">
+  <li>Je vous offre la possibilité de gagner cet appareil.</li>
+  <li>De votre côté, je vous demande de choisir un ou deux de mes road trips et de les partager sur Facebook, pour faire découvrir mes voyages à d'autres personnes.</li>
+  <li>Si vous êtes tiré au sort, l'appareil est offert. Seuls les frais d'expédition seront à votre charge.</li>
+ </ul>
+ <p><strong>Voilà, c'est le deal ! 🤝</strong></p>
+ <p>Pour vous faciliter la vie, j'ai regroupé mes voyages ci-dessous. Vous choisissez une destination, vous découvrez les épisodes et vous sélectionnez ceux qui vous plaisent.</p>
+ <p>Le site prépare même votre message de partage, que vous pouvez modifier comme bon vous semble.</p>
+ <p>Et qui sait ? Peut-être qu'au passage, vous découvrirez des aventures qui vous donneront envie de prendre la route à votre tour !</p>
 </div></section>
 
 <section class="wrap">
- <h2 class="sec">Choisissez votre aventure</h2>
+ <h2 class="sec">🏍 Découvrez mes road trips</h2>
  <div class="cards" id="cards">
   <button class="card" data-i="0"><b>Cap Nord &agrave; moto</b><span>10 000 km en solo, 30 jours au-del&agrave; du cercle polaire. Les Lofoten, le froid, le silence.</span><em>Ouvrir cette aventure &rarr;</em></button>
   <button class="card" data-i="1"><b>Tour d'Espagne</b><span>6 600 km en solo : Pyr&eacute;n&eacute;es, Andalousie, d&eacute;sert des Bardenas, Alhambra.</span><em>Ouvrir cette aventure &rarr;</em></button>
@@ -114,16 +124,16 @@ footer a{color:#fff}
 <section class="wrap" id="participer">
  <div class="gift">
   <h2>&#127873; Le cadeau : un Blackview ROCK 2</h2>
-  <p>J'ai test&eacute; ce t&eacute;l&eacute;phone dans ma derni&egrave;re vid&eacute;o. Plut&ocirc;t qu'il dorme dans un placard, je le donne &agrave; quelqu'un qui en a vraiment l'utilit&eacute;.</p>
-  <p><strong>Ce n'est pas un tirage au sort :</strong> je lis les demandes et je choisis. Candidatures jusqu'au <strong>26 novembre 2026 &agrave; 23h59</strong>.</p>
+  <p>J'ai test&eacute; ce t&eacute;l&eacute;phone dans ma derni&egrave;re vid&eacute;o. Plut&ocirc;t qu'il dorme dans un placard, je l'offre &agrave; l'un de vous.</p>
+  <p><strong>Tirage au sort</strong> parmi les personnes inscrites qui ont partag&eacute; un ou deux road trips. R&eacute;sultat annonc&eacute; le <strong>27 novembre 2026</strong>. Inscriptions jusqu'au <strong>26 novembre 2026 &agrave; 23h59</strong>.</p>
   <p>Frais d'envoi &agrave; ta charge : 15,49 &euro; (Colissimo assur&eacute; 300 &euro;) ou 14,79 &euro; en point retrait. Aucun autre frais.</p>
  </div>
 
  <form id="f" novalidate>
   <label>Pr&eacute;nom<input name="prenom" required autocomplete="given-name"></label>
   <label>E-mail<input name="email" type="email" required autocomplete="email"></label>
-  <label>Pourquoi ce t&eacute;l&eacute;phone te serait-il vraiment utile ?<textarea name="motif" rows="4" required placeholder="Ton usage, tes voyages, ce que tu ferais avec. Quelques lignes suffisent."></textarea></label>
-  <label class="chk"><input type="checkbox" name="ok" required> J'accepte que mon e-mail serve uniquement &agrave; traiter ma demande.</label>
+  <label>Un mot sur toi (facultatif)<textarea name="motif" rows="3" placeholder="Où et comment utiliserais-tu ce téléphone ?"></textarea></label>
+  <label class="chk"><input type="checkbox" name="ok" required> J'ai partag&eacute; un ou deux road trips et j'accepte que mon e-mail serve au tirage au sort.</label>
   <button type="submit">Envoyer ma demande</button>
   <p class="mini">Le bouton ouvre ton logiciel de messagerie avec la demande d&eacute;j&agrave; r&eacute;dig&eacute;e : tu n'as plus qu'&agrave; envoyer. Ou &eacute;cris &agrave; <a href="mailto:yvesbali@gmail.com">yvesbali@gmail.com</a>.</p>
  </form>
@@ -228,7 +238,7 @@ document.getElementById('d-valider').addEventListener('click',function(){
 document.getElementById('f').addEventListener('submit',function(e){
  e.preventDefault();
  var f=e.target,p=f.prenom.value.trim(),m=f.email.value.trim(),t=f.motif.value.trim();
- if(!p||!m||!t){alert('Il manque le prenom, l email ou la motivation.');return;}
+ if(!p||!m){alert('Il manque le prenom ou l email.');return;}
  if(!f.ok.checked){alert('Il faut cocher la case d accord.');return;}
  var s='Demande cadeau Blackview ROCK 2 - '+p;
  var b='Prenom : '+p+'\nE-mail : '+m+'\n\nPourquoi ce telephone me serait utile :\n'+t+'\n';
