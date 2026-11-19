@@ -316,8 +316,10 @@ document.getElementById('sh-cp').addEventListener('click',function(){
  copieMsg().then(function(ok){didShare('copie');info(ok?'Message copi&eacute; : collez-le o&ugrave; vous voulez (Facebook, groupe, message). Puis cliquez sur &laquo; J\'ai partag&eacute; &raquo;.':'La copie automatique est bloqu&eacute;e : s&eacute;lectionnez le message ci-dessus et copiez-le &agrave; la main. Puis cliquez sur &laquo; J\'ai partag&eacute; &raquo;.');});
 });
 var form=document.getElementById('f');
-function gate(){var on=!!DECL;Array.prototype.forEach.call(form.elements,function(x){x.disabled=!on;});var g=document.getElementById('f-gate');if(g)g.hidden=on;}
+var FERME=Date.now()>Date.parse('2026-11-26T23:59:59+01:00');
+function gate(){var on=!!DECL&&!FERME;Array.prototype.forEach.call(form.elements,function(x){x.disabled=!on;});var g=document.getElementById('f-gate');if(g)g.hidden=on;}
 document.getElementById('sh-done').addEventListener('click',function(){
+ if(FERME){document.getElementById('f-gate').hidden=false;document.getElementById('f-gate').innerHTML='<strong>Les inscriptions sont closes.</strong> Merci à toutes et à tous ! Le résultat du tirage sera annoncé dans une vidéo de la chaîne.';return;}
  if(SEL.length<2){info('Choisis d&rsquo;abord <strong>deux vid&eacute;os</strong>, partage-les, puis clique ici.');return;}
  var titres=SEL.map(function(id){var l=document.querySelector('.ep-ck[value="'+id+'"]');return l?l.closest('.ep').querySelector('.ep-t').textContent.replace(/\u2605\u2605\u2605/,'').trim():id;});
  DECL={ids:SEL.slice(),titres:titres,canaux:Object.keys(chan)};
@@ -367,6 +369,7 @@ function mailto(p){var b='Prenom : '+p.prenom+'\nE-mail : '+p.email+'\nLien du p
  return 'mailto:yvesbali@gmail.com?subject='+encodeURIComponent('Demande cadeau Blackview ROCK 2 - '+p.prenom)+'&body='+encodeURIComponent(b);}
 form.addEventListener('submit',function(e){
  e.preventDefault();
+ if(FERME){fmsg('Les inscriptions sont closes. Merci !');return;}
  if(!DECL){fmsg('Partagez d\'abord deux vidéos, puis cliquez sur « J\'ai partagé ».');return;}
  var p=form.prenom.value.trim(),m=form.email.value.trim(),t=form.lien.value.trim();
  if(!p){fmsg('Merci d\'indiquer votre prénom.');return;}
