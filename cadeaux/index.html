@@ -216,11 +216,12 @@ function textePartage(){
  var v=document.getElementById('d-titre').textContent;
  var l=[];
  SEL.forEach(function(id){
-  var t='';
-  (document.querySelectorAll('.ep')||[]).forEach(function(){});
-  l.push('https://youtu.be/'+id);
+  var lab=document.querySelector('.ep-ck[value="'+id+'"]');
+  var ti=lab?lab.closest('.ep').querySelector('.ep-t').textContent.replace(/★★★/,'').trim():'';
+  l.push((ti?ti+' : ':'')+'https://youtu.be/'+id);
  });
- return 'Je te conseille ces episodes de LCDMH - '+v+' :\n'+l.join('\n');
+ return 'Je te conseille '+(SEL.length>1?'ces épisodes':'cet épisode')+' de LCDMH — '+v+' :\n'+l.join('\n')
+  +'\n\nTous ses road trips à moto : https://lcdmh.com/cadeaux/';
 }
 function majSel(){
  var bar=document.getElementById('selbar');
@@ -229,7 +230,7 @@ function majSel(){
  if(!SEL.length)return;
  var t=textePartage();
  document.getElementById('sh-wa').href='https://wa.me/?text='+encodeURIComponent(t);
- document.getElementById('sh-fb').href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('https://lcdmh.com/cadeaux/');
+ document.getElementById('sh-fb').href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('https://youtu.be/'+SEL[0]);
  window.__shareText=t;
 }
 document.getElementById('sh-cp').addEventListener('click',function(){
