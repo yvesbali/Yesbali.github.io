@@ -165,7 +165,7 @@ footer a{color:#fff}
   <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><input name="site" tabindex="-1" autocomplete="off"></div>
   <label>Pr&eacute;nom<input name="prenom" required autocomplete="given-name"></label>
   <label>E-mail<input name="email" type="email" required autocomplete="email"></label>
-  <label>Lien de ton partage Facebook (le groupe ou le profil o&ugrave; tu as publi&eacute;)<input name="lien" type="url" placeholder="https://www.facebook.com/groups/.../posts/..."></label>
+  <label>Lien de ton partage (obligatoire)<input name="lien" type="text" placeholder="Lien de ta publication Facebook, ou écris WhatsApp" autocomplete="off"><span class="mini" style="display:block;margin-top:4px">Facebook : colle le lien de ta publication (le groupe ou le profil où tu as publié). WhatsApp : écris simplement &laquo; WhatsApp &raquo;.</span></label>
   <label class="chk"><input type="checkbox" name="ok" required> J'ai partag&eacute; un ou deux road trips et j'accepte que mon e-mail serve au tirage au sort.</label>
   <button type="submit">Envoyer ma demande</button>
   <p class="mini" id="f-msg" aria-live="polite"></p>
@@ -334,6 +334,8 @@ form.addEventListener('submit',function(e){
  var p=form.prenom.value.trim(),m=form.email.value.trim(),t=form.lien.value.trim();
  if(!p){fmsg('Merci d\'indiquer votre prénom.');return;}
  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m)){fmsg('Merci d\'indiquer une adresse e-mail valide.');return;}
+ if(!t){fmsg('Merci d\'indiquer le lien de ta publication (ou « WhatsApp » si tu as partagé par WhatsApp).');return;}
+ if(t.length<8&&!/whatsapp/i.test(t)){fmsg('Ce lien semble incomplet : colle le lien de ta publication, ou écris « WhatsApp ».');return;}
  if(!form.ok.checked){fmsg('Il faut cocher la case d\'accord.');return;}
  if(form.site&&form.site.value)return;
  var payload={date:new Date().toISOString(),prenom:p,email:m,lien:t,videos:DECL.ids,titres:DECL.titres,canaux:DECL.canaux};
