@@ -36,10 +36,23 @@ h2.sec{text-align:center;margin:38px 0 6px;font-size:1.25rem}
 #detail h3{margin-bottom:.4em}
 #detail p{margin:.4em 0}
 #detail .row{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
-.eps{display:flex;gap:10px;overflow-x:auto;padding:12px 2px;margin-top:12px;-webkit-overflow-scrolling:touch}
-.eps a{flex:0 0 168px;text-decoration:none;color:var(--n);font-size:.8rem;line-height:1.35}
-.eps img{width:168px;height:94px;object-fit:cover;border-radius:8px;background:#ddd;display:block;margin-bottom:5px}
-.eps a:hover img{outline:3px solid var(--o)}
+.eps{display:flex;flex-direction:column;gap:12px;margin-top:14px}
+.ep{display:grid;grid-template-columns:132px 1fr;gap:12px;background:var(--w);border:1px solid #e3ddd4;border-radius:12px;padding:10px;cursor:pointer;position:relative}
+.ep.sel{border-color:var(--o);box-shadow:0 0 0 2px rgba(230,126,34,.25)}
+.ep img{width:132px;height:74px;object-fit:cover;border-radius:8px;background:#ddd}
+.ep-b{min-width:0}
+.ep-t{font-family:Montserrat,sans-serif;font-weight:700;font-size:.94rem;line-height:1.3;margin:0 0 4px}
+.ep-t .st{color:var(--o)}
+.ep-teaser{font-size:.84rem;opacity:.85;margin:0 0 6px}
+.avis{font-size:.8rem;border-left:3px solid #ddd6c9;padding-left:8px;margin:5px 0;font-style:italic;opacity:.9}
+.avis b{font-style:normal;opacity:.7;font-weight:600;display:block;font-size:.75rem}
+.ep-ck{position:absolute;top:8px;right:8px;width:22px;height:22px;accent-color:#e67e22}
+.selbar{display:none;position:sticky;bottom:0;background:#fff;border-top:2px solid var(--o);padding:10px 0;margin-top:12px}
+.selbar.on{display:block}
+.selbar p{margin:0 0 8px;font-size:.86rem;font-weight:600}
+.share{display:flex;flex-wrap:wrap;gap:8px}
+.share a,.share button{flex:1 1 auto;text-align:center;background:var(--o);color:#fff;border:0;border-radius:8px;padding:10px;font:700 .85rem Montserrat,sans-serif;text-decoration:none;cursor:pointer}
+.share button.alt{background:#fff;color:var(--n);border:1px solid #cfc7bb}
 .btn{display:inline-block;background:var(--o);color:#fff;border:0;border-radius:9px;padding:12px 16px;font:700 .95rem Montserrat,sans-serif;text-decoration:none;cursor:pointer}
 .btn.ghost{background:#fff;color:var(--n);border:1px solid #cfc7bb}
 #participer{display:none;margin-top:34px}
@@ -82,8 +95,16 @@ footer a{color:#fff}
   <h3 id="d-titre"></h3>
   <p id="d-texte"></p>
   <div id="d-eps" class="eps"></div>
+  <div class="selbar" id="selbar">
+   <p id="seltxt">0 / 2 &eacute;pisodes s&eacute;lectionn&eacute;s</p>
+   <div class="share">
+    <a id="sh-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+    <button id="sh-cp" class="alt">Copier le lien</button>
+    <a id="sh-fb" class="alt" href="#" target="_blank" rel="noopener">Facebook</a>
+   </div>
+  </div>
   <div class="row">
-   <a class="btn" id="d-lien" href="#">Voir les &eacute;pisodes</a>
+   <a class="btn" id="d-lien" href="#">Voir la page du voyage</a>
    <button class="btn ghost" id="d-valider">C'est ce voyage qui me pla&icirc;t</button>
   </div>
  </div>
@@ -118,6 +139,66 @@ var V=[
  {t:"Turquie &amp; Balkans",d:"Istanbul, la Cappadoce, puis le retour par les Balkans : 10 000 km en 11 &eacute;pisodes.",u:"/europe-asie-moto.html"}
 ];
 var detail=document.getElementById('detail'),part=document.getElementById('participer'),choisi=false;
+var SEL=[],MAX=2;
+function renderEps(i){
+ var box=document.getElementById('d-eps');box.innerHTML='';SEL=[];
+ var list=EPS[i]||[];
+ list.forEach(function(e,n){
+  var lab=document.createElement('label');lab.className='ep';
+  var ck=document.createElement('input');ck.type='checkbox';ck.className='ep-ck';ck.value=e.id;
+  var im=document.createElement('img');im.src='https://i.ytimg.com/vi/'+e.id+'/mqdefault.jpg';
+  im.loading='lazy';im.alt=e.t;im.width=132;im.height=74;
+  var b=document.createElement('div');b.className='ep-b';
+  var t=document.createElement('p');t.className='ep-t';
+  t.innerHTML=e.t+(e.st?' <span class="st">&#9733;</span>':'');
+  var te=document.createElement('p');te.className='ep-teaser';
+  b.appendChild(t);
+  if(e.x){te.innerHTML=e.x;b.appendChild(te);}
+  (e.a||[]).forEach(function(av){
+   var q=document.createElement('div');q.className='avis';
+   q.textContent='&laquo; '+av[0]+' &raquo;';q.innerHTML='&laquo; '+av[0]+' &raquo;<b>'+av[1]+'</b>';
+   b.appendChild(q);
+  });
+  lab.appendChild(ck);lab.appendChild(im);lab.appendChild(b);
+  ck.addEventListener('change',function(){toggle(ck,lab);});
+  box.appendChild(lab);
+ });
+ majSel();
+}
+function toggle(ck,lab){
+ if(ck.checked){
+  if(SEL.length>=MAX){ck.checked=false;alert('Deux episodes maximum.');return;}
+  SEL.push(ck.value);lab.classList.add('sel');
+ }else{
+  SEL=SEL.filter(function(x){return x!==ck.value;});lab.classList.remove('sel');
+ }
+ majSel();
+}
+function textePartage(){
+ var v=document.getElementById('d-titre').textContent;
+ var l=[];
+ SEL.forEach(function(id){
+  var t='';
+  (document.querySelectorAll('.ep')||[]).forEach(function(){});
+  l.push('https://youtu.be/'+id);
+ });
+ return 'Je te conseille ces episodes de LCDMH - '+v+' :\n'+l.join('\n');
+}
+function majSel(){
+ var bar=document.getElementById('selbar');
+ document.getElementById('seltxt').textContent=SEL.length+' / '+MAX+' episodes selectionnes';
+ bar.classList.toggle('on',SEL.length>0);
+ if(!SEL.length)return;
+ var t=textePartage();
+ document.getElementById('sh-wa').href='https://wa.me/?text='+encodeURIComponent(t);
+ document.getElementById('sh-fb').href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('https://lcdmh.com/cadeaux/');
+ window.__shareText=t;
+}
+document.getElementById('sh-cp').addEventListener('click',function(){
+ var t=window.__shareText||'';
+ if(navigator.clipboard){navigator.clipboard.writeText(t);}
+ this.textContent='Copie !';
+});
 var EPS={"0":[{"id":"aEEJXeNSsdg","t":"Cap Nord à Moto : 63 ans, 10 000 km Solo | Road Trip Norvège Honda NT1100 EP1&2"},{"id":"XbA7du0oX-I","t":"Road trip moto Norvège : 5 ferries sans savoir si c'était le bon"},{"id":"MNKg781CFh0","t":"Fjords de Norvège à Moto : Bergen, Gaularfjellet & Bivouac Sauvage | Cap Nord EP4"},{"id":"L9ZSCWiqNFU","t":"SOGNEFJORD. Road trip moto Fjords,  Bergen-Balestrand. Norvège Cap Nord EP5"},{"id":"Fzj-lGDwedc","t":"GEIRANGERFJORD à Moto : Le Plus Beau Fjord de Norvège | Road Trip Cap Nord EP6"},{"id":"PaEMRm_5H0U","t":"L'ivresse du voyage en moto, La Norvège, Road trip moto Norvège, Cap Nord 2025 EP7"},{"id":"cstTBA6HBGc","t":"350 km dans le FROID NORVÉGIEN : Le Vent du Groenland m'a Brisé.EP8. Road trip moto CapNord Nor"},{"id":"Q3a39FcIjQo","t":"Road trip moto en Norvège – Cette nuit-là, j’étais à bout | EP9"},{"id":"VrjDNkzVAZk","t":"Le Cap Nord ça va mal finir : Cercle Arctique Polaire | Road Trip Moto Norvège EP10"},{"id":"Kq36_wrfvnw","t":"Tu vas te marrer,...ou pas ? je pète un câble..🤪 Ferry Bodø  Lofoten | Road Trip Moto Norvège É"}],"1":[{"id":"BAPas-qa5eU","t":"EP 1. Enfin le grand jour ! : Jour 1, 23 jours 6600 kms \"Tous d'Espagne 2023\""},{"id":"tmOiM0ZlorE","t":"EP02 – Trouver le spot parfait pour bivouaquer 🇫🇷 | Tour d’Espagne à moto (Jour 2)"},{"id":"OVmmCxnXnVo","t":"EP04 – Traverser la Catalogne par les petites routes 🇪🇸 | Tour d’Espagne à moto (Jour 6)"},{"id":"Un68jTJROrs","t":"EP05 – Aventure moto en Catalogne 🇪🇸 | Montagnes et vallées sauvages"},{"id":"9e2VVgC-Sqw","t":"EP06 – Cap vers les Bardenas Reales 🇪🇸 | Aragon à moto – Tour d’Espagne (Jour 7)"},{"id":"wvgvHSkkjGQ","t":"EP07 – Plongée dans les Bardenas Reales 🇪🇸 | Désert d’Aragon à moto – Tour d’Espagne (Jour 8)"},{"id":"qcSA-qs5smM","t":"EP08 Galère à Madrid : chute et réparation 🇪🇸 | Tour d’Espagne à moto"},{"id":"OAgMxHPiTco","t":"EP09 – Châteaux et routes sauvages au lever du jour 🇪🇸 | Tour d’Espagne à moto (Jour 12)"},{"id":"ly7GGAo9RWU","t":"J’ai perdu mon drone à Ronda… mission impossible | Épisode 12"}],"2":[{"id":"ili6Tkm6kJw","t":"Road trip moto Alpes : la Tarentaise en cols | Partie 1"},{"id":"Ig7sfnRf80A","t":"Road trip moto Alpes : Tarentaise & Mont-Blanc | Partie 2"},{"id":"5cI2rCVRiGw","t":"RGA, en moto et en bivouac. 1800 kilomètres à traver les Alpes."},{"id":"YU51KbYRZJw","t":"Road trip moto Alpes : 5 cols de légende | EP3"},{"id":"QPH5CJRbI0E","t":"Balade moto Alpes : col du Semnoz depuis Annecy"},{"id":"amxFV0iPxR0","t":"Sortie moto en Haute-Savoie ▸ Benelli TRK 502 avec un Chapter Harley"},{"id":"3MrTGcwA_-4","t":"Road trip moto dans les Bauges — découverte du massif (Savoie)"},{"id":"i1YwQsEgCSQ","t":"Balade moto Alpes : Pont de l'Abîme et Saint-Jacques"},{"id":"hqDzIM7M2qs","t":"Balade moto Alpes : Bellecombe-en-Bauges, cœur du massif"},{"id":"VqwvMUWyCO4","t":"Balade moto Alpes : Précherel et Trélod en Bauges"}],"3":[{"id":"Fblx1mI1teE","t":"Road trip moto Turquie : Mont-Cenis & lac de Côme | EP1"},{"id":"iHbzhxcOVrA","t":"Croatie – Cette journée a mal dérapé… | Road trip moto Europe–Asie EP2"},{"id":"ixzZerrhubU","t":"Traverser 3 pays à moto en 24h : le défi des Balkans !"},{"id":"CnrUas-r0gE","t":"Road Trip Moto Europe-Asie | De Kotor à l’Albanie en Benelli TRK 702 – Galères & Aventure (EP4)"},{"id":"6NtbDiiGgNY","t":"Off-Road (extrême) en Albanie 🇦🇱 | Road Trip Moto en Benelli TRK 702 jusqu’aux Météores | EP5"},{"id":"iQiEbdyokBg","t":"700 km à moto en une journée. Des Météores à Istanbul en Benelli TRK 702 | Road Trip (EP6)"},{"id":"Njm4fUFu-Lw","t":"Istanbul à pied et à moto 🇹🇷 | Immersion, rencontres & Benelli TRK 702 (EP7)"},{"id":"SY5vAz7iQx8","t":"Cappadoce en moto 🇹🇷 | Montgolfières, galères & Benelli TRK 702 (EP8)"},{"id":"mWKp9bFWQMc","t":"Road Trip Moto | Göreme & Love Valley 🇹🇷 → Sofia 🇧🇬 | Routes défoncées en Benelli TRK 702"},{"id":"XlpyhrLkfVo","t":"Transfăgărășan à moto : route EPIC… et mon drone disparaît ! | TRK 702 (EP10)"}]};
 document.querySelectorAll('.card').forEach(function(c){
  c.addEventListener('click',function(){
@@ -125,16 +206,7 @@ document.querySelectorAll('.card').forEach(function(c){
   document.getElementById('d-titre').innerHTML=v.t;
   document.getElementById('d-texte').innerHTML=v.d;
   document.getElementById('d-lien').href=v.u;
-  var box=document.getElementById('d-eps');box.innerHTML='';
-  (EPS[c.dataset.i]||[]).forEach(function(e){
-   var a=document.createElement('a');
-   a.href='https://www.youtube.com/watch?v='+e.id;a.target='_blank';a.rel='noopener';
-   var im=document.createElement('img');
-   im.src='https://i.ytimg.com/vi/'+e.id+'/mqdefault.jpg';im.loading='lazy';
-   im.alt=e.t;im.width=168;im.height=94;
-   var s=document.createElement('span');s.textContent=e.t;
-   a.appendChild(im);a.appendChild(s);box.appendChild(a);
-  });
+  renderEps(c.dataset.i);
   detail.classList.add('on');
   detail.scrollIntoView({behavior:'smooth',block:'center'});
   choisi=true;
