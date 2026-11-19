@@ -92,6 +92,7 @@ footer a{color:#fff}
 .hero .deal{background:rgba(44,62,80,.88);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:16px 20px 16px 38px;margin:14px auto;max-width:640px;text-shadow:none;font-size:1.04rem}
 .hero .deal li{margin:9px 0;line-height:1.55}
 .hero .cledeal{display:inline-block;background:var(--o);color:#fff;border-radius:999px;padding:6px 18px;font-size:1.08rem;text-shadow:none;margin:6px 0}
+.etape-inscription{margin-top:12px;padding:12px;border:2px solid var(--o);border-radius:10px;background:#fff}
 </style>
 </head>
 <body>
@@ -142,7 +143,7 @@ footer a{color:#fff}
    </div>
    <p class="note-copie" id="sh-note"><strong>Si le partage automatique ne fonctionne pas</strong> (Facebook peut ne pas s'ouvrir ou s'arr&ecirc;ter), faites un <strong>copier-coller</strong> : cliquez sur &laquo; Copier le message &raquo;, ouvrez Facebook, &eacute;crivez une publication (ou un message dans un groupe) et <strong>collez-y le message</strong>. Les liens des vid&eacute;os y sont inclus.</p>
    <p class="mini" id="sh-info"></p>
-   <div id="sh-declare" hidden><button type="button" id="sh-done" class="btn">J'ai partag&eacute;</button> <span class="mini">Cliquez ici une fois le message publi&eacute; ou envoy&eacute; : le formulaire s'ouvre.</span></div>
+   <div id="sh-declare" class="etape-inscription" hidden><p class="mini" style="margin:0 0 6px"><strong>&Eacute;tape suivante</strong> : une fois votre message publi&eacute; ou envoy&eacute;, cliquez ci-dessous pour vous inscrire au tirage.</p><button type="button" id="sh-done" class="btn">J'ai partag&eacute; : je m'inscris</button></div>
   </div>
   <div class="row">
    <a class="btn" id="d-lien" href="#">Voir la page du voyage</a>
@@ -254,7 +255,7 @@ function majSel(){
  var key=SEL.join(',');if(key!==lastKey){lastKey=key;edited=false;}
  if(!edited)document.getElementById('sh-msg').value=textePartage();
  document.getElementById('sh-nat').hidden=typeof navigator.share!=='function';
- document.getElementById('sh-declare').hidden=!attempted;
+ document.getElementById('sh-declare').hidden=false;
 }
 document.getElementById('sh-msg').addEventListener('input',function(){edited=true;});
 function copieMsg(){var t=msgText();
@@ -308,11 +309,18 @@ document.getElementById('d-valider').addEventListener('click',function(){
  part.classList.add('on');
  part.scrollIntoView({behavior:'smooth',block:'start'});
 });
-var ENDPOINT=function(){return window.LCDMH_ENDPOINT||'';};
+var FORM_URL='https://docs.google.com/forms/d/e/1FAIpQLSf7z-3tiHiEOEGrRpRmJJtrNQ3KHqpGKWfUgcWU26DBGEyKHw/formResponse';
+var FORM_ENTRY={prenom:'entry.25825078',email:'entry.873877111',lien:'entry.248385164',details:'entry.1479282757'};
+var ENDPOINT=function(){return window.LCDMH_ENDPOINT||FORM_URL;};
 function fmsg(t){document.getElementById('f-msg').textContent=t;}
 function queueGet(){try{return JSON.parse(localStorage.getItem('lcdmh_queue')||'[]');}catch(e){return[];}}
 function queueSet(a){try{localStorage.setItem('lcdmh_queue',JSON.stringify(a));}catch(e){}}
 function send(p){var u=ENDPOINT();if(!u)return Promise.resolve(false);
+ if(u.indexOf('docs.google.com/forms')>=0){
+  var d=new URLSearchParams();
+  d.append(FORM_ENTRY.prenom,p.prenom);d.append(FORM_ENTRY.email,p.email);d.append(FORM_ENTRY.lien,p.lien||'');
+  d.append(FORM_ENTRY.details,'Videos partagees : '+(p.titres||[]).join(' | ')+'\nCanaux : '+(p.canaux||[]).join(', ')+'\nDate : '+p.date);
+  return fetch(u,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:d.toString()}).then(function(){return true;},function(){return false;});}
  var o={method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(p)};
  return fetch(u,o).then(function(r){if(!r.ok)return false;return r.json().then(function(j){return j.ok===true;},function(){return true;});},
   function(){return fetch(u,{method:'POST',mode:'no-cors',headers:o.headers,body:o.body}).then(function(){return true;},function(){return false;});});}
