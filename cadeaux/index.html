@@ -103,12 +103,13 @@ footer a{color:#fff}
 
 <section class="hero"><div class="wrap">
  <h1>Bienvenue dans mes aventures !</h1>
+ <p><strong>Je m'appelle Yves. Sur LCDMH, je pars en road trip &agrave; moto : Cap Nord, Turquie, Espagne, Alpes, Dolomites&hellip; Des voyages film&eacute;s en vrai, au guidon, &agrave; regarder comme une belle balade.</strong></p>
  <p>Vous me connaissez peut-être pour mes essais de matériel. Mais derrière les équipements, il y a surtout des milliers de kilomètres à moto, des voyages, de magnifiques paysages et quelques belles rencontres !</p>
  <p>Si vous êtes ici, c'est probablement parce que vous avez vu ma vidéo dans laquelle je propose de vous offrir un appareil.</p>
  <p><strong>Le principe est simple :</strong></p>
  <ul class="deal">
   <li>Je vous offre la possibilité de gagner cet appareil.</li>
-  <li>De votre côté, je vous demande de choisir un ou deux de mes road trips et de les partager sur Facebook, pour faire découvrir mes voyages à d'autres personnes.</li>
+  <li>De votre côté, je vous demande de choisir <strong>deux</strong> de mes road trips et de les partager sur vos réseaux (Facebook, Instagram, votre propre chaîne YouTube…), pour faire découvrir mes voyages à d'autres personnes. Une fois les deux vidéos partagées, vous pouvez vous inscrire.</li>
   <li>Si vous êtes tiré au sort, l'appareil est offert. Seuls les frais d'expédition seront à votre charge.</li>
  </ul>
  <p><strong class="cledeal">Voilà, c'est le deal ! 🤝</strong></p>
@@ -140,11 +141,12 @@ footer a{color:#fff}
    <textarea id="sh-msg" rows="6"></textarea>
    <div class="share">
     <button type="button" id="sh-fb">Facebook</button>
+    <button type="button" id="sh-ig" class="alt">Instagram</button>
     <button type="button" id="sh-wa">WhatsApp</button>
     <button type="button" id="sh-cp" class="alt">Copier le message</button>
     <button type="button" id="sh-nat" class="alt" hidden>Partager&hellip;</button>
    </div>
-   <p class="note-copie" id="sh-note"><strong>Si le partage automatique ne fonctionne pas</strong> (Facebook peut ne pas s'ouvrir ou s'arr&ecirc;ter), faites un <strong>copier-coller</strong> : cliquez sur &laquo; Copier le message &raquo;, ouvrez Facebook, &eacute;crivez une publication (ou un message dans un groupe) et <strong>collez-y le message</strong>. Les liens des vid&eacute;os y sont inclus.</p>
+   <p class="note-copie" id="sh-note"><strong>Si le partage automatique ne fonctionne pas</strong> (Facebook peut ne pas s'ouvrir ou s'arr&ecirc;ter), ou pour Instagram et votre cha&icirc;ne YouTube, faites un <strong>copier-coller</strong> : cliquez sur &laquo; Copier le message &raquo;, ouvrez Facebook, &eacute;crivez une publication (ou un message dans un groupe) et <strong>collez-y le message</strong>. Les liens des vid&eacute;os y sont inclus.</p>
    <p class="mini" id="sh-info"></p>
    <div id="sh-declare" class="etape-inscription" hidden><p class="mini" style="margin:0 0 6px"><strong>&Eacute;tape suivante</strong> : une fois votre message publi&eacute; ou envoy&eacute;, cliquez ci-dessous pour vous inscrire au tirage.</p><button type="button" id="sh-done" class="btn">J'ai partag&eacute; : je m'inscris</button></div>
   </div>
@@ -159,18 +161,18 @@ footer a{color:#fff}
  <div class="gift">
   <h2>&#127873; Le cadeau : un Blackview ROCK 2</h2>
   <p>J'ai test&eacute; ce t&eacute;l&eacute;phone dans ma derni&egrave;re vid&eacute;o. Plut&ocirc;t qu'il dorme dans un placard, je l'offre &agrave; l'un de vous.</p>
-  <p><strong>Tirage au sort</strong> parmi les personnes inscrites qui ont partag&eacute; un ou deux road trips. R&eacute;sultat annonc&eacute; le <strong>27 novembre 2026</strong>. Inscriptions jusqu'au <strong>26 novembre 2026 &agrave; 23h59</strong>.</p>
+  <p><strong>Tirage au sort</strong> parmi les personnes inscrites qui ont partag&eacute; deux road trips. R&eacute;sultat annonc&eacute; le <strong>27 novembre 2026</strong>. Inscriptions jusqu'au <strong>26 novembre 2026 &agrave; 23h59</strong>.</p>
   <p><strong>Participer est gratuit</strong> et le t&eacute;l&eacute;phone est offert. Seule l'exp&eacute;dition reste &agrave; la charge de la personne tir&eacute;e au sort, apr&egrave;s sa d&eacute;signation : forfait de <strong>20 &euro;</strong> (exp&eacute;dition et emballage, Colissimo assur&eacute; 300 &euro;, France m&eacute;tropolitaine), &agrave; r&eacute;gler par PayPal, Revolut ou virement. Elle peut aussi renoncer au lot, sans aucune cons&eacute;quence.</p>
  </div>
 
- <p class="mini" id="f-gate" style="margin:0 0 10px"><strong>Le formulaire s'ouvre d&egrave;s que vous avez partag&eacute; au moins un voyage</strong> (Facebook, WhatsApp ou copier-coller du message), puis cliqu&eacute; sur &laquo; J'ai partag&eacute; &raquo;.</p>
+ <p class="mini" id="f-gate" style="margin:0 0 10px"><strong>Le formulaire s'ouvre d&egrave;s que vous avez partag&eacute; deux vid&eacute;os</strong> (Facebook, Instagram, WhatsApp, votre cha&icirc;ne YouTube ou copier-coller du message), puis cliqu&eacute; sur &laquo; J'ai partag&eacute; &raquo;.</p>
  <form id="f" novalidate>
   <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><input name="site" tabindex="-1" autocomplete="off"></div>
   <label>Pr&eacute;nom<input name="prenom" required autocomplete="given-name"></label>
   <label>E-mail<input name="email" type="email" required autocomplete="email"></label>
   <label>Pourquoi toi ? (ta motivation, facultatif)<textarea name="motivation" rows="3" maxlength="1500" placeholder="En quelques lignes : à quoi te servirait ce téléphone ?"></textarea></label>
   <label>Lien de ton partage (obligatoire)<input name="lien" type="text" placeholder="Lien de ta publication Facebook, ou écris WhatsApp" autocomplete="off"><span class="mini" style="display:block;margin-top:4px">Facebook : colle le lien de ta publication (le groupe ou le profil où tu as publié). WhatsApp : écris simplement &laquo; WhatsApp &raquo;.</span></label>
-  <label class="chk"><input type="checkbox" name="ok" required> J'ai partag&eacute; un ou deux road trips et j'accepte que mon e-mail serve au tirage au sort.</label>
+  <label class="chk"><input type="checkbox" name="ok" required> J'ai partag&eacute; deux road trips et j'accepte que mon e-mail serve au tirage au sort.</label>
   <button type="submit">Envoyer ma demande</button>
   <p class="mini" id="f-msg" aria-live="polite"></p>
   <p class="mini" id="f-note">Le bouton ouvre ton logiciel de messagerie avec la demande d&eacute;j&agrave; r&eacute;dig&eacute;e : tu n'as plus qu'&agrave; envoyer. Ou &eacute;cris &agrave; <a href="mailto:yvesbali@gmail.com">yvesbali@gmail.com</a>.</p>
@@ -292,6 +294,12 @@ document.getElementById('sh-fb').addEventListener('click',function(){
  window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(lien(SEL[0])),'_blank','noopener,noreferrer');
  info('Votre message est copi&eacute;. Si Facebook ne s\'ouvre pas ou n\'avance pas, ouvrez-le vous-m&ecirc;me (<a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">facebook.com</a>), &eacute;crivez une publication ou un message dans un groupe et collez-le. Quand c\'est fait, cliquez sur &laquo; J\'ai partag&eacute; &raquo;.');
 });
+document.getElementById('sh-ig').addEventListener('click',function(){
+ if(!SEL.length)return;
+ copieMsg();didShare('instagram');
+ window.open('https://www.instagram.com/','_blank','noopener,noreferrer');
+ info('Votre message est copi&eacute;. Sur Instagram, collez-le dans une story, un message ou votre bio, ou publiez-le sur votre propre cha&icirc;ne YouTube. Puis cliquez sur &laquo; J\'ai partag&eacute; &raquo;.');
+});
 document.getElementById('sh-wa').addEventListener('click',function(){
  if(!SEL.length)return;didShare('whatsapp');
  window.open('https://wa.me/?text='+encodeURIComponent(msgText()),'_blank','noopener,noreferrer');
@@ -308,6 +316,7 @@ document.getElementById('sh-cp').addEventListener('click',function(){
 var form=document.getElementById('f');
 function gate(){var on=!!DECL;Array.prototype.forEach.call(form.elements,function(x){x.disabled=!on;});var g=document.getElementById('f-gate');if(g)g.hidden=on;}
 document.getElementById('sh-done').addEventListener('click',function(){
+ if(SEL.length<2){info('Choisis d&rsquo;abord <strong>deux vid&eacute;os</strong>, partage-les, puis clique ici.');return;}
  var titres=SEL.map(function(id){var l=document.querySelector('.ep-ck[value="'+id+'"]');return l?l.closest('.ep').querySelector('.ep-t').textContent.replace(/\u2605\u2605\u2605/,'').trim():id;});
  DECL={ids:SEL.slice(),titres:titres,canaux:Object.keys(chan)};
  try{localStorage.setItem('lcdmh_decl',JSON.stringify(DECL));}catch(e){}
@@ -356,7 +365,7 @@ function mailto(p){var b='Prenom : '+p.prenom+'\nE-mail : '+p.email+'\nLien du p
  return 'mailto:yvesbali@gmail.com?subject='+encodeURIComponent('Demande cadeau Blackview ROCK 2 - '+p.prenom)+'&body='+encodeURIComponent(b);}
 form.addEventListener('submit',function(e){
  e.preventDefault();
- if(!DECL){fmsg('Partagez d\'abord au moins un voyage, puis cliquez sur « J\'ai partagé ».');return;}
+ if(!DECL){fmsg('Partagez d\'abord deux vidéos, puis cliquez sur « J\'ai partagé ».');return;}
  var p=form.prenom.value.trim(),m=form.email.value.trim(),t=form.lien.value.trim();
  if(!p){fmsg('Merci d\'indiquer votre prénom.');return;}
  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m)){fmsg('Merci d\'indiquer une adresse e-mail valide.');return;}
