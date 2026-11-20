@@ -10,7 +10,7 @@
 <style>body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:#f0ede8;color:#2c3e50;text-align:center;padding:48px 18px}a{color:#e67e22;font-weight:700}</style>
 <link rel="stylesheet" href="/css/vignettes.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7GC33KPRMS"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-7GC33KPRMS",{send_page_view:true});</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-7GC33KPRMS",{send_page_view:false});</script>
 </head><body>
 <p>Ouverture de la vidéo sur YouTube…</p>
 <p><a href="https://www.youtube.com/watch?v=SY5vAz7iQx8">Ouvrir la vidéo</a></p>
@@ -48,10 +48,20 @@
   else p=host;
  }
  var o=(p||"direct")+(host&&host!==p?"|"+host:"");
- try{gtag("event","share_open",{video_id:ID,code:c,plateforme:p||"direct",referent:host||"direct"});}catch(e){}
- var d=new URLSearchParams();d.append("entry.1689257593",c);d.append("entry.379694102",ID);d.append("entry.1480692466",o);
- try{fetch(FORM,{method:"POST",mode:"no-cors",keepalive:true,headers:{"Content-Type":"application/x-www-form-urlencoded"},body:d.toString()}).then(go,go);}catch(e){go();}
- setTimeout(go,1500);
+ var gaFait=false,formFait=false,fini=false;
+ function apresEnvoi(quoi){if(quoi==="ga")gaFait=true;if(quoi==="form")formFait=true;
+  if(fini)return;if((gaFait&&formFait)){fini=true;go();}}
+ try{
+  gtag("event","page_view",{page_title:document.title,page_location:location.href});
+  gtag("event","share_open",{video_id:ID,code:c,plateforme:p||"direct",referent:host||"direct",
+   event_callback:function(){apresEnvoi("ga");},event_timeout:2500});
+ }catch(e){apresEnvoi("ga");}
+ var d=new URLSearchParams();d.append("entry.1689257593",c);
+ d.append("entry.379694102",ID);d.append("entry.1480692466",o);
+ try{fetch(FORM,{method:"POST",mode:"no-cors",keepalive:true,
+  headers:{"Content-Type":"application/x-www-form-urlencoded"},body:d.toString()})
+  .then(function(){apresEnvoi("form");},function(){apresEnvoi("form");});}catch(e){apresEnvoi("form");}
+ setTimeout(function(){if(!fini){fini=true;go();}},3500);
 })();
 </script>
 </body></html>
