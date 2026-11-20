@@ -1,6 +1,6 @@
 {
  "$schema": "lcdmh-maillage-v1",
- "genere_le": "2026-10-05T18:01:09",
+ "genere_le": "2026-11-20T07:24:21",
  "description": "SOURCE UNIQUE DU MAILLAGE ÉDITORIAL LCDMH. Chaque relation est une question logique du lecteur, jamais un mot-clé. Le script build_maillage.py génère les blocs HTML depuis ce fichier. NE PAS éditer les blocs HTML à la main : modifier ce fichier puis relancer le build.",
  "regles": [
   "Une relation doit répondre à : quelle est la prochaine question logique du lecteur ?",
@@ -7572,6 +7572,70 @@
    "type": "TOPIC",
    "bloc": "maillage_section",
    "justification": "maillage éditorial hiver (pneus / loi Montagne), ajouté 2/11/2026"
+  },
+  {
+   "source": "/articles/gants-moto-obligatoires-france-amende-espagne.html",
+   "cible": "/articles/pot-non-homologue-chicane-amendes-moto.html",
+   "ancre": "Pot non homologué : les vraies amendes",
+   "type": "SIBLING",
+   "bloc": "a_lire_aussi",
+   "justification": "Meme question : ce que coute une infraction d'equipement"
+  },
+  {
+   "source": "/articles/controle-technique-moto-2026-calendrier-prix-contre-visite.html",
+   "cible": "/articles/pot-non-homologue-chicane-amendes-moto.html",
+   "ancre": "Pot non homologué : les vraies amendes",
+   "type": "REGULATION",
+   "bloc": "a_lire_aussi",
+   "justification": "Le controle technique verifie l'echappement : suite logique"
+  },
+  {
+   "source": "/articles/pot-non-homologue-chicane-amendes-moto.html",
+   "cible": "/articles/controle-technique-moto-2026-calendrier-prix-contre-visite.html",
+   "ancre": "Contrôle technique moto 2026 : la date limite",
+   "type": "NEXT_STEP",
+   "bloc": "a_lire_aussi",
+   "justification": "Apres la question du pot, celle du controle"
+  },
+  {
+   "source": "/articles/pot-non-homologue-chicane-amendes-moto.html",
+   "cible": "/articles/gants-moto-obligatoires-france-amende-espagne.html",
+   "ancre": "Gants obligatoires : 68 € d'amende",
+   "type": "SIBLING",
+   "bloc": "a_lire_aussi",
+   "justification": "Autre equipement, autre amende"
+  },
+  {
+   "source": "/articles/choisir-son-pneu-moto.html",
+   "cible": "/articles/cout-entretien-moto-par-marque.html",
+   "ancre": "Coût d'entretien moto par marque : mes factures",
+   "type": "SIBLING",
+   "bloc": "a_lire_aussi",
+   "justification": "Apres le choix du pneu, le cout reel d'entretien"
+  },
+  {
+   "source": "/articles/cout-entretien-moto-par-marque.html",
+   "cible": "/articles/choisir-son-pneu-moto.html",
+   "ancre": "Choisir son pneu : mon expérience après 6 montes",
+   "type": "EQUIPMENT",
+   "bloc": "a_lire_aussi",
+   "justification": "Le poste le plus lourd : les pneus"
+  },
+  {
+   "source": "/articles/controle-technique-moto-2026-calendrier-prix-contre-visite.html",
+   "cible": "/articles/cout-entretien-moto-par-marque.html",
+   "ancre": "Coût d'entretien moto par marque",
+   "type": "SIBLING",
+   "bloc": "a_lire_aussi",
+   "justification": "Le controle a un prix, l'entretien aussi"
+  },
+  {
+   "source": "/articles/cout-entretien-moto-par-marque.html",
+   "cible": "/articles/budget-cap-nord-a-moto-seul-10-000-km-couts-et-conseils-prat.html",
+   "ancre": "Budget Cap Nord moto : 2 300 € pour 10 000 km",
+   "type": "NEXT_STEP",
+   "bloc": "a_lire_aussi",
+   "justification": "De l'entretien au budget d'un long voyage"
   }
  ]
 }
