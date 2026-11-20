@@ -9,6 +9,8 @@
 <noscript><meta http-equiv="refresh" content="0;url=https://www.youtube.com/watch?v=hqDzIM7M2qs"></noscript>
 <style>body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:#f0ede8;color:#2c3e50;text-align:center;padding:48px 18px}a{color:#e67e22;font-weight:700}</style>
 <link rel="stylesheet" href="/css/vignettes.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7GC33KPRMS"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-7GC33KPRMS",{send_page_view:true});</script>
 </head><body>
 <p>Ouverture de la vidéo sur YouTube…</p>
 <p><a href="https://www.youtube.com/watch?v=hqDzIM7M2qs">Ouvrir la vidéo</a></p>
@@ -16,11 +18,37 @@
 (function(){
  var YT="https://www.youtube.com/watch?v=hqDzIM7M2qs",FORM="https://docs.google.com/forms/d/e/1FAIpQLSdk97tEklyuiwuICLjUd5iYTxH4AYBViuiA8BoXpbqhrwfZSg/formResponse",ID="hqDzIM7M2qs";
  var q=new URLSearchParams(location.search);
- var c=(q.get("c")||"").replace(/[^a-z0-9]/gi,"").slice(0,12);
+ var c=(q.get("c")||"").replace(/[^a-z0-9-]/gi,"").toLowerCase().slice(0,16);
  var done=false;function go(){if(done)return;done=true;location.replace(YT);}
  var own="";try{own=localStorage.getItem("lcdmh_code")||"";}catch(e){}
  if(!c||c===own){go();return;}
- var o="direct";try{if(document.referrer)o=new URL(document.referrer).hostname;}catch(e){}
+ var ua=navigator.userAgent||"";
+ function plat(){
+  if(/FBAN|FBAV|FB_IAB/i.test(ua))return "facebook";
+  if(/Instagram/i.test(ua))return "instagram";
+  if(/WhatsApp/i.test(ua))return "whatsapp";
+  if(/TikTok|musical_ly/i.test(ua))return "tiktok";
+  if(/LinkedIn/i.test(ua))return "linkedin";
+  if(/Twitter/i.test(ua))return "twitter";
+  if(/Snapchat/i.test(ua))return "snapchat";
+  if(/Telegram/i.test(ua))return "telegram";
+  return "";
+ }
+ var host="";try{if(document.referrer)host=new URL(document.referrer).hostname;}catch(e){}
+ var p=plat();
+ if(!p&&host){
+  if(/facebook/i.test(host))p="facebook";
+  else if(/instagram/i.test(host))p="instagram";
+  else if(/whatsapp|wa\.me/i.test(host))p="whatsapp";
+  else if(/tiktok/i.test(host))p="tiktok";
+  else if(/linkedin/i.test(host))p="linkedin";
+  else if(/t\.co|twitter|x\.com/i.test(host))p="twitter";
+  else if(/google/i.test(host))p="google";
+  else if(/youtube/i.test(host))p="youtube";
+  else p=host;
+ }
+ var o=(p||"direct")+(host&&host!==p?"|"+host:"");
+ try{gtag("event","share_open",{video_id:ID,code:c,plateforme:p||"direct",referent:host||"direct"});}catch(e){}
  var d=new URLSearchParams();d.append("entry.1689257593",c);d.append("entry.379694102",ID);d.append("entry.1480692466",o);
  try{fetch(FORM,{method:"POST",mode:"no-cors",keepalive:true,headers:{"Content-Type":"application/x-www-form-urlencoded"},body:d.toString()}).then(go,go);}catch(e){go();}
  setTimeout(go,1500);
