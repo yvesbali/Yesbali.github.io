@@ -50,7 +50,7 @@
  var o=(p||"direct")+(host&&host!==p?"|"+host:"");
  var gaFait=false,formFait=false,fini=false;
  function apresEnvoi(quoi){if(quoi==="ga")gaFait=true;if(quoi==="form")formFait=true;
-  if(fini)return;if((gaFait&&formFait)){fini=true;go();}}
+  if(fini)return;if(gaFait&&formFait){fini=true;setTimeout(go,700);}}
  try{
   gtag("event","page_view",{page_title:document.title,page_location:location.href});
   gtag("event","share_open",{video_id:ID,code:c,plateforme:p||"direct",referent:host||"direct",
