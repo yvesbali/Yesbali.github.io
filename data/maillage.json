@@ -7636,6 +7636,30 @@
    "type": "NEXT_STEP",
    "bloc": "a_lire_aussi",
    "justification": "De l'entretien au budget d'un long voyage"
+  },
+  {
+   "source": "/pneus.html",
+   "cible": "/articles/continental-contiroadattack-4-test.html",
+   "ancre": "Continental ContiRoadAttack 4 : mon test",
+   "type": "COMPARISON",
+   "bloc": "maillage_section",
+   "justification": "Le comparatif de pneus testés renvoie vers le test détaillé du Continental ContiRoadAttack 4, ajouté 21/11/2026"
+  },
+  {
+   "source": "/articles/continental-contiroadattack-4-test.html",
+   "cible": "/pneus.html",
+   "ancre": "🛞 Comparatif des pneus testés",
+   "type": "COMPARISON",
+   "bloc": "maillage_section",
+   "justification": "Après le test du Continental, la question suivante est de le situer parmi les autres pneus testés."
+  },
+  {
+   "source": "/articles/continental-contiroadattack-4-test.html",
+   "cible": "/articles/choisir-son-pneu-moto.html",
+   "ancre": "🛞 Comment je choisis mes pneus moto",
+   "type": "NEXT_STEP",
+   "bloc": "maillage_section",
+   "justification": "Après un test de pneu, la question suivante est comment choisir le sien."
   }
  ]
 }
