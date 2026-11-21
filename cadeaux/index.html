@@ -144,7 +144,7 @@ footer a{color:#fff}
   <h3 id="d-titre"></h3>
     <p id="d-texte"></p>
   <div class="ident" id="ident">
-   <p class="mini" style="margin:0 0 8px"><strong>&Eacute;tape 1 &mdash; avant de partager</strong> : indique ton pr&eacute;nom et ton e-mail. Un code personnel est cr&eacute;&eacute; pour toi : il est ajout&eacute; automatiquement aux vid&eacute;os que tu partages, et c'est gr&acirc;ce &agrave; lui que tes ouvertures sont compt&eacute;es.</p>
+   <p class="mini" style="margin:0 0 8px"><strong>&Eacute;tape 1 &mdash; avant de partager</strong> : ton pr&eacute;nom et ton e-mail, pour que ta participation soit compt&eacute;e &agrave; ton nom.</p>
    <div class="ident-f" id="ident-f">
     <input id="id-prenom" type="text" placeholder="Ton pr&eacute;nom" autocomplete="given-name" maxlength="40">
     <input id="id-email" type="email" placeholder="Ton e-mail" autocomplete="email" maxlength="80">
@@ -350,7 +350,7 @@ function identLock(){
  var det=document.getElementById('detail');if(det)det.classList.toggle('lock',!ok);
  var f=document.getElementById('ident-f');if(f)f.hidden=ok;
  var msg=document.getElementById('id-msg');
- if(msg)msg.innerHTML=ok?('Merci '+esc(ID.prenom)+'. C&rsquo;est not&eacute;. Choisis deux &eacute;pisodes ci-dessous : ton code est ajout&eacute; automatiquement quand tu partages.'):'';
+ if(msg)msg.innerHTML=ok?('Merci '+esc(ID.prenom)+'. C&rsquo;est not&eacute;. Choisis deux &eacute;pisodes ci-dessous et partage-les.'):'';
  if(ok){try{if(form.prenom&&!form.prenom.value)form.prenom.value=ID.prenom;if(form.email&&!form.email.value)form.email.value=ID.email;}catch(e){}}
 }
 function flushId(){
