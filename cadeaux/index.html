@@ -144,11 +144,11 @@ footer a{color:#fff}
   <h3 id="d-titre"></h3>
     <p id="d-texte"></p>
   <div class="ident" id="ident">
-   <p class="mini" style="margin:0 0 8px"><strong>&Eacute;tape 1 &mdash; avant de partager</strong> : indique ton pr&eacute;nom et ton e-mail. Ton lien de partage personnel sera cr&eacute;&eacute; pour toi, et tes ouvertures seront compt&eacute;es &agrave; ton nom.</p>
+   <p class="mini" style="margin:0 0 8px"><strong>&Eacute;tape 1 &mdash; avant de partager</strong> : indique ton pr&eacute;nom et ton e-mail. Un code personnel est cr&eacute;&eacute; pour toi : il est ajout&eacute; automatiquement aux vid&eacute;os que tu partages, et c'est gr&acirc;ce &agrave; lui que tes ouvertures sont compt&eacute;es.</p>
    <div class="ident-f" id="ident-f">
     <input id="id-prenom" type="text" placeholder="Ton pr&eacute;nom" autocomplete="given-name" maxlength="40">
     <input id="id-email" type="email" placeholder="Ton e-mail" autocomplete="email" maxlength="80">
-    <button type="button" class="btn" id="id-ok">Recevoir mon lien</button>
+    <button type="button" class="btn" id="id-ok">Valider et voir les vid&eacute;os</button>
    </div>
    <p class="mini" id="id-msg" aria-live="polite"></p>
   </div>
@@ -350,7 +350,7 @@ function identLock(){
  var det=document.getElementById('detail');if(det)det.classList.toggle('lock',!ok);
  var f=document.getElementById('ident-f');if(f)f.hidden=ok;
  var msg=document.getElementById('id-msg');
- if(msg)msg.innerHTML=ok?('Merci '+esc(ID.prenom)+'. Ton lien personnel est actif : choisis deux &eacute;pisodes ci-dessous et partage-les.'):'';
+ if(msg)msg.innerHTML=ok?('Merci '+esc(ID.prenom)+'. C&rsquo;est not&eacute;. Choisis deux &eacute;pisodes ci-dessous : ton code est ajout&eacute; automatiquement quand tu partages.'):'';
  if(ok){try{if(form.prenom&&!form.prenom.value)form.prenom.value=ID.prenom;if(form.email&&!form.email.value)form.email.value=ID.email;}catch(e){}}
 }
 function flushId(){
@@ -362,7 +362,7 @@ function flushId(){
 document.getElementById('id-ok').addEventListener('click',function(){
  var p=document.getElementById('id-prenom').value.trim(),m=document.getElementById('id-email').value.trim();
  var msg=document.getElementById('id-msg');
- if(!identValide(p,m)){msg.textContent='Indique ton pr\u00e9nom et une adresse e-mail valide pour recevoir ton lien.';return;}
+ if(!identValide(p,m)){msg.textContent='Indique ton pr\u00e9nom et une adresse e-mail valide pour continuer.';return;}
  ID={prenom:p,email:m,code:CODE,date:new Date().toISOString()};
  try{localStorage.setItem(ID_KEY,JSON.stringify(ID));}catch(e){}
  track('identite_donnee',{});
