@@ -7660,6 +7660,22 @@
    "type": "NEXT_STEP",
    "bloc": "maillage_section",
    "justification": "Après un test de pneu, la question suivante est comment choisir le sien."
+  },
+  {
+   "source": "/articles/choisir-son-pneu-moto.html",
+   "cible": "/articles/continental-contiroadattack-4-test.html",
+   "ancre": "🛞 Mon test du Continental ContiRoadAttack 4",
+   "type": "NEXT_STEP",
+   "bloc": "maillage_section",
+   "justification": "La page explique comment je choisis mes pneus ; le test du ContiRoadAttack 4 est le cas concret et publié du pneu en cours de test."
+  },
+  {
+   "source": "/articles/metzeler-roadtec-02-vs-michelin-road-6-gt.html",
+   "cible": "/articles/continental-contiroadattack-4-test.html",
+   "ancre": "🛞 Mon test du Continental RoadAttack 4",
+   "type": "COMPARISON",
+   "bloc": "maillage_section",
+   "justification": "Après la durée de vie comparée Metzeler/Road 6, la question suivante est le troisième pneu testé sur la même NT1100 : le ContiRoadAttack 4."
   }
  ]
 }
