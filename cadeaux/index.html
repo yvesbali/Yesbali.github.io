@@ -100,6 +100,12 @@ footer a{color:#fff}
 <!-- Google tag (gtag.js) - GA4 LCDMH -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7GC33KPRMS"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-7GC33KPRMS');</script>
+<style>
+#detail.lock #d-eps,#detail.lock .selbar{display:none!important}
+.ident{border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:12px;margin:12px 0}
+.ident-f{display:flex;gap:8px;flex-wrap:wrap}
+.ident-f input{flex:1 1 160px;min-width:0;padding:9px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.25);color:inherit;font:inherit}
+</style>
 </head>
 <body>
 <header><div class="wrap"><b>LCDMH</b><a href="/roadtrips.html">Tous mes voyages &rarr;</a></div></header>
@@ -136,7 +142,16 @@ footer a{color:#fff}
 
  <div id="detail">
   <h3 id="d-titre"></h3>
-  <p id="d-texte"></p>
+    <p id="d-texte"></p>
+  <div class="ident" id="ident">
+   <p class="mini" style="margin:0 0 8px"><strong>&Eacute;tape 1 &mdash; avant de partager</strong> : indique ton pr&eacute;nom et ton e-mail. Ton lien de partage personnel sera cr&eacute;&eacute; pour toi, et tes ouvertures seront compt&eacute;es &agrave; ton nom.</p>
+   <div class="ident-f" id="ident-f">
+    <input id="id-prenom" type="text" placeholder="Ton pr&eacute;nom" autocomplete="given-name" maxlength="40">
+    <input id="id-email" type="email" placeholder="Ton e-mail" autocomplete="email" maxlength="80">
+    <button type="button" class="btn" id="id-ok">Recevoir mon lien</button>
+   </div>
+   <p class="mini" id="id-msg" aria-live="polite"></p>
+  </div>
   <div id="d-eps" class="eps"></div>
   <div class="selbar" id="selbar">
    <p id="seltxt">0 / 2 &eacute;pisodes s&eacute;lectionn&eacute;s</p>
@@ -318,6 +333,44 @@ document.getElementById('sh-cp').addEventListener('click',function(){
  if(!SEL.length)return;
  copieMsg().then(function(ok){didShare('copie');info(ok?'Message copi&eacute; : collez-le o&ugrave; vous voulez (Facebook, groupe, message). Puis cliquez sur &laquo; J\'ai partag&eacute; &raquo;.':'La copie automatique est bloqu&eacute;e : s&eacute;lectionnez le message ci-dessus et copiez-le &agrave; la main. Puis cliquez sur &laquo; J\'ai partag&eacute; &raquo;.');});
 });
+/* --- Etape 1 : identite avant partage (anti partage anonyme) --- */
+var ID_KEY='lcdmh_identite',ID=null;
+try{ID=JSON.parse(localStorage.getItem(ID_KEY)||'null');}catch(e){ID=null;}
+function esc(s){return String(s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function identValide(p,m){return !!p&&p.length>=2&&/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m);}
+function sendIdentite(){
+ var u=ENDPOINT();if(!u)return Promise.resolve(false);
+ var d=new URLSearchParams();
+ d.append(FORM_ENTRY.prenom,ID.prenom);d.append(FORM_ENTRY.email,ID.email);
+ d.append(FORM_ENTRY.details,'ETAPE 1 - IDENTITE AVANT PARTAGE\nCode : '+CODE+'\nPrenom et e-mail donnes avant tout partage\nDate : '+new Date().toISOString());
+ return fetch(u,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:d.toString()}).then(function(){return true;},function(){return false;});
+}
+function identLock(){
+ var ok=!!(ID&&ID.prenom&&ID.email);
+ var det=document.getElementById('detail');if(det)det.classList.toggle('lock',!ok);
+ var f=document.getElementById('ident-f');if(f)f.hidden=ok;
+ var msg=document.getElementById('id-msg');
+ if(msg)msg.innerHTML=ok?('Merci '+esc(ID.prenom)+'. Ton lien personnel est actif : choisis deux &eacute;pisodes ci-dessous et partage-les.'):'';
+ if(ok){try{if(form.prenom&&!form.prenom.value)form.prenom.value=ID.prenom;if(form.email&&!form.email.value)form.email.value=ID.email;}catch(e){}}
+}
+function flushId(){
+ var raw=null;try{raw=localStorage.getItem('lcdmh_queue_id');}catch(e){}
+ if(!raw||!ENDPOINT())return;
+ try{ID=JSON.parse(raw);}catch(e){return;}
+ sendIdentite().then(function(ok){if(ok){try{localStorage.removeItem('lcdmh_queue_id');}catch(e){}}});
+}
+document.getElementById('id-ok').addEventListener('click',function(){
+ var p=document.getElementById('id-prenom').value.trim(),m=document.getElementById('id-email').value.trim();
+ var msg=document.getElementById('id-msg');
+ if(!identValide(p,m)){msg.textContent='Indique ton pr\u00e9nom et une adresse e-mail valide pour recevoir ton lien.';return;}
+ ID={prenom:p,email:m,code:CODE,date:new Date().toISOString()};
+ try{localStorage.setItem(ID_KEY,JSON.stringify(ID));}catch(e){}
+ track('identite_donnee',{});
+ sendIdentite().then(function(ok){if(!ok){try{localStorage.setItem('lcdmh_queue_id',JSON.stringify(ID));}catch(e){}}});
+ identLock();
+});
+document.getElementById('id-prenom').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();document.getElementById('id-email').focus();}});
+document.getElementById('id-email').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();document.getElementById('id-ok').click();}});
 var form=document.getElementById('f');
 var FERME=Date.now()>Date.parse('2026-11-26T23:59:59+01:00');
 function gate(){var on=!!DECL&&!FERME;Array.prototype.forEach.call(form.elements,function(x){x.disabled=!on;});var g=document.getElementById('f-gate');if(g)g.hidden=on;}
@@ -391,7 +444,7 @@ form.addEventListener('submit',function(e){
 });
 document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a[href*="youtu"]');if(a)track('youtube_click',{lien:a.href});});
 document.querySelectorAll('.card').forEach(function(c){c.addEventListener('click',function(){track('serie_ouverte',{serie:c.dataset.i});});});
-gate();flush();
+gate();flush();identLock();flushId();
 if(ENDPOINT()){var fnote=document.getElementById('f-note');if(fnote)fnote.innerHTML='Ta demande est enregistrée directement. Pour toute question, écris à <a href="mailto:yvesbali@gmail.com">yvesbali@gmail.com</a>.';}
 </script>
 </body>
